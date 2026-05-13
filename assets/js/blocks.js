@@ -46,120 +46,105 @@
     class StableClassicEditor extends wp.element.Component {
         constructor(props) {
             super(props);
-            this.editorRef = wp.element.createRef();
+            this.editorId = 'tc4-tinymce-editor-' + Math.random().toString(36).substr(2, 9);
+            this.textareaRef = wp.element.createRef();
+            this.isReady = false;
             this.lastValue = props.value || '';
-            this.exec = this.exec.bind(this);
-            this.handleInput = this.handleInput.bind(this);
-            this.handlePaste = this.handlePaste.bind(this);
+            this.handleChange = this.handleChange.bind(this);
         }
 
         componentDidMount() {
-            if (this.editorRef.current) {
-                this.editorRef.current.innerHTML = this.props.value || '';
-            }
+            this.initializeEditor();
         }
 
         componentDidUpdate(prevProps) {
             const nextValue = this.props.value || '';
-            if (nextValue !== this.lastValue && this.editorRef.current && document.activeElement !== this.editorRef.current) {
-                this.editorRef.current.innerHTML = nextValue;
+
+            if (nextValue !== prevProps.value && nextValue !== this.lastValue) {
                 this.lastValue = nextValue;
-            }
-        }
 
-        exec(command, value) {
-            const editor = this.editorRef.current;
-            if (!editor) return;
-            editor.focus();
-
-            if (command === 'createLink') {
-                const url = window.prompt('Link URL');
-                if (url) {
-                    document.execCommand('createLink', false, url);
+                if (window.tinymce && window.tinymce.get(this.editorId)) {
+                    const editor = window.tinymce.get(this.editorId);
+                    if (editor && editor.getContent() !== nextValue) {
+                        editor.setContent(nextValue || '');
+                    }
+                } else if (this.textareaRef.current && this.textareaRef.current.value !== nextValue) {
+                    this.textareaRef.current.value = nextValue;
                 }
-            } else {
-                document.execCommand(command, false, value || null);
             }
-
-            this.handleInput();
         }
 
-        handleInput() {
-            const editor = this.editorRef.current;
-            if (!editor) return;
-            this.lastValue = editor.innerHTML;
+        componentWillUnmount() {
+            if (window.wp && wp.editor && wp.editor.remove) {
+                try {
+                    wp.editor.remove(this.editorId);
+                    return;
+                } catch (error) {}
+            }
+
+            if (window.tinymce && window.tinymce.get(this.editorId)) {
+                try {
+                    window.tinymce.get(this.editorId).remove();
+                } catch (error) {}
+            }
+        }
+
+        handleChange(value) {
+            this.lastValue = value || '';
             this.props.onChange(this.lastValue);
         }
 
-        handlePaste(event) {
-            event.preventDefault();
-
-            let html = '';
-            if (event.clipboardData) {
-                html = event.clipboardData.getData('text/html') || '';
-                if (!html) {
-                    const text = event.clipboardData.getData('text/plain') || '';
-                    html = text
-                        .split(/\n{2,}/)
-                        .map(function(paragraph) {
-                            return '<p>' + paragraph.replace(/\n/g, '<br>') + '</p>';
-                        })
-                        .join('');
-                }
+        initializeEditor() {
+            if (!this.textareaRef.current) {
+                return;
             }
 
-            html = html
-                .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '')
-                .replace(/<style[\s\S]*?>[\s\S]*?<\/style>/gi, '')
-                .replace(/\son\w+="[^"]*"/gi, '')
-                .replace(/\son\w+='[^']*'/gi, '');
+            this.textareaRef.current.value = this.props.value || '';
 
-            document.execCommand('insertHTML', false, html);
-            this.handleInput();
-        }
+            if (!window.wp || !wp.editor || !wp.editor.initialize) {
+                return;
+            }
 
-        renderButton(label, command, value, extraClass) {
-            return wp.element.createElement('button', {
-                type: 'button',
-                className: 'tc4-real-toolbar-button ' + (extraClass || ''),
-                title: label,
-                onMouseDown: (event) => {
-                    event.preventDefault();
-                    this.exec(command, value);
+            const self = this;
+
+            window.setTimeout(function() {
+                if (!document.getElementById(self.editorId)) {
+                    return;
                 }
-            }, label);
+
+                wp.editor.initialize(self.editorId, {
+                    tinymce: {
+                        wpautop: true,
+                        menubar: false,
+                        branding: false,
+                        height: 300,
+                        plugins: 'charmap colorpicker hr lists paste tabfocus textcolor wordpress wpautoresize wpeditimage wplink',
+                        toolbar1: 'bold italic underline blockquote strikethrough bullist numlist alignleft aligncenter alignright undo redo link unlink fullscreen',
+                        toolbar2: '',
+                        setup: function(editor) {
+                            editor.on('init', function() {
+                                self.isReady = true;
+                                editor.setContent(self.props.value || '');
+                            });
+
+                            editor.on('change keyup paste input undo redo', function() {
+                                self.handleChange(editor.getContent());
+                            });
+                        }
+                    },
+                    quicktags: true,
+                    mediaButtons: false
+                });
+            }, 0);
         }
 
         render() {
-            return wp.element.createElement('div', {className:'tc4-real-classic-editor'},
-                wp.element.createElement('div', {className:'tc4-real-tabs', 'aria-hidden':'true'},
-                    wp.element.createElement('span', {className:'is-active'}, 'Visueel'),
-                    wp.element.createElement('span', {}, 'Tekst')
-                ),
-                wp.element.createElement('div', {className:'tc4-real-toolbar'},
-                    this.renderButton('B', 'bold', null, 'is-bold'),
-                    this.renderButton('I', 'italic', null, 'is-italic'),
-                    this.renderButton('U', 'underline', null, 'is-underline'),
-                    this.renderButton('“', 'formatBlock', 'blockquote'),
-                    this.renderButton('ABC', 'strikeThrough', null, 'is-small'),
-                    this.renderButton('•', 'insertUnorderedList'),
-                    this.renderButton('1.', 'insertOrderedList'),
-                    this.renderButton('≡', 'justifyLeft'),
-                    this.renderButton('≣', 'justifyCenter'),
-                    this.renderButton('≡', 'justifyRight'),
-                    this.renderButton('↶', 'undo'),
-                    this.renderButton('↷', 'redo'),
-                    this.renderButton('🔗', 'createLink'),
-                    this.renderButton('×', 'removeFormat')
-                ),
-                wp.element.createElement('div', {
-                    ref: this.editorRef,
-                    className:'tc4-real-editor-content',
-                    contentEditable:true,
-                    suppressContentEditableWarning:true,
-                    onInput:this.handleInput,
-                    onBlur:this.handleInput,
-                    onPaste:this.handlePaste
+            return wp.element.createElement('div', {className:'tc4-tinymce-editor-wrap'},
+                wp.element.createElement('textarea', {
+                    id: this.editorId,
+                    ref: this.textareaRef,
+                    defaultValue: this.props.value || '',
+                    onChange: event => this.handleChange(event.target.value)
                 })
             );
         }
@@ -169,7 +154,123 @@
         return wp.element.createElement(StableClassicEditor, props);
     }
 
-    registerBlockType('scoutingtc4/featured-items', {
+    let scoutingtc4ActiveLinkField = null;
+    let scoutingtc4ActiveTextEditorLink = null;
+    let scoutingtc4LinkFieldId = 0;
+
+    function ensureScoutingTc4LinkModalHandler() {
+        if (window.scoutingtc4FeaturedLinkHandlerReady) {
+            return;
+        }
+        window.scoutingtc4FeaturedLinkHandlerReady = true;
+
+        if (!window.jQuery) {
+            return;
+        }
+
+        window.jQuery(document).on('click', '#wp-link-submit', function(event) {
+            if ((!scoutingtc4ActiveLinkField && !scoutingtc4ActiveTextEditorLink) || !window.wpLink) {
+                return;
+            }
+
+            event.preventDefault();
+
+            const attrs = window.wpLink.getAttrs ? window.wpLink.getAttrs() : {};
+            const href = attrs.href || window.jQuery('#wp-link-url').val() || '';
+            const text = window.jQuery('#wp-link-text').val() || '';
+            const target = window.jQuery('#wp-link-target').is(':checked') ? '_blank' : '';
+
+            if (scoutingtc4ActiveTextEditorLink) {
+                scoutingtc4ActiveTextEditorLink.apply(href, text, target);
+                scoutingtc4ActiveTextEditorLink = null;
+                window.wpLink.close();
+                return;
+            }
+
+            scoutingtc4ActiveLinkField.onUrl(href);
+
+            if (text && scoutingtc4ActiveLinkField.onText) {
+                scoutingtc4ActiveLinkField.onText(text);
+            }
+
+            if (scoutingtc4ActiveLinkField.onTarget) {
+                scoutingtc4ActiveLinkField.onTarget(target);
+            }
+
+            scoutingtc4ActiveLinkField = null;
+            window.wpLink.close();
+        });
+
+        window.jQuery(document).on('click', '#wp-link-cancel, #wp-link-close', function() {
+            scoutingtc4ActiveLinkField = null;
+            scoutingtc4ActiveTextEditorLink = null;
+        });
+    }
+
+    function LinkPickerField({url, text, target, onUrl, onText, onTarget}) {
+        ensureScoutingTc4LinkModalHandler();
+
+        const id = 'tc4-featured-link-' + (++scoutingtc4LinkFieldId);
+        const currentUrl = url || '';
+        const currentText = text || '';
+
+        const openLinkModal = function(event) {
+            event.preventDefault();
+
+            if (!window.wpLink || !window.jQuery) {
+                return;
+            }
+
+            scoutingtc4ActiveLinkField = {
+                onUrl: onUrl,
+                onText: onText,
+                onTarget: onTarget
+            };
+
+            let textarea = document.getElementById(id);
+            if (!textarea) {
+                textarea = document.createElement('textarea');
+                textarea.id = id;
+                textarea.style.display = 'none';
+                document.body.appendChild(textarea);
+            }
+
+            textarea.value = currentUrl;
+            window.wpLink.open(id);
+
+            window.setTimeout(function() {
+                window.jQuery('#wp-link-url').val(currentUrl);
+                window.jQuery('#wp-link-text').val(currentText);
+                window.jQuery('#wp-link-target').prop('checked', target === '_blank');
+            }, 50);
+        };
+
+        return wp.element.createElement('div', {className:'tc4-link-field-acf'},
+            wp.element.createElement('div', {className:'tc4-link-field-acf__summary'},
+                currentUrl
+                    ? wp.element.createElement(Fragment, {},
+                        wp.element.createElement('strong', {}, currentText || currentUrl),
+                        wp.element.createElement('span', {}, currentUrl)
+                    )
+                    : wp.element.createElement('span', {className:'tc4-link-field-acf__empty'}, 'Geen link gekozen')
+            ),
+            wp.element.createElement('div', {className:'tc4-link-field-acf__actions'},
+                wp.element.createElement(Button, {variant:'secondary', onClick:openLinkModal}, currentUrl ? 'Link bewerken' : 'Link invoegen'),
+                currentUrl ? wp.element.createElement(Button, {
+                    variant:'link',
+                    isDestructive:true,
+                    onClick:function(){
+                        onUrl('');
+                        if (onTarget) {
+                            onTarget('');
+                        }
+                    }
+                }, 'Link verwijderen') : null
+            )
+        );
+    }
+
+registerBlockType('scoutingtc4/featured-items', {
         title: __('Featured items', 'scoutingtc4'),
         icon: 'screenoptions',
         category: 'scoutingtc4',
@@ -260,10 +361,13 @@
                                     wp.element.createElement('div', {className:'tc4-acf-button-grid'},
                                         wp.element.createElement('div', {className:'tc4-acf-field'},
                                             wp.element.createElement('label', {}, 'URL'),
-                                            wp.element.createElement(TextControl, {
-                                                value:item.buttonUrl || '',
-                                                onChange:v=>setItem(i,'buttonUrl',v),
-                                                placeholder:'https://...'
+                                            wp.element.createElement(LinkPickerField, {
+                                                url:item.buttonUrl || '',
+                                                text:item.buttonText || '',
+                                                target:item.buttonTarget || '',
+                                                onUrl:v=>setItem(i,'buttonUrl',v),
+                                                onText:v=>setItem(i,'buttonText',v),
+                                                onTarget:v=>setItem(i,'buttonTarget',v)
                                             })
                                         ),
                                         wp.element.createElement('div', {className:'tc4-acf-field'},
@@ -290,6 +394,7 @@
             text:{type:'string', default:'Ben jij enthousiast, geef je goed leiding en vind je het leuk om kinderen en jongeren te begeleiden bij hun persoonlijke ontwikkeling? Of heb je misschien bestuurlijke kwaliteiten die je wilt inzetten? Dan zijn wij op zoek naar jou!'},
             buttonText:{type:'string', default:'Meld je aan'},
             buttonUrl:{type:'string', default:''},
+            buttonTarget:{type:'string', default:''},
             buttonColor:{type:'string', default:'zwart'},
             imageUrl:{type:'string', default:''},
             calloutPreset:{type:'string', default:'kompas'},
@@ -396,10 +501,13 @@
                         wp.element.createElement('div', {className:'tc4-acf-button-grid'},
                             wp.element.createElement('div', {className:'tc4-acf-field'},
                                 wp.element.createElement('label', {}, 'URL'),
-                                wp.element.createElement(TextControl, {
-                                    value:a.buttonUrl || '',
-                                    onChange:v=>props.setAttributes({buttonUrl:v}),
-                                    placeholder:'https://...'
+                                wp.element.createElement(LinkPickerField, {
+                                    url:a.buttonUrl || '',
+                                    text:a.buttonText || '',
+                                    target:a.buttonTarget || '',
+                                    onUrl:v=>props.setAttributes({buttonUrl:v}),
+                                    onText:v=>props.setAttributes({buttonText:v}),
+                                    onTarget:v=>props.setAttributes({buttonTarget:v})
                                 })
                             ),
                             wp.element.createElement('div', {className:'tc4-acf-field'},
@@ -425,6 +533,7 @@
             count:{type:'number', default:3},
             buttonText:{type:'string', default:'Meer nieuws'},
             buttonUrl:{type:'string', default:''},
+            buttonTarget:{type:'string', default:''},
             buttonColor:{type:'string', default:'blauw'}
         },
         edit: (props) => {
@@ -541,10 +650,13 @@
                         wp.element.createElement('div', {className:'tc4-acf-button-grid'},
                             wp.element.createElement('div', {className:'tc4-acf-field'},
                                 wp.element.createElement('label', {}, 'URL'),
-                                wp.element.createElement(TextControl, {
-                                    value:a.buttonUrl || '',
-                                    onChange:v=>props.setAttributes({buttonUrl:v}),
-                                    placeholder:'https://...'
+                                wp.element.createElement(LinkPickerField, {
+                                    url:a.buttonUrl || '',
+                                    text:a.buttonText || '',
+                                    target:a.buttonTarget || '',
+                                    onUrl:v=>props.setAttributes({buttonUrl:v}),
+                                    onText:v=>props.setAttributes({buttonText:v}),
+                                    onTarget:v=>props.setAttributes({buttonTarget:v})
                                 })
                             ),
                             wp.element.createElement('div', {className:'tc4-acf-field'},
@@ -569,11 +681,13 @@
             leftImageUrl:{type:'string', default:''},
             leftButtonText:{type:'string', default:'Lees hier meer!'},
             leftButtonUrl:{type:'string', default:''},
+            leftButtonTarget:{type:'string', default:''},
             leftButtonColor:{type:'string', default:'blauw'},
             rightTitle:{type:'string', default:'Vacatures'},
             rightText:{type:'string', default:'Meer weten over vrijwilligerswerk bij Scouting? Laat je verrassen door één van de uitdagende vacatures of lees meer over vrijwilliger worden bij Scouting.<ul><li>Welpenleiding</li><li>Secretaris</li></ul><h2>Maatschappelijke stage</h2><p>Iedere scholier krijgt er wel mee te maken: de maatschappelijke stage.</p>'},
             rightButtonText:{type:'string', default:'Meer vacatures'},
             rightButtonUrl:{type:'string', default:''},
+            rightButtonTarget:{type:'string', default:''},
             rightButtonColor:{type:'string', default:'zwart'}
         },
         edit: (props) => {
@@ -608,10 +722,13 @@
                     wp.element.createElement('div', {className:'tc4-acf-button-grid'},
                         wp.element.createElement('div', {className:'tc4-acf-field'},
                             wp.element.createElement('label', {}, 'URL'),
-                            wp.element.createElement(TextControl, {
-                                value:a[urlKey] || '',
-                                onChange:v=>props.setAttributes({[urlKey]:v}),
-                                placeholder:'https://...'
+                            wp.element.createElement(LinkPickerField, {
+                                url:a[urlKey] || '',
+                                text:a[textKey] || '',
+                                target:a[prefix + 'ButtonTarget'] || '',
+                                onUrl:v=>props.setAttributes({[urlKey]:v}),
+                                onText:v=>props.setAttributes({[textKey]:v}),
+                                onTarget:v=>props.setAttributes({[prefix + 'ButtonTarget']:v})
                             })
                         ),
                         wp.element.createElement('div', {className:'tc4-acf-field'},
@@ -649,10 +766,9 @@
                     ),
                     wp.element.createElement('div', {className:'tc4-acf-field'},
                         wp.element.createElement('label', {}, 'Tekst'),
-                        wp.element.createElement(TextareaControl, {
+                        wp.element.createElement(ClassicHtmlEditor, {
                             value:a.leftText || '',
-                            onChange:v=>props.setAttributes({leftText:v}),
-                            rows:7
+                            onChange:v=>props.setAttributes({leftText:v})
                         })
                     ),
                     buttonBox('left', 'blauw')

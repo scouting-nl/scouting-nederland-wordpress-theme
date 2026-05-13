@@ -1,7 +1,7 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
 
-define('SCOUTINGTC4_VERSION', '1.0');
+define('SCOUTINGTC4_VERSION', '1.1');
 
 function scoutingtc4_setup() {
     load_theme_textdomain('scoutingtc4', get_template_directory() . '/languages');
@@ -502,7 +502,7 @@ function scoutingtc4_register_editor_blocks() {
     wp_register_script(
         'scoutingtc4-blocks',
         get_template_directory_uri() . '/assets/js/blocks.js',
-        array('wp-blocks', 'wp-element', 'wp-editor', 'wp-block-editor', 'wp-components', 'wp-i18n', 'wp-server-side-render'),
+        array('wp-blocks', 'wp-element', 'wp-editor', 'wp-block-editor', 'wp-components', 'wp-i18n', 'wp-server-side-render', 'wp-url', 'jquery', 'wplink', 'quicktags'),
         SCOUTINGTC4_VERSION,
         true
     );
@@ -606,6 +606,69 @@ function scoutingtc4_register_editor_blocks() {
 }
 add_action('init', 'scoutingtc4_register_editor_blocks');
 
+
+function scoutingtc4_render_featured_quicklinks($text) {
+    $text = trim((string) $text);
+
+    if ($text === '') {
+        return '';
+    }
+
+    $links = array();
+
+    if (preg_match_all('/<a\s+[^>]*href=["\']([^"\']+)["\'][^>]*>(.*?)<\/a>/is', $text, $matches, PREG_SET_ORDER)) {
+        foreach ($matches as $match) {
+            $label = trim(wp_strip_all_tags($match[2]));
+            $href  = trim(html_entity_decode($match[1], ENT_QUOTES, get_bloginfo('charset')));
+
+            if ($label === '') {
+                $label = $href;
+            }
+
+            if ($href === '') {
+                $href = '#';
+            }
+
+            $links[] = array(
+                'label' => $label,
+                'href'  => $href,
+            );
+        }
+    }
+
+    if (empty($links)) {
+        $parts = preg_split('/<br\s*\/?>|\r\n|\r|\n|<\/p>\s*<p>/i', $text);
+
+        foreach ($parts as $part) {
+            $part = trim(wp_strip_all_tags($part));
+
+            if ($part === '') {
+                continue;
+            }
+
+            $links[] = array(
+                'label' => $part,
+                'href'  => '#',
+            );
+        }
+    }
+
+    if (empty($links)) {
+        return '';
+    }
+
+    $output = '<ul class="tc4-quicklink-list">';
+
+    foreach ($links as $link) {
+        $output .= '<li><a href="' . esc_url($link['href']) . '">' . esc_html($link['label']) . '</a></li>';
+    }
+
+    $output .= '</ul>';
+
+    return $output;
+}
+
+
 function scoutingtc4_render_featured_items_block($attrs) {
     $items = isset($attrs['items']) && is_array($attrs['items']) ? $attrs['items'] : array();
     if (empty($items)) {
@@ -637,16 +700,7 @@ function scoutingtc4_render_featured_items_block($attrs) {
 
         if ($text) {
             if ($is_quicklinks) {
-                $parts = preg_split('/<br\s*\/?>|\r\n|\r|\n/i', $text);
-                echo '<ul class="tc4-quicklink-list">';
-                foreach ($parts as $part) {
-                    $part = trim(wp_strip_all_tags($part));
-                    if ($part === '') {
-                        continue;
-                    }
-                    echo '<li><a href="#">' . esc_html($part) . '</a></li>';
-                }
-                echo '</ul>';
+                echo scoutingtc4_render_featured_quicklinks($text);
             } else {
                 echo '<div class="tc4-featured-text">' . wp_kses_post(wpautop($text)) . '</div>';
             }
@@ -1347,4 +1401,11 @@ function scoutingtc4_scouting_openid_connect_notice() {
     <?php
 }
 add_action('admin_notices', 'scoutingtc4_scouting_openid_connect_notice');
+
+
+
+function scoutingtc4_enqueue_block_editor_dependencies() {
+    wp_enqueue_editor();
+}
+add_action('enqueue_block_editor_assets', 'scoutingtc4_enqueue_block_editor_dependencies');
 
