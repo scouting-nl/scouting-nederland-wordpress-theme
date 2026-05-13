@@ -1,1 +1,31 @@
+@keyframes tc4SkylineSlideX {
+  from { background-position-x: 0; }
+  to { background-position-x: -2000px; }
+}
 
+.tc4-block-callout.tc4-callout-style-2020::before,
+.tc4-callout-style-2020::before {
+  animation: tc4SkylineSlideX 90s linear infinite !important;
+  animation-play-state: running !important;
+}
+
+.tc4-block-callout.tc4-callout-style-2020::before,
+.tc4-callout-style-2020::before {
+  -webkit-animation: animatedBackground 20000s linear infinite !important;
+  animation: animatedBackground 20000s linear infinite !important;
+}
+
+.tc4-block-callout.tc4-callout-style-2020::before,
+.tc4-callout-style-2020::before {
+  -webkit-animation: tc4SkylineVisibleMove 140s linear infinite !important;
+  animation: tc4SkylineVisibleMove 140s linear infinite !important;
+  animation-play-state: running !important;
+}
+
+.tc4-block-callout.tc4-callout-style-2020::before,
+.tc4-callout-style-2020::before {
+  background-position-y: 100% !important;
+  -webkit-animation: tc4SkylineMoveX 110s linear infinite !important;
+  animation: tc4SkylineMoveX 110s linear infinite !important;
+  animation-play-state: running !important;
+}

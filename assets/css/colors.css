@@ -1,0 +1,518 @@
+body {
+  --tc4-main-color: #00a551;
+  --tc4-support-color: #0066b2;
+}
+
+body.mgroen,
+body.green-main {
+  --tc4-main-color: #00a551;
+}
+
+body.mblauw,
+body.blue-main {
+  --tc4-main-color: #0066b2;
+}
+
+body.mgeel,
+body.yellow-main {
+  --tc4-main-color: #fcdd17;
+}
+
+body.mrood,
+body.red-main {
+  --tc4-main-color: #e1071a;
+}
+
+body.moranje,
+body.orange-main {
+  --tc4-main-color: #f2940a;
+}
+
+body.mpaars,
+body.purple-main {
+  --tc4-main-color: #921c7f;
+}
+
+body.sgroen,
+body.green-support {
+  --tc4-support-color: #00a551;
+}
+
+body.sblauw,
+body.blue-support {
+  --tc4-support-color: #0066b2;
+}
+
+body.sgeel,
+body.yellow-support {
+  --tc4-support-color: #fcdd17;
+}
+
+body.srood,
+body.red-support {
+  --tc4-support-color: #e1071a;
+}
+
+body.soranje,
+body.orange-support {
+  --tc4-support-color: #f2940a;
+}
+
+body.spaars,
+body.purple-support {
+  --tc4-support-color: #921c7f;
+}
+
+.tc4-block-callout.tc4-callout-style-2020,
+.tc4-volunteers,
+#tc4-footer,
+#tc4-footer .tc4-footer-main,
+.tc4-news-grid h3,
+.tc4-news-style-2020 .tc4-news-card-title,
+.tc4-news-style-2020 .gb-news-items .news-item h5,
+.bg-success {
+  background-color: var(--tc4-main-color) !important;
+}
+
+.tc4-home-content h2,
+.tc4-homepage-2020 h2,
+.tc4-featured-style-2020 h2,
+.tc4-featured-item h2,
+.tc4-block-news > h2,
+.tc4-block-callout h2,
+.tc4-block-two-columns h2,
+.tc4-news-style-2020 > h2,
+.tc4-news-style-2020 .gb-news-items > a,
+.tc4-news-style-2020 .gb-news-items > .tc4-news-heading-link,
+.tc4-vacancy-card h2,
+.text-success,
+h1,
+.h1 {
+  color: var(--tc4-main-color) !important;
+}
+
+.tc4-home-content hr {
+  border-top-color: var(--tc4-main-color) !important;
+}
+
+.tc4-vacancy-card,
+.bottom-b .moduletable {
+  border-color: var(--tc4-main-color) !important;
+}
+
+#tc4-nav .navbar-nav > li > a,
+#tc4-nav .navbar-nav > li > .nav-link,
+#tc4-buttons a,
+#tc4-buttons .tc4-fa-icon,
+#tc4-buttons .navbar-toggler,
+#tc4-headermessage a,
+.tc4-mobile-nav a,
+.tc4-mobile-icons a,
+.tc4-news-style-2020 .tc4-read-more,
+.tc4-news-style-2020 .gb-news-items .news-item .lees-meer,
+a {
+  color: var(--tc4-support-color) !important;
+}
+
+#tc4-nav .navbar-nav > li > a:hover,
+#tc4-nav .navbar-nav > li > .nav-link:hover,
+#tc4-buttons a:hover,
+#tc4-buttons a:focus,
+.tc4-featured-style-2020 .tc4-quicklink-list a:hover,
+.tc4-news-style-2020 .gb-news-items > a:hover,
+.tc4-news-style-2020 .gb-news-items > .tc4-news-heading-link:hover,
+.tc4-news-style-2020 .gb-news-items .news-item .lees-meer:hover {
+  color: var(--tc4-support-color) !important;
+}
+
+.tc4-btn-blue,
+.wp-block-button.is-style-tc4-blue .wp-block-button__link,
+.tc4-homepage-2020 .wp-block-button.is-style-tc4-blue .wp-block-button__link,
+.tc4-news-style-2020 .tc4-more-news,
+.tc4-news-style-2020 .gb-news-items .meer-nieuws {
+  background-color: var(--tc4-support-color) !important;
+}
+
+#tc4-nav .navbar-nav > li::after,
+#tc4-nav .navbar-nav > li > a::before,
+#tc4-nav .navbar-nav > li > .nav-link::before {
+  background-color: var(--tc4-main-color) !important;
+}
+
+body.mgroen .showcase-skyline::before,
+body.green-main .showcase-skyline::before,
+body.mgroen .tc4-block-callout.tc4-callout-style-2020::before,
+body.green-main .tc4-block-callout.tc4-callout-style-2020::before,
+body.mgroen .tc4-volunteers::before,
+body.green-main .tc4-volunteers::before {
+  background-image: url("../images/skyline-groen.png") !important;
+}
+
+body.mblauw .showcase-skyline::before,
+body.blue-main .showcase-skyline::before,
+body.mblauw .tc4-block-callout.tc4-callout-style-2020::before,
+body.blue-main .tc4-block-callout.tc4-callout-style-2020::before,
+body.mblauw .tc4-volunteers::before,
+body.blue-main .tc4-volunteers::before {
+  background-image: url("../images/skyline-blauw.png") !important;
+}
+
+body.mgeel .showcase-skyline::before,
+body.yellow-main .showcase-skyline::before,
+body.mgeel .tc4-block-callout.tc4-callout-style-2020::before,
+body.yellow-main .tc4-block-callout.tc4-callout-style-2020::before,
+body.mgeel .tc4-volunteers::before,
+body.yellow-main .tc4-volunteers::before {
+  background-image: url("../images/skyline-geel.png") !important;
+}
+
+body.mrood .showcase-skyline::before,
+body.red-main .showcase-skyline::before,
+body.mrood .tc4-block-callout.tc4-callout-style-2020::before,
+body.red-main .tc4-block-callout.tc4-callout-style-2020::before,
+body.mrood .tc4-volunteers::before,
+body.red-main .tc4-volunteers::before {
+  background-image: url("../images/skyline-rood.png") !important;
+}
+
+body.moranje .showcase-skyline::before,
+body.orange-main .showcase-skyline::before,
+body.moranje .tc4-block-callout.tc4-callout-style-2020::before,
+body.orange-main .tc4-block-callout.tc4-callout-style-2020::before,
+body.moranje .tc4-volunteers::before,
+body.orange-main .tc4-volunteers::before {
+  background-image: url("../images/skyline-oranje.png") !important;
+}
+
+body.mpaars .showcase-skyline::before,
+body.purple-main .showcase-skyline::before,
+body.mpaars .tc4-block-callout.tc4-callout-style-2020::before,
+body.purple-main .tc4-block-callout.tc4-callout-style-2020::before,
+body.mpaars .tc4-volunteers::before,
+body.purple-main .tc4-volunteers::before {
+  background-image: url("../images/skyline-paars.png") !important;
+}
+
+body.mgroen #tc4-footer .tc4-footer-grass,
+body.green-main #tc4-footer .tc4-footer-grass {
+  background-image: url("../images/grass-groen.png") !important;
+}
+
+body.mblauw #tc4-footer .tc4-footer-grass,
+body.blue-main #tc4-footer .tc4-footer-grass {
+  background-image: url("../images/grass-blauw.png") !important;
+}
+
+body.mgeel #tc4-footer .tc4-footer-grass,
+body.yellow-main #tc4-footer .tc4-footer-grass {
+  background-image: url("../images/grass-geel.png") !important;
+}
+
+body.mrood #tc4-footer .tc4-footer-grass,
+body.red-main #tc4-footer .tc4-footer-grass {
+  background-image: url("../images/grass-rood.png") !important;
+}
+
+body.moranje #tc4-footer .tc4-footer-grass,
+body.orange-main #tc4-footer .tc4-footer-grass {
+  background-image: url("../images/grass-oranje.png") !important;
+}
+
+body.mpaars #tc4-footer .tc4-footer-grass,
+body.purple-main #tc4-footer .tc4-footer-grass {
+  background-image: url("../images/grass-paars.png") !important;
+}
+
+body.mgeel .tc4-news-grid h3,
+body.yellow-main .tc4-news-grid h3,
+body.mgeel .tc4-news-style-2020 .tc4-news-card-title,
+body.yellow-main .tc4-news-style-2020 .tc4-news-card-title,
+body.mgeel .tc4-news-style-2020 .gb-news-items .news-item h5,
+body.yellow-main .tc4-news-style-2020 .gb-news-items .news-item h5 {
+  color: #333 !important;
+}
+
+body #tc4-nav .navbar-nav > li > a,
+body #tc4-nav .navbar-nav > li > .nav-link,
+body #tc4-nav .navbar-nav > .menu-item > a,
+body #tc4-nav .navbar-nav > .menu-item > .nav-link,
+body.scoutingtc4-header-wide #tc4-nav .navbar-nav > li > a,
+body.scoutingtc4-header-wide #tc4-nav .navbar-nav > li > .nav-link,
+body.scoutingtc4-header-narrow #tc4-nav .navbar-nav > li > a,
+body.scoutingtc4-header-narrow #tc4-nav .navbar-nav > li > .nav-link {
+  color: var(--tc4-support-color) !important;
+}
+
+body #tc4-nav .dropdown-menu a,
+body #tc4-nav .dropdown-menu .dropdown-item,
+body #tc4-nav .sub-menu a,
+body #tc4-nav .sub-menu .nav-link,
+body.scoutingtc4-header-wide #tc4-nav .dropdown-menu a,
+body.scoutingtc4-header-narrow #tc4-nav .dropdown-menu a {
+  color: var(--tc4-support-color) !important;
+}
+
+body #tc4-buttons,
+body #tc4-buttons a,
+body #tc4-buttons a:visited,
+body #tc4-buttons button,
+body #tc4-buttons .navbar-toggler,
+body #tc4-buttons .navbar-toggler:visited,
+body.scoutingtc4-header-wide #tc4-buttons,
+body.scoutingtc4-header-wide #tc4-buttons a,
+body.scoutingtc4-header-wide #tc4-buttons button,
+body.scoutingtc4-header-wide #tc4-buttons .navbar-toggler,
+body.scoutingtc4-header-narrow #tc4-buttons,
+body.scoutingtc4-header-narrow #tc4-buttons a,
+body.scoutingtc4-header-narrow #tc4-buttons button,
+body.scoutingtc4-header-narrow #tc4-buttons .navbar-toggler {
+  color: var(--tc4-support-color) !important;
+}
+
+body #tc4-buttons i,
+body #tc4-buttons .fa,
+body #tc4-buttons .fas,
+body #tc4-buttons .far,
+body #tc4-buttons .fab,
+body #tc4-buttons .tc4-fa-icon,
+body #tc4-buttons .tc4-icon,
+body.scoutingtc4-header-wide #tc4-buttons i,
+body.scoutingtc4-header-wide #tc4-buttons .fa,
+body.scoutingtc4-header-wide #tc4-buttons .fas,
+body.scoutingtc4-header-wide #tc4-buttons .far,
+body.scoutingtc4-header-wide #tc4-buttons .fab,
+body.scoutingtc4-header-wide #tc4-buttons .tc4-fa-icon,
+body.scoutingtc4-header-wide #tc4-buttons .tc4-icon,
+body.scoutingtc4-header-narrow #tc4-buttons i,
+body.scoutingtc4-header-narrow #tc4-buttons .fa,
+body.scoutingtc4-header-narrow #tc4-buttons .fas,
+body.scoutingtc4-header-narrow #tc4-buttons .far,
+body.scoutingtc4-header-narrow #tc4-buttons .fab,
+body.scoutingtc4-header-narrow #tc4-buttons .tc4-fa-icon,
+body.scoutingtc4-header-narrow #tc4-buttons .tc4-icon {
+  color: var(--tc4-support-color) !important;
+}
+
+body #tc4-buttons svg,
+body #tc4-buttons svg *,
+body #tc4-buttons .tc4-svg-icon,
+body #tc4-buttons .tc4-svg-icon *,
+body.scoutingtc4-header-wide #tc4-buttons svg,
+body.scoutingtc4-header-wide #tc4-buttons svg *,
+body.scoutingtc4-header-wide #tc4-buttons .tc4-svg-icon,
+body.scoutingtc4-header-wide #tc4-buttons .tc4-svg-icon *,
+body.scoutingtc4-header-narrow #tc4-buttons svg,
+body.scoutingtc4-header-narrow #tc4-buttons svg *,
+body.scoutingtc4-header-narrow #tc4-buttons .tc4-svg-icon,
+body.scoutingtc4-header-narrow #tc4-buttons .tc4-svg-icon * {
+  color: var(--tc4-support-color) !important;
+  fill: var(--tc4-support-color) !important;
+  stroke: var(--tc4-support-color) !important;
+}
+
+body #tc4-buttons .tc4-menu-label,
+body.scoutingtc4-header-wide #tc4-buttons .tc4-menu-label,
+body.scoutingtc4-header-narrow #tc4-buttons .tc4-menu-label {
+  color: var(--tc4-support-color) !important;
+}
+
+body #tc4-headermessage,
+body #tc4-headermessage a,
+body #tc4-headermessage i,
+body #tc4-headermessage .fa,
+body #tc4-headermessage .fas,
+body.scoutingtc4-header-wide #tc4-headermessage,
+body.scoutingtc4-header-wide #tc4-headermessage a,
+body.scoutingtc4-header-wide #tc4-headermessage i,
+body.scoutingtc4-header-wide #tc4-headermessage .fa,
+body.scoutingtc4-header-wide #tc4-headermessage .fas,
+body.scoutingtc4-header-narrow #tc4-headermessage,
+body.scoutingtc4-header-narrow #tc4-headermessage a,
+body.scoutingtc4-header-narrow #tc4-headermessage i,
+body.scoutingtc4-header-narrow #tc4-headermessage .fa,
+body.scoutingtc4-header-narrow #tc4-headermessage .fas {
+  color: var(--tc4-support-color) !important;
+}
+
+body .tc4-mobile-offcanvas a,
+body .tc4-mobile-offcanvas button,
+body .tc4-mobile-offcanvas i,
+body .tc4-mobile-offcanvas .fa,
+body .tc4-mobile-offcanvas .fas,
+body .tc4-mobile-nav a,
+body .tc4-mobile-icons a,
+body .tc4-mobile-icons i {
+  color: var(--tc4-support-color) !important;
+}
+
+body #tc4-nav .navbar-nav > li > a:hover,
+body #tc4-nav .navbar-nav > li > .nav-link:hover,
+body #tc4-nav .dropdown-menu a:hover,
+body #tc4-nav .dropdown-menu .dropdown-item:hover,
+body #tc4-buttons a:hover,
+body #tc4-buttons button:hover,
+body #tc4-buttons .navbar-toggler:hover,
+body .tc4-mobile-offcanvas a:hover {
+  color: var(--tc4-support-color) !important;
+  opacity: .85;
+}
+
+body #tc4-nav .navbar-nav > li::after,
+body #tc4-nav .navbar-nav > li > a::before,
+body #tc4-nav .navbar-nav > li > .nav-link::before {
+  background-color: var(--tc4-main-color) !important;
+}
+
+body.mgroen { --tc4-main-color: #00a551 !important; }
+body.mblauw { --tc4-main-color: #0066b2 !important; }
+body.mgeel { --tc4-main-color: #fcdd17 !important; }
+body.mrood { --tc4-main-color: #e1071a !important; }
+body.moranje { --tc4-main-color: #f2940a !important; }
+body.mpaars { --tc4-main-color: #921c7f !important; }
+
+body.green-main { --tc4-main-color: #00a551 !important; }
+body.blue-main { --tc4-main-color: #0066b2 !important; }
+body.yellow-main { --tc4-main-color: #fcdd17 !important; }
+body.red-main { --tc4-main-color: #e1071a !important; }
+body.orange-main { --tc4-main-color: #f2940a !important; }
+body.purple-main { --tc4-main-color: #921c7f !important; }
+
+body.sgroen { --tc4-support-color: #00a551 !important; }
+body.sblauw { --tc4-support-color: #0066b2 !important; }
+body.sgeel { --tc4-support-color: #fcdd17 !important; }
+body.srood { --tc4-support-color: #e1071a !important; }
+body.soranje { --tc4-support-color: #f2940a !important; }
+body.spaars { --tc4-support-color: #921c7f !important; }
+
+body.green-support { --tc4-support-color: #00a551 !important; }
+body.blue-support { --tc4-support-color: #0066b2 !important; }
+body.yellow-support { --tc4-support-color: #fcdd17 !important; }
+body.red-support { --tc4-support-color: #e1071a !important; }
+body.orange-support { --tc4-support-color: #f2940a !important; }
+body.purple-support { --tc4-support-color: #921c7f !important; }
+
+body #tc4-headermessage,
+body #tc4-headermessage a,
+body #tc4-headermessage i,
+body #tc4-headermessage .fa,
+body #tc4-headermessage .fas,
+body #tc4-nav .navbar-nav > li > a,
+body #tc4-nav .navbar-nav > li > .nav-link,
+body #tc4-nav .navbar-nav > .menu-item > a,
+body #tc4-nav .navbar-nav > .menu-item > .nav-link,
+body #tc4-nav .dropdown-menu a,
+body #tc4-nav .dropdown-item,
+body #tc4-buttons,
+body #tc4-buttons a,
+body #tc4-buttons button,
+body #tc4-buttons .navbar-toggler,
+body #tc4-buttons .tc4-menu-label,
+body #tc4-buttons i,
+body #tc4-buttons .fa,
+body #tc4-buttons .fas,
+body #tc4-buttons .far,
+body #tc4-buttons .fab,
+body #tc4-buttons .tc4-fa-icon,
+body #tc4-buttons .tc4-icon,
+body.scoutingtc4-header-wide #tc4-headermessage,
+body.scoutingtc4-header-wide #tc4-headermessage a,
+body.scoutingtc4-header-wide #tc4-headermessage i,
+body.scoutingtc4-header-wide #tc4-nav .navbar-nav > li > a,
+body.scoutingtc4-header-wide #tc4-nav .navbar-nav > li > .nav-link,
+body.scoutingtc4-header-wide #tc4-buttons,
+body.scoutingtc4-header-wide #tc4-buttons a,
+body.scoutingtc4-header-wide #tc4-buttons button,
+body.scoutingtc4-header-wide #tc4-buttons .navbar-toggler,
+body.scoutingtc4-header-wide #tc4-buttons .tc4-menu-label,
+body.scoutingtc4-header-wide #tc4-buttons i,
+body.scoutingtc4-header-wide #tc4-buttons .fa,
+body.scoutingtc4-header-wide #tc4-buttons .fas,
+body.scoutingtc4-header-wide #tc4-buttons .tc4-fa-icon,
+body.scoutingtc4-header-narrow #tc4-headermessage,
+body.scoutingtc4-header-narrow #tc4-headermessage a,
+body.scoutingtc4-header-narrow #tc4-headermessage i,
+body.scoutingtc4-header-narrow #tc4-nav .navbar-nav > li > a,
+body.scoutingtc4-header-narrow #tc4-nav .navbar-nav > li > .nav-link,
+body.scoutingtc4-header-narrow #tc4-buttons,
+body.scoutingtc4-header-narrow #tc4-buttons a,
+body.scoutingtc4-header-narrow #tc4-buttons button,
+body.scoutingtc4-header-narrow #tc4-buttons .navbar-toggler,
+body.scoutingtc4-header-narrow #tc4-buttons .tc4-menu-label,
+body.scoutingtc4-header-narrow #tc4-buttons i,
+body.scoutingtc4-header-narrow #tc4-buttons .fa,
+body.scoutingtc4-header-narrow #tc4-buttons .fas,
+body.scoutingtc4-header-narrow #tc4-buttons .tc4-fa-icon {
+  color: var(--tc4-support-color) !important;
+}
+
+body #tc4-buttons svg,
+body #tc4-buttons svg *,
+body #tc4-buttons .tc4-svg-icon,
+body #tc4-buttons .tc4-svg-icon *,
+body.scoutingtc4-header-wide #tc4-buttons svg,
+body.scoutingtc4-header-wide #tc4-buttons svg *,
+body.scoutingtc4-header-narrow #tc4-buttons svg,
+body.scoutingtc4-header-narrow #tc4-buttons svg * {
+  color: var(--tc4-support-color) !important;
+  fill: var(--tc4-support-color) !important;
+  stroke: var(--tc4-support-color) !important;
+}
+
+body #tc4-nav .navbar-nav > li::after,
+body #tc4-nav .navbar-nav > li > a::before,
+body #tc4-nav .navbar-nav > li > .nav-link::before {
+  background-color: var(--tc4-main-color) !important;
+}
+
+body.mblauw.sgroen #tc4-headermessage,
+body.mblauw.sgroen #tc4-headermessage a,
+body.mblauw.sgroen #tc4-headermessage i,
+body.mblauw.sgroen #tc4-nav .navbar-nav > li > a,
+body.mblauw.sgroen #tc4-nav .navbar-nav > li > .nav-link,
+body.mblauw.sgroen #tc4-buttons,
+body.mblauw.sgroen #tc4-buttons a,
+body.mblauw.sgroen #tc4-buttons button,
+body.mblauw.sgroen #tc4-buttons .navbar-toggler,
+body.mblauw.sgroen #tc4-buttons .tc4-menu-label,
+body.mblauw.sgroen #tc4-buttons i,
+body.mblauw.sgroen #tc4-buttons .fa,
+body.mblauw.sgroen #tc4-buttons .fas,
+body.mblauw.sgroen #tc4-buttons .tc4-fa-icon {
+  color: #00a551 !important;
+}
+
+body.mblauw.sgroen #tc4-nav .navbar-nav > li::after,
+body.mblauw.sgroen #tc4-nav .navbar-nav > li > a::before,
+body.mblauw.sgroen #tc4-nav .navbar-nav > li > .nav-link::before {
+  background-color: #0066b2 !important;
+}
+
+body #tc4-headermessage,
+body #tc4-headermessage a,
+body #tc4-headermessage a:visited,
+body #tc4-headermessage i,
+body #tc4-headermessage .fa,
+body #tc4-headermessage .fas,
+body.scoutingtc4-header-wide #tc4-headermessage,
+body.scoutingtc4-header-wide #tc4-headermessage a,
+body.scoutingtc4-header-wide #tc4-headermessage a:visited,
+body.scoutingtc4-header-wide #tc4-headermessage i,
+body.scoutingtc4-header-wide #tc4-headermessage .fa,
+body.scoutingtc4-header-wide #tc4-headermessage .fas,
+body.scoutingtc4-header-narrow #tc4-headermessage,
+body.scoutingtc4-header-narrow #tc4-headermessage a,
+body.scoutingtc4-header-narrow #tc4-headermessage a:visited,
+body.scoutingtc4-header-narrow #tc4-headermessage i,
+body.scoutingtc4-header-narrow #tc4-headermessage .fa,
+body.scoutingtc4-header-narrow #tc4-headermessage .fas {
+  color: #e1071a !important;
+}
+
+body.mblauw.sgroen #tc4-headermessage,
+body.mblauw.sgroen #tc4-headermessage a,
+body.mblauw.sgroen #tc4-headermessage a:visited,
+body.mblauw.sgroen #tc4-headermessage i,
+body.mblauw.sgroen #tc4-headermessage .fa,
+body.mblauw.sgroen #tc4-headermessage .fas {
+  color: #e1071a !important;
+}

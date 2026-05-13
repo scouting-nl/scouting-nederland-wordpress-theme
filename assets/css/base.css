@@ -1,1 +1,87 @@
+.mainbody {
+  padding-top: 84px !important;
+}
 
+.mainbody {
+  padding-top: 84px !important;
+}
+
+body .mainbody,
+body #content,
+body main#content {
+  margin-top: 0 !important;
+}
+
+body .mainbody > *:first-child,
+body #content > *:first-child,
+body main#content > *:first-child {
+  margin-top: 0 !important;
+}
+
+body #tc4-hero,
+body .tc4-home-hero,
+body .tc4-search-hero,
+body .tc4-404-hero,
+body .defaultbanner,
+body .home-slider,
+body .tc4-home-slider,
+body .tc4-video-banner {
+  margin-top: 0 !important;
+}
+
+body #tc4-hero.container-fluid,
+body #tc4-hero .row,
+body #tc4-hero .col,
+body #tc4-hero .col-sm-12,
+body #tc4-hero .col-md-12 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body .mainbody > #tc4-hero:first-child,
+body .mainbody > .tc4-home-hero:first-child,
+body .mainbody > .tc4-search-hero:first-child,
+body .mainbody > .tc4-404-hero:first-child,
+body .mainbody > .defaultbanner:first-child,
+body main#content > .tc4-home-hero:first-child,
+body main#content > .tc4-search-hero:first-child,
+body main#content > .tc4-404-hero:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body .tc4-search-page,
+body .tc4-404-page {
+  padding-top: 0 !important;
+}
+
+
+#tc4-hero h1,
+#tc4-hero h2,
+#tc4-hero h3,
+#tc4-hero p,
+.tc4-home-hero h1,
+.tc4-home-hero h2,
+.tc4-home-hero h3,
+.tc4-home-hero p,
+.defaultbanner h1,
+.defaultbanner h2,
+.defaultbanner h3,
+.defaultbanner p {
+  color: #fff !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,.35);
+}
+
+
+#tc4-hero h1,
+#tc4-hero h2,
+#tc4-hero h3,
+.tc4-home-hero h1,
+.tc4-home-hero h2,
+.tc4-home-hero h3,
+.defaultbanner h1,
+.defaultbanner h2,
+.defaultbanner h3 {
+  font-family: "Urban Jungle", "Roboto Slab", Georgia, serif !important;
+  letter-spacing: .02em;
+}

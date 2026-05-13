@@ -43,7 +43,6 @@
         return 'tc4-btn tc4-btn-blue';
     }
 
-
     class StableClassicEditor extends wp.element.Component {
         constructor(props) {
             super(props);
@@ -109,7 +108,6 @@
                 }
             }
 
-            // Alleen veilige, eenvoudige HTML toestaan.
             html = html
                 .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '')
                 .replace(/<style[\s\S]*?>[\s\S]*?<\/style>/gi, '')

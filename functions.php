@@ -1,7 +1,7 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
 
-define('SCOUTINGTC4_VERSION', '1.8.7');
+define('SCOUTINGTC4_VERSION', '1.0');
 
 function scoutingtc4_setup() {
     load_theme_textdomain('scoutingtc4', get_template_directory() . '/languages');
@@ -16,11 +16,36 @@ function scoutingtc4_setup() {
 }
 add_action('after_setup_theme', 'scoutingtc4_setup');
 
+function scoutingtc4_get_default_hero_url() {
+    $hero_id = absint(get_theme_mod('scoutingtc4_default_hero_image', 0));
+
+    if ($hero_id) {
+        $hero_url = wp_get_attachment_image_url($hero_id, 'full');
+        if ($hero_url) {
+            return $hero_url;
+        }
+    }
+
+    return get_template_directory_uri() . '/assets/images/default-slide.jpg';
+}
+
 function scoutingtc4_assets() {
     wp_enqueue_style('scoutingtc4-google-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&family=Roboto+Slab:wght@700&display=swap', array(), null);
     wp_enqueue_style('scoutingtc4-fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4');
+
     wp_enqueue_style('scoutingtc4-template', get_template_directory_uri() . '/assets/css/template.css', array('scoutingtc4-google-fonts', 'scoutingtc4-fontawesome'), SCOUTINGTC4_VERSION);
-    wp_enqueue_style('scoutingtc4-style', get_stylesheet_uri(), array('scoutingtc4-template'), SCOUTINGTC4_VERSION);
+    wp_enqueue_style('scoutingtc4-base', get_template_directory_uri() . '/assets/css/base.css', array('scoutingtc4-template'), SCOUTINGTC4_VERSION);
+    wp_enqueue_style('scoutingtc4-utilities', get_template_directory_uri() . '/assets/css/utilities.css', array('scoutingtc4-base'), SCOUTINGTC4_VERSION);
+    wp_enqueue_style('scoutingtc4-header', get_template_directory_uri() . '/assets/css/header.css', array('scoutingtc4-utilities'), SCOUTINGTC4_VERSION);
+    wp_enqueue_style('scoutingtc4-footer', get_template_directory_uri() . '/assets/css/footer.css', array('scoutingtc4-header'), SCOUTINGTC4_VERSION);
+    wp_enqueue_style('scoutingtc4-homepage', get_template_directory_uri() . '/assets/css/homepage.css', array('scoutingtc4-footer'), SCOUTINGTC4_VERSION);
+    wp_enqueue_style('scoutingtc4-news', get_template_directory_uri() . '/assets/css/news.css', array('scoutingtc4-homepage'), SCOUTINGTC4_VERSION);
+    wp_enqueue_style('scoutingtc4-blocks', get_template_directory_uri() . '/assets/css/blocks.css', array('scoutingtc4-news'), SCOUTINGTC4_VERSION);
+    wp_enqueue_style('scoutingtc4-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array('scoutingtc4-blocks'), SCOUTINGTC4_VERSION);
+    wp_enqueue_style('scoutingtc4-colors', get_template_directory_uri() . '/assets/css/colors.css', array('scoutingtc4-responsive'), SCOUTINGTC4_VERSION);
+    wp_enqueue_style('scoutingtc4-404', get_template_directory_uri() . '/assets/css/404.css', array('scoutingtc4-colors'), SCOUTINGTC4_VERSION);
+    wp_enqueue_style('scoutingtc4-search', get_template_directory_uri() . '/assets/css/search.css', array('scoutingtc4-colors'), SCOUTINGTC4_VERSION);
+
     wp_enqueue_script('bootstrap-bundle', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js', array(), '5.1.3', true);
     wp_enqueue_script('scoutingtc4-template', get_template_directory_uri() . '/assets/js/template.js', array('bootstrap-bundle'), SCOUTINGTC4_VERSION, true);
     wp_enqueue_script('scoutingtc4-home-slider', get_template_directory_uri() . '/assets/js/home-slider.js', array(), SCOUTINGTC4_VERSION, true);
@@ -56,7 +81,6 @@ function scoutingtc4_widgets_init() {
 }
 add_action('widgets_init', 'scoutingtc4_widgets_init');
 
-
 function scoutingtc4_sanitize_checkbox($checked) {
     return ((isset($checked) && true == $checked) ? 1 : 0);
 }
@@ -78,6 +102,18 @@ function scoutingtc4_customize_register($wp_customize) {
     $wp_customize->add_control('scoutingtc4_sub_color', array('type'=>'select', 'section'=>'scoutingtc4_options', 'label'=>__('Steunkleur', 'scoutingtc4'), 'choices'=>$subcolors));
     $wp_customize->add_setting('scoutingtc4_logo_stamp', array('default'=>1, 'sanitize_callback'=>'scoutingtc4_sanitize_checkbox'));
     $wp_customize->add_control('scoutingtc4_logo_stamp', array('type'=>'checkbox', 'section'=>'scoutingtc4_options', 'label'=>__('Logo stempel gebruiken', 'scoutingtc4'), 'description'=>__('Zoals in Joomla: toont de stempel/schaduw onder het logo.', 'scoutingtc4')));
+
+    $wp_customize->add_setting('scoutingtc4_default_hero_image', array(
+        'default'           => 0,
+        'sanitize_callback' => 'absint',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'scoutingtc4_default_hero_image', array(
+        'label'       => __('Standaard hero-afbeelding', 'scoutingtc4'),
+        'description' => __('Deze afbeelding wordt gebruikt als er geen eigen pagina-afbeelding, slider of hero-widget is ingesteld.', 'scoutingtc4'),
+        'section'     => 'scoutingtc4_options',
+        'mime_type'   => 'image',
+    )));
 
     $wp_customize->add_setting('scoutingtc4_hamburger_desktop', array('default'=>0, 'sanitize_callback'=>'scoutingtc4_sanitize_checkbox'));
     $wp_customize->add_control('scoutingtc4_hamburger_desktop', array('type'=>'checkbox', 'section'=>'scoutingtc4_options', 'label'=>__('Hamburger menu op desktop', 'scoutingtc4'), 'description'=>__('Uit = horizontaal menu op desktop. Aan = ook op desktop hamburger-menu, zoals de Joomla optie.', 'scoutingtc4')));
@@ -157,9 +193,39 @@ class ScoutingTC4_Bootstrap_Navwalker extends Walker_Nav_Menu {
 }
 
 function scoutingtc4_body_classes($classes) {
-    $classes[] = get_theme_mod('scoutingtc4_main_color', 'mgroen');
-    $classes[] = get_theme_mod('scoutingtc4_sub_color', 'sgroen');
-    return $classes;
+    $main = get_theme_mod('scoutingtc4_main_color', 'mgroen');
+    $support = get_theme_mod('scoutingtc4_sub_color', 'sgroen');
+
+    $classes[] = $main;
+    $classes[] = $support;
+
+    $main_map = array(
+        'mgroen'  => 'green-main',
+        'mblauw'  => 'blue-main',
+        'mgeel'   => 'yellow-main',
+        'mrood'   => 'red-main',
+        'moranje' => 'orange-main',
+        'mpaars'  => 'purple-main',
+    );
+
+    $support_map = array(
+        'sgroen'  => 'green-support',
+        'sblauw'  => 'blue-support',
+        'sgeel'   => 'yellow-support',
+        'srood'   => 'red-support',
+        'soranje' => 'orange-support',
+        'spaars'  => 'purple-support',
+    );
+
+    if (isset($main_map[$main])) {
+        $classes[] = $main_map[$main];
+    }
+
+    if (isset($support_map[$support])) {
+        $classes[] = $support_map[$support];
+    }
+
+    return array_unique($classes);
 }
 add_filter('body_class', 'scoutingtc4_body_classes');
 
@@ -167,25 +233,14 @@ function scoutingtc4_posted_on() {
     echo '<p class="text-muted small">' . esc_html(get_the_date()) . '</p>';
 }
 
-
-
-
-
-
-/**
- * Homepage 2020: slider instellingen en eigen Scouting-blokken.
- */
 function scoutingtc4_homepage_features_setup() {
     add_image_size('tc4_home_hero', 1920, 520, true);
     add_image_size('tc4_home_card', 560, 320, true);
     add_theme_support('editor-styles');
-    add_editor_style('style.css');
+    add_editor_style(array('style.css', 'assets/css/base.css', 'assets/css/utilities.css', 'assets/css/blocks.css', 'assets/css/homepage.css', 'assets/css/news.css', 'assets/css/editor.css', 'assets/css/colors.css'));
 }
 add_action('after_setup_theme', 'scoutingtc4_homepage_features_setup', 20);
 
-/**
- * Slider meta box op pagina's, vergelijkbaar met het oude Scouting 2020 thema.
- */
 function scoutingtc4_add_slider_metabox() {
     add_meta_box(
         'scoutingtc4_slider',
@@ -420,7 +475,6 @@ function scoutingtc4_render_home_slider($post_id = null) {
     return true;
 }
 
-
 function scoutingtc4_callout_image_options() {
     return array(
         'bijl'    => array('label' => 'bijl', 'file' => 'callout-bijl.png'),
@@ -444,9 +498,6 @@ function scoutingtc4_callout_image_url($preset) {
     return get_template_directory_uri() . '/assets/images/' . $options[$preset]['file'];
 }
 
-/**
- * Gutenberg blokken.
- */
 function scoutingtc4_register_editor_blocks() {
     wp_register_script(
         'scoutingtc4-blocks',
@@ -758,9 +809,6 @@ function scoutingtc4_render_two_columns_block($attrs) {
     return ob_get_clean();
 }
 
-/**
- * Homepage invoervelden zoals het oude Scouting 2020 thema.
- */
 function scoutingtc4_home_fields_defaults() {
     return array(
         'enabled' => '0',
@@ -829,7 +877,6 @@ function scoutingtc4_add_home_fields_metaboxes() {
         'default'
     );
 }
-// Homepagina onderdelen metabox uitgeschakeld: onderdelen worden nu in de blok-editor aangepast.
 
 function scoutingtc4_home_image_field($name, $image_id = 0) {
     $preview = $image_id ? wp_get_attachment_image_url($image_id, 'thumbnail') : '';
@@ -1069,7 +1116,6 @@ function scoutingtc4_save_home_fields_metabox($post_id) {
     }
     update_post_meta($post_id, '_tc4_home_fields', scoutingtc4_sanitize_home_fields($_POST['tc4_home_fields'] ?? array()));
 }
-// Homepagina onderdelen save uitgeschakeld: onderdelen worden nu in de blok-editor opgeslagen.
 
 function scoutingtc4_button_class_from_color($color) {
     if ($color === 'groen') {
@@ -1181,7 +1227,6 @@ function scoutingtc4_render_home_fields_frontend($post_id = null) {
     return true;
 }
 
-
 function scoutingtc4_block_categories($categories, $post) {
     return array_merge(
         array(
@@ -1196,11 +1241,6 @@ function scoutingtc4_block_categories($categories, $post) {
 }
 add_filter('block_categories_all', 'scoutingtc4_block_categories', 10, 2);
 
-
-/**
- * Voeg kleur-classes toe aan de body zodat menu en support-kleuren
- * hetzelfde werken als in het oude template.
- */
 function scoutingtc4_color_body_classes($classes) {
     $support = get_theme_mod('scoutingtc4_support_color', 'blue');
     $main = get_theme_mod('scoutingtc4_main_color', 'green');
@@ -1219,10 +1259,6 @@ function scoutingtc4_color_body_classes($classes) {
 }
 add_filter('body_class', 'scoutingtc4_color_body_classes');
 
-
-/**
- * Header breedte-class.
- */
 function scoutingtc4_header_width_body_class($classes) {
     $mode = get_theme_mod('scoutingtc4_header_width', 'narrow');
     $classes[] = ($mode === 'narrow') ? 'scoutingtc4-header-wide' : 'scoutingtc4-header-narrow';
@@ -1230,10 +1266,6 @@ function scoutingtc4_header_width_body_class($classes) {
 }
 add_filter('body_class', 'scoutingtc4_header_width_body_class');
 
-/**
- * Standaard favicon: Scouting Nederland-logo.
- * WordPress site-icoon heeft voorrang als dat is ingesteld.
- */
 function scoutingtc4_default_favicon() {
     if (function_exists('has_site_icon') && has_site_icon()) {
         return;
@@ -1247,5 +1279,72 @@ function scoutingtc4_default_favicon() {
 add_action('wp_head', 'scoutingtc4_default_favicon', 1);
 add_action('admin_head', 'scoutingtc4_default_favicon', 1);
 
+function scoutingtc4_prevent_empty_search_results($query) {
+    if (is_admin() || !$query->is_main_query() || !$query->is_search()) {
+        return;
+    }
 
+    $search_term = isset($_GET['s']) ? trim(wp_unslash($_GET['s'])) : '';
+
+    if ($search_term === '') {
+        $query->set('post__in', array(0));
+    }
+}
+add_action('pre_get_posts', 'scoutingtc4_prevent_empty_search_results');
+
+function scoutingtc4_is_scouting_openid_connect_active() {
+    if (!function_exists('is_plugin_active')) {
+        include_once ABSPATH . 'wp-admin/includes/plugin.php';
+    }
+
+    $active_plugins = (array) get_option('active_plugins', array());
+
+    if (is_multisite()) {
+        $active_plugins = array_merge($active_plugins, array_keys((array) get_site_option('active_sitewide_plugins', array())));
+    }
+
+    foreach ($active_plugins as $plugin_file) {
+        if (strpos($plugin_file, 'scouting-openid-connect/') === 0) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function scoutingtc4_scouting_openid_connect_notice() {
+    if (!is_admin() || !current_user_can('install_plugins')) {
+        return;
+    }
+
+    if (get_user_meta(get_current_user_id(), 'scoutingtc4_openid_notice_seen', true)) {
+        return;
+    }
+
+    if (scoutingtc4_is_scouting_openid_connect_active()) {
+        update_user_meta(get_current_user_id(), 'scoutingtc4_openid_notice_seen', 1);
+        return;
+    }
+
+    update_user_meta(get_current_user_id(), 'scoutingtc4_openid_notice_seen', 1);
+
+    $install_url = wp_nonce_url(
+        self_admin_url('update.php?action=install-plugin&plugin=scouting-openid-connect'),
+        'install-plugin_scouting-openid-connect'
+    );
+    ?>
+    <div class="notice notice-info is-dismissible">
+        <p>
+            <strong><?php esc_html_e('Scouting login beschikbaar', 'scoutingtc4'); ?></strong><br>
+            <?php esc_html_e('Je kunt de plugin Scouting OpenID Connect installeren om gebruikers via Scouting te laten inloggen.', 'scoutingtc4'); ?>
+        </p>
+        <p>
+            <a class="button button-primary" href="<?php echo esc_url($install_url); ?>">
+                <?php esc_html_e('Scouting OpenID Connect direct installeren', 'scoutingtc4'); ?>
+            </a>
+        </p>
+    </div>
+    <?php
+}
+add_action('admin_notices', 'scoutingtc4_scouting_openid_connect_notice');
 

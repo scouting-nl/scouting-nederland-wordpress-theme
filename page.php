@@ -2,7 +2,7 @@
 <div id="tc4-hero" class="container-fluid px-0">
     <div class="row no-gutters"><div class="col">
         <?php if (is_active_sidebar('hero')) { dynamic_sidebar('hero'); } else { ?>
-            <div class="defaultbanner laag" style="background-image:url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/default-slide.jpg'); ?>')"></div>
+            <div class="defaultbanner laag" style="background-image:url('<?php echo esc_url(scoutingtc4_get_default_hero_url()); ?>')"></div>
         <?php } ?>
     </div></div>
 </div>

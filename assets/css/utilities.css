@@ -1,0 +1,18 @@
+body {
+  --tc4-support-color: #0066b2;
+  --tc4-main-color: #00a551;
+}
+
+body.green-support { --tc4-support-color: #00a551; }
+body.blue-support { --tc4-support-color: #0066b2; }
+body.red-support { --tc4-support-color: #e1071a; }
+body.yellow-support { --tc4-support-color: #fcdd17; }
+body.orange-support { --tc4-support-color: #f2940a; }
+body.purple-support { --tc4-support-color: #921c7f; }
+
+body.green-main { --tc4-main-color: #00a551; }
+body.blue-main { --tc4-main-color: #0066b2; }
+body.red-main { --tc4-main-color: #e1071a; }
+body.yellow-main { --tc4-main-color: #fcdd17; }
+body.orange-main { --tc4-main-color: #f2940a; }
+body.purple-main { --tc4-main-color: #921c7f; }

@@ -7,7 +7,7 @@ if (!$rendered_slider) {
         $hero_url = get_the_post_thumbnail_url(get_the_ID(), 'tc4_home_hero');
     }
     if (!$hero_url) {
-        $hero_url = get_template_directory_uri() . '/assets/images/default-slide.jpg';
+        $hero_url = scoutingtc4_get_default_hero_url();
     }
 }
 ?>
