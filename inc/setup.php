@@ -138,6 +138,44 @@ function scoutingtc4_widgets_init() {
     }
 }
 add_action('widgets_init', 'scoutingtc4_widgets_init');
+
+function scoutingtc4_remove_default_sidebar_widgets() {
+    $cleanup_option = 'scoutingtc4_default_sidebar_widgets_removed_154';
+
+    if (get_option($cleanup_option)) {
+        return;
+    }
+
+    $sidebars_widgets = get_option('sidebars_widgets');
+    if (!is_array($sidebars_widgets) || empty($sidebars_widgets['sidebar']) || !is_array($sidebars_widgets['sidebar'])) {
+        update_option($cleanup_option, 1, false);
+        return;
+    }
+
+    $default_widget_patterns = array(
+        '/^recent-posts-\d+$/',
+        '/^recent-comments-\d+$/',
+        '/^archives-\d+$/',
+        '/^categories-\d+$/',
+    );
+
+    $sidebars_widgets['sidebar'] = array_values(array_filter(
+        $sidebars_widgets['sidebar'],
+        function($widget_id) use ($default_widget_patterns) {
+            foreach ($default_widget_patterns as $pattern) {
+                if (preg_match($pattern, $widget_id)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    ));
+
+    update_option('sidebars_widgets', $sidebars_widgets);
+    update_option($cleanup_option, 1, false);
+}
+add_action('after_switch_theme', 'scoutingtc4_remove_default_sidebar_widgets');
+add_action('admin_init', 'scoutingtc4_remove_default_sidebar_widgets');
 function scoutingtc4_posted_on() {
     echo '<p class="text-muted small">' . esc_html(get_the_date()) . '</p>';
 }

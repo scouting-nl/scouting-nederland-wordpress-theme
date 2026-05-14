@@ -30,7 +30,6 @@
   animation-play-state: running !important;
 }
 
-/* Scouting OIDC blok */
 .tc4-block-oidc {
   display: block !important;
   width: 100% !important;
@@ -63,7 +62,6 @@
   padding: 0 !important;
 }
 
-/* OIDC linkvariant: toon als gewone tekstlink, niet als knop. */
 .tc4-block-oidc--link {
   width: auto !important;
 }
