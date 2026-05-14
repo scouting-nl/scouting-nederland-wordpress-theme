@@ -102,9 +102,6 @@
   background: #fff;
 }
 
-.tc4-btn-green {
-  background: #00a551;
-}
 
 .tc4-home-fields-rendered .tc4-btn {
   margin-top: 1rem;
@@ -1685,4 +1682,116 @@ body.purple-main .tc4-block-callout.tc4-callout-style-2020::before {
 .home-slider p {
   color: #fff !important;
   text-shadow: 0 2px 12px rgba(0,0,0,.35);
+}
+
+.tc4-block-speltakken-grid.tc4-speltakken-grid-style-2020 {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto 78px;
+}
+
+.tc4-speltakken-main-title {
+  margin: 0 0 28px;
+  color: #00a551;
+  text-align: center;
+  font-family: "Roboto Slab", Georgia, serif;
+  font-size: clamp(2rem, 3vw, 2.85rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+}
+
+.tc4-speltakken-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  align-items: stretch;
+  margin-top: 20px;
+}
+
+.tc4-speltakken-main-title + .tc4-speltakken-grid {
+  margin-top: 0;
+}
+
+.tc4-speltak-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .10);
+}
+
+.tc4-speltak-card__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.tc4-speltak-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.tc4-speltak-card__image--placeholder {
+  background: linear-gradient(135deg, rgba(0, 165, 81, .16), rgba(0, 111, 185, .14));
+}
+
+.tc4-speltak-card__body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 24px 28px;
+  text-align: center;
+}
+
+.tc4-speltak-card h3 {
+  margin: 0 0 12px;
+  color: #00a551;
+  font-family: "Roboto Slab", Georgia, serif;
+  font-size: clamp(1.55rem, 2vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.tc4-speltak-card__text,
+.tc4-speltak-card__text p {
+  margin: 0;
+  color: #1d1d1b;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.tc4-speltak-card__button {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+}
+
+.tc4-speltak-card__button .tc4-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff !important;
+}
+
+.tc4-speltak-card__button .tc4-btn span {
+  color: #fff !important;
+}
+
+@media (max-width: 900px) {
+  .tc4-speltakken-grid {
+    grid-template-columns: 1fr;
+  }
 }

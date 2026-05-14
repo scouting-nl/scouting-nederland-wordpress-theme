@@ -1,9 +1,19 @@
 <?php get_header(); ?>
+<?php
+$tc4_single_hero_url = '';
+if (is_singular('post') && has_post_thumbnail(get_queried_object_id())) {
+    $tc4_single_hero_url = get_the_post_thumbnail_url(get_queried_object_id(), 'full');
+}
+?>
 <div id="tc4-hero" class="container-fluid px-0">
     <div class="row no-gutters"><div class="col">
-        <?php if (is_active_sidebar('hero')) { dynamic_sidebar('hero'); } else { ?>
-            <div class="defaultbanner laag" style="background-image:url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/default-slide.jpg'); ?>')"></div>
-        <?php } ?>
+        <?php if ($tc4_single_hero_url) : ?>
+            <div class="defaultbanner laag tc4-single-hero" style="background-image:url('<?php echo esc_url($tc4_single_hero_url); ?>')"></div>
+        <?php elseif (is_active_sidebar('hero')) : ?>
+            <?php dynamic_sidebar('hero'); ?>
+        <?php else : ?>
+            <div class="defaultbanner laag" style="background-image:url('<?php echo esc_url(scoutingtc4_get_default_hero_url()); ?>')"></div>
+        <?php endif; ?>
     </div></div>
 </div>
 <div class="container">

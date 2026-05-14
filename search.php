@@ -88,7 +88,7 @@ $has_search_query = $search_query !== '';
                                 $post_type = get_post_type_object(get_post_type());
                                 echo esc_html($post_type ? $post_type->labels->singular_name : __('Pagina', 'scoutingtc4'));
                                 ?>
-                                <?php if (get_the_date()) : ?>
+                                <?php if ('page' !== get_post_type() && get_the_date()) : ?>
                                     <span aria-hidden="true">•</span>
                                     <time datetime="<?php echo esc_attr(get_the_date('c')); ?>"><?php echo esc_html(get_the_date()); ?></time>
                                 <?php endif; ?>

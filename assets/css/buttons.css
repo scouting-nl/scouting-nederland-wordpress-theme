@@ -1,0 +1,62 @@
+.tc4-btn,
+.btn.tc4-btn-blue,
+.btn.tc4-btn-green,
+.btn.tc4-btn-black {
+  color: #fff !important;
+  text-decoration: none !important;
+  border: 0;
+}
+
+.tc4-btn:visited,
+.tc4-btn:hover,
+.tc4-btn:focus,
+.tc4-btn:active,
+.btn.tc4-btn-blue:visited,
+.btn.tc4-btn-blue:hover,
+.btn.tc4-btn-blue:focus,
+.btn.tc4-btn-blue:active,
+.btn.tc4-btn-green:visited,
+.btn.tc4-btn-green:hover,
+.btn.tc4-btn-green:focus,
+.btn.tc4-btn-green:active,
+.btn.tc4-btn-black:visited,
+.btn.tc4-btn-black:hover,
+.btn.tc4-btn-black:focus,
+.btn.tc4-btn-black:active {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.tc4-btn-blue {
+  background-color: var(--tc4-support-color, #0066b2) !important;
+}
+
+.tc4-btn-green {
+  background-color: #00a551 !important;
+}
+
+.tc4-btn-black {
+  background-color: #000 !important;
+}
+
+.tc4-btn-blue:hover,
+.tc4-btn-blue:focus,
+.tc4-btn-blue:active {
+  background-color: var(--tc4-support-color, #0066b2) !important;
+}
+
+.tc4-btn-green:hover,
+.tc4-btn-green:focus,
+.tc4-btn-green:active {
+  background-color: #00a551 !important;
+}
+
+.tc4-btn-black:hover,
+.tc4-btn-black:focus,
+.tc4-btn-black:active {
+  background-color: #000 !important;
+}
+
+.tc4-btn span {
+  color: inherit;
+}

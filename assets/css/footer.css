@@ -19,7 +19,7 @@
   background: var(--tc4-main-color, #00a551);
   color: #fff;
   min-height: 315px;
-  padding: 0 0 3rem;
+  padding: 2.5rem 0 3rem;
 }
 
 #tc4-footer .tc4-footer-inner {

@@ -2000,3 +2000,16 @@ body.admin-bar .offcanvas {
     top: 46px !important;
   }
 }
+
+@media (max-width: 1180px) {
+  #tc4-logo {
+    padding-left: 14px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 700px) {
+  #tc4-logo {
+    padding-left: 16px !important;
+  }
+}

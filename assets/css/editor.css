@@ -1152,3 +1152,7 @@ body.admin-bar #tc4-nav {
 .tc4-two-columns-editor-form .tc4-link-field-acf {
   max-width: 100%;
 }
+
+.editor-styles-wrapper .tc4-speltakken-editor-form .components-textarea-control__input {
+  width: 100%;
+}

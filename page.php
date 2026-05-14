@@ -1,11 +1,34 @@
 <?php get_header(); ?>
-<div id="tc4-hero" class="container-fluid px-0">
-    <div class="row no-gutters"><div class="col">
+<?php
+$tc4_page_id = get_queried_object_id();
+$tc4_page_title = '';
+if (have_posts()) {
+    the_post();
+    $tc4_page_id = get_the_ID();
+    $tc4_page_title = get_the_title();
+    rewind_posts();
+}
+$tc4_page_display_settings = scoutingtc4_get_page_display_settings($tc4_page_id);
+$tc4_hide_hero = !empty($tc4_page_display_settings['hide_hero']);
+$tc4_hide_page_title = !empty($tc4_page_display_settings['hide_page_title']);
+$tc4_rendered_slider = scoutingtc4_render_home_slider($tc4_page_id);
+?>
+<?php if (!$tc4_hide_hero && !$tc4_rendered_slider) : ?>
+<div id="tc4-hero" class="container-fluid px-0 tc4-page-hero">
+    <div class="row no-gutters"><div class="col tc4-page-hero__media">
         <?php if (is_active_sidebar('hero')) { dynamic_sidebar('hero'); } else { ?>
             <div class="defaultbanner laag" style="background-image:url('<?php echo esc_url(scoutingtc4_get_default_hero_url()); ?>')"></div>
         <?php } ?>
+        <?php if ($tc4_page_title && !$tc4_hide_page_title) : ?>
+            <div class="tc4-page-hero__title" aria-hidden="false">
+                <div class="container">
+                    <h1><?php echo esc_html($tc4_page_title); ?></h1>
+                </div>
+            </div>
+        <?php endif; ?>
     </div></div>
 </div>
+<?php endif; ?>
 <div class="container">
     <?php if (is_active_sidebar('featured-a') || is_active_sidebar('featured-b') || is_active_sidebar('featured-c')) : ?>
     <div id="tc4-featured" class="row">

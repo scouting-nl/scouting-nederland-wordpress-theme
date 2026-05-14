@@ -2,15 +2,6 @@
 
 <footer id="tc4-footer" role="contentinfo">
     <div class="tc4-footer-grass" aria-hidden="true"></div>
-                    <div class="wing">
-                        <div class="bit"></div>
-                        <div class="bit"></div>
-                    </div>
-                </div>
-                <div class="shadow"></div>
-            </div>
-        </div>
-    </div>
 
     <div class="tc4-footer-main">
         <div class="tc4-footer-inner">
@@ -43,7 +34,6 @@
                 <div id="copyright" class="tc4-footer-copyright">
                     <p>Copyright &copy; <?php echo esc_html(date('Y')); ?> <?php bloginfo('name'); ?></p>
                     <p><?php printf(esc_html__('Dit is de officiële website van de vereniging %s.', 'scoutingtc4'), esc_html(get_bloginfo('name'))); ?></p>
-                    <p><?php esc_html_e('Nederland.', 'scoutingtc4'); ?></p>
                 </div>
             </div>
 

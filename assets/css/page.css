@@ -1,0 +1,72 @@
+.tc4-page-hero__media {
+  position: relative;
+  min-height: 260px;
+}
+
+.tc4-page-hero__media > .defaultbanner,
+.tc4-page-hero__media > .widget,
+.tc4-page-hero__media > section,
+.tc4-page-hero__media > div:not(.tc4-page-hero__title) {
+  min-height: 260px;
+}
+
+.tc4-page-hero__title {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+  pointer-events: none;
+  text-align: center;
+}
+
+.tc4-page-hero__title h1 {
+  margin: 0;
+  color: #fff;
+  font-family: "Urban Jungle", "Roboto Slab", Georgia, serif;
+  font-size: clamp(2.2rem, 7vw, 4.6rem);
+  font-weight: 400;
+  line-height: .95;
+  letter-spacing: .08em;
+  text-shadow: 0 6px 0 rgba(0, 0, 0, .18);
+}
+
+.tc4-page-hero__title::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(0, 0, 0, .28), rgba(0, 0, 0, .12), rgba(0, 0, 0, .28));
+}
+
+@media (max-width: 767.98px) {
+  .tc4-page-hero__media,
+  .tc4-page-hero__media > .defaultbanner,
+  .tc4-page-hero__media > .widget,
+  .tc4-page-hero__media > section,
+  .tc4-page-hero__media > div:not(.tc4-page-hero__title) {
+    min-height: 210px;
+  }
+
+  .tc4-page-hero__title {
+    padding: 36px 16px;
+  }
+}
+
+.tc4-page-hero,
+body.page .tc4-home-slider {
+  margin-bottom: 48px;
+}
+
+body.page .tc4-page-hero + .container #tc4-featured {
+  margin-top: 0;
+}
+
+@media (max-width: 767.98px) {
+  .tc4-page-hero,
+  body.page .tc4-home-slider {
+    margin-bottom: 32px;
+  }
+}
