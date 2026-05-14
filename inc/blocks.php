@@ -35,6 +35,10 @@ function scoutingtc4_blocks_button_class_from_color($color) {
     return 'tc4-btn-blue';
 }
 
+function scoutingtc4_is_scouting_oidc_available() {
+    return shortcode_exists('scouting_oidc_button') || shortcode_exists('scouting_oidc_link') || defined('SCOUTING_OIDC_VERSION');
+}
+
 function scoutingtc4_register_editor_blocks() {
     $block_editor_dependencies = array('wp-blocks', 'wp-element', 'wp-editor', 'wp-block-editor', 'wp-components', 'wp-i18n', 'wp-server-side-render', 'wp-url', 'jquery', 'wplink', 'quicktags');
     $block_scripts = array(
@@ -44,6 +48,10 @@ function scoutingtc4_register_editor_blocks() {
         'scoutingtc4-blocks-speltakken-grid' => 'speltakken-grid.js',
         'scoutingtc4-blocks-two-columns' => 'two-columns.js',
     );
+
+    if (scoutingtc4_is_scouting_oidc_available()) {
+        $block_scripts['scoutingtc4-blocks-oidc'] = 'oidc.js';
+    }
 
     wp_register_script(
         'scoutingtc4-blocks-common',
@@ -108,6 +116,7 @@ function scoutingtc4_register_editor_blocks() {
         'calloutOptions' => $callout_options,
         'newsCategories' => $news_categories,
         'newsPosts' => $news_posts,
+        'oidcAvailable' => scoutingtc4_is_scouting_oidc_available(),
     ));
 
     $common = array('editor_script' => 'scoutingtc4-blocks');
@@ -175,6 +184,17 @@ function scoutingtc4_register_editor_blocks() {
         ),
         'render_callback' => 'scoutingtc4_render_two_columns_block',
     )));
+
+    if (scoutingtc4_is_scouting_oidc_available()) {
+        register_block_type('scoutingtc4/oidc', array_merge($common, array(
+            'attributes' => array(
+                'displayType' => array('type' => 'string', 'default' => 'button'),
+                'buttonText' => array('type' => 'string', 'default' => 'Inloggen met Scouting'),
+                'alignCenter' => array('type' => 'boolean', 'default' => false),
+            ),
+            'render_callback' => 'scoutingtc4_render_oidc_block',
+        )));
+    }
 }
 add_action('init', 'scoutingtc4_register_editor_blocks');
 function scoutingtc4_render_featured_quicklinks($text) {
@@ -487,6 +507,33 @@ function scoutingtc4_render_two_columns_block($attrs) {
 
     return ob_get_clean();
 }
+function scoutingtc4_render_oidc_block($attrs) {
+    if (!scoutingtc4_is_scouting_oidc_available()) {
+        return current_user_can('edit_posts') ? '<p class="tc4-oidc-unavailable">Scouting OpenID Connect is niet actief.</p>' : '';
+    }
+
+    $display_type = !empty($attrs['displayType']) ? sanitize_key($attrs['displayType']) : 'button';
+    $align_center = !empty($attrs['alignCenter']);
+    $classes = 'tc4-block-oidc' . ($align_center ? ' tc4-block-oidc--center' : '');
+
+    if ($display_type === 'link') {
+        $login_url = shortcode_exists('scouting_oidc_link') ? trim(do_shortcode('[scouting_oidc_link]')) : '';
+        $button_text = !empty($attrs['buttonText']) ? $attrs['buttonText'] : 'Inloggen met Scouting';
+
+        if ($login_url === '') {
+            return '';
+        }
+
+        return '<div class="' . esc_attr($classes . ' tc4-block-oidc--link') . '"><a class="tc4-oidc-text-link" href="' . esc_url($login_url) . '">' . esc_html($button_text) . '</a></div>';
+    }
+
+    if (!shortcode_exists('scouting_oidc_button')) {
+        return '';
+    }
+
+    return '<div class="' . esc_attr($classes . ' tc4-block-oidc--button') . '">' . do_shortcode('[scouting_oidc_button]') . '</div>';
+}
+
 function scoutingtc4_block_categories($categories, $post) {
     return array_merge(
         array(
