@@ -1763,6 +1763,11 @@ body.purple-main .tc4-block-callout.tc4-callout-style-2020::before {
   line-height: 1.08;
 }
 
+.tc4-speltak-card__text {
+  flex: 1 1 auto;
+  width: 100%;
+}
+
 .tc4-speltak-card__text,
 .tc4-speltak-card__text p {
   margin: 0;
@@ -1774,7 +1779,8 @@ body.purple-main .tc4-block-callout.tc4-callout-style-2020::before {
 }
 
 .tc4-speltak-card__button {
-  margin-top: 22px;
+  margin-top: auto;
+  padding-top: 22px;
   display: flex;
   justify-content: center;
 }
