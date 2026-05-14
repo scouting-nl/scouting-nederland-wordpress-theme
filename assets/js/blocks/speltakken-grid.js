@@ -30,19 +30,19 @@ registerBlockType('scoutingtc4/speltakken-grid', {
         attributes: {
             title: {type:'string', default:''},
             items: {type:'array', default:[
-                {title:'Bevers', text:'Voor kinderen van 5 tot 7 jaar: samen spelen, fantaseren en ontdekken.', imageUrl:'', buttonText:'Meer info', buttonUrl:'', buttonTarget:''},
-                {title:'Welpen', text:'Voor kinderen van 7 tot 11 jaar: avonturen beleven in de jungle.', imageUrl:'', buttonText:'Meer info', buttonUrl:'', buttonTarget:''},
-                {title:'Scouts', text:'Voor jongeren van 11 tot 15 jaar: buitenactiviteiten, samenwerken en nieuwe skills leren.', imageUrl:'', buttonText:'Meer info', buttonUrl:'', buttonTarget:''}
+                {title:'Bevers', text:'Voor kinderen van 5 tot 7 jaar: samen spelen, fantaseren en ontdekken.', imageUrl:'', buttonText:'Meer informatie', buttonUrl:'', buttonTarget:''},
+                {title:'Welpen', text:'Voor kinderen van 7 tot 11 jaar: avonturen beleven in de jungle.', imageUrl:'', buttonText:'Meer informatie', buttonUrl:'', buttonTarget:''},
+                {title:'Scouts', text:'Voor jongeren van 11 tot 15 jaar: buitenactiviteiten, samenwerken en nieuwe skills leren.', imageUrl:'', buttonText:'Meer informatie', buttonUrl:'', buttonTarget:''}
             ]}
         },
         edit: (props) => {
             const attrs = props.attributes;
-            const defaultItem = {title:'', text:'', imageUrl:'', buttonText:'Meer info', buttonUrl:'', buttonTarget:''};
+            const defaultItem = {title:'', text:'', imageUrl:'', buttonText:'Meer informatie', buttonUrl:'', buttonTarget:''};
             const items = Array.isArray(attrs.items) ? attrs.items : [];
             const normalizedItems = items.length ? items : [
-                {title:'Bevers', text:'Voor kinderen van 5 tot 7 jaar: samen spelen, fantaseren en ontdekken.', imageUrl:'', buttonText:'Meer info', buttonUrl:'', buttonTarget:''},
-                {title:'Welpen', text:'Voor kinderen van 7 tot 11 jaar: avonturen beleven in de jungle.', imageUrl:'', buttonText:'Meer info', buttonUrl:'', buttonTarget:''},
-                {title:'Scouts', text:'Voor jongeren van 11 tot 15 jaar: buitenactiviteiten, samenwerken en nieuwe skills leren.', imageUrl:'', buttonText:'Meer info', buttonUrl:'', buttonTarget:''}
+                {title:'Bevers', text:'Voor kinderen van 5 tot 7 jaar: samen spelen, fantaseren en ontdekken.', imageUrl:'', buttonText:'Meer informatie', buttonUrl:'', buttonTarget:''},
+                {title:'Welpen', text:'Voor kinderen van 7 tot 11 jaar: avonturen beleven in de jungle.', imageUrl:'', buttonText:'Meer informatie', buttonUrl:'', buttonTarget:''},
+                {title:'Scouts', text:'Voor jongeren van 11 tot 15 jaar: buitenactiviteiten, samenwerken en nieuwe skills leren.', imageUrl:'', buttonText:'Meer informatie', buttonUrl:'', buttonTarget:''}
             ];
 
             const updateItems = (next) => props.setAttributes({items: next});
@@ -139,17 +139,17 @@ registerBlockType('scoutingtc4/speltakken-grid', {
                                     ),
                                     wp.element.createElement('fieldset', {className:'tc4-acf-button-box'},
                                         wp.element.createElement('legend', {}, 'Knop'),
-                                        wp.element.createElement('p', {className:'tc4-acf-help'}, 'De knoptekst is altijd “Meer info”. Vul alleen een link in om de knop te tonen.'),
+                                        wp.element.createElement('p', {className:'tc4-acf-help'}, 'De knoptekst is altijd “Meer informatie”. Vul alleen een link in om de knop te tonen.'),
                                         wp.element.createElement('div', {className:'tc4-acf-field'},
                                             wp.element.createElement('label', {}, 'URL'),
                                             wp.element.createElement(LinkPickerField, {
                                                 url:item.buttonUrl || '',
-                                                text:'Meer info',
+                                                text:'Meer informatie',
                                                 target:item.buttonTarget || '',
                                                 onChange:link=>{
                                                     const next = normalizedItems.slice();
                                                     next[i] = Object.assign({}, defaultItem, next[i] || {}, {
-                                                        buttonText: 'Meer info',
+                                                        buttonText: 'Meer informatie',
                                                         buttonUrl: link.url || '',
                                                         buttonTarget: link.target || ''
                                                     });

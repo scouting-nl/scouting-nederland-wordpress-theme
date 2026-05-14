@@ -30,7 +30,7 @@ registerBlockType('scoutingtc4/featured-items', {
         attributes: {
             title: {type:'string', default:''},
             items: {type:'array', default:[
-                {title:'Wie zijn wij?', text:'Scouting staat voor uitdaging! Scouting biedt leuke en spannende activiteiten waarmee meiden en jongens worden uitgedaagd zich persoonlijk te ontwikkelen.', imageUrl:'', buttonText:'Meer info', buttonUrl:'', buttonColor:'blauw'},
+                {title:'Wie zijn wij?', text:'Scouting staat voor uitdaging! Scouting biedt leuke en spannende activiteiten waarmee meiden en jongens worden uitgedaagd zich persoonlijk te ontwikkelen.', imageUrl:'', buttonText:'Meer informatie', buttonUrl:'', buttonColor:'blauw'},
                 {title:'Lid worden', text:'Laat je uitdagen en ontdek Scouting!', imageUrl:'', buttonText:'Kom een keer meedoen', buttonUrl:'', buttonColor:'blauw'},
                 {title:'Snel naar', text:'Verhuur<br>Stockfoto’s<br>Scouting Nederland', imageUrl:'', buttonText:'', buttonUrl:'', buttonColor:'blauw'}
             ]}

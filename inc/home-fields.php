@@ -7,7 +7,7 @@ function scoutingtc4_home_fields_defaults() {
         'featured' => array(
             'title' => '',
             'items' => array(
-                array('title' => 'Wie zijn wij?', 'image_id' => 0, 'text' => 'Scouting staat voor uitdaging!', 'button_text' => 'Meer info', 'button_url' => '', 'button_color' => 'blauw'),
+                array('title' => 'Wie zijn wij?', 'image_id' => 0, 'text' => 'Scouting staat voor uitdaging!', 'button_text' => 'Meer informatie', 'button_url' => '', 'button_color' => 'blauw'),
                 array('title' => 'Lid worden', 'image_id' => 0, 'text' => 'Laat je uitdagen en ontdek Scouting!', 'button_text' => 'Kom een keer meedoen', 'button_url' => '', 'button_color' => 'blauw'),
                 array('title' => 'Snel naar', 'image_id' => 0, 'text' => 'Verhuur<br>Stockfoto’s<br>Scouting Nederland', 'button_text' => '', 'button_url' => '', 'button_color' => 'blauw'),
             ),

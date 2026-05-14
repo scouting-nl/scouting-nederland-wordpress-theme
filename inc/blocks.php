@@ -264,7 +264,7 @@ function scoutingtc4_render_featured_items_block($attrs) {
     $items = isset($attrs['items']) && is_array($attrs['items']) ? $attrs['items'] : array();
     if (empty($items)) {
         $items = array(
-            array('title' => 'Wie zijn wij?', 'text' => 'Scouting staat voor uitdaging!', 'buttonText' => 'Meer info', 'buttonColor' => 'blauw'),
+            array('title' => 'Wie zijn wij?', 'text' => 'Scouting staat voor uitdaging!', 'buttonText' => 'Meer informatie', 'buttonColor' => 'blauw'),
             array('title' => 'Lid worden', 'text' => 'Laat je uitdagen en ontdek Scouting!', 'buttonText' => 'Kom een keer meedoen', 'buttonColor' => 'blauw'),
             array('title' => 'Snel naar', 'text' => 'Verhuur<br>Stockfoto’s<br>Scouting Nederland', 'buttonText' => '', 'buttonColor' => 'blauw'),
         );
@@ -412,9 +412,9 @@ function scoutingtc4_render_speltakken_grid_block($attrs) {
 
     if (empty($items)) {
         $items = array(
-            array('title' => 'Bevers', 'text' => 'Voor kinderen van 5 tot 7 jaar: samen spelen, fantaseren en ontdekken.', 'imageUrl' => '', 'buttonText' => 'Meer info', 'buttonUrl' => '', 'buttonTarget' => ''),
-            array('title' => 'Welpen', 'text' => 'Voor kinderen van 7 tot 11 jaar: avonturen beleven in de jungle.', 'imageUrl' => '', 'buttonText' => 'Meer info', 'buttonUrl' => '', 'buttonTarget' => ''),
-            array('title' => 'Scouts', 'text' => 'Voor jongeren van 11 tot 15 jaar: buitenactiviteiten, samenwerken en nieuwe skills leren.', 'imageUrl' => '', 'buttonText' => 'Meer info', 'buttonUrl' => '', 'buttonTarget' => ''),
+            array('title' => 'Bevers', 'text' => 'Voor kinderen van 5 tot 7 jaar: samen spelen, fantaseren en ontdekken.', 'imageUrl' => '', 'buttonText' => 'Meer informatie', 'buttonUrl' => '', 'buttonTarget' => ''),
+            array('title' => 'Welpen', 'text' => 'Voor kinderen van 7 tot 11 jaar: avonturen beleven in de jungle.', 'imageUrl' => '', 'buttonText' => 'Meer informatie', 'buttonUrl' => '', 'buttonTarget' => ''),
+            array('title' => 'Scouts', 'text' => 'Voor jongeren van 11 tot 15 jaar: buitenactiviteiten, samenwerken en nieuwe skills leren.', 'imageUrl' => '', 'buttonText' => 'Meer informatie', 'buttonUrl' => '', 'buttonTarget' => ''),
         );
     }
 
@@ -430,7 +430,7 @@ function scoutingtc4_render_speltakken_grid_block($attrs) {
         $text = isset($item['text']) ? $item['text'] : '';
         $image = isset($item['imageUrl']) ? $item['imageUrl'] : '';
         $button_url = isset($item['buttonUrl']) ? $item['buttonUrl'] : '';
-        $button_text = $button_url ? 'Meer info' : '';
+        $button_text = $button_url ? 'Meer informatie' : '';
         $button_target = isset($item['buttonTarget']) ? $item['buttonTarget'] : '';
 
         echo '<article class="tc4-speltak-card">';
