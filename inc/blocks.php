@@ -185,6 +185,7 @@ function scoutingtc4_register_editor_blocks() {
         'render_callback' => 'scoutingtc4_render_two_columns_block',
     )));
 
+
     if (scoutingtc4_is_scouting_oidc_available()) {
         register_block_type('scoutingtc4/oidc', array_merge($common, array(
             'attributes' => array(
@@ -424,7 +425,7 @@ function scoutingtc4_render_speltakken_grid_block($attrs) {
     }
     echo '<div class="tc4-speltakken-grid">';
 
-    foreach (array_slice($items, 0, 3) as $item) {
+    foreach ($items as $item) {
         $title = isset($item['title']) ? $item['title'] : '';
         $text = isset($item['text']) ? $item['text'] : '';
         $image = isset($item['imageUrl']) ? $item['imageUrl'] : '';
@@ -507,6 +508,7 @@ function scoutingtc4_render_two_columns_block($attrs) {
 
     return ob_get_clean();
 }
+
 function scoutingtc4_render_oidc_block($attrs) {
     if (!scoutingtc4_is_scouting_oidc_available()) {
         return current_user_can('edit_posts') ? '<p class="tc4-oidc-unavailable">Scouting OpenID Connect is niet actief.</p>' : '';

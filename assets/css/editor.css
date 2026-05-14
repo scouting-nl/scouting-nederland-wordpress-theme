@@ -114,6 +114,19 @@
   padding: 18px;
 }
 
+.editor-styles-wrapper .tc4-acf-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.editor-styles-wrapper .tc4-acf-repeater-add {
+  padding: 18px;
+  border-top: 1px solid #e2e4e7;
+  background: #f6f7f7;
+}
+
 .editor-styles-wrapper .tc4-acf-field {
   margin-bottom: 22px;
 }
@@ -1155,4 +1168,15 @@ body.admin-bar #tc4-nav {
 
 .editor-styles-wrapper .tc4-speltakken-editor-form .components-textarea-control__input {
   width: 100%;
+}
+
+.editor-styles-wrapper .tc4-acf-section-title-with-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.editor-styles-wrapper .tc4-speltakken-add-button {
+  white-space: nowrap;
 }

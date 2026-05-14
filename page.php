@@ -11,6 +11,8 @@ if (have_posts()) {
 $tc4_page_display_settings = scoutingtc4_get_page_display_settings($tc4_page_id);
 $tc4_hide_hero = !empty($tc4_page_display_settings['hide_hero']);
 $tc4_hide_page_title = !empty($tc4_page_display_settings['hide_page_title']);
+$tc4_hide_sidebar = !empty($tc4_page_display_settings['hide_sidebar']);
+$tc4_has_sidebar = is_active_sidebar('sidebar') && !$tc4_hide_sidebar;
 $tc4_rendered_slider = scoutingtc4_render_home_slider($tc4_page_id);
 ?>
 <?php if (!$tc4_hide_hero && !$tc4_rendered_slider) : ?>
@@ -45,10 +47,12 @@ $tc4_rendered_slider = scoutingtc4_render_home_slider($tc4_page_id);
     <?php if (is_active_sidebar('news')) : ?><div id="tc4-news" class="row"><div class="col-sm-12"><?php dynamic_sidebar('news'); ?></div></div><?php endif; ?>
     <?php if (is_active_sidebar('breadcrumbs')) : ?><div id="tc4-breadcrumbs" class="row"><div class="col-sm-12"><?php dynamic_sidebar('breadcrumbs'); ?></div></div><?php endif; ?>
     <div id="tc4-maincontent" class="row">
-        <main id="content" role="main" class="<?php echo is_active_sidebar('sidebar') ? 'col-md-8 col-lg-9' : 'col-md-12'; ?>">
+        <main id="content" role="main" class="<?php echo $tc4_has_sidebar ? 'col-md-8 col-lg-9' : 'col-md-12'; ?>">
             <?php if (have_posts()) : while (have_posts()) : the_post(); get_template_part('template-parts/content'); endwhile; the_posts_pagination(); else : ?><p><?php esc_html_e('Geen inhoud gevonden.', 'scoutingtc4'); ?></p><?php endif; ?>
         </main>
-        <?php get_sidebar(); ?>
+        <?php if ($tc4_has_sidebar) : ?>
+            <?php get_sidebar(); ?>
+        <?php endif; ?>
     </div>
     <?php if (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b')) : ?>
     <div id="tc4-bottom" class="row"><div class="<?php echo (is_active_sidebar('bottom-a') && is_active_sidebar('bottom-b')) ? 'col-md-6' : 'col-md-12'; ?> bottom-a"><?php dynamic_sidebar('bottom-a'); ?></div><div class="<?php echo (is_active_sidebar('bottom-a') && is_active_sidebar('bottom-b')) ? 'col-md-6' : 'col-md-12'; ?> bottom-b"><?php dynamic_sidebar('bottom-b'); ?></div></div>

@@ -7,6 +7,7 @@ function scoutingtc4_get_page_display_settings($post_id = null) {
     return array(
         'hide_hero' => get_post_meta($post_id, '_tc4_hide_hero', true) === '1',
         'hide_page_title' => get_post_meta($post_id, '_tc4_hide_page_title', true) === '1',
+        'hide_sidebar' => get_post_meta($post_id, '_tc4_hide_sidebar', true) === '1',
     );
 }
 
@@ -18,6 +19,11 @@ function scoutingtc4_page_hides_hero($post_id = null) {
 function scoutingtc4_page_hides_title($post_id = null) {
     $settings = scoutingtc4_get_page_display_settings($post_id);
     return !empty($settings['hide_page_title']);
+}
+
+function scoutingtc4_page_hides_sidebar($post_id = null) {
+    $settings = scoutingtc4_get_page_display_settings($post_id);
+    return !empty($settings['hide_sidebar']);
 }
 
 function scoutingtc4_add_page_display_metabox() {
@@ -48,8 +54,14 @@ function scoutingtc4_render_page_display_metabox($post) {
             <?php esc_html_e('Paginatitel in hero verbergen', 'scoutingtc4'); ?>
         </label>
     </p>
+    <p>
+        <label>
+            <input type="checkbox" name="tc4_hide_sidebar" value="1" <?php checked($settings['hide_sidebar']); ?>>
+            <?php esc_html_e('Sidebar verbergen', 'scoutingtc4'); ?>
+        </label>
+    </p>
     <p class="description">
-        <?php esc_html_e('Gebruik deze opties om de standaard hero of alleen de titel-overlay voor deze pagina uit te zetten. Een ingestelde slider of video blijft zichtbaar.', 'scoutingtc4'); ?>
+        <?php esc_html_e('Gebruik deze opties om de standaard hero, de titel-overlay of de sidebar voor deze pagina uit te zetten. Een ingestelde slider of video blijft zichtbaar.', 'scoutingtc4'); ?>
     </p>
     <?php
 }
@@ -73,5 +85,6 @@ function scoutingtc4_save_page_display_metabox($post_id) {
 
     update_post_meta($post_id, '_tc4_hide_hero', !empty($_POST['tc4_hide_hero']) ? '1' : '0');
     update_post_meta($post_id, '_tc4_hide_page_title', !empty($_POST['tc4_hide_page_title']) ? '1' : '0');
+    update_post_meta($post_id, '_tc4_hide_sidebar', !empty($_POST['tc4_hide_sidebar']) ? '1' : '0');
 }
 add_action('save_post_page', 'scoutingtc4_save_page_display_metabox');
