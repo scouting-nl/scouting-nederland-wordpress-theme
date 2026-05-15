@@ -5,7 +5,7 @@ function scoutingtc4_homepage_features_setup() {
     add_image_size('tc4_home_hero', 1920, 520, true);
     add_image_size('tc4_home_card', 560, 320, true);
     add_theme_support('editor-styles');
-    add_editor_style(array('style.css', 'assets/css/base.css', 'assets/css/utilities.css', 'assets/css/blocks.css', 'assets/css/homepage.css', 'assets/css/news.css', 'assets/css/editor.css', 'assets/css/colors.css'));
+    add_editor_style(array('style.css', 'assets/css/base.css', 'assets/css/utilities.css', 'assets/css/blocks.css', 'assets/css/homepage.css', 'assets/css/news.css', 'assets/css/editor.css', 'assets/css/colors.css', 'assets/css/buttons.css'));
 }
 add_action('after_setup_theme', 'scoutingtc4_homepage_features_setup', 20);
 
