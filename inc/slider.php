@@ -187,6 +187,7 @@ function scoutingtc4_render_home_slider($post_id = null) {
     }
 
     $type = get_post_meta($post_id, '_tc4_slider_type', true) ?: 'slider';
+    $tc4_hero_font_class = scoutingtc4_get_hero_title_font_class($post_id);
 
     if ($type === 'video') {
         $video_id = absint(get_post_meta($post_id, '_tc4_slider_video_id', true));
@@ -196,10 +197,10 @@ function scoutingtc4_render_home_slider($post_id = null) {
             $video_url = wp_get_attachment_url($video_id);
             if ($video_url) {
                 $video_heading = get_post_meta($post_id, '_tc4_slider_video_heading', true);
-                echo '<section class="tc4-home-slider tc4-home-video tc4-home-video-library">';
+                echo '<section class="tc4-home-slider tc4-home-video tc4-home-video-library ' . esc_attr($tc4_hero_font_class) . '">';
                 echo '<video class="tc4-home-video-player" src="' . esc_url($video_url) . '" autoplay muted loop playsinline></video>';
                 if ($video_heading) {
-                    echo '<div class="tc4-home-video-caption"><h1>' . esc_html($video_heading) . '</h1></div>';
+                    echo '<div class="tc4-home-video-caption ' . esc_attr($tc4_hero_font_class) . '"><h1 class="' . esc_attr($tc4_hero_font_class) . '">' . esc_html($video_heading) . '</h1></div>';
                 }
                 echo '</section>';
                 return true;
@@ -210,9 +211,9 @@ function scoutingtc4_render_home_slider($post_id = null) {
             $embed = wp_oembed_get($video);
             if ($embed) {
                 $video_heading = get_post_meta($post_id, '_tc4_slider_video_heading', true);
-                echo '<section class="tc4-home-slider tc4-home-video tc4-home-video-embed"><div class="tc4-video-wrap">' . $embed . '</div>';
+                echo '<section class="tc4-home-slider tc4-home-video tc4-home-video-embed ' . esc_attr($tc4_hero_font_class) . '"><div class="tc4-video-wrap">' . $embed . '</div>';
                 if ($video_heading) {
-                    echo '<div class="tc4-home-video-caption"><h1>' . esc_html($video_heading) . '</h1></div>';
+                    echo '<div class="tc4-home-video-caption ' . esc_attr($tc4_hero_font_class) . '"><h1 class="' . esc_attr($tc4_hero_font_class) . '">' . esc_html($video_heading) . '</h1></div>';
                 }
                 echo '</section>';
                 return true;
@@ -225,7 +226,7 @@ function scoutingtc4_render_home_slider($post_id = null) {
         return false;
     }
 
-    echo '<section class="tc4-home-slider" data-tc4-slider>';
+    echo '<section class="tc4-home-slider ' . esc_attr($tc4_hero_font_class) . '" data-tc4-slider>';
     foreach ($slides as $i => $slide) {
         $image_id = isset($slide['image_id']) ? absint($slide['image_id']) : 0;
         $heading  = isset($slide['heading']) ? $slide['heading'] : '';
@@ -235,7 +236,7 @@ function scoutingtc4_render_home_slider($post_id = null) {
         }
         echo '<div class="tc4-home-slide' . ($i === 0 ? ' is-active' : '') . '" style="background-image:url(' . esc_url($image) . ')">';
         if ($heading) {
-            echo '<div class="tc4-home-slide__caption"><h1>' . esc_html($heading) . '</h1></div>';
+            echo '<div class="tc4-home-slide__caption ' . esc_attr($tc4_hero_font_class) . '"><h1 class="' . esc_attr($tc4_hero_font_class) . '">' . esc_html($heading) . '</h1></div>';
         }
         echo '</div>';
     }

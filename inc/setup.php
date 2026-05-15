@@ -61,10 +61,9 @@ function scoutingtc4_get_default_hero_url() {
 }
 
 function scoutingtc4_assets() {
-    wp_enqueue_style('scoutingtc4-google-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&family=Roboto+Slab:wght@700&display=swap', array(), null);
     wp_enqueue_style('scoutingtc4-fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4');
 
-    wp_enqueue_style('scoutingtc4-template', get_template_directory_uri() . '/assets/css/template.css', array('scoutingtc4-google-fonts', 'scoutingtc4-fontawesome'), SCOUTINGTC4_VERSION);
+    wp_enqueue_style('scoutingtc4-template', get_template_directory_uri() . '/assets/css/template.css', array('scoutingtc4-fontawesome'), SCOUTINGTC4_VERSION);
     wp_enqueue_style('scoutingtc4-base', get_template_directory_uri() . '/assets/css/base.css', array('scoutingtc4-template'), SCOUTINGTC4_VERSION);
     wp_enqueue_style('scoutingtc4-utilities', get_template_directory_uri() . '/assets/css/utilities.css', array('scoutingtc4-base'), SCOUTINGTC4_VERSION);
     wp_enqueue_style('scoutingtc4-header', get_template_directory_uri() . '/assets/css/header.css', array('scoutingtc4-utilities'), SCOUTINGTC4_VERSION);

@@ -72,6 +72,19 @@ function scoutingtc4_customize_register($wp_customize) {
     $wp_customize->add_control('scoutingtc4_header_message', array('type'=>'text', 'section'=>'scoutingtc4_options', 'label'=>__('Melding in de header', 'scoutingtc4')));
     $wp_customize->add_setting('scoutingtc4_header_message_url', array('default'=>'', 'sanitize_callback'=>'esc_url_raw'));
     $wp_customize->add_control('scoutingtc4_header_message_url', array('type'=>'url', 'section'=>'scoutingtc4_options', 'label'=>__('Link header melding', 'scoutingtc4')));
+
+    $wp_customize->add_setting('scoutingtc4_hero_title_font', array(
+        'default'           => 'urban-jungle',
+        'sanitize_callback' => 'scoutingtc4_sanitize_hero_font',
+    ));
+    $wp_customize->add_control('scoutingtc4_hero_title_font', array(
+        'type'        => 'select',
+        'section'     => 'scoutingtc4_options',
+        'label'       => __('Standaard lettertype hero-koptekst', 'scoutingtc4'),
+        'description' => __('Dit lettertype wordt gebruikt voor hero-koppen, tenzij je op een pagina een afwijkend lettertype kiest.', 'scoutingtc4'),
+        'choices'     => scoutingtc4_get_hero_font_choices(),
+    ));
+
     foreach (array('facebook','twitter','linkedin','youtube','instagram') as $network) {
         $wp_customize->add_setting('scoutingtc4_' . $network . '_url', array('default'=>'', 'sanitize_callback'=>'esc_url_raw'));
         $wp_customize->add_control('scoutingtc4_' . $network . '_url', array('type'=>'url', 'section'=>'scoutingtc4_options', 'label'=>ucfirst($network) . ' URL'));
