@@ -13,6 +13,7 @@ Het thema volgt de WordPress Theme Developer Handbook-opzet met een enkele root 
 - Thema-instellingen via de WordPress Customizer
 - Ondersteuning voor eigen kleuren
 - Responsive ontwerp voor desktop, tablet en mobiel
+- Elementor-vriendelijke paginatemplates
 
 ## Installatie
 
@@ -67,6 +68,15 @@ Per pagina kunnen extra opties beschikbaar zijn, zoals:
 - Sidebar verbergen
 - Alternatief lettertype voor de hero
 - Slider wel of niet tonen
+
+## Elementor
+
+Het thema bevat twee paginatemplates voor Elementor:
+
+- **Elementor Full Width** - gebruikt de thema-header en footer, maar laat Elementor de volledige contentbreedte gebruiken.
+- **Elementor Canvas** - laat Elementor de volledige pagina beheren zonder thema-header en footer.
+
+Wanneer een normale pagina met Elementor is gebouwd, verbergt het standaard paginatemplate automatisch de thema-hero, sidebar en extra widgetbanden zodat Elementor niet tegen de thema-layout werkt.
 
 ## Gutenberg blokken
 

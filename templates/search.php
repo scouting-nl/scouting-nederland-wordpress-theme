@@ -4,6 +4,7 @@ $search_query = trim(get_search_query());
 $has_search_query = $search_query !== '';
 ?>
 
+<div class="mainbody"><div class="content">
 <main id="content" class="scouting-nederland-search-page" role="main">
     <section class="scouting-nederland-search-hero" style="background-image:linear-gradient(180deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.88) 100%), url(\'<?php echo esc_url(get_template_directory_uri() . '/assets/images/default-slide.jpg'); ?>\');">
         <div class="container scouting-nederland-search-hero__inner">
@@ -77,9 +78,9 @@ $has_search_query = $search_query !== '';
                                 <?php the_post_thumbnail('medium_large'); ?>
                             </a>
                         <?php else : ?>
-                            <a class="scouting-nederland-search-card__image scouting-nederland-search-card__image--fallback" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+                            <div class="scouting-nederland-search-card__image scouting-nederland-search-card__image--fallback" aria-hidden="true">
                                 <i class="fas fa-compass" aria-hidden="true"></i>
-                            </a>
+                            </div>
                         <?php endif; ?>
 
                         <div class="scouting-nederland-search-card__content">
@@ -131,5 +132,7 @@ $has_search_query = $search_query !== '';
         <?php endif; ?>
     </section>
 </main>
+</div><!-- .content -->
+</div><!-- .mainbody -->
 
 <?php get_template_part('parts/footer'); ?>

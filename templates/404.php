@@ -5,6 +5,7 @@ $contact_url = get_theme_mod('scouting_nederland_contact_url', '');
 $hero_url = get_template_directory_uri() . '/assets/images/default-slide.jpg';
 ?>
 
+<div class="mainbody"><div class="content">
 <main id="content" class="scouting-nederland-404-page" role="main">
     <section class="scouting-nederland-404-hero" style="background-image:linear-gradient(180deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.88) 100%), url('<?php echo esc_url($hero_url); ?>');">
         <div class="container scouting-nederland-404-hero__inner">
@@ -68,5 +69,7 @@ $hero_url = get_template_directory_uri() . '/assets/images/default-slide.jpg';
         </div>
     </section>
 </main>
+</div><!-- .content -->
+</div><!-- .mainbody -->
 
 <?php get_template_part('parts/footer'); ?>

@@ -5,6 +5,7 @@ if (is_singular('post') && has_post_thumbnail(get_queried_object_id())) {
     $scouting_nederland_single_hero_url = get_the_post_thumbnail_url(get_queried_object_id(), 'full');
 }
 ?>
+<div class="mainbody"><div class="content">
 <div id="scouting-nederland-hero" class="container-fluid px-0">
     <div class="row no-gutters"><div class="col">
         <?php if ($scouting_nederland_single_hero_url) : ?>
@@ -41,4 +42,6 @@ if (is_singular('post') && has_post_thumbnail(get_queried_object_id())) {
     <div id="scouting-nederland-bottom" class="row"><div class="<?php echo (is_active_sidebar('bottom-a') && is_active_sidebar('bottom-b')) ? 'col-md-6' : 'col-md-12'; ?> bottom-a"><?php dynamic_sidebar('bottom-a'); ?></div><div class="<?php echo (is_active_sidebar('bottom-a') && is_active_sidebar('bottom-b')) ? 'col-md-6' : 'col-md-12'; ?> bottom-b"><?php dynamic_sidebar('bottom-b'); ?></div></div>
     <?php endif; ?>
 </div>
+</div><!-- .content -->
+</div><!-- .mainbody -->
 <?php get_template_part('parts/footer'); ?>

@@ -61,14 +61,16 @@ No. It is optional and only needed for Scouting login functionality.
 
 No. This is a classic PHP theme with block editor support, custom blocks, editor styles, and `theme.json` settings.
 
+= Does this theme work with Elementor? =
+
+Yes. Use the Elementor Full Width page template when you want the theme header and footer, or Elementor Canvas when Elementor should control the whole page. The default page template also detects Elementor-built pages and suppresses the theme hero, sidebar, and extra widget bands.
+
 == Screenshots ==
 
 1. Front page
 
 == Changelog ==
 
-= Unreleased =
-* Development changes for handbook-aligned theme metadata, theme structure documentation, `theme.json`, and optional Scouting OpenID Connect installation guidance.
 
 = 1.0.0 =
 * Initial release

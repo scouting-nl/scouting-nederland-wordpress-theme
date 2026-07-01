@@ -183,6 +183,27 @@ add_action('admin_init', 'scoutingNederlandRemoveDefaultSidebarWidgets');
 function scoutingNederlandPostedOn() {
     echo '<p class="text-muted small">' . esc_html(get_the_date()) . '</p>';
 }
+
+function scoutingNederlandIsElementorPage($post_id = null) {
+    $post_id = $post_id ? absint($post_id) : absint(get_queried_object_id());
+
+    if (!$post_id || get_post_type($post_id) !== 'page') {
+        return false;
+    }
+
+    return get_post_meta($post_id, '_elementor_edit_mode', true) === 'builder'
+        || get_post_meta($post_id, '_elementor_data', true) !== '';
+}
+
+function scoutingNederlandElementorBodyClass($classes) {
+    if (scoutingNederlandIsElementorPage()) {
+        $classes[] = 'scouting-nederland-is-elementor-page';
+    }
+
+    return $classes;
+}
+add_filter('body_class', 'scoutingNederlandElementorBodyClass');
+
 function scoutingNederlandHeaderWidthBodyClass($classes) {
     $mode = get_theme_mod('scouting_nederland_header_width', 'narrow');
     $classes[] = ($mode === 'narrow') ? 'scouting-nederland-header-wide' : 'scouting-nederland-header-narrow';

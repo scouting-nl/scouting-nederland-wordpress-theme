@@ -114,5 +114,3 @@ $custom_logo_url = $custom_logo_id ? wp_get_attachment_image_url($custom_logo_id
         </div>
     </div>
 </div>
-
-<div class="mainbody"><div class="content">

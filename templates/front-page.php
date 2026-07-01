@@ -16,6 +16,7 @@ if (!$scouting_nederland_hide_hero && !$rendered_slider) {
     }
 }
 ?>
+<div class="mainbody"><div class="content">
 <?php if (!$scouting_nederland_hide_hero && !$rendered_slider) : ?>
     <?php if (is_active_sidebar('hero')) : ?>
     <div id="scouting-nederland-hero" class="container-fluid px-0 <?php echo esc_attr($scouting_nederland_hero_font_class); ?>">
@@ -39,5 +40,7 @@ if (!$scouting_nederland_hide_hero && !$rendered_slider) {
     endif;
     ?>
 </main>
+</div><!-- .content -->
+</div><!-- .mainbody -->
 
 <?php get_template_part('parts/footer'); ?>

@@ -1,6 +1,3 @@
-</div><!-- .content -->
-</div><!-- .mainbody -->
-
 <footer id="scouting-nederland-footer" role="contentinfo">
     <div class="scouting-nederland-footer-grass" aria-hidden="true"></div>
 

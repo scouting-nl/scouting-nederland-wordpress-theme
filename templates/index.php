@@ -1,4 +1,5 @@
 <?php get_template_part('parts/header'); ?>
+<div class="mainbody"><div class="content">
 <div id="scouting-nederland-hero" class="container-fluid px-0">
     <div class="row no-gutters"><div class="col">
         <?php if (is_active_sidebar('hero')) { dynamic_sidebar('hero'); } else { ?>
@@ -31,4 +32,6 @@
     <div id="scouting-nederland-bottom" class="row"><div class="<?php echo (is_active_sidebar('bottom-a') && is_active_sidebar('bottom-b')) ? 'col-md-6' : 'col-md-12'; ?> bottom-a"><?php dynamic_sidebar('bottom-a'); ?></div><div class="<?php echo (is_active_sidebar('bottom-a') && is_active_sidebar('bottom-b')) ? 'col-md-6' : 'col-md-12'; ?> bottom-b"><?php dynamic_sidebar('bottom-b'); ?></div></div>
     <?php endif; ?>
 </div>
+</div><!-- .content -->
+</div><!-- .mainbody -->
 <?php get_template_part('parts/footer'); ?>
