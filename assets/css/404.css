@@ -70,7 +70,7 @@ body.purple-main .scouting-nederland-404-hero::after {
   padding: .48rem .85rem;
   border-radius: 999px;
   background: #fff;
-  color: var(--scouting-nederland-support-color, #005ea8);
+  color: var(--scouting-nederland-support-color, #0066b2);
   font-size: .9rem;
   font-weight: 800;
   box-shadow: 0 8px 22px rgba(0,0,0,.08);
@@ -79,8 +79,8 @@ body.purple-main .scouting-nederland-404-hero::after {
 .scouting-nederland-404-hero h1 {
   max-width: 920px;
   margin: 0 auto;
-  color: var(--scouting-nederland-main-color, #009036) !important;
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--scouting-nederland-main-color, #00a551) !important;
+  font-family: "Roboto Slab", Georgia, serif;
   font-size: clamp(4.4rem, 10vw, 7rem);
   font-weight: 700;
   line-height: .95;
@@ -123,7 +123,7 @@ body.purple-main .scouting-nederland-404-hero::after {
 
 .scouting-nederland-404-card--side {
   padding: 30px;
-  border: 2px dashed var(--scouting-nederland-main-color, #009036);
+  border: 2px dashed var(--scouting-nederland-main-color, #00a551);
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(250,250,250,1) 100%);
 }
 
@@ -135,19 +135,19 @@ body.purple-main .scouting-nederland-404-hero::after {
   padding: .52rem .88rem;
   border-radius: 999px;
   background: rgba(0,0,0,.04);
-  color: var(--scouting-nederland-main-color, #009036);
+  color: var(--scouting-nederland-main-color, #00a551);
   font-weight: 700;
 }
 
 .scouting-nederland-404-badge i {
-  color: var(--scouting-nederland-support-color, #005ea8);
+  color: var(--scouting-nederland-support-color, #0066b2);
 }
 
 .scouting-nederland-404-card h2,
 .scouting-nederland-404-card h3 {
   margin: 0 0 14px;
-  color: var(--scouting-nederland-main-color, #009036) !important;
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--scouting-nederland-main-color, #00a551) !important;
+  font-family: "Roboto Slab", Georgia, serif;
   font-weight: 700;
   line-height: 1.08;
 }
@@ -188,7 +188,7 @@ body.purple-main .scouting-nederland-404-hero::after {
 .scouting-nederland-404-tips i {
   flex: 0 0 auto;
   margin-top: 7px;
-  color: var(--scouting-nederland-support-color, #005ea8);
+  color: var(--scouting-nederland-support-color, #0066b2);
   font-size: 1.1rem;
 }
 
@@ -208,7 +208,7 @@ body.purple-main .scouting-nederland-404-hero::after {
   position: absolute;
   left: 0;
   top: 0;
-  color: var(--scouting-nederland-main-color, #009036);
+  color: var(--scouting-nederland-main-color, #00a551);
   font-weight: 700;
 }
 

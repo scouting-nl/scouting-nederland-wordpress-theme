@@ -1,3 +1,67 @@
+@font-face {
+  font-family: "Urban Jungle";
+  src: url("../fonts/urban-jungle.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/poppins-300.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/poppins-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/poppins-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/poppins-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/poppins-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/poppins-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("../fonts/roboto-slab-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 .mainbody {
   padding-top: 84px !important;
 }
@@ -82,86 +146,61 @@ body .scouting-nederland-404-page {
 .defaultbanner h1,
 .defaultbanner h2,
 .defaultbanner h3 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", Arial, sans-serif !important;
+  font-family: "Urban Jungle", "Roboto Slab", Georgia, serif !important;
   letter-spacing: .02em;
 }
 
-.scouting-nederland-hero-font-impact .scouting-nederland-page-hero__title h1,
-.scouting-nederland-hero-font-impact .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-hero-font-impact h1 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", Arial, sans-serif !important;
+.scouting-nederland-hero-font-urban-jungle .scouting-nederland-page-hero__title h1,
+.scouting-nederland-hero-font-urban-jungle .scouting-nederland-home-hero__inner h1,
+.scouting-nederland-hero-font-urban-jungle h1 {
+  font-family: "Urban Jungle", "Roboto Slab", Georgia, serif !important;
 }
 
-.scouting-nederland-hero-font-arial-bold .scouting-nederland-page-hero__title h1,
-.scouting-nederland-hero-font-arial-bold .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-hero-font-arial-bold h1 {
-  font-family: Arial, Helvetica, sans-serif !important;
+.scouting-nederland-hero-font-roboto-slab .scouting-nederland-page-hero__title h1,
+.scouting-nederland-hero-font-roboto-slab .scouting-nederland-home-hero__inner h1,
+.scouting-nederland-hero-font-roboto-slab h1 {
+  font-family: "Roboto Slab", Georgia, serif !important;
 }
 
-.scouting-nederland-hero-font-arial .scouting-nederland-page-hero__title h1,
-.scouting-nederland-hero-font-arial .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-hero-font-arial h1 {
-  font-family: Arial, Helvetica, sans-serif !important;
-}
-
-.scouting-nederland-hero-font-arial-italic .scouting-nederland-page-hero__title h1,
-.scouting-nederland-hero-font-arial-italic .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-hero-font-arial-italic h1,
-h1.scouting-nederland-hero-font-arial-italic {
-  font-family: Arial, Helvetica, sans-serif !important;
-  font-style: italic !important;
-  font-weight: 400 !important;
-}
-
-.scouting-nederland-hero-font-arial-bold .scouting-nederland-page-hero__title h1,
-.scouting-nederland-hero-font-arial-bold .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-hero-font-arial-bold h1,
-h1.scouting-nederland-hero-font-arial-bold {
-  font-weight: 700 !important;
-}
-
-.scouting-nederland-hero-font-arial-bold-italic .scouting-nederland-page-hero__title h1,
-.scouting-nederland-hero-font-arial-bold-italic .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-hero-font-arial-bold-italic h1,
-h1.scouting-nederland-hero-font-arial-bold-italic {
-  font-family: Arial, Helvetica, sans-serif !important;
-  font-style: italic !important;
-  font-weight: 700 !important;
+.scouting-nederland-hero-font-poppins .scouting-nederland-page-hero__title h1,
+.scouting-nederland-hero-font-poppins .scouting-nederland-home-hero__inner h1,
+.scouting-nederland-hero-font-poppins h1 {
+  font-family: "Poppins", Arial, Helvetica, sans-serif !important;
 }
 
 /* Hero title font override: works for standard hero, slider hero and video hero. */
-#scouting-nederland-hero.scouting-nederland-hero-font-impact h1,
-.scouting-nederland-page-hero.scouting-nederland-hero-font-impact .scouting-nederland-page-hero__title h1,
-.scouting-nederland-page-hero__title.scouting-nederland-hero-font-impact h1,
-h1.scouting-nederland-hero-font-impact,
-.scouting-nederland-home-hero.scouting-nederland-hero-font-impact .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-home-hero__inner.scouting-nederland-hero-font-impact h1,
-.scouting-nederland-home-slider.scouting-nederland-hero-font-impact h1,
-.scouting-nederland-home-slide__caption.scouting-nederland-hero-font-impact h1,
-.scouting-nederland-home-video-caption.scouting-nederland-hero-font-impact h1 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", Arial, sans-serif !important;
+#scouting-nederland-hero.scouting-nederland-hero-font-urban-jungle h1,
+.scouting-nederland-page-hero.scouting-nederland-hero-font-urban-jungle .scouting-nederland-page-hero__title h1,
+.scouting-nederland-page-hero__title.scouting-nederland-hero-font-urban-jungle h1,
+h1.scouting-nederland-hero-font-urban-jungle,
+.scouting-nederland-home-hero.scouting-nederland-hero-font-urban-jungle .scouting-nederland-home-hero__inner h1,
+.scouting-nederland-home-hero__inner.scouting-nederland-hero-font-urban-jungle h1,
+.scouting-nederland-home-slider.scouting-nederland-hero-font-urban-jungle h1,
+.scouting-nederland-home-slide__caption.scouting-nederland-hero-font-urban-jungle h1,
+.scouting-nederland-home-video-caption.scouting-nederland-hero-font-urban-jungle h1 {
+  font-family: "Urban Jungle", "Roboto Slab", Georgia, serif !important;
 }
 
-#scouting-nederland-hero.scouting-nederland-hero-font-arial-bold h1,
-.scouting-nederland-page-hero.scouting-nederland-hero-font-arial-bold .scouting-nederland-page-hero__title h1,
-.scouting-nederland-page-hero__title.scouting-nederland-hero-font-arial-bold h1,
-h1.scouting-nederland-hero-font-arial-bold,
-.scouting-nederland-home-hero.scouting-nederland-hero-font-arial-bold .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-home-hero__inner.scouting-nederland-hero-font-arial-bold h1,
-.scouting-nederland-home-slider.scouting-nederland-hero-font-arial-bold h1,
-.scouting-nederland-home-slide__caption.scouting-nederland-hero-font-arial-bold h1,
-.scouting-nederland-home-video-caption.scouting-nederland-hero-font-arial-bold h1 {
-  font-family: Arial, Helvetica, sans-serif !important;
+#scouting-nederland-hero.scouting-nederland-hero-font-roboto-slab h1,
+.scouting-nederland-page-hero.scouting-nederland-hero-font-roboto-slab .scouting-nederland-page-hero__title h1,
+.scouting-nederland-page-hero__title.scouting-nederland-hero-font-roboto-slab h1,
+h1.scouting-nederland-hero-font-roboto-slab,
+.scouting-nederland-home-hero.scouting-nederland-hero-font-roboto-slab .scouting-nederland-home-hero__inner h1,
+.scouting-nederland-home-hero__inner.scouting-nederland-hero-font-roboto-slab h1,
+.scouting-nederland-home-slider.scouting-nederland-hero-font-roboto-slab h1,
+.scouting-nederland-home-slide__caption.scouting-nederland-hero-font-roboto-slab h1,
+.scouting-nederland-home-video-caption.scouting-nederland-hero-font-roboto-slab h1 {
+  font-family: "Roboto Slab", Georgia, serif !important;
 }
 
-#scouting-nederland-hero.scouting-nederland-hero-font-arial h1,
-.scouting-nederland-page-hero.scouting-nederland-hero-font-arial .scouting-nederland-page-hero__title h1,
-.scouting-nederland-page-hero__title.scouting-nederland-hero-font-arial h1,
-h1.scouting-nederland-hero-font-arial,
-.scouting-nederland-home-hero.scouting-nederland-hero-font-arial .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-home-hero__inner.scouting-nederland-hero-font-arial h1,
-.scouting-nederland-home-slider.scouting-nederland-hero-font-arial h1,
-.scouting-nederland-home-slide__caption.scouting-nederland-hero-font-arial h1,
-.scouting-nederland-home-video-caption.scouting-nederland-hero-font-arial h1 {
-  font-family: Arial, Helvetica, sans-serif !important;
+#scouting-nederland-hero.scouting-nederland-hero-font-poppins h1,
+.scouting-nederland-page-hero.scouting-nederland-hero-font-poppins .scouting-nederland-page-hero__title h1,
+.scouting-nederland-page-hero__title.scouting-nederland-hero-font-poppins h1,
+h1.scouting-nederland-hero-font-poppins,
+.scouting-nederland-home-hero.scouting-nederland-hero-font-poppins .scouting-nederland-home-hero__inner h1,
+.scouting-nederland-home-hero__inner.scouting-nederland-hero-font-poppins h1,
+.scouting-nederland-home-slider.scouting-nederland-hero-font-poppins h1,
+.scouting-nederland-home-slide__caption.scouting-nederland-hero-font-poppins h1,
+.scouting-nederland-home-video-caption.scouting-nederland-hero-font-poppins h1 {
+  font-family: "Poppins", Arial, Helvetica, sans-serif !important;
 }

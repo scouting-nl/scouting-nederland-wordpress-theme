@@ -12,32 +12,32 @@
                 {
                     "name": "Scouting groen",
                     "slug": "scouting-groen",
-                    "color": "#009036"
+                    "color": "#00a551"
                 },
                 {
                     "name": "Scouting blauw",
                     "slug": "scouting-blauw",
-                    "color": "#005ea8"
+                    "color": "#0066b2"
                 },
                 {
                     "name": "Scouting geel",
                     "slug": "scouting-geel",
-                    "color": "#ffdd00"
+                    "color": "#fcdd17"
                 },
                 {
                     "name": "Scouting rood",
                     "slug": "scouting-rood",
-                    "color": "#e2001a"
+                    "color": "#e1071a"
                 },
                 {
                     "name": "Scouting oranje",
                     "slug": "scouting-oranje",
-                    "color": "#f29400"
+                    "color": "#f2940a"
                 },
                 {
                     "name": "Scouting paars",
                     "slug": "scouting-paars",
-                    "color": "#93117e"
+                    "color": "#921c7f"
                 },
                 {
                     "name": "Zwart",
@@ -69,14 +69,19 @@
             "customFontSize": true,
             "fontFamilies": [
                 {
-                    "name": "Arial",
-                    "slug": "arial",
-                    "fontFamily": "Arial, Helvetica, sans-serif"
+                    "name": "Poppins",
+                    "slug": "poppins",
+                    "fontFamily": "Poppins, Arial, Helvetica, sans-serif"
                 },
                 {
-                    "name": "Impact",
-                    "slug": "impact",
-                    "fontFamily": "Impact, Haettenschweiler, 'Arial Narrow Bold', Arial, sans-serif"
+                    "name": "Roboto Slab",
+                    "slug": "roboto-slab",
+                    "fontFamily": "'Roboto Slab', Georgia, serif"
+                },
+                {
+                    "name": "Urban Jungle",
+                    "slug": "urban-jungle",
+                    "fontFamily": "'Urban Jungle', 'Roboto Slab', Georgia, serif"
                 }
             ]
         }
@@ -87,7 +92,7 @@
             "text": "#222222"
         },
         "typography": {
-            "fontFamily": "var(--wp--preset--font-family--arial)"
+            "fontFamily": "var(--wp--preset--font-family--poppins)"
         },
         "elements": {
             "button": {
@@ -101,7 +106,7 @@
                     "text": "var(--wp--preset--color--scouting-groen)"
                 },
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--arial)",
+                    "fontFamily": "var(--wp--preset--font-family--roboto-slab)",
                     "fontWeight": "700"
                 }
             },

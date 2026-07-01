@@ -11,7 +11,7 @@
 .scouting-nederland-category-header__eyebrow {
   margin: 0 0 8px;
   color: #006fba;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
   font-size: .78rem;
   font-weight: 800;
   letter-spacing: .08em;
@@ -21,8 +21,8 @@
 
 .scouting-nederland-category-header__title {
   margin: 0;
-  color: #009036;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #00a551;
+  font-family: "Roboto Slab", Georgia, serif;
   font-size: clamp(2.2rem, 4vw, 3.5rem);
   font-weight: 700;
   letter-spacing: -.02em;
@@ -32,7 +32,7 @@
 .scouting-nederland-category-header__description {
   margin-top: 18px;
   color: #1d1d1b;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
   font-size: 1.08rem;
   line-height: 1.75;
 }
@@ -80,7 +80,7 @@
   left: 16px;
   bottom: 14px;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
   font-size: .92rem;
   font-weight: 800;
   line-height: 1.2;
@@ -90,13 +90,13 @@
 .scouting-nederland-category-card__titlebar {
   min-height: 124px;
   padding: 18px 18px 20px;
-  background: #009036;
+  background: #00a551;
 }
 
 .scouting-nederland-category-card__titlebar h2 {
   margin: 0;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto Slab", Georgia, serif;
   font-size: clamp(1.45rem, 2vw, 1.85rem);
   font-weight: 700;
   line-height: 1.08;
@@ -124,7 +124,7 @@
 .scouting-nederland-category-card__body p {
   margin: 0 0 26px;
   color: #1d1d1b;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.8;
 }
@@ -133,7 +133,7 @@
 .scouting-nederland-category-card__readmore:visited {
   margin-top: auto;
   color: #006fba;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
   font-size: .96rem;
   font-weight: 500;
   text-decoration: none;
@@ -141,7 +141,7 @@
 
 .scouting-nederland-category-card__readmore:hover,
 .scouting-nederland-category-card__readmore:focus {
-  color: #009036;
+  color: #00a551;
   text-decoration: underline;
 }
 
@@ -185,8 +185,8 @@
 
 .scouting-nederland-category-empty h2 {
   margin-top: 0;
-  color: #009036;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #00a551;
+  font-family: "Roboto Slab", Georgia, serif;
 }
 
 @media (max-width: 991.98px) {

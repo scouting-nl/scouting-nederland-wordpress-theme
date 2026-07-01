@@ -4,18 +4,16 @@ if (!defined('ABSPATH')) { exit; }
 
 function scoutingNederlandGetHeroFontChoices() {
     return array(
-        'arial'             => __('Arial normaal', 'scouting-nederland'),
-        'arial-bold'        => __('Arial vet', 'scouting-nederland'),
-        'arial-italic'      => __('Arial cursief', 'scouting-nederland'),
-        'arial-bold-italic' => __('Arial vet cursief', 'scouting-nederland'),
-        'impact'            => __('Impact', 'scouting-nederland'),
+        'urban-jungle' => __('Urban Jungle', 'scouting-nederland'),
+        'roboto-slab'  => __('Roboto Slab', 'scouting-nederland'),
+        'poppins'      => __('Poppins', 'scouting-nederland'),
     );
 }
 
 function scoutingNederlandSanitizeHeroFont($value) {
     $value = sanitize_key($value);
     $choices = scoutingNederlandGetHeroFontChoices();
-    return array_key_exists($value, $choices) ? $value : 'arial';
+    return array_key_exists($value, $choices) ? $value : 'urban-jungle';
 }
 
 function scoutingNederlandSanitizePageHeroFont($value) {
@@ -28,7 +26,7 @@ function scoutingNederlandSanitizePageHeroFont($value) {
 }
 
 function scoutingNederlandGetDefaultHeroTitleFont() {
-    return scoutingNederlandSanitizeHeroFont(get_theme_mod('scouting_nederland_hero_title_font', 'arial'));
+    return scoutingNederlandSanitizeHeroFont(get_theme_mod('scouting_nederland_hero_title_font', 'urban-jungle'));
 }
 
 function scoutingNederlandGetHeroTitleFont($post_id = null) {
@@ -117,14 +115,19 @@ function scoutingNederlandRenderPageDisplayMetabox($post) {
 }
 
 function scoutingNederlandSavePageDisplayMetabox($post_id) {
-    $cannot_save = !isset($_POST['scouting_nederland_page_display_nonce'])
-        || !wp_verify_nonce($_POST['scouting_nederland_page_display_nonce'], 'scouting_nederland_save_page_display_settings')
-        || (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
-        || wp_is_post_revision($post_id)
-        || get_post_type($post_id) !== 'page'
-        || !current_user_can('edit_page', $post_id);
-
-    if ($cannot_save) {
+    if (!isset($_POST['scouting_nederland_page_display_nonce']) || !wp_verify_nonce($_POST['scouting_nederland_page_display_nonce'], 'scouting_nederland_save_page_display_settings')) {
+        return;
+    }
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    if (wp_is_post_revision($post_id)) {
+        return;
+    }
+    if (get_post_type($post_id) !== 'page') {
+        return;
+    }
+    if (!current_user_can('edit_page', $post_id)) {
         return;
     }
 
