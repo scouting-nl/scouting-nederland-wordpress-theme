@@ -1,6 +1,6 @@
 === Scouting Nederland ===
 Contributors: geldwolfje216, jobvk
-Tags: custom-logo, custom-menu, editor-style, featured-images, one-column, right-sidebar, two-columns, wide-blocks, block-styles
+Tags: custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, one-column, right-sidebar, theme-options, translation-ready, two-columns, wide-blocks, block-styles
 Requires at least: 7.0
 Tested up to: 7.0
 Stable tag: 1.0.0
