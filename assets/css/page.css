@@ -3,10 +3,10 @@
   min-height: 260px;
 }
 
-.scouting-nederland-page-hero__media > .defaultbanner,
-.scouting-nederland-page-hero__media > .widget,
-.scouting-nederland-page-hero__media > section,
-.scouting-nederland-page-hero__media > div:not(.scouting-nederland-page-hero__title) {
+.scouting-nederland-page-hero__media>.defaultbanner,
+.scouting-nederland-page-hero__media>.widget,
+.scouting-nederland-page-hero__media>section,
+.scouting-nederland-page-hero__media>div:not(.scouting-nederland-page-hero__title) {
   min-height: 260px;
 }
 
@@ -42,11 +42,12 @@
 }
 
 @media (max-width: 767.98px) {
+
   .scouting-nederland-page-hero__media,
-  .scouting-nederland-page-hero__media > .defaultbanner,
-  .scouting-nederland-page-hero__media > .widget,
-  .scouting-nederland-page-hero__media > section,
-  .scouting-nederland-page-hero__media > div:not(.scouting-nederland-page-hero__title) {
+  .scouting-nederland-page-hero__media>.defaultbanner,
+  .scouting-nederland-page-hero__media>.widget,
+  .scouting-nederland-page-hero__media>section,
+  .scouting-nederland-page-hero__media>div:not(.scouting-nederland-page-hero__title) {
     min-height: 210px;
   }
 
@@ -60,11 +61,12 @@ body.page .scouting-nederland-home-slider {
   margin-bottom: 48px;
 }
 
-body.page .scouting-nederland-page-hero + .container #scouting-nederland-featured {
+body.page .scouting-nederland-page-hero+.container #scouting-nederland-featured {
   margin-top: 0;
 }
 
 @media (max-width: 767.98px) {
+
   .scouting-nederland-page-hero,
   body.page .scouting-nederland-home-slider {
     margin-bottom: 32px;
