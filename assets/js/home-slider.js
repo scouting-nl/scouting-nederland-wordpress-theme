@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
-  document.querySelectorAll('[data-tc4-slider]').forEach(function(slider){
-    var slides = slider.querySelectorAll('.tc4-home-slide');
+  document.querySelectorAll('[data-scouting-nederland-slider]').forEach(function(slider){
+    var slides = slider.querySelectorAll('.scouting-nederland-home-slide');
     if(slides.length < 2) return;
     var current = 0;
     setInterval(function(){

@@ -1,6 +1,6 @@
 :root {
-  --tc4-page-width: 1140px;
-  --tc4-page-gutter: 1rem;
+  --scouting-nederland-page-width: 1140px;
+  --scouting-nederland-page-gutter: 1rem;
 }
 
 @media (min-width: 1025px) {
@@ -10,45 +10,45 @@
   .container-lg,
   .container-xl,
   .container-xxl {
-    max-width: var(--tc4-page-width) !important;
+    max-width: var(--scouting-nederland-page-width) !important;
   }
 }
 
-.tc4-home-slide__caption,
-.tc4-video-wrap,
-.tc4-home-hero__inner,
-.tc4-home-content,
-.tc4-block-news.tc4-news-style-2020,
-.tc4-block-speltakken-grid.tc4-speltakken-grid-style-2020,
-.tc4-block-two-columns.tc4-two-columns-style-2020,
-.tc4-two-columns-style-2020 .gb-two-columns,
-#tc4-footer .tc4-footer-inner,
-#tc4-footer .tc4-footer-bottom-inner {
-  width: min(var(--tc4-page-width), calc(100% - 2rem)) !important;
-  max-width: var(--tc4-page-width) !important;
+.scouting-nederland-home-slide__caption,
+.scouting-nederland-video-wrap,
+.scouting-nederland-home-hero__inner,
+.scouting-nederland-home-content,
+.scouting-nederland-block-news.scouting-nederland-news-style-2020,
+.scouting-nederland-block-speltakken-grid.scouting-nederland-speltakken-grid-style-2020,
+.scouting-nederland-block-two-columns.scouting-nederland-two-columns-style-2020,
+.scouting-nederland-two-columns-style-2020 .gb-two-columns,
+#scouting-nederland-footer .scouting-nederland-footer-inner,
+#scouting-nederland-footer .scouting-nederland-footer-bottom-inner {
+  width: min(var(--scouting-nederland-page-width), calc(100% - 2rem)) !important;
+  max-width: var(--scouting-nederland-page-width) !important;
 }
 
-.tc4-home-content,
-.tc4-block-news.tc4-news-style-2020,
-.tc4-block-speltakken-grid.tc4-speltakken-grid-style-2020,
-.tc4-block-two-columns.tc4-two-columns-style-2020,
-#tc4-footer .tc4-footer-inner,
-#tc4-footer .tc4-footer-bottom-inner {
+.scouting-nederland-home-content,
+.scouting-nederland-block-news.scouting-nederland-news-style-2020,
+.scouting-nederland-block-speltakken-grid.scouting-nederland-speltakken-grid-style-2020,
+.scouting-nederland-block-two-columns.scouting-nederland-two-columns-style-2020,
+#scouting-nederland-footer .scouting-nederland-footer-inner,
+#scouting-nederland-footer .scouting-nederland-footer-bottom-inner {
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
 @media (max-width: 1024px) {
-  .tc4-home-slide__caption,
-  .tc4-video-wrap,
-  .tc4-home-hero__inner,
-  .tc4-home-content,
-  .tc4-block-news.tc4-news-style-2020,
-  .tc4-block-speltakken-grid.tc4-speltakken-grid-style-2020,
-  .tc4-block-two-columns.tc4-two-columns-style-2020,
-  .tc4-two-columns-style-2020 .gb-two-columns,
-  #tc4-footer .tc4-footer-inner,
-  #tc4-footer .tc4-footer-bottom-inner {
+  .scouting-nederland-home-slide__caption,
+  .scouting-nederland-video-wrap,
+  .scouting-nederland-home-hero__inner,
+  .scouting-nederland-home-content,
+  .scouting-nederland-block-news.scouting-nederland-news-style-2020,
+  .scouting-nederland-block-speltakken-grid.scouting-nederland-speltakken-grid-style-2020,
+  .scouting-nederland-block-two-columns.scouting-nederland-two-columns-style-2020,
+  .scouting-nederland-two-columns-style-2020 .gb-two-columns,
+  #scouting-nederland-footer .scouting-nederland-footer-inner,
+  #scouting-nederland-footer .scouting-nederland-footer-bottom-inner {
     width: calc(100% - 2rem) !important;
     max-width: none !important;
   }
@@ -74,7 +74,7 @@
 .sidebar .wp-block-search__label {
   display: block;
   margin: 0;
-  color: var(--tc4-main-color, #00a551) !important;
+  color: var(--scouting-nederland-main-color, #00a551) !important;
   font-family: "Roboto Slab", Georgia, serif;
   font-size: 1.25rem;
   font-weight: 700;
@@ -149,7 +149,7 @@
 
 .sidebar .widget_search .search-field:focus,
 .sidebar .wp-block-search__input:focus {
-  border-color: var(--tc4-support-color, #0066b2);
+  border-color: var(--scouting-nederland-support-color, #0066b2);
   box-shadow: 0 0 0 3px rgba(0, 102, 178, .12);
 }
 
@@ -164,7 +164,7 @@
   padding: 0 18px;
   border: 0;
   border-radius: 16px;
-  background: var(--tc4-main-color, #00a551);
+  background: var(--scouting-nederland-main-color, #00a551);
   color: #fff !important;
   font-size: .9rem;
   font-weight: 700;

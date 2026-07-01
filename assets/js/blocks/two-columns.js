@@ -1,4 +1,4 @@
-(function(wp, tc4){
+(function(wp, scoutingNederland){
     const {
         registerBlockType,
         __,
@@ -21,12 +21,12 @@
         StableClassicEditor,
         ClassicHtmlEditor,
         LinkPickerField
-    } = tc4;
+    } = scoutingNederland;
 
-registerBlockType('scoutingtc4/two-columns', {
-        title: __('Twee kolommen', 'scoutingtc4'),
+registerBlockType('scouting-nederland/two-columns', {
+        title: __('Twee kolommen', 'scouting-nederland'),
         icon: 'columns',
-        category: 'scoutingtc4',
+        category: 'scouting-nederland',
         attributes: {
             leftTitle:{type:'string', default:'Gratis sponsoren'},
             leftText:{type:'string', default:'Binnen onze Scoutinggroep hebben we sponsoracties om op die manier Scouting betaalbaar te maken voor iedereen.'},
@@ -45,7 +45,7 @@ registerBlockType('scoutingtc4/two-columns', {
         edit: (props) => {
             const a = props.attributes;
 
-            const radioColors = (value, onChange) => wp.element.createElement('div', {className:'tc4-editor-radio-row'},
+            const radioColors = (value, onChange) => wp.element.createElement('div', {className:'scouting-nederland-editor-radio-row'},
                 ['blauw','groen','zwart'].map(color =>
                     wp.element.createElement('label', {key:color},
                         wp.element.createElement('input', {
@@ -62,17 +62,17 @@ registerBlockType('scoutingtc4/two-columns', {
                 const textKey = prefix + 'ButtonText';
                 const urlKey = prefix + 'ButtonUrl';
                 const colorKey = prefix + 'ButtonColor';
-                return wp.element.createElement('fieldset', {className:'tc4-acf-button-box tc4-two-button-box'},
+                return wp.element.createElement('fieldset', {className:'scouting-nederland-acf-button-box scouting-nederland-two-button-box'},
                     wp.element.createElement('legend', {}, 'Knop'),
-                    wp.element.createElement('div', {className:'tc4-acf-field'},
+                    wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                         wp.element.createElement('label', {}, 'Tekst'),
                         wp.element.createElement(TextControl, {
                             value:a[textKey] || '',
                             onChange:v=>props.setAttributes({[textKey]:v})
                         })
                     ),
-                    wp.element.createElement('div', {className:'tc4-acf-button-grid'},
-                        wp.element.createElement('div', {className:'tc4-acf-field'},
+                    wp.element.createElement('div', {className:'scouting-nederland-acf-button-grid'},
+                        wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                             wp.element.createElement('label', {}, 'URL'),
                             wp.element.createElement(LinkPickerField, {
                                 url:a[urlKey] || '',
@@ -83,7 +83,7 @@ registerBlockType('scoutingtc4/two-columns', {
                                 onTarget:v=>props.setAttributes({[prefix + 'ButtonTarget']:v})
                             })
                         ),
-                        wp.element.createElement('div', {className:'tc4-acf-field'},
+                        wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                             wp.element.createElement('label', {}, 'Kleur'),
                             radioColors(a[colorKey] || colorDefault, v=>props.setAttributes({[colorKey]:v}))
                         )
@@ -91,16 +91,16 @@ registerBlockType('scoutingtc4/two-columns', {
                 );
             };
 
-            return wp.element.createElement('div', {className:'tc4-acf-like-block tc4-two-columns-editor-form'},
-                wp.element.createElement('fieldset', {className:'tc4-two-column-fieldset'},
+            return wp.element.createElement('div', {className:'scouting-nederland-acf-like-block scouting-nederland-two-columns-editor-form'},
+                wp.element.createElement('fieldset', {className:'scouting-nederland-two-column-fieldset'},
                     wp.element.createElement('legend', {}, 'Kolom 1 (headerbeeld + kop, tekst en knop)'),
-                    wp.element.createElement('div', {className:'tc4-acf-field'},
+                    wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                         wp.element.createElement('label', {}, 'Beeld'),
                         wp.element.createElement(MediaUploadCheck, {},
                             wp.element.createElement(MediaUpload, {
                                 onSelect:media=>props.setAttributes({leftImageUrl:media.url}),
                                 allowedTypes:['image'],
-                                render:({open})=>wp.element.createElement('div', {className:'tc4-acf-image-field'},
+                                render:({open})=>wp.element.createElement('div', {className:'scouting-nederland-acf-image-field'},
                                     a.leftImageUrl
                                         ? wp.element.createElement('img', {src:a.leftImageUrl, alt:'', onClick:open})
                                         : wp.element.createElement(Button, {onClick:open, variant:'secondary'}, 'Afbeelding kiezen'),
@@ -109,14 +109,14 @@ registerBlockType('scoutingtc4/two-columns', {
                             })
                         )
                     ),
-                    wp.element.createElement('div', {className:'tc4-acf-field'},
+                    wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                         wp.element.createElement('label', {}, 'Kop'),
                         wp.element.createElement(TextControl, {
                             value:a.leftTitle || '',
                             onChange:v=>props.setAttributes({leftTitle:v})
                         })
                     ),
-                    wp.element.createElement('div', {className:'tc4-acf-field'},
+                    wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                         wp.element.createElement('label', {}, 'Tekst'),
                         wp.element.createElement(ClassicHtmlEditor, {
                             value:a.leftText || '',
@@ -126,16 +126,16 @@ registerBlockType('scoutingtc4/two-columns', {
                     buttonBox('left', 'blauw')
                 ),
 
-                wp.element.createElement('fieldset', {className:'tc4-two-column-fieldset'},
+                wp.element.createElement('fieldset', {className:'scouting-nederland-two-column-fieldset'},
                     wp.element.createElement('legend', {}, 'Kolom 2 (kop, WYSIWYG en knop)'),
-                    wp.element.createElement('div', {className:'tc4-acf-field'},
+                    wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                         wp.element.createElement('label', {}, 'Kop'),
                         wp.element.createElement(TextControl, {
                             value:a.rightTitle || '',
                             onChange:v=>props.setAttributes({rightTitle:v})
                         })
                     ),
-                    wp.element.createElement('div', {className:'tc4-acf-field'},
+                    wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                         wp.element.createElement('label', {}, 'Tekst'),
                         wp.element.createElement(ClassicHtmlEditor, {
                             value:a.rightText || '',
@@ -149,4 +149,4 @@ registerBlockType('scoutingtc4/two-columns', {
         save: () => null
     });
 
-})(window.wp, window.scoutingtc4BlockEditor);
+})(globalThis.wp, globalThis.scoutingNederlandBlockEditor);

@@ -1,14 +1,14 @@
-.tc4-category-page {
+.scouting-nederland-category-page {
   padding-top: 44px;
   padding-bottom: 70px;
 }
 
-.tc4-category-header {
+.scouting-nederland-category-header {
   max-width: 820px;
   margin: 0 0 38px;
 }
 
-.tc4-category-header__eyebrow {
+.scouting-nederland-category-header__eyebrow {
   margin: 0 0 8px;
   color: #006fba;
   font-family: "Poppins", Arial, sans-serif;
@@ -19,7 +19,7 @@
   text-transform: uppercase;
 }
 
-.tc4-category-header__title {
+.scouting-nederland-category-header__title {
   margin: 0;
   color: #00a551;
   font-family: "Roboto Slab", Georgia, serif;
@@ -29,7 +29,7 @@
   line-height: 1.05;
 }
 
-.tc4-category-header__description {
+.scouting-nederland-category-header__description {
   margin-top: 18px;
   color: #1d1d1b;
   font-family: "Poppins", Arial, sans-serif;
@@ -37,24 +37,24 @@
   line-height: 1.75;
 }
 
-.tc4-category-header__description p {
+.scouting-nederland-category-header__description p {
   margin: 0;
 }
 
-.tc4-category-grid {
+.scouting-nederland-category-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 34px 30px;
 }
 
-.tc4-category-card {
+.scouting-nederland-category-card {
   display: flex;
   flex-direction: column;
   min-width: 0;
   background: #fff;
 }
 
-.tc4-category-card__media {
+.scouting-nederland-category-card__media {
   position: relative;
   display: block;
   overflow: hidden;
@@ -62,7 +62,7 @@
   text-decoration: none;
 }
 
-.tc4-category-card__media img {
+.scouting-nederland-category-card__media img {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -70,12 +70,12 @@
   transition: transform .25s ease;
 }
 
-.tc4-category-card:hover .tc4-category-card__media img,
-.tc4-category-card:focus-within .tc4-category-card__media img {
+.scouting-nederland-category-card:hover .scouting-nederland-category-card__media img,
+.scouting-nederland-category-card:focus-within .scouting-nederland-category-card__media img {
   transform: scale(1.04);
 }
 
-.tc4-category-card__date {
+.scouting-nederland-category-card__date {
   position: absolute;
   left: 16px;
   bottom: 14px;
@@ -87,13 +87,13 @@
   text-shadow: 0 2px 8px rgba(0,0,0,.45);
 }
 
-.tc4-category-card__titlebar {
+.scouting-nederland-category-card__titlebar {
   min-height: 124px;
   padding: 18px 18px 20px;
   background: #00a551;
 }
 
-.tc4-category-card__titlebar h2 {
+.scouting-nederland-category-card__titlebar h2 {
   margin: 0;
   color: #fff;
   font-family: "Roboto Slab", Georgia, serif;
@@ -102,26 +102,26 @@
   line-height: 1.08;
 }
 
-.tc4-category-card__titlebar a,
-.tc4-category-card__titlebar a:visited {
+.scouting-nederland-category-card__titlebar a,
+.scouting-nederland-category-card__titlebar a:visited {
   color: #fff;
   text-decoration: none;
 }
 
-.tc4-category-card__titlebar a:hover,
-.tc4-category-card__titlebar a:focus {
+.scouting-nederland-category-card__titlebar a:hover,
+.scouting-nederland-category-card__titlebar a:focus {
   color: #fff;
   text-decoration: underline;
 }
 
-.tc4-category-card__body {
+.scouting-nederland-category-card__body {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
   padding: 24px 0 0;
 }
 
-.tc4-category-card__body p {
+.scouting-nederland-category-card__body p {
   margin: 0 0 26px;
   color: #1d1d1b;
   font-family: "Poppins", Arial, sans-serif;
@@ -129,8 +129,8 @@
   line-height: 1.8;
 }
 
-.tc4-category-card__readmore,
-.tc4-category-card__readmore:visited {
+.scouting-nederland-category-card__readmore,
+.scouting-nederland-category-card__readmore:visited {
   margin-top: auto;
   color: #006fba;
   font-family: "Poppins", Arial, sans-serif;
@@ -139,24 +139,24 @@
   text-decoration: none;
 }
 
-.tc4-category-card__readmore:hover,
-.tc4-category-card__readmore:focus {
+.scouting-nederland-category-card__readmore:hover,
+.scouting-nederland-category-card__readmore:focus {
   color: #00a551;
   text-decoration: underline;
 }
 
-.tc4-category-pagination {
+.scouting-nederland-category-pagination {
   margin-top: 54px;
 }
 
-.tc4-category-pagination .nav-links {
+.scouting-nederland-category-pagination .nav-links {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
 }
 
-.tc4-category-pagination .page-numbers {
+.scouting-nederland-category-pagination .page-numbers {
   display: inline-flex;
   min-width: 42px;
   min-height: 42px;
@@ -170,68 +170,68 @@
   text-decoration: none;
 }
 
-.tc4-category-pagination .page-numbers.current,
-.tc4-category-pagination a.page-numbers:hover,
-.tc4-category-pagination a.page-numbers:focus {
+.scouting-nederland-category-pagination .page-numbers.current,
+.scouting-nederland-category-pagination a.page-numbers:hover,
+.scouting-nederland-category-pagination a.page-numbers:focus {
   background: #006fba;
   color: #fff;
 }
 
-.tc4-category-empty {
+.scouting-nederland-category-empty {
   max-width: 760px;
   padding: 36px;
   background: #f3f6f8;
 }
 
-.tc4-category-empty h2 {
+.scouting-nederland-category-empty h2 {
   margin-top: 0;
   color: #00a551;
   font-family: "Roboto Slab", Georgia, serif;
 }
 
 @media (max-width: 991.98px) {
-  .tc4-category-grid {
+  .scouting-nederland-category-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 640px) {
-  .tc4-category-page {
+  .scouting-nederland-category-page {
     padding-top: 30px;
   }
 
-  .tc4-category-grid {
+  .scouting-nederland-category-grid {
     grid-template-columns: 1fr;
   }
 
-  .tc4-category-card__titlebar {
+  .scouting-nederland-category-card__titlebar {
     min-height: 0;
   }
 }
 
-.tc4-category-grid {
+.scouting-nederland-category-grid {
   align-items: stretch;
 }
 
-.tc4-category-card {
+.scouting-nederland-category-card {
   height: 100%;
 }
 
-.tc4-category-card__titlebar {
+.scouting-nederland-category-card__titlebar {
   display: flex;
   align-items: flex-start;
   min-height: 150px;
 }
 
-.tc4-category-card__titlebar,
-.tc4-category-card__titlebar h2,
-.tc4-category-card__titlebar a,
-.tc4-category-card__titlebar a:visited,
-.tc4-category-card__titlebar a:hover,
-.tc4-category-card__titlebar a:focus {
+.scouting-nederland-category-card__titlebar,
+.scouting-nederland-category-card__titlebar h2,
+.scouting-nederland-category-card__titlebar a,
+.scouting-nederland-category-card__titlebar a:visited,
+.scouting-nederland-category-card__titlebar a:hover,
+.scouting-nederland-category-card__titlebar a:focus {
   color: #fff !important;
 }
 
-.tc4-category-card__body {
+.scouting-nederland-category-card__body {
   flex: 1 1 auto;
 }

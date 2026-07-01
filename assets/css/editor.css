@@ -1,46 +1,46 @@
 @media only screen and (min-width: 992px) {
-  #tc4-nav.navbar-expand-lg .navbar-toggler {
+  #scouting-nederland-nav.navbar-expand-lg .navbar-toggler {
     display: none;
   }
 
-  #tc4-nav.hamburger .navbar-toggler {
+  #scouting-nederland-nav.hamburger .navbar-toggler {
     display: inline-flex;
   }
 }
 
 @media only screen and (max-width: 991px) {
-  #tc4-nav .navbar-toggler {
+  #scouting-nederland-nav .navbar-toggler {
     display: inline-flex;
   }
 }
 
 .mainbody { padding-top: 72px; }
-.admin-bar #tc4-nav { top: 32px; }
+.admin-bar #scouting-nederland-nav { top: 32px; }
 
-@media (max-width: 782px) { .admin-bar #tc4-nav { top: 46px; } }
+@media (max-width: 782px) { .admin-bar #scouting-nederland-nav { top: 46px; } }
 
 @media only screen and (max-width: 575px) {
-  #tc4-nav { padding-left: .75rem; padding-right: .75rem; }
-  #tc4-logo { flex-basis: 145px; min-height: 56px; }
-  #tc4-logo > .navbar-brand,
-  #tc4-logo .navbar-brand.logostamp { width: 145px; height: 56px; }
-  #tc4-logo .navbar-brand img.scoutinglogo { width: 95px; max-width: 95px; top: 6px; left: 24px; }
-  #tc4-logo .navbar-brand img.eigenlogo { max-width: 95px; max-height: 72px; top: 6px; left: 24px; }
+  #scouting-nederland-nav { padding-left: .75rem; padding-right: .75rem; }
+  #scouting-nederland-logo { flex-basis: 145px; min-height: 56px; }
+  #scouting-nederland-logo > .navbar-brand,
+  #scouting-nederland-logo .navbar-brand.logostamp { width: 145px; height: 56px; }
+  #scouting-nederland-logo .navbar-brand img.scoutinglogo { width: 95px; max-width: 95px; top: 6px; left: 24px; }
+  #scouting-nederland-logo .navbar-brand img.eigenlogo { max-width: 95px; max-height: 72px; top: 6px; left: 24px; }
 
-  #tc4-logo .navbar-brand .tc4-logostamp-image {
+  #scouting-nederland-logo .navbar-brand .scouting-nederland-logostamp-image {
     top: -50px;
     left: -10px;
     width: 165px;
   }
-  #tc4-headermessage { display: none; }
+  #scouting-nederland-headermessage { display: none; }
 }
 
-.editor-styles-wrapper .tc4-editor-block {
+.editor-styles-wrapper .scouting-nederland-editor-block {
   outline: 1px dashed rgba(0, 165, 81, .35);
   outline-offset: 8px;
 }
 
-.editor-styles-wrapper .tc4-editor-image-picker {
+.editor-styles-wrapper .scouting-nederland-editor-image-picker {
   cursor: pointer;
   min-height: 90px;
   display: grid;
@@ -48,23 +48,23 @@
   background: rgba(0,0,0,.035);
 }
 
-.editor-styles-wrapper .tc4-editor-image-picker img {
+.editor-styles-wrapper .scouting-nederland-editor-image-picker img {
   cursor: pointer;
 }
 
-.editor-styles-wrapper .tc4-editor-button-inline {
+.editor-styles-wrapper .scouting-nederland-editor-button-inline {
   margin-top: 1rem;
 }
 
-.editor-styles-wrapper .tc4-btn {
+.editor-styles-wrapper .scouting-nederland-btn {
   cursor: text;
 }
 
-.tc4-btn-green {
+.scouting-nederland-btn-green {
   background: #00a551;
 }
 
-.editor-styles-wrapper .tc4-acf-like-block {
+.editor-styles-wrapper .scouting-nederland-acf-like-block {
   border: 1px solid #ccd0d4;
   background: #fff;
   padding: 0;
@@ -73,7 +73,7 @@
   color: #1e1e1e;
 }
 
-.editor-styles-wrapper .tc4-acf-row {
+.editor-styles-wrapper .scouting-nederland-acf-row {
   display: grid;
   grid-template-columns: 90px 1fr;
   gap: 18px;
@@ -82,26 +82,26 @@
   border-bottom: 1px solid #e2e4e7;
 }
 
-.editor-styles-wrapper .tc4-acf-row label,
-.editor-styles-wrapper .tc4-acf-field label {
+.editor-styles-wrapper .scouting-nederland-acf-row label,
+.editor-styles-wrapper .scouting-nederland-acf-field label {
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
 }
 
-.editor-styles-wrapper .tc4-acf-section-title {
+.editor-styles-wrapper .scouting-nederland-acf-section-title {
   padding: 14px 18px;
   border-bottom: 1px solid #e2e4e7;
   font-weight: 600;
 }
 
-.editor-styles-wrapper .tc4-acf-repeater-row {
+.editor-styles-wrapper .scouting-nederland-acf-repeater-row {
   display: grid;
   grid-template-columns: 48px 1fr;
   border-bottom: 1px solid #e2e4e7;
 }
 
-.editor-styles-wrapper .tc4-acf-row-number {
+.editor-styles-wrapper .scouting-nederland-acf-row-number {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,28 +110,28 @@
   color: #646970;
 }
 
-.editor-styles-wrapper .tc4-acf-row-content {
+.editor-styles-wrapper .scouting-nederland-acf-row-content {
   padding: 18px;
 }
 
-.editor-styles-wrapper .tc4-acf-row-actions {
+.editor-styles-wrapper .scouting-nederland-acf-row-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 16px;
 }
 
-.editor-styles-wrapper .tc4-acf-repeater-add {
+.editor-styles-wrapper .scouting-nederland-acf-repeater-add {
   padding: 18px;
   border-top: 1px solid #e2e4e7;
   background: #f6f7f7;
 }
 
-.editor-styles-wrapper .tc4-acf-field {
+.editor-styles-wrapper .scouting-nederland-acf-field {
   margin-bottom: 22px;
 }
 
-.editor-styles-wrapper .tc4-acf-image-field img {
+.editor-styles-wrapper .scouting-nederland-acf-image-field img {
   display: block;
   width: 220px;
   max-width: 100%;
@@ -140,35 +140,35 @@
   margin-bottom: 8px;
 }
 
-.editor-styles-wrapper .tc4-acf-button-box {
+.editor-styles-wrapper .scouting-nederland-acf-button-box {
   border: 1px solid #ccd0d4;
   padding: 14px;
   margin: 10px 0 0;
 }
 
-.editor-styles-wrapper .tc4-acf-button-box legend {
+.editor-styles-wrapper .scouting-nederland-acf-button-box legend {
   padding: 0 6px;
   font-weight: 600;
 }
 
-.editor-styles-wrapper .tc4-acf-button-grid {
+.editor-styles-wrapper .scouting-nederland-acf-button-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 18px;
 }
 
-.editor-styles-wrapper .tc4-editor-radio-row label {
+.editor-styles-wrapper .scouting-nederland-editor-radio-row label {
   display: block;
   margin-bottom: 8px;
   font-weight: 400;
 }
 
-.editor-styles-wrapper .tc4-acf-like-block input[type="text"],
-.editor-styles-wrapper .tc4-acf-like-block textarea {
+.editor-styles-wrapper .scouting-nederland-acf-like-block input[type="text"],
+.editor-styles-wrapper .scouting-nederland-acf-like-block textarea {
   width: 100%;
 }
 
-.editor-styles-wrapper .tc4-real-classic-editor {
+.editor-styles-wrapper .scouting-nederland-real-classic-editor {
   position: relative;
   border: 1px solid #c3c4c7;
   background: #fff;
@@ -176,7 +176,7 @@
   margin-top: 34px;
 }
 
-.editor-styles-wrapper .tc4-real-tabs {
+.editor-styles-wrapper .scouting-nederland-real-tabs {
   position: absolute;
   top: -34px;
   right: -1px;
@@ -184,7 +184,7 @@
   gap: 4px;
 }
 
-.editor-styles-wrapper .tc4-real-tabs span {
+.editor-styles-wrapper .scouting-nederland-real-tabs span {
   display: inline-block;
   padding: 8px 10px;
   border: 1px solid #c3c4c7;
@@ -194,12 +194,12 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-.editor-styles-wrapper .tc4-real-tabs span.is-active {
+.editor-styles-wrapper .scouting-nederland-real-tabs span.is-active {
   background: #fff;
   border-bottom-color: #fff;
 }
 
-.editor-styles-wrapper .tc4-real-toolbar {
+.editor-styles-wrapper .scouting-nederland-real-toolbar {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -210,7 +210,7 @@
   box-shadow: 0 1px 2px rgba(0,0,0,.04);
 }
 
-.editor-styles-wrapper .tc4-real-toolbar-button {
+.editor-styles-wrapper .scouting-nederland-real-toolbar-button {
   min-width: 30px;
   height: 28px;
   margin: 0 1px;
@@ -226,30 +226,30 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-.editor-styles-wrapper .tc4-real-toolbar-button.is-bold {
+.editor-styles-wrapper .scouting-nederland-real-toolbar-button.is-bold {
   font-weight: 800;
 }
 
-.editor-styles-wrapper .tc4-real-toolbar-button.is-italic {
+.editor-styles-wrapper .scouting-nederland-real-toolbar-button.is-italic {
   font-style: italic;
 }
 
-.editor-styles-wrapper .tc4-real-toolbar-button.is-underline {
+.editor-styles-wrapper .scouting-nederland-real-toolbar-button.is-underline {
   text-decoration: underline;
 }
 
-.editor-styles-wrapper .tc4-real-toolbar-button.is-small {
+.editor-styles-wrapper .scouting-nederland-real-toolbar-button.is-small {
   font-size: 9px;
 }
 
-.editor-styles-wrapper .tc4-real-toolbar-button:hover,
-.editor-styles-wrapper .tc4-real-toolbar-button:focus {
+.editor-styles-wrapper .scouting-nederland-real-toolbar-button:hover,
+.editor-styles-wrapper .scouting-nederland-real-toolbar-button:focus {
   background: #dcdcde;
   color: #1d2327;
   outline: none;
 }
 
-.editor-styles-wrapper .tc4-real-editor-content {
+.editor-styles-wrapper .scouting-nederland-real-editor-content {
   min-height: 240px;
   padding: 18px;
   font-family: Georgia, "Times New Roman", serif;
@@ -261,42 +261,42 @@
   white-space: normal;
 }
 
-.editor-styles-wrapper .tc4-real-editor-content:focus {
+.editor-styles-wrapper .scouting-nederland-real-editor-content:focus {
   outline: none;
   box-shadow: inset 0 0 0 1px #2271b1;
 }
 
-.editor-styles-wrapper .tc4-real-editor-content p {
+.editor-styles-wrapper .scouting-nederland-real-editor-content p {
   margin-top: 0;
   margin-bottom: 1em;
 }
 
-.editor-styles-wrapper .tc4-real-editor-content blockquote {
+.editor-styles-wrapper .scouting-nederland-real-editor-content blockquote {
   margin: 0 0 1em;
   padding-left: 1em;
   border-left: 4px solid #dcdcde;
 }
 
-.editor-styles-wrapper .tc4-real-editor-content ul,
-.editor-styles-wrapper .tc4-real-editor-content ol {
+.editor-styles-wrapper .scouting-nederland-real-editor-content ul,
+.editor-styles-wrapper .scouting-nederland-real-editor-content ol {
   margin-left: 1.6em;
 }
 
-.editor-styles-wrapper .tc4-callout-editor-form .tc4-acf-row {
+.editor-styles-wrapper .scouting-nederland-callout-editor-form .scouting-nederland-acf-row {
   grid-template-columns: 150px 1fr;
 }
 
-.editor-styles-wrapper .tc4-callout-editor-form .tc4-acf-row-editor {
+.editor-styles-wrapper .scouting-nederland-callout-editor-form .scouting-nederland-acf-row-editor {
   align-items: start;
 }
 
-.editor-styles-wrapper .tc4-editor-radio-inline {
+.editor-styles-wrapper .scouting-nederland-editor-radio-inline {
   display: flex;
   gap: 22px;
   align-items: center;
 }
 
-.editor-styles-wrapper .tc4-acf-select {
+.editor-styles-wrapper .scouting-nederland-acf-select {
   width: 100%;
   min-height: 34px;
   border: 1px solid #8c8f94;
@@ -304,47 +304,47 @@
   background: #fff;
 }
 
-.editor-styles-wrapper .tc4-callout-button-box {
+.editor-styles-wrapper .scouting-nederland-callout-button-box {
   max-width: 760px;
   width: 100%;
 }
 
-.editor-styles-wrapper .tc4-callout-editor-form .tc4-real-classic-editor {
+.editor-styles-wrapper .scouting-nederland-callout-editor-form .scouting-nederland-real-classic-editor {
   margin-top: 34px;
 }
 
-.editor-styles-wrapper .tc4-news-editor-form .tc4-acf-row {
+.editor-styles-wrapper .scouting-nederland-news-editor-form .scouting-nederland-acf-row {
   grid-template-columns: 140px 1fr;
 }
 
-.editor-styles-wrapper .tc4-news-category-box {
+.editor-styles-wrapper .scouting-nederland-news-category-box {
   border: 1px solid #ccd0d4;
   border-radius: 3px;
   padding: 14px;
   background: #fff;
 }
 
-.editor-styles-wrapper .tc4-news-checkbox {
+.editor-styles-wrapper .scouting-nederland-news-checkbox {
   display: block;
   margin: 0 0 8px;
   font-weight: 400;
 }
 
-.editor-styles-wrapper .tc4-news-select-wrap {
+.editor-styles-wrapper .scouting-nederland-news-select-wrap {
   border: 1px solid #8c8f94;
   border-radius: 3px;
   padding: 6px;
   background: #fff;
 }
 
-.editor-styles-wrapper .tc4-news-token-field {
+.editor-styles-wrapper .scouting-nederland-news-token-field {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 6px;
 }
 
-.editor-styles-wrapper .tc4-news-token {
+.editor-styles-wrapper .scouting-nederland-news-token {
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -355,7 +355,7 @@
   font-size: 12px;
 }
 
-.editor-styles-wrapper .tc4-news-token button {
+.editor-styles-wrapper .scouting-nederland-news-token button {
   border: 0;
   background: transparent;
   cursor: pointer;
@@ -363,55 +363,55 @@
   line-height: 1;
 }
 
-.editor-styles-wrapper .tc4-news-select-wrap .tc4-acf-select {
+.editor-styles-wrapper .scouting-nederland-news-select-wrap .scouting-nederland-acf-select {
   margin-top: 4px;
 }
 
-.editor-styles-wrapper .tc4-news-button-box {
+.editor-styles-wrapper .scouting-nederland-news-button-box {
   max-width: 760px;
   width: 100%;
 }
 
-.editor-styles-wrapper .tc4-two-columns-editor-form {
+.editor-styles-wrapper .scouting-nederland-two-columns-editor-form {
   padding: 14px;
 }
 
-.editor-styles-wrapper .tc4-two-column-fieldset {
+.editor-styles-wrapper .scouting-nederland-two-column-fieldset {
   border: 1px solid #ccd0d4;
   margin: 0 0 20px;
   padding: 16px 18px 18px;
   background: #fff;
 }
 
-.editor-styles-wrapper .tc4-two-column-fieldset > legend {
+.editor-styles-wrapper .scouting-nederland-two-column-fieldset > legend {
   padding: 0 6px;
   font-weight: 600;
 }
 
-.editor-styles-wrapper .tc4-two-columns-editor-form .tc4-acf-image-field img {
+.editor-styles-wrapper .scouting-nederland-two-columns-editor-form .scouting-nederland-acf-image-field img {
   width: 260px;
   max-width: 100%;
   height: auto;
 }
 
-.editor-styles-wrapper .tc4-two-columns-editor-form .tc4-real-classic-editor {
+.editor-styles-wrapper .scouting-nederland-two-columns-editor-form .scouting-nederland-real-classic-editor {
   margin-top: 34px;
 }
 
-.editor-styles-wrapper .tc4-two-button-box {
+.editor-styles-wrapper .scouting-nederland-two-button-box {
   max-width: none;
 }
 
-.editor-styles-wrapper .tc4-acf-like-block,
-.editor-styles-wrapper .tc4-acf-like-block input,
-.editor-styles-wrapper .tc4-acf-like-block textarea,
-.editor-styles-wrapper .tc4-acf-like-block select {
+.editor-styles-wrapper .scouting-nederland-acf-like-block,
+.editor-styles-wrapper .scouting-nederland-acf-like-block input,
+.editor-styles-wrapper .scouting-nederland-acf-like-block textarea,
+.editor-styles-wrapper .scouting-nederland-acf-like-block select {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   font-size: 13px;
   line-height: 1.4;
 }
 
-#tc4-nav {
+#scouting-nederland-nav {
   min-height: 84px;
   height: 84px;
   padding: 0 24px 0 0;
@@ -420,7 +420,7 @@
   z-index: 1050;
 }
 
-#tc4-nav .container-fluid {
+#scouting-nederland-nav .container-fluid {
   position: relative;
   display: grid;
   grid-template-columns: 245px minmax(190px, auto) minmax(0, 1fr) auto;
@@ -432,7 +432,7 @@
   padding: 0;
 }
 
-#tc4-logo {
+#scouting-nederland-logo {
   grid-area: logo;
   position: relative;
   flex: none;
@@ -443,8 +443,8 @@
   overflow: visible;
 }
 
-#tc4-logo > .navbar-brand,
-#tc4-logo .navbar-brand.logostamp {
+#scouting-nederland-logo > .navbar-brand,
+#scouting-nederland-logo .navbar-brand.logostamp {
   position: absolute;
   top: -34px;
   left: 0;
@@ -455,7 +455,7 @@
   overflow: visible;
 }
 
-#tc4-logo .navbar-brand .tc4-logostamp-image {
+#scouting-nederland-logo .navbar-brand .scouting-nederland-logostamp-image {
   position: absolute;
   inset: 0;
   width: 225px;
@@ -466,8 +466,8 @@
   z-index: 1;
 }
 
-#tc4-logo .navbar-brand img.scoutinglogo,
-#tc4-logo .navbar-brand img.eigenlogo {
+#scouting-nederland-logo .navbar-brand img.scoutinglogo,
+#scouting-nederland-logo .navbar-brand img.eigenlogo {
   position: absolute;
   top: 57px;
   left: 58px;
@@ -478,7 +478,7 @@
   z-index: 2;
 }
 
-#tc4-headermessage {
+#scouting-nederland-headermessage {
   grid-area: message;
   display: flex;
   justify-content: flex-end;
@@ -492,13 +492,13 @@
   white-space: nowrap;
 }
 
-#tc4-headermessage a,
-#tc4-headermessage .tc4-header-alert {
+#scouting-nederland-headermessage a,
+#scouting-nederland-headermessage .scouting-nederland-header-alert {
   color: #e1071a !important;
   text-decoration: none;
 }
 
-.tc4-menu {
+.scouting-nederland-menu {
   grid-area: menu;
   display: flex;
   justify-content: flex-end;
@@ -507,26 +507,26 @@
   flex-grow: 0;
 }
 
-#tc4-nav:not(.hamburger) .tc4-menu.collapse {
+#scouting-nederland-nav:not(.hamburger) .scouting-nederland-menu.collapse {
   display: flex !important;
 }
 
-#tc4-nav .navbar-nav {
+#scouting-nederland-nav .navbar-nav {
   display: flex;
   align-items: stretch;
   height: 84px;
   margin: 0;
 }
 
-#tc4-nav .navbar-nav > li {
+#scouting-nederland-nav .navbar-nav > li {
   display: flex;
   align-items: stretch;
   position: relative;
   margin: 0;
 }
 
-#tc4-nav .navbar-nav > li > a,
-#tc4-nav .navbar-nav > li > .nav-link {
+#scouting-nederland-nav .navbar-nav > li > a,
+#scouting-nederland-nav .navbar-nav > li > .nav-link {
   position: relative;
   display: flex;
   align-items: center;
@@ -541,19 +541,19 @@
   white-space: nowrap;
 }
 
-#tc4-nav .navbar-nav > li > a:hover,
-#tc4-nav .navbar-nav > li > .nav-link:hover,
-#tc4-nav .navbar-nav > li.current-menu-item > a,
-#tc4-nav .navbar-nav > li.current-menu-ancestor > a,
-#tc4-nav .navbar-nav > li.active > a,
-#tc4-nav .navbar-nav > li.active > .nav-link {
+#scouting-nederland-nav .navbar-nav > li > a:hover,
+#scouting-nederland-nav .navbar-nav > li > .nav-link:hover,
+#scouting-nederland-nav .navbar-nav > li.current-menu-item > a,
+#scouting-nederland-nav .navbar-nav > li.current-menu-ancestor > a,
+#scouting-nederland-nav .navbar-nav > li.active > a,
+#scouting-nederland-nav .navbar-nav > li.active > .nav-link {
   color: #006fb9;
 }
 
-#tc4-nav .navbar-nav > li.current-menu-item > a::before,
-#tc4-nav .navbar-nav > li.current-menu-ancestor > a::before,
-#tc4-nav .navbar-nav > li.active > a::before,
-#tc4-nav .navbar-nav > li.active > .nav-link::before {
+#scouting-nederland-nav .navbar-nav > li.current-menu-item > a::before,
+#scouting-nederland-nav .navbar-nav > li.current-menu-ancestor > a::before,
+#scouting-nederland-nav .navbar-nav > li.active > a::before,
+#scouting-nederland-nav .navbar-nav > li.active > .nav-link::before {
   content: "";
   position: absolute;
   top: 22px;
@@ -563,7 +563,7 @@
   background: #00a551;
 }
 
-#tc4-buttons {
+#scouting-nederland-buttons {
   grid-area: buttons;
   display: flex;
   justify-content: flex-end;
@@ -573,7 +573,7 @@
   flex: none;
 }
 
-#tc4-buttons a {
+#scouting-nederland-buttons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -582,19 +582,19 @@
   line-height: 1;
 }
 
-#tc4-buttons .tc4-svg-icon {
+#scouting-nederland-buttons .scouting-nederland-svg-icon {
   display: block;
   width: 31px;
   height: 31px;
   fill: currentColor;
 }
 
-#tc4-buttons .search .tc4-svg-icon {
+#scouting-nederland-buttons .search .scouting-nederland-svg-icon {
   width: 34px;
   height: 34px;
 }
 
-#tc4-buttons .navbar-toggler {
+#scouting-nederland-buttons .navbar-toggler {
   display: none;
   border: 0;
   padding: 0;
@@ -602,11 +602,11 @@
   background: transparent;
 }
 
-#tc4-nav.hamburger #tc4-buttons .navbar-toggler {
+#scouting-nederland-nav.hamburger #scouting-nederland-buttons .navbar-toggler {
   display: inline-flex;
 }
 
-body.admin-bar #tc4-nav {
+body.admin-bar #scouting-nederland-nav {
   top: 32px;
 }
 
@@ -614,14 +614,14 @@ body.admin-bar #tc4-nav {
   padding-top: 84px;
 }
 
-.tc4-home-slider,
-.tc4-home-hero,
-#tc4-hero {
+.scouting-nederland-home-slider,
+.scouting-nederland-home-hero,
+#scouting-nederland-hero {
   margin-top: 0;
 }
 
 @media (max-width: 1180px) {
-  #tc4-nav .container-fluid {
+  #scouting-nederland-nav .container-fluid {
     grid-template-columns: 210px 1fr auto;
     grid-template-areas:
       "logo message buttons"
@@ -630,21 +630,21 @@ body.admin-bar #tc4-nav {
     min-height: 84px;
   }
 
-  #tc4-nav {
+  #scouting-nederland-nav {
     height: auto;
     min-height: 84px;
   }
 
-  #tc4-nav:not(.hamburger) .tc4-menu.collapse {
+  #scouting-nederland-nav:not(.hamburger) .scouting-nederland-menu.collapse {
     display: none !important;
   }
 
-  #tc4-buttons .navbar-toggler {
+  #scouting-nederland-buttons .navbar-toggler {
     display: inline-flex;
   }
 
-  #tc4-nav .tc4-menu.show,
-  #tc4-nav .tc4-menu.collapsing {
+  #scouting-nederland-nav .scouting-nederland-menu.show,
+  #scouting-nederland-nav .scouting-nederland-menu.collapsing {
     display: block !important;
     grid-area: menu;
     width: 100%;
@@ -654,23 +654,23 @@ body.admin-bar #tc4-nav {
     padding-bottom: 1rem;
   }
 
-  #tc4-nav .navbar-nav,
-  #tc4-nav .navbar-nav > li,
-  #tc4-nav .navbar-nav > li > a,
-  #tc4-nav .navbar-nav > li > .nav-link {
+  #scouting-nederland-nav .navbar-nav,
+  #scouting-nederland-nav .navbar-nav > li,
+  #scouting-nederland-nav .navbar-nav > li > a,
+  #scouting-nederland-nav .navbar-nav > li > .nav-link {
     display: block;
     height: auto;
   }
 
-  #tc4-nav .navbar-nav > li > a,
-  #tc4-nav .navbar-nav > li > .nav-link {
+  #scouting-nederland-nav .navbar-nav > li > a,
+  #scouting-nederland-nav .navbar-nav > li > .nav-link {
     padding: .75rem 1rem;
   }
 
-  #tc4-nav .navbar-nav > li.current-menu-item > a::before,
-  #tc4-nav .navbar-nav > li.current-menu-ancestor > a::before,
-  #tc4-nav .navbar-nav > li.active > a::before,
-  #tc4-nav .navbar-nav > li.active > .nav-link::before {
+  #scouting-nederland-nav .navbar-nav > li.current-menu-item > a::before,
+  #scouting-nederland-nav .navbar-nav > li.current-menu-ancestor > a::before,
+  #scouting-nederland-nav .navbar-nav > li.active > a::before,
+  #scouting-nederland-nav .navbar-nav > li.active > .nav-link::before {
     top: 0;
     left: 1rem;
     right: auto;
@@ -679,74 +679,74 @@ body.admin-bar #tc4-nav {
 }
 
 @media (max-width: 782px) {
-  body.admin-bar #tc4-nav {
+  body.admin-bar #scouting-nederland-nav {
     top: 46px;
   }
 }
 
 @media (max-width: 700px) {
-  #tc4-nav .container-fluid {
+  #scouting-nederland-nav .container-fluid {
     grid-template-columns: 150px 1fr auto;
     grid-template-areas: "logo message buttons" "menu menu menu";
   }
 
-  #tc4-logo {
+  #scouting-nederland-logo {
     width: 150px;
   }
 
-  #tc4-logo > .navbar-brand,
-  #tc4-logo .navbar-brand.logostamp {
+  #scouting-nederland-logo > .navbar-brand,
+  #scouting-nederland-logo .navbar-brand.logostamp {
     top: -18px;
     width: 150px;
     height: 150px;
   }
 
-  #tc4-logo .navbar-brand .tc4-logostamp-image {
+  #scouting-nederland-logo .navbar-brand .scouting-nederland-logostamp-image {
     width: 150px;
     height: 150px;
   }
 
-  #tc4-logo .navbar-brand img.scoutinglogo,
-  #tc4-logo .navbar-brand img.eigenlogo {
+  #scouting-nederland-logo .navbar-brand img.scoutinglogo,
+  #scouting-nederland-logo .navbar-brand img.eigenlogo {
     top: 38px;
     left: 38px;
     width: 76px;
     max-width: 76px;
   }
 
-  #tc4-headermessage {
+  #scouting-nederland-headermessage {
     font-size: .85rem;
     min-width: 0;
     white-space: normal;
   }
 
-  #tc4-buttons {
+  #scouting-nederland-buttons {
     gap: 7px;
   }
 
-  #tc4-buttons .tc4-svg-icon {
+  #scouting-nederland-buttons .scouting-nederland-svg-icon {
     width: 25px;
     height: 25px;
   }
 
-  #tc4-nav .tc4-menu.show,
-  #tc4-nav .tc4-menu.collapsing {
+  #scouting-nederland-nav .scouting-nederland-menu.show,
+  #scouting-nederland-nav .scouting-nederland-menu.collapsing {
     padding-left: 1rem;
   }
 }
 
-body.admin-bar #tc4-nav {
+body.admin-bar #scouting-nederland-nav {
   top: 32px !important;
 }
 
 @media (max-width: 782px) {
-  body.admin-bar #tc4-nav {
+  body.admin-bar #scouting-nederland-nav {
     top: 46px !important;
   }
 }
 
 @media (min-width: 1181px) {
-  body.scoutingtc4-header-wide #tc4-nav {
+  body.scouting-nederland-header-wide #scouting-nederland-nav {
     height: 64px !important;
     min-height: 64px !important;
     padding: 0 32px 0 0 !important;
@@ -754,7 +754,7 @@ body.admin-bar #tc4-nav {
     box-shadow: 0 1px 8px rgba(0,0,0,.14) !important;
   }
 
-  body.scoutingtc4-header-wide #tc4-nav .container-fluid {
+  body.scouting-nederland-header-wide #scouting-nederland-nav .container-fluid {
     height: 64px !important;
     min-height: 64px !important;
     grid-template-columns: minmax(280px, 1fr) auto auto auto !important;
@@ -763,15 +763,15 @@ body.admin-bar #tc4-nav {
     align-items: center !important;
   }
 
-  body.scoutingtc4-header-wide #tc4-logo {
+  body.scouting-nederland-header-wide #scouting-nederland-logo {
     grid-area: logo !important;
     width: auto !important;
     height: 64px !important;
     min-height: 64px !important;
   }
 
-  body.scoutingtc4-header-wide #tc4-logo > .navbar-brand,
-  body.scoutingtc4-header-wide #tc4-logo .navbar-brand.logostamp {
+  body.scouting-nederland-header-wide #scouting-nederland-logo > .navbar-brand,
+  body.scouting-nederland-header-wide #scouting-nederland-logo .navbar-brand.logostamp {
     top: 7px !important;
     left: 50% !important;
     width: 122px !important;
@@ -779,20 +779,20 @@ body.admin-bar #tc4-nav {
     transform: translateX(-50%) !important;
   }
 
-  body.scoutingtc4-header-wide #tc4-logo .navbar-brand .tc4-logostamp-image {
+  body.scouting-nederland-header-wide #scouting-nederland-logo .navbar-brand .scouting-nederland-logostamp-image {
     width: 122px !important;
     height: 122px !important;
   }
 
-  body.scoutingtc4-header-wide #tc4-logo .navbar-brand img.scoutinglogo,
-  body.scoutingtc4-header-wide #tc4-logo .navbar-brand img.eigenlogo {
+  body.scouting-nederland-header-wide #scouting-nederland-logo .navbar-brand img.scoutinglogo,
+  body.scouting-nederland-header-wide #scouting-nederland-logo .navbar-brand img.eigenlogo {
     top: 30px !important;
     left: 31px !important;
     width: 62px !important;
     max-width: 62px !important;
   }
 
-  body.scoutingtc4-header-wide #tc4-headermessage {
+  body.scouting-nederland-header-wide #scouting-nederland-headermessage {
     grid-area: message !important;
     display: flex !important;
     height: 64px !important;
@@ -803,23 +803,23 @@ body.admin-bar #tc4-nav {
     text-transform: uppercase !important;
   }
 
-  body.scoutingtc4-header-wide #tc4-headermessage a {
+  body.scouting-nederland-header-wide #scouting-nederland-headermessage a {
     height: 64px !important;
-    color: var(--tc4-support-color, #0066b2) !important;
+    color: var(--scouting-nederland-support-color, #0066b2) !important;
   }
 
-  body.scoutingtc4-header-wide #tc4-headermessage a i,
-  body.scoutingtc4-header-wide #tc4-headermessage .fas.fa-exclamation-triangle {
-    color: var(--tc4-support-color, #0066b2) !important;
+  body.scouting-nederland-header-wide #scouting-nederland-headermessage a i,
+  body.scouting-nederland-header-wide #scouting-nederland-headermessage .fas.fa-exclamation-triangle {
+    color: var(--scouting-nederland-support-color, #0066b2) !important;
     margin-left: .6rem !important;
   }
 
-  body.scoutingtc4-header-wide #tc4-nav .tc4-menu,
-  body.scoutingtc4-header-wide #tc4-nav #navbarSupportedContent {
+  body.scouting-nederland-header-wide #scouting-nederland-nav .scouting-nederland-menu,
+  body.scouting-nederland-header-wide #scouting-nederland-nav #navbarSupportedContent {
     display: none !important;
   }
 
-  body.scoutingtc4-header-wide #tc4-buttons {
+  body.scouting-nederland-header-wide #scouting-nederland-buttons {
     grid-area: buttons !important;
     height: 64px !important;
     display: flex !important;
@@ -827,68 +827,68 @@ body.admin-bar #tc4-nav {
     gap: 1.25rem !important;
   }
 
-  body.scoutingtc4-header-wide #tc4-buttons > a {
+  body.scouting-nederland-header-wide #scouting-nederland-buttons > a {
     display: inline-flex !important;
     height: 64px !important;
     align-items: center !important;
-    color: var(--tc4-main-color, #00a551) !important;
+    color: var(--scouting-nederland-main-color, #00a551) !important;
   }
 
-  body.scoutingtc4-header-wide #tc4-buttons .navbar-toggler {
+  body.scouting-nederland-header-wide #scouting-nederland-buttons .navbar-toggler {
     display: inline-flex !important;
     height: 64px !important;
     align-items: center !important;
     justify-content: center !important;
     padding: 0 !important;
-    color: var(--tc4-main-color, #00a551) !important;
+    color: var(--scouting-nederland-main-color, #00a551) !important;
   }
 
-  body.scoutingtc4-header-wide #tc4-buttons .fa.fa-bars {
+  body.scouting-nederland-header-wide #scouting-nederland-buttons .fa.fa-bars {
     font-size: 1.85rem !important;
   }
 
-  body.scoutingtc4-header-wide #tc4-buttons .tc4-menu-label {
+  body.scouting-nederland-header-wide #scouting-nederland-buttons .scouting-nederland-menu-label {
     display: inline-block !important;
   }
 
-  body.scoutingtc4-header-wide #tc4-buttons .phone .tc4-fa-icon,
-  body.scoutingtc4-header-wide #tc4-buttons .contact .tc4-fa-icon,
-  body.scoutingtc4-header-wide #tc4-buttons .search .tc4-fa-icon {
-    color: var(--tc4-main-color, #00a551) !important;
+  body.scouting-nederland-header-wide #scouting-nederland-buttons .phone .scouting-nederland-fa-icon,
+  body.scouting-nederland-header-wide #scouting-nederland-buttons .contact .scouting-nederland-fa-icon,
+  body.scouting-nederland-header-wide #scouting-nederland-buttons .search .scouting-nederland-fa-icon {
+    color: var(--scouting-nederland-main-color, #00a551) !important;
   }
 
-  body.scoutingtc4-header-wide .mainbody {
+  body.scouting-nederland-header-wide .mainbody {
     padding-top: 64px !important;
   }
 
-  body.admin-bar.scoutingtc4-header-wide #tc4-nav {
+  body.admin-bar.scouting-nederland-header-wide #scouting-nederland-nav {
     top: 32px !important;
   }
 }
 
 
 
-.tc4-link-picker-field .components-base-control {
+.scouting-nederland-link-picker-field .components-base-control {
   margin-bottom: 0;
 }
 
-.tc4-link-picker-button {
+.scouting-nederland-link-picker-button {
   padding-bottom: 8px;
 }
 
-.tc4-link-picker-button .block-editor-url-input__button,
-.tc4-link-picker-button .editor-url-input__button {
+.scouting-nederland-link-picker-button .block-editor-url-input__button,
+.scouting-nederland-link-picker-button .editor-url-input__button {
   height: 36px;
   min-width: 36px;
 }
 
 
-.tc4-link-field-acf {
+.scouting-nederland-link-field-acf {
   display: grid;
   gap: 8px;
 }
 
-.tc4-link-field-acf__summary {
+.scouting-nederland-link-field-acf__summary {
   min-height: 38px;
   padding: 8px 10px;
   border: 1px solid #8c8f94;
@@ -896,24 +896,24 @@ body.admin-bar #tc4-nav {
   background: #fff;
 }
 
-.tc4-link-field-acf__summary strong {
+.scouting-nederland-link-field-acf__summary strong {
   display: block;
   color: #1d2327;
   font-weight: 600;
 }
 
-.tc4-link-field-acf__summary span {
+.scouting-nederland-link-field-acf__summary span {
   display: block;
   color: #646970;
   font-size: 12px;
   overflow-wrap: anywhere;
 }
 
-.tc4-link-field-acf__empty {
+.scouting-nederland-link-field-acf__empty {
   color: #646970;
 }
 
-.tc4-link-field-acf__actions {
+.scouting-nederland-link-field-acf__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -922,7 +922,7 @@ body.admin-bar #tc4-nav {
 
 
 
-.tc4-featured-editor-form .tc4-acf-field > label {
+.scouting-nederland-featured-editor-form .scouting-nederland-acf-field > label {
   display: block;
   margin: 0 0 14px;
   color: #1d2327;
@@ -930,7 +930,7 @@ body.admin-bar #tc4-nav {
   font-weight: 400;
 }
 
-.tc4-real-classic-editor {
+.scouting-nederland-real-classic-editor {
   position: relative;
   margin: 0;
   border: 1px solid #c3c4c7;
@@ -939,7 +939,7 @@ body.admin-bar #tc4-nav {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-.tc4-real-tabs {
+.scouting-nederland-real-tabs {
   position: absolute;
   top: -29px;
   right: -1px;
@@ -949,7 +949,7 @@ body.admin-bar #tc4-nav {
   z-index: 2;
 }
 
-.tc4-real-tabs span {
+.scouting-nederland-real-tabs span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -964,17 +964,17 @@ body.admin-bar #tc4-nav {
   line-height: 1;
 }
 
-.tc4-real-tabs span + span {
+.scouting-nederland-real-tabs span + span {
   margin-left: 4px;
 }
 
-.tc4-real-tabs span.is-active {
+.scouting-nederland-real-tabs span.is-active {
   background: #fff;
   color: #1d2327;
   height: 30px;
 }
 
-.tc4-real-toolbar {
+.scouting-nederland-real-toolbar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -984,7 +984,7 @@ body.admin-bar #tc4-nav {
   background: #f6f7f7;
 }
 
-.tc4-real-toolbar-button {
+.scouting-nederland-real-toolbar-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1003,46 +1003,46 @@ body.admin-bar #tc4-nav {
   cursor: pointer;
 }
 
-.tc4-real-toolbar-button:hover,
-.tc4-real-toolbar-button:focus {
+.scouting-nederland-real-toolbar-button:hover,
+.scouting-nederland-real-toolbar-button:focus {
   background: #fff;
   color: #1d2327;
   box-shadow: inset 0 0 0 1px #c3c4c7;
   outline: none;
 }
 
-.tc4-real-toolbar-button.is-bold {
+.scouting-nederland-real-toolbar-button.is-bold {
   font-weight: 700;
 }
 
-.tc4-real-toolbar-button.is-italic {
+.scouting-nederland-real-toolbar-button.is-italic {
   font-style: italic;
   font-family: Georgia, serif;
 }
 
-.tc4-real-toolbar-button.is-underline {
+.scouting-nederland-real-toolbar-button.is-underline {
   text-decoration: underline;
 }
 
-.tc4-real-toolbar-button.is-strike {
+.scouting-nederland-real-toolbar-button.is-strike {
   font-size: 10px;
   text-decoration: line-through;
 }
 
-.tc4-real-toolbar-button.is-list,
-.tc4-real-toolbar-button.is-align,
-.tc4-real-toolbar-button.is-history,
-.tc4-real-toolbar-button.is-link,
-.tc4-real-toolbar-button.is-fullscreen {
+.scouting-nederland-real-toolbar-button.is-list,
+.scouting-nederland-real-toolbar-button.is-align,
+.scouting-nederland-real-toolbar-button.is-history,
+.scouting-nederland-real-toolbar-button.is-link,
+.scouting-nederland-real-toolbar-button.is-fullscreen {
   font-size: 17px;
   font-weight: 500;
 }
 
-.tc4-real-toolbar-button.is-disabled-looking {
+.scouting-nederland-real-toolbar-button.is-disabled-looking {
   color: #a7aaad;
 }
 
-.tc4-real-editor-content {
+.scouting-nederland-real-editor-content {
   display: block;
   width: 100%;
   min-height: 300px;
@@ -1057,16 +1057,16 @@ body.admin-bar #tc4-nav {
   overflow: auto;
 }
 
-.tc4-real-editor-content p {
+.scouting-nederland-real-editor-content p {
   margin: 0 0 1em;
 }
 
-.tc4-real-editor-content a {
+.scouting-nederland-real-editor-content a {
   color: #0066b2;
   text-decoration: underline;
 }
 
-.tc4-real-statusbar {
+.scouting-nederland-real-statusbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1080,49 +1080,49 @@ body.admin-bar #tc4-nav {
   line-height: 18px;
 }
 
-.tc4-real-resize {
+.scouting-nederland-real-resize {
   color: #8c8f94;
   font-size: 11px;
   transform: translateY(1px);
 }
 
-.tc4-acf-button-box {
+.scouting-nederland-acf-button-box {
   margin-top: 20px;
 }
 
 @media (max-width: 782px) {
-  .tc4-real-tabs {
+  .scouting-nederland-real-tabs {
     position: static;
     justify-content: flex-end;
     height: auto;
     margin-bottom: -1px;
   }
 
-  .tc4-real-tabs span,
-  .tc4-real-tabs span.is-active {
+  .scouting-nederland-real-tabs span,
+  .scouting-nederland-real-tabs span.is-active {
     height: 34px;
   }
 
-  .tc4-real-editor-content {
+  .scouting-nederland-real-editor-content {
     min-height: 240px;
   }
 }
 
 
-.tc4-tinymce-editor-wrap {
+.scouting-nederland-tinymce-editor-wrap {
   position: relative;
   width: 100%;
 }
 
-.tc4-tinymce-editor-wrap .wp-editor-wrap {
+.scouting-nederland-tinymce-editor-wrap .wp-editor-wrap {
   margin: 0;
 }
 
-.tc4-tinymce-editor-wrap .wp-editor-tabs {
+.scouting-nederland-tinymce-editor-wrap .wp-editor-tabs {
   margin-bottom: 0;
 }
 
-.tc4-tinymce-editor-wrap .wp-switch-editor {
+.scouting-nederland-tinymce-editor-wrap .wp-switch-editor {
   height: 29px;
   margin: 0 0 0 4px;
   padding: 6px 12px 5px;
@@ -1133,50 +1133,50 @@ body.admin-bar #tc4-nav {
   line-height: 1;
 }
 
-.tc4-tinymce-editor-wrap .tmce-active .switch-tmce,
-.tc4-tinymce-editor-wrap .html-active .switch-html {
+.scouting-nederland-tinymce-editor-wrap .tmce-active .switch-tmce,
+.scouting-nederland-tinymce-editor-wrap .html-active .switch-html {
   background: #fff;
   color: #1d2327;
 }
 
-.tc4-tinymce-editor-wrap .wp-editor-container {
+.scouting-nederland-tinymce-editor-wrap .wp-editor-container {
   border-color: #c3c4c7;
 }
 
-.tc4-tinymce-editor-wrap .mce-toolbar-grp,
-.tc4-tinymce-editor-wrap .quicktags-toolbar {
+.scouting-nederland-tinymce-editor-wrap .mce-toolbar-grp,
+.scouting-nederland-tinymce-editor-wrap .quicktags-toolbar {
   background: #f6f7f7;
   border-bottom-color: #dcdcde;
 }
 
-.tc4-tinymce-editor-wrap iframe {
+.scouting-nederland-tinymce-editor-wrap iframe {
   min-height: 300px;
 }
 
-.tc4-tinymce-editor-wrap textarea.wp-editor-area {
+.scouting-nederland-tinymce-editor-wrap textarea.wp-editor-area {
   min-height: 300px;
   font-family: Consolas, Monaco, monospace;
   font-size: 13px;
 }
 
 
-.tc4-callout-editor-form .tc4-link-field-acf,
-.tc4-news-editor-form .tc4-link-field-acf,
-.tc4-two-columns-editor-form .tc4-link-field-acf {
+.scouting-nederland-callout-editor-form .scouting-nederland-link-field-acf,
+.scouting-nederland-news-editor-form .scouting-nederland-link-field-acf,
+.scouting-nederland-two-columns-editor-form .scouting-nederland-link-field-acf {
   max-width: 100%;
 }
 
-.editor-styles-wrapper .tc4-speltakken-editor-form .components-textarea-control__input {
+.editor-styles-wrapper .scouting-nederland-speltakken-editor-form .components-textarea-control__input {
   width: 100%;
 }
 
-.editor-styles-wrapper .tc4-acf-section-title-with-action {
+.editor-styles-wrapper .scouting-nederland-acf-section-title-with-action {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
 }
 
-.editor-styles-wrapper .tc4-speltakken-add-button {
+.editor-styles-wrapper .scouting-nederland-speltakken-add-button {
   white-space: nowrap;
 }

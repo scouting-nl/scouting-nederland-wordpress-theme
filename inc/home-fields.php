@@ -1,7 +1,7 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
 
-function scoutingtc4_home_fields_defaults() {
+function scoutingNederlandHomeFieldsDefaults() {
     return array(
         'enabled' => '0',
         'featured' => array(
@@ -49,54 +49,54 @@ function scoutingtc4_home_fields_defaults() {
     );
 }
 
-function scoutingtc4_get_home_fields($post_id = null) {
+function scoutingNederlandGetHomeFields($post_id = null) {
     $post_id = $post_id ?: get_the_ID();
-    $defaults = scoutingtc4_home_fields_defaults();
-    $saved = get_post_meta($post_id, '_tc4_home_fields', true);
+    $defaults = scoutingNederlandHomeFieldsDefaults();
+    $saved = get_post_meta($post_id, '_scouting_nederland_home_fields', true);
     if (!is_array($saved)) {
         $saved = array();
     }
     return array_replace_recursive($defaults, $saved);
 }
 
-function scoutingtc4_add_home_fields_metaboxes() {
+function scoutingNederlandAddHomeFieldsMetaboxes() {
     add_meta_box(
-        'scoutingtc4_home_fields',
-        __('Homepagina onderdelen', 'scoutingtc4'),
-        'scoutingtc4_render_home_fields_metabox',
+        'scouting_nederland_home_fields',
+        __('Homepagina onderdelen', 'scouting-nederland'),
+        'scoutingNederlandRenderHomeFieldsMetabox',
         'page',
         'normal',
         'default'
     );
 }
 
-function scoutingtc4_home_image_field($name, $image_id = 0) {
+function scoutingNederlandHomeImageField($name, $image_id = 0) {
     $preview = $image_id ? wp_get_attachment_image_url($image_id, 'thumbnail') : '';
     ?>
-    <input type="hidden" class="tc4-image-id" name="<?php echo esc_attr($name); ?>" value="<?php echo esc_attr(absint($image_id)); ?>">
-    <div class="tc4-image-preview">
+    <input type="hidden" class="scouting-nederland-image-id" name="<?php echo esc_attr($name); ?>" value="<?php echo esc_attr(absint($image_id)); ?>">
+    <div class="scouting-nederland-image-preview">
         <?php if ($preview) : ?><img src="<?php echo esc_url($preview); ?>" alt="" style="max-width:140px;height:auto;"><?php endif; ?>
     </div>
-    <button type="button" class="button tc4-select-home-image"><?php esc_html_e('Afbeelding kiezen', 'scoutingtc4'); ?></button>
-    <button type="button" class="button-link-delete tc4-remove-home-image"><?php esc_html_e('Verwijderen', 'scoutingtc4'); ?></button>
+    <button type="button" class="button scouting-nederland-select-home-image"><?php esc_html_e('Afbeelding kiezen', 'scouting-nederland'); ?></button>
+    <button type="button" class="button-link-delete scouting-nederland-remove-home-image"><?php esc_html_e('Verwijderen', 'scouting-nederland'); ?></button>
     <?php
 }
 
-function scoutingtc4_button_fields($base, $data) {
+function scoutingNederlandButtonFields($base, $data) {
     $text = isset($data['button_text']) ? $data['button_text'] : '';
     $url = isset($data['button_url']) ? $data['button_url'] : '';
     $color = isset($data['button_color']) ? $data['button_color'] : 'blauw';
     ?>
-    <div class="tc4-button-fields">
-        <label><?php esc_html_e('Tekst', 'scoutingtc4'); ?><br>
+    <div class="scouting-nederland-button-fields">
+        <label><?php esc_html_e('Tekst', 'scouting-nederland'); ?><br>
             <input type="text" name="<?php echo esc_attr($base); ?>[button_text]" value="<?php echo esc_attr($text); ?>" class="widefat">
         </label>
-        <div class="tc4-button-row">
-            <label><?php esc_html_e('URL', 'scoutingtc4'); ?><br>
+        <div class="scouting-nederland-button-row">
+            <label><?php esc_html_e('URL', 'scouting-nederland'); ?><br>
                 <input type="url" name="<?php echo esc_attr($base); ?>[button_url]" value="<?php echo esc_attr($url); ?>" class="widefat">
             </label>
             <fieldset>
-                <legend><?php esc_html_e('Kleur', 'scoutingtc4'); ?></legend>
+                <legend><?php esc_html_e('Kleur', 'scouting-nederland'); ?></legend>
                 <?php foreach (array('blauw' => 'blauw', 'groen' => 'groen', 'zwart' => 'zwart') as $value => $label) : ?>
                     <label><input type="radio" name="<?php echo esc_attr($base); ?>[button_color]" value="<?php echo esc_attr($value); ?>" <?php checked($color, $value); ?>> <?php echo esc_html($label); ?></label><br>
                 <?php endforeach; ?>
@@ -106,22 +106,22 @@ function scoutingtc4_button_fields($base, $data) {
     <?php
 }
 
-function scoutingtc4_render_home_fields_metabox($post) {
-    wp_nonce_field('scoutingtc4_save_home_fields', 'scoutingtc4_home_fields_nonce');
-    $fields = scoutingtc4_get_home_fields($post->ID);
+function scoutingNederlandRenderHomeFieldsMetabox($post) {
+    wp_nonce_field('scouting_nederland_save_home_fields', 'scouting_nederland_home_fields_nonce');
+    $fields = scoutingNederlandGetHomeFields($post->ID);
     ?>
-    <div class="tc4-home-fields">
+    <div class="scouting-nederland-home-fields">
         <p>
             <label>
-                <input type="checkbox" name="tc4_home_fields[enabled]" value="1" <?php checked($fields['enabled'], '1'); ?>>
-                <strong><?php esc_html_e('Homepagina onderdelen tonen vanuit deze velden', 'scoutingtc4'); ?></strong>
+                <input type="checkbox" name="scouting_nederland_home_fields[enabled]" value="1" <?php checked($fields['enabled'], '1'); ?>>
+                <strong><?php esc_html_e('Homepagina onderdelen tonen vanuit deze velden', 'scouting-nederland'); ?></strong>
             </label>
         </p>
-        <p class="description"><?php esc_html_e('Zet dit aan als je de homepage wilt vullen zoals in het oude thema, met onderstaande velden in plaats van losse Gutenberg-blokken.', 'scoutingtc4'); ?></p>
+        <p class="description"><?php esc_html_e('Zet dit aan als je de homepage wilt vullen zoals in het oude thema, met onderstaande velden in plaats van losse Gutenberg-blokken.', 'scouting-nederland'); ?></p>
 
-        <h2><?php esc_html_e('Featured items', 'scoutingtc4'); ?></h2>
+        <h2><?php esc_html_e('Featured items', 'scouting-nederland'); ?></h2>
         <table class="widefat striped">
-            <thead><tr><th style="width:60px;"></th><th><?php esc_html_e('Item', 'scoutingtc4'); ?></th></tr></thead>
+            <thead><tr><th style="width:60px;"></th><th><?php esc_html_e('Item', 'scouting-nederland'); ?></th></tr></thead>
             <tbody>
             <?php for ($i = 0; $i < 3; $i++) :
                 $item = isset($fields['featured']['items'][$i]) ? $fields['featured']['items'][$i] : array();
@@ -129,17 +129,17 @@ function scoutingtc4_render_home_fields_metabox($post) {
                 <tr>
                     <td><?php echo esc_html($i + 1); ?></td>
                     <td>
-                        <p><label><?php esc_html_e('Kop', 'scoutingtc4'); ?><br>
-                            <input type="text" class="widefat" name="tc4_home_fields[featured][items][<?php echo esc_attr($i); ?>][title]" value="<?php echo esc_attr(isset($item['title']) ? $item['title'] : ''); ?>">
+                        <p><label><?php esc_html_e('Kop', 'scouting-nederland'); ?><br>
+                            <input type="text" class="widefat" name="scouting_nederland_home_fields[featured][items][<?php echo esc_attr($i); ?>][title]" value="<?php echo esc_attr(isset($item['title']) ? $item['title'] : ''); ?>">
                         </label></p>
-                        <p><label><?php esc_html_e('Beeld', 'scoutingtc4'); ?></label><br>
-                            <?php scoutingtc4_home_image_field("tc4_home_fields[featured][items][$i][image_id]", isset($item['image_id']) ? $item['image_id'] : 0); ?>
+                        <p><label><?php esc_html_e('Beeld', 'scouting-nederland'); ?></label><br>
+                            <?php scoutingNederlandHomeImageField("scouting_nederland_home_fields[featured][items][$i][image_id]", isset($item['image_id']) ? $item['image_id'] : 0); ?>
                         </p>
-                        <p><label><?php esc_html_e('Tekst', 'scoutingtc4'); ?><br>
-                            <textarea class="widefat" rows="4" name="tc4_home_fields[featured][items][<?php echo esc_attr($i); ?>][text]"><?php echo esc_textarea(isset($item['text']) ? $item['text'] : ''); ?></textarea>
+                        <p><label><?php esc_html_e('Tekst', 'scouting-nederland'); ?><br>
+                            <textarea class="widefat" rows="4" name="scouting_nederland_home_fields[featured][items][<?php echo esc_attr($i); ?>][text]"><?php echo esc_textarea(isset($item['text']) ? $item['text'] : ''); ?></textarea>
                         </label></p>
-                        <fieldset class="tc4-fieldset"><legend><?php esc_html_e('Knop', 'scoutingtc4'); ?></legend>
-                            <?php scoutingtc4_button_fields("tc4_home_fields[featured][items][$i]", $item); ?>
+                        <fieldset class="scouting-nederland-fieldset"><legend><?php esc_html_e('Knop', 'scouting-nederland'); ?></legend>
+                            <?php scoutingNederlandButtonFields("scouting_nederland_home_fields[featured][items][$i]", $item); ?>
                         </fieldset>
                     </td>
                 </tr>
@@ -147,79 +147,79 @@ function scoutingtc4_render_home_fields_metabox($post) {
             </tbody>
         </table>
 
-        <h2><?php esc_html_e('Callout', 'scoutingtc4'); ?></h2>
+        <h2><?php esc_html_e('Callout', 'scouting-nederland'); ?></h2>
         <table class="form-table">
             <tr>
-                <th><?php esc_html_e('Eigen beeld gebruiken', 'scoutingtc4'); ?></th>
+                <th><?php esc_html_e('Eigen beeld gebruiken', 'scouting-nederland'); ?></th>
                 <td>
-                    <label><input type="radio" name="tc4_home_fields[callout][own_image]" value="1" <?php checked($fields['callout']['own_image'], '1'); ?>> ja</label>
-                    <label><input type="radio" name="tc4_home_fields[callout][own_image]" value="0" <?php checked($fields['callout']['own_image'], '0'); ?>> nee</label>
+                    <label><input type="radio" name="scouting_nederland_home_fields[callout][own_image]" value="1" <?php checked($fields['callout']['own_image'], '1'); ?>> ja</label>
+                    <label><input type="radio" name="scouting_nederland_home_fields[callout][own_image]" value="0" <?php checked($fields['callout']['own_image'], '0'); ?>> nee</label>
                 </td>
             </tr>
             <tr>
-                <th><?php esc_html_e('Beeld [eigen]', 'scoutingtc4'); ?></th>
-                <td><?php scoutingtc4_home_image_field('tc4_home_fields[callout][image_id]', $fields['callout']['image_id']); ?></td>
+                <th><?php esc_html_e('Beeld [eigen]', 'scouting-nederland'); ?></th>
+                <td><?php scoutingNederlandHomeImageField('scouting_nederland_home_fields[callout][image_id]', $fields['callout']['image_id']); ?></td>
             </tr>
             <tr>
-                <th><?php esc_html_e('Beeld [lijst]', 'scoutingtc4'); ?></th>
+                <th><?php esc_html_e('Beeld [lijst]', 'scouting-nederland'); ?></th>
                 <td>
-                    <select name="tc4_home_fields[callout][preset]" class="widefat">
+                    <select name="scouting_nederland_home_fields[callout][preset]" class="widefat">
                         <option value="kompas" <?php selected($fields['callout']['preset'], 'kompas'); ?>>kompas</option>
                         <option value="bijl" <?php selected($fields['callout']['preset'], 'bijl'); ?>>bijl</option>
                     </select>
                 </td>
             </tr>
             <tr>
-                <th><?php esc_html_e('Titel', 'scoutingtc4'); ?></th>
-                <td><input type="text" class="widefat" name="tc4_home_fields[callout][title]" value="<?php echo esc_attr($fields['callout']['title']); ?>"></td>
+                <th><?php esc_html_e('Titel', 'scouting-nederland'); ?></th>
+                <td><input type="text" class="widefat" name="scouting_nederland_home_fields[callout][title]" value="<?php echo esc_attr($fields['callout']['title']); ?>"></td>
             </tr>
             <tr>
-                <th><?php esc_html_e('Tekst', 'scoutingtc4'); ?></th>
-                <td><?php wp_editor($fields['callout']['text'], 'tc4_callout_text', array('textarea_name' => 'tc4_home_fields[callout][text]', 'textarea_rows' => 8, 'media_buttons' => false)); ?></td>
+                <th><?php esc_html_e('Tekst', 'scouting-nederland'); ?></th>
+                <td><?php wp_editor($fields['callout']['text'], 'scouting_nederland_callout_text', array('textarea_name' => 'scouting_nederland_home_fields[callout][text]', 'textarea_rows' => 8, 'media_buttons' => false)); ?></td>
             </tr>
             <tr>
-                <th><?php esc_html_e('Knop', 'scoutingtc4'); ?></th>
-                <td><?php scoutingtc4_button_fields('tc4_home_fields[callout]', $fields['callout']); ?></td>
+                <th><?php esc_html_e('Knop', 'scouting-nederland'); ?></th>
+                <td><?php scoutingNederlandButtonFields('scouting_nederland_home_fields[callout]', $fields['callout']); ?></td>
             </tr>
         </table>
 
-        <h2><?php esc_html_e('Intro tekst', 'scoutingtc4'); ?></h2>
-        <?php wp_editor($fields['intro_text'], 'tc4_intro_text', array('textarea_name' => 'tc4_home_fields[intro_text]', 'textarea_rows' => 6, 'media_buttons' => false)); ?>
+        <h2><?php esc_html_e('Intro tekst', 'scouting-nederland'); ?></h2>
+        <?php wp_editor($fields['intro_text'], 'scouting_nederland_intro_text', array('textarea_name' => 'scouting_nederland_home_fields[intro_text]', 'textarea_rows' => 6, 'media_buttons' => false)); ?>
 
-        <h2><?php esc_html_e('Nieuws items', 'scoutingtc4'); ?></h2>
+        <h2><?php esc_html_e('Nieuws items', 'scouting-nederland'); ?></h2>
         <table class="form-table">
-            <tr><th><?php esc_html_e('Titel', 'scoutingtc4'); ?></th><td><input type="text" class="widefat" name="tc4_home_fields[news][title]" value="<?php echo esc_attr($fields['news']['title']); ?>"></td></tr>
-            <tr><th><?php esc_html_e('Bron', 'scoutingtc4'); ?></th><td>
-                <label><input type="radio" name="tc4_home_fields[news][mode]" value="latest" <?php checked($fields['news']['mode'], 'latest'); ?>> <?php esc_html_e('Laatste berichten', 'scoutingtc4'); ?></label><br>
-                <label><input type="radio" name="tc4_home_fields[news][mode]" value="manual" <?php checked($fields['news']['mode'], 'manual'); ?>> <?php esc_html_e('Handmatig gekozen berichten', 'scoutingtc4'); ?></label>
+            <tr><th><?php esc_html_e('Titel', 'scouting-nederland'); ?></th><td><input type="text" class="widefat" name="scouting_nederland_home_fields[news][title]" value="<?php echo esc_attr($fields['news']['title']); ?>"></td></tr>
+            <tr><th><?php esc_html_e('Bron', 'scouting-nederland'); ?></th><td>
+                <label><input type="radio" name="scouting_nederland_home_fields[news][mode]" value="latest" <?php checked($fields['news']['mode'], 'latest'); ?>> <?php esc_html_e('Laatste berichten', 'scouting-nederland'); ?></label><br>
+                <label><input type="radio" name="scouting_nederland_home_fields[news][mode]" value="manual" <?php checked($fields['news']['mode'], 'manual'); ?>> <?php esc_html_e('Handmatig gekozen berichten', 'scouting-nederland'); ?></label>
             </td></tr>
-            <tr><th><?php esc_html_e('Aantal', 'scoutingtc4'); ?></th><td><input type="number" min="1" max="6" name="tc4_home_fields[news][count]" value="<?php echo esc_attr($fields['news']['count']); ?>"></td></tr>
-            <tr><th><?php esc_html_e('Bericht IDs', 'scoutingtc4'); ?></th><td><input type="text" class="widefat" name="tc4_home_fields[news][post_ids]" value="<?php echo esc_attr($fields['news']['post_ids']); ?>"><p class="description"><?php esc_html_e('Alleen bij handmatig. Vul bericht-ID’s in, gescheiden met komma’s.', 'scoutingtc4'); ?></p></td></tr>
-            <tr><th><?php esc_html_e('Knop', 'scoutingtc4'); ?></th><td><?php scoutingtc4_button_fields('tc4_home_fields[news]', $fields['news']); ?></td></tr>
+            <tr><th><?php esc_html_e('Aantal', 'scouting-nederland'); ?></th><td><input type="number" min="1" max="6" name="scouting_nederland_home_fields[news][count]" value="<?php echo esc_attr($fields['news']['count']); ?>"></td></tr>
+            <tr><th><?php esc_html_e('Bericht IDs', 'scouting-nederland'); ?></th><td><input type="text" class="widefat" name="scouting_nederland_home_fields[news][post_ids]" value="<?php echo esc_attr($fields['news']['post_ids']); ?>"><p class="description"><?php esc_html_e('Alleen bij handmatig. Vul bericht-ID’s in, gescheiden met komma’s.', 'scouting-nederland'); ?></p></td></tr>
+            <tr><th><?php esc_html_e('Knop', 'scouting-nederland'); ?></th><td><?php scoutingNederlandButtonFields('scouting_nederland_home_fields[news]', $fields['news']); ?></td></tr>
         </table>
 
-        <h2><?php esc_html_e('Twee kolommen', 'scoutingtc4'); ?></h2>
-        <div class="tc4-two-admin">
+        <h2><?php esc_html_e('Twee kolommen', 'scouting-nederland'); ?></h2>
+        <div class="scouting-nederland-two-admin">
             <div>
-                <h3><?php esc_html_e('Kolom 1', 'scoutingtc4'); ?></h3>
-                <p><label><?php esc_html_e('Beeld', 'scoutingtc4'); ?></label><br><?php scoutingtc4_home_image_field('tc4_home_fields[two_columns][left_image_id]', $fields['two_columns']['left_image_id']); ?></p>
-                <p><label><?php esc_html_e('Kop', 'scoutingtc4'); ?><br><input type="text" class="widefat" name="tc4_home_fields[two_columns][left_title]" value="<?php echo esc_attr($fields['two_columns']['left_title']); ?>"></label></p>
-                <p><label><?php esc_html_e('Tekst', 'scoutingtc4'); ?><br><textarea class="widefat" rows="6" name="tc4_home_fields[two_columns][left_text]"><?php echo esc_textarea($fields['two_columns']['left_text']); ?></textarea></label></p>
-                <fieldset class="tc4-fieldset"><legend><?php esc_html_e('Knop', 'scoutingtc4'); ?></legend><?php scoutingtc4_button_fields('tc4_home_fields[two_columns]', array('button_text'=>$fields['two_columns']['left_button_text'], 'button_url'=>$fields['two_columns']['left_button_url'], 'button_color'=>$fields['two_columns']['left_button_color'])); ?></fieldset>
+                <h3><?php esc_html_e('Kolom 1', 'scouting-nederland'); ?></h3>
+                <p><label><?php esc_html_e('Beeld', 'scouting-nederland'); ?></label><br><?php scoutingNederlandHomeImageField('scouting_nederland_home_fields[two_columns][left_image_id]', $fields['two_columns']['left_image_id']); ?></p>
+                <p><label><?php esc_html_e('Kop', 'scouting-nederland'); ?><br><input type="text" class="widefat" name="scouting_nederland_home_fields[two_columns][left_title]" value="<?php echo esc_attr($fields['two_columns']['left_title']); ?>"></label></p>
+                <p><label><?php esc_html_e('Tekst', 'scouting-nederland'); ?><br><textarea class="widefat" rows="6" name="scouting_nederland_home_fields[two_columns][left_text]"><?php echo esc_textarea($fields['two_columns']['left_text']); ?></textarea></label></p>
+                <fieldset class="scouting-nederland-fieldset"><legend><?php esc_html_e('Knop', 'scouting-nederland'); ?></legend><?php scoutingNederlandButtonFields('scouting_nederland_home_fields[two_columns]', array('button_text'=>$fields['two_columns']['left_button_text'], 'button_url'=>$fields['two_columns']['left_button_url'], 'button_color'=>$fields['two_columns']['left_button_color'])); ?></fieldset>
             </div>
             <div>
-                <h3><?php esc_html_e('Kolom 2', 'scoutingtc4'); ?></h3>
-                <p><label><?php esc_html_e('Kop', 'scoutingtc4'); ?><br><input type="text" class="widefat" name="tc4_home_fields[two_columns][right_title]" value="<?php echo esc_attr($fields['two_columns']['right_title']); ?>"></label></p>
-                <p><label><?php esc_html_e('Tekst', 'scoutingtc4'); ?><br><textarea class="widefat" rows="5" name="tc4_home_fields[two_columns][right_text]"><?php echo esc_textarea($fields['two_columns']['right_text']); ?></textarea></label></p>
-                <p><label><?php esc_html_e('Tweede kop', 'scoutingtc4'); ?><br><input type="text" class="widefat" name="tc4_home_fields[two_columns][right_second_title]" value="<?php echo esc_attr($fields['two_columns']['right_second_title']); ?>"></label></p>
-                <p><label><?php esc_html_e('Tweede tekst', 'scoutingtc4'); ?><br><textarea class="widefat" rows="5" name="tc4_home_fields[two_columns][right_second_text]"><?php echo esc_textarea($fields['two_columns']['right_second_text']); ?></textarea></label></p>
-                <fieldset class="tc4-fieldset"><legend><?php esc_html_e('Knop', 'scoutingtc4'); ?></legend>
-                    <label><?php esc_html_e('Tekst', 'scoutingtc4'); ?><br><input type="text" class="widefat" name="tc4_home_fields[two_columns][right_button_text]" value="<?php echo esc_attr($fields['two_columns']['right_button_text']); ?>"></label>
-                    <div class="tc4-button-row">
-                        <label><?php esc_html_e('URL', 'scoutingtc4'); ?><br><input type="url" class="widefat" name="tc4_home_fields[two_columns][right_button_url]" value="<?php echo esc_attr($fields['two_columns']['right_button_url']); ?>"></label>
-                        <fieldset><legend><?php esc_html_e('Kleur', 'scoutingtc4'); ?></legend>
+                <h3><?php esc_html_e('Kolom 2', 'scouting-nederland'); ?></h3>
+                <p><label><?php esc_html_e('Kop', 'scouting-nederland'); ?><br><input type="text" class="widefat" name="scouting_nederland_home_fields[two_columns][right_title]" value="<?php echo esc_attr($fields['two_columns']['right_title']); ?>"></label></p>
+                <p><label><?php esc_html_e('Tekst', 'scouting-nederland'); ?><br><textarea class="widefat" rows="5" name="scouting_nederland_home_fields[two_columns][right_text]"><?php echo esc_textarea($fields['two_columns']['right_text']); ?></textarea></label></p>
+                <p><label><?php esc_html_e('Tweede kop', 'scouting-nederland'); ?><br><input type="text" class="widefat" name="scouting_nederland_home_fields[two_columns][right_second_title]" value="<?php echo esc_attr($fields['two_columns']['right_second_title']); ?>"></label></p>
+                <p><label><?php esc_html_e('Tweede tekst', 'scouting-nederland'); ?><br><textarea class="widefat" rows="5" name="scouting_nederland_home_fields[two_columns][right_second_text]"><?php echo esc_textarea($fields['two_columns']['right_second_text']); ?></textarea></label></p>
+                <fieldset class="scouting-nederland-fieldset"><legend><?php esc_html_e('Knop', 'scouting-nederland'); ?></legend>
+                    <label><?php esc_html_e('Tekst', 'scouting-nederland'); ?><br><input type="text" class="widefat" name="scouting_nederland_home_fields[two_columns][right_button_text]" value="<?php echo esc_attr($fields['two_columns']['right_button_text']); ?>"></label>
+                    <div class="scouting-nederland-button-row">
+                        <label><?php esc_html_e('URL', 'scouting-nederland'); ?><br><input type="url" class="widefat" name="scouting_nederland_home_fields[two_columns][right_button_url]" value="<?php echo esc_attr($fields['two_columns']['right_button_url']); ?>"></label>
+                        <fieldset><legend><?php esc_html_e('Kleur', 'scouting-nederland'); ?></legend>
                             <?php foreach (array('blauw'=>'blauw', 'groen'=>'groen', 'zwart'=>'zwart') as $value=>$label) : ?>
-                                <label><input type="radio" name="tc4_home_fields[two_columns][right_button_color]" value="<?php echo esc_attr($value); ?>" <?php checked($fields['two_columns']['right_button_color'], $value); ?>> <?php echo esc_html($label); ?></label><br>
+                                <label><input type="radio" name="scouting_nederland_home_fields[two_columns][right_button_color]" value="<?php echo esc_attr($value); ?>" <?php checked($fields['two_columns']['right_button_color'], $value); ?>> <?php echo esc_html($label); ?></label><br>
                             <?php endforeach; ?>
                         </fieldset>
                     </div>
@@ -230,8 +230,8 @@ function scoutingtc4_render_home_fields_metabox($post) {
     <?php
 }
 
-function scoutingtc4_sanitize_home_fields($raw) {
-    $defaults = scoutingtc4_home_fields_defaults();
+function scoutingNederlandSanitizeHomeFields($raw) {
+    $defaults = scoutingNederlandHomeFieldsDefaults();
     $raw = is_array($raw) ? $raw : array();
     $out = $defaults;
     $out['enabled'] = !empty($raw['enabled']) ? '1' : '0';
@@ -296,8 +296,8 @@ function scoutingtc4_sanitize_home_fields($raw) {
     return $out;
 }
 
-function scoutingtc4_save_home_fields_metabox($post_id) {
-    if (!isset($_POST['scoutingtc4_home_fields_nonce']) || !wp_verify_nonce($_POST['scoutingtc4_home_fields_nonce'], 'scoutingtc4_save_home_fields')) {
+function scoutingNederlandSaveHomeFieldsMetabox($post_id) {
+    if (!isset($_POST['scouting_nederland_home_fields_nonce']) || !wp_verify_nonce($_POST['scouting_nederland_home_fields_nonce'], 'scouting_nederland_save_home_fields')) {
         return;
     }
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
@@ -306,20 +306,20 @@ function scoutingtc4_save_home_fields_metabox($post_id) {
     if (!current_user_can('edit_page', $post_id)) {
         return;
     }
-    update_post_meta($post_id, '_tc4_home_fields', scoutingtc4_sanitize_home_fields($_POST['tc4_home_fields'] ?? array()));
+    update_post_meta($post_id, '_scouting_nederland_home_fields', scoutingNederlandSanitizeHomeFields($_POST['scouting_nederland_home_fields'] ?? array()));
 }
 
-function scoutingtc4_button_class_from_color($color) {
+function scoutingNederlandButtonClassFromColor($color) {
     if ($color === 'groen') {
-        return 'tc4-btn-green';
+        return 'scouting-nederland-btn-green';
     }
     if ($color === 'zwart') {
-        return 'tc4-btn-black';
+        return 'scouting-nederland-btn-black';
     }
-    return 'tc4-btn-blue';
+    return 'scouting-nederland-btn-blue';
 }
 
-function scoutingtc4_render_button_from_fields($data, $prefix = '') {
+function scoutingNederlandRenderButtonFromFields($data, $prefix = '') {
     $text_key = $prefix ? $prefix . '_button_text' : 'button_text';
     $url_key = $prefix ? $prefix . '_button_url' : 'button_url';
     $color_key = $prefix ? $prefix . '_button_color' : 'button_color';
@@ -329,25 +329,25 @@ function scoutingtc4_render_button_from_fields($data, $prefix = '') {
     }
     $url = $data[$url_key] ?? '#';
     $color = $data[$color_key] ?? 'blauw';
-    echo '<a class="tc4-btn ' . esc_attr(scoutingtc4_button_class_from_color($color)) . '" href="' . esc_url($url ?: '#') . '">' . esc_html($text) . '</a>';
+    echo '<a class="scouting-nederland-btn ' . esc_attr(scoutingNederlandButtonClassFromColor($color)) . '" href="' . esc_url($url ?: '#') . '">' . esc_html($text) . '</a>';
 }
 
-function scoutingtc4_render_home_fields_frontend($post_id = null) {
+function scoutingNederlandRenderHomeFieldsFrontend($post_id = null) {
     $post_id = $post_id ?: get_the_ID();
-    $fields = scoutingtc4_get_home_fields($post_id);
+    $fields = scoutingNederlandGetHomeFields($post_id);
     if ($fields['enabled'] !== '1') {
         return false;
     }
 
-    echo '<div class="tc4-home-fields-rendered">';
+    echo '<div class="scouting-nederland-home-fields-rendered">';
 
-    echo '<section class="tc4-block-featured-items"><div class="tc4-featured-grid">';
+    echo '<section class="scouting-nederland-block-featured-items"><div class="scouting-nederland-featured-grid">';
     foreach ($fields['featured']['items'] as $item) {
-        echo '<article class="tc4-featured-item">';
+        echo '<article class="scouting-nederland-featured-item">';
         if (!empty($item['title'])) echo '<h2>' . esc_html($item['title']) . '</h2>';
-        if (!empty($item['image_id'])) echo wp_get_attachment_image(absint($item['image_id']), 'tc4_home_card');
+        if (!empty($item['image_id'])) echo wp_get_attachment_image(absint($item['image_id']), 'scouting_nederland_home_card');
         if (!empty($item['text'])) echo '<p>' . wp_kses_post(nl2br($item['text'])) . '</p>';
-        scoutingtc4_render_button_from_fields($item);
+        scoutingNederlandRenderButtonFromFields($item);
         echo '</article>';
     }
     echo '</div></section>';
@@ -361,16 +361,16 @@ function scoutingtc4_render_home_fields_frontend($post_id = null) {
     } else {
         $callout_image = get_template_directory_uri() . '/assets/images/callout-kompas.png';
     }
-    echo '<section class="tc4-block-callout"><div class="tc4-callout-inner"><div class="tc4-callout-image">';
+    echo '<section class="scouting-nederland-block-callout"><div class="scouting-nederland-callout-inner"><div class="scouting-nederland-callout-image">';
     if ($callout_image) echo '<img src="' . esc_url($callout_image) . '" alt="">';
-    echo '</div><div class="tc4-callout-text">';
+    echo '</div><div class="scouting-nederland-callout-text">';
     if (!empty($callout['title'])) echo '<h2>' . esc_html($callout['title']) . '</h2>';
-    if (!empty($callout['text'])) echo '<div class="tc4-callout-copy">' . wp_kses_post(wpautop($callout['text'])) . '</div>';
-    scoutingtc4_render_button_from_fields($callout);
+    if (!empty($callout['text'])) echo '<div class="scouting-nederland-callout-copy">' . wp_kses_post(wpautop($callout['text'])) . '</div>';
+    scoutingNederlandRenderButtonFromFields($callout);
     echo '</div></div></section>';
 
     if (!empty($fields['intro_text'])) {
-        echo '<section class="tc4-home-intro-text">' . wp_kses_post(wpautop($fields['intro_text'])) . '</section>';
+        echo '<section class="scouting-nederland-home-intro-text">' . wp_kses_post(wpautop($fields['intro_text'])) . '</section>';
     }
 
     $news = $fields['news'];
@@ -384,35 +384,35 @@ function scoutingtc4_render_home_fields_frontend($post_id = null) {
         }
     }
     $q = new WP_Query($args);
-    echo '<section class="tc4-block-news">';
+    echo '<section class="scouting-nederland-block-news">';
     if (!empty($news['title'])) echo '<h2>' . esc_html($news['title']) . '</h2>';
-    echo '<div class="tc4-news-grid-real">';
+    echo '<div class="scouting-nederland-news-grid-real">';
     while ($q->have_posts()) {
         $q->the_post();
-        echo '<article class="tc4-news-card">';
-        if (has_post_thumbnail()) echo '<a href="' . esc_url(get_permalink()) . '">' . get_the_post_thumbnail(get_the_ID(), 'tc4_home_card') . '</a>';
-        echo '<div class="tc4-news-card-title"><small>' . esc_html(get_the_date()) . '</small><h3><a href="' . esc_url(get_permalink()) . '">' . esc_html(get_the_title()) . '</a></h3></div>';
-        echo '<p>' . esc_html(scoutingtc4_trim_text_chars(get_the_excerpt(), 142)) . '</p>';
-        echo '<a class="tc4-read-more" href="' . esc_url(get_permalink()) . '">' . esc_html__('Lees meer', 'scoutingtc4') . ' ›</a>';
+        echo '<article class="scouting-nederland-news-card">';
+        if (has_post_thumbnail()) echo '<a href="' . esc_url(get_permalink()) . '">' . get_the_post_thumbnail(get_the_ID(), 'scouting_nederland_home_card') . '</a>';
+        echo '<div class="scouting-nederland-news-card-title"><small>' . esc_html(get_the_date()) . '</small><h3><a href="' . esc_url(get_permalink()) . '">' . esc_html(get_the_title()) . '</a></h3></div>';
+        echo '<p>' . esc_html(scoutingNederlandTrimTextChars(get_the_excerpt(), 142)) . '</p>';
+        echo '<a class="scouting-nederland-read-more" href="' . esc_url(get_permalink()) . '">' . esc_html__('Lees meer', 'scouting-nederland') . ' ›</a>';
         echo '</article>';
     }
     wp_reset_postdata();
     echo '</div>';
-    scoutingtc4_render_button_from_fields($news);
+    scoutingNederlandRenderButtonFromFields($news);
     echo '</section>';
 
     $two = $fields['two_columns'];
-    echo '<section class="tc4-block-two-columns"><div class="tc4-two-left">';
-    if (!empty($two['left_image_id'])) echo wp_get_attachment_image(absint($two['left_image_id']), 'tc4_home_card');
+    echo '<section class="scouting-nederland-block-two-columns"><div class="scouting-nederland-two-left">';
+    if (!empty($two['left_image_id'])) echo wp_get_attachment_image(absint($two['left_image_id']), 'scouting_nederland_home_card');
     if (!empty($two['left_title'])) echo '<h2>' . esc_html($two['left_title']) . '</h2>';
     if (!empty($two['left_text'])) echo '<p>' . wp_kses_post(nl2br($two['left_text'])) . '</p>';
-    scoutingtc4_render_button_from_fields($two, 'left');
-    echo '</div><div class="tc4-two-right">';
+    scoutingNederlandRenderButtonFromFields($two, 'left');
+    echo '</div><div class="scouting-nederland-two-right">';
     if (!empty($two['right_title'])) echo '<h2>' . esc_html($two['right_title']) . '</h2>';
     if (!empty($two['right_text'])) echo '<p>' . wp_kses_post(nl2br($two['right_text'])) . '</p>';
     if (!empty($two['right_second_title'])) echo '<h2>' . esc_html($two['right_second_title']) . '</h2>';
     if (!empty($two['right_second_text'])) echo '<p>' . wp_kses_post(nl2br($two['right_second_text'])) . '</p>';
-    scoutingtc4_render_button_from_fields($two, 'right');
+    scoutingNederlandRenderButtonFromFields($two, 'right');
     echo '</div></section>';
 
     echo '</div>';

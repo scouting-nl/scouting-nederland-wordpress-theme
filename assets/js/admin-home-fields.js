@@ -1,9 +1,9 @@
 jQuery(function($){
-  $(document).on('click', '.tc4-select-home-image', function(e){
+  $(document).on('click', '.scouting-nederland-select-home-image', function(e){
     e.preventDefault();
     var wrap = $(this).closest('p, td, div');
-    var idField = wrap.find('.tc4-image-id').first();
-    var preview = wrap.find('.tc4-image-preview').first();
+    var idField = wrap.find('.scouting-nederland-image-id').first();
+    var preview = wrap.find('.scouting-nederland-image-preview').first();
     var frame = wp.media({
       title: 'Afbeelding kiezen',
       button: { text: 'Gebruik afbeelding' },
@@ -18,10 +18,10 @@ jQuery(function($){
     frame.open();
   });
 
-  $(document).on('click', '.tc4-remove-home-image', function(e){
+  $(document).on('click', '.scouting-nederland-remove-home-image', function(e){
     e.preventDefault();
     var wrap = $(this).closest('p, td, div');
-    wrap.find('.tc4-image-id').first().val('');
-    wrap.find('.tc4-image-preview').first().empty();
+    wrap.find('.scouting-nederland-image-id').first().val('');
+    wrap.find('.scouting-nederland-image-preview').first().empty();
   });
 });

@@ -1,7 +1,7 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
 
-class ScoutingTC4_Bootstrap_Navwalker extends Walker_Nav_Menu {
+class ScoutingNederlandBootstrapNavwalker extends Walker_Nav_Menu {
     public function start_lvl(&$output, $depth = 0, $args = null) {
         $output .= "\n<ul class=\"dropdown-menu\">\n";
     }
@@ -27,9 +27,9 @@ class ScoutingTC4_Bootstrap_Navwalker extends Walker_Nav_Menu {
     }
 }
 
-function scoutingtc4_body_classes($classes) {
-    $main = get_theme_mod('scoutingtc4_main_color', 'mgroen');
-    $support = get_theme_mod('scoutingtc4_sub_color', 'sgroen');
+function scoutingNederlandBodyClasses($classes) {
+    $main = get_theme_mod('scouting_nederland_main_color', 'mgroen');
+    $support = get_theme_mod('scouting_nederland_sub_color', 'sgroen');
 
     $classes[] = $main;
     $classes[] = $support;
@@ -62,4 +62,4 @@ function scoutingtc4_body_classes($classes) {
 
     return array_unique($classes);
 }
-add_filter('body_class', 'scoutingtc4_body_classes');
+add_filter('body_class', 'scoutingNederlandBodyClasses');

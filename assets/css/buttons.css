@@ -1,70 +1,70 @@
-.tc4-btn,
-.btn.tc4-btn-blue,
-.btn.tc4-btn-green,
-.btn.tc4-btn-black {
+.scouting-nederland-btn,
+.btn.scouting-nederland-btn-blue,
+.btn.scouting-nederland-btn-green,
+.btn.scouting-nederland-btn-black {
   color: #fff !important;
   text-decoration: none !important;
   border: 0;
 }
 
-.tc4-btn:visited,
-.tc4-btn:hover,
-.tc4-btn:focus,
-.tc4-btn:active,
-.btn.tc4-btn-blue:visited,
-.btn.tc4-btn-blue:hover,
-.btn.tc4-btn-blue:focus,
-.btn.tc4-btn-blue:active,
-.btn.tc4-btn-green:visited,
-.btn.tc4-btn-green:hover,
-.btn.tc4-btn-green:focus,
-.btn.tc4-btn-green:active,
-.btn.tc4-btn-black:visited,
-.btn.tc4-btn-black:hover,
-.btn.tc4-btn-black:focus,
-.btn.tc4-btn-black:active {
+.scouting-nederland-btn:visited,
+.scouting-nederland-btn:hover,
+.scouting-nederland-btn:focus,
+.scouting-nederland-btn:active,
+.btn.scouting-nederland-btn-blue:visited,
+.btn.scouting-nederland-btn-blue:hover,
+.btn.scouting-nederland-btn-blue:focus,
+.btn.scouting-nederland-btn-blue:active,
+.btn.scouting-nederland-btn-green:visited,
+.btn.scouting-nederland-btn-green:hover,
+.btn.scouting-nederland-btn-green:focus,
+.btn.scouting-nederland-btn-green:active,
+.btn.scouting-nederland-btn-black:visited,
+.btn.scouting-nederland-btn-black:hover,
+.btn.scouting-nederland-btn-black:focus,
+.btn.scouting-nederland-btn-black:active {
   color: #fff !important;
   text-decoration: none !important;
 }
 
-.tc4-btn-blue {
-  background-color: var(--tc4-support-color, #0066b2) !important;
+.scouting-nederland-btn-blue {
+  background-color: var(--scouting-nederland-support-color, #0066b2) !important;
 }
 
-.tc4-btn-green {
+.scouting-nederland-btn-green {
   background-color: #00a551 !important;
 }
 
-.tc4-btn-black {
+.scouting-nederland-btn-black {
   background-color: #000 !important;
 }
 
-.tc4-btn-blue:hover,
-.tc4-btn-blue:focus,
-.tc4-btn-blue:active {
-  background-color: var(--tc4-support-color, #0066b2) !important;
+.scouting-nederland-btn-blue:hover,
+.scouting-nederland-btn-blue:focus,
+.scouting-nederland-btn-blue:active {
+  background-color: var(--scouting-nederland-support-color, #0066b2) !important;
 }
 
-.tc4-btn-green:hover,
-.tc4-btn-green:focus,
-.tc4-btn-green:active {
+.scouting-nederland-btn-green:hover,
+.scouting-nederland-btn-green:focus,
+.scouting-nederland-btn-green:active {
   background-color: #00a551 !important;
 }
 
-.tc4-btn-black:hover,
-.tc4-btn-black:focus,
-.tc4-btn-black:active {
+.scouting-nederland-btn-black:hover,
+.scouting-nederland-btn-black:focus,
+.scouting-nederland-btn-black:active {
   background-color: #000 !important;
 }
 
-.tc4-btn span {
+.scouting-nederland-btn span {
   color: inherit;
 }
 
-.wp-block-button:not(.is-style-outline):not([class*="is-style-tc4-"]) .wp-block-button__link.wp-element-button,
-.wp-block-button:not(.is-style-outline):not([class*="is-style-tc4-"]) .wp-block-button__link,
+.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link.wp-element-button,
+.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link,
 a.wp-block-button__link.wp-element-button:not(.has-background):not(.has-text-color) {
-  background-color: var(--tc4-main-color, #00a551) !important;
+  background-color: var(--scouting-nederland-main-color, #00a551) !important;
   color: #fff !important;
   border: 0 !important;
   text-decoration: none !important;
@@ -74,19 +74,19 @@ a.wp-block-button__link.wp-element-button:not(.has-background):not(.has-text-col
   min-height: 0 !important;
 }
 
-.wp-block-button:not(.is-style-outline):not([class*="is-style-tc4-"]) .wp-block-button__link.wp-element-button:visited,
-.wp-block-button:not(.is-style-outline):not([class*="is-style-tc4-"]) .wp-block-button__link:visited,
+.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link.wp-element-button:visited,
+.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link:visited,
 a.wp-block-button__link.wp-element-button:not(.has-background):not(.has-text-color):visited,
-.wp-block-button:not(.is-style-outline):not([class*="is-style-tc4-"]) .wp-block-button__link.wp-element-button:hover,
-.wp-block-button:not(.is-style-outline):not([class*="is-style-tc4-"]) .wp-block-button__link:hover,
+.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link.wp-element-button:hover,
+.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link:hover,
 a.wp-block-button__link.wp-element-button:not(.has-background):not(.has-text-color):hover,
-.wp-block-button:not(.is-style-outline):not([class*="is-style-tc4-"]) .wp-block-button__link.wp-element-button:focus,
-.wp-block-button:not(.is-style-outline):not([class*="is-style-tc4-"]) .wp-block-button__link:focus,
+.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link.wp-element-button:focus,
+.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link:focus,
 a.wp-block-button__link.wp-element-button:not(.has-background):not(.has-text-color):focus,
-.wp-block-button:not(.is-style-outline):not([class*="is-style-tc4-"]) .wp-block-button__link.wp-element-button:active,
-.wp-block-button:not(.is-style-outline):not([class*="is-style-tc4-"]) .wp-block-button__link:active,
+.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link.wp-element-button:active,
+.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link:active,
 a.wp-block-button__link.wp-element-button:not(.has-background):not(.has-text-color):active {
-  background-color: var(--tc4-main-color, #00a551) !important;
+  background-color: var(--scouting-nederland-main-color, #00a551) !important;
   color: #fff !important;
   text-decoration: none !important;
 }

@@ -1,4 +1,4 @@
-(function(wp, tc4){
+(function(wp, scoutingNederland){
     const {
         registerBlockType,
         __,
@@ -21,12 +21,12 @@
         StableClassicEditor,
         ClassicHtmlEditor,
         LinkPickerField
-    } = tc4;
+    } = scoutingNederland;
 
-registerBlockType('scoutingtc4/news-items', {
-        title: __('Nieuws items', 'scoutingtc4'),
+registerBlockType('scouting-nederland/news-items', {
+        title: __('Nieuws items', 'scouting-nederland'),
         icon: 'welcome-write-blog',
-        category: 'scoutingtc4',
+        category: 'scouting-nederland',
         attributes: {
             title:{type:'string', default:'Nieuws'},
             categoryIds:{type:'array', default:[]},
@@ -39,8 +39,8 @@ registerBlockType('scoutingtc4/news-items', {
         },
         edit: (props) => {
             const a = props.attributes;
-            const categories = (window.scoutingtc4Blocks && scoutingtc4Blocks.newsCategories) ? scoutingtc4Blocks.newsCategories : [];
-            const posts = (window.scoutingtc4Blocks && scoutingtc4Blocks.newsPosts) ? scoutingtc4Blocks.newsPosts : [];
+            const categories = (globalThis.scoutingNederlandBlocks && scoutingNederlandBlocks.newsCategories) ? scoutingNederlandBlocks.newsCategories : [];
+            const posts = (globalThis.scoutingNederlandBlocks && scoutingNederlandBlocks.newsPosts) ? scoutingNederlandBlocks.newsPosts : [];
 
             const selectedCategories = Array.isArray(a.categoryIds) ? a.categoryIds : [];
             const selectedPosts = Array.isArray(a.postIds) ? a.postIds : [];
@@ -72,7 +72,7 @@ registerBlockType('scoutingtc4/news-items', {
                 .map(id => posts.find(p => parseInt(p.id, 10) === parseInt(id, 10)))
                 .filter(Boolean);
 
-            const colorRadios = () => wp.element.createElement('div', {className:'tc4-editor-radio-row'},
+            const colorRadios = () => wp.element.createElement('div', {className:'scouting-nederland-editor-radio-row'},
                 ['blauw','groen','zwart'].map(color =>
                     wp.element.createElement('label', {key:color},
                         wp.element.createElement('input', {
@@ -85,12 +85,12 @@ registerBlockType('scoutingtc4/news-items', {
                 )
             );
 
-            return wp.element.createElement('div', {className:'tc4-acf-like-block tc4-news-editor-form'},
-                wp.element.createElement('div', {className:'tc4-acf-row'},
+            return wp.element.createElement('div', {className:'scouting-nederland-acf-like-block scouting-nederland-news-editor-form'},
+                wp.element.createElement('div', {className:'scouting-nederland-acf-row'},
                     wp.element.createElement('label', {}, 'Titel'),
-                    wp.element.createElement('div', {className:'tc4-news-category-box'},
+                    wp.element.createElement('div', {className:'scouting-nederland-news-category-box'},
                         categories.length ? categories.map(cat =>
-                            wp.element.createElement('label', {key:cat.id, className:'tc4-news-checkbox'},
+                            wp.element.createElement('label', {key:cat.id, className:'scouting-nederland-news-checkbox'},
                                 wp.element.createElement('input', {
                                     type:'checkbox',
                                     checked:selectedCategories.includes(parseInt(cat.id, 10)),
@@ -101,12 +101,12 @@ registerBlockType('scoutingtc4/news-items', {
                         ) : wp.element.createElement('em', {}, 'Geen categorieën gevonden')
                     )
                 ),
-                wp.element.createElement('div', {className:'tc4-acf-row'},
+                wp.element.createElement('div', {className:'scouting-nederland-acf-row'},
                     wp.element.createElement('label', {}, 'Nieuwsitems'),
-                    wp.element.createElement('div', {className:'tc4-news-select-wrap'},
-                        wp.element.createElement('div', {className:'tc4-news-token-field'},
+                    wp.element.createElement('div', {className:'scouting-nederland-news-select-wrap'},
+                        wp.element.createElement('div', {className:'scouting-nederland-news-token-field'},
                             selectedPostObjects.map(post =>
-                                wp.element.createElement('span', {key:post.id, className:'tc4-news-token'},
+                                wp.element.createElement('span', {key:post.id, className:'scouting-nederland-news-token'},
                                     '× ' + post.title,
                                     wp.element.createElement('button', {
                                         type:'button',
@@ -117,7 +117,7 @@ registerBlockType('scoutingtc4/news-items', {
                             )
                         ),
                         wp.element.createElement('select', {
-                            className:'tc4-acf-select',
+                            className:'scouting-nederland-acf-select',
                             value:'',
                             onChange:e=>{ addPost(e.target.value); e.target.value=''; }
                         },
@@ -129,7 +129,7 @@ registerBlockType('scoutingtc4/news-items', {
                         wp.element.createElement('p', {className:'description'}, 'Kies eerst één of meer categorieën. De lijst met nieuwsitems wordt daarop gefilterd.')
                     )
                 ),
-                wp.element.createElement('div', {className:'tc4-acf-row'},
+                wp.element.createElement('div', {className:'scouting-nederland-acf-row'},
                     wp.element.createElement('label', {}, 'Aantal'),
                     wp.element.createElement(RangeControl, {
                         value:a.count || 3,
@@ -138,18 +138,18 @@ registerBlockType('scoutingtc4/news-items', {
                         onChange:v=>props.setAttributes({count:v})
                     })
                 ),
-                wp.element.createElement('div', {className:'tc4-acf-row'},
+                wp.element.createElement('div', {className:'scouting-nederland-acf-row'},
                     wp.element.createElement('label', {}, 'Knop'),
-                    wp.element.createElement('fieldset', {className:'tc4-acf-button-box tc4-news-button-box'},
-                        wp.element.createElement('div', {className:'tc4-acf-field'},
+                    wp.element.createElement('fieldset', {className:'scouting-nederland-acf-button-box scouting-nederland-news-button-box'},
+                        wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                             wp.element.createElement('label', {}, 'Tekst'),
                             wp.element.createElement(TextControl, {
                                 value:a.buttonText || '',
                                 onChange:v=>props.setAttributes({buttonText:v})
                             })
                         ),
-                        wp.element.createElement('div', {className:'tc4-acf-button-grid'},
-                            wp.element.createElement('div', {className:'tc4-acf-field'},
+                        wp.element.createElement('div', {className:'scouting-nederland-acf-button-grid'},
+                            wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                                 wp.element.createElement('label', {}, 'URL'),
                                 wp.element.createElement(LinkPickerField, {
                                     url:a.buttonUrl || '',
@@ -160,7 +160,7 @@ registerBlockType('scoutingtc4/news-items', {
                                     onTarget:v=>props.setAttributes({buttonTarget:v})
                                 })
                             ),
-                            wp.element.createElement('div', {className:'tc4-acf-field'},
+                            wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                                 wp.element.createElement('label', {}, 'Kleur'),
                                 colorRadios()
                             )
@@ -172,4 +172,4 @@ registerBlockType('scoutingtc4/news-items', {
         save: () => null
     });
 
-})(window.wp, window.scoutingtc4BlockEditor);
+})(globalThis.wp, globalThis.scoutingNederlandBlockEditor);

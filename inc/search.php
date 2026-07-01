@@ -1,7 +1,7 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
 
-function scoutingtc4_prevent_empty_search_results($query) {
+function scoutingNederlandPreventEmptySearchResults($query) {
     if (is_admin() || !$query->is_main_query() || !$query->is_search()) {
         return;
     }
@@ -12,9 +12,9 @@ function scoutingtc4_prevent_empty_search_results($query) {
         $query->set('post__in', array(0));
     }
 }
-add_action('pre_get_posts', 'scoutingtc4_prevent_empty_search_results');
+add_action('pre_get_posts', 'scoutingNederlandPreventEmptySearchResults');
 
-function scoutingtc4_search_pages_before_posts($query) {
+function scoutingNederlandSearchPagesBeforePosts($query) {
     if (is_admin() || !$query->is_main_query() || !$query->is_search()) {
         return;
     }
@@ -26,12 +26,12 @@ function scoutingtc4_search_pages_before_posts($query) {
     }
 
     $query->set('post_type', array('page', 'post'));
-    $query->set('scoutingtc4_pages_first', true);
+    $query->set('scouting_nederland_pages_first', true);
 }
-add_action('pre_get_posts', 'scoutingtc4_search_pages_before_posts', 20);
+add_action('pre_get_posts', 'scoutingNederlandSearchPagesBeforePosts', 20);
 
-function scoutingtc4_search_pages_first_orderby($orderby, $query) {
-    if (is_admin() || !$query->is_main_query() || !$query->is_search() || !$query->get('scoutingtc4_pages_first')) {
+function scoutingNederlandSearchPagesFirstOrderby($orderby, $query) {
+    if (is_admin() || !$query->is_main_query() || !$query->is_search() || !$query->get('scouting_nederland_pages_first')) {
         return $orderby;
     }
 
@@ -45,4 +45,4 @@ function scoutingtc4_search_pages_first_orderby($orderby, $query) {
 
     return $pages_first . ", {$wpdb->posts}.post_date DESC";
 }
-add_filter('posts_orderby', 'scoutingtc4_search_pages_first_orderby', 10, 2);
+add_filter('posts_orderby', 'scoutingNederlandSearchPagesFirstOrderby', 10, 2);

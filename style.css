@@ -1,14 +1,16 @@
 /*
-Theme Name: Scouting TC4 WordPress
-Theme URI: https://heldonline.nl/templates/scoutingnederlandtc4wordpress
+Theme Name: Scouting Nederland
+Theme URI: https://github.com/scouting-nl/wordpress-theme
 Author: Julian Geldof - Scouting Nederland
-Description: Wordpress thema voor Scouting Nederland websites
-Version: 1.1
+Author URI: https://www.scouting.nl/
+Description: Classic WordPress theme for Scouting Nederland websites, with responsive layouts, editor styles, custom blocks, widget areas, sliders, and Scouting-specific presentation options.
+Version: 1.0.0
 Requires at least: 6.0
 Tested up to: 6.9.4
 Requires PHP: 7.4
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
-Text Domain: scoutingtc4
-Tags: custom-logo, custom-menu, one-column, two-columns, right-sidebar, featured-images
+Text Domain: scouting-nederland
+Domain Path: /languages
+Tags: custom-logo, custom-menu, editor-style, featured-images, one-column, right-sidebar, two-columns, wide-blocks, block-styles
 */

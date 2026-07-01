@@ -82,52 +82,52 @@ body main#content > *:first-child {
   margin-top: 0 !important;
 }
 
-body #tc4-hero,
-body .tc4-home-hero,
-body .tc4-search-hero,
-body .tc4-404-hero,
+body #scouting-nederland-hero,
+body .scouting-nederland-home-hero,
+body .scouting-nederland-search-hero,
+body .scouting-nederland-404-hero,
 body .defaultbanner,
 body .home-slider,
-body .tc4-home-slider,
-body .tc4-video-banner {
+body .scouting-nederland-home-slider,
+body .scouting-nederland-video-banner {
   margin-top: 0 !important;
 }
 
-body #tc4-hero.container-fluid,
-body #tc4-hero .row,
-body #tc4-hero .col,
-body #tc4-hero .col-sm-12,
-body #tc4-hero .col-md-12 {
+body #scouting-nederland-hero.container-fluid,
+body #scouting-nederland-hero .row,
+body #scouting-nederland-hero .col,
+body #scouting-nederland-hero .col-sm-12,
+body #scouting-nederland-hero .col-md-12 {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
 
-body .mainbody > #tc4-hero:first-child,
-body .mainbody > .tc4-home-hero:first-child,
-body .mainbody > .tc4-search-hero:first-child,
-body .mainbody > .tc4-404-hero:first-child,
+body .mainbody > #scouting-nederland-hero:first-child,
+body .mainbody > .scouting-nederland-home-hero:first-child,
+body .mainbody > .scouting-nederland-search-hero:first-child,
+body .mainbody > .scouting-nederland-404-hero:first-child,
 body .mainbody > .defaultbanner:first-child,
-body main#content > .tc4-home-hero:first-child,
-body main#content > .tc4-search-hero:first-child,
-body main#content > .tc4-404-hero:first-child {
+body main#content > .scouting-nederland-home-hero:first-child,
+body main#content > .scouting-nederland-search-hero:first-child,
+body main#content > .scouting-nederland-404-hero:first-child {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
 
-body .tc4-search-page,
-body .tc4-404-page {
+body .scouting-nederland-search-page,
+body .scouting-nederland-404-page {
   padding-top: 0 !important;
 }
 
 
-#tc4-hero h1,
-#tc4-hero h2,
-#tc4-hero h3,
-#tc4-hero p,
-.tc4-home-hero h1,
-.tc4-home-hero h2,
-.tc4-home-hero h3,
-.tc4-home-hero p,
+#scouting-nederland-hero h1,
+#scouting-nederland-hero h2,
+#scouting-nederland-hero h3,
+#scouting-nederland-hero p,
+.scouting-nederland-home-hero h1,
+.scouting-nederland-home-hero h2,
+.scouting-nederland-home-hero h3,
+.scouting-nederland-home-hero p,
 .defaultbanner h1,
 .defaultbanner h2,
 .defaultbanner h3,
@@ -137,12 +137,12 @@ body .tc4-404-page {
 }
 
 
-#tc4-hero h1,
-#tc4-hero h2,
-#tc4-hero h3,
-.tc4-home-hero h1,
-.tc4-home-hero h2,
-.tc4-home-hero h3,
+#scouting-nederland-hero h1,
+#scouting-nederland-hero h2,
+#scouting-nederland-hero h3,
+.scouting-nederland-home-hero h1,
+.scouting-nederland-home-hero h2,
+.scouting-nederland-home-hero h3,
 .defaultbanner h1,
 .defaultbanner h2,
 .defaultbanner h3 {
@@ -150,57 +150,57 @@ body .tc4-404-page {
   letter-spacing: .02em;
 }
 
-.tc4-hero-font-urban-jungle .tc4-page-hero__title h1,
-.tc4-hero-font-urban-jungle .tc4-home-hero__inner h1,
-.tc4-hero-font-urban-jungle h1 {
+.scouting-nederland-hero-font-urban-jungle .scouting-nederland-page-hero__title h1,
+.scouting-nederland-hero-font-urban-jungle .scouting-nederland-home-hero__inner h1,
+.scouting-nederland-hero-font-urban-jungle h1 {
   font-family: "Urban Jungle", "Roboto Slab", Georgia, serif !important;
 }
 
-.tc4-hero-font-roboto-slab .tc4-page-hero__title h1,
-.tc4-hero-font-roboto-slab .tc4-home-hero__inner h1,
-.tc4-hero-font-roboto-slab h1 {
+.scouting-nederland-hero-font-roboto-slab .scouting-nederland-page-hero__title h1,
+.scouting-nederland-hero-font-roboto-slab .scouting-nederland-home-hero__inner h1,
+.scouting-nederland-hero-font-roboto-slab h1 {
   font-family: "Roboto Slab", Georgia, serif !important;
 }
 
-.tc4-hero-font-poppins .tc4-page-hero__title h1,
-.tc4-hero-font-poppins .tc4-home-hero__inner h1,
-.tc4-hero-font-poppins h1 {
+.scouting-nederland-hero-font-poppins .scouting-nederland-page-hero__title h1,
+.scouting-nederland-hero-font-poppins .scouting-nederland-home-hero__inner h1,
+.scouting-nederland-hero-font-poppins h1 {
   font-family: "Poppins", Arial, Helvetica, sans-serif !important;
 }
 
 /* Hero title font override: works for standard hero, slider hero and video hero. */
-#tc4-hero.tc4-hero-font-urban-jungle h1,
-.tc4-page-hero.tc4-hero-font-urban-jungle .tc4-page-hero__title h1,
-.tc4-page-hero__title.tc4-hero-font-urban-jungle h1,
-h1.tc4-hero-font-urban-jungle,
-.tc4-home-hero.tc4-hero-font-urban-jungle .tc4-home-hero__inner h1,
-.tc4-home-hero__inner.tc4-hero-font-urban-jungle h1,
-.tc4-home-slider.tc4-hero-font-urban-jungle h1,
-.tc4-home-slide__caption.tc4-hero-font-urban-jungle h1,
-.tc4-home-video-caption.tc4-hero-font-urban-jungle h1 {
+#scouting-nederland-hero.scouting-nederland-hero-font-urban-jungle h1,
+.scouting-nederland-page-hero.scouting-nederland-hero-font-urban-jungle .scouting-nederland-page-hero__title h1,
+.scouting-nederland-page-hero__title.scouting-nederland-hero-font-urban-jungle h1,
+h1.scouting-nederland-hero-font-urban-jungle,
+.scouting-nederland-home-hero.scouting-nederland-hero-font-urban-jungle .scouting-nederland-home-hero__inner h1,
+.scouting-nederland-home-hero__inner.scouting-nederland-hero-font-urban-jungle h1,
+.scouting-nederland-home-slider.scouting-nederland-hero-font-urban-jungle h1,
+.scouting-nederland-home-slide__caption.scouting-nederland-hero-font-urban-jungle h1,
+.scouting-nederland-home-video-caption.scouting-nederland-hero-font-urban-jungle h1 {
   font-family: "Urban Jungle", "Roboto Slab", Georgia, serif !important;
 }
 
-#tc4-hero.tc4-hero-font-roboto-slab h1,
-.tc4-page-hero.tc4-hero-font-roboto-slab .tc4-page-hero__title h1,
-.tc4-page-hero__title.tc4-hero-font-roboto-slab h1,
-h1.tc4-hero-font-roboto-slab,
-.tc4-home-hero.tc4-hero-font-roboto-slab .tc4-home-hero__inner h1,
-.tc4-home-hero__inner.tc4-hero-font-roboto-slab h1,
-.tc4-home-slider.tc4-hero-font-roboto-slab h1,
-.tc4-home-slide__caption.tc4-hero-font-roboto-slab h1,
-.tc4-home-video-caption.tc4-hero-font-roboto-slab h1 {
+#scouting-nederland-hero.scouting-nederland-hero-font-roboto-slab h1,
+.scouting-nederland-page-hero.scouting-nederland-hero-font-roboto-slab .scouting-nederland-page-hero__title h1,
+.scouting-nederland-page-hero__title.scouting-nederland-hero-font-roboto-slab h1,
+h1.scouting-nederland-hero-font-roboto-slab,
+.scouting-nederland-home-hero.scouting-nederland-hero-font-roboto-slab .scouting-nederland-home-hero__inner h1,
+.scouting-nederland-home-hero__inner.scouting-nederland-hero-font-roboto-slab h1,
+.scouting-nederland-home-slider.scouting-nederland-hero-font-roboto-slab h1,
+.scouting-nederland-home-slide__caption.scouting-nederland-hero-font-roboto-slab h1,
+.scouting-nederland-home-video-caption.scouting-nederland-hero-font-roboto-slab h1 {
   font-family: "Roboto Slab", Georgia, serif !important;
 }
 
-#tc4-hero.tc4-hero-font-poppins h1,
-.tc4-page-hero.tc4-hero-font-poppins .tc4-page-hero__title h1,
-.tc4-page-hero__title.tc4-hero-font-poppins h1,
-h1.tc4-hero-font-poppins,
-.tc4-home-hero.tc4-hero-font-poppins .tc4-home-hero__inner h1,
-.tc4-home-hero__inner.tc4-hero-font-poppins h1,
-.tc4-home-slider.tc4-hero-font-poppins h1,
-.tc4-home-slide__caption.tc4-hero-font-poppins h1,
-.tc4-home-video-caption.tc4-hero-font-poppins h1 {
+#scouting-nederland-hero.scouting-nederland-hero-font-poppins h1,
+.scouting-nederland-page-hero.scouting-nederland-hero-font-poppins .scouting-nederland-page-hero__title h1,
+.scouting-nederland-page-hero__title.scouting-nederland-hero-font-poppins h1,
+h1.scouting-nederland-hero-font-poppins,
+.scouting-nederland-home-hero.scouting-nederland-hero-font-poppins .scouting-nederland-home-hero__inner h1,
+.scouting-nederland-home-hero__inner.scouting-nederland-hero-font-poppins h1,
+.scouting-nederland-home-slider.scouting-nederland-hero-font-poppins h1,
+.scouting-nederland-home-slide__caption.scouting-nederland-hero-font-poppins h1,
+.scouting-nederland-home-video-caption.scouting-nederland-hero-font-poppins h1 {
   font-family: "Poppins", Arial, Helvetica, sans-serif !important;
 }

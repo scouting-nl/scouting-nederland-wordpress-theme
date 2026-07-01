@@ -1,4 +1,4 @@
-(function(wp, tc4){
+(function(wp, scoutingNederland){
     const {
         registerBlockType,
         __,
@@ -21,12 +21,12 @@
         StableClassicEditor,
         ClassicHtmlEditor,
         LinkPickerField
-    } = tc4;
+    } = scoutingNederland;
 
-registerBlockType('scoutingtc4/featured-items', {
-        title: __('Featured items', 'scoutingtc4'),
+registerBlockType('scouting-nederland/featured-items', {
+        title: __('Featured items', 'scouting-nederland'),
         icon: 'screenoptions',
-        category: 'scoutingtc4',
+        category: 'scouting-nederland',
         attributes: {
             title: {type:'string', default:''},
             items: {type:'array', default:[
@@ -44,7 +44,7 @@ registerBlockType('scoutingtc4/featured-items', {
                 props.setAttributes({items: next});
             };
 
-            const colorRadios = (i, item) => wp.element.createElement('div', {className:'tc4-editor-radio-row'},
+            const colorRadios = (i, item) => wp.element.createElement('div', {className:'scouting-nederland-editor-radio-row'},
                 ['blauw','groen','zwart'].map(color =>
                     wp.element.createElement('label', {key:color},
                         wp.element.createElement('input', {
@@ -57,8 +57,8 @@ registerBlockType('scoutingtc4/featured-items', {
                 )
             );
 
-            return wp.element.createElement('div', {className:'tc4-acf-like-block tc4-featured-editor-form'},
-                wp.element.createElement('div', {className:'tc4-acf-row'},
+            return wp.element.createElement('div', {className:'scouting-nederland-acf-like-block scouting-nederland-featured-editor-form'},
+                wp.element.createElement('div', {className:'scouting-nederland-acf-row'},
                     wp.element.createElement('label', {}, 'Kop'),
                     wp.element.createElement(TextControl, {
                         value:attrs.title || '',
@@ -66,27 +66,27 @@ registerBlockType('scoutingtc4/featured-items', {
                         placeholder:'Optionele algemene kop'
                     })
                 ),
-                wp.element.createElement('div', {className:'tc4-acf-section-title'}, 'Items'),
-                wp.element.createElement('div', {className:'tc4-acf-repeater'},
+                wp.element.createElement('div', {className:'scouting-nederland-acf-section-title'}, 'Items'),
+                wp.element.createElement('div', {className:'scouting-nederland-acf-repeater'},
                     [0,1,2].map(i => {
                         const item = items[i] || {};
-                        return wp.element.createElement('div', {className:'tc4-acf-repeater-row', key:i},
-                            wp.element.createElement('div', {className:'tc4-acf-row-number'}, i + 1),
-                            wp.element.createElement('div', {className:'tc4-acf-row-content'},
-                                wp.element.createElement('div', {className:'tc4-acf-field'},
+                        return wp.element.createElement('div', {className:'scouting-nederland-acf-repeater-row', key:i},
+                            wp.element.createElement('div', {className:'scouting-nederland-acf-row-number'}, i + 1),
+                            wp.element.createElement('div', {className:'scouting-nederland-acf-row-content'},
+                                wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                                     wp.element.createElement('label', {}, 'Kop'),
                                     wp.element.createElement(TextControl, {
                                         value:item.title || '',
                                         onChange:v=>setItem(i,'title',v)
                                     })
                                 ),
-                                wp.element.createElement('div', {className:'tc4-acf-field'},
+                                wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                                     wp.element.createElement('label', {}, 'Beeld'),
                                     wp.element.createElement(MediaUploadCheck, {},
                                         wp.element.createElement(MediaUpload, {
                                             onSelect:media=>setItem(i,'imageUrl',media.url),
                                             allowedTypes:['image'],
-                                            render:({open})=>wp.element.createElement('div', {className:'tc4-acf-image-field'},
+                                            render:({open})=>wp.element.createElement('div', {className:'scouting-nederland-acf-image-field'},
                                                 item.imageUrl
                                                     ? wp.element.createElement('img', {src:item.imageUrl, alt:'', onClick:open})
                                                     : wp.element.createElement(Button, {onClick:open, variant:'secondary'}, 'Afbeelding kiezen'),
@@ -95,24 +95,24 @@ registerBlockType('scoutingtc4/featured-items', {
                                         })
                                     )
                                 ),
-                                wp.element.createElement('div', {className:'tc4-acf-field'},
+                                wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                                     wp.element.createElement('label', {}, 'Tekst'),
                                     wp.element.createElement(ClassicHtmlEditor, {
                                         value:item.text || '',
                                         onChange:v=>setItem(i,'text',v)
                                     })
                                 ),
-                                wp.element.createElement('fieldset', {className:'tc4-acf-button-box'},
+                                wp.element.createElement('fieldset', {className:'scouting-nederland-acf-button-box'},
                                     wp.element.createElement('legend', {}, 'Knop'),
-                                    wp.element.createElement('div', {className:'tc4-acf-field'},
+                                    wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                                         wp.element.createElement('label', {}, 'Tekst'),
                                         wp.element.createElement(TextControl, {
                                             value:item.buttonText || '',
                                             onChange:v=>setItem(i,'buttonText',v)
                                         })
                                     ),
-                                    wp.element.createElement('div', {className:'tc4-acf-button-grid'},
-                                        wp.element.createElement('div', {className:'tc4-acf-field'},
+                                    wp.element.createElement('div', {className:'scouting-nederland-acf-button-grid'},
+                                        wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                                             wp.element.createElement('label', {}, 'URL'),
                                             wp.element.createElement(LinkPickerField, {
                                                 url:item.buttonUrl || '',
@@ -129,7 +129,7 @@ registerBlockType('scoutingtc4/featured-items', {
                                                 }
                                             })
                                         ),
-                                        wp.element.createElement('div', {className:'tc4-acf-field'},
+                                        wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                                             wp.element.createElement('label', {}, 'Kleur'),
                                             colorRadios(i, item)
                                         )
@@ -144,4 +144,4 @@ registerBlockType('scoutingtc4/featured-items', {
         save: () => null
     });
 
-})(window.wp, window.scoutingtc4BlockEditor);
+})(globalThis.wp, globalThis.scoutingNederlandBlockEditor);

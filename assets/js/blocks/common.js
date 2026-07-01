@@ -6,7 +6,7 @@
     const { PanelBody, TextControl, TextareaControl, Button, RangeControl, SelectControl, ToggleControl } = wp.components;
 
     function ButtonFields({label, text, url, color, onText, onUrl, onColor}) {
-        return wp.element.createElement('div', {className:'tc4-editor-button-fields'},
+        return wp.element.createElement('div', {className:'scouting-nederland-editor-button-fields'},
             wp.element.createElement('strong', {}, label || 'Knop'),
             wp.element.createElement(TextControl, {label:'Knoptekst', value:text || '', onChange:onText}),
             wp.element.createElement(TextControl, {label:'Knop URL', value:url || '', onChange:onUrl}),
@@ -28,7 +28,7 @@
             wp.element.createElement(MediaUpload, {
                 onSelect: onSelect,
                 allowedTypes: ['image'],
-                render: ({open}) => wp.element.createElement('div', {className:'tc4-editor-image-picker'},
+                render: ({open}) => wp.element.createElement('div', {className:'scouting-nederland-editor-image-picker'},
                     url
                         ? wp.element.createElement('img', {src:url, alt:'', onClick:open})
                         : wp.element.createElement(Button, {onClick:open, variant:'secondary'}, buttonText || 'Afbeelding kiezen')
@@ -38,15 +38,15 @@
     }
 
     function btnClass(color) {
-        if (color === 'groen') return 'tc4-btn tc4-btn-green';
-        if (color === 'zwart') return 'tc4-btn tc4-btn-black';
-        return 'tc4-btn tc4-btn-blue';
+        if (color === 'groen') return 'scouting-nederland-btn scouting-nederland-btn-green';
+        if (color === 'zwart') return 'scouting-nederland-btn scouting-nederland-btn-black';
+        return 'scouting-nederland-btn scouting-nederland-btn-blue';
     }
 
     class StableClassicEditor extends wp.element.Component {
         constructor(props) {
             super(props);
-            this.editorId = 'tc4-tinymce-editor-' + Math.random().toString(36).substr(2, 9);
+            this.editorId = 'scouting-nederland-tinymce-editor-' + Math.random().toString(36).substr(2, 9);
             this.textareaRef = wp.element.createRef();
             this.isReady = false;
             this.lastValue = props.value || '';
@@ -63,8 +63,8 @@
             if (nextValue !== prevProps.value && nextValue !== this.lastValue) {
                 this.lastValue = nextValue;
 
-                if (window.tinymce && window.tinymce.get(this.editorId)) {
-                    const editor = window.tinymce.get(this.editorId);
+                if (globalThis.tinymce && globalThis.tinymce.get(this.editorId)) {
+                    const editor = globalThis.tinymce.get(this.editorId);
                     if (editor && editor.getContent() !== nextValue) {
                         editor.setContent(nextValue || '');
                     }
@@ -75,16 +75,16 @@
         }
 
         componentWillUnmount() {
-            if (window.wp && wp.editor && wp.editor.remove) {
+            if (globalThis.wp && wp.editor && wp.editor.remove) {
                 try {
                     wp.editor.remove(this.editorId);
                     return;
                 } catch (error) {}
             }
 
-            if (window.tinymce && window.tinymce.get(this.editorId)) {
+            if (globalThis.tinymce && globalThis.tinymce.get(this.editorId)) {
                 try {
-                    window.tinymce.get(this.editorId).remove();
+                    globalThis.tinymce.get(this.editorId).remove();
                 } catch (error) {}
             }
         }
@@ -101,13 +101,13 @@
 
             this.textareaRef.current.value = this.props.value || '';
 
-            if (!window.wp || !wp.editor || !wp.editor.initialize) {
+            if (!globalThis.wp || !wp.editor || !wp.editor.initialize) {
                 return;
             }
 
             const self = this;
 
-            window.setTimeout(function() {
+            globalThis.setTimeout(function() {
                 if (!document.getElementById(self.editorId)) {
                     return;
                 }
@@ -139,7 +139,7 @@
         }
 
         render() {
-            return wp.element.createElement('div', {className:'tc4-tinymce-editor-wrap'},
+            return wp.element.createElement('div', {className:'scouting-nederland-tinymce-editor-wrap'},
                 wp.element.createElement('textarea', {
                     id: this.editorId,
                     ref: this.textareaRef,
@@ -154,82 +154,82 @@
         return wp.element.createElement(StableClassicEditor, props);
     }
 
-    let scoutingtc4ActiveLinkField = null;
-    let scoutingtc4ActiveTextEditorLink = null;
-    let scoutingtc4LinkFieldId = 0;
+    let scoutingNederlandActiveLinkField = null;
+    let scoutingNederlandActiveTextEditorLink = null;
+    let scoutingNederlandLinkFieldId = 0;
 
-    function ensureScoutingTc4LinkModalHandler() {
-        if (window.scoutingtc4FeaturedLinkHandlerReady) {
+    function ensureScoutingNederlandLinkModalHandler() {
+        if (globalThis.scoutingNederlandFeaturedLinkHandlerReady) {
             return;
         }
-        window.scoutingtc4FeaturedLinkHandlerReady = true;
+        globalThis.scoutingNederlandFeaturedLinkHandlerReady = true;
 
-        if (!window.jQuery) {
+        if (!globalThis.jQuery) {
             return;
         }
 
-        window.jQuery(document).on('click', '#wp-link-submit', function(event) {
-            if ((!scoutingtc4ActiveLinkField && !scoutingtc4ActiveTextEditorLink) || !window.wpLink) {
+        globalThis.jQuery(document).on('click', '#wp-link-submit', function(event) {
+            if ((!scoutingNederlandActiveLinkField && !scoutingNederlandActiveTextEditorLink) || !globalThis.wpLink) {
                 return;
             }
 
             event.preventDefault();
 
-            const attrs = window.wpLink.getAttrs ? window.wpLink.getAttrs() : {};
-            const href = attrs.href || window.jQuery('#wp-link-url').val() || '';
-            const text = window.jQuery('#wp-link-text').val() || '';
-            const target = window.jQuery('#wp-link-target').is(':checked') ? '_blank' : '';
+            const attrs = globalThis.wpLink.getAttrs ? globalThis.wpLink.getAttrs() : {};
+            const href = attrs.href || globalThis.jQuery('#wp-link-url').val() || '';
+            const text = globalThis.jQuery('#wp-link-text').val() || '';
+            const target = globalThis.jQuery('#wp-link-target').is(':checked') ? '_blank' : '';
 
-            if (scoutingtc4ActiveTextEditorLink) {
-                scoutingtc4ActiveTextEditorLink.apply(href, text, target);
-                scoutingtc4ActiveTextEditorLink = null;
-                window.wpLink.close();
+            if (scoutingNederlandActiveTextEditorLink) {
+                scoutingNederlandActiveTextEditorLink.apply(href, text, target);
+                scoutingNederlandActiveTextEditorLink = null;
+                globalThis.wpLink.close();
                 return;
             }
 
-            if (scoutingtc4ActiveLinkField.onChange) {
-                scoutingtc4ActiveLinkField.onChange({
+            if (scoutingNederlandActiveLinkField.onChange) {
+                scoutingNederlandActiveLinkField.onChange({
                     url: href,
                     text: text,
                     target: target
                 });
             } else {
-                scoutingtc4ActiveLinkField.onUrl(href);
+                scoutingNederlandActiveLinkField.onUrl(href);
 
-                if (text && scoutingtc4ActiveLinkField.onText) {
-                    scoutingtc4ActiveLinkField.onText(text);
+                if (text && scoutingNederlandActiveLinkField.onText) {
+                    scoutingNederlandActiveLinkField.onText(text);
                 }
 
-                if (scoutingtc4ActiveLinkField.onTarget) {
-                    scoutingtc4ActiveLinkField.onTarget(target);
+                if (scoutingNederlandActiveLinkField.onTarget) {
+                    scoutingNederlandActiveLinkField.onTarget(target);
                 }
             }
 
-            scoutingtc4ActiveLinkField = null;
-            window.wpLink.close();
+            scoutingNederlandActiveLinkField = null;
+            globalThis.wpLink.close();
         });
 
-        window.jQuery(document).on('click', '#wp-link-cancel, #wp-link-close', function() {
-            scoutingtc4ActiveLinkField = null;
-            scoutingtc4ActiveTextEditorLink = null;
+        globalThis.jQuery(document).on('click', '#wp-link-cancel, #wp-link-close', function() {
+            scoutingNederlandActiveLinkField = null;
+            scoutingNederlandActiveTextEditorLink = null;
         });
     }
 
     function LinkPickerField({url, text, target, onUrl, onText, onTarget, onChange}) {
-        ensureScoutingTc4LinkModalHandler();
+        ensureScoutingNederlandLinkModalHandler();
 
-        const id = 'tc4-featured-link-' + (++scoutingtc4LinkFieldId);
+        const id = 'scouting-nederland-featured-link-' + (++scoutingNederlandLinkFieldId);
         const currentUrl = url || '';
         const currentText = text || '';
 
         const openLinkModal = function(event) {
             event.preventDefault();
 
-            if (!window.wpLink || !window.jQuery) {
+            if (!globalThis.wpLink || !globalThis.jQuery) {
                 return;
             }
 
-            scoutingtc4ActiveLinkField = {
+            scoutingNederlandActiveLinkField = {
                 onUrl: onUrl,
                 onText: onText,
                 onTarget: onTarget,
@@ -245,25 +245,25 @@
             }
 
             textarea.value = currentUrl;
-            window.wpLink.open(id);
+            globalThis.wpLink.open(id);
 
-            window.setTimeout(function() {
-                window.jQuery('#wp-link-url').val(currentUrl);
-                window.jQuery('#wp-link-text').val(currentText);
-                window.jQuery('#wp-link-target').prop('checked', target === '_blank');
+            globalThis.setTimeout(function() {
+                globalThis.jQuery('#wp-link-url').val(currentUrl);
+                globalThis.jQuery('#wp-link-text').val(currentText);
+                globalThis.jQuery('#wp-link-target').prop('checked', target === '_blank');
             }, 50);
         };
 
-        return wp.element.createElement('div', {className:'tc4-link-field-acf'},
-            wp.element.createElement('div', {className:'tc4-link-field-acf__summary'},
+        return wp.element.createElement('div', {className:'scouting-nederland-link-field-acf'},
+            wp.element.createElement('div', {className:'scouting-nederland-link-field-acf__summary'},
                 currentUrl
                     ? wp.element.createElement(Fragment, {},
                         wp.element.createElement('strong', {}, currentText || currentUrl),
                         wp.element.createElement('span', {}, currentUrl)
                     )
-                    : wp.element.createElement('span', {className:'tc4-link-field-acf__empty'}, 'Geen link gekozen')
+                    : wp.element.createElement('span', {className:'scouting-nederland-link-field-acf__empty'}, 'Geen link gekozen')
             ),
-            wp.element.createElement('div', {className:'tc4-link-field-acf__actions'},
+            wp.element.createElement('div', {className:'scouting-nederland-link-field-acf__actions'},
                 wp.element.createElement(Button, {variant:'secondary', onClick:openLinkModal}, currentUrl ? 'Link bewerken' : 'Link invoegen'),
                 currentUrl ? wp.element.createElement(Button, {
                     variant:'link',
@@ -284,7 +284,7 @@
     }
 
 
-    window.scoutingtc4BlockEditor = {
+    globalThis.scoutingNederlandBlockEditor = {
         registerBlockType: registerBlockType,
         __: __,
         Fragment: Fragment,
@@ -308,4 +308,4 @@
         LinkPickerField: LinkPickerField
     };
 
-})(window.wp);
+})(globalThis.wp);

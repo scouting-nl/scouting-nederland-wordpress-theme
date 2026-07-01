@@ -1,4 +1,4 @@
-(function(wp, tc4){
+(function(wp, scoutingNederland){
     const {
         registerBlockType,
         __,
@@ -21,12 +21,12 @@
         StableClassicEditor,
         ClassicHtmlEditor,
         LinkPickerField
-    } = tc4;
+    } = scoutingNederland;
 
-registerBlockType('scoutingtc4/speltakken-grid', {
-        title: __('Speltakken grid', 'scoutingtc4'),
+registerBlockType('scouting-nederland/speltakken-grid', {
+        title: __('Speltakken grid', 'scouting-nederland'),
         icon: 'grid-view',
-        category: 'scoutingtc4',
+        category: 'scouting-nederland',
         attributes: {
             title: {type:'string', default:''},
             items: {type:'array', default:[
@@ -73,7 +73,7 @@ registerBlockType('scoutingtc4/speltakken-grid', {
             const addButton = wp.element.createElement(Button, {
                 onClick:addItem,
                 isPrimary:true,
-                className:'tc4-speltakken-add-button'
+                className:'scouting-nederland-speltakken-add-button'
             }, '+ Speltak toevoegen');
 
             return wp.element.createElement(Fragment, {},
@@ -83,8 +83,8 @@ registerBlockType('scoutingtc4/speltakken-grid', {
                         wp.element.createElement(Button, {onClick:addItem, isPrimary:true}, '+ Speltak toevoegen')
                     )
                 ),
-                wp.element.createElement('div', {className:'tc4-acf-like-block tc4-speltakken-editor-form'},
-                    wp.element.createElement('div', {className:'tc4-acf-row'},
+                wp.element.createElement('div', {className:'scouting-nederland-acf-like-block scouting-nederland-speltakken-editor-form'},
+                    wp.element.createElement('div', {className:'scouting-nederland-acf-row'},
                         wp.element.createElement('label', {}, 'Kop'),
                         wp.element.createElement(TextControl, {
                             value:attrs.title || '',
@@ -92,28 +92,28 @@ registerBlockType('scoutingtc4/speltakken-grid', {
                             placeholder:'Optionele algemene kop, bijvoorbeeld Speltakken'
                         })
                     ),
-                    wp.element.createElement('div', {className:'tc4-acf-section-title tc4-acf-section-title-with-action'},
+                    wp.element.createElement('div', {className:'scouting-nederland-acf-section-title scouting-nederland-acf-section-title-with-action'},
                         wp.element.createElement('span', {}, 'Kaarten (' + normalizedItems.length + ')'),
                         addButton
                     ),
-                    wp.element.createElement('div', {className:'tc4-acf-repeater'},
+                    wp.element.createElement('div', {className:'scouting-nederland-acf-repeater'},
                         normalizedItems.map((item, i) => {
                             item = Object.assign({}, defaultItem, item || {});
-                            return wp.element.createElement('div', {className:'tc4-acf-repeater-row', key:i},
-                                wp.element.createElement('div', {className:'tc4-acf-row-number'}, i + 1),
-                                wp.element.createElement('div', {className:'tc4-acf-row-content'},
-                                    wp.element.createElement('div', {className:'tc4-acf-row-actions'},
+                            return wp.element.createElement('div', {className:'scouting-nederland-acf-repeater-row', key:i},
+                                wp.element.createElement('div', {className:'scouting-nederland-acf-row-number'}, i + 1),
+                                wp.element.createElement('div', {className:'scouting-nederland-acf-row-content'},
+                                    wp.element.createElement('div', {className:'scouting-nederland-acf-row-actions'},
                                         wp.element.createElement(Button, {onClick:()=>moveItem(i, -1), isSecondary:true, disabled:i === 0}, 'Omhoog'),
                                         wp.element.createElement(Button, {onClick:()=>moveItem(i, 1), isSecondary:true, disabled:i === normalizedItems.length - 1}, 'Omlaag'),
                                         wp.element.createElement(Button, {onClick:()=>removeItem(i), isDestructive:true, isSecondary:true}, 'Speltak verwijderen')
                                     ),
-                                    wp.element.createElement('div', {className:'tc4-acf-field'},
+                                    wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                                         wp.element.createElement('label', {}, 'Afbeelding'),
                                         wp.element.createElement(MediaUploadCheck, {},
                                             wp.element.createElement(MediaUpload, {
                                                 onSelect:media=>setItem(i,'imageUrl',media.url),
                                                 allowedTypes:['image'],
-                                                render:({open})=>wp.element.createElement('div', {className:'tc4-acf-image-field'},
+                                                render:({open})=>wp.element.createElement('div', {className:'scouting-nederland-acf-image-field'},
                                                     item.imageUrl
                                                         ? wp.element.createElement('img', {src:item.imageUrl, alt:'', onClick:open})
                                                         : wp.element.createElement(Button, {onClick:open, isSecondary:true}, 'Afbeelding kiezen'),
@@ -122,14 +122,14 @@ registerBlockType('scoutingtc4/speltakken-grid', {
                                             })
                                         )
                                     ),
-                                    wp.element.createElement('div', {className:'tc4-acf-field'},
+                                    wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                                         wp.element.createElement('label', {}, 'Titel'),
                                         wp.element.createElement(TextControl, {
                                             value:item.title || '',
                                             onChange:v=>setItem(i,'title',v)
                                         })
                                     ),
-                                    wp.element.createElement('div', {className:'tc4-acf-field'},
+                                    wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                                         wp.element.createElement('label', {}, 'Korte tekst'),
                                         wp.element.createElement(TextareaControl, {
                                             value:item.text || '',
@@ -137,10 +137,10 @@ registerBlockType('scoutingtc4/speltakken-grid', {
                                             onChange:v=>setItem(i,'text',v)
                                         })
                                     ),
-                                    wp.element.createElement('fieldset', {className:'tc4-acf-button-box'},
+                                    wp.element.createElement('fieldset', {className:'scouting-nederland-acf-button-box'},
                                         wp.element.createElement('legend', {}, 'Knop'),
-                                        wp.element.createElement('p', {className:'tc4-acf-help'}, 'De knoptekst is altijd “Meer informatie”. Vul alleen een link in om de knop te tonen.'),
-                                        wp.element.createElement('div', {className:'tc4-acf-field'},
+                                        wp.element.createElement('p', {className:'scouting-nederland-acf-help'}, 'De knoptekst is altijd “Meer informatie”. Vul alleen een link in om de knop te tonen.'),
+                                        wp.element.createElement('div', {className:'scouting-nederland-acf-field'},
                                             wp.element.createElement('label', {}, 'URL'),
                                             wp.element.createElement(LinkPickerField, {
                                                 url:item.buttonUrl || '',
@@ -161,7 +161,7 @@ registerBlockType('scoutingtc4/speltakken-grid', {
                                 )
                             );
                         }),
-                        wp.element.createElement('div', {className:'tc4-acf-repeater-add'},
+                        wp.element.createElement('div', {className:'scouting-nederland-acf-repeater-add'},
                             wp.element.createElement(Button, {onClick:addItem, isPrimary:true}, '+ Speltak toevoegen')
                         )
                     )
@@ -171,4 +171,4 @@ registerBlockType('scoutingtc4/speltakken-grid', {
         save: () => null
     });
 
-})(window.wp, window.scoutingtc4BlockEditor);
+})(globalThis.wp, globalThis.scoutingNederlandBlockEditor);

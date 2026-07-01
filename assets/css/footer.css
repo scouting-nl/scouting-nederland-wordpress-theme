@@ -1,11 +1,11 @@
-#tc4-footer {
+#scouting-nederland-footer {
   margin-top: 0;
   background: #00a551;
   color: #fff;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
 
-#tc4-footer .tc4-footer-grass {
+#scouting-nederland-footer .scouting-nederland-footer-grass {
   height: 210px;
   width: 100%;
   background-color: #fff;
@@ -15,14 +15,14 @@
   background-size: auto 210px;
 }
 
-#tc4-footer .tc4-footer-main {
-  background: var(--tc4-main-color, #00a551);
+#scouting-nederland-footer .scouting-nederland-footer-main {
+  background: var(--scouting-nederland-main-color, #00a551);
   color: #fff;
   min-height: 315px;
   padding: 2.5rem 0 3rem;
 }
 
-#tc4-footer .tc4-footer-inner {
+#scouting-nederland-footer .scouting-nederland-footer-inner {
   width: min(1088px, calc(100vw - 48px));
   margin: 0 auto;
   display: grid;
@@ -31,7 +31,7 @@
   align-items: start;
 }
 
-#tc4-footer h5 {
+#scouting-nederland-footer h5 {
   margin: 0 0 1.4rem;
   color: #fff;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
@@ -40,7 +40,7 @@
   line-height: 1.2;
 }
 
-#tc4-footer .tc4-footer-social ul {
+#scouting-nederland-footer .scouting-nederland-footer-social ul {
   display: flex;
   align-items: center;
   gap: 1.65rem;
@@ -49,23 +49,23 @@
   padding: 0;
 }
 
-#tc4-footer .tc4-footer-social a {
+#scouting-nederland-footer .scouting-nederland-footer-social a {
   color: #fff;
   text-decoration: none;
   font-size: 1.15rem;
   line-height: 1;
 }
 
-#tc4-footer .tc4-footer-social i {
+#scouting-nederland-footer .scouting-nederland-footer-social i {
   color: #fff;
 }
 
-#tc4-footer .tc4-footer-copyright {
+#scouting-nederland-footer .scouting-nederland-footer-copyright {
   margin-top: 2.4rem;
   max-width: 360px;
 }
 
-#tc4-footer .tc4-footer-copyright p {
+#scouting-nederland-footer .scouting-nederland-footer-copyright p {
   margin: 0 0 .65rem;
   color: #fff;
   font-size: .95rem;
@@ -73,18 +73,18 @@
   font-weight: 400;
 }
 
-#tc4-footer .tc4-footer-right h5 {
+#scouting-nederland-footer .scouting-nederland-footer-right h5 {
   margin-bottom: 1.8rem;
 }
 
-#tc4-footer .tc4-footer-partners {
+#scouting-nederland-footer .scouting-nederland-footer-partners {
   display: grid;
   grid-template-columns: repeat(3, max-content);
   gap: 2rem 2.7rem;
   align-items: center;
 }
 
-#tc4-footer .tc4-partner-logo {
+#scouting-nederland-footer .scouting-nederland-partner-logo {
   color: #fff;
   min-height: 54px;
   display: inline-flex;
@@ -93,35 +93,35 @@
   filter: none;
 }
 
-#tc4-footer .tc4-partner-postcode strong {
+#scouting-nederland-footer .scouting-nederland-partner-postcode strong {
   font-size: 3.1rem;
   font-weight: 900;
   letter-spacing: -.12em;
   margin-right: .55rem;
 }
 
-#tc4-footer .tc4-partner-postcode span {
+#scouting-nederland-footer .scouting-nederland-partner-postcode span {
   font-size: 1.25rem;
   font-weight: 800;
   text-transform: uppercase;
   line-height: .95;
 }
 
-#tc4-footer .tc4-partner-jantje {
+#scouting-nederland-footer .scouting-nederland-partner-jantje {
   transform: rotate(-5deg);
   flex-direction: column;
   align-items: flex-start;
   font-family: "Roboto Slab", Georgia, serif;
 }
 
-#tc4-footer .tc4-partner-jantje span,
-#tc4-footer .tc4-partner-jantje strong {
+#scouting-nederland-footer .scouting-nederland-partner-jantje span,
+#scouting-nederland-footer .scouting-nederland-partner-jantje strong {
   font-size: 1.85rem;
   line-height: .85;
   text-transform: uppercase;
 }
 
-#tc4-footer .tc4-partner-jantje small {
+#scouting-nederland-footer .scouting-nederland-partner-jantje small {
   font-family: "Poppins", Arial, sans-serif;
   font-size: .55rem;
   font-weight: 800;
@@ -129,13 +129,13 @@
   text-transform: uppercase;
 }
 
-#tc4-footer .tc4-partner-kind {
+#scouting-nederland-footer .scouting-nederland-partner-kind {
   gap: .75rem;
   font-size: 1.1rem;
   line-height: 1.05;
 }
 
-#tc4-footer .tc4-kind-mark {
+#scouting-nederland-footer .scouting-nederland-kind-mark {
   width: 64px;
   height: 64px;
   border-radius: 50%;
@@ -144,7 +144,7 @@
   display: inline-block;
 }
 
-#tc4-footer .tc4-kind-mark::after {
+#scouting-nederland-footer .scouting-nederland-kind-mark::after {
   content: "";
   position: absolute;
   width: 42px;
@@ -156,7 +156,7 @@
   transform: rotate(25deg);
 }
 
-#tc4-footer .tc4-partner-club {
+#scouting-nederland-footer .scouting-nederland-partner-club {
   grid-column: 1 / span 2;
   flex-direction: column;
   align-items: center;
@@ -164,7 +164,7 @@
   margin-top: .65rem;
 }
 
-#tc4-footer .tc4-club-icon {
+#scouting-nederland-footer .scouting-nederland-club-icon {
   width: 58px;
   height: 58px;
   border: 8px solid #fff;
@@ -175,8 +175,8 @@
   margin-bottom: .35rem;
 }
 
-#tc4-footer .tc4-club-icon::before,
-#tc4-footer .tc4-club-icon::after {
+#scouting-nederland-footer .scouting-nederland-club-icon::before,
+#scouting-nederland-footer .scouting-nederland-club-icon::after {
   content: "";
   position: absolute;
   top: -17px;
@@ -186,39 +186,39 @@
   border-radius: 10px;
 }
 
-#tc4-footer .tc4-club-icon::before {
+#scouting-nederland-footer .scouting-nederland-club-icon::before {
   left: 6px;
   transform: rotate(-35deg);
 }
 
-#tc4-footer .tc4-club-icon::after {
+#scouting-nederland-footer .scouting-nederland-club-icon::after {
   right: 6px;
   transform: rotate(35deg);
 }
 
-#tc4-footer .tc4-partner-club strong {
+#scouting-nederland-footer .scouting-nederland-partner-club strong {
   font-size: 1.65rem;
   line-height: 1;
 }
 
-#tc4-footer .tc4-footer-partner-widget,
-#tc4-footer .tc4-footer-partner-widget * {
+#scouting-nederland-footer .scouting-nederland-footer-partner-widget,
+#scouting-nederland-footer .scouting-nederland-footer-partner-widget * {
   color: #fff;
 }
 
-#tc4-footer .tc4-footer-partner-widget img {
+#scouting-nederland-footer .scouting-nederland-footer-partner-widget img {
   max-height: 90px;
   width: auto;
   margin: 0 1.5rem 1.5rem 0;
   filter: brightness(0) invert(1);
 }
 
-#tc4-footer .tc4-footer-bottom {
+#scouting-nederland-footer .scouting-nederland-footer-bottom {
   background: #fff;
-  color: var(--tc4-main-color, #00a551);
+  color: var(--scouting-nederland-main-color, #00a551);
 }
 
-#tc4-footer .tc4-footer-bottom-inner {
+#scouting-nederland-footer .scouting-nederland-footer-bottom-inner {
   width: min(1088px, calc(100vw - 48px));
   margin: 0 auto;
   min-height: 52px;
@@ -227,7 +227,7 @@
   justify-content: center;
 }
 
-#tc4-footer .tc4-footer-menu {
+#scouting-nederland-footer .scouting-nederland-footer-menu {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -237,116 +237,116 @@
   padding: 0;
 }
 
-#tc4-footer .tc4-footer-menu li {
+#scouting-nederland-footer .scouting-nederland-footer-menu li {
   display: inline-flex;
   align-items: center;
 }
 
-#tc4-footer .tc4-footer-menu li + li::before {
+#scouting-nederland-footer .scouting-nederland-footer-menu li + li::before {
   content: "";
   display: inline-block;
   width: 1px;
   height: 22px;
   margin: 0 1rem;
-  background: var(--tc4-main-color, #00a551);
+  background: var(--scouting-nederland-main-color, #00a551);
   opacity: .8;
 }
 
-#tc4-footer .tc4-footer-menu a {
-  color: var(--tc4-main-color, #00a551);
+#scouting-nederland-footer .scouting-nederland-footer-menu a {
+  color: var(--scouting-nederland-main-color, #00a551);
   font-size: .85rem;
   line-height: 1.2;
   font-weight: 400;
   text-decoration: none;
 }
 
-#tc4-footer .tc4-footer-menu a:hover {
+#scouting-nederland-footer .scouting-nederland-footer-menu a:hover {
   text-decoration: underline;
 }
 
 @media (max-width: 900px) {
-  #tc4-footer .tc4-footer-grass {
+  #scouting-nederland-footer .scouting-nederland-footer-grass {
     height: 150px;
     background-size: auto 150px;
   }
 
-  #tc4-footer .tc4-footer-inner {
+  #scouting-nederland-footer .scouting-nederland-footer-inner {
     grid-template-columns: 1fr;
     gap: 2.5rem;
     width: min(100% - 32px, 680px);
   }
 
-  #tc4-footer .tc4-footer-partners {
+  #scouting-nederland-footer .scouting-nederland-footer-partners {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-  #tc4-footer .tc4-partner-club {
+  #scouting-nederland-footer .scouting-nederland-partner-club {
     grid-column: auto;
     justify-self: start;
   }
 
-  #tc4-footer .tc4-footer-bottom-inner {
+  #scouting-nederland-footer .scouting-nederland-footer-bottom-inner {
     width: min(100% - 32px, 680px);
     padding: 1rem 0;
   }
 
-  #tc4-footer .tc4-footer-menu {
+  #scouting-nederland-footer .scouting-nederland-footer-menu {
     display: grid;
     grid-template-columns: 1fr;
     gap: .6rem;
     text-align: center;
   }
 
-  #tc4-footer .tc4-footer-menu li + li::before {
+  #scouting-nederland-footer .scouting-nederland-footer-menu li + li::before {
     content: none;
   }
 }
 
-#tc4-footer .tc4-footer-bottom,
-#tc4-footer .tc4-footer-bottom * {
-  color: var(--tc4-main-color, #00a551) !important;
+#scouting-nederland-footer .scouting-nederland-footer-bottom,
+#scouting-nederland-footer .scouting-nederland-footer-bottom * {
+  color: var(--scouting-nederland-main-color, #00a551) !important;
 }
 
-#tc4-footer .tc4-footer-bottom .tc4-footer-menu a,
-#tc4-footer .tc4-footer-bottom .tc4-footer-menu a:visited,
-#tc4-footer .tc4-footer-bottom .tc4-footer-menu a:hover,
-#tc4-footer .tc4-footer-bottom .tc4-footer-menu a:focus,
-#tc4-footer .tc4-footer-bottom .tc4-footer-menu .nav-link {
-  color: var(--tc4-main-color, #00a551) !important;
+#scouting-nederland-footer .scouting-nederland-footer-bottom .scouting-nederland-footer-menu a,
+#scouting-nederland-footer .scouting-nederland-footer-bottom .scouting-nederland-footer-menu a:visited,
+#scouting-nederland-footer .scouting-nederland-footer-bottom .scouting-nederland-footer-menu a:hover,
+#scouting-nederland-footer .scouting-nederland-footer-bottom .scouting-nederland-footer-menu a:focus,
+#scouting-nederland-footer .scouting-nederland-footer-bottom .scouting-nederland-footer-menu .nav-link {
+  color: var(--scouting-nederland-main-color, #00a551) !important;
   opacity: 1 !important;
   visibility: visible !important;
   text-decoration: none;
 }
 
-#tc4-footer .tc4-footer-bottom .tc4-footer-menu a:hover,
-#tc4-footer .tc4-footer-bottom .tc4-footer-menu a:focus {
+#scouting-nederland-footer .scouting-nederland-footer-bottom .scouting-nederland-footer-menu a:hover,
+#scouting-nederland-footer .scouting-nederland-footer-bottom .scouting-nederland-footer-menu a:focus {
   text-decoration: underline;
 }
 
-#tc4-footer .tc4-footer-menu li + li::before {
-  background: var(--tc4-main-color, #00a551) !important;
+#scouting-nederland-footer .scouting-nederland-footer-menu li + li::before {
+  background: var(--scouting-nederland-main-color, #00a551) !important;
   opacity: 1 !important;
 }
 
-#tc4-footer .tc4-footer-partners-widget-area {
+#scouting-nederland-footer .scouting-nederland-footer-partners-widget-area {
   color: #fff;
 }
 
-#tc4-footer .tc4-footer-partners-widget-area .widget {
+#scouting-nederland-footer .scouting-nederland-footer-partners-widget-area .widget {
   margin: 0;
   color: #fff;
 }
 
-#tc4-footer .tc4-footer-partners-widget-area .widget + .widget {
+#scouting-nederland-footer .scouting-nederland-footer-partners-widget-area .widget + .widget {
   margin-top: 1.5rem;
 }
 
-#tc4-footer .tc4-footer-partners-widget-area .widget-title,
-#tc4-footer .tc4-footer-partners-widget-area h2,
-#tc4-footer .tc4-footer-partners-widget-area h3,
-#tc4-footer .tc4-footer-partners-widget-area h4,
-#tc4-footer .tc4-footer-partners-widget-area h5 {
+#scouting-nederland-footer .scouting-nederland-footer-partners-widget-area .widget-title,
+#scouting-nederland-footer .scouting-nederland-footer-partners-widget-area h2,
+#scouting-nederland-footer .scouting-nederland-footer-partners-widget-area h3,
+#scouting-nederland-footer .scouting-nederland-footer-partners-widget-area h4,
+#scouting-nederland-footer .scouting-nederland-footer-partners-widget-area h5 {
   margin: 0 0 1.8rem;
   color: #fff;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
@@ -355,11 +355,11 @@
   line-height: 1.2;
 }
 
-#tc4-footer .tc4-footer-partners-widget-area a {
+#scouting-nederland-footer .scouting-nederland-footer-partners-widget-area a {
   color: #fff;
 }
 
-#tc4-footer .tc4-footer-partners-widget-area img {
+#scouting-nederland-footer .scouting-nederland-footer-partners-widget-area img {
   max-height: 95px;
   width: auto;
   max-width: 100%;
@@ -367,25 +367,25 @@
   vertical-align: middle;
 }
 
-#tc4-footer .tc4-footer-partners-widget-area figure,
-#tc4-footer .tc4-footer-partners-widget-area p {
+#scouting-nederland-footer .scouting-nederland-footer-partners-widget-area figure,
+#scouting-nederland-footer .scouting-nederland-footer-partners-widget-area p {
   margin: 0 0 1rem;
   color: #fff;
 }
 
-#tc4-footer .tc4-footer-partners-widget-area .wp-block-gallery,
-#tc4-footer .tc4-footer-partners-widget-area .wp-block-image {
+#scouting-nederland-footer .scouting-nederland-footer-partners-widget-area .wp-block-gallery,
+#scouting-nederland-footer .scouting-nederland-footer-partners-widget-area .wp-block-image {
   margin-bottom: 1rem;
 }
 
-#tc4-footer .butterfly__container,
-#tc4-footer .butterfly__wrapper,
-#tc4-footer .butterfly,
-#tc4-footer .shadow {
+#scouting-nederland-footer .butterfly__container,
+#scouting-nederland-footer .butterfly__wrapper,
+#scouting-nederland-footer .butterfly,
+#scouting-nederland-footer .shadow {
   display: none !important;
 }
 
-#tc4-footer .tc4-footer-grass {
+#scouting-nederland-footer .scouting-nederland-footer-grass {
   display: block !important;
   position: relative !important;
   height: 210px !important;
@@ -398,13 +398,13 @@
 }
 
 @media (max-width: 900px) {
-  #tc4-footer .tc4-footer-grass {
+  #scouting-nederland-footer .scouting-nederland-footer-grass {
     height: 150px !important;
     background-size: auto 150px !important;
   }
 }
 
-#tc4-footer .tc4-footer-grass {
+#scouting-nederland-footer .scouting-nederland-footer-grass {
   height: 150px !important;
   background-position-x: left !important;
   background-position-y: calc(100% + 34px) !important;
@@ -412,32 +412,32 @@
   margin-bottom: -1px !important;
 }
 
-body.mgroen #tc4-footer .tc4-footer-grass,
-body.green-main #tc4-footer .tc4-footer-grass,
-body.mblauw #tc4-footer .tc4-footer-grass,
-body.blue-main #tc4-footer .tc4-footer-grass,
-body.mgeel #tc4-footer .tc4-footer-grass,
-body.yellow-main #tc4-footer .tc4-footer-grass,
-body.mrood #tc4-footer .tc4-footer-grass,
-body.red-main #tc4-footer .tc4-footer-grass,
-body.moranje #tc4-footer .tc4-footer-grass,
-body.orange-main #tc4-footer .tc4-footer-grass,
-body.mpaars #tc4-footer .tc4-footer-grass,
-body.purple-main #tc4-footer .tc4-footer-grass {
+body.mgroen #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.green-main #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.mblauw #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.blue-main #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.mgeel #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.yellow-main #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.mrood #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.red-main #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.moranje #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.orange-main #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.mpaars #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.purple-main #scouting-nederland-footer .scouting-nederland-footer-grass {
   background-position-x: left !important;
   background-position-y: calc(100% + 34px) !important;
   background-size: auto 185px !important;
 }
 
 @media (max-width: 900px) {
-  #tc4-footer .tc4-footer-grass {
+  #scouting-nederland-footer .scouting-nederland-footer-grass {
     height: 105px !important;
     background-position-y: calc(100% + 24px) !important;
     background-size: auto 135px !important;
   }
 }
 
-#tc4-footer .tc4-footer-grass {
+#scouting-nederland-footer .scouting-nederland-footer-grass {
   height: 110px !important;
   background-position-x: left !important;
   background-position-y: calc(100% + 22px) !important;
@@ -445,18 +445,18 @@ body.purple-main #tc4-footer .tc4-footer-grass {
   margin-bottom: -1px !important;
 }
 
-body.mgroen #tc4-footer .tc4-footer-grass,
-body.green-main #tc4-footer .tc4-footer-grass,
-body.mblauw #tc4-footer .tc4-footer-grass,
-body.blue-main #tc4-footer .tc4-footer-grass,
-body.mgeel #tc4-footer .tc4-footer-grass,
-body.yellow-main #tc4-footer .tc4-footer-grass,
-body.mrood #tc4-footer .tc4-footer-grass,
-body.red-main #tc4-footer .tc4-footer-grass,
-body.moranje #tc4-footer .tc4-footer-grass,
-body.orange-main #tc4-footer .tc4-footer-grass,
-body.mpaars #tc4-footer .tc4-footer-grass,
-body.purple-main #tc4-footer .tc4-footer-grass {
+body.mgroen #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.green-main #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.mblauw #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.blue-main #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.mgeel #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.yellow-main #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.mrood #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.red-main #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.moranje #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.orange-main #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.mpaars #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.purple-main #scouting-nederland-footer .scouting-nederland-footer-grass {
   height: 110px !important;
   background-position-x: left !important;
   background-position-y: calc(100% + 22px) !important;
@@ -464,7 +464,7 @@ body.purple-main #tc4-footer .tc4-footer-grass {
 }
 
 @media (max-width: 900px) {
-  #tc4-footer .tc4-footer-grass {
+  #scouting-nederland-footer .scouting-nederland-footer-grass {
     height: 90px !important;
     background-position-y: calc(100% + 18px) !important;
     background-size: auto 112px !important;
