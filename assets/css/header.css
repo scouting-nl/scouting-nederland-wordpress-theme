@@ -134,12 +134,12 @@
   font-size: 22px;
   font-weight: 700;
   line-height: 1;
-  color: #0066b2;
+  color: #005ea8;
 }
 
 #scouting-nederland-buttons a:hover .scouting-nederland-icon,
 #scouting-nederland-nav .navbar-toggler:hover .scouting-nederland-icon {
-  color: #00a551;
+  color: #009036;
 }
 
 .navbar-collapse.show {
@@ -285,8 +285,8 @@
 
 #scouting-nederland-headermessage a,
 #scouting-nederland-headermessage .scouting-nederland-header-alert {
-  color: #e1071a !important;
-  font-family: "Poppins", Arial, sans-serif !important;
+  color: #e2001a !important;
+  font-family: Arial, Helvetica, sans-serif !important;
   font-weight: 400 !important;
   text-decoration: none !important;
 }
@@ -323,7 +323,7 @@
   height: 84px !important;
   padding: 0 15px !important;
   color: #006fb9 !important;
-  font-family: "Poppins", Arial, sans-serif !important;
+  font-family: Arial, Helvetica, sans-serif !important;
   font-size: 1rem !important;
   font-weight: 400 !important;
   line-height: 1 !important;
@@ -333,7 +333,7 @@
 
 #scouting-nederland-nav .navbar-nav>li>a:hover,
 #scouting-nederland-nav .navbar-nav>li>.nav-link:hover {
-  color: #00a551 !important;
+  color: #009036 !important;
 }
 
 #scouting-nederland-nav .navbar-nav>li>a::before,
@@ -349,7 +349,7 @@
   left: 15px !important;
   right: 15px !important;
   height: 4px !important;
-  background: #00a551 !important;
+  background: #009036 !important;
 }
 
 #scouting-nederland-buttons {
@@ -366,7 +366,7 @@
 }
 
 #scouting-nederland-buttons a:hover {
-  color: #00a551 !important;
+  color: #009036 !important;
 }
 
 #scouting-nederland-buttons .scouting-nederland-svg-icon {
@@ -549,7 +549,7 @@
   right: 15px !important;
   width: auto !important;
   height: 4px !important;
-  background: var(--scouting-nederland-main-color, #00a551) !important;
+  background: var(--scouting-nederland-main-color, #009036) !important;
   display: block !important;
   transform: scaleX(0) !important;
   transform-origin: left center !important;
@@ -609,7 +609,7 @@
   right: 15px !important;
   height: 4px !important;
   width: auto !important;
-  background: var(--scouting-nederland-main-color, #00a551) !important;
+  background: var(--scouting-nederland-main-color, #009036) !important;
   display: block !important;
   transform: scaleX(0) !important;
   transform-origin: left center !important;
@@ -693,7 +693,7 @@
   left: 15px !important;
   right: 15px !important;
   height: 4px !important;
-  background: var(--scouting-nederland-main-color, #00a551) !important;
+  background: var(--scouting-nederland-main-color, #009036) !important;
   opacity: 0 !important;
   visibility: hidden !important;
   transform: scaleX(0) !important;
@@ -722,7 +722,7 @@
 #scouting-nederland-nav .navbar-nav>li>a,
 #scouting-nederland-nav .navbar-nav>li>.nav-link,
 #scouting-nederland-buttons a {
-  color: var(--scouting-nederland-support-color, #0066b2) !important;
+  color: var(--scouting-nederland-support-color, #005ea8) !important;
 }
 
 @media (max-width: 1180px) {
@@ -809,7 +809,7 @@
     height: auto !important;
     padding: .55rem 1rem !important;
     color: #1d1d1b !important;
-    font-family: "Poppins", Arial, sans-serif !important;
+    font-family: Arial, Helvetica, sans-serif !important;
     font-size: 1rem !important;
     line-height: 1.3 !important;
     white-space: nowrap !important;
@@ -820,7 +820,7 @@
   #scouting-nederland-nav .dropdown-menu a:hover,
   #scouting-nederland-nav .sub-menu a:hover,
   #scouting-nederland-nav .dropdown-item:hover {
-    color: var(--scouting-nederland-support-color, #0066b2) !important;
+    color: var(--scouting-nederland-support-color, #005ea8) !important;
     background: #f7f7f7 !important;
   }
 
@@ -876,12 +876,12 @@
 }
 
 #scouting-nederland-buttons a {
-  color: var(--scouting-nederland-support-color, #0066b2) !important;
+  color: var(--scouting-nederland-support-color, #005ea8) !important;
 }
 
 #scouting-nederland-buttons a:hover,
 #scouting-nederland-buttons a:focus {
-  color: var(--scouting-nederland-support-color, #0066b2) !important;
+  color: var(--scouting-nederland-support-color, #005ea8) !important;
   opacity: .85;
 }
 
@@ -891,7 +891,7 @@
 
 #scouting-nederland-headermessage .fas.fa-exclamation-triangle {
   margin-left: .25rem;
-  color: #e1071a;
+  color: #e2001a;
   font-size: .95em;
 }
 
@@ -1008,7 +1008,7 @@
   align-items: center !important;
   gap: .25rem !important;
   height: 84px !important;
-  color: #e1071a !important;
+  color: #e2001a !important;
   line-height: 1 !important;
 }
 
@@ -1053,7 +1053,7 @@
   font-size: 1rem !important;
   line-height: 1 !important;
   font-weight: 400 !important;
-  color: var(--scouting-nederland-support-color, #0066b2) !important;
+  color: var(--scouting-nederland-support-color, #005ea8) !important;
 }
 
 #scouting-nederland-nav .navbar-nav>li::after {
@@ -1084,7 +1084,7 @@
   margin: 0 !important;
   padding: 0 !important;
   line-height: 1 !important;
-  color: var(--scouting-nederland-support-color, #0066b2) !important;
+  color: var(--scouting-nederland-support-color, #005ea8) !important;
 }
 
 #scouting-nederland-buttons .scouting-nederland-fa-icon {
@@ -1186,10 +1186,10 @@
 }
 
 .scouting-nederland-mobile-offcanvas .offcanvas-title {
-  font-family: "Roboto Slab", Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 1.35rem;
-  color: var(--scouting-nederland-main-color, #00a551);
+  color: var(--scouting-nederland-main-color, #009036);
 }
 
 .scouting-nederland-mobile-message {
@@ -1197,9 +1197,9 @@
 }
 
 .scouting-nederland-mobile-message a {
-  color: #e1071a;
+  color: #e2001a;
   text-decoration: none;
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
 }
 
@@ -1222,8 +1222,8 @@
 .scouting-nederland-mobile-nav a {
   display: block;
   padding: .9rem 0;
-  color: var(--scouting-nederland-support-color, #0066b2);
-  font-family: "Poppins", Arial, sans-serif;
+  color: var(--scouting-nederland-support-color, #005ea8);
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.05rem;
   text-decoration: none;
 }
@@ -1262,9 +1262,9 @@
   display: flex;
   align-items: center;
   gap: .85rem;
-  color: var(--scouting-nederland-support-color, #0066b2);
+  color: var(--scouting-nederland-support-color, #005ea8);
   text-decoration: none;
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
 }
 
@@ -1316,7 +1316,7 @@
     justify-content: center !important;
     border: 0 !important;
     background: transparent !important;
-    color: var(--scouting-nederland-support-color, #0066b2) !important;
+    color: var(--scouting-nederland-support-color, #005ea8) !important;
   }
 
   #scouting-nederland-buttons .fa.fa-bars {
@@ -1371,7 +1371,7 @@
     justify-content: center !important;
     border: 0 !important;
     background: transparent !important;
-    color: var(--scouting-nederland-support-color, #0066b2) !important;
+    color: var(--scouting-nederland-support-color, #005ea8) !important;
   }
 
   #scouting-nederland-nav.hamburger #scouting-nederland-buttons .fa.fa-bars {
@@ -1408,7 +1408,7 @@
     display: inline-flex !important;
     align-items: center !important;
     height: 84px !important;
-    color: #e1071a !important;
+    color: #e2001a !important;
   }
 
   #scouting-nederland-nav.hamburger .scouting-nederland-menu,
@@ -1424,7 +1424,7 @@
 #scouting-nederland-buttons .scouting-nederland-menu-label {
   display: none;
   margin-left: .45rem;
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   line-height: 1;
   text-transform: uppercase;
@@ -1581,7 +1581,7 @@ body.scouting-nederland-header-narrow #scouting-nederland-nav {
     display: inline-flex !important;
     align-items: center !important;
     height: 64px !important;
-    color: var(--scouting-nederland-support-color, #0066b2) !important;
+    color: var(--scouting-nederland-support-color, #005ea8) !important;
     font-size: .95rem !important;
     font-weight: 500 !important;
     letter-spacing: .12em !important;
@@ -1590,7 +1590,7 @@ body.scouting-nederland-header-narrow #scouting-nederland-nav {
   }
 
   body.scouting-nederland-header-wide #scouting-nederland-headermessage .fas.fa-exclamation-triangle {
-    color: var(--scouting-nederland-support-color, #0066b2) !important;
+    color: var(--scouting-nederland-support-color, #005ea8) !important;
     margin-left: .6rem !important;
     font-size: .95rem !important;
   }
@@ -1619,12 +1619,12 @@ body.scouting-nederland-header-narrow #scouting-nederland-nav {
     height: 64px !important;
     margin: 0 !important;
     padding: 0 !important;
-    color: var(--scouting-nederland-main-color, #00a551) !important;
+    color: var(--scouting-nederland-main-color, #009036) !important;
     line-height: 1 !important;
   }
 
   body.scouting-nederland-header-wide #scouting-nederland-buttons .scouting-nederland-fa-icon {
-    color: var(--scouting-nederland-main-color, #00a551) !important;
+    color: var(--scouting-nederland-main-color, #009036) !important;
   }
 
   body.scouting-nederland-header-wide #scouting-nederland-buttons .phone .scouting-nederland-fa-icon,
@@ -1644,7 +1644,7 @@ body.scouting-nederland-header-narrow #scouting-nederland-nav {
   body.scouting-nederland-header-wide #scouting-nederland-buttons .scouting-nederland-menu-label {
     display: inline-block !important;
     margin-left: .45rem !important;
-    color: var(--scouting-nederland-main-color, #00a551) !important;
+    color: var(--scouting-nederland-main-color, #009036) !important;
     font-size: 1rem !important;
     font-weight: 500 !important;
     letter-spacing: .02em !important;
@@ -1977,8 +1977,8 @@ body.scouting-nederland-header-narrow #scouting-nederland-logo .navbar-brand.log
   body.scouting-nederland-header-narrow #scouting-nederland-nav.hamburger #scouting-nederland-buttons .scouting-nederland-menu-label {
     display: inline-block !important;
     margin-left: .45rem !important;
-    color: var(--scouting-nederland-support-color, #0066b2) !important;
-    font-family: "Poppins", Arial, sans-serif !important;
+    color: var(--scouting-nederland-support-color, #005ea8) !important;
+    font-family: Arial, Helvetica, sans-serif !important;
     font-size: 1rem !important;
     font-weight: 500 !important;
     line-height: 1 !important;
@@ -1987,7 +1987,7 @@ body.scouting-nederland-header-narrow #scouting-nederland-logo .navbar-brand.log
 
   body.scouting-nederland-header-narrow #scouting-nederland-nav.hamburger #scouting-nederland-buttons .navbar-toggler {
     gap: .45rem !important;
-    color: var(--scouting-nederland-support-color, #0066b2) !important;
+    color: var(--scouting-nederland-support-color, #005ea8) !important;
   }
 }
 

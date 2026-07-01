@@ -28,11 +28,11 @@
 }
 
 .scouting-nederland-btn-blue {
-  background-color: var(--scouting-nederland-support-color, #0066b2) !important;
+  background-color: var(--scouting-nederland-support-color, #005ea8) !important;
 }
 
 .scouting-nederland-btn-green {
-  background-color: #00a551 !important;
+  background-color: #009036 !important;
 }
 
 .scouting-nederland-btn-black {
@@ -42,13 +42,13 @@
 .scouting-nederland-btn-blue:hover,
 .scouting-nederland-btn-blue:focus,
 .scouting-nederland-btn-blue:active {
-  background-color: var(--scouting-nederland-support-color, #0066b2) !important;
+  background-color: var(--scouting-nederland-support-color, #005ea8) !important;
 }
 
 .scouting-nederland-btn-green:hover,
 .scouting-nederland-btn-green:focus,
 .scouting-nederland-btn-green:active {
-  background-color: #00a551 !important;
+  background-color: #009036 !important;
 }
 
 .scouting-nederland-btn-black:hover,
@@ -64,7 +64,7 @@
 .wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link.wp-element-button,
 .wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link,
 a.wp-block-button__link.wp-element-button:not(.has-background):not(.has-text-color) {
-  background-color: var(--scouting-nederland-main-color, #00a551) !important;
+  background-color: var(--scouting-nederland-main-color, #009036) !important;
   color: #fff !important;
   border: 0 !important;
   text-decoration: none !important;
@@ -86,7 +86,7 @@ a.wp-block-button__link.wp-element-button:not(.has-background):not(.has-text-col
 .wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link.wp-element-button:active,
 .wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link:active,
 a.wp-block-button__link.wp-element-button:not(.has-background):not(.has-text-color):active {
-  background-color: var(--scouting-nederland-main-color, #00a551) !important;
+  background-color: var(--scouting-nederland-main-color, #009036) !important;
   color: #fff !important;
   text-decoration: none !important;
 }

@@ -1,18 +1,18 @@
 body {
-  --scouting-nederland-support-color: #0066b2;
-  --scouting-nederland-main-color: #00a551;
+  --scouting-nederland-support-color: #005ea8;
+  --scouting-nederland-main-color: #009036;
 }
 
-body.green-support { --scouting-nederland-support-color: #00a551; }
-body.blue-support { --scouting-nederland-support-color: #0066b2; }
-body.red-support { --scouting-nederland-support-color: #e1071a; }
-body.yellow-support { --scouting-nederland-support-color: #fcdd17; }
-body.orange-support { --scouting-nederland-support-color: #f2940a; }
-body.purple-support { --scouting-nederland-support-color: #921c7f; }
+body.green-support { --scouting-nederland-support-color: #009036; }
+body.blue-support { --scouting-nederland-support-color: #005ea8; }
+body.red-support { --scouting-nederland-support-color: #e2001a; }
+body.yellow-support { --scouting-nederland-support-color: #ffdd00; }
+body.orange-support { --scouting-nederland-support-color: #f29400; }
+body.purple-support { --scouting-nederland-support-color: #93117e; }
 
-body.green-main { --scouting-nederland-main-color: #00a551; }
-body.blue-main { --scouting-nederland-main-color: #0066b2; }
-body.red-main { --scouting-nederland-main-color: #e1071a; }
-body.yellow-main { --scouting-nederland-main-color: #fcdd17; }
-body.orange-main { --scouting-nederland-main-color: #f2940a; }
-body.purple-main { --scouting-nederland-main-color: #921c7f; }
+body.green-main { --scouting-nederland-main-color: #009036; }
+body.blue-main { --scouting-nederland-main-color: #005ea8; }
+body.red-main { --scouting-nederland-main-color: #e2001a; }
+body.yellow-main { --scouting-nederland-main-color: #ffdd00; }
+body.orange-main { --scouting-nederland-main-color: #f29400; }
+body.purple-main { --scouting-nederland-main-color: #93117e; }

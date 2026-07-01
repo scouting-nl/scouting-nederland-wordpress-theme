@@ -1,8 +1,8 @@
 #scouting-nederland-footer {
   margin-top: 0;
-  background: #00a551;
+  background: #009036;
   color: #fff;
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #scouting-nederland-footer .scouting-nederland-footer-grass {
@@ -16,7 +16,7 @@
 }
 
 #scouting-nederland-footer .scouting-nederland-footer-main {
-  background: var(--scouting-nederland-main-color, #00a551);
+  background: var(--scouting-nederland-main-color, #009036);
   color: #fff;
   min-height: 315px;
   padding: 2.5rem 0 3rem;
@@ -34,7 +34,7 @@
 #scouting-nederland-footer h5 {
   margin: 0 0 1.4rem;
   color: #fff;
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.35rem;
   font-weight: 700;
   line-height: 1.2;
@@ -111,7 +111,7 @@
   transform: rotate(-5deg);
   flex-direction: column;
   align-items: flex-start;
-  font-family: "Roboto Slab", Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #scouting-nederland-footer .scouting-nederland-partner-jantje span,
@@ -122,7 +122,7 @@
 }
 
 #scouting-nederland-footer .scouting-nederland-partner-jantje small {
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: .55rem;
   font-weight: 800;
   margin-top: .25rem;
@@ -215,7 +215,7 @@
 
 #scouting-nederland-footer .scouting-nederland-footer-bottom {
   background: #fff;
-  color: var(--scouting-nederland-main-color, #00a551);
+  color: var(--scouting-nederland-main-color, #009036);
 }
 
 #scouting-nederland-footer .scouting-nederland-footer-bottom-inner {
@@ -248,12 +248,12 @@
   width: 1px;
   height: 22px;
   margin: 0 1rem;
-  background: var(--scouting-nederland-main-color, #00a551);
+  background: var(--scouting-nederland-main-color, #009036);
   opacity: .8;
 }
 
 #scouting-nederland-footer .scouting-nederland-footer-menu a {
-  color: var(--scouting-nederland-main-color, #00a551);
+  color: var(--scouting-nederland-main-color, #009036);
   font-size: .85rem;
   line-height: 1.2;
   font-weight: 400;
@@ -305,7 +305,7 @@
 
 #scouting-nederland-footer .scouting-nederland-footer-bottom,
 #scouting-nederland-footer .scouting-nederland-footer-bottom * {
-  color: var(--scouting-nederland-main-color, #00a551) !important;
+  color: var(--scouting-nederland-main-color, #009036) !important;
 }
 
 #scouting-nederland-footer .scouting-nederland-footer-bottom .scouting-nederland-footer-menu a,
@@ -313,7 +313,7 @@
 #scouting-nederland-footer .scouting-nederland-footer-bottom .scouting-nederland-footer-menu a:hover,
 #scouting-nederland-footer .scouting-nederland-footer-bottom .scouting-nederland-footer-menu a:focus,
 #scouting-nederland-footer .scouting-nederland-footer-bottom .scouting-nederland-footer-menu .nav-link {
-  color: var(--scouting-nederland-main-color, #00a551) !important;
+  color: var(--scouting-nederland-main-color, #009036) !important;
   opacity: 1 !important;
   visibility: visible !important;
   text-decoration: none;
@@ -325,7 +325,7 @@
 }
 
 #scouting-nederland-footer .scouting-nederland-footer-menu li + li::before {
-  background: var(--scouting-nederland-main-color, #00a551) !important;
+  background: var(--scouting-nederland-main-color, #009036) !important;
   opacity: 1 !important;
 }
 
@@ -349,7 +349,7 @@
 #scouting-nederland-footer .scouting-nederland-footer-partners-widget-area h5 {
   margin: 0 0 1.8rem;
   color: #fff;
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 1.35rem;
   font-weight: 700;
   line-height: 1.2;
