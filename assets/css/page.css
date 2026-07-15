@@ -108,30 +108,3 @@ h1.scouting-nederland-hero-font-poppins,
 .scouting-nederland-home-video-caption.scouting-nederland-hero-font-poppins h1 {
   font-family: "Poppins", Arial, Helvetica, sans-serif !important;
 }
-
-.scouting-nederland-elementor-template,
-.scouting-nederland-elementor-maincontent,
-.scouting-nederland-elementor-content {
-  width: 100%;
-  max-width: none;
-}
-
-.scouting-nederland-elementor-template--default,
-.scouting-nederland-elementor-template--full-width {
-  margin-right: 0;
-  margin-left: 0;
-}
-
-.scouting-nederland-elementor-content {
-  display: block;
-}
-
-.scouting-nederland-elementor-canvas-body {
-  margin: 0;
-  background: #fff;
-}
-
-.scouting-nederland-elementor-canvas {
-  width: 100%;
-  min-height: 100vh;
-}
