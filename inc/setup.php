@@ -206,7 +206,7 @@ add_filter('body_class', 'scoutingNederlandElementorBodyClass');
 
 function scoutingNederlandHeaderWidthBodyClass($classes) {
     $mode = get_theme_mod('scouting_nederland_header_width', 'narrow');
-    $classes[] = ($mode === 'narrow') ? 'scouting-nederland-header-wide' : 'scouting-nederland-header-narrow';
+    $classes[] = ($mode === 'narrow') ? 'scouting-nederland-header-narrow' : 'scouting-nederland-header-wide';
     return $classes;
 }
 add_filter('body_class', 'scoutingNederlandHeaderWidthBodyClass');
