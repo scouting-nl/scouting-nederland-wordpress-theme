@@ -132,7 +132,11 @@ function scoutingNederlandRenderSliderMetabox($post) {
 }
 
 function scoutingNederlandSaveSliderMetabox($post_id) {
-    if (!isset($_POST['scouting_nederland_slider_nonce']) || !wp_verify_nonce($_POST['scouting_nederland_slider_nonce'], 'scouting_nederland_save_slider')) {
+    $nonce = isset($_POST['scouting_nederland_slider_nonce'])
+        ? sanitize_text_field(wp_unslash($_POST['scouting_nederland_slider_nonce']))
+        : '';
+
+    if (!wp_verify_nonce($nonce, 'scouting_nederland_save_slider')) {
         return;
     }
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
@@ -144,15 +148,18 @@ function scoutingNederlandSaveSliderMetabox($post_id) {
 
     update_post_meta($post_id, '_scouting_nederland_slider_show', isset($_POST['scouting_nederland_slider_show']) ? '1' : '0');
 
-    $type = isset($_POST['scouting_nederland_slider_type']) && $_POST['scouting_nederland_slider_type'] === 'video' ? 'video' : 'slider';
+    $type = isset($_POST['scouting_nederland_slider_type'])
+        && sanitize_key(wp_unslash($_POST['scouting_nederland_slider_type'])) === 'video'
+        ? 'video'
+        : 'slider';
     update_post_meta($post_id, '_scouting_nederland_slider_type', $type);
-    update_post_meta($post_id, '_scouting_nederland_slider_video', isset($_POST['scouting_nederland_slider_video']) ? esc_url_raw($_POST['scouting_nederland_slider_video']) : '');
-    update_post_meta($post_id, '_scouting_nederland_slider_video_id', isset($_POST['scouting_nederland_slider_video_id']) ? absint($_POST['scouting_nederland_slider_video_id']) : 0);
-    update_post_meta($post_id, '_scouting_nederland_slider_video_heading', isset($_POST['scouting_nederland_slider_video_heading']) ? sanitize_text_field($_POST['scouting_nederland_slider_video_heading']) : '');
+    update_post_meta($post_id, '_scouting_nederland_slider_video', isset($_POST['scouting_nederland_slider_video']) ? esc_url_raw(wp_unslash($_POST['scouting_nederland_slider_video'])) : '');
+    update_post_meta($post_id, '_scouting_nederland_slider_video_id', isset($_POST['scouting_nederland_slider_video_id']) ? absint(wp_unslash($_POST['scouting_nederland_slider_video_id'])) : 0);
+    update_post_meta($post_id, '_scouting_nederland_slider_video_heading', isset($_POST['scouting_nederland_slider_video_heading']) ? sanitize_text_field(wp_unslash($_POST['scouting_nederland_slider_video_heading'])) : '');
 
     $slides = array();
     if (isset($_POST['scouting_nederland_slides']) && is_array($_POST['scouting_nederland_slides'])) {
-        foreach ($_POST['scouting_nederland_slides'] as $slide) {
+        foreach (wp_unslash($_POST['scouting_nederland_slides']) as $slide) {
             $image_id = isset($slide['image_id']) ? absint($slide['image_id']) : 0;
             $heading  = isset($slide['heading']) ? sanitize_text_field($slide['heading']) : '';
             if ($image_id || $heading) {

@@ -1,4 +1,4 @@
-<?php get_template_part('parts/header'); ?>
+<?php get_header(); ?>
 <div class="mainbody"><div class="content">
 <div id="scouting-nederland-hero" class="container-fluid px-0">
     <div class="row no-gutters"><div class="col">
@@ -78,4 +78,4 @@
 </div>
 </div><!-- .content -->
 </div><!-- .mainbody -->
-<?php get_template_part('parts/footer'); ?>
+<?php get_footer(); ?>

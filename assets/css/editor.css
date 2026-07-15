@@ -36,7 +36,7 @@
 }
 
 .editor-styles-wrapper .scouting-nederland-editor-block {
-  outline: 1px dashed rgba(0, 165, 81, .35);
+  outline: 1px dashed rgb(from var(--wp--preset--color--scouting-groen) r g b / .35);
   outline-offset: 8px;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .scouting-nederland-btn-green {
-  background: #00a551;
+  background: var(--wp--preset--color--scouting-groen);
 }
 
 .editor-styles-wrapper .scouting-nederland-acf-like-block {
@@ -494,7 +494,7 @@
 
 #scouting-nederland-headermessage a,
 #scouting-nederland-headermessage .scouting-nederland-header-alert {
-  color: #e1071a !important;
+  color: var(--wp--preset--color--scouting-rood) !important;
   text-decoration: none;
 }
 
@@ -532,7 +532,7 @@
   align-items: center;
   height: 84px;
   padding: 0 16px;
-  color: #006fb9;
+  color: var(--wp--preset--color--scouting-blauw-accent);
   font-family: "Poppins", Arial, sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -547,7 +547,7 @@
 #scouting-nederland-nav .navbar-nav > li.current-menu-ancestor > a,
 #scouting-nederland-nav .navbar-nav > li.active > a,
 #scouting-nederland-nav .navbar-nav > li.active > .nav-link {
-  color: #006fb9;
+  color: var(--wp--preset--color--scouting-blauw-accent);
 }
 
 #scouting-nederland-nav .navbar-nav > li.current-menu-item > a::before,
@@ -560,7 +560,7 @@
   left: 16px;
   right: 16px;
   height: 4px;
-  background: #00a551;
+  background: var(--wp--preset--color--scouting-groen);
 }
 
 #scouting-nederland-buttons {
@@ -577,7 +577,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #006fb9;
+  color: var(--wp--preset--color--scouting-blauw-accent);
   text-decoration: none;
   line-height: 1;
 }
@@ -598,7 +598,7 @@
   display: none;
   border: 0;
   padding: 0;
-  color: #006fb9;
+  color: var(--wp--preset--color--scouting-blauw-accent);
   background: transparent;
 }
 
@@ -805,12 +805,12 @@ body.admin-bar #scouting-nederland-nav {
 
   body.scouting-nederland-header-wide #scouting-nederland-headermessage a {
     height: 64px !important;
-    color: var(--scouting-nederland-support-color, #0066b2) !important;
+    color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw)) !important;
   }
 
   body.scouting-nederland-header-wide #scouting-nederland-headermessage a i,
   body.scouting-nederland-header-wide #scouting-nederland-headermessage .fas.fa-exclamation-triangle {
-    color: var(--scouting-nederland-support-color, #0066b2) !important;
+    color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw)) !important;
     margin-left: .6rem !important;
   }
 
@@ -831,7 +831,7 @@ body.admin-bar #scouting-nederland-nav {
     display: inline-flex !important;
     height: 64px !important;
     align-items: center !important;
-    color: var(--scouting-nederland-main-color, #00a551) !important;
+    color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
   }
 
   body.scouting-nederland-header-wide #scouting-nederland-buttons .navbar-toggler {
@@ -840,7 +840,7 @@ body.admin-bar #scouting-nederland-nav {
     align-items: center !important;
     justify-content: center !important;
     padding: 0 !important;
-    color: var(--scouting-nederland-main-color, #00a551) !important;
+    color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
   }
 
   body.scouting-nederland-header-wide #scouting-nederland-buttons .fa.fa-bars {
@@ -854,7 +854,7 @@ body.admin-bar #scouting-nederland-nav {
   body.scouting-nederland-header-wide #scouting-nederland-buttons .phone .scouting-nederland-fa-icon,
   body.scouting-nederland-header-wide #scouting-nederland-buttons .contact .scouting-nederland-fa-icon,
   body.scouting-nederland-header-wide #scouting-nederland-buttons .search .scouting-nederland-fa-icon {
-    color: var(--scouting-nederland-main-color, #00a551) !important;
+    color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
   }
 
   body.scouting-nederland-header-wide .mainbody {
@@ -1062,7 +1062,7 @@ body.admin-bar #scouting-nederland-nav {
 }
 
 .scouting-nederland-real-editor-content a {
-  color: #0066b2;
+  color: var(--wp--preset--color--scouting-blauw);
   text-decoration: underline;
 }
 

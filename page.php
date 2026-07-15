@@ -1,4 +1,4 @@
-<?php get_template_part('parts/header'); ?>
+<?php get_header(); ?>
 <?php
 $scouting_nederland_page_id = get_queried_object_id();
 $scouting_nederland_page_title = '';
@@ -84,7 +84,7 @@ if ($scouting_nederland_is_elementor_page) {
             <?php endif; ?>
         </main>
         <?php if ($scouting_nederland_has_sidebar) : ?>
-            <?php get_template_part('parts/sidebar'); ?>
+            <?php get_sidebar(); ?>
         <?php endif; ?>
     </div>
     <?php if (!$scouting_nederland_is_elementor_page && (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b'))) : ?>
@@ -93,4 +93,4 @@ if ($scouting_nederland_is_elementor_page) {
 </div>
 </div><!-- .content -->
 </div><!-- .mainbody -->
-<?php get_template_part('parts/footer'); ?>
+<?php get_footer(); ?>

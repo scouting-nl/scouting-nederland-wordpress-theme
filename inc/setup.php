@@ -65,54 +65,6 @@ function scoutingNederlandGetDefaultHeroUrl() {
     return get_template_directory_uri() . '/assets/images/default-slide.jpg';
 }
 
-function scoutingNederlandAssets() {
-    wp_enqueue_style('scouting-nederland-fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css', array(), '5.15.4');
-
-    wp_enqueue_style('scouting-nederland-template', get_template_directory_uri() . '/assets/css/template.css', array('scouting-nederland-fontawesome'), SCOUTING_NEDERLAND_VERSION);
-    wp_enqueue_style('scouting-nederland-base', get_template_directory_uri() . '/assets/css/base.css', array('scouting-nederland-template'), SCOUTING_NEDERLAND_VERSION);
-    wp_enqueue_style('scouting-nederland-utilities', get_template_directory_uri() . '/assets/css/utilities.css', array('scouting-nederland-base'), SCOUTING_NEDERLAND_VERSION);
-    wp_enqueue_style('scouting-nederland-header', get_template_directory_uri() . '/assets/css/header.css', array('scouting-nederland-utilities'), SCOUTING_NEDERLAND_VERSION);
-    wp_enqueue_style('scouting-nederland-footer', get_template_directory_uri() . '/assets/css/footer.css', array('scouting-nederland-header'), SCOUTING_NEDERLAND_VERSION);
-    wp_enqueue_style('scouting-nederland-homepage', get_template_directory_uri() . '/assets/css/homepage.css', array('scouting-nederland-footer'), SCOUTING_NEDERLAND_VERSION);
-    wp_enqueue_style('scouting-nederland-news', get_template_directory_uri() . '/assets/css/news.css', array('scouting-nederland-homepage'), SCOUTING_NEDERLAND_VERSION);
-    wp_enqueue_style('scouting-nederland-blocks', get_template_directory_uri() . '/assets/css/blocks.css', array('scouting-nederland-news'), SCOUTING_NEDERLAND_VERSION);
-    wp_enqueue_style('scouting-nederland-colors', get_template_directory_uri() . '/assets/css/colors.css', array('scouting-nederland-blocks'), SCOUTING_NEDERLAND_VERSION);
-
-    if (is_search() || is_404()) {
-        wp_enqueue_style('scouting-nederland-search', get_template_directory_uri() . '/assets/css/search.css', array('scouting-nederland-colors'), SCOUTING_NEDERLAND_VERSION);
-    }
-
-    if (is_404()) {
-        wp_enqueue_style('scouting-nederland-404', get_template_directory_uri() . '/assets/css/404.css', array('scouting-nederland-search'), SCOUTING_NEDERLAND_VERSION);
-    }
-
-    if (is_page()) {
-        wp_enqueue_style('scouting-nederland-page', get_template_directory_uri() . '/assets/css/page.css', array('scouting-nederland-colors'), SCOUTING_NEDERLAND_VERSION);
-    }
-
-    if (is_singular('post')) {
-        wp_enqueue_style('scouting-nederland-single', get_template_directory_uri() . '/assets/css/single.css', array('scouting-nederland-colors'), SCOUTING_NEDERLAND_VERSION);
-    }
-
-    if (is_category()) {
-        wp_enqueue_style('scouting-nederland-category', get_template_directory_uri() . '/assets/css/category.css', array('scouting-nederland-colors'), SCOUTING_NEDERLAND_VERSION);
-    }
-
-    $buttons_dependency = 'scouting-nederland-colors';
-    if (is_search()) {
-        $buttons_dependency = 'scouting-nederland-search';
-    }
-    if (is_404()) {
-        $buttons_dependency = 'scouting-nederland-404';
-    }
-    wp_enqueue_style('scouting-nederland-buttons', get_template_directory_uri() . '/assets/css/buttons.css', array($buttons_dependency), SCOUTING_NEDERLAND_VERSION);
-    wp_enqueue_style('scouting-nederland-layout', get_template_directory_uri() . '/assets/css/layout.css', array('scouting-nederland-buttons'), SCOUTING_NEDERLAND_VERSION);
-
-    wp_enqueue_script('bootstrap-bundle', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js', array(), '5.1.3', true);
-    wp_enqueue_script('scouting-nederland-home-slider', get_template_directory_uri() . '/assets/js/home-slider.js', array(), SCOUTING_NEDERLAND_VERSION, true);
-}
-add_action('wp_enqueue_scripts', 'scoutingNederlandAssets');
-
 function scoutingNederlandWidgetsInit() {
     $areas = array(
         'hero' => __('Hero', 'scouting-nederland'),
@@ -142,43 +94,6 @@ function scoutingNederlandWidgetsInit() {
 }
 add_action('widgets_init', 'scoutingNederlandWidgetsInit');
 
-function scoutingNederlandRemoveDefaultSidebarWidgets() {
-    $cleanup_option = 'scouting_nederland_default_sidebar_widgets_removed_154';
-
-    if (get_option($cleanup_option)) {
-        return;
-    }
-
-    $sidebars_widgets = get_option('sidebars_widgets');
-    if (!is_array($sidebars_widgets) || empty($sidebars_widgets['sidebar']) || !is_array($sidebars_widgets['sidebar'])) {
-        update_option($cleanup_option, 1, false);
-        return;
-    }
-
-    $default_widget_patterns = array(
-        '/^recent-posts-\d+$/',
-        '/^recent-comments-\d+$/',
-        '/^archives-\d+$/',
-        '/^categories-\d+$/',
-    );
-
-    $sidebars_widgets['sidebar'] = array_values(array_filter(
-        $sidebars_widgets['sidebar'],
-        function($widget_id) use ($default_widget_patterns) {
-            foreach ($default_widget_patterns as $pattern) {
-                if (preg_match($pattern, $widget_id)) {
-                    return false;
-                }
-            }
-            return true;
-        }
-    ));
-
-    update_option('sidebars_widgets', $sidebars_widgets);
-    update_option($cleanup_option, 1, false);
-}
-add_action('after_switch_theme', 'scoutingNederlandRemoveDefaultSidebarWidgets');
-add_action('admin_init', 'scoutingNederlandRemoveDefaultSidebarWidgets');
 function scoutingNederlandPostedOn() {
     echo '<p class="text-muted small">' . esc_html(get_the_date()) . '</p>';
 }
@@ -216,8 +131,6 @@ function scoutingNederlandDefaultFavicon() {
     }
 
     $favicon_png = get_template_directory_uri() . '/assets/images/favicon.png';
-    $favicon_ico = get_template_directory_uri() . '/assets/images/favicon.ico';
     echo '<link rel="icon" type="image/png" sizes="512x512" href="' . esc_url($favicon_png) . '">' . "\n";
-    echo '<link rel="shortcut icon" href="' . esc_url($favicon_ico) . '">' . "\n";
 }
 add_action('wp_head', 'scoutingNederlandDefaultFavicon', 1);

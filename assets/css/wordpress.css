@@ -1,0 +1,268 @@
+.wp-site-blocks,
+html {
+    font-size: 16px;
+    line-height: 1.9em;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    color: var(--wp--custom--color--text);
+    font-family: "Poppins-Light", sans-serif;
+    font-size: 1.125rem;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures;
+    font-weight: 300;
+    line-height: 1.9em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body :is(.fa, .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands, .fa-classic):not(.fa-fw):not(.fa-width-fixed) {
+    --fa-width: auto;
+}
+
+.text-primary,
+.text-secondary {
+    color: var(--wp--preset--color--scouting-blauw);
+}
+
+.bg-primary {
+    background-color: var(--wp--preset--color--scouting-blauw);
+}
+
+.text-success {
+    color: var(--wp--preset--color--scouting-groen) !important;
+}
+
+.bg-success {
+    background-color: var(--wp--preset--color--scouting-groen) !important;
+}
+
+.text-danger {
+    color: var(--wp--custom--color--danger) !important;
+}
+
+.bg-danger {
+    background-color: var(--wp--custom--color--danger);
+}
+
+a.text-success:focus,
+a.text-success:hover {
+    color: var(--wp--preset--color--scouting-blauw) !important;
+}
+
+h1,
+.h1 {
+    margin: .67em 0;
+    color: var(--wp--preset--color--scouting-groen);
+    font-family: "Roboto Slab", serif;
+    font-size: 2.8125rem;
+    line-height: 1em;
+}
+
+h2,
+.h2 {
+    margin: .67em 0;
+    font-family: "Roboto Slab", serif;
+    font-size: 2rem;
+    line-height: 1em;
+}
+
+h3,
+.h3 {
+    margin: .67em 0;
+    font-family: "Roboto Slab", serif;
+    font-size: 1.5rem;
+    line-height: 1em;
+}
+
+a {
+    color: var(--wp--preset--color--scouting-blauw);
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+}
+
+a:hover {
+    color: var(--wp--custom--color--link-hover);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul li {
+    list-style-position: inside;
+}
+
+li.no-bullet {
+    list-style: none;
+}
+
+.navbar-expand-lg {
+    justify-content: flex-end;
+}
+
+.navbar-brand {
+    position: relative;
+    padding: 0;
+    color: var(--wp--custom--color--navbar-text);
+}
+
+.btn-close,
+.form-control,
+.form-select,
+.navbar-toggler,
+.page-link {
+    border-radius: .25rem;
+}
+
+.form-control,
+.form-select {
+    border-color: var(--wp--custom--color--bootstrap-border);
+}
+
+.offcanvas-header .btn-close {
+    margin: -.5rem -.5rem -.5rem 0;
+}
+
+.offcanvas-header {
+    justify-content: space-between;
+}
+
+.pagination {
+    --bs-pagination-border-radius: .25rem;
+}
+
+.page-link {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
+    outline: 0;
+}
+
+@media only screen and (min-width: 992px) {
+    .dropdown-item {
+        margin-bottom: 10px;
+    }
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 50px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+    cursor: pointer;
+    font-weight: 600;
+    line-height: 1.2em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .2s ease-in-out;
+}
+
+.btn::after {
+    position: relative;
+    display: inline-block;
+    width: .8em;
+    height: .8em;
+    margin-left: 20px;
+    border-width: 2px 2px 0 0;
+    border-style: solid;
+    content: "";
+    transform: rotate(45deg);
+    transition: all .3s ease;
+    vertical-align: top;
+}
+
+.btn-primary,
+.btn-primary:hover {
+    border-color: var(--wp--preset--color--scouting-blauw);
+    background-color: var(--wp--preset--color--scouting-blauw);
+}
+
+.btn-secondary,
+.btn-secondary:hover {
+    border-color: var(--wp--preset--color--zwart);
+    background-color: var(--wp--preset--color--zwart);
+}
+
+.btn-primary:hover::after,
+.btn:hover::after {
+    margin-right: -10px;
+    margin-left: 30px;
+}
+
+.badge-info {
+    padding: .5rem;
+    color: #444;
+    background-color: var(--wp--custom--color--surface-muted);
+}
+
+.content {
+    min-height: 300px;
+}
+
+#scouting-nederland-footer {
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 2;
+}
+
+.widget {
+    margin-bottom: 1.5rem;
+}
+
+.widget ul {
+    padding-left: 1.2rem;
+}
+
+.wp-caption,
+.gallery-caption {
+    max-width: 100%;
+}
+
+.aligncenter {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.alignleft {
+    float: left;
+    margin-right: 1rem;
+}
+
+.alignright {
+    float: right;
+    margin-left: 1rem;
+}
+
+.screen-reader-text {
+    position: absolute;
+    left: -9999px;
+}
+
+.post-thumbnail img,
+.entry-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.defaultbanner {
+    min-height: 360px;
+    background-position: center;
+    background-size: cover;
+}
+
+.defaultbanner.laag {
+    height: 350px;
+    background-repeat: no-repeat;
+}

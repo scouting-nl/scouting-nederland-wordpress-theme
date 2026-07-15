@@ -115,19 +115,17 @@ function scoutingNederlandRenderPageDisplayMetabox($post) {
 }
 
 function scoutingNederlandSavePageDisplayMetabox($post_id) {
-    if (!isset($_POST['scouting_nederland_page_display_nonce']) || !wp_verify_nonce($_POST['scouting_nederland_page_display_nonce'], 'scouting_nederland_save_page_display_settings')) {
-        return;
-    }
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-        return;
-    }
-    if (wp_is_post_revision($post_id)) {
-        return;
-    }
-    if (get_post_type($post_id) !== 'page') {
-        return;
-    }
-    if (!current_user_can('edit_page', $post_id)) {
+    $nonce = isset($_POST['scouting_nederland_page_display_nonce'])
+        ? sanitize_text_field(wp_unslash($_POST['scouting_nederland_page_display_nonce']))
+        : '';
+
+    if (
+        !wp_verify_nonce($nonce, 'scouting_nederland_save_page_display_settings')
+        || (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+        || wp_is_post_revision($post_id)
+        || get_post_type($post_id) !== 'page'
+        || !current_user_can('edit_page', $post_id)
+    ) {
         return;
     }
 

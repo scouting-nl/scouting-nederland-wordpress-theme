@@ -1,18 +1,64 @@
 body {
-  --scouting-nederland-support-color: #0066b2;
-  --scouting-nederland-main-color: #00a551;
+  --scouting-nederland-support-color: var(--wp--preset--color--scouting-blauw);
+  --scouting-nederland-main-color: var(--wp--preset--color--scouting-groen);
 }
 
-body.green-support { --scouting-nederland-support-color: #00a551; }
-body.blue-support { --scouting-nederland-support-color: #0066b2; }
-body.red-support { --scouting-nederland-support-color: #e1071a; }
-body.yellow-support { --scouting-nederland-support-color: #fcdd17; }
-body.orange-support { --scouting-nederland-support-color: #f2940a; }
-body.purple-support { --scouting-nederland-support-color: #921c7f; }
+body.sgroen,
+body.green-support {
+  --scouting-nederland-support-color: var(--wp--preset--color--scouting-groen) !important;
+}
 
-body.green-main { --scouting-nederland-main-color: #00a551; }
-body.blue-main { --scouting-nederland-main-color: #0066b2; }
-body.red-main { --scouting-nederland-main-color: #e1071a; }
-body.yellow-main { --scouting-nederland-main-color: #fcdd17; }
-body.orange-main { --scouting-nederland-main-color: #f2940a; }
-body.purple-main { --scouting-nederland-main-color: #921c7f; }
+body.sblauw,
+body.blue-support {
+  --scouting-nederland-support-color: var(--wp--preset--color--scouting-blauw) !important;
+}
+
+body.srood,
+body.red-support {
+  --scouting-nederland-support-color: var(--wp--preset--color--scouting-rood) !important;
+}
+
+body.sgeel,
+body.yellow-support {
+  --scouting-nederland-support-color: var(--wp--preset--color--scouting-geel) !important;
+}
+
+body.soranje,
+body.orange-support {
+  --scouting-nederland-support-color: var(--wp--preset--color--scouting-oranje) !important;
+}
+
+body.spaars,
+body.purple-support {
+  --scouting-nederland-support-color: var(--wp--preset--color--scouting-paars) !important;
+}
+
+body.mgroen,
+body.green-main {
+  --scouting-nederland-main-color: var(--wp--preset--color--scouting-groen) !important;
+}
+
+body.mblauw,
+body.blue-main {
+  --scouting-nederland-main-color: var(--wp--preset--color--scouting-blauw) !important;
+}
+
+body.mrood,
+body.red-main {
+  --scouting-nederland-main-color: var(--wp--preset--color--scouting-rood) !important;
+}
+
+body.mgeel,
+body.yellow-main {
+  --scouting-nederland-main-color: var(--wp--preset--color--scouting-geel) !important;
+}
+
+body.moranje,
+body.orange-main {
+  --scouting-nederland-main-color: var(--wp--preset--color--scouting-oranje) !important;
+}
+
+body.mpaars,
+body.purple-main {
+  --scouting-nederland-main-color: var(--wp--preset--color--scouting-paars) !important;
+}

@@ -73,7 +73,7 @@ function scoutingNederlandRegisterEditorBlocks() {
 
     wp_register_script(
         'scouting-nederland-blocks',
-        get_template_directory_uri() . '/assets/js/blocks/index.js',
+        false,
         array_keys($block_scripts),
         SCOUTING_NEDERLAND_VERSION,
         true
@@ -271,7 +271,7 @@ function scoutingNederlandRenderFeaturedItemsBlock($attrs) {
     }
 
     ob_start();
-    echo '<section class="scouting-nederland-block-featured-items scouting-nederland-featured-style-2020">';
+    echo '<section class="scouting-nederland-block-featured-items scouting-nederland-featured-style">';
     if (!empty($attrs['title'])) {
         echo '<h2 class="scouting-nederland-featured-main-title">' . esc_html($attrs['title']) . '</h2>';
     }
@@ -298,7 +298,7 @@ function scoutingNederlandRenderFeaturedItemsBlock($attrs) {
         }
 
         if ($button) {
-            echo '<a class="scouting-nederland-btn ' . esc_attr(scoutingNederlandButtonClassFromColor($color)) . '" href="' . esc_url($url ?: '#') . '"><span>' . esc_html($button) . '</span></a>';
+            echo '<a class="scouting-nederland-btn ' . esc_attr(scoutingNederlandBlocksButtonClassFromColor($color)) . '" href="' . esc_url($url ?: '#') . '"><span>' . esc_html($button) . '</span></a>';
         }
         echo '</article>';
     }
@@ -319,7 +319,7 @@ function scoutingNederlandRenderCalloutBlock($attrs) {
     }
 
     ob_start();
-    echo '<section class="scouting-nederland-block-callout scouting-nederland-callout-style-2020">';
+    echo '<section class="scouting-nederland-block-callout scouting-nederland-callout-style">';
     echo '<div class="scouting-nederland-callout-inner">';
     echo '<div class="scouting-nederland-callout-image">';
     if ($image) {
@@ -334,7 +334,7 @@ function scoutingNederlandRenderCalloutBlock($attrs) {
     echo '<div class="scouting-nederland-callout-copy">' . wp_kses_post(wpautop($text)) . '</div>';
 
     if (!empty($attrs['buttonText'])) {
-        echo '<a class="scouting-nederland-btn ' . esc_attr(scoutingNederlandButtonClassFromColor(!empty($attrs['buttonColor']) ? $attrs['buttonColor'] : 'zwart')) . '" href="' . esc_url(!empty($attrs['buttonUrl']) ? $attrs['buttonUrl'] : '#') . '"><span>' . esc_html($attrs['buttonText']) . '</span></a>';
+        echo '<a class="scouting-nederland-btn ' . esc_attr(scoutingNederlandBlocksButtonClassFromColor(!empty($attrs['buttonColor']) ? $attrs['buttonColor'] : 'zwart')) . '" href="' . esc_url(!empty($attrs['buttonUrl']) ? $attrs['buttonUrl'] : '#') . '"><span>' . esc_html($attrs['buttonText']) . '</span></a>';
     }
     echo '</div></div></section>';
     return ob_get_clean();
@@ -370,7 +370,7 @@ function scoutingNederlandRenderNewsItemsBlock($attrs) {
 
     $query = new WP_Query($args);
     ob_start();
-    echo '<section class="scouting-nederland-block-news scouting-nederland-news-style-2020">';
+    echo '<section class="scouting-nederland-block-news scouting-nederland-news-style">';
     echo '<div class="gb-news-items">';
     if (!empty($attrs['title'])) {
         echo '<a class="scouting-nederland-news-heading-link" href="' . esc_url($category_link) . '"><h4>' . esc_html($attrs['title']) . '</h4></a>';
@@ -419,7 +419,7 @@ function scoutingNederlandRenderSpeltakkenGridBlock($attrs) {
     }
 
     ob_start();
-    echo '<section class="scouting-nederland-block-speltakken-grid scouting-nederland-speltakken-grid-style-2020">';
+    echo '<section class="scouting-nederland-block-speltakken-grid scouting-nederland-speltakken-grid-style">';
     if (!empty($attrs['title'])) {
         echo '<h2 class="scouting-nederland-speltakken-main-title">' . esc_html($attrs['title']) . '</h2>';
     }
@@ -478,7 +478,7 @@ function scoutingNederlandRenderTwoColumnsBlock($attrs) {
         $right_text = '<p>Meer weten over vrijwilligerswerk bij Scouting? Laat je verrassen door één van de uitdagende vacatures of lees meer over vrijwilliger worden bij Scouting.</p><ul><li>Welpenleiding</li><li>Secretaris</li></ul><h2>Maatschappelijke stage</h2><p>Iedere scholier krijgt er wel mee te maken: de maatschappelijke stage. Sommige scholieren gaan aan de slag in peuterspeelzalen, bejaardentehuizen of sociale werkplaatsen. Maar je kunt natuurlijk ook bij Scouting terecht.</p><p>Klik hier om je maatschappelijke stage bij onze Scoutinggroep te lopen.</p>';
     }
 
-    echo '<section class="scouting-nederland-block-two-columns scouting-nederland-two-columns-style-2020">';
+    echo '<section class="scouting-nederland-block-two-columns scouting-nederland-two-columns-style">';
     echo '<div class="gb-two-columns">';
 
     echo '<div class="col-headerimage">';
@@ -489,7 +489,7 @@ function scoutingNederlandRenderTwoColumnsBlock($attrs) {
     echo '</div>';
     echo '<div class="tekst">' . wp_kses_post(wpautop($left_text)) . '</div>';
     if ($left_btn_t) {
-        echo '<div class="knop"><a class="btn scouting-nederland-two-btn ' . esc_attr(scoutingNederlandButtonClassFromColor($left_btn_c)) . '" href="' . esc_url($left_btn_u) . '"><span class="scouting-nederland-two-btn-label">' . esc_html($left_btn_t) . '</span><span class="scouting-nederland-two-btn-arrow" aria-hidden="true"></span></a></div>';
+        echo '<div class="knop"><a class="btn scouting-nederland-two-btn ' . esc_attr(scoutingNederlandBlocksButtonClassFromColor($left_btn_c)) . '" href="' . esc_url($left_btn_u) . '"><span class="scouting-nederland-two-btn-label">' . esc_html($left_btn_t) . '</span><span class="scouting-nederland-two-btn-arrow" aria-hidden="true"></span></a></div>';
     }
     echo '</div>';
 
@@ -499,7 +499,7 @@ function scoutingNederlandRenderTwoColumnsBlock($attrs) {
     }
     echo '<div class="content">' . wp_kses_post(wpautop($right_text)) . '</div>';
     if ($right_btn_t) {
-        echo '<div class="knop"><a class="btn scouting-nederland-two-btn ' . esc_attr(scoutingNederlandButtonClassFromColor($right_btn_c)) . '" href="' . esc_url($right_btn_u) . '"><span class="scouting-nederland-two-btn-label">' . esc_html($right_btn_t) . '</span><span class="scouting-nederland-two-btn-arrow" aria-hidden="true"></span></a></div>';
+        echo '<div class="knop"><a class="btn scouting-nederland-two-btn ' . esc_attr(scoutingNederlandBlocksButtonClassFromColor($right_btn_c)) . '" href="' . esc_url($right_btn_u) . '"><span class="scouting-nederland-two-btn-label">' . esc_html($right_btn_t) . '</span><span class="scouting-nederland-two-btn-arrow" aria-hidden="true"></span></a></div>';
     }
     echo '</div>';
 

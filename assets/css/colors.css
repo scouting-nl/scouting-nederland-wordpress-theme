@@ -1,89 +1,22 @@
-body {
-  --scouting-nederland-main-color: #00a551;
-  --scouting-nederland-support-color: #0066b2;
-}
-
-body.mgroen,
-body.green-main {
-  --scouting-nederland-main-color: #00a551;
-}
-
-body.mblauw,
-body.blue-main {
-  --scouting-nederland-main-color: #0066b2;
-}
-
-body.mgeel,
-body.yellow-main {
-  --scouting-nederland-main-color: #fcdd17;
-}
-
-body.mrood,
-body.red-main {
-  --scouting-nederland-main-color: #e1071a;
-}
-
-body.moranje,
-body.orange-main {
-  --scouting-nederland-main-color: #f2940a;
-}
-
-body.mpaars,
-body.purple-main {
-  --scouting-nederland-main-color: #921c7f;
-}
-
-body.sgroen,
-body.green-support {
-  --scouting-nederland-support-color: #00a551;
-}
-
-body.sblauw,
-body.blue-support {
-  --scouting-nederland-support-color: #0066b2;
-}
-
-body.sgeel,
-body.yellow-support {
-  --scouting-nederland-support-color: #fcdd17;
-}
-
-body.srood,
-body.red-support {
-  --scouting-nederland-support-color: #e1071a;
-}
-
-body.soranje,
-body.orange-support {
-  --scouting-nederland-support-color: #f2940a;
-}
-
-body.spaars,
-body.purple-support {
-  --scouting-nederland-support-color: #921c7f;
-}
-
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020,
+.scouting-nederland-block-callout.scouting-nederland-callout-style,
 .scouting-nederland-volunteers,
 #scouting-nederland-footer,
 #scouting-nederland-footer .scouting-nederland-footer-main,
 .scouting-nederland-news-grid h3,
-.scouting-nederland-news-style-2020 .scouting-nederland-news-card-title,
-.scouting-nederland-news-style-2020 .gb-news-items .news-item h5,
+.scouting-nederland-news-style .gb-news-items .news-item h5,
 .bg-success {
   background-color: var(--scouting-nederland-main-color) !important;
 }
 
 .scouting-nederland-home-content h2,
-.scouting-nederland-homepage-2020 h2,
-.scouting-nederland-featured-style-2020 h2,
+.scouting-nederland-featured-style h2,
 .scouting-nederland-featured-item h2,
-.scouting-nederland-block-news > h2,
+.scouting-nederland-block-news>h2,
 .scouting-nederland-block-callout h2,
 .scouting-nederland-block-two-columns h2,
-.scouting-nederland-news-style-2020 > h2,
-.scouting-nederland-news-style-2020 .gb-news-items > a,
-.scouting-nederland-news-style-2020 .gb-news-items > .scouting-nederland-news-heading-link,
+.scouting-nederland-news-style>h2,
+.scouting-nederland-news-style .gb-news-items>a,
+.scouting-nederland-news-style .gb-news-items>.scouting-nederland-news-heading-link,
 .scouting-nederland-vacancy-card h2,
 .text-success,
 h1,
@@ -100,48 +33,46 @@ h1,
   border-color: var(--scouting-nederland-main-color) !important;
 }
 
-#scouting-nederland-nav .navbar-nav > li > a,
-#scouting-nederland-nav .navbar-nav > li > .nav-link,
+#scouting-nederland-nav .navbar-nav>li>a,
+#scouting-nederland-nav .navbar-nav>li>.nav-link,
 #scouting-nederland-buttons a,
 #scouting-nederland-buttons .scouting-nederland-fa-icon,
 #scouting-nederland-buttons .navbar-toggler,
 #scouting-nederland-headermessage a,
 .scouting-nederland-mobile-nav a,
 .scouting-nederland-mobile-icons a,
-.scouting-nederland-news-style-2020 .scouting-nederland-read-more,
-.scouting-nederland-news-style-2020 .gb-news-items .news-item .lees-meer,
+.scouting-nederland-news-style .gb-news-items .news-item .lees-meer,
 a {
   color: var(--scouting-nederland-support-color) !important;
 }
 
-#scouting-nederland-nav .navbar-nav > li > a:hover,
-#scouting-nederland-nav .navbar-nav > li > .nav-link:hover,
+#scouting-nederland-nav .navbar-nav>li>a:hover,
+#scouting-nederland-nav .navbar-nav>li>.nav-link:hover,
 #scouting-nederland-buttons a:hover,
 #scouting-nederland-buttons a:focus,
-.scouting-nederland-featured-style-2020 .scouting-nederland-quicklink-list a:hover,
-.scouting-nederland-news-style-2020 .gb-news-items > a:hover,
-.scouting-nederland-news-style-2020 .gb-news-items > .scouting-nederland-news-heading-link:hover,
-.scouting-nederland-news-style-2020 .gb-news-items .news-item .lees-meer:hover {
+.scouting-nederland-featured-style .scouting-nederland-quicklink-list a:hover,
+.scouting-nederland-news-style .gb-news-items>a:hover,
+.scouting-nederland-news-style .gb-news-items>.scouting-nederland-news-heading-link:hover,
+.scouting-nederland-news-style .gb-news-items .news-item .lees-meer:hover {
   color: var(--scouting-nederland-support-color) !important;
 }
 
 .wp-block-button.is-style-scouting-nederland-blue .wp-block-button__link,
-.scouting-nederland-homepage-2020 .wp-block-button.is-style-scouting-nederland-blue .wp-block-button__link,
-.scouting-nederland-news-style-2020 .scouting-nederland-more-news,
-.scouting-nederland-news-style-2020 .gb-news-items .meer-nieuws {
+.scouting-nederland-news-style .scouting-nederland-more-news,
+.scouting-nederland-news-style .gb-news-items .meer-nieuws {
   background-color: var(--scouting-nederland-support-color) !important;
 }
 
-#scouting-nederland-nav .navbar-nav > li::after,
-#scouting-nederland-nav .navbar-nav > li > a::before,
-#scouting-nederland-nav .navbar-nav > li > .nav-link::before {
+#scouting-nederland-nav .navbar-nav>li::after,
+#scouting-nederland-nav .navbar-nav>li>a::before,
+#scouting-nederland-nav .navbar-nav>li>.nav-link::before {
   background-color: var(--scouting-nederland-main-color) !important;
 }
 
 body.mgroen .showcase-skyline::before,
 body.green-main .showcase-skyline::before,
-body.mgroen .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.green-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
+body.mgroen .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.green-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
 body.mgroen .scouting-nederland-volunteers::before,
 body.green-main .scouting-nederland-volunteers::before {
   background-image: url("../images/skyline-groen.png") !important;
@@ -149,8 +80,8 @@ body.green-main .scouting-nederland-volunteers::before {
 
 body.mblauw .showcase-skyline::before,
 body.blue-main .showcase-skyline::before,
-body.mblauw .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.blue-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
+body.mblauw .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.blue-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
 body.mblauw .scouting-nederland-volunteers::before,
 body.blue-main .scouting-nederland-volunteers::before {
   background-image: url("../images/skyline-blauw.png") !important;
@@ -158,8 +89,8 @@ body.blue-main .scouting-nederland-volunteers::before {
 
 body.mgeel .showcase-skyline::before,
 body.yellow-main .showcase-skyline::before,
-body.mgeel .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.yellow-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
+body.mgeel .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.yellow-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
 body.mgeel .scouting-nederland-volunteers::before,
 body.yellow-main .scouting-nederland-volunteers::before {
   background-image: url("../images/skyline-geel.png") !important;
@@ -167,8 +98,8 @@ body.yellow-main .scouting-nederland-volunteers::before {
 
 body.mrood .showcase-skyline::before,
 body.red-main .showcase-skyline::before,
-body.mrood .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.red-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
+body.mrood .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.red-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
 body.mrood .scouting-nederland-volunteers::before,
 body.red-main .scouting-nederland-volunteers::before {
   background-image: url("../images/skyline-rood.png") !important;
@@ -176,8 +107,8 @@ body.red-main .scouting-nederland-volunteers::before {
 
 body.moranje .showcase-skyline::before,
 body.orange-main .showcase-skyline::before,
-body.moranje .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.orange-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
+body.moranje .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.orange-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
 body.moranje .scouting-nederland-volunteers::before,
 body.orange-main .scouting-nederland-volunteers::before {
   background-image: url("../images/skyline-oranje.png") !important;
@@ -185,8 +116,8 @@ body.orange-main .scouting-nederland-volunteers::before {
 
 body.mpaars .showcase-skyline::before,
 body.purple-main .showcase-skyline::before,
-body.mpaars .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
+body.mpaars .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
 body.mpaars .scouting-nederland-volunteers::before,
 body.purple-main .scouting-nederland-volunteers::before {
   background-image: url("../images/skyline-paars.png") !important;
@@ -227,105 +158,12 @@ body.yellow-main .scouting-nederland-news-grid h3 {
   color: #fff !important;
 }
 
-body #scouting-nederland-nav .navbar-nav > li > a,
-body #scouting-nederland-nav .navbar-nav > li > .nav-link,
-body #scouting-nederland-nav .navbar-nav > .menu-item > a,
-body #scouting-nederland-nav .navbar-nav > .menu-item > .nav-link,
-body.scouting-nederland-header-wide #scouting-nederland-nav .navbar-nav > li > a,
-body.scouting-nederland-header-wide #scouting-nederland-nav .navbar-nav > li > .nav-link,
-body.scouting-nederland-header-narrow #scouting-nederland-nav .navbar-nav > li > a,
-body.scouting-nederland-header-narrow #scouting-nederland-nav .navbar-nav > li > .nav-link {
-  color: var(--scouting-nederland-support-color) !important;
-}
-
 body #scouting-nederland-nav .dropdown-menu a,
 body #scouting-nederland-nav .dropdown-menu .dropdown-item,
 body #scouting-nederland-nav .sub-menu a,
 body #scouting-nederland-nav .sub-menu .nav-link,
 body.scouting-nederland-header-wide #scouting-nederland-nav .dropdown-menu a,
 body.scouting-nederland-header-narrow #scouting-nederland-nav .dropdown-menu a {
-  color: var(--scouting-nederland-support-color) !important;
-}
-
-body #scouting-nederland-buttons,
-body #scouting-nederland-buttons a,
-body #scouting-nederland-buttons a:visited,
-body #scouting-nederland-buttons button,
-body #scouting-nederland-buttons .navbar-toggler,
-body #scouting-nederland-buttons .navbar-toggler:visited,
-body.scouting-nederland-header-wide #scouting-nederland-buttons,
-body.scouting-nederland-header-wide #scouting-nederland-buttons a,
-body.scouting-nederland-header-wide #scouting-nederland-buttons button,
-body.scouting-nederland-header-wide #scouting-nederland-buttons .navbar-toggler,
-body.scouting-nederland-header-narrow #scouting-nederland-buttons,
-body.scouting-nederland-header-narrow #scouting-nederland-buttons a,
-body.scouting-nederland-header-narrow #scouting-nederland-buttons button,
-body.scouting-nederland-header-narrow #scouting-nederland-buttons .navbar-toggler {
-  color: var(--scouting-nederland-support-color) !important;
-}
-
-body #scouting-nederland-buttons i,
-body #scouting-nederland-buttons .fa,
-body #scouting-nederland-buttons .fas,
-body #scouting-nederland-buttons .far,
-body #scouting-nederland-buttons .fab,
-body #scouting-nederland-buttons .scouting-nederland-fa-icon,
-body #scouting-nederland-buttons .scouting-nederland-icon,
-body.scouting-nederland-header-wide #scouting-nederland-buttons i,
-body.scouting-nederland-header-wide #scouting-nederland-buttons .fa,
-body.scouting-nederland-header-wide #scouting-nederland-buttons .fas,
-body.scouting-nederland-header-wide #scouting-nederland-buttons .far,
-body.scouting-nederland-header-wide #scouting-nederland-buttons .fab,
-body.scouting-nederland-header-wide #scouting-nederland-buttons .scouting-nederland-fa-icon,
-body.scouting-nederland-header-wide #scouting-nederland-buttons .scouting-nederland-icon,
-body.scouting-nederland-header-narrow #scouting-nederland-buttons i,
-body.scouting-nederland-header-narrow #scouting-nederland-buttons .fa,
-body.scouting-nederland-header-narrow #scouting-nederland-buttons .fas,
-body.scouting-nederland-header-narrow #scouting-nederland-buttons .far,
-body.scouting-nederland-header-narrow #scouting-nederland-buttons .fab,
-body.scouting-nederland-header-narrow #scouting-nederland-buttons .scouting-nederland-fa-icon,
-body.scouting-nederland-header-narrow #scouting-nederland-buttons .scouting-nederland-icon {
-  color: var(--scouting-nederland-support-color) !important;
-}
-
-body #scouting-nederland-buttons svg,
-body #scouting-nederland-buttons svg *,
-body #scouting-nederland-buttons .scouting-nederland-svg-icon,
-body #scouting-nederland-buttons .scouting-nederland-svg-icon *,
-body.scouting-nederland-header-wide #scouting-nederland-buttons svg,
-body.scouting-nederland-header-wide #scouting-nederland-buttons svg *,
-body.scouting-nederland-header-wide #scouting-nederland-buttons .scouting-nederland-svg-icon,
-body.scouting-nederland-header-wide #scouting-nederland-buttons .scouting-nederland-svg-icon *,
-body.scouting-nederland-header-narrow #scouting-nederland-buttons svg,
-body.scouting-nederland-header-narrow #scouting-nederland-buttons svg *,
-body.scouting-nederland-header-narrow #scouting-nederland-buttons .scouting-nederland-svg-icon,
-body.scouting-nederland-header-narrow #scouting-nederland-buttons .scouting-nederland-svg-icon * {
-  color: var(--scouting-nederland-support-color) !important;
-  fill: var(--scouting-nederland-support-color) !important;
-  stroke: var(--scouting-nederland-support-color) !important;
-}
-
-body #scouting-nederland-buttons .scouting-nederland-menu-label,
-body.scouting-nederland-header-wide #scouting-nederland-buttons .scouting-nederland-menu-label,
-body.scouting-nederland-header-narrow #scouting-nederland-buttons .scouting-nederland-menu-label {
-  color: var(--scouting-nederland-support-color) !important;
-}
-
-body #scouting-nederland-headermessage,
-body #scouting-nederland-headermessage a,
-body #scouting-nederland-headermessage i,
-body #scouting-nederland-headermessage .fa,
-body #scouting-nederland-headermessage .fas,
-body.scouting-nederland-header-wide #scouting-nederland-headermessage,
-body.scouting-nederland-header-wide #scouting-nederland-headermessage a,
-body.scouting-nederland-header-wide #scouting-nederland-headermessage i,
-body.scouting-nederland-header-wide #scouting-nederland-headermessage .fa,
-body.scouting-nederland-header-wide #scouting-nederland-headermessage .fas,
-body.scouting-nederland-header-narrow #scouting-nederland-headermessage,
-body.scouting-nederland-header-narrow #scouting-nederland-headermessage a,
-body.scouting-nederland-header-narrow #scouting-nederland-headermessage i,
-body.scouting-nederland-header-narrow #scouting-nederland-headermessage .fa,
-body.scouting-nederland-header-narrow #scouting-nederland-headermessage .fas {
   color: var(--scouting-nederland-support-color) !important;
 }
 
@@ -340,8 +178,8 @@ body .scouting-nederland-mobile-icons i {
   color: var(--scouting-nederland-support-color) !important;
 }
 
-body #scouting-nederland-nav .navbar-nav > li > a:hover,
-body #scouting-nederland-nav .navbar-nav > li > .nav-link:hover,
+body #scouting-nederland-nav .navbar-nav>li>a:hover,
+body #scouting-nederland-nav .navbar-nav>li>.nav-link:hover,
 body #scouting-nederland-nav .dropdown-menu a:hover,
 body #scouting-nederland-nav .dropdown-menu .dropdown-item:hover,
 body #scouting-nederland-buttons a:hover,
@@ -352,49 +190,21 @@ body .scouting-nederland-mobile-offcanvas a:hover {
   opacity: .85;
 }
 
-body #scouting-nederland-nav .navbar-nav > li::after,
-body #scouting-nederland-nav .navbar-nav > li > a::before,
-body #scouting-nederland-nav .navbar-nav > li > .nav-link::before {
+body #scouting-nederland-nav .navbar-nav>li::after,
+body #scouting-nederland-nav .navbar-nav>li>a::before,
+body #scouting-nederland-nav .navbar-nav>li>.nav-link::before {
   background-color: var(--scouting-nederland-main-color) !important;
 }
-
-body.mgroen { --scouting-nederland-main-color: #00a551 !important; }
-body.mblauw { --scouting-nederland-main-color: #0066b2 !important; }
-body.mgeel { --scouting-nederland-main-color: #fcdd17 !important; }
-body.mrood { --scouting-nederland-main-color: #e1071a !important; }
-body.moranje { --scouting-nederland-main-color: #f2940a !important; }
-body.mpaars { --scouting-nederland-main-color: #921c7f !important; }
-
-body.green-main { --scouting-nederland-main-color: #00a551 !important; }
-body.blue-main { --scouting-nederland-main-color: #0066b2 !important; }
-body.yellow-main { --scouting-nederland-main-color: #fcdd17 !important; }
-body.red-main { --scouting-nederland-main-color: #e1071a !important; }
-body.orange-main { --scouting-nederland-main-color: #f2940a !important; }
-body.purple-main { --scouting-nederland-main-color: #921c7f !important; }
-
-body.sgroen { --scouting-nederland-support-color: #00a551 !important; }
-body.sblauw { --scouting-nederland-support-color: #0066b2 !important; }
-body.sgeel { --scouting-nederland-support-color: #fcdd17 !important; }
-body.srood { --scouting-nederland-support-color: #e1071a !important; }
-body.soranje { --scouting-nederland-support-color: #f2940a !important; }
-body.spaars { --scouting-nederland-support-color: #921c7f !important; }
-
-body.green-support { --scouting-nederland-support-color: #00a551 !important; }
-body.blue-support { --scouting-nederland-support-color: #0066b2 !important; }
-body.yellow-support { --scouting-nederland-support-color: #fcdd17 !important; }
-body.red-support { --scouting-nederland-support-color: #e1071a !important; }
-body.orange-support { --scouting-nederland-support-color: #f2940a !important; }
-body.purple-support { --scouting-nederland-support-color: #921c7f !important; }
 
 body #scouting-nederland-headermessage,
 body #scouting-nederland-headermessage a,
 body #scouting-nederland-headermessage i,
 body #scouting-nederland-headermessage .fa,
 body #scouting-nederland-headermessage .fas,
-body #scouting-nederland-nav .navbar-nav > li > a,
-body #scouting-nederland-nav .navbar-nav > li > .nav-link,
-body #scouting-nederland-nav .navbar-nav > .menu-item > a,
-body #scouting-nederland-nav .navbar-nav > .menu-item > .nav-link,
+body #scouting-nederland-nav .navbar-nav>li>a,
+body #scouting-nederland-nav .navbar-nav>li>.nav-link,
+body #scouting-nederland-nav .navbar-nav>.menu-item>a,
+body #scouting-nederland-nav .navbar-nav>.menu-item>.nav-link,
 body #scouting-nederland-nav .dropdown-menu a,
 body #scouting-nederland-nav .dropdown-item,
 body #scouting-nederland-buttons,
@@ -412,8 +222,8 @@ body #scouting-nederland-buttons .scouting-nederland-icon,
 body.scouting-nederland-header-wide #scouting-nederland-headermessage,
 body.scouting-nederland-header-wide #scouting-nederland-headermessage a,
 body.scouting-nederland-header-wide #scouting-nederland-headermessage i,
-body.scouting-nederland-header-wide #scouting-nederland-nav .navbar-nav > li > a,
-body.scouting-nederland-header-wide #scouting-nederland-nav .navbar-nav > li > .nav-link,
+body.scouting-nederland-header-wide #scouting-nederland-nav .navbar-nav>li>a,
+body.scouting-nederland-header-wide #scouting-nederland-nav .navbar-nav>li>.nav-link,
 body.scouting-nederland-header-wide #scouting-nederland-buttons,
 body.scouting-nederland-header-wide #scouting-nederland-buttons a,
 body.scouting-nederland-header-wide #scouting-nederland-buttons button,
@@ -426,8 +236,8 @@ body.scouting-nederland-header-wide #scouting-nederland-buttons .scouting-nederl
 body.scouting-nederland-header-narrow #scouting-nederland-headermessage,
 body.scouting-nederland-header-narrow #scouting-nederland-headermessage a,
 body.scouting-nederland-header-narrow #scouting-nederland-headermessage i,
-body.scouting-nederland-header-narrow #scouting-nederland-nav .navbar-nav > li > a,
-body.scouting-nederland-header-narrow #scouting-nederland-nav .navbar-nav > li > .nav-link,
+body.scouting-nederland-header-narrow #scouting-nederland-nav .navbar-nav>li>a,
+body.scouting-nederland-header-narrow #scouting-nederland-nav .navbar-nav>li>.nav-link,
 body.scouting-nederland-header-narrow #scouting-nederland-buttons,
 body.scouting-nederland-header-narrow #scouting-nederland-buttons a,
 body.scouting-nederland-header-narrow #scouting-nederland-buttons button,
@@ -453,17 +263,17 @@ body.scouting-nederland-header-narrow #scouting-nederland-buttons svg * {
   stroke: var(--scouting-nederland-support-color) !important;
 }
 
-body #scouting-nederland-nav .navbar-nav > li::after,
-body #scouting-nederland-nav .navbar-nav > li > a::before,
-body #scouting-nederland-nav .navbar-nav > li > .nav-link::before {
+body #scouting-nederland-nav .navbar-nav>li::after,
+body #scouting-nederland-nav .navbar-nav>li>a::before,
+body #scouting-nederland-nav .navbar-nav>li>.nav-link::before {
   background-color: var(--scouting-nederland-main-color) !important;
 }
 
 body.mblauw.sgroen #scouting-nederland-headermessage,
 body.mblauw.sgroen #scouting-nederland-headermessage a,
 body.mblauw.sgroen #scouting-nederland-headermessage i,
-body.mblauw.sgroen #scouting-nederland-nav .navbar-nav > li > a,
-body.mblauw.sgroen #scouting-nederland-nav .navbar-nav > li > .nav-link,
+body.mblauw.sgroen #scouting-nederland-nav .navbar-nav>li>a,
+body.mblauw.sgroen #scouting-nederland-nav .navbar-nav>li>.nav-link,
 body.mblauw.sgroen #scouting-nederland-buttons,
 body.mblauw.sgroen #scouting-nederland-buttons a,
 body.mblauw.sgroen #scouting-nederland-buttons button,
@@ -473,13 +283,13 @@ body.mblauw.sgroen #scouting-nederland-buttons i,
 body.mblauw.sgroen #scouting-nederland-buttons .fa,
 body.mblauw.sgroen #scouting-nederland-buttons .fas,
 body.mblauw.sgroen #scouting-nederland-buttons .scouting-nederland-fa-icon {
-  color: #00a551 !important;
+  color: var(--wp--preset--color--scouting-groen) !important;
 }
 
-body.mblauw.sgroen #scouting-nederland-nav .navbar-nav > li::after,
-body.mblauw.sgroen #scouting-nederland-nav .navbar-nav > li > a::before,
-body.mblauw.sgroen #scouting-nederland-nav .navbar-nav > li > .nav-link::before {
-  background-color: #0066b2 !important;
+body.mblauw.sgroen #scouting-nederland-nav .navbar-nav>li::after,
+body.mblauw.sgroen #scouting-nederland-nav .navbar-nav>li>a::before,
+body.mblauw.sgroen #scouting-nederland-nav .navbar-nav>li>.nav-link::before {
+  background-color: var(--wp--preset--color--scouting-blauw) !important;
 }
 
 body #scouting-nederland-headermessage,
@@ -500,7 +310,7 @@ body.scouting-nederland-header-narrow #scouting-nederland-headermessage a:visite
 body.scouting-nederland-header-narrow #scouting-nederland-headermessage i,
 body.scouting-nederland-header-narrow #scouting-nederland-headermessage .fa,
 body.scouting-nederland-header-narrow #scouting-nederland-headermessage .fas {
-  color: #e1071a !important;
+  color: var(--wp--preset--color--scouting-rood) !important;
 }
 
 body.mblauw.sgroen #scouting-nederland-headermessage,
@@ -509,5 +319,5 @@ body.mblauw.sgroen #scouting-nederland-headermessage a:visited,
 body.mblauw.sgroen #scouting-nederland-headermessage i,
 body.mblauw.sgroen #scouting-nederland-headermessage .fa,
 body.mblauw.sgroen #scouting-nederland-headermessage .fas {
-  color: #e1071a !important;
+  color: var(--wp--preset--color--scouting-rood) !important;
 }

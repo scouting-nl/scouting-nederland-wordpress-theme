@@ -1,6 +1,6 @@
 #scouting-nederland-footer {
   margin-top: 0;
-  background: #00a551;
+  background: var(--wp--preset--color--scouting-groen);
   color: #fff;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
@@ -16,7 +16,7 @@
 }
 
 #scouting-nederland-footer .scouting-nederland-footer-main {
-  background: var(--scouting-nederland-main-color, #00a551);
+  background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
   color: #fff;
   min-height: 315px;
   padding: 2.5rem 0 3rem;
@@ -215,7 +215,7 @@
 
 #scouting-nederland-footer .scouting-nederland-footer-bottom {
   background: #fff;
-  color: var(--scouting-nederland-main-color, #00a551);
+  color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
 }
 
 #scouting-nederland-footer .scouting-nederland-footer-bottom-inner {
@@ -248,12 +248,12 @@
   width: 1px;
   height: 22px;
   margin: 0 1rem;
-  background: var(--scouting-nederland-main-color, #00a551);
+  background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
   opacity: .8;
 }
 
 #scouting-nederland-footer .scouting-nederland-footer-menu a {
-  color: var(--scouting-nederland-main-color, #00a551);
+  color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
   font-size: .85rem;
   line-height: 1.2;
   font-weight: 400;
@@ -305,7 +305,7 @@
 
 #scouting-nederland-footer .scouting-nederland-footer-bottom,
 #scouting-nederland-footer .scouting-nederland-footer-bottom * {
-  color: var(--scouting-nederland-main-color, #00a551) !important;
+  color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
 }
 
 #scouting-nederland-footer .scouting-nederland-footer-bottom .scouting-nederland-footer-menu a,
@@ -313,7 +313,7 @@
 #scouting-nederland-footer .scouting-nederland-footer-bottom .scouting-nederland-footer-menu a:hover,
 #scouting-nederland-footer .scouting-nederland-footer-bottom .scouting-nederland-footer-menu a:focus,
 #scouting-nederland-footer .scouting-nederland-footer-bottom .scouting-nederland-footer-menu .nav-link {
-  color: var(--scouting-nederland-main-color, #00a551) !important;
+  color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
   opacity: 1 !important;
   visibility: visible !important;
   text-decoration: none;
@@ -325,7 +325,7 @@
 }
 
 #scouting-nederland-footer .scouting-nederland-footer-menu li + li::before {
-  background: var(--scouting-nederland-main-color, #00a551) !important;
+  background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
   opacity: 1 !important;
 }
 

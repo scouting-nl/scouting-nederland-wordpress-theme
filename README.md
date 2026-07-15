@@ -2,7 +2,7 @@
 
 Een classic WordPress thema voor Scouting Nederland websites, met ondersteuning voor hero-secties, sliders, speltakken, sidebar-instellingen, editor-styles, `theme.json` en Gutenberg-blokken.
 
-Het thema volgt de WordPress Theme Developer Handbook-opzet met een enkele root fallback-loader voor classic theme compatibility, template bodies in `templates/`, herbruikbare template parts in `parts/`, custom PHP in `inc/` en assets in `assets/`.
+Het thema gebruikt de native WordPress-templatehiërarchie met de volledige templates in de root. Herbruikbare template parts staan in `parts/`, custom PHP staat in `inc/` en assets staan in `assets/`.
 
 ## Functies
 
@@ -11,9 +11,9 @@ Het thema volgt de WordPress Theme Developer Handbook-opzet met een enkele root 
 - Speltakken-grid Gutenberg block
 - Optie om sidebar per pagina te verbergen
 - Thema-instellingen via de WordPress Customizer
-- Ondersteuning voor eigen kleuren
+- Een centrale kleurenverzameling in `theme.json`
 - Responsive ontwerp voor desktop, tablet en mobiel
-- Elementor-vriendelijke paginatemplates
+- Automatische ondersteuning voor pagina's die met Elementor zijn opgebouwd
 
 ## Installatie
 
@@ -36,12 +36,12 @@ Voor volledige werking kunnen deze plugins nodig of handig zijn:
 ## Thema-structuur
 
 - `style.css` - verplichte stylesheet met de WordPress thema-header.
-- `index.php` - verplichte fallback-loader die de juiste template uit `templates/` kiest.
+- `index.php`, `front-page.php`, `page.php`, `single.php`, `archive.php`, `category.php`, `search.php` en `404.php` - standaard WordPress-templatehiërarchie.
+- `header.php`, `footer.php` en `sidebar.php` - standaard classic-theme entry points.
 - `functions.php` - laadpunt voor setup, assets en losse modules.
-- `theme.json` - globale editorinstellingen, kleuren, lettertypes en layoutmaten.
-- `templates/` - template bodies voor index, pagina's, berichten, archieven, zoekresultaten en 404.
-- `parts/` - herbruikbare template parts voor header, footer, sidebar en content.
-- `assets/` - CSS, JavaScript, fonts en afbeeldingen.
+- `theme.json` - bron voor globale editorinstellingen, merkkleuren, lettertypes en layoutmaten.
+- `parts/` - herbruikbare template parts, momenteel de gedeelde contentweergave.
+- `assets/` - modulaire CSS, JavaScript, fonts, afbeeldingen en lokale vendorbestanden.
 - `inc/` - Customizer, navigatie, blocks, zoeklogica, page settings en admin notices.
 - `screenshot.png` - screenshot voor **Weergave > Thema's**.
 - `readme.txt` - installatie-, release- en gebruikersinformatie.
@@ -71,12 +71,7 @@ Per pagina kunnen extra opties beschikbaar zijn, zoals:
 
 ## Elementor
 
-Het thema bevat twee paginatemplates voor Elementor:
-
-- **Elementor Full Width** - gebruikt de thema-header en footer, maar laat Elementor de volledige contentbreedte gebruiken.
-- **Elementor Canvas** - laat Elementor de volledige pagina beheren zonder thema-header en footer.
-
-Wanneer een normale pagina met Elementor is gebouwd, verbergt het standaard paginatemplate automatisch de thema-hero, sidebar en extra widgetbanden zodat Elementor niet tegen de thema-layout werkt.
+Wanneer een pagina met Elementor is gebouwd, verbergt het standaard paginatemplate automatisch de thema-hero, sidebar en extra widgetbanden zodat Elementor niet tegen de thema-layout werkt. Voor Elementor Canvas kan de paginatemplate van de Elementor-plugin zelf worden gebruikt.
 
 ## Gutenberg blokken
 
@@ -105,3 +100,7 @@ Een layoutblok waarmee content in twee kolommen kan worden geplaatst.
 ### Scouting OIDC
 
 Toont een login-knop of login-link wanneer de Scouting OIDC plugin beschikbaar is.
+
+## Publiceren
+
+De technische publicatiecheck en de resterende WordPress.org-blokkers staan in `PUBLISHING.md`.

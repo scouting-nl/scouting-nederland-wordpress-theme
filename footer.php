@@ -30,7 +30,7 @@
                 </div>
 
                 <div id="copyright" class="scouting-nederland-footer-copyright">
-                    <p>Copyright &copy; <?php echo esc_html(date('Y')); ?> <?php bloginfo('name'); ?></p>
+                    <p>Copyright &copy; <?php echo esc_html(wp_date('Y')); ?> <?php bloginfo('name'); ?></p>
                     <p><?php printf(esc_html__('Dit is de officiële website van de vereniging %s.', 'scouting-nederland'), esc_html(get_bloginfo('name'))); ?></p>
                 </div>
             </div>
@@ -62,3 +62,4 @@
 
 <?php wp_footer(); ?>
 </body></html>
+

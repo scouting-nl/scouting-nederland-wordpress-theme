@@ -5,8 +5,9 @@
             <h1 class="scouting-nederland-single-post__title"><?php the_title(); ?></h1>
             <div class="scouting-nederland-single-post__meta">
                 <span><?php echo esc_html(get_the_date()); ?></span>
-                <?php if (get_the_author()) : ?>
-                    <span><?php esc_html_e('door', 'scouting-nederland'); ?> <?php the_author(); ?></span>
+                <?php $scouting_nederland_author_name = get_the_author(); ?>
+                <?php if ($scouting_nederland_author_name) : ?>
+                    <span><?php esc_html_e('door', 'scouting-nederland'); ?> <?php echo esc_html($scouting_nederland_author_name); ?></span>
                 <?php endif; ?>
             </div>
         </header>

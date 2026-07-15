@@ -62,8 +62,19 @@
   font-display: swap;
 }
 
-.mainbody {
-  padding-top: 84px !important;
+.scouting-nederland-skip-link:focus {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1040;
+  width: auto;
+  height: auto;
+  padding: .75rem 1rem;
+  color: #fff;
+  background: var(--wp--preset--color--scouting-blauw);
+  clip: auto;
+  clip-path: none;
+  text-decoration: none;
 }
 
 .mainbody {
@@ -76,9 +87,9 @@ body main#content {
   margin-top: 0 !important;
 }
 
-body .mainbody > *:first-child,
-body #content > *:first-child,
-body main#content > *:first-child {
+body .mainbody>*:first-child,
+body #content>*:first-child,
+body main#content>*:first-child {
   margin-top: 0 !important;
 }
 
@@ -102,14 +113,14 @@ body #scouting-nederland-hero .col-md-12 {
   padding-top: 0 !important;
 }
 
-body .mainbody > #scouting-nederland-hero:first-child,
-body .mainbody > .scouting-nederland-home-hero:first-child,
-body .mainbody > .scouting-nederland-search-hero:first-child,
-body .mainbody > .scouting-nederland-404-hero:first-child,
-body .mainbody > .defaultbanner:first-child,
-body main#content > .scouting-nederland-home-hero:first-child,
-body main#content > .scouting-nederland-search-hero:first-child,
-body main#content > .scouting-nederland-404-hero:first-child {
+body .mainbody>#scouting-nederland-hero:first-child,
+body .mainbody>.scouting-nederland-home-hero:first-child,
+body .mainbody>.scouting-nederland-search-hero:first-child,
+body .mainbody>.scouting-nederland-404-hero:first-child,
+body .mainbody>.defaultbanner:first-child,
+body main#content>.scouting-nederland-home-hero:first-child,
+body main#content>.scouting-nederland-search-hero:first-child,
+body main#content>.scouting-nederland-404-hero:first-child {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
@@ -133,7 +144,7 @@ body .scouting-nederland-404-page {
 .defaultbanner h3,
 .defaultbanner p {
   color: #fff !important;
-  text-shadow: 0 2px 12px rgba(0,0,0,.35);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .35);
 }
 
 

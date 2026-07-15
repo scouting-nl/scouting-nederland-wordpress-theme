@@ -3,6 +3,17 @@
     "version": 2,
     "settings": {
         "appearanceTools": true,
+        "custom": {
+            "color": {
+                "bootstrapBorder": "#ced4da",
+                "danger": "#ec1c24",
+                "linkHover": "#005799",
+                "navbarText": "rgba(0, 0, 0, 0.9)",
+                "offcanvasBorder": "rgba(0, 0, 0, 0.2)",
+                "surfaceMuted": "#e3e7eb",
+                "text": "#222222"
+            }
+        },
         "color": {
             "custom": true,
             "customDuotone": false,
@@ -18,6 +29,11 @@
                     "name": "Scouting blauw",
                     "slug": "scouting-blauw",
                     "color": "#0066b2"
+                },
+                {
+                    "name": "Scouting blauw accent",
+                    "slug": "scouting-blauw-accent",
+                    "color": "#006fb9"
                 },
                 {
                     "name": "Scouting geel",
@@ -88,8 +104,8 @@
     },
     "styles": {
         "color": {
-            "background": "#ffffff",
-            "text": "#222222"
+            "background": "var:preset|color|wit",
+            "text": "var:preset|color|zwart"
         },
         "typography": {
             "fontFamily": "var(--wp--preset--font-family--poppins)"
@@ -97,22 +113,22 @@
         "elements": {
             "button": {
                 "color": {
-                    "background": "var(--wp--preset--color--scouting-groen)",
-                    "text": "var(--wp--preset--color--wit)"
+                    "background": "var:preset|color|scouting-groen",
+                    "text": "var:preset|color|wit"
                 }
             },
             "heading": {
                 "color": {
-                    "text": "var(--wp--preset--color--scouting-groen)"
+                    "text": "var:preset|color|scouting-groen"
                 },
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--roboto-slab)",
+                    "fontFamily": "var:preset|font-family|roboto-slab",
                     "fontWeight": "700"
                 }
             },
             "link": {
                 "color": {
-                    "text": "var(--wp--preset--color--scouting-blauw)"
+                    "text": "var:preset|color|scouting-blauw"
                 }
             }
         },

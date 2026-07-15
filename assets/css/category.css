@@ -21,7 +21,7 @@
 
 .scouting-nederland-category-header__title {
   margin: 0;
-  color: #00a551;
+  color: var(--wp--preset--color--scouting-groen);
   font-family: "Roboto Slab", Georgia, serif;
   font-size: clamp(2.2rem, 4vw, 3.5rem);
   font-weight: 700;
@@ -90,7 +90,7 @@
 .scouting-nederland-category-card__titlebar {
   min-height: 124px;
   padding: 18px 18px 20px;
-  background: #00a551;
+  background: var(--wp--preset--color--scouting-groen);
 }
 
 .scouting-nederland-category-card__titlebar h2 {
@@ -141,7 +141,7 @@
 
 .scouting-nederland-category-card__readmore:hover,
 .scouting-nederland-category-card__readmore:focus {
-  color: #00a551;
+  color: var(--wp--preset--color--scouting-groen);
   text-decoration: underline;
 }
 
@@ -185,7 +185,7 @@
 
 .scouting-nederland-category-empty h2 {
   margin-top: 0;
-  color: #00a551;
+  color: var(--wp--preset--color--scouting-groen);
   font-family: "Roboto Slab", Georgia, serif;
 }
 

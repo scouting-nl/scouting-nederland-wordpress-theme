@@ -1,4 +1,4 @@
-<?php get_template_part('parts/header'); ?>
+<?php get_header(); ?>
 <?php
 $search_query = trim(get_search_query());
 $has_search_query = $search_query !== '';
@@ -135,4 +135,4 @@ $has_search_query = $search_query !== '';
 </div><!-- .content -->
 </div><!-- .mainbody -->
 
-<?php get_template_part('parts/footer'); ?>
+<?php get_footer(); ?>

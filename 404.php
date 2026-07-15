@@ -1,4 +1,4 @@
-<?php get_template_part('parts/header'); ?>
+<?php get_header(); ?>
 <?php
 $search_query = trim(get_search_query());
 $contact_url = get_theme_mod('scouting_nederland_contact_url', '');
@@ -72,4 +72,4 @@ $hero_url = get_template_directory_uri() . '/assets/images/default-slide.jpg';
 </div><!-- .content -->
 </div><!-- .mainbody -->
 
-<?php get_template_part('parts/footer'); ?>
+<?php get_footer(); ?>

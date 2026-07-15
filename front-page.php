@@ -1,4 +1,4 @@
-<?php get_template_part('parts/header'); ?>
+<?php get_header(); ?>
 <?php
 $scouting_nederland_page_id = get_queried_object_id();
 $scouting_nederland_page_display_settings = scoutingNederlandGetPageDisplaySettings($scouting_nederland_page_id);
@@ -43,4 +43,4 @@ if (!$scouting_nederland_hide_hero && !$rendered_slider) {
 </div><!-- .content -->
 </div><!-- .mainbody -->
 
-<?php get_template_part('parts/footer'); ?>
+<?php get_footer(); ?>

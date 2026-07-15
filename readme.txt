@@ -14,7 +14,7 @@ Classic WordPress theme for Scouting Nederland websites.
 
 Scouting Nederland is a classic WordPress theme for Scouting Nederland websites. It includes responsive templates, widget areas, editor styles, custom blocks, sliders, custom colors, and page-level display settings for local scouting groups and national sites.
 
-The theme follows the WordPress Theme Handbook structure while preserving classic theme compatibility: the required root `index.php` acts as a fallback dispatcher, template bodies live in `templates/`, reusable template parts live in `parts/`, custom PHP lives in `inc/`, and assets live in `assets/`.
+The theme uses the native classic WordPress template hierarchy with complete templates in the theme root. Reusable template parts live in `parts/`, custom PHP lives in `inc/`, and assets live in `assets/`.
 
 == Frequently Asked Questions ==
 
@@ -24,7 +24,7 @@ No. This is a classic PHP theme with block editor support, custom blocks, editor
 
 = Does this theme work with Elementor? =
 
-Yes. Use the Elementor Full Width page template when you want the theme header and footer, or Elementor Canvas when Elementor should control the whole page. The default page template also detects Elementor-built pages and suppresses the theme hero, sidebar, and extra widget bands.
+Yes. The default page template detects Elementor-built pages and suppresses the theme hero, sidebar, and extra widget bands. Elementor Canvas remains available through the Elementor plugin.
 
 == Screenshots ==
 
@@ -34,3 +34,11 @@ Yes. Use the Elementor Full Width page template when you want the theme header a
 
 = 1.0.0 =
 * Initial release
+
+== Resources ==
+
+* Bootstrap 5.3.8, Copyright 2011-2025 The Bootstrap Authors, MIT License, https://getbootstrap.com/
+* Font Awesome Free 7.3.1, Copyright Fonticons, Inc., icons: CC BY 4.0, fonts: SIL OFL 1.1, code: MIT License, https://fontawesome.com/
+* Poppins, Copyright 2014-2020 Indian Type Foundry, SIL Open Font License 1.1, https://github.com/itfoundry/Poppins
+* Roboto Slab, Copyright 2013 The Roboto Slab Project Authors, Apache License 2.0, https://github.com/googlefonts/robotoslab
+* Urban Jungle Demo, Copyright KC Fonts, free for personal use only, https://www.dafont.com/urban-jungle.font

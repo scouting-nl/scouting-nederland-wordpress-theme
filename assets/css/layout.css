@@ -18,10 +18,10 @@
 .scouting-nederland-video-wrap,
 .scouting-nederland-home-hero__inner,
 .scouting-nederland-home-content,
-.scouting-nederland-block-news.scouting-nederland-news-style-2020,
-.scouting-nederland-block-speltakken-grid.scouting-nederland-speltakken-grid-style-2020,
-.scouting-nederland-block-two-columns.scouting-nederland-two-columns-style-2020,
-.scouting-nederland-two-columns-style-2020 .gb-two-columns,
+.scouting-nederland-block-news.scouting-nederland-news-style,
+.scouting-nederland-block-speltakken-grid.scouting-nederland-speltakken-grid-style,
+.scouting-nederland-block-two-columns.scouting-nederland-two-columns-style,
+.scouting-nederland-two-columns-style .gb-two-columns,
 #scouting-nederland-footer .scouting-nederland-footer-inner,
 #scouting-nederland-footer .scouting-nederland-footer-bottom-inner {
   width: min(var(--scouting-nederland-page-width), calc(100% - 2rem)) !important;
@@ -29,9 +29,9 @@
 }
 
 .scouting-nederland-home-content,
-.scouting-nederland-block-news.scouting-nederland-news-style-2020,
-.scouting-nederland-block-speltakken-grid.scouting-nederland-speltakken-grid-style-2020,
-.scouting-nederland-block-two-columns.scouting-nederland-two-columns-style-2020,
+.scouting-nederland-block-news.scouting-nederland-news-style,
+.scouting-nederland-block-speltakken-grid.scouting-nederland-speltakken-grid-style,
+.scouting-nederland-block-two-columns.scouting-nederland-two-columns-style,
 #scouting-nederland-footer .scouting-nederland-footer-inner,
 #scouting-nederland-footer .scouting-nederland-footer-bottom-inner {
   margin-left: auto !important;
@@ -43,10 +43,10 @@
   .scouting-nederland-video-wrap,
   .scouting-nederland-home-hero__inner,
   .scouting-nederland-home-content,
-  .scouting-nederland-block-news.scouting-nederland-news-style-2020,
-  .scouting-nederland-block-speltakken-grid.scouting-nederland-speltakken-grid-style-2020,
-  .scouting-nederland-block-two-columns.scouting-nederland-two-columns-style-2020,
-  .scouting-nederland-two-columns-style-2020 .gb-two-columns,
+  .scouting-nederland-block-news.scouting-nederland-news-style,
+  .scouting-nederland-block-speltakken-grid.scouting-nederland-speltakken-grid-style,
+  .scouting-nederland-block-two-columns.scouting-nederland-two-columns-style,
+  .scouting-nederland-two-columns-style .gb-two-columns,
   #scouting-nederland-footer .scouting-nederland-footer-inner,
   #scouting-nederland-footer .scouting-nederland-footer-bottom-inner {
     width: calc(100% - 2rem) !important;
@@ -74,7 +74,7 @@
 .sidebar .wp-block-search__label {
   display: block;
   margin: 0;
-  color: var(--scouting-nederland-main-color, #00a551) !important;
+  color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
   font-family: "Roboto Slab", Georgia, serif;
   font-size: 1.25rem;
   font-weight: 700;
@@ -149,8 +149,8 @@
 
 .sidebar .widget_search .search-field:focus,
 .sidebar .wp-block-search__input:focus {
-  border-color: var(--scouting-nederland-support-color, #0066b2);
-  box-shadow: 0 0 0 3px rgba(0, 102, 178, .12);
+  border-color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
+  box-shadow: 0 0 0 3px rgb(from var(--wp--preset--color--scouting-blauw) r g b / .12);
 }
 
 .sidebar .widget_search .search-submit,
@@ -164,7 +164,7 @@
   padding: 0 18px;
   border: 0;
   border-radius: 16px;
-  background: var(--scouting-nederland-main-color, #00a551);
+  background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
   color: #fff !important;
   font-size: .9rem;
   font-weight: 700;

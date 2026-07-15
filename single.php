@@ -1,4 +1,4 @@
-<?php get_template_part('parts/header'); ?>
+<?php get_header(); ?>
 <?php
 $scouting_nederland_single_hero_url = '';
 if (is_singular('post') && has_post_thumbnail(get_queried_object_id())) {
@@ -36,7 +36,7 @@ if (is_singular('post') && has_post_thumbnail(get_queried_object_id())) {
         <main id="content" role="main" class="<?php echo is_active_sidebar('sidebar') ? 'col-md-8 col-lg-9' : 'col-md-12'; ?>">
             <?php if (have_posts()) : while (have_posts()) : the_post(); get_template_part('parts/content'); endwhile; the_posts_pagination(); else : ?><p><?php esc_html_e('Geen inhoud gevonden.', 'scouting-nederland'); ?></p><?php endif; ?>
         </main>
-        <?php get_template_part('parts/sidebar'); ?>
+        <?php get_sidebar(); ?>
     </div>
     <?php if (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b')) : ?>
     <div id="scouting-nederland-bottom" class="row"><div class="<?php echo (is_active_sidebar('bottom-a') && is_active_sidebar('bottom-b')) ? 'col-md-6' : 'col-md-12'; ?> bottom-a"><?php dynamic_sidebar('bottom-a'); ?></div><div class="<?php echo (is_active_sidebar('bottom-a') && is_active_sidebar('bottom-b')) ? 'col-md-6' : 'col-md-12'; ?> bottom-b"><?php dynamic_sidebar('bottom-b'); ?></div></div>
@@ -44,4 +44,4 @@ if (is_singular('post') && has_post_thumbnail(get_queried_object_id())) {
 </div>
 </div><!-- .content -->
 </div><!-- .mainbody -->
-<?php get_template_part('parts/footer'); ?>
+<?php get_footer(); ?>

@@ -4,10 +4,14 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php if (!current_theme_supports('title-tag')) : ?>
+        <title><?php echo esc_html(wp_get_document_title()); ?></title>
+    <?php endif; ?>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<a class="scouting-nederland-skip-link screen-reader-text" href="#content"><?php esc_html_e('Ga naar de inhoud', 'scouting-nederland'); ?></a>
 <?php
 $navclass  = get_theme_mod('scouting_nederland_hamburger_desktop', 0) ? 'hamburger' : 'navbar-expand-lg';
 $show_stamp = get_theme_mod('scouting_nederland_logo_stamp', 1);
@@ -114,3 +118,4 @@ $custom_logo_url = $custom_logo_id ? wp_get_attachment_image_url($custom_logo_id
         </div>
     </div>
 </div>
+

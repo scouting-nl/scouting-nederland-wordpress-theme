@@ -36,7 +36,7 @@
   font-size: clamp(2.2rem, 7vw, 4.6rem);
   line-height: 1;
   text-transform: uppercase;
-  text-shadow: 0 6px 0 rgba(0,0,0,.18);
+  text-shadow: 0 6px 0 rgba(0, 0, 0, .18);
 }
 
 .scouting-nederland-home-video {
@@ -64,61 +64,12 @@
   object-fit: contain;
 }
 
-.scouting-nederland-home-fields h2 {
-  margin-top: 28px;
-  padding-top: 18px;
-  border-top: 1px solid #ccd0d4;
-}
-
-.scouting-nederland-button-fields {
-  border: 1px solid #ccd0d4;
-  padding: 12px;
-  max-width: 760px;
-  background: #fff;
-}
-
-.scouting-nederland-button-row {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 18px;
-  margin-top: 12px;
-}
-
-.scouting-nederland-fieldset {
-  border: 1px solid #ccd0d4;
-  padding: 12px;
-  margin-top: 12px;
-}
-
-.scouting-nederland-two-admin {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-
-.scouting-nederland-two-admin > div {
-  border: 1px solid #ccd0d4;
-  padding: 16px;
-  background: #fff;
-}
-
-
-.scouting-nederland-home-fields-rendered .scouting-nederland-btn {
-  margin-top: 1rem;
-}
-
-.scouting-nederland-home-intro-text {
-  margin: 0 0 50px;
-  border-bottom: 2px solid #00a551;
-  padding-bottom: 2rem;
-}
-
-.scouting-nederland-home-content .scouting-nederland-featured-style-2020,
-.scouting-nederland-block-featured-items.scouting-nederland-featured-style-2020 {
+.scouting-nederland-home-content .scouting-nederland-featured-style,
+.scouting-nederland-block-featured-items.scouting-nederland-featured-style {
   margin: 0 0 78px;
 }
 
-.scouting-nederland-featured-style-2020 .scouting-nederland-featured-grid {
+.scouting-nederland-featured-style .scouting-nederland-featured-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   column-gap: 28px;
@@ -126,15 +77,15 @@
   align-items: start;
 }
 
-.scouting-nederland-featured-style-2020 .scouting-nederland-featured-item {
+.scouting-nederland-featured-style .scouting-nederland-featured-item {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.scouting-nederland-featured-style-2020 .scouting-nederland-featured-item h2 {
+.scouting-nederland-featured-style .scouting-nederland-featured-item h2 {
   margin: 0 0 16px;
-  color: #00a551;
+  color: var(--wp--preset--color--scouting-groen);
   font-family: "Roboto Slab", Georgia, serif;
   font-size: clamp(2rem, 3vw, 2.85rem);
   font-weight: 700;
@@ -142,7 +93,7 @@
   letter-spacing: -.02em;
 }
 
-.scouting-nederland-featured-style-2020 .scouting-nederland-featured-item img {
+.scouting-nederland-featured-style .scouting-nederland-featured-item img {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 8.6;
@@ -150,8 +101,8 @@
   margin: 0 0 22px;
 }
 
-.scouting-nederland-featured-style-2020 .scouting-nederland-featured-text,
-.scouting-nederland-featured-style-2020 .scouting-nederland-featured-text p {
+.scouting-nederland-featured-style .scouting-nederland-featured-text,
+.scouting-nederland-featured-style .scouting-nederland-featured-text p {
   color: #1d1d1b;
   font-family: "Poppins", Arial, sans-serif;
   font-size: 1.05rem;
@@ -160,12 +111,12 @@
   margin: 0;
 }
 
-.scouting-nederland-featured-style-2020 .scouting-nederland-featured-text {
+.scouting-nederland-featured-style .scouting-nederland-featured-text {
   min-height: 142px;
   margin-bottom: 28px;
 }
 
-.scouting-nederland-featured-style-2020 .scouting-nederland-btn {
+.scouting-nederland-featured-style .scouting-nederland-btn {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -175,7 +126,7 @@
   margin-top: auto;
   padding: 0 52px 0 30px;
   border-radius: 999px;
-  background: #006fb9;
+  background: var(--wp--preset--color--scouting-blauw-accent);
   color: #fff !important;
   font-family: "Poppins", Arial, sans-serif;
   font-size: .85rem;
@@ -183,10 +134,10 @@
   line-height: 1;
   text-transform: uppercase;
   text-decoration: none;
-  box-shadow: 0 6px 10px rgba(0, 102, 178, .28);
+  box-shadow: 0 6px 10px rgb(from var(--wp--preset--color--scouting-blauw) r g b / .28);
 }
 
-.scouting-nederland-featured-style-2020 .scouting-nederland-btn::after {
+.scouting-nederland-featured-style .scouting-nederland-btn::after {
   content: "›";
   position: absolute;
   right: 22px;
@@ -197,34 +148,34 @@
   line-height: 1;
 }
 
-.scouting-nederland-featured-style-2020 .scouting-nederland-btn:hover,
-.scouting-nederland-featured-style-2020 .scouting-nederland-btn:focus {
+.scouting-nederland-featured-style .scouting-nederland-btn:hover,
+.scouting-nederland-featured-style .scouting-nederland-btn:focus {
   background: #005b9a;
   color: #fff !important;
   text-decoration: none;
 }
 
-.scouting-nederland-featured-style-2020 .scouting-nederland-featured-quicklinks img {
+.scouting-nederland-featured-style .scouting-nederland-featured-quicklinks img {
   margin-bottom: 18px;
 }
 
-.scouting-nederland-featured-style-2020 .scouting-nederland-quicklink-list {
+.scouting-nederland-featured-style .scouting-nederland-quicklink-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.scouting-nederland-featured-style-2020 .scouting-nederland-quicklink-list li {
+.scouting-nederland-featured-style .scouting-nederland-quicklink-list li {
   margin: 0 0 13px;
 }
 
-.scouting-nederland-featured-style-2020 .scouting-nederland-quicklink-list a {
+.scouting-nederland-featured-style .scouting-nederland-quicklink-list a {
   position: relative;
   display: inline-flex;
   align-items: center;
   min-height: 34px;
   padding-left: 46px;
-  color: #00a551;
+  color: var(--wp--preset--color--scouting-groen);
   font-family: "Poppins", Arial, sans-serif;
   font-size: .95rem;
   font-weight: 400;
@@ -232,7 +183,7 @@
   text-decoration: none;
 }
 
-.scouting-nederland-featured-style-2020 .scouting-nederland-quicklink-list a::before {
+.scouting-nederland-featured-style .scouting-nederland-quicklink-list a::before {
   content: "›";
   position: absolute;
   left: 0;
@@ -244,44 +195,49 @@
   place-items: center;
   border-radius: 50%;
   background: #fff;
-  color: #00a551;
+  color: var(--wp--preset--color--scouting-groen);
   font-size: 1.55rem;
   font-weight: 300;
   line-height: 1;
   box-shadow: 0 2px 10px rgba(0, 0, 0, .16);
 }
 
-.scouting-nederland-featured-style-2020 .scouting-nederland-quicklink-list a:hover {
-  color: #006fb9;
+.scouting-nederland-featured-style .scouting-nederland-quicklink-list a:hover {
+  color: var(--wp--preset--color--scouting-blauw-accent);
 }
 
 @media (max-width: 900px) {
-  .scouting-nederland-featured-style-2020 .scouting-nederland-featured-grid {
+  .scouting-nederland-featured-style .scouting-nederland-featured-grid {
     grid-template-columns: 1fr;
   }
 
-  .scouting-nederland-featured-style-2020 .scouting-nederland-featured-text {
+  .scouting-nederland-featured-style .scouting-nederland-featured-text {
     min-height: 0;
   }
 }
 
 @keyframes scoutingNederlandSkylineMove {
-  0% { background-position: 0 100%; }
-  100% { background-position: -2000px 100%; }
+  0% {
+    background-position: 0 100%;
+  }
+
+  100% {
+    background-position: -2000px 100%;
+  }
 }
 
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020 {
+.scouting-nederland-block-callout.scouting-nederland-callout-style {
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-top: 2.5rem;
   margin-bottom: 4rem;
-  background: #00a551;
+  background: var(--wp--preset--color--scouting-groen);
   color: #fff;
   overflow: hidden;
 }
 
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+.scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   content: "";
   display: block;
   width: 100%;
@@ -294,7 +250,7 @@
   animation: scoutingNederlandSkylineMove 220s linear infinite;
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-inner {
+.scouting-nederland-callout-style .scouting-nederland-callout-inner {
   display: grid;
   grid-template-columns: minmax(220px, 320px) minmax(320px, 560px);
   justify-content: center;
@@ -305,14 +261,14 @@
   padding: 28px 40px 56px;
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-image {
+.scouting-nederland-callout-style .scouting-nederland-callout-image {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   margin-top: -22px;
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-image img {
+.scouting-nederland-callout-style .scouting-nederland-callout-image img {
   display: block;
   width: min(100%, 215px);
   max-width: 215px;
@@ -321,12 +277,12 @@
   object-fit: contain;
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-text {
+.scouting-nederland-callout-style .scouting-nederland-callout-text {
   max-width: 560px;
   padding-top: 4px;
 }
 
-.scouting-nederland-callout-style-2020 h2 {
+.scouting-nederland-callout-style h2 {
   margin: 0 0 10px;
   color: #fff;
   font-family: "Roboto Slab", Georgia, serif;
@@ -335,8 +291,8 @@
   line-height: 1.05;
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-copy,
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-copy p {
+.scouting-nederland-callout-style .scouting-nederland-callout-copy,
+.scouting-nederland-callout-style .scouting-nederland-callout-copy p {
   margin: 0 0 1.15rem;
   color: #fff;
   font-family: "Poppins", Arial, sans-serif;
@@ -345,7 +301,7 @@
   line-height: 1.72;
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-btn {
+.scouting-nederland-callout-style .scouting-nederland-btn {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -362,10 +318,10 @@
   letter-spacing: 0;
   text-transform: uppercase;
   text-decoration: none;
-  box-shadow: 0 2px 4px rgba(0,0,0,.25);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-btn::after {
+.scouting-nederland-callout-style .scouting-nederland-btn::after {
   content: "";
   position: absolute;
   right: 20px;
@@ -377,93 +333,93 @@
   transform: translateY(-50%) rotate(45deg);
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-btn:hover,
-.scouting-nederland-callout-style-2020 .scouting-nederland-btn:focus {
+.scouting-nederland-callout-style .scouting-nederland-btn:hover,
+.scouting-nederland-callout-style .scouting-nederland-btn:focus {
   color: #fff !important;
   text-decoration: none;
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-btn:hover::after,
-.scouting-nederland-callout-style-2020 .scouting-nederland-btn:focus::after {
+.scouting-nederland-callout-style .scouting-nederland-btn:hover::after,
+.scouting-nederland-callout-style .scouting-nederland-btn:focus::after {
   right: 14px;
 }
 
 @media (max-width: 900px) {
-  .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+  .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
     height: 62px;
     background-size: auto 58px;
   }
 
-  .scouting-nederland-callout-style-2020 .scouting-nederland-callout-inner {
+  .scouting-nederland-callout-style .scouting-nederland-callout-inner {
     grid-template-columns: 1fr;
     text-align: center;
     padding: 18px 24px 42px;
   }
 
-  .scouting-nederland-callout-style-2020 .scouting-nederland-callout-image {
+  .scouting-nederland-callout-style .scouting-nederland-callout-image {
     margin-top: -12px;
   }
 
-  .scouting-nederland-callout-style-2020 .scouting-nederland-callout-text {
+  .scouting-nederland-callout-style .scouting-nederland-callout-text {
     margin: 0 auto;
   }
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-copy {
+.scouting-nederland-callout-style .scouting-nederland-callout-copy {
   display: block;
   visibility: visible;
   opacity: 1;
   color: #fff;
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-copy p {
+.scouting-nederland-callout-style .scouting-nederland-callout-copy p {
   display: block;
   visibility: visible;
   opacity: 1;
   color: #fff;
 }
 
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+.scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   height: 96px;
   background-position: top center;
   background-size: auto 90px;
   animation-duration: 10000s;
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-inner {
+.scouting-nederland-callout-style .scouting-nederland-callout-inner {
   grid-template-columns: minmax(260px, 320px) minmax(320px, 560px);
   gap: 2rem;
   padding-top: 34px;
   padding-bottom: 64px;
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-image {
+.scouting-nederland-callout-style .scouting-nederland-callout-image {
   align-items: flex-start;
   justify-content: center;
   margin-top: 18px;
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-image img {
+.scouting-nederland-callout-style .scouting-nederland-callout-image img {
   width: min(100%, 255px);
   max-width: 255px;
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-text {
+.scouting-nederland-callout-style .scouting-nederland-callout-text {
   padding-top: 14px;
 }
 
 @media (max-width: 900px) {
-  .scouting-nederland-callout-style-2020 .scouting-nederland-callout-inner {
+  .scouting-nederland-callout-style .scouting-nederland-callout-inner {
     grid-template-columns: 1fr;
     padding-top: 16px;
     padding-bottom: 42px;
   }
 
-  .scouting-nederland-callout-style-2020 .scouting-nederland-callout-image {
+  .scouting-nederland-callout-style .scouting-nederland-callout-image {
     margin-top: 0;
   }
 
-  .scouting-nederland-callout-style-2020 .scouting-nederland-callout-image img {
+  .scouting-nederland-callout-style .scouting-nederland-callout-image img {
     max-width: 220px;
   }
 }
@@ -472,12 +428,13 @@
   0% {
     background-position: 0 100%;
   }
+
   100% {
     background-position: 2000px 100%;
   }
 }
 
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+.scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   animation-name: scoutingNederlandSkylineMove;
   animation-duration: 120s;
   animation-timing-function: linear;
@@ -486,7 +443,7 @@
   will-change: background-position;
 }
 
-.scouting-nederland-two-columns-style-2020 {
+.scouting-nederland-two-columns-style {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
@@ -494,79 +451,42 @@
   margin: 0 0 80px;
 }
 
-.scouting-nederland-two-columns-style-2020 .scouting-nederland-two-left {
-  background: #ccefdc;
-  display: flex;
-  flex-direction: column;
-}
-
-.scouting-nederland-two-columns-style-2020 .scouting-nederland-two-left img {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  display: block;
-}
-
-.scouting-nederland-two-columns-style-2020 .scouting-nederland-two-left-content {
-  padding: 30px 30px 34px;
-}
-
-.scouting-nederland-two-columns-style-2020 .scouting-nederland-two-right {
-  border: 2px solid #00a551;
-  padding: 34px 34px 36px;
-}
-
-.scouting-nederland-two-columns-style-2020 h2 {
+.scouting-nederland-two-columns-style h2 {
   margin: 0 0 16px;
   font-family: "Roboto Slab", Georgia, serif;
   font-weight: 700;
   line-height: 1.12;
 }
 
-.scouting-nederland-two-columns-style-2020 .scouting-nederland-two-left h2 {
-  color: #fff;
-  margin-top: -72px;
-  position: relative;
-  text-shadow: 0 1px 3px rgba(0,0,0,.35);
-}
-
-.scouting-nederland-two-columns-style-2020 .scouting-nederland-two-right h2:first-child {
-  color: #222;
-}
-
-.scouting-nederland-two-columns-style-2020 .scouting-nederland-two-right h2:not(:first-child) {
-  color: #00a551;
-}
-
-.scouting-nederland-two-columns-style-2020 .scouting-nederland-two-copy,
-.scouting-nederland-two-columns-style-2020 .scouting-nederland-two-copy p,
-.scouting-nederland-two-columns-style-2020 .scouting-nederland-two-copy li {
+.scouting-nederland-two-columns-style .scouting-nederland-two-copy,
+.scouting-nederland-two-columns-style .scouting-nederland-two-copy p,
+.scouting-nederland-two-columns-style .scouting-nederland-two-copy li {
   font-family: "Poppins", Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.75;
   color: #222;
 }
 
-.scouting-nederland-two-columns-style-2020 .scouting-nederland-two-copy ul {
+.scouting-nederland-two-columns-style .scouting-nederland-two-copy ul {
   margin-top: 0.7rem;
   margin-bottom: 1.2rem;
 }
 
-.scouting-nederland-two-columns-style-2020 .scouting-nederland-btn {
+.scouting-nederland-two-columns-style .scouting-nederland-btn {
   margin-top: 1rem;
 }
 
 @media (max-width: 900px) {
-  .scouting-nederland-two-columns-style-2020 {
+  .scouting-nederland-two-columns-style {
     grid-template-columns: 1fr;
   }
 }
 
-.scouting-nederland-two-columns-style-2020 {
+.scouting-nederland-two-columns-style {
   margin: 3rem 0 4.5rem;
 }
 
-.scouting-nederland-two-columns-style-2020 .gb-two-columns {
+.scouting-nederland-two-columns-style .gb-two-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 32px;
@@ -574,19 +494,19 @@
   align-items: stretch;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-headerimage,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg {
+.scouting-nederland-two-columns-style .col-headerimage,
+.scouting-nederland-two-columns-style .col-wysiwyg {
   display: grid;
   align-items: start;
   grid-template-columns: 1fr;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-headerimage {
+.scouting-nederland-two-columns-style .col-headerimage {
   background-color: #c7e3d4;
   grid-template-rows: auto auto 1fr;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-headerimage .beeld {
+.scouting-nederland-two-columns-style .col-headerimage .beeld {
   position: relative;
   height: 350px;
   background-position: center center;
@@ -594,7 +514,7 @@
   background-size: cover;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-headerimage .beeld h4 {
+.scouting-nederland-two-columns-style .col-headerimage .beeld h4 {
   margin: 0;
   padding: 2rem;
   color: #fff;
@@ -605,7 +525,7 @@
   text-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
 }
 
-.scouting-nederland-two-columns-style-2020 .col-headerimage .tekst {
+.scouting-nederland-two-columns-style .col-headerimage .tekst {
   align-self: stretch;
   padding: 2rem;
   color: #1d1d1b;
@@ -614,17 +534,17 @@
   line-height: 1.9;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-headerimage .tekst p {
+.scouting-nederland-two-columns-style .col-headerimage .tekst p {
   margin: 0 0 1rem;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg {
-  border: .125rem solid #00a551;
+.scouting-nederland-two-columns-style .col-wysiwyg {
+  border: .125rem solid var(--wp--preset--color--scouting-groen);
   grid-template-rows: 4rem auto 5.75rem;
   background: transparent;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg > h4 {
+.scouting-nederland-two-columns-style .col-wysiwyg>h4 {
   margin: 0;
   padding: 2rem 2rem 0;
   color: #1d1d1b;
@@ -637,7 +557,7 @@
   white-space: nowrap;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content {
+.scouting-nederland-two-columns-style .col-wysiwyg .content {
   padding: 1rem 2rem 0 2rem;
   color: #1d1d1b;
   font-family: "Poppins", Arial, sans-serif;
@@ -645,39 +565,39 @@
   line-height: 1.9;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content p {
+.scouting-nederland-two-columns-style .col-wysiwyg .content p {
   margin: 0 0 1rem;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content ul {
+.scouting-nederland-two-columns-style .col-wysiwyg .content ul {
   margin: .5rem 0 1.5rem 1.5rem;
   padding-left: 0;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content li {
+.scouting-nederland-two-columns-style .col-wysiwyg .content li {
   font-size: 1.125rem;
   line-height: 1.9;
   margin-bottom: .2rem;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content h1,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content h2,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content h3,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content h4 {
+.scouting-nederland-two-columns-style .col-wysiwyg .content h1,
+.scouting-nederland-two-columns-style .col-wysiwyg .content h2,
+.scouting-nederland-two-columns-style .col-wysiwyg .content h3,
+.scouting-nederland-two-columns-style .col-wysiwyg .content h4 {
   margin: 1.35rem 0 .75rem;
-  color: #00a551;
+  color: var(--wp--preset--color--scouting-groen);
   font-family: "Roboto Slab", Georgia, serif;
   font-size: clamp(1.95rem, 2.7vw, 2.7rem);
   font-weight: 700;
   line-height: 1.12;
 }
 
-.scouting-nederland-two-columns-style-2020 .knop {
+.scouting-nederland-two-columns-style .knop {
   align-self: end;
   padding: 0 2rem 2rem 2rem;
 }
 
-.scouting-nederland-two-columns-style-2020 .knop .btn {
+.scouting-nederland-two-columns-style .knop .btn {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -694,22 +614,22 @@
   text-decoration: none;
 }
 
-.scouting-nederland-two-columns-style-2020 .knop .btn.scouting-nederland-btn-blue {
-  background: #006fb9;
-  box-shadow: 0 6px 10px rgba(0, 102, 178, .28);
+.scouting-nederland-two-columns-style .knop .btn.scouting-nederland-btn-blue {
+  background: var(--wp--preset--color--scouting-blauw-accent);
+  box-shadow: 0 6px 10px rgb(from var(--wp--preset--color--scouting-blauw) r g b / .28);
 }
 
-.scouting-nederland-two-columns-style-2020 .knop .btn.scouting-nederland-btn-black {
+.scouting-nederland-two-columns-style .knop .btn.scouting-nederland-btn-black {
   background: #000;
-  box-shadow: 0 3px 8px rgba(0,0,0,.22);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .22);
 }
 
-.scouting-nederland-two-columns-style-2020 .knop .btn.scouting-nederland-btn-green {
-  background: #00a551;
-  box-shadow: 0 6px 10px rgba(0,165,81,.24);
+.scouting-nederland-two-columns-style .knop .btn.scouting-nederland-btn-green {
+  background: var(--wp--preset--color--scouting-groen);
+  box-shadow: 0 6px 10px rgb(from var(--wp--preset--color--scouting-groen) r g b / .24);
 }
 
-.scouting-nederland-two-columns-style-2020 .knop .btn::after {
+.scouting-nederland-two-columns-style .knop .btn::after {
   content: "›";
   position: absolute;
   right: 24px;
@@ -721,60 +641,60 @@
 }
 
 @media (max-width: 980px) {
-  .scouting-nederland-two-columns-style-2020 .gb-two-columns {
+  .scouting-nederland-two-columns-style .gb-two-columns {
     grid-template-columns: 1fr;
   }
 
-  .scouting-nederland-two-columns-style-2020 .col-headerimage .beeld {
+  .scouting-nederland-two-columns-style .col-headerimage .beeld {
     height: 280px;
   }
 
-  .scouting-nederland-two-columns-style-2020 .col-wysiwyg {
+  .scouting-nederland-two-columns-style .col-wysiwyg {
     grid-template-rows: auto auto auto;
   }
 
-  .scouting-nederland-two-columns-style-2020 .col-wysiwyg > h4,
-  .scouting-nederland-two-columns-style-2020 .col-headerimage .beeld h4,
-  .scouting-nederland-two-columns-style-2020 .col-headerimage .tekst,
-  .scouting-nederland-two-columns-style-2020 .col-wysiwyg .content,
-  .scouting-nederland-two-columns-style-2020 .knop {
+  .scouting-nederland-two-columns-style .col-wysiwyg>h4,
+  .scouting-nederland-two-columns-style .col-headerimage .beeld h4,
+  .scouting-nederland-two-columns-style .col-headerimage .tekst,
+  .scouting-nederland-two-columns-style .col-wysiwyg .content,
+  .scouting-nederland-two-columns-style .knop {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-.scouting-nederland-two-columns-style-2020 .gb-two-columns {
+.scouting-nederland-two-columns-style .gb-two-columns {
   align-items: stretch;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-headerimage {
+.scouting-nederland-two-columns-style .col-headerimage {
   grid-template-rows: auto 1fr auto;
   background-color: #c7e3d4;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-headerimage .beeld {
+.scouting-nederland-two-columns-style .col-headerimage .beeld {
   height: 320px;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-headerimage .beeld h4 {
+.scouting-nederland-two-columns-style .col-headerimage .beeld h4 {
   max-width: 70%;
   font-size: clamp(2.35rem, 3.6vw, 4rem);
   line-height: 0.95;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-headerimage .tekst {
+.scouting-nederland-two-columns-style .col-headerimage .tekst {
   min-height: 0;
   padding: 1.9rem 2rem 1.2rem;
   font-size: 1.08rem;
   line-height: 1.75;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg {
+.scouting-nederland-two-columns-style .col-wysiwyg {
   grid-template-rows: auto 1fr auto;
   min-height: 100%;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg > h4 {
+.scouting-nederland-two-columns-style .col-wysiwyg>h4 {
   padding: 2rem 2rem 0.5rem;
   font-size: clamp(2.35rem, 3.6vw, 4rem);
   line-height: 1;
@@ -783,69 +703,70 @@
   text-overflow: clip;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content {
+.scouting-nederland-two-columns-style .col-wysiwyg .content {
   display: block;
   padding: 0.2rem 2rem 1rem;
   font-size: 1.08rem;
   line-height: 1.75;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content > *:first-child {
+.scouting-nederland-two-columns-style .col-wysiwyg .content>*:first-child {
   margin-top: 0;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content ul,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content ol {
+.scouting-nederland-two-columns-style .col-wysiwyg .content ul,
+.scouting-nederland-two-columns-style .col-wysiwyg .content ol {
   margin: 0.5rem 0 1.4rem 1.45rem;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content li {
+.scouting-nederland-two-columns-style .col-wysiwyg .content li {
   margin-bottom: 0.05rem;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content h1,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content h2,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content h3,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content h4 {
+.scouting-nederland-two-columns-style .col-wysiwyg .content h1,
+.scouting-nederland-two-columns-style .col-wysiwyg .content h2,
+.scouting-nederland-two-columns-style .col-wysiwyg .content h3,
+.scouting-nederland-two-columns-style .col-wysiwyg .content h4 {
   margin: 1.25rem 0 0.6rem;
   font-size: clamp(1.9rem, 2.6vw, 2.9rem);
   line-height: 1.05;
 }
 
-.scouting-nederland-two-columns-style-2020 .knop {
+.scouting-nederland-two-columns-style .knop {
   padding: 0 2rem 2rem;
 }
 
-.scouting-nederland-two-columns-style-2020 .knop .btn {
+.scouting-nederland-two-columns-style .knop .btn {
   min-height: 46px;
   min-width: 188px;
   padding: 0 62px 0 30px;
   font-size: .86rem;
 }
 
-.scouting-nederland-two-columns-style-2020 .knop .btn::after {
+.scouting-nederland-two-columns-style .knop .btn::after {
   right: 22px;
   font-size: 1.9rem;
 }
 
 @media (max-width: 980px) {
-  .scouting-nederland-two-columns-style-2020 .col-headerimage .beeld {
+  .scouting-nederland-two-columns-style .col-headerimage .beeld {
     height: 280px;
   }
-  .scouting-nederland-two-columns-style-2020 .col-headerimage .beeld h4,
-  .scouting-nederland-two-columns-style-2020 .col-wysiwyg > h4 {
+
+  .scouting-nederland-two-columns-style .col-headerimage .beeld h4,
+  .scouting-nederland-two-columns-style .col-wysiwyg>h4 {
     max-width: 100%;
   }
 }
 
-.scouting-nederland-block-two-columns.scouting-nederland-two-columns-style-2020 {
+.scouting-nederland-block-two-columns.scouting-nederland-two-columns-style {
   width: min(1148px, calc(100vw - 96px));
   max-width: none;
   margin-left: auto;
   margin-right: auto;
 }
 
-.scouting-nederland-two-columns-style-2020 .gb-two-columns {
+.scouting-nederland-two-columns-style .gb-two-columns {
   width: 100%;
   max-width: 1148px;
   margin: 0 auto;
@@ -853,29 +774,29 @@
   grid-gap: 32px;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-headerimage,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg {
+.scouting-nederland-two-columns-style .col-headerimage,
+.scouting-nederland-two-columns-style .col-wysiwyg {
   min-width: 0;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-headerimage .tekst,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content {
+.scouting-nederland-two-columns-style .col-headerimage .tekst,
+.scouting-nederland-two-columns-style .col-wysiwyg .content {
   max-width: none;
 }
 
 @media (max-width: 1200px) {
-  .scouting-nederland-block-two-columns.scouting-nederland-two-columns-style-2020 {
+  .scouting-nederland-block-two-columns.scouting-nederland-two-columns-style {
     width: calc(100vw - 64px);
   }
 }
 
 @media (max-width: 980px) {
-  .scouting-nederland-block-two-columns.scouting-nederland-two-columns-style-2020 {
+  .scouting-nederland-block-two-columns.scouting-nederland-two-columns-style {
     width: calc(100vw - 32px);
   }
 }
 
-.scouting-nederland-block-two-columns.scouting-nederland-two-columns-style-2020 {
+.scouting-nederland-block-two-columns.scouting-nederland-two-columns-style {
   display: block !important;
   grid-template-columns: none !important;
   width: 100%;
@@ -883,7 +804,7 @@
   margin: 3rem auto 4.5rem;
 }
 
-.scouting-nederland-block-two-columns.scouting-nederland-two-columns-style-2020 .gb-two-columns {
+.scouting-nederland-block-two-columns.scouting-nederland-two-columns-style .gb-two-columns {
   display: grid !important;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 32px;
@@ -892,62 +813,62 @@
   margin: 0 auto;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-headerimage,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg {
+.scouting-nederland-two-columns-style .col-headerimage,
+.scouting-nederland-two-columns-style .col-wysiwyg {
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-headerimage {
+.scouting-nederland-two-columns-style .col-headerimage {
   overflow: hidden;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg {
+.scouting-nederland-two-columns-style .col-wysiwyg {
   overflow: visible;
 }
 
 @media (max-width: 980px) {
-  .scouting-nederland-block-two-columns.scouting-nederland-two-columns-style-2020 .gb-two-columns {
+  .scouting-nederland-block-two-columns.scouting-nederland-two-columns-style .gb-two-columns {
     grid-template-columns: 1fr;
   }
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content {
+.scouting-nederland-two-columns-style .col-wysiwyg .content {
   display: block !important;
   min-height: 0;
   color: #1d1d1b;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content:empty {
+.scouting-nederland-two-columns-style .col-wysiwyg .content:empty {
   display: none !important;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content p,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content ul,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content ol,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content li,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content h1,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content h2,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content h3,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content h4 {
+.scouting-nederland-two-columns-style .col-wysiwyg .content p,
+.scouting-nederland-two-columns-style .col-wysiwyg .content ul,
+.scouting-nederland-two-columns-style .col-wysiwyg .content ol,
+.scouting-nederland-two-columns-style .col-wysiwyg .content li,
+.scouting-nederland-two-columns-style .col-wysiwyg .content h1,
+.scouting-nederland-two-columns-style .col-wysiwyg .content h2,
+.scouting-nederland-two-columns-style .col-wysiwyg .content h3,
+.scouting-nederland-two-columns-style .col-wysiwyg .content h4 {
   color: inherit;
 }
 
-.scouting-nederland-two-columns-style-2020 .knop .scouting-nederland-two-btn {
+.scouting-nederland-two-columns-style .knop .scouting-nederland-two-btn {
   position: relative;
   padding-right: 66px;
 }
 
-.scouting-nederland-two-columns-style-2020 .knop .scouting-nederland-two-btn::after {
+.scouting-nederland-two-columns-style .knop .scouting-nederland-two-btn::after {
   content: none !important;
 }
 
-.scouting-nederland-two-columns-style-2020 .knop .scouting-nederland-two-btn-label {
+.scouting-nederland-two-columns-style .knop .scouting-nederland-two-btn-label {
   display: inline-block;
 }
 
-.scouting-nederland-two-columns-style-2020 .knop .scouting-nederland-two-btn-arrow {
+.scouting-nederland-two-columns-style .knop .scouting-nederland-two-btn-arrow {
   position: absolute;
   right: 24px;
   top: 50%;
@@ -956,14 +877,14 @@
   transform: translateY(-50%);
 }
 
-.scouting-nederland-two-columns-style-2020 .knop .scouting-nederland-two-btn-arrow::before,
-.scouting-nederland-two-columns-style-2020 .knop .scouting-nederland-two-btn-arrow::after {
+.scouting-nederland-two-columns-style .knop .scouting-nederland-two-btn-arrow::before,
+.scouting-nederland-two-columns-style .knop .scouting-nederland-two-btn-arrow::after {
   content: "";
   position: absolute;
   display: block;
 }
 
-.scouting-nederland-two-columns-style-2020 .knop .scouting-nederland-two-btn-arrow::before {
+.scouting-nederland-two-columns-style .knop .scouting-nederland-two-btn-arrow::before {
   left: 0;
   top: 8px;
   width: 11px;
@@ -971,7 +892,7 @@
   background: #fff;
 }
 
-.scouting-nederland-two-columns-style-2020 .knop .scouting-nederland-two-btn-arrow::after {
+.scouting-nederland-two-columns-style .knop .scouting-nederland-two-btn-arrow::after {
   right: 0;
   top: 4px;
   width: 8px;
@@ -1020,7 +941,7 @@
   line-height: 1;
   letter-spacing: .04em;
   text-transform: uppercase;
-  text-shadow: 2px 2px 2px rgba(0,0,0,.55);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, .55);
 }
 
 .scouting-nederland-home-video-library::after {
@@ -1028,55 +949,55 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: rgba(0,0,0,.12);
+  background: rgba(0, 0, 0, .12);
   pointer-events: none;
 }
 
-.scouting-nederland-featured-style-2020 .scouting-nederland-featured-text,
-.scouting-nederland-featured-style-2020 .scouting-nederland-featured-text p,
-.scouting-nederland-featured-style-2020 .scouting-nederland-quicklink-list a {
+.scouting-nederland-featured-style .scouting-nederland-featured-text,
+.scouting-nederland-featured-style .scouting-nederland-featured-text p,
+.scouting-nederland-featured-style .scouting-nederland-quicklink-list a {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: 1.125rem;
   line-height: 1.9;
 }
 
-.scouting-nederland-featured-style-2020 .scouting-nederland-featured-item h2 {
+.scouting-nederland-featured-style .scouting-nederland-featured-item h2 {
   margin-bottom: 1rem;
 }
 
-.scouting-nederland-callout-style-2020 h2 {
+.scouting-nederland-callout-style h2 {
   font-size: 2.75rem;
   line-height: 1.08;
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-copy,
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-copy p {
+.scouting-nederland-callout-style .scouting-nederland-callout-copy,
+.scouting-nederland-callout-style .scouting-nederland-callout-copy p {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: 1.125rem;
   line-height: 1.9;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-headerimage .beeld h4,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg > h4 {
+.scouting-nederland-two-columns-style .col-headerimage .beeld h4,
+.scouting-nederland-two-columns-style .col-wysiwyg>h4 {
   font-size: 2.75rem;
   line-height: 1.08;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-headerimage .tekst,
-.scouting-nederland-two-columns-style-2020 .col-headerimage .tekst p,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content p,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content li {
+.scouting-nederland-two-columns-style .col-headerimage .tekst,
+.scouting-nederland-two-columns-style .col-headerimage .tekst p,
+.scouting-nederland-two-columns-style .col-wysiwyg .content,
+.scouting-nederland-two-columns-style .col-wysiwyg .content p,
+.scouting-nederland-two-columns-style .col-wysiwyg .content li {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: 1.125rem;
   line-height: 1.9;
 }
 
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content h1,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content h2,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content h3,
-.scouting-nederland-two-columns-style-2020 .col-wysiwyg .content h4 {
-  color: #00a551;
+.scouting-nederland-two-columns-style .col-wysiwyg .content h1,
+.scouting-nederland-two-columns-style .col-wysiwyg .content h2,
+.scouting-nederland-two-columns-style .col-wysiwyg .content h3,
+.scouting-nederland-two-columns-style .col-wysiwyg .content h4 {
+  color: var(--wp--preset--color--scouting-groen);
   font-family: "Roboto Slab", Georgia, "Times New Roman", serif;
   font-size: 2.75rem;
   line-height: 1.08;
@@ -1092,8 +1013,8 @@
   line-height: .95;
 }
 
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-.scouting-nederland-callout-style-2020::before {
+.scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+.scouting-nederland-callout-style::before {
   display: block !important;
   height: 88px !important;
   background-image: url("../images/skyline-groen.png") !important;
@@ -1102,44 +1023,44 @@
   animation: scoutingNederlandSkylineMove 220s linear infinite !important;
 }
 
-body.mgroen .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.green-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mgroen .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.green-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-groen.png") !important;
 }
 
-body.mblauw .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.blue-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mblauw .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.blue-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-blauw.png") !important;
 }
 
-body.mgeel .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.yellow-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mgeel .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.yellow-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-geel.png") !important;
 }
 
-body.mrood .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.red-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mrood .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.red-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-rood.png") !important;
 }
 
-body.moranje .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.orange-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.moranje .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.orange-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-oranje.png") !important;
 }
 
-body.mpaars .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mpaars .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-paars.png") !important;
 }
 
-.scouting-nederland-callout-style-2020 h1,
-.scouting-nederland-callout-style-2020 h2,
-.scouting-nederland-callout-style-2020 h3,
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-title,
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020 h1,
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020 h2,
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020 h3,
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020 .scouting-nederland-callout-title {
+.scouting-nederland-callout-style h1,
+.scouting-nederland-callout-style h2,
+.scouting-nederland-callout-style h3,
+.scouting-nederland-callout-style .scouting-nederland-callout-title,
+.scouting-nederland-block-callout.scouting-nederland-callout-style h1,
+.scouting-nederland-block-callout.scouting-nederland-callout-style h2,
+.scouting-nederland-block-callout.scouting-nederland-callout-style h3,
+.scouting-nederland-block-callout.scouting-nederland-callout-style .scouting-nederland-callout-title {
   color: #fff !important;
   opacity: 1 !important;
   visibility: visible !important;
@@ -1148,15 +1069,16 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
   z-index: 2 !important;
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-copy,
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-copy p,
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020 p {
+.scouting-nederland-callout-style .scouting-nederland-callout-copy,
+.scouting-nederland-callout-style .scouting-nederland-callout-copy p,
+.scouting-nederland-block-callout.scouting-nederland-callout-style p {
   color: #fff !important;
 }
 
 @media (max-width: 900px) {
-  .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-  .scouting-nederland-callout-style-2020::before {
+
+  .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+  .scouting-nederland-callout-style::before {
     height: 62px !important;
     background-size: auto 58px !important;
   }
@@ -1166,13 +1088,14 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
   0% {
     background-position: 0 100%;
   }
+
   100% {
     background-position: -2000px 100%;
   }
 }
 
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-.scouting-nederland-callout-style-2020::before {
+.scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+.scouting-nederland-callout-style::before {
   animation-name: scoutingNederlandSkylineMove !important;
   animation-duration: 220s !important;
   animation-timing-function: linear !important;
@@ -1182,8 +1105,9 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-  .scouting-nederland-callout-style-2020::before {
+
+  .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+  .scouting-nederland-callout-style::before {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
@@ -1193,6 +1117,7 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
   from {
     background-position-x: 0;
   }
+
   to {
     background-position-x: -2000px;
   }
@@ -1202,13 +1127,14 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
   from {
     background-position-x: 0;
   }
+
   to {
     background-position-x: -2000px;
   }
 }
 
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-.scouting-nederland-callout-style-2020::before,
+.scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+.scouting-nederland-callout-style::before,
 .scouting-nederland-callout-skyline,
 .scouting-nederland-skyline,
 [class*="skyline"]::before {
@@ -1221,8 +1147,9 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-  .scouting-nederland-callout-style-2020::before,
+
+  .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+  .scouting-nederland-callout-style::before,
   .scouting-nederland-callout-skyline,
   .scouting-nederland-skyline,
   [class*="skyline"]::before {
@@ -1235,6 +1162,7 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
   0% {
     background-position: 0 0;
   }
+
   100% {
     background-position: 9999em 0;
   }
@@ -1244,6 +1172,7 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
   0% {
     background-position: 0 0;
   }
+
   100% {
     background-position: 9999em 0;
   }
@@ -1274,8 +1203,8 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
   animation-play-state: running !important;
 }
 
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-.scouting-nederland-callout-style-2020::before {
+.scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+.scouting-nederland-callout-style::before {
   content: "";
   display: block;
   width: 100%;
@@ -1292,49 +1221,50 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
 
 body.mgroen .showcase-skyline::before,
 body.green-main .showcase-skyline::before,
-body.mgroen .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.green-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mgroen .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.green-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-groen.png") !important;
 }
 
 body.mblauw .showcase-skyline::before,
 body.blue-main .showcase-skyline::before,
-body.mblauw .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.blue-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mblauw .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.blue-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-blauw.png") !important;
 }
 
 body.mgeel .showcase-skyline::before,
 body.yellow-main .showcase-skyline::before,
-body.mgeel .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.yellow-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mgeel .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.yellow-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-geel.png") !important;
 }
 
 body.mrood .showcase-skyline::before,
 body.red-main .showcase-skyline::before,
-body.mrood .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.red-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mrood .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.red-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-rood.png") !important;
 }
 
 body.moranje .showcase-skyline::before,
 body.orange-main .showcase-skyline::before,
-body.moranje .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.orange-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.moranje .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.orange-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-oranje.png") !important;
 }
 
 body.mpaars .showcase-skyline::before,
 body.purple-main .showcase-skyline::before,
-body.mpaars .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mpaars .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-paars.png") !important;
 }
 
 @media (max-width: 900px) {
-  .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-  .scouting-nederland-callout-style-2020::before {
+
+  .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+  .scouting-nederland-callout-style::before {
     height: 62px;
     background-size: auto 58px;
   }
@@ -1344,6 +1274,7 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
   0% {
     background-position: 0 100%;
   }
+
   100% {
     background-position: 2000px 100%;
   }
@@ -1353,14 +1284,15 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
   0% {
     background-position: 0 100%;
   }
+
   100% {
     background-position: 2000px 100%;
   }
 }
 
 .showcase-skyline::before,
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-.scouting-nederland-callout-style-2020::before {
+.scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+.scouting-nederland-callout-style::before {
   background-repeat: repeat-x !important;
   -webkit-animation-name: scoutingNederlandSkylineVisibleMove !important;
   animation-name: scoutingNederlandSkylineVisibleMove !important;
@@ -1375,8 +1307,8 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
   will-change: background-position !important;
 }
 
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-.scouting-nederland-callout-style-2020::before {
+.scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+.scouting-nederland-callout-style::before {
   height: 88px !important;
   background-image: url("../images/skyline-groen.png") !important;
   background-size: auto 84px !important;
@@ -1390,49 +1322,50 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
 
 body.mgroen .showcase-skyline::before,
 body.green-main .showcase-skyline::before,
-body.mgroen .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.green-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mgroen .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.green-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-groen.png") !important;
 }
 
 body.mblauw .showcase-skyline::before,
 body.blue-main .showcase-skyline::before,
-body.mblauw .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.blue-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mblauw .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.blue-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-blauw.png") !important;
 }
 
 body.mgeel .showcase-skyline::before,
 body.yellow-main .showcase-skyline::before,
-body.mgeel .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.yellow-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mgeel .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.yellow-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-geel.png") !important;
 }
 
 body.mrood .showcase-skyline::before,
 body.red-main .showcase-skyline::before,
-body.mrood .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.red-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mrood .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.red-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-rood.png") !important;
 }
 
 body.moranje .showcase-skyline::before,
 body.orange-main .showcase-skyline::before,
-body.moranje .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.orange-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.moranje .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.orange-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-oranje.png") !important;
 }
 
 body.mpaars .showcase-skyline::before,
 body.purple-main .showcase-skyline::before,
-body.mpaars .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mpaars .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-paars.png") !important;
 }
 
 @media (max-width: 900px) {
-  .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-  .scouting-nederland-callout-style-2020::before {
+
+  .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+  .scouting-nederland-callout-style::before {
     height: 62px !important;
     background-size: auto 58px !important;
     -webkit-animation-duration: 110s !important;
@@ -1444,6 +1377,7 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
   0% {
     background-position-x: 0;
   }
+
   100% {
     background-position-x: 2000px;
   }
@@ -1453,14 +1387,15 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
   0% {
     background-position-x: 0;
   }
+
   100% {
     background-position-x: 2000px;
   }
 }
 
 .showcase-skyline::before,
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-.scouting-nederland-callout-style-2020::before {
+.scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+.scouting-nederland-callout-style::before {
   background-repeat: repeat-x !important;
   background-position-y: 100% !important;
   -webkit-animation: scoutingNederlandSkylineMoveX 140s linear infinite !important;
@@ -1470,38 +1405,40 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
   will-change: background-position-x !important;
 }
 
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-.scouting-nederland-callout-style-2020::before {
+.scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+.scouting-nederland-callout-style::before {
   -webkit-animation-duration: 110s !important;
   animation-duration: 110s !important;
 }
 
 @media (max-width: 900px) {
+
   .showcase-skyline::before,
-  .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-  .scouting-nederland-callout-style-2020::before {
+  .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+  .scouting-nederland-callout-style::before {
     -webkit-animation-duration: 85s !important;
     animation-duration: 85s !important;
   }
 }
 
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-.scouting-nederland-callout-style-2020::before {
+.scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+.scouting-nederland-callout-style::before {
   height: 90px !important;
   margin-bottom: -2px !important;
   background-color: #fff !important;
   background-position-y: 100% !important;
 }
 
-.scouting-nederland-callout-style-2020 .scouting-nederland-callout-inner,
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020 .scouting-nederland-callout-inner {
+.scouting-nederland-callout-style .scouting-nederland-callout-inner,
+.scouting-nederland-block-callout.scouting-nederland-callout-style .scouting-nederland-callout-inner {
   margin-top: 0 !important;
   padding-top: 26px !important;
 }
 
 @media (max-width: 900px) {
-  .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-  .scouting-nederland-callout-style-2020::before {
+
+  .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+  .scouting-nederland-callout-style::before {
     height: 64px !important;
     margin-bottom: -2px !important;
   }
@@ -1509,48 +1446,48 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
 
 body.mgroen .showcase-skyline::before,
 body.green-main .showcase-skyline::before,
-body.mgroen .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.green-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mgroen .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.green-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-groen.png") !important;
 }
 
 body.mblauw .showcase-skyline::before,
 body.blue-main .showcase-skyline::before,
-body.mblauw .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.blue-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mblauw .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.blue-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-blauw.png") !important;
 }
 
 body.mgeel .showcase-skyline::before,
 body.yellow-main .showcase-skyline::before,
-body.mgeel .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.yellow-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mgeel .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.yellow-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-geel.png") !important;
 }
 
 body.mrood .showcase-skyline::before,
 body.red-main .showcase-skyline::before,
-body.mrood .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.red-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mrood .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.red-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-rood.png") !important;
 }
 
 body.moranje .showcase-skyline::before,
 body.orange-main .showcase-skyline::before,
-body.moranje .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.orange-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.moranje .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.orange-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-oranje.png") !important;
 }
 
 body.mpaars .showcase-skyline::before,
 body.purple-main .showcase-skyline::before,
-body.mpaars .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mpaars .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-paars.png") !important;
 }
 
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-.scouting-nederland-callout-style-2020::before {
+.scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-groen.png") !important;
   background-repeat: repeat-x !important;
   background-size: auto 85px !important;
@@ -1567,58 +1504,58 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
 
 body.mgroen .showcase-skyline::before,
 body.green-main .showcase-skyline::before,
-body.mgroen .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.green-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mgroen .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.green-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-groen.png") !important;
 }
 
 body.mblauw .showcase-skyline::before,
 body.blue-main .showcase-skyline::before,
-body.mblauw .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.blue-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mblauw .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.blue-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-blauw.png") !important;
 }
 
 body.mgeel .showcase-skyline::before,
 body.yellow-main .showcase-skyline::before,
-body.mgeel .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.yellow-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mgeel .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.yellow-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-geel.png") !important;
 }
 
 body.mrood .showcase-skyline::before,
 body.red-main .showcase-skyline::before,
-body.mrood .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.red-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mrood .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.red-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-rood.png") !important;
 }
 
 body.moranje .showcase-skyline::before,
 body.orange-main .showcase-skyline::before,
-body.moranje .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.orange-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.moranje .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.orange-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-oranje.png") !important;
 }
 
 body.mpaars .showcase-skyline::before,
 body.purple-main .showcase-skyline::before,
-body.mpaars .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before {
+body.mpaars .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
   background-image: url("../images/skyline-paars.png") !important;
 }
 
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-.scouting-nederland-callout-style-2020::before,
+.scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+.scouting-nederland-callout-style::before,
 .showcase-skyline::before {
   background-color: #fff !important;
 }
 
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020 {
-  background-color: var(--scouting-nederland-main-color, #00a551) !important;
+.scouting-nederland-block-callout.scouting-nederland-callout-style {
+  background-color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
 }
 
-.scouting-nederland-block-callout.scouting-nederland-callout-style-2020::before,
-.scouting-nederland-callout-style-2020::before {
+.scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+.scouting-nederland-callout-style::before {
   box-shadow: none !important;
   border: 0 !important;
 }
@@ -1681,17 +1618,17 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
 .home-slider h3,
 .home-slider p {
   color: #fff !important;
-  text-shadow: 0 2px 12px rgba(0,0,0,.35);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .35);
 }
 
-.scouting-nederland-block-speltakken-grid.scouting-nederland-speltakken-grid-style-2020 {
+.scouting-nederland-block-speltakken-grid.scouting-nederland-speltakken-grid-style {
   width: min(1120px, calc(100% - 40px));
   margin: 0 auto 78px;
 }
 
 .scouting-nederland-speltakken-main-title {
   margin: 0 0 28px;
-  color: #00a551;
+  color: var(--wp--preset--color--scouting-groen);
   text-align: center;
   font-family: "Roboto Slab", Georgia, serif;
   font-size: clamp(2rem, 3vw, 2.85rem);
@@ -1708,7 +1645,7 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
   margin-top: 20px;
 }
 
-.scouting-nederland-speltakken-main-title + .scouting-nederland-speltakken-grid {
+.scouting-nederland-speltakken-main-title+.scouting-nederland-speltakken-grid {
   margin-top: 0;
 }
 
@@ -1742,7 +1679,7 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
 }
 
 .scouting-nederland-speltak-card__image--placeholder {
-  background: linear-gradient(135deg, rgba(0, 165, 81, .16), rgba(0, 111, 185, .14));
+  background: linear-gradient(135deg, rgb(from var(--wp--preset--color--scouting-groen) r g b / .16), rgb(from var(--wp--preset--color--scouting-blauw-accent) r g b / .14));
 }
 
 .scouting-nederland-speltak-card__body {
@@ -1756,7 +1693,7 @@ body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-st
 
 .scouting-nederland-speltak-card h3 {
   margin: 0 0 12px;
-  color: #00a551;
+  color: var(--wp--preset--color--scouting-groen);
   font-family: "Roboto Slab", Georgia, serif;
   font-size: clamp(1.55rem, 2vw, 2.15rem);
   font-weight: 700;
