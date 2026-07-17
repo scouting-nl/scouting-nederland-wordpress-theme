@@ -10,6 +10,7 @@
                         <?php
                         $socials = array(
                             'facebook'  => array('icon' => 'fab fa-facebook-f', 'label' => 'Facebook'),
+                            'x'         => array('icon' => 'fab fa-x-twitter', 'label' => 'X'),
                             'linkedin'  => array('icon' => 'fab fa-linkedin-in', 'label' => 'LinkedIn'),
                             'youtube'   => array('icon' => 'fab fa-youtube', 'label' => 'YouTube'),
                             'instagram' => array('icon' => 'fab fa-instagram', 'label' => 'Instagram'),
