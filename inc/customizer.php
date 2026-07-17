@@ -85,9 +85,10 @@ function scoutingNederlandCustomizeRegister($wp_customize) {
         'choices'     => scoutingNederlandGetHeroFontChoices(),
     ));
 
-    foreach (array('facebook','twitter','linkedin','youtube','instagram') as $network) {
+    foreach (array('facebook','twitter','linkedin','youtube','instagram','tiktok') as $network) {
         $wp_customize->add_setting('scouting_nederland_' . $network . '_url', array('default'=>'', 'sanitize_callback'=>'esc_url_raw'));
-        $wp_customize->add_control('scouting_nederland_' . $network . '_url', array('type'=>'url', 'section'=>'scouting_nederland_options', 'label'=>ucfirst($network) . ' URL'));
+        $label = $network === 'tiktok' ? 'TikTok' : ucfirst($network);
+        $wp_customize->add_control('scouting_nederland_' . $network . '_url', array('type'=>'url', 'section'=>'scouting_nederland_options', 'label'=>$label . ' URL'));
     }
 
 }

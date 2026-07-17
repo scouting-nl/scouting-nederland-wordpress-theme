@@ -13,6 +13,7 @@
                             'linkedin'  => array('icon' => 'fab fa-linkedin-in', 'label' => 'LinkedIn'),
                             'youtube'   => array('icon' => 'fab fa-youtube', 'label' => 'YouTube'),
                             'instagram' => array('icon' => 'fab fa-instagram', 'label' => 'Instagram'),
+                            'tiktok'    => array('icon' => 'fab fa-tiktok', 'label' => 'TikTok'),
                         );
                         foreach ($socials as $network => $data) :
                             $url = get_theme_mod('scouting_nederland_' . $network . '_url', '');
