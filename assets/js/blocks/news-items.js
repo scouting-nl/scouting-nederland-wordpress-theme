@@ -27,6 +27,7 @@ registerBlockType('scoutingtc4/news-items', {
         title: __('Nieuws items', 'scoutingtc4'),
         icon: 'welcome-write-blog',
         category: 'scoutingtc4',
+        supports: {anchor:true},
         attributes: {
             title:{type:'string', default:'Nieuws'},
             categoryIds:{type:'array', default:[]},

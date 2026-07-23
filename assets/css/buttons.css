@@ -68,6 +68,10 @@ a.wp-block-button__link.wp-element-button:not(.has-background):not(.has-text-col
   color: #fff !important;
   border: 0 !important;
   text-decoration: none !important;
+  padding: 0.55rem 1rem !important;
+  font-size: 0.95rem !important;
+  line-height: 1.2 !important;
+  min-height: 0 !important;
 }
 
 .wp-block-button:not(.is-style-outline):not([class*="is-style-tc4-"]) .wp-block-button__link.wp-element-button:visited,

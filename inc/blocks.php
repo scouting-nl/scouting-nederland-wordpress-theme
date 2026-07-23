@@ -119,7 +119,12 @@ function scoutingtc4_register_editor_blocks() {
         'oidcAvailable' => scoutingtc4_is_scouting_oidc_available(),
     ));
 
-    $common = array('editor_script' => 'scoutingtc4-blocks');
+    $common = array(
+        'editor_script' => 'scoutingtc4-blocks',
+        'supports' => array(
+            'anchor' => true,
+        ),
+    );
 
     register_block_type('scoutingtc4/featured-items', array_merge($common, array(
         'attributes' => array(
@@ -260,6 +265,16 @@ function scoutingtc4_render_featured_quicklinks($text) {
 }
 
 
+
+function scoutingtc4_block_anchor_attribute($attrs) {
+    if (empty($attrs['anchor'])) {
+        return '';
+    }
+
+    $anchor = sanitize_title((string) $attrs['anchor']);
+    return $anchor !== '' ? ' id="' . esc_attr($anchor) . '"' : '';
+}
+
 function scoutingtc4_render_featured_items_block($attrs) {
     $items = isset($attrs['items']) && is_array($attrs['items']) ? $attrs['items'] : array();
     if (empty($items)) {
@@ -271,7 +286,7 @@ function scoutingtc4_render_featured_items_block($attrs) {
     }
 
     ob_start();
-    echo '<section class="tc4-block-featured-items tc4-featured-style-2020">';
+    echo '<section' . scoutingtc4_block_anchor_attribute($attrs) . ' class="tc4-block-featured-items tc4-featured-style-2020">';
     if (!empty($attrs['title'])) {
         echo '<h2 class="tc4-featured-main-title">' . esc_html($attrs['title']) . '</h2>';
     }
@@ -282,6 +297,7 @@ function scoutingtc4_render_featured_items_block($attrs) {
         $image = isset($item['imageUrl']) ? $item['imageUrl'] : '';
         $button = isset($item['buttonText']) ? $item['buttonText'] : '';
         $url = isset($item['buttonUrl']) ? $item['buttonUrl'] : '';
+        $target = isset($item['buttonTarget']) && $item['buttonTarget'] === '_blank' ? '_blank' : '';
         $color = isset($item['buttonColor']) ? $item['buttonColor'] : 'blauw';
         $is_quicklinks = empty($button) && $index === 2;
 
@@ -298,7 +314,8 @@ function scoutingtc4_render_featured_items_block($attrs) {
         }
 
         if ($button) {
-            echo '<a class="tc4-btn ' . esc_attr(scoutingtc4_button_class_from_color($color)) . '" href="' . esc_url($url ?: '#') . '"><span>' . esc_html($button) . '</span></a>';
+            $target_attr = $target === '_blank' ? ' target="_blank" rel="noopener noreferrer"' : '';
+            echo '<a class="tc4-btn ' . esc_attr(scoutingtc4_button_class_from_color($color)) . '" href="' . esc_url($url ?: '#') . '"' . $target_attr . '><span>' . esc_html($button) . '</span></a>';
         }
         echo '</article>';
     }
@@ -319,7 +336,7 @@ function scoutingtc4_render_callout_block($attrs) {
     }
 
     ob_start();
-    echo '<section class="tc4-block-callout tc4-callout-style-2020">';
+    echo '<section' . scoutingtc4_block_anchor_attribute($attrs) . ' class="tc4-block-callout tc4-callout-style-2020">';
     echo '<div class="tc4-callout-inner">';
     echo '<div class="tc4-callout-image">';
     if ($image) {
@@ -370,7 +387,7 @@ function scoutingtc4_render_news_items_block($attrs) {
 
     $query = new WP_Query($args);
     ob_start();
-    echo '<section class="tc4-block-news tc4-news-style-2020">';
+    echo '<section' . scoutingtc4_block_anchor_attribute($attrs) . ' class="tc4-block-news tc4-news-style-2020">';
     echo '<div class="gb-news-items">';
     if (!empty($attrs['title'])) {
         echo '<a class="tc4-news-heading-link" href="' . esc_url($category_link) . '"><h4>' . esc_html($attrs['title']) . '</h4></a>';
@@ -419,7 +436,7 @@ function scoutingtc4_render_speltakken_grid_block($attrs) {
     }
 
     ob_start();
-    echo '<section class="tc4-block-speltakken-grid tc4-speltakken-grid-style-2020">';
+    echo '<section' . scoutingtc4_block_anchor_attribute($attrs) . ' class="tc4-block-speltakken-grid tc4-speltakken-grid-style-2020">';
     if (!empty($attrs['title'])) {
         echo '<h2 class="tc4-speltakken-main-title">' . esc_html($attrs['title']) . '</h2>';
     }
@@ -478,7 +495,7 @@ function scoutingtc4_render_two_columns_block($attrs) {
         $right_text = '<p>Meer weten over vrijwilligerswerk bij Scouting? Laat je verrassen door één van de uitdagende vacatures of lees meer over vrijwilliger worden bij Scouting.</p><ul><li>Welpenleiding</li><li>Secretaris</li></ul><h2>Maatschappelijke stage</h2><p>Iedere scholier krijgt er wel mee te maken: de maatschappelijke stage. Sommige scholieren gaan aan de slag in peuterspeelzalen, bejaardentehuizen of sociale werkplaatsen. Maar je kunt natuurlijk ook bij Scouting terecht.</p><p>Klik hier om je maatschappelijke stage bij onze Scoutinggroep te lopen.</p>';
     }
 
-    echo '<section class="tc4-block-two-columns tc4-two-columns-style-2020">';
+    echo '<section' . scoutingtc4_block_anchor_attribute($attrs) . ' class="tc4-block-two-columns tc4-two-columns-style-2020">';
     echo '<div class="gb-two-columns">';
 
     echo '<div class="col-headerimage">';
@@ -526,14 +543,14 @@ function scoutingtc4_render_oidc_block($attrs) {
             return '';
         }
 
-        return '<div class="' . esc_attr($classes . ' tc4-block-oidc--link') . '"><a class="tc4-oidc-text-link" href="' . esc_url($login_url) . '">' . esc_html($button_text) . '</a></div>';
+        return '<div' . scoutingtc4_block_anchor_attribute($attrs) . ' class="' . esc_attr($classes . ' tc4-block-oidc--link') . '"><a class="tc4-oidc-text-link" href="' . esc_url($login_url) . '">' . esc_html($button_text) . '</a></div>';
     }
 
     if (!shortcode_exists('scouting_oidc_button')) {
         return '';
     }
 
-    return '<div class="' . esc_attr($classes . ' tc4-block-oidc--button') . '">' . do_shortcode('[scouting_oidc_button]') . '</div>';
+    return '<div' . scoutingtc4_block_anchor_attribute($attrs) . ' class="' . esc_attr($classes . ' tc4-block-oidc--button') . '">' . do_shortcode('[scouting_oidc_button]') . '</div>';
 }
 
 function scoutingtc4_block_categories($categories, $post) {

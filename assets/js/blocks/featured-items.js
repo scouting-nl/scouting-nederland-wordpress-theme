@@ -27,6 +27,7 @@ registerBlockType('scoutingtc4/featured-items', {
         title: __('Featured items', 'scoutingtc4'),
         icon: 'screenoptions',
         category: 'scoutingtc4',
+        supports: {anchor:true},
         attributes: {
             title: {type:'string', default:''},
             items: {type:'array', default:[

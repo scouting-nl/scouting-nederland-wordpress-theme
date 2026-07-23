@@ -27,6 +27,7 @@ registerBlockType('scoutingtc4/speltakken-grid', {
         title: __('Speltakken grid', 'scoutingtc4'),
         icon: 'grid-view',
         category: 'scoutingtc4',
+        supports: {anchor:true},
         attributes: {
             title: {type:'string', default:''},
             items: {type:'array', default:[

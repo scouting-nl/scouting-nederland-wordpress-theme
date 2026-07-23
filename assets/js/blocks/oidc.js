@@ -17,6 +17,7 @@
         description: __('Voeg een Scouting OpenID Connect login toe.', 'scoutingtc4'),
         icon: 'admin-users',
         category: 'scoutingtc4',
+        supports: {anchor:true},
         attributes: {
             displayType: {type:'string', default:'button'},
             buttonText: {type:'string', default:'Inloggen met Scouting'},

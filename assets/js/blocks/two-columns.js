@@ -27,6 +27,7 @@ registerBlockType('scoutingtc4/two-columns', {
         title: __('Twee kolommen', 'scoutingtc4'),
         icon: 'columns',
         category: 'scoutingtc4',
+        supports: {anchor:true},
         attributes: {
             leftTitle:{type:'string', default:'Gratis sponsoren'},
             leftText:{type:'string', default:'Binnen onze Scoutinggroep hebben we sponsoracties om op die manier Scouting betaalbaar te maken voor iedereen.'},
