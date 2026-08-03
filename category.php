@@ -1,15 +1,15 @@
 <?php get_header(); ?>
-<div class="mainbody"><div class="content">
-<div id="scouting-nederland-hero" class="container-fluid px-0">
-    <div class="row no-gutters"><div class="col">
+<div class="scouting-nederland-base-main"><div class="scouting-nederland-layout-shell">
+<div class="scouting-nederland-base-widget-hero container-fluid px-0">
+    <div class="row g-0"><div class="col">
         <?php if (is_active_sidebar('hero')) { dynamic_sidebar('hero'); } else { ?>
-            <div class="defaultbanner laag" style="background-image:url('<?php echo esc_url(scoutingNederlandGetDefaultHeroUrl()); ?>')"></div>
+            <div class="scouting-nederland-base-default-banner scouting-nederland-base-default-banner--low" style="background-image:url('<?php echo esc_url(scoutingNederlandGetDefaultHeroUrl()); ?>')"></div>
         <?php } ?>
     </div></div>
 </div>
 <div class="container">
     <?php if (is_active_sidebar('featured-a') || is_active_sidebar('featured-b') || is_active_sidebar('featured-c')) : ?>
-    <div id="scouting-nederland-featured" class="row">
+    <div class="row">
         <div class="col-sm-4"><?php dynamic_sidebar('featured-a'); ?></div>
         <div class="col-sm-4"><?php dynamic_sidebar('featured-b'); ?></div>
         <div class="col-sm-4"><?php dynamic_sidebar('featured-c'); ?></div>
@@ -17,10 +17,10 @@
     <?php endif; ?>
 </div>
 <?php if (is_active_sidebar('showcase')) : ?>
-<div id="scouting-nederland-showcase" class="container-fluid px-0 text-light bg-success"><div class="showcase-skyline"><div class="mover-1"></div><div class="mover-2"></div></div><div class="container"><?php dynamic_sidebar('showcase'); ?></div></div>
+<div class="container-fluid px-0 text-light bg-success"><div class="scouting-nederland-layout-showcase-skyline"></div><div class="container"><?php dynamic_sidebar('showcase'); ?></div></div>
 <?php endif; ?>
 <div class="container scouting-nederland-category-page">
-    <?php if (is_active_sidebar('breadcrumbs')) : ?><div id="scouting-nederland-breadcrumbs" class="row"><div class="col-sm-12"><?php dynamic_sidebar('breadcrumbs'); ?></div></div><?php endif; ?>
+    <?php if (is_active_sidebar('breadcrumbs')) : ?><div class="row"><div class="col-sm-12"><?php dynamic_sidebar('breadcrumbs'); ?></div></div><?php endif; ?>
 
     <header class="scouting-nederland-category-header">
         <p class="scouting-nederland-category-header__eyebrow"><?php esc_html_e('Categorie', 'scouting-nederland'); ?></p>
@@ -30,7 +30,7 @@
         <?php endif; ?>
     </header>
 
-    <main id="content" role="main" class="scouting-nederland-category-main">
+    <main id="scouting-nederland-layout-content" role="main">
         <?php if (have_posts()) : ?>
             <div class="scouting-nederland-category-grid">
                 <?php while (have_posts()) : the_post(); ?>
@@ -73,9 +73,9 @@
     </main>
 
     <?php if (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b')) : ?>
-    <div id="scouting-nederland-bottom" class="row"><div class="<?php echo (is_active_sidebar('bottom-a') && is_active_sidebar('bottom-b')) ? 'col-md-6' : 'col-md-12'; ?> bottom-a"><?php dynamic_sidebar('bottom-a'); ?></div><div class="<?php echo (is_active_sidebar('bottom-a') && is_active_sidebar('bottom-b')) ? 'col-md-6' : 'col-md-12'; ?> bottom-b"><?php dynamic_sidebar('bottom-b'); ?></div></div>
+    <div class="row"><div class="<?php echo (is_active_sidebar('bottom-a') && is_active_sidebar('bottom-b')) ? 'col-md-6' : 'col-md-12'; ?>"><?php dynamic_sidebar('bottom-a'); ?></div><div class="<?php echo (is_active_sidebar('bottom-a') && is_active_sidebar('bottom-b')) ? 'col-md-6' : 'col-md-12'; ?>"><?php dynamic_sidebar('bottom-b'); ?></div></div>
     <?php endif; ?>
 </div>
 </div><!-- .content -->
-</div><!-- .mainbody -->
+</div><!-- .scouting-nederland-base-main -->
 <?php get_footer(); ?>

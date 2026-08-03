@@ -13,14 +13,14 @@ Dit thema is opgeschoond richting de WordPress Theme Developer Handbook, maar is
 - De front-end bevat een toetsenbordtoegankelijke skiplink.
 - De ongekoppelde home-fields-module, de exclusieve CSS-selectors daarvan en verweesde afbeeldingen zijn verwijderd.
 - Metabox-invoer wordt ontslashed, gevalideerd en gesanitized voordat deze wordt opgeslagen.
+- De eigen CSS-selectors volgen `scouting-nederland-{bestandsnaam}-*`; override-lagen zijn per component geconsolideerd en de actieve stijlen zijn gedocumenteerd.
 
 ## Blokkers
 
 1. De custom Gutenberg-blokken in `inc/blocks.php` en `assets/js/blocks/` horen volgens de Theme Review-regels in een losse companion-plugin. Verplaats de registraties en render-callbacks pas samen met een migratieplan, zodat bestaande content blijft werken.
 2. `assets/fonts/urban-jungle.otf` is door de maker alleen vrijgegeven voor persoonlijk gebruik. Voor WordPress.org is een GPL-compatibele herdistributielicentie of een visueel goedgekeurd alternatief nodig.
-3. `assets/css/header.css` en `assets/css/homepage.css` bevatten nog opeenvolgende override-lagen. De veilige verwijderingen zijn met computed-style-vergelijkingen gecontroleerd; verdere consolidatie vraagt om een representatieve WordPress-testsite en screenshots per viewport.
-4. Voeg volledige bron-, copyright- en licentiegegevens toe voor alle afbeeldingen en graphics. Controleer ook of de screenshot voldoet aan de actuele regels voor herkenbare personen.
-5. Classic themes in de WordPress.org-directory moeten comments ondersteunen. Voeg `comments.php`, threaded comments en passende styling toe nadat het gewenste ontwerp is vastgesteld.
+3. Voeg volledige bron-, copyright- en licentiegegevens toe voor alle afbeeldingen en graphics. Controleer ook of de screenshot voldoet aan de actuele regels voor herkenbare personen.
+4. Classic themes in de WordPress.org-directory moeten comments ondersteunen. Voeg `comments.php`, threaded comments en passende styling toe nadat het gewenste ontwerp is vastgesteld.
 
 ## Releasevalidatie
 

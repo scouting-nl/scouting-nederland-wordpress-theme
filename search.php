@@ -4,9 +4,9 @@ $search_query = trim(get_search_query());
 $has_search_query = $search_query !== '';
 ?>
 
-<div class="mainbody"><div class="content">
-<main id="content" class="scouting-nederland-search-page" role="main">
-    <section class="scouting-nederland-search-hero" style="background-image:linear-gradient(180deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.88) 100%), url(\'<?php echo esc_url(get_template_directory_uri() . '/assets/images/default-slide.jpg'); ?>\');">
+<div class="scouting-nederland-base-main"><div class="scouting-nederland-layout-shell">
+<main id="scouting-nederland-layout-content" class="scouting-nederland-search-page" role="main">
+    <section class="scouting-nederland-search-hero">
         <div class="container scouting-nederland-search-hero__inner">
             <span class="scouting-nederland-search-kicker">
                 <i class="fas fa-search" aria-hidden="true"></i>
@@ -126,13 +126,13 @@ $has_search_query = $search_query !== '';
                 <h2><?php esc_html_e('De route loopt hier dood', 'scouting-nederland'); ?></h2>
                 <p><?php esc_html_e('Controleer je zoekterm, probeer een korter woord of ga terug naar de homepage.', 'scouting-nederland'); ?></p>
                 <div class="scouting-nederland-search-empty__actions">
-                    <a class="btn scouting-nederland-btn-blue" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Terug naar home', 'scouting-nederland'); ?></a>
+                    <a class="btn scouting-nederland-buttons-button scouting-nederland-buttons-button--blue" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Terug naar home', 'scouting-nederland'); ?></a>
                 </div>
             </div>
         <?php endif; ?>
     </section>
 </main>
 </div><!-- .content -->
-</div><!-- .mainbody -->
+</div><!-- .scouting-nederland-base-main -->
 
 <?php get_footer(); ?>

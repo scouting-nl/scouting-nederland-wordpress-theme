@@ -5,8 +5,8 @@ $contact_url = get_theme_mod('scouting_nederland_contact_url', '');
 $hero_url = get_template_directory_uri() . '/assets/images/default-slide.jpg';
 ?>
 
-<div class="mainbody"><div class="content">
-<main id="content" class="scouting-nederland-404-page" role="main">
+<div class="scouting-nederland-base-main"><div class="scouting-nederland-layout-shell">
+<main id="scouting-nederland-layout-content" class="scouting-nederland-404-page" role="main">
     <section class="scouting-nederland-404-hero" style="background-image:linear-gradient(180deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.88) 100%), url('<?php echo esc_url($hero_url); ?>');">
         <div class="container scouting-nederland-404-hero__inner">
             <span class="scouting-nederland-404-kicker">
@@ -15,7 +15,7 @@ $hero_url = get_template_directory_uri() . '/assets/images/default-slide.jpg';
             </span>
 
             <h1><?php esc_html_e('404', 'scouting-nederland'); ?></h1>
-            <p class="scouting-nederland-404-lead"><?php esc_html_e('Deze pagina is op hike zonder routekaart vertrokken.', 'scouting-nederland'); ?></p>
+            <p><?php esc_html_e('Deze pagina is op hike zonder routekaart vertrokken.', 'scouting-nederland'); ?></p>
 
             <form role="search" method="get" class="scouting-nederland-search-form scouting-nederland-404-search-form" action="<?php echo esc_url(home_url('/')); ?>">
                 <label class="screen-reader-text" for="scouting-nederland-404-search-field"><?php esc_html_e('Zoeken naar:', 'scouting-nederland'); ?></label>
@@ -49,9 +49,9 @@ $hero_url = get_template_directory_uri() . '/assets/images/default-slide.jpg';
                 </ul>
 
                 <div class="scouting-nederland-404-actions">
-                    <a class="btn scouting-nederland-btn-blue" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Terug naar home', 'scouting-nederland'); ?></a>
+                    <a class="btn scouting-nederland-buttons-button scouting-nederland-buttons-button--blue" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Terug naar home', 'scouting-nederland'); ?></a>
                     <?php if ($contact_url) : ?>
-                        <a class="btn scouting-nederland-btn-black" href="<?php echo esc_url($contact_url); ?>"><?php esc_html_e('Contact', 'scouting-nederland'); ?></a>
+                        <a class="btn scouting-nederland-buttons-button scouting-nederland-buttons-button--black" href="<?php echo esc_url($contact_url); ?>"><?php esc_html_e('Contact', 'scouting-nederland'); ?></a>
                     <?php endif; ?>
                 </div>
             </article>
@@ -70,6 +70,6 @@ $hero_url = get_template_directory_uri() . '/assets/images/default-slide.jpg';
     </section>
 </main>
 </div><!-- .content -->
-</div><!-- .mainbody -->
+</div><!-- .scouting-nederland-base-main -->
 
 <?php get_footer(); ?>

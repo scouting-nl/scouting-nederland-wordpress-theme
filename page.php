@@ -19,23 +19,24 @@ if ($scouting_nederland_is_elementor_page) {
     $scouting_nederland_hide_sidebar = true;
 }
 $scouting_nederland_has_sidebar = is_active_sidebar('sidebar') && !$scouting_nederland_hide_sidebar;
-$scouting_nederland_rendered_slider = $scouting_nederland_is_elementor_page ? false : scoutingNederlandRenderHomeSlider($scouting_nederland_page_id);
+$scouting_nederland_rendered_slider = false;
 $scouting_nederland_hero_font_class = scoutingNederlandGetHeroTitleFontClass($scouting_nederland_page_id);
-$scouting_nederland_page_container_class = $scouting_nederland_is_elementor_page ? 'scouting-nederland-elementor-template scouting-nederland-elementor-template--default' : 'container';
-$scouting_nederland_maincontent_class = $scouting_nederland_is_elementor_page ? 'scouting-nederland-elementor-maincontent' : 'row';
+$scouting_nederland_page_container_class = $scouting_nederland_is_elementor_page ? '' : 'container';
+$scouting_nederland_maincontent_class = $scouting_nederland_is_elementor_page ? '' : 'row';
 $scouting_nederland_content_class = 'col-md-12';
 if ($scouting_nederland_is_elementor_page) {
-    $scouting_nederland_content_class = 'scouting-nederland-elementor-content';
+    $scouting_nederland_content_class = '';
 } elseif ($scouting_nederland_has_sidebar) {
     $scouting_nederland_content_class = 'col-md-8 col-lg-9';
 }
 ?>
-<div class="mainbody"><div class="content">
+<div class="scouting-nederland-base-main"><div class="scouting-nederland-layout-shell">
+<?php if (!$scouting_nederland_is_elementor_page) { $scouting_nederland_rendered_slider = scoutingNederlandRenderHomeSlider($scouting_nederland_page_id); } ?>
 <?php if (!$scouting_nederland_is_elementor_page && !$scouting_nederland_hide_hero && !$scouting_nederland_rendered_slider) : ?>
-<div id="scouting-nederland-hero" class="container-fluid px-0 scouting-nederland-page-hero <?php echo esc_attr($scouting_nederland_hero_font_class); ?>">
-    <div class="row no-gutters"><div class="col scouting-nederland-page-hero__media">
+<div class="scouting-nederland-base-widget-hero container-fluid px-0 scouting-nederland-page-hero <?php echo esc_attr($scouting_nederland_hero_font_class); ?>">
+    <div class="row g-0"><div class="col scouting-nederland-page-hero__media">
         <?php if (is_active_sidebar('hero')) { dynamic_sidebar('hero'); } else { ?>
-            <div class="defaultbanner laag" style="background-image:url('<?php echo esc_url(scoutingNederlandGetDefaultHeroUrl()); ?>')"></div>
+            <div class="scouting-nederland-base-default-banner scouting-nederland-base-default-banner--low scouting-nederland-page-hero__fallback" style="background-image:url('<?php echo esc_url(scoutingNederlandGetDefaultHeroUrl()); ?>')"></div>
         <?php } ?>
         <?php if ($scouting_nederland_page_title && !$scouting_nederland_hide_page_title) : ?>
             <div class="scouting-nederland-page-hero__title <?php echo esc_attr($scouting_nederland_hero_font_class); ?>" aria-hidden="false">
@@ -50,7 +51,7 @@ if ($scouting_nederland_is_elementor_page) {
 <?php if (!$scouting_nederland_is_elementor_page) : ?>
 <div class="container">
     <?php if (is_active_sidebar('featured-a') || is_active_sidebar('featured-b') || is_active_sidebar('featured-c')) : ?>
-    <div id="scouting-nederland-featured" class="row">
+    <div class="row scouting-nederland-page-featured">
         <div class="col-sm-4"><?php dynamic_sidebar('featured-a'); ?></div>
         <div class="col-sm-4"><?php dynamic_sidebar('featured-b'); ?></div>
         <div class="col-sm-4"><?php dynamic_sidebar('featured-c'); ?></div>
@@ -58,16 +59,16 @@ if ($scouting_nederland_is_elementor_page) {
     <?php endif; ?>
 </div>
 <?php if (is_active_sidebar('showcase')) : ?>
-<div id="scouting-nederland-showcase" class="container-fluid px-0 text-light bg-success"><div class="showcase-skyline"><div class="mover-1"></div><div class="mover-2"></div></div><div class="container"><?php dynamic_sidebar('showcase'); ?></div></div>
+<div class="container-fluid px-0 text-light bg-success"><div class="scouting-nederland-layout-showcase-skyline"></div><div class="container"><?php dynamic_sidebar('showcase'); ?></div></div>
 <?php endif; ?>
 <?php endif; ?>
 <div class="<?php echo esc_attr($scouting_nederland_page_container_class); ?>">
     <?php if (!$scouting_nederland_is_elementor_page) : ?>
-    <?php if (is_active_sidebar('news')) : ?><div id="scouting-nederland-news" class="row"><div class="col-sm-12"><?php dynamic_sidebar('news'); ?></div></div><?php endif; ?>
-    <?php if (is_active_sidebar('breadcrumbs')) : ?><div id="scouting-nederland-breadcrumbs" class="row"><div class="col-sm-12"><?php dynamic_sidebar('breadcrumbs'); ?></div></div><?php endif; ?>
+    <?php if (is_active_sidebar('news')) : ?><div class="row"><div class="col-sm-12"><?php dynamic_sidebar('news'); ?></div></div><?php endif; ?>
+    <?php if (is_active_sidebar('breadcrumbs')) : ?><div class="row"><div class="col-sm-12"><?php dynamic_sidebar('breadcrumbs'); ?></div></div><?php endif; ?>
     <?php endif; ?>
-    <div id="scouting-nederland-maincontent" class="<?php echo esc_attr($scouting_nederland_maincontent_class); ?>">
-        <main id="content" role="main" class="<?php echo esc_attr($scouting_nederland_content_class); ?>">
+    <div class="<?php echo esc_attr($scouting_nederland_maincontent_class); ?>">
+        <main id="scouting-nederland-layout-content" role="main" class="<?php echo esc_attr($scouting_nederland_content_class); ?>">
             <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>
                     <?php if ($scouting_nederland_is_elementor_page) : ?>
@@ -88,9 +89,9 @@ if ($scouting_nederland_is_elementor_page) {
         <?php endif; ?>
     </div>
     <?php if (!$scouting_nederland_is_elementor_page && (is_active_sidebar('bottom-a') || is_active_sidebar('bottom-b'))) : ?>
-    <div id="scouting-nederland-bottom" class="row"><div class="<?php echo (is_active_sidebar('bottom-a') && is_active_sidebar('bottom-b')) ? 'col-md-6' : 'col-md-12'; ?> bottom-a"><?php dynamic_sidebar('bottom-a'); ?></div><div class="<?php echo (is_active_sidebar('bottom-a') && is_active_sidebar('bottom-b')) ? 'col-md-6' : 'col-md-12'; ?> bottom-b"><?php dynamic_sidebar('bottom-b'); ?></div></div>
+    <div class="row"><div class="<?php echo (is_active_sidebar('bottom-a') && is_active_sidebar('bottom-b')) ? 'col-md-6' : 'col-md-12'; ?>"><?php dynamic_sidebar('bottom-a'); ?></div><div class="<?php echo (is_active_sidebar('bottom-a') && is_active_sidebar('bottom-b')) ? 'col-md-6' : 'col-md-12'; ?>"><?php dynamic_sidebar('bottom-b'); ?></div></div>
     <?php endif; ?>
 </div>
 </div><!-- .content -->
-</div><!-- .mainbody -->
+</div><!-- .scouting-nederland-base-main -->
 <?php get_footer(); ?>

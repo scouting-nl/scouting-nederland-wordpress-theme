@@ -46,19 +46,19 @@
     function initializeSliderControls() {
         // Keep every DOM selector in one place so handlers use the same form contract.
         const SELECTORS = {
-            addSlideButton: '#scouting-nederland-add-slide',
-            imageId: '.scouting-nederland-slide-image-id',
-            imagePreview: '.scouting-nederland-slide-preview',
-            removeSlideButton: '.scouting-nederland-remove-slide',
-            removeVideoButton: '#scouting-nederland-remove-video',
-            row: '.scouting-nederland-slide-row',
-            rowNumber: '.scouting-nederland-slide-number',
-            rows: '#scouting-nederland-slides-rows',
-            selectImageButton: '.scouting-nederland-select-image',
-            selectVideoButton: '#scouting-nederland-select-video',
-            slideTemplate: '#scouting-nederland-slide-template',
-            videoId: '#scouting_nederland_slider_video_id',
-            videoPreview: '#scouting-nederland-slider-video-preview'
+            addSlideButton: '#scouting-nederland-admin-slider-add-slide',
+            imageId: '.scouting-nederland-admin-slider-image-id',
+            imagePreview: '.scouting-nederland-admin-slider-preview',
+            removeSlideButton: '.scouting-nederland-admin-slider-remove-slide',
+            removeVideoButton: '#scouting-nederland-admin-slider-remove-video',
+            row: '.scouting-nederland-admin-slider-row',
+            rowNumber: '.scouting-nederland-admin-slider-number',
+            rows: '#scouting-nederland-admin-slider-rows',
+            selectImageButton: '.scouting-nederland-admin-slider-select-image',
+            selectVideoButton: '#scouting-nederland-admin-slider-select-video',
+            slideTemplate: '#scouting-nederland-admin-slider-template',
+            videoId: '#scouting-nederland-admin-slider-video-id',
+            videoPreview: '#scouting-nederland-admin-slider-video-preview'
         };
         const SLIDE_FIELD_PATTERN = /scouting_nederland_slides\[\d+\]/;
 

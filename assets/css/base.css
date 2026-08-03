@@ -1,3 +1,9 @@
+/* Shared responsive page-width tokens consumed by component owners. */
+:root {
+  --scouting-nederland-page-width: 1140px;
+  --scouting-nederland-page-gutter: 1rem;
+}
+
 @font-face {
   font-family: "Urban Jungle";
   src: url("../fonts/urban-jungle.otf") format("opentype");
@@ -62,7 +68,13 @@
   font-display: swap;
 }
 
-.scouting-nederland-skip-link:focus {
+/*
+ * Keyboard skip link.
+ *
+ * WordPress keeps the link visually hidden with screen-reader-text until focus.
+ * Fixed positioning then places it above the fixed header in the viewport.
+ */
+.scouting-nederland-base-skip-link:focus {
   position: fixed;
   top: 1rem;
   left: 1rem;
@@ -77,141 +89,73 @@
   text-decoration: none;
 }
 
-.mainbody {
+/* Reserve space for the fixed 84px navigation bar on every template. */
+.scouting-nederland-base-main {
   padding-top: 84px !important;
 }
 
-body .mainbody,
-body #content,
-body main#content {
+/* Shared fallback hero used when a template has no page-specific media. */
+.scouting-nederland-base-default-banner {
+  min-height: 360px;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Fixed-height variant used by archive and singular fallback heroes. */
+.scouting-nederland-base-default-banner--low {
+  height: 350px;
+  background-repeat: no-repeat;
+}
+
+/* Prevent the page shell itself from adding a second fixed-header gap. */
+body .scouting-nederland-base-main {
   margin-top: 0 !important;
 }
 
-body .mainbody>*:first-child,
-body #content>*:first-child,
-body main#content>*:first-child {
+body .scouting-nederland-base-main>*:first-child {
   margin-top: 0 !important;
 }
 
-body #scouting-nederland-hero,
-body .scouting-nederland-home-hero,
-body .scouting-nederland-search-hero,
-body .scouting-nederland-404-hero,
-body .defaultbanner,
-body .home-slider,
-body .scouting-nederland-home-slider,
-body .scouting-nederland-video-banner {
-  margin-top: 0 !important;
-}
-
-body #scouting-nederland-hero.container-fluid,
-body #scouting-nederland-hero .row,
-body #scouting-nederland-hero .col,
-body #scouting-nederland-hero .col-sm-12,
-body #scouting-nederland-hero .col-md-12 {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-body .mainbody>#scouting-nederland-hero:first-child,
-body .mainbody>.scouting-nederland-home-hero:first-child,
-body .mainbody>.scouting-nederland-search-hero:first-child,
-body .mainbody>.scouting-nederland-404-hero:first-child,
-body .mainbody>.defaultbanner:first-child,
-body main#content>.scouting-nederland-home-hero:first-child,
-body main#content>.scouting-nederland-search-hero:first-child,
-body main#content>.scouting-nederland-404-hero:first-child {
+/* Bootstrap widget rows in the shared hero must meet the top edge of the shell. */
+.scouting-nederland-base-widget-hero,
+.scouting-nederland-base-widget-hero .row,
+.scouting-nederland-base-widget-hero .col,
+.scouting-nederland-base-widget-hero .col-sm-12,
+.scouting-nederland-base-widget-hero .col-md-12 {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
 
-body .scouting-nederland-search-page,
-body .scouting-nederland-404-page {
-  padding-top: 0 !important;
-}
-
-
-#scouting-nederland-hero h1,
-#scouting-nederland-hero h2,
-#scouting-nederland-hero h3,
-#scouting-nederland-hero p,
-.scouting-nederland-home-hero h1,
-.scouting-nederland-home-hero h2,
-.scouting-nederland-home-hero h3,
-.scouting-nederland-home-hero p,
-.defaultbanner h1,
-.defaultbanner h2,
-.defaultbanner h3,
-.defaultbanner p {
+/* Widget authors can provide several heading levels and copy inside this extension point. */
+.scouting-nederland-base-widget-hero h1,
+.scouting-nederland-base-widget-hero h2,
+.scouting-nederland-base-widget-hero h3,
+.scouting-nederland-base-widget-hero p {
   color: #fff !important;
   text-shadow: 0 2px 12px rgba(0, 0, 0, .35);
 }
 
-
-#scouting-nederland-hero h1,
-#scouting-nederland-hero h2,
-#scouting-nederland-hero h3,
-.scouting-nederland-home-hero h1,
-.scouting-nederland-home-hero h2,
-.scouting-nederland-home-hero h3,
-.defaultbanner h1,
-.defaultbanner h2,
-.defaultbanner h3 {
+.scouting-nederland-base-widget-hero h1,
+.scouting-nederland-base-widget-hero h2,
+.scouting-nederland-base-widget-hero h3 {
   font-family: "Urban Jungle", "Roboto Slab", Georgia, serif !important;
   letter-spacing: .02em;
 }
 
-.scouting-nederland-hero-font-urban-jungle .scouting-nederland-page-hero__title h1,
-.scouting-nederland-hero-font-urban-jungle .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-hero-font-urban-jungle h1 {
+/*
+ * Runtime hero font state.
+ *
+ * PHP can place the state on a hero ancestor or directly on its h1. :is()
+ * handles both placements without enumerating every hero component.
+ */
+:is(.scouting-nederland-hero-font-urban-jungle h1, h1.scouting-nederland-hero-font-urban-jungle) {
   font-family: "Urban Jungle", "Roboto Slab", Georgia, serif !important;
 }
 
-.scouting-nederland-hero-font-roboto-slab .scouting-nederland-page-hero__title h1,
-.scouting-nederland-hero-font-roboto-slab .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-hero-font-roboto-slab h1 {
+:is(.scouting-nederland-hero-font-roboto-slab h1, h1.scouting-nederland-hero-font-roboto-slab) {
   font-family: "Roboto Slab", Georgia, serif !important;
 }
 
-.scouting-nederland-hero-font-poppins .scouting-nederland-page-hero__title h1,
-.scouting-nederland-hero-font-poppins .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-hero-font-poppins h1 {
-  font-family: "Poppins", Arial, Helvetica, sans-serif !important;
-}
-
-/* Hero title font override: works for standard hero, slider hero and video hero. */
-#scouting-nederland-hero.scouting-nederland-hero-font-urban-jungle h1,
-.scouting-nederland-page-hero.scouting-nederland-hero-font-urban-jungle .scouting-nederland-page-hero__title h1,
-.scouting-nederland-page-hero__title.scouting-nederland-hero-font-urban-jungle h1,
-h1.scouting-nederland-hero-font-urban-jungle,
-.scouting-nederland-home-hero.scouting-nederland-hero-font-urban-jungle .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-home-hero__inner.scouting-nederland-hero-font-urban-jungle h1,
-.scouting-nederland-home-slider.scouting-nederland-hero-font-urban-jungle h1,
-.scouting-nederland-home-slide__caption.scouting-nederland-hero-font-urban-jungle h1,
-.scouting-nederland-home-video-caption.scouting-nederland-hero-font-urban-jungle h1 {
-  font-family: "Urban Jungle", "Roboto Slab", Georgia, serif !important;
-}
-
-#scouting-nederland-hero.scouting-nederland-hero-font-roboto-slab h1,
-.scouting-nederland-page-hero.scouting-nederland-hero-font-roboto-slab .scouting-nederland-page-hero__title h1,
-.scouting-nederland-page-hero__title.scouting-nederland-hero-font-roboto-slab h1,
-h1.scouting-nederland-hero-font-roboto-slab,
-.scouting-nederland-home-hero.scouting-nederland-hero-font-roboto-slab .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-home-hero__inner.scouting-nederland-hero-font-roboto-slab h1,
-.scouting-nederland-home-slider.scouting-nederland-hero-font-roboto-slab h1,
-.scouting-nederland-home-slide__caption.scouting-nederland-hero-font-roboto-slab h1,
-.scouting-nederland-home-video-caption.scouting-nederland-hero-font-roboto-slab h1 {
-  font-family: "Roboto Slab", Georgia, serif !important;
-}
-
-#scouting-nederland-hero.scouting-nederland-hero-font-poppins h1,
-.scouting-nederland-page-hero.scouting-nederland-hero-font-poppins .scouting-nederland-page-hero__title h1,
-.scouting-nederland-page-hero__title.scouting-nederland-hero-font-poppins h1,
-h1.scouting-nederland-hero-font-poppins,
-.scouting-nederland-home-hero.scouting-nederland-hero-font-poppins .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-home-hero__inner.scouting-nederland-hero-font-poppins h1,
-.scouting-nederland-home-slider.scouting-nederland-hero-font-poppins h1,
-.scouting-nederland-home-slide__caption.scouting-nederland-hero-font-poppins h1,
-.scouting-nederland-home-video-caption.scouting-nederland-hero-font-poppins h1 {
+:is(.scouting-nederland-hero-font-poppins h1, h1.scouting-nederland-hero-font-poppins) {
   font-family: "Poppins", Arial, Helvetica, sans-serif !important;
 }

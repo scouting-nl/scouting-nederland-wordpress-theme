@@ -34,7 +34,7 @@
         <?php endif; ?>
 
         <nav class="scouting-nederland-single-post__navigation" aria-label="<?php esc_attr_e('Berichtnavigatie', 'scouting-nederland'); ?>">
-            <div class="scouting-nederland-single-post__nav-item scouting-nederland-single-post__nav-item--previous">
+            <div class="scouting-nederland-single-post__nav-item">
                 <?php previous_post_link('<span>' . esc_html__('Vorige bericht', 'scouting-nederland') . '</span>%link'); ?>
             </div>
             <div class="scouting-nederland-single-post__nav-item scouting-nederland-single-post__nav-item--next">

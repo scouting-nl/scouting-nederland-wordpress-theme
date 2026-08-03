@@ -1,3 +1,4 @@
+/* Page spacing is local to the category archive content region. */
 .scouting-nederland-category-page {
   padding-top: 44px;
   padding-bottom: 70px;
@@ -25,7 +26,7 @@
   font-family: "Roboto Slab", Georgia, serif;
   font-size: clamp(2.2rem, 4vw, 3.5rem);
   font-weight: 700;
-  letter-spacing: -.02em;
+  letter-spacing: 0;
   line-height: 1.05;
 }
 
@@ -41,14 +42,18 @@
   margin: 0;
 }
 
+/* Equal-width Grid tracks form a three-card desktop row. */
 .scouting-nederland-category-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 34px 30px;
+  align-items: stretch;
 }
 
+/* Flex lets every card stretch and keeps its read-more link at the bottom. */
 .scouting-nederland-category-card {
   display: flex;
+  height: 100%;
   flex-direction: column;
   min-width: 0;
   background: #fff;
@@ -70,6 +75,7 @@
   transition: transform .25s ease;
 }
 
+/* Hover and keyboard focus use the same restrained media zoom. */
 .scouting-nederland-category-card:hover .scouting-nederland-category-card__media img,
 .scouting-nederland-category-card:focus-within .scouting-nederland-category-card__media img {
   transform: scale(1.04);
@@ -84,11 +90,13 @@
   font-size: .92rem;
   font-weight: 800;
   line-height: 1.2;
-  text-shadow: 0 2px 8px rgba(0,0,0,.45);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .45);
 }
 
 .scouting-nederland-category-card__titlebar {
-  min-height: 124px;
+  display: flex;
+  align-items: flex-start;
+  min-height: 150px;
   padding: 18px 18px 20px;
   background: var(--wp--preset--color--scouting-groen);
 }
@@ -114,6 +122,7 @@
   text-decoration: underline;
 }
 
+/* The flexible body aligns variable excerpts while preserving a bottom action. */
 .scouting-nederland-category-card__body {
   display: flex;
   flex: 1 1 auto;
@@ -189,12 +198,14 @@
   font-family: "Roboto Slab", Georgia, serif;
 }
 
+/* Two columns fit tablet widths without shrinking card text below its design size. */
 @media (max-width: 991.98px) {
   .scouting-nederland-category-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
+/* Phone layout becomes a single column and releases the desktop title height. */
 @media (max-width: 640px) {
   .scouting-nederland-category-page {
     padding-top: 30px;
@@ -207,31 +218,4 @@
   .scouting-nederland-category-card__titlebar {
     min-height: 0;
   }
-}
-
-.scouting-nederland-category-grid {
-  align-items: stretch;
-}
-
-.scouting-nederland-category-card {
-  height: 100%;
-}
-
-.scouting-nederland-category-card__titlebar {
-  display: flex;
-  align-items: flex-start;
-  min-height: 150px;
-}
-
-.scouting-nederland-category-card__titlebar,
-.scouting-nederland-category-card__titlebar h2,
-.scouting-nederland-category-card__titlebar a,
-.scouting-nederland-category-card__titlebar a:visited,
-.scouting-nederland-category-card__titlebar a:hover,
-.scouting-nederland-category-card__titlebar a:focus {
-  color: #fff !important;
-}
-
-.scouting-nederland-category-card__body {
-  flex: 1 1 auto;
 }

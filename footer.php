@@ -1,10 +1,10 @@
-<footer id="scouting-nederland-footer" role="contentinfo">
+<footer class="scouting-nederland-footer-root" role="contentinfo">
     <div class="scouting-nederland-footer-grass" aria-hidden="true"></div>
 
     <div class="scouting-nederland-footer-main">
         <div class="scouting-nederland-footer-inner">
-            <div class="scouting-nederland-footer-left">
-                <div id="social-media" class="scouting-nederland-footer-social">
+            <div>
+                <div class="scouting-nederland-footer-social">
                     <h5><?php esc_html_e('Vind Scouting op:', 'scouting-nederland'); ?></h5>
                     <ul>
                         <?php
@@ -31,14 +31,14 @@
                     </ul>
                 </div>
 
-                <div id="copyright" class="scouting-nederland-footer-copyright">
+                <div class="scouting-nederland-footer-copyright">
                     <p>Copyright &copy; <?php echo esc_html(wp_date('Y')); ?> <?php bloginfo('name'); ?></p>
                     <p><?php printf(esc_html__('Dit is de officiële website van de vereniging %s.', 'scouting-nederland'), esc_html(get_bloginfo('name'))); ?></p>
                 </div>
             </div>
 
             <?php if (is_active_sidebar('footer-partners')) : ?>
-                <div class="scouting-nederland-footer-right scouting-nederland-footer-partners-widget-area">
+                <div class="scouting-nederland-footer-partners-widget-area">
                     <?php dynamic_sidebar('footer-partners'); ?>
                 </div>
             <?php endif; ?>

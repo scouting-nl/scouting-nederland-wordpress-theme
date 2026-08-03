@@ -1,9 +1,11 @@
+/* Featured-image hero scales between a compact minimum and a bounded desktop height. */
 .scouting-nederland-single-hero {
   min-height: clamp(280px, 44vw, 520px);
   background-size: cover;
   background-position: center;
 }
 
+/* Restrict long-form reading width independently of Bootstrap's outer container. */
 .scouting-nederland-single-post {
   max-width: 920px;
   margin: 0 auto 4.5rem;
@@ -36,10 +38,11 @@
   font-family: "Roboto Slab", Georgia, serif;
   font-size: clamp(2rem, 4vw, 3.35rem);
   font-weight: 700;
-  letter-spacing: -.02em;
+  letter-spacing: 0;
   line-height: 1.05;
 }
 
+/* Metadata wraps naturally; generated separators are attached only between entries. */
 .scouting-nederland-single-post__meta {
   display: flex;
   flex-wrap: wrap;
@@ -54,7 +57,7 @@
   position: relative;
 }
 
-.scouting-nederland-single-post__meta span + span::before {
+.scouting-nederland-single-post__meta span+span::before {
   content: "";
   position: absolute;
   left: -.65rem;
@@ -66,18 +69,6 @@
   transform: translateY(-50%);
 }
 
-.scouting-nederland-single-post__image {
-  margin: 2rem 0 2.4rem;
-  overflow: hidden;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, .12);
-}
-
-.scouting-nederland-single-post__image img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 .scouting-nederland-single-post__content {
   color: #1d1d1b;
   font-family: "Poppins", Arial, sans-serif;
@@ -85,7 +76,7 @@
   line-height: 1.85;
 }
 
-.scouting-nederland-single-post__content > *:first-child {
+.scouting-nederland-single-post__content>*:first-child {
   margin-top: 0;
 }
 
@@ -104,6 +95,7 @@
   font-weight: 700;
 }
 
+/* The quote border and tinted background distinguish editorial emphasis semantically. */
 .scouting-nederland-single-post__content blockquote {
   margin: 2rem 0;
   padding: 1.4rem 1.6rem;
@@ -123,7 +115,7 @@
   font-family: "Poppins", Arial, sans-serif;
 }
 
-.scouting-nederland-single-post__terms + .scouting-nederland-single-post__terms {
+.scouting-nederland-single-post__terms+.scouting-nederland-single-post__terms {
   margin-top: .5rem;
 }
 
@@ -132,6 +124,7 @@
   font-weight: 700;
 }
 
+/* Two equal Grid tracks align previous and next navigation on desktop. */
 .scouting-nederland-single-post__navigation {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -177,6 +170,7 @@
   color: #fff;
 }
 
+/* Stack navigation links and restore left alignment on narrow screens. */
 @media (max-width: 767px) {
   .scouting-nederland-single-post {
     margin-bottom: 3rem;

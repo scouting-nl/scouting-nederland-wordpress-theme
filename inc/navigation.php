@@ -14,8 +14,8 @@ class ScoutingNederlandBootstrapNavwalker extends Walker_Nav_Menu {
         $output .= '<li class="' . esc_attr($class_names) . '">';
         $atts = array('href' => !empty($item->url) ? $item->url : '#');
         $atts['class'] = $depth === 0 ? 'nav-link' : 'dropdown-item';
-        if ($has_children) {
-            $atts['class'] .= $depth === 0 ? ' dropdown-toggle' : ' submenu-link';
+        if ($has_children && $depth === 0) {
+            $atts['class'] .= ' dropdown-toggle';
             $atts['aria-haspopup'] = 'true';
         }
         $attributes = '';
@@ -31,25 +31,22 @@ function scoutingNederlandBodyClasses($classes) {
     $main = get_theme_mod('scouting_nederland_main_color', 'mgroen');
     $support = get_theme_mod('scouting_nederland_sub_color', 'sgroen');
 
-    $classes[] = $main;
-    $classes[] = $support;
-
     $main_map = array(
-        'mgroen'  => 'green-main',
-        'mblauw'  => 'blue-main',
-        'mgeel'   => 'yellow-main',
-        'mrood'   => 'red-main',
-        'moranje' => 'orange-main',
-        'mpaars'  => 'purple-main',
+        'mgroen'  => 'scouting-nederland-utilities-main-green',
+        'mblauw'  => 'scouting-nederland-utilities-main-blue',
+        'mgeel'   => 'scouting-nederland-utilities-main-yellow',
+        'mrood'   => 'scouting-nederland-utilities-main-red',
+        'moranje' => 'scouting-nederland-utilities-main-orange',
+        'mpaars'  => 'scouting-nederland-utilities-main-purple',
     );
 
     $support_map = array(
-        'sgroen'  => 'green-support',
-        'sblauw'  => 'blue-support',
-        'sgeel'   => 'yellow-support',
-        'srood'   => 'red-support',
-        'soranje' => 'orange-support',
-        'spaars'  => 'purple-support',
+        'sgroen'  => 'scouting-nederland-utilities-support-green',
+        'sblauw'  => 'scouting-nederland-utilities-support-blue',
+        'sgeel'   => 'scouting-nederland-utilities-support-yellow',
+        'srood'   => 'scouting-nederland-utilities-support-red',
+        'soranje' => 'scouting-nederland-utilities-support-orange',
+        'spaars'  => 'scouting-nederland-utilities-support-purple',
     );
 
     if (isset($main_map[$main])) {

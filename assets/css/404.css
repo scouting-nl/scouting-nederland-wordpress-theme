@@ -1,7 +1,9 @@
+/* The shared base wrapper owns fixed-header spacing for this template. */
 .scouting-nederland-404-page {
   padding-top: 0;
 }
 
+/* Relative positioning anchors the decorative skyline beneath centered hero content. */
 .scouting-nederland-404-hero {
   position: relative;
   padding: 112px 0 72px;
@@ -12,6 +14,7 @@
   margin-top: 0 !important;
 }
 
+/* Theme-color utility classes swap only the skyline bitmap, not its geometry. */
 .scouting-nederland-404-hero::after {
   content: "";
   position: absolute;
@@ -23,35 +26,41 @@
   background-repeat: repeat-x;
   background-position: 0 100%;
   background-size: auto 78px;
-  animation: scoutingNederlandSkylineMoveX 130s linear infinite;
+  animation: scoutingNederland404SkylineMove 130s linear infinite;
   pointer-events: none;
 }
 
-body.mblauw .scouting-nederland-404-hero::after,
-body.blue-main .scouting-nederland-404-hero::after {
+@keyframes scoutingNederland404SkylineMove {
+  from {
+    background-position-x: 0;
+  }
+
+  to {
+    background-position-x: 2000px;
+  }
+}
+
+body.scouting-nederland-utilities-main-blue .scouting-nederland-404-hero::after {
   background-image: url("../images/skyline-blauw.png");
 }
 
-body.mgeel .scouting-nederland-404-hero::after,
-body.yellow-main .scouting-nederland-404-hero::after {
+body.scouting-nederland-utilities-main-yellow .scouting-nederland-404-hero::after {
   background-image: url("../images/skyline-geel.png");
 }
 
-body.mrood .scouting-nederland-404-hero::after,
-body.red-main .scouting-nederland-404-hero::after {
+body.scouting-nederland-utilities-main-red .scouting-nederland-404-hero::after {
   background-image: url("../images/skyline-rood.png");
 }
 
-body.moranje .scouting-nederland-404-hero::after,
-body.orange-main .scouting-nederland-404-hero::after {
+body.scouting-nederland-utilities-main-orange .scouting-nederland-404-hero::after {
   background-image: url("../images/skyline-oranje.png");
 }
 
-body.mpaars .scouting-nederland-404-hero::after,
-body.purple-main .scouting-nederland-404-hero::after {
+body.scouting-nederland-utilities-main-purple .scouting-nederland-404-hero::after {
   background-image: url("../images/skyline-paars.png");
 }
 
+/* A local stacking context keeps copy above the absolutely positioned skyline. */
 .scouting-nederland-404-hero__inner {
   position: relative;
   z-index: 1;
@@ -73,7 +82,7 @@ body.purple-main .scouting-nederland-404-hero::after {
   color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
   font-size: .9rem;
   font-weight: 800;
-  box-shadow: 0 8px 22px rgba(0,0,0,.08);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .08);
 }
 
 .scouting-nederland-404-hero h1 {
@@ -94,6 +103,7 @@ body.purple-main .scouting-nederland-404-hero::after {
   line-height: 1.8;
 }
 
+/* Search controls are shared with search.css; this class only centers the 404 instance. */
 .scouting-nederland-404-search-form {
   margin-left: auto !important;
   margin-right: auto !important;
@@ -104,6 +114,7 @@ body.purple-main .scouting-nederland-404-hero::after {
   padding-bottom: 76px;
 }
 
+/* Asymmetric Grid tracks prioritize recovery actions over secondary guidance. */
 .scouting-nederland-404-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.55fr) minmax(320px, .95fr);
@@ -114,7 +125,7 @@ body.purple-main .scouting-nederland-404-hero::after {
 .scouting-nederland-404-card {
   background: #fff;
   border-radius: 24px;
-  box-shadow: 0 14px 36px rgba(0,0,0,.08);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, .08);
 }
 
 .scouting-nederland-404-card--main {
@@ -124,7 +135,7 @@ body.purple-main .scouting-nederland-404-hero::after {
 .scouting-nederland-404-card--side {
   padding: 30px;
   border: 2px dashed var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(250,250,250,1) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(250, 250, 250, 1) 100%);
 }
 
 .scouting-nederland-404-badge {
@@ -134,7 +145,7 @@ body.purple-main .scouting-nederland-404-hero::after {
   margin: 0 0 16px;
   padding: .52rem .88rem;
   border-radius: 999px;
-  background: rgba(0,0,0,.04);
+  background: rgba(0, 0, 0, .04);
   color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
   font-weight: 700;
 }
@@ -173,12 +184,13 @@ body.purple-main .scouting-nederland-404-hero::after {
   padding: 0;
 }
 
+/* Flex rows align each icon with multi-line guidance text. */
 .scouting-nederland-404-tips li {
   display: flex;
   align-items: flex-start;
   gap: 14px;
   padding: 12px 0;
-  border-bottom: 1px solid rgba(0,0,0,.08);
+  border-bottom: 1px solid rgba(0, 0, 0, .08);
 }
 
 .scouting-nederland-404-tips li:last-child {
@@ -204,12 +216,14 @@ body.purple-main .scouting-nederland-404-hero::after {
 }
 
 .scouting-nederland-404-found li::before {
-  content: "•";
+  content: "";
   position: absolute;
   left: 0;
-  top: 0;
-  color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
-  font-weight: 700;
+  top: .8em;
+  width: .4rem;
+  height: .4rem;
+  border-radius: 50%;
+  background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
 }
 
 .scouting-nederland-404-actions {
@@ -232,6 +246,7 @@ body.purple-main .scouting-nederland-404-hero::after {
   text-transform: uppercase;
 }
 
+/* Tablet layout stacks the cards and reduces hero space. */
 @media (max-width: 991.98px) {
   .scouting-nederland-404-hero {
     padding-top: 88px;
@@ -247,7 +262,9 @@ body.purple-main .scouting-nederland-404-hero::after {
   }
 }
 
+/* Phone layout reduces card padding while retaining comfortable tap targets. */
 @media (max-width: 767.98px) {
+
   .scouting-nederland-404-card--main,
   .scouting-nederland-404-card--side {
     padding: 24px 22px;
@@ -257,5 +274,11 @@ body.purple-main .scouting-nederland-404-hero::after {
   .scouting-nederland-404-content {
     padding-top: 34px;
     padding-bottom: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scouting-nederland-404-hero::after {
+    animation: none;
   }
 }

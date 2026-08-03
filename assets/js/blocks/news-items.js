@@ -134,7 +134,7 @@
 
                 return createElement(
                     'label',
-                    { key: category.id, className: 'scouting-nederland-news-checkbox' },
+                    { key: category.id, className: 'scouting-nederland-editor-news-items__category' },
                     createElement('input', {
                         type: 'checkbox',
                         checked: selectedCategoryIds.includes(categoryId),
@@ -148,11 +148,11 @@
         // Place all category choices in the block editor's standard row structure.
         return createElement(
             'div',
-            { className: 'scouting-nederland-acf-row' },
-            createElement('label', {}, 'Titel'),
+            { className: 'scouting-nederland-editor-form__row' },
+            createElement('label', {}, 'Categorieën'),
             createElement(
                 'div',
-                { className: 'scouting-nederland-news-category-box' },
+                { className: 'scouting-nederland-editor-news-items__categories' },
                 categoryOptions
             )
         );
@@ -169,11 +169,11 @@
         // Give every selected post an accessible removal button.
         return createElement(
             'div',
-            { className: 'scouting-nederland-news-token-field' },
+            { className: 'scouting-nederland-editor-news-items__tokens' },
             selectedPosts.map((post) => createElement(
                 'span',
-                { key: post.id, className: 'scouting-nederland-news-token' },
-                '× ' + post.title,
+                { key: post.id, className: 'scouting-nederland-editor-news-items__token' },
+                post.title,
                 createElement(
                     'button',
                     {
@@ -204,7 +204,7 @@
         return createElement(
             'select',
             {
-                className: 'scouting-nederland-acf-select',
+                className: 'scouting-nederland-editor-form__select',
                 value: '',
                 onChange: (event) => {
                     // Add the selected ID, then reset the control to its placeholder.
@@ -236,11 +236,11 @@
         // Compose the related selection controls under one labelled form row.
         return createElement(
             'div',
-            { className: 'scouting-nederland-acf-row' },
+            { className: 'scouting-nederland-editor-form__row' },
             createElement('label', {}, 'Nieuwsitems'),
             createElement(
                 'div',
-                { className: 'scouting-nederland-news-select-wrap' },
+                { className: 'scouting-nederland-editor-news-items__selector' },
                 renderSelectedPostTokens(context.selectedPosts, context.removePost),
                 renderPostSelector(context.availablePosts, context.selectedPostIds, context.addPost),
                 createElement(
@@ -263,7 +263,7 @@
         // Constrain the public query count to the supported one-through-six range.
         return createElement(
             'div',
-            { className: 'scouting-nederland-acf-row' },
+            { className: 'scouting-nederland-editor-form__row' },
             createElement('label', {}, 'Aantal'),
             createElement(RangeControl, {
                 value: attributes.count || 3,
@@ -285,17 +285,17 @@
         // Group all overview-button attributes in one fieldset.
         return createElement(
             'div',
-            { className: 'scouting-nederland-acf-row' },
+            { className: 'scouting-nederland-editor-form__row' },
             createElement('label', {}, 'Knop'),
             createElement(
                 'fieldset',
                 {
-                    className: 'scouting-nederland-acf-button-box '
-                        + 'scouting-nederland-news-button-box'
+                    className: 'scouting-nederland-editor-button '
+                        + 'scouting-nederland-editor-news-items__button'
                 },
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-acf-field' },
+                    { className: 'scouting-nederland-editor-form__field' },
                     createElement('label', {}, 'Tekst'),
                     createElement(TextControl, {
                         value: attributes.buttonText || '',
@@ -304,10 +304,10 @@
                 ),
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-acf-button-grid' },
+                    { className: 'scouting-nederland-editor-button__grid' },
                     createElement(
                         'div',
-                        { className: 'scouting-nederland-acf-field' },
+                        { className: 'scouting-nederland-editor-form__field' },
                         createElement('label', {}, 'URL'),
                         createElement(LinkPickerField, {
                             url: attributes.buttonUrl || '',
@@ -320,7 +320,7 @@
                     ),
                     createElement(
                         'div',
-                        { className: 'scouting-nederland-acf-field' },
+                        { className: 'scouting-nederland-editor-form__field' },
                         createElement('label', {}, 'Kleur'),
                         createElement(ColorRadioControl, {
                             value: attributes.buttonColor,
@@ -337,7 +337,6 @@
         title: __('Nieuws items', 'scouting-nederland'),
         icon: 'welcome-write-blog',
         category: 'scouting-nederland',
-        supports: { anchor: true },
         attributes: {
             title: { type: 'string', default: 'Nieuws' },
             categoryIds: { type: 'array', default: [] },
@@ -419,8 +418,8 @@
             return createElement(
                 'div',
                 {
-                    className: 'scouting-nederland-acf-like-block '
-                        + 'scouting-nederland-news-editor-form'
+                    className: 'scouting-nederland-editor-form '
+                        + 'scouting-nederland-editor-news-items-form'
                 },
                 renderCategorySelector(categories, selectedCategoryIds, toggleCategory),
                 renderNewsSelection({

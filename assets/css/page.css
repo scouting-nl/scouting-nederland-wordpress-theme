@@ -1,15 +1,22 @@
+/* Hero media establishes the positioning and minimum-height context for its title overlay. */
 .scouting-nederland-page-hero__media {
   position: relative;
   min-height: 260px;
 }
 
-.scouting-nederland-page-hero__media>.defaultbanner,
+.scouting-nederland-page-hero__media>.scouting-nederland-page-hero__fallback,
 .scouting-nederland-page-hero__media>.widget,
 .scouting-nederland-page-hero__media>section,
 .scouting-nederland-page-hero__media>div:not(.scouting-nederland-page-hero__title) {
   min-height: 260px;
 }
 
+/* The page-owned fallback mirrors the desktop base banner and can override it responsively. */
+.scouting-nederland-page-hero__fallback {
+  height: 350px;
+}
+
+/* The absolute overlay centers the title without blocking links in widget media below it. */
 .scouting-nederland-page-hero__title {
   position: absolute;
   inset: 0;
@@ -33,6 +40,7 @@
   text-shadow: 0 6px 0 rgba(0, 0, 0, .18);
 }
 
+/* A transparent gradient protects white title contrast over arbitrary user imagery. */
 .scouting-nederland-page-hero__title::before {
   content: "";
   position: absolute;
@@ -41,14 +49,19 @@
   background: linear-gradient(90deg, rgba(0, 0, 0, .28), rgba(0, 0, 0, .12), rgba(0, 0, 0, .28));
 }
 
+/* Reduce fixed hero space on narrow viewports while preserving overlay alignment. */
 @media (max-width: 767.98px) {
 
   .scouting-nederland-page-hero__media,
-  .scouting-nederland-page-hero__media>.defaultbanner,
+  .scouting-nederland-page-hero__media>.scouting-nederland-page-hero__fallback,
   .scouting-nederland-page-hero__media>.widget,
   .scouting-nederland-page-hero__media>section,
   .scouting-nederland-page-hero__media>div:not(.scouting-nederland-page-hero__title) {
     min-height: 210px;
+  }
+
+  .scouting-nederland-page-hero__fallback {
+    height: 210px;
   }
 
   .scouting-nederland-page-hero__title {
@@ -56,55 +69,20 @@
   }
 }
 
+/* Separate page content from image, slider, or video hero variants consistently. */
 .scouting-nederland-page-hero,
-body.page .scouting-nederland-home-slider {
+.scouting-nederland-page-featured {
   margin-bottom: 48px;
 }
 
-body.page .scouting-nederland-page-hero+.container #scouting-nederland-featured {
+.scouting-nederland-page-hero+.container .scouting-nederland-page-featured {
   margin-top: 0;
 }
 
 @media (max-width: 767.98px) {
 
   .scouting-nederland-page-hero,
-  body.page .scouting-nederland-home-slider {
+  .scouting-nederland-page-featured {
     margin-bottom: 32px;
   }
-}
-
-#scouting-nederland-hero.scouting-nederland-hero-font-urban-jungle h1,
-.scouting-nederland-page-hero.scouting-nederland-hero-font-urban-jungle .scouting-nederland-page-hero__title h1,
-.scouting-nederland-page-hero__title.scouting-nederland-hero-font-urban-jungle h1,
-h1.scouting-nederland-hero-font-urban-jungle,
-.scouting-nederland-home-hero.scouting-nederland-hero-font-urban-jungle .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-home-hero__inner.scouting-nederland-hero-font-urban-jungle h1,
-.scouting-nederland-home-slider.scouting-nederland-hero-font-urban-jungle h1,
-.scouting-nederland-home-slide__caption.scouting-nederland-hero-font-urban-jungle h1,
-.scouting-nederland-home-video-caption.scouting-nederland-hero-font-urban-jungle h1 {
-  font-family: "Urban Jungle", "Roboto Slab", Georgia, serif !important;
-}
-
-#scouting-nederland-hero.scouting-nederland-hero-font-roboto-slab h1,
-.scouting-nederland-page-hero.scouting-nederland-hero-font-roboto-slab .scouting-nederland-page-hero__title h1,
-.scouting-nederland-page-hero__title.scouting-nederland-hero-font-roboto-slab h1,
-h1.scouting-nederland-hero-font-roboto-slab,
-.scouting-nederland-home-hero.scouting-nederland-hero-font-roboto-slab .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-home-hero__inner.scouting-nederland-hero-font-roboto-slab h1,
-.scouting-nederland-home-slider.scouting-nederland-hero-font-roboto-slab h1,
-.scouting-nederland-home-slide__caption.scouting-nederland-hero-font-roboto-slab h1,
-.scouting-nederland-home-video-caption.scouting-nederland-hero-font-roboto-slab h1 {
-  font-family: "Roboto Slab", Georgia, serif !important;
-}
-
-#scouting-nederland-hero.scouting-nederland-hero-font-poppins h1,
-.scouting-nederland-page-hero.scouting-nederland-hero-font-poppins .scouting-nederland-page-hero__title h1,
-.scouting-nederland-page-hero__title.scouting-nederland-hero-font-poppins h1,
-h1.scouting-nederland-hero-font-poppins,
-.scouting-nederland-home-hero.scouting-nederland-hero-font-poppins .scouting-nederland-home-hero__inner h1,
-.scouting-nederland-home-hero__inner.scouting-nederland-hero-font-poppins h1,
-.scouting-nederland-home-slider.scouting-nederland-hero-font-poppins h1,
-.scouting-nederland-home-slide__caption.scouting-nederland-hero-font-poppins h1,
-.scouting-nederland-home-video-caption.scouting-nederland-hero-font-poppins h1 {
-  font-family: "Poppins", Arial, Helvetica, sans-serif !important;
 }
