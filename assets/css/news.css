@@ -340,7 +340,7 @@
   margin: 0;
   color: inherit;
   font-family: "Roboto Slab", Georgia, "Times New Roman", serif;
-  font-size: clamp(2.2rem, 3vw, 2.75rem);
+  font-size: 2.75rem;
   font-weight: 700;
   line-height: 1.08;
 }
@@ -348,6 +348,7 @@
 .scouting-nederland-news-style .gb-news-items .news-items {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
   gap: 15px;
   margin: 1.65rem 0 1.45rem;
 }
@@ -355,6 +356,7 @@
 .scouting-nederland-news-style .gb-news-items .news-item {
   display: flex;
   flex-direction: column;
+  height: 100%;
   min-width: 0;
 }
 
@@ -364,6 +366,7 @@
 
 .scouting-nederland-news-style .gb-news-items .news-item .titel {
   display: grid;
+  flex: 0 0 auto;
   grid-template-areas:
     "beeld"
     "titel";
@@ -411,7 +414,7 @@
   margin: 0;
   padding: 1rem 1rem 1.1rem;
   background: var(--wp--preset--color--scouting-groen);
-  color: #fff;
+  color: #fff !important;
   font-family: "Roboto Slab", Georgia, "Times New Roman", serif;
   font-size: 1.65rem;
   font-weight: 700;
@@ -541,36 +544,6 @@ body,
 .scouting-nederland-two-columns-style .col-wysiwyg>h4 {
   font-size: 2.75rem;
   line-height: 1.08;
-}
-
-.scouting-nederland-news-style .gb-news-items h4 {
-  font-size: 2.75rem;
-  line-height: 1.08;
-}
-
-.scouting-nederland-news-style .gb-news-items .news-item h5 {
-  font-family: "Roboto Slab", Georgia, "Times New Roman", serif;
-  font-size: 1.65rem;
-  line-height: 1.12;
-  font-weight: 700;
-}
-
-.scouting-nederland-news-style .gb-news-items .news-item .tekst {
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.9;
-}
-
-.scouting-nederland-news-style .gb-news-items .news-item .datum {
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
-  font-size: .9rem;
-  font-weight: 700;
-}
-
-.scouting-nederland-news-style .gb-news-items .news-item .lees-meer {
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
 }
 
 .scouting-nederland-featured-style .scouting-nederland-btn,
@@ -723,35 +696,4 @@ body,
 .home-news::before,
 .scouting-news-block::before {
   background-image: url("../images/skyline-groen.png");
-}
-
-.scouting-nederland-news-style .gb-news-items .news-items {
-  align-items: stretch;
-}
-
-.scouting-nederland-news-style .gb-news-items .news-item {
-  height: 100%;
-}
-
-.scouting-nederland-news-style .gb-news-items .news-item .titel {
-  flex: 0 0 auto;
-}
-
-.scouting-nederland-news-style .gb-news-items .news-item h5 {
-  min-height: 150px;
-  color: #fff !important;
-}
-
-.scouting-nederland-news-style .gb-news-items .news-item h5,
-.scouting-nederland-news-style .gb-news-items .news-item h5 a,
-.scouting-nederland-news-style .gb-news-items .news-item .titel h5 {
-  color: #fff !important;
-}
-
-.scouting-nederland-news-style .gb-news-items .news-item .tekst {
-  flex: 1 1 auto;
-}
-
-.scouting-nederland-news-style .gb-news-items .news-item .lees-meer {
-  margin-top: auto;
 }
