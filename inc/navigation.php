@@ -14,8 +14,8 @@ class ScoutingNederlandBootstrapNavwalker extends Walker_Nav_Menu {
         $output .= '<li class="' . esc_attr($class_names) . '">';
         $atts = array('href' => !empty($item->url) ? $item->url : '#');
         $atts['class'] = $depth === 0 ? 'nav-link' : 'dropdown-item';
-        if ($has_children && $depth === 0) {
-            $atts['class'] .= ' dropdown-toggle';
+        if ($has_children) {
+            $atts['class'] .= $depth === 0 ? ' dropdown-toggle' : ' submenu-link';
             $atts['aria-haspopup'] = 'true';
         }
         $attributes = '';

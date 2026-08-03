@@ -1180,3 +1180,22 @@ body.admin-bar #scouting-nederland-nav {
 .editor-styles-wrapper .scouting-nederland-speltakken-add-button {
   white-space: nowrap;
 }
+
+
+.editor-styles-wrapper .wp-block-separator {
+  border: 0;
+  width: 100%;
+  max-width: none;
+  height: 8px;
+  margin: 2.5rem 0;
+  opacity: 1;
+  background-color: transparent;
+  background-image: radial-gradient(circle, var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) 0 2px, transparent 2.2px);
+  background-repeat: repeat-x;
+  background-position: left center;
+  background-size: 12px 8px;
+}
+
+.editor-styles-wrapper .wp-block-separator.is-style-dots::before {
+  content: none;
+}

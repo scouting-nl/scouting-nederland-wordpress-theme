@@ -1762,3 +1762,90 @@ body.admin-bar .offcanvas {
     padding-left: 16px !important;
   }
 }
+
+@media (min-width: 1181px) {
+  #scouting-nederland-nav .dropdown-menu,
+  #scouting-nederland-nav .sub-menu {
+    overflow: visible !important;
+  }
+
+  #scouting-nederland-nav .dropdown-menu > li.menu-item-has-children,
+  #scouting-nederland-nav .dropdown-menu > li.dropdown,
+  #scouting-nederland-nav .sub-menu > li.menu-item-has-children,
+  #scouting-nederland-nav .sub-menu > li.dropdown {
+    position: relative !important;
+  }
+
+  #scouting-nederland-nav .dropdown-menu .dropdown-menu,
+  #scouting-nederland-nav .dropdown-menu .sub-menu,
+  #scouting-nederland-nav .sub-menu .dropdown-menu,
+  #scouting-nederland-nav .sub-menu .sub-menu {
+    display: none !important;
+    position: absolute !important;
+    top: -.65rem !important;
+    left: 100% !important;
+    right: auto !important;
+    z-index: 2100 !important;
+    min-width: 210px !important;
+    margin: 0 !important;
+    padding: .65rem 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: #fff !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .18) !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+
+  #scouting-nederland-nav .dropdown-menu li:hover > .dropdown-menu,
+  #scouting-nederland-nav .dropdown-menu li:hover > .sub-menu,
+  #scouting-nederland-nav .dropdown-menu li:focus-within > .dropdown-menu,
+  #scouting-nederland-nav .dropdown-menu li:focus-within > .sub-menu,
+  #scouting-nederland-nav .sub-menu li:hover > .dropdown-menu,
+  #scouting-nederland-nav .sub-menu li:hover > .sub-menu,
+  #scouting-nederland-nav .sub-menu li:focus-within > .dropdown-menu,
+  #scouting-nederland-nav .sub-menu li:focus-within > .sub-menu {
+    display: block !important;
+  }
+
+  #scouting-nederland-nav .dropdown-menu .submenu-link,
+  #scouting-nederland-nav .sub-menu .submenu-link {
+    position: relative !important;
+    padding-right: 2rem !important;
+    pointer-events: auto !important;
+  }
+
+  #scouting-nederland-nav .dropdown-menu .submenu-link::after,
+  #scouting-nederland-nav .sub-menu .submenu-link::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    top: 50% !important;
+    right: .8rem !important;
+    width: .45rem !important;
+    height: .45rem !important;
+    border-top: 2px solid currentColor !important;
+    border-right: 2px solid currentColor !important;
+    transform: translateY(-50%) rotate(45deg) !important;
+    background: transparent !important;
+  }
+}
+
+@media (min-width: 1181px) {
+  #scouting-nederland-nav li.scouting-nederland-submenu-open-left > .dropdown-menu,
+  #scouting-nederland-nav li.scouting-nederland-submenu-open-left > .sub-menu {
+    left: auto !important;
+    right: 100% !important;
+  }
+
+  #scouting-nederland-nav li.scouting-nederland-submenu-open-left > .submenu-link {
+    padding-right: 1rem !important;
+    padding-left: 2rem !important;
+  }
+
+  #scouting-nederland-nav li.scouting-nederland-submenu-open-left > .submenu-link::after {
+    right: auto !important;
+    left: .8rem !important;
+    transform: translateY(-50%) rotate(-135deg) !important;
+  }
+}

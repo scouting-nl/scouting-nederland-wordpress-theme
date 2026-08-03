@@ -134,11 +134,31 @@
   color: #fff;
 }
 
-.scouting-nederland-home-content hr {
+.scouting-nederland-home-content hr,
+.scouting-nederland-home-content .wp-block-separator,
+.entry-content hr,
+.entry-content .wp-block-separator {
   border: 0;
-  border-top: 2px solid var(--wp--preset--color--scouting-groen);
-  opacity: 1;
+  width: 100%;
+  max-width: none;
+  height: 8px;
   margin: 2.5rem 0;
+  opacity: 1;
+  background-color: transparent;
+  background-image: radial-gradient(circle, var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) 0 2px, transparent 2.2px);
+  background-repeat: repeat-x;
+  background-position: left center;
+  background-size: 12px 8px;
+}
+
+.scouting-nederland-home-content .wp-block-separator.is-style-dots,
+.entry-content .wp-block-separator.is-style-dots {
+  height: 8px;
+}
+
+.scouting-nederland-home-content .wp-block-separator.is-style-dots::before,
+.entry-content .wp-block-separator.is-style-dots::before {
+  content: none;
 }
 
 .scouting-nederland-news-grid {

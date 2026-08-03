@@ -236,6 +236,7 @@
         title: __('Speltakken grid', 'scouting-nederland'),
         icon: 'grid-view',
         category: 'scouting-nederland',
+        supports: { anchor: true },
         attributes: {
             title: { type: 'string', default: '' },
             items: { type: 'array', default: DEFAULT_ITEMS }

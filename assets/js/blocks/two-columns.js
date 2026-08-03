@@ -224,6 +224,7 @@
         title: __('Twee kolommen', 'scouting-nederland'),
         icon: 'columns',
         category: 'scouting-nederland',
+        supports: { anchor: true },
         attributes: {
             leftTitle: { type: 'string', default: 'Gratis sponsoren' },
             leftText: {

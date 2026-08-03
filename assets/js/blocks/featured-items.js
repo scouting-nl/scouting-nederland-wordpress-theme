@@ -180,6 +180,7 @@
         title: __('Featured items', 'scouting-nederland'),
         icon: 'screenoptions',
         category: 'scouting-nederland',
+        supports: { anchor: true },
         attributes: {
             title: { type: 'string', default: '' },
             items: { type: 'array', default: DEFAULT_ITEMS }

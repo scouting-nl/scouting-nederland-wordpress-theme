@@ -337,6 +337,7 @@
         title: __('Nieuws items', 'scouting-nederland'),
         icon: 'welcome-write-blog',
         category: 'scouting-nederland',
+        supports: { anchor: true },
         attributes: {
             title: { type: 'string', default: 'Nieuws' },
             categoryIds: { type: 'array', default: [] },

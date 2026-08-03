@@ -115,6 +115,7 @@
         description: __('Voeg een Scouting OpenID Connect login toe.', 'scouting-nederland'),
         icon: 'admin-users',
         category: 'scouting-nederland',
+        supports: { anchor: true },
         attributes: {
             displayType: { type: 'string', default: 'button' },
             buttonText: { type: 'string', default: 'Inloggen met Scouting' },
