@@ -75,6 +75,12 @@ function scoutingNederlandIsScoutingOidcAvailable() {
     return shortcode_exists('scouting_oidc_button') || shortcode_exists('scouting_oidc_link') || defined('SCOUTING_OIDC_VERSION');
 }
 
+function scoutingNederlandBlockEditorAssetVersion($filename) {
+    $asset_path = get_template_directory() . '/assets/js/blocks/' . $filename;
+
+    return file_exists($asset_path) ? (string) filemtime($asset_path) : SCOUTING_NEDERLAND_VERSION;
+}
+
 function scoutingNederlandRegisterEditorBlocks() {
     $block_editor_dependencies = array('wp-blocks', 'wp-element', 'wp-editor', 'wp-block-editor', 'wp-components', 'wp-i18n', 'wp-server-side-render', 'wp-url', 'jquery', 'wplink', 'quicktags');
     $block_scripts = array(
@@ -93,7 +99,7 @@ function scoutingNederlandRegisterEditorBlocks() {
         'scouting-nederland-blocks-common',
         get_template_directory_uri() . '/assets/js/blocks/common.js',
         $block_editor_dependencies,
-        SCOUTING_NEDERLAND_VERSION,
+        scoutingNederlandBlockEditorAssetVersion('common.js'),
         true
     );
 
@@ -102,7 +108,7 @@ function scoutingNederlandRegisterEditorBlocks() {
             $handle,
             get_template_directory_uri() . '/assets/js/blocks/' . $file,
             array('scouting-nederland-blocks-common'),
-            SCOUTING_NEDERLAND_VERSION,
+            scoutingNederlandBlockEditorAssetVersion($file),
             true
         );
     }
