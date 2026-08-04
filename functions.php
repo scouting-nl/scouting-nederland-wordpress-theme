@@ -1,7 +1,7 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
 
-define('SCOUTINGTC4_VERSION', '1.1');
+define('SCOUTINGTC4_VERSION', '1.0');
 
 require_once get_template_directory() . '/inc/setup.php';
 require_once get_template_directory() . '/inc/customizer.php';

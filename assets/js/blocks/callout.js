@@ -27,6 +27,7 @@ registerBlockType('scoutingtc4/callout', {
         title: __('Callout', 'scoutingtc4'),
         icon: 'megaphone',
         category: 'scoutingtc4',
+        supports: {anchor:true},
         attributes: {
             title:{type:'string', default:'Vrijwilligers gezocht'},
             text:{type:'string', default:'Ben jij enthousiast, geef je goed leiding en vind je het leuk om kinderen en jongeren te begeleiden bij hun persoonlijke ontwikkeling? Of heb je misschien bestuurlijke kwaliteiten die je wilt inzetten? Dan zijn wij op zoek naar jou!'},
