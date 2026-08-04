@@ -34,12 +34,12 @@ if ($scouting_nederland_is_elementor_page) {
 <?php if (!$scouting_nederland_is_elementor_page) { $scouting_nederland_rendered_slider = scoutingNederlandRenderHomeSlider($scouting_nederland_page_id); } ?>
 <?php if (!$scouting_nederland_is_elementor_page && !$scouting_nederland_hide_hero && !$scouting_nederland_rendered_slider) : ?>
 <div class="scouting-nederland-base-widget-hero container-fluid px-0 scouting-nederland-page-hero <?php echo esc_attr($scouting_nederland_hero_font_class); ?>">
-    <div class="row g-0"><div class="col scouting-nederland-page-hero__media">
+    <div class="row g-0"><div class="col scouting-nederland-page-hero-media">
         <?php if (is_active_sidebar('hero')) { dynamic_sidebar('hero'); } else { ?>
-            <div class="scouting-nederland-base-default-banner scouting-nederland-base-default-banner--low scouting-nederland-page-hero__fallback" style="background-image:url('<?php echo esc_url(scoutingNederlandGetDefaultHeroUrl()); ?>')"></div>
+            <div class="scouting-nederland-base-default-banner scouting-nederland-base-default-banner-low scouting-nederland-page-hero-fallback" style="background-image:url('<?php echo esc_url(scoutingNederlandGetDefaultHeroUrl()); ?>')"></div>
         <?php } ?>
         <?php if ($scouting_nederland_page_title && !$scouting_nederland_hide_page_title) : ?>
-            <div class="scouting-nederland-page-hero__title <?php echo esc_attr($scouting_nederland_hero_font_class); ?>" aria-hidden="false">
+            <div class="scouting-nederland-page-hero-title <?php echo esc_attr($scouting_nederland_hero_font_class); ?>" aria-hidden="false">
                 <div class="container">
                     <h1 class="<?php echo esc_attr($scouting_nederland_hero_font_class); ?>"><?php echo esc_html($scouting_nederland_page_title); ?></h1>
                 </div>

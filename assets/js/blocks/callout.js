@@ -73,12 +73,12 @@
         // Bind both radios to the same boolean so exactly one image mode is active.
         return createElement(
             'div',
-            { className: 'scouting-nederland-acf-row' },
+            { className: 'scouting-nederland-editor-form-row' },
             createElement('label', {}, 'Eigen beeld gebruiken'),
             createElement(
                 'div',
                 {
-                    className: 'scouting-nederland-editor-radio-row '
+                    className: 'scouting-nederland-editor-radio '
                         + 'scouting-nederland-editor-radio-inline'
                 },
                 createElement(
@@ -121,7 +121,7 @@
         // Connect the shared image picker directly to the callout image URL attribute.
         return createElement(
             'div',
-            { className: 'scouting-nederland-acf-row' },
+            { className: 'scouting-nederland-editor-form-row' },
             createElement('label', {}, 'Beeld [eigen]'),
             createElement(ImagePicker, {
                 url: attributes.imageUrl || '',
@@ -147,12 +147,12 @@
         // Build one option for every localized or fallback preset.
         return createElement(
             'div',
-            { className: 'scouting-nederland-acf-row' },
+            { className: 'scouting-nederland-editor-form-row' },
             createElement('label', {}, 'Beeld [lijst]'),
             createElement(
                 'select',
                 {
-                    className: 'scouting-nederland-acf-select',
+                    className: 'scouting-nederland-editor-form-select',
                     value: attributes.calloutPreset || 'kompas',
                     onChange: (event) => setAttributes({ calloutPreset: event.target.value })
                 },
@@ -177,7 +177,7 @@
         return [
             createElement(
                 'div',
-                { className: 'scouting-nederland-acf-row', key: 'title' },
+                { className: 'scouting-nederland-editor-form-row', key: 'title' },
                 createElement('label', {}, 'Titel'),
                 createElement(TextControl, {
                     value: attributes.title || '',
@@ -187,7 +187,7 @@
             createElement(
                 'div',
                 {
-                    className: 'scouting-nederland-acf-row scouting-nederland-acf-row-editor',
+                    className: 'scouting-nederland-editor-form-row scouting-nederland-editor-form-row-editor',
                     key: 'text'
                 },
                 createElement('label', {}, 'Tekst'),
@@ -210,18 +210,18 @@
         // Group all call-to-action attributes in one fieldset for a coherent editing flow.
         return createElement(
             'div',
-            { className: 'scouting-nederland-acf-row' },
+            { className: 'scouting-nederland-editor-form-row' },
             createElement('label', {}, ''),
             createElement(
                 'fieldset',
                 {
-                    className: 'scouting-nederland-acf-button-box '
-                        + 'scouting-nederland-callout-button-box'
+                    className: 'scouting-nederland-editor-button '
+                        + 'scouting-nederland-editor-callout-button'
                 },
                 createElement('legend', {}, 'Knop'),
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-acf-field' },
+                    { className: 'scouting-nederland-editor-form-field' },
                     createElement('label', {}, 'Tekst'),
                     createElement(TextControl, {
                         value: attributes.buttonText || '',
@@ -230,10 +230,10 @@
                 ),
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-acf-button-grid' },
+                    { className: 'scouting-nederland-editor-button-grid' },
                     createElement(
                         'div',
-                        { className: 'scouting-nederland-acf-field' },
+                        { className: 'scouting-nederland-editor-form-field' },
                         createElement('label', {}, 'URL'),
                         createElement(LinkPickerField, {
                             url: attributes.buttonUrl || '',
@@ -246,7 +246,7 @@
                     ),
                     createElement(
                         'div',
-                        { className: 'scouting-nederland-acf-field' },
+                        { className: 'scouting-nederland-editor-form-field' },
                         createElement('label', {}, 'Kleur'),
                         createElement(ColorRadioControl, {
                             value: attributes.buttonColor,
@@ -287,8 +287,8 @@
             return createElement(
                 'div',
                 {
-                    className: 'scouting-nederland-acf-like-block '
-                        + 'scouting-nederland-callout-editor-form'
+                    className: 'scouting-nederland-editor-form '
+                        + 'scouting-nederland-editor-callout-form'
                 },
                 renderImageModeControl(attributes, setAttributes),
                 renderCustomImageField(attributes, setAttributes),

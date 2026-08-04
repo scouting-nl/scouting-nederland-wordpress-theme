@@ -97,8 +97,8 @@
         return createElement(
             'div',
             {
-                className: 'scouting-nederland-acf-like-block '
-                    + 'scouting-nederland-oidc-editor-form'
+                className: 'scouting-nederland-editor-form '
+                    + 'scouting-nederland-editor-oidc-form'
             },
             createElement('h3', {}, __('Scouting OIDC', 'scouting-nederland')),
             createElement(

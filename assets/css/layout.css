@@ -8,7 +8,7 @@
 
 /* Maintain a useful content height on short templates without styling editor content classes. */
 .scouting-nederland-layout-shell {
-  min-height: 300px;
+	min-height: 300px;
 }
 
 /*
@@ -18,195 +18,195 @@
  * carries the decorative bitmap above widget content without changing document flow.
  */
 .scouting-nederland-layout-showcase-skyline {
-  position: relative;
-  margin-top: 150px;
-  transform: translateY(20px);
+	position: relative;
+	margin-top: 150px;
+	transform: translateY(20px);
 }
 
 .scouting-nederland-layout-showcase-skyline::before {
-  content: "";
-  position: absolute;
-  top: -89px;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 90px;
-  background-color: #fff;
-  background-image: url("../images/skyline-groen.png");
-  background-position: 0 100%;
-  background-repeat: repeat-x;
-  background-size: auto 91px;
-  animation: scoutingNederlandLayoutShowcaseSkyline 140s linear infinite;
-  will-change: background-position-x;
+	content: "";
+	position: absolute;
+	top: -89px;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 90px;
+	background-color: #fff;
+	background-image: url("../images/skyline-groen.png");
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: auto 91px;
+	animation: scouting-nederland-layout-showcase-skyline 140s linear infinite;
+	will-change: background-position-x;
 }
 
-@keyframes scoutingNederlandLayoutShowcaseSkyline {
-  from {
-    background-position-x: 0;
-  }
+@keyframes scouting-nederland-layout-showcase-skyline {
+	from {
+		background-position-x: 0;
+	}
 
-  to {
-    background-position-x: 2000px;
-  }
+	to {
+		background-position-x: 2000px;
+	}
 }
 
 body.scouting-nederland-utilities-main-blue .scouting-nederland-layout-showcase-skyline::before {
-  background-image: url("../images/skyline-blauw.png");
+	background-image: url("../images/skyline-blauw.png");
 }
 
 body.scouting-nederland-utilities-main-yellow .scouting-nederland-layout-showcase-skyline::before {
-  background-image: url("../images/skyline-geel.png");
+	background-image: url("../images/skyline-geel.png");
 }
 
 body.scouting-nederland-utilities-main-red .scouting-nederland-layout-showcase-skyline::before {
-  background-image: url("../images/skyline-rood.png");
+	background-image: url("../images/skyline-rood.png");
 }
 
 body.scouting-nederland-utilities-main-orange .scouting-nederland-layout-showcase-skyline::before {
-  background-image: url("../images/skyline-oranje.png");
+	background-image: url("../images/skyline-oranje.png");
 }
 
 body.scouting-nederland-utilities-main-purple .scouting-nederland-layout-showcase-skyline::before {
-  background-image: url("../images/skyline-paars.png");
+	background-image: url("../images/skyline-paars.png");
 }
 
 @media (max-width: 900px) {
-  .scouting-nederland-layout-showcase-skyline::before {
-    animation-duration: 85s;
-  }
+	.scouting-nederland-layout-showcase-skyline::before {
+		animation-duration: 85s;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scouting-nederland-layout-showcase-skyline::before {
-    animation: none;
-  }
+	.scouting-nederland-layout-showcase-skyline::before {
+		animation: none;
+	}
 }
 
 @media (min-width: 1025px) {
 
-  .container,
-  .container-sm,
-  .container-md,
-  .container-lg,
-  .container-xl,
-  .container-xxl {
-    max-width: var(--scouting-nederland-page-width) !important;
-  }
+	.container,
+	.container-sm,
+	.container-md,
+	.container-lg,
+	.container-xl,
+	.container-xxl {
+		max-width: var(--scouting-nederland-page-width) !important;
+	}
 }
 
 .scouting-nederland-layout-sidebar .widget_search,
 .scouting-nederland-layout-sidebar .widget_block:has(.wp-block-search) {
-  margin-bottom: 1.75rem;
+	margin-bottom: 1.75rem;
 }
 
 .scouting-nederland-layout-sidebar .widget_search,
 .scouting-nederland-layout-sidebar .widget_search .wp-block-search,
 .scouting-nederland-layout-sidebar .widget_block .wp-block-search {
-  padding: 0 !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
+	padding: 0 !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	background: transparent !important;
+	box-shadow: none !important;
 }
 
 .scouting-nederland-layout-sidebar .widget_search .widget-title,
 .scouting-nederland-layout-sidebar .widget_search h2,
 .scouting-nederland-layout-sidebar .wp-block-search__label {
-  display: block;
-  margin: 0 0 16px;
-  color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
-  font-family: "Roboto Slab", Georgia, serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.2;
+	display: block;
+	margin: 0 0 16px;
+	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
+	font-family: "Roboto Slab", Georgia, serif;
+	font-size: 1.25rem;
+	font-weight: 700;
+	line-height: 1.2;
 }
 
 .scouting-nederland-layout-sidebar .widget_search .search-form,
 .scouting-nederland-layout-sidebar .wp-block-search__inside-wrapper {
-  display: block;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
+	display: block;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
 }
 
 .scouting-nederland-layout-sidebar .widget_search label {
-  display: block;
-  margin: 0 0 12px;
+	display: block;
+	margin: 0 0 12px;
 }
 
 .scouting-nederland-layout-sidebar .widget_search .screen-reader-text,
 .scouting-nederland-layout-sidebar .wp-block-search__label .screen-reader-text {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  word-wrap: normal !important;
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
 }
 
 .scouting-nederland-layout-sidebar .widget_search .search-field,
 .scouting-nederland-layout-sidebar .wp-block-search__input {
-  display: block;
-  width: 100%;
-  min-height: 50px;
-  margin: 0 0 14px;
-  padding: 0 16px;
-  border: 1px solid rgba(0, 0, 0, .14);
-  border-radius: 16px;
-  background: #fff;
-  color: #222;
-  font-size: 1rem;
-  line-height: 50px;
-  outline: 0;
-  box-shadow: none;
+	display: block;
+	width: 100%;
+	min-height: 50px;
+	margin: 0 0 14px;
+	padding: 0 16px;
+	border: 1px solid rgba(0, 0, 0, 0.14);
+	border-radius: 16px;
+	background: #fff;
+	color: #222;
+	font-size: 1rem;
+	line-height: 50px;
+	outline: 0;
+	box-shadow: none;
 }
 
 .scouting-nederland-layout-sidebar .widget_search .search-field::placeholder,
 .scouting-nederland-layout-sidebar .wp-block-search__input::placeholder {
-  color: #8e8e8e;
+	color: #8e8e8e;
 }
 
 .scouting-nederland-layout-sidebar .widget_search .search-field:focus,
 .scouting-nederland-layout-sidebar .wp-block-search__input:focus {
-  border-color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
-  box-shadow: 0 0 0 3px rgb(from var(--wp--preset--color--scouting-blauw) r g b / .12);
+	border-color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
+	box-shadow: 0 0 0 3px rgb(from var(--wp--preset--color--scouting-blauw) r g b / 0.12);
 }
 
 .scouting-nederland-layout-sidebar .widget_search .search-submit,
 .scouting-nederland-layout-sidebar .wp-block-search__button {
-  display: inline-flex;
-  width: 100%;
-  min-height: 48px;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0 18px;
-  border: 0;
-  border-radius: 16px;
-  background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
-  color: #fff !important;
-  font-size: .9rem;
-  font-weight: 700;
-  line-height: 48px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  box-shadow: none;
-  cursor: pointer;
-  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+	display: inline-flex;
+	width: 100%;
+	min-height: 48px;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 0 18px;
+	border: 0;
+	border-radius: 16px;
+	background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
+	color: #fff !important;
+	font-size: 0.9rem;
+	font-weight: 700;
+	line-height: 48px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	box-shadow: none;
+	cursor: pointer;
+	transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
 }
 
 .scouting-nederland-layout-sidebar .widget_search .search-submit:hover,
 .scouting-nederland-layout-sidebar .widget_search .search-submit:focus,
 .scouting-nederland-layout-sidebar .wp-block-search__button:hover,
 .scouting-nederland-layout-sidebar .wp-block-search__button:focus {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+	transform: translateY(-1px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }

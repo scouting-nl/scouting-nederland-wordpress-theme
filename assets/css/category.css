@@ -1,221 +1,221 @@
 /* Page spacing is local to the category archive content region. */
 .scouting-nederland-category-page {
-  padding-top: 44px;
-  padding-bottom: 70px;
+	padding-top: 44px;
+	padding-bottom: 70px;
 }
 
 .scouting-nederland-category-header {
-  max-width: 820px;
-  margin: 0 0 38px;
+	max-width: 820px;
+	margin: 0 0 38px;
 }
 
-.scouting-nederland-category-header__eyebrow {
-  margin: 0 0 8px;
-  color: #006fba;
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: .78rem;
-  font-weight: 800;
-  letter-spacing: .08em;
-  line-height: 1.2;
-  text-transform: uppercase;
+.scouting-nederland-category-header-eyebrow {
+	margin: 0 0 8px;
+	color: #006fba;
+	font-family: "Poppins", Arial, sans-serif;
+	font-size: 0.78rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	line-height: 1.2;
+	text-transform: uppercase;
 }
 
-.scouting-nederland-category-header__title {
-  margin: 0;
-  color: var(--wp--preset--color--scouting-groen);
-  font-family: "Roboto Slab", Georgia, serif;
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 1.05;
+.scouting-nederland-category-header-title {
+	margin: 0;
+	color: var(--wp--preset--color--scouting-groen);
+	font-family: "Roboto Slab", Georgia, serif;
+	font-size: clamp(2.2rem, 4vw, 3.5rem);
+	font-weight: 700;
+	letter-spacing: 0;
+	line-height: 1.05;
 }
 
-.scouting-nederland-category-header__description {
-  margin-top: 18px;
-  color: #1d1d1b;
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: 1.08rem;
-  line-height: 1.75;
+.scouting-nederland-category-header-description {
+	margin-top: 18px;
+	color: #1d1d1b;
+	font-family: "Poppins", Arial, sans-serif;
+	font-size: 1.08rem;
+	line-height: 1.75;
 }
 
-.scouting-nederland-category-header__description p {
-  margin: 0;
+.scouting-nederland-category-header-description p {
+	margin: 0;
 }
 
 /* Equal-width Grid tracks form a three-card desktop row. */
 .scouting-nederland-category-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 34px 30px;
-  align-items: stretch;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 34px 30px;
+	align-items: stretch;
 }
 
 /* Flex lets every card stretch and keeps its read-more link at the bottom. */
 .scouting-nederland-category-card {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  min-width: 0;
-  background: #fff;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	min-width: 0;
+	background: #fff;
 }
 
-.scouting-nederland-category-card__media {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  background: #e9f5ee;
-  text-decoration: none;
+.scouting-nederland-category-card-media {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	background: #e9f5ee;
+	text-decoration: none;
 }
 
-.scouting-nederland-category-card__media img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  transition: transform .25s ease;
+.scouting-nederland-category-card-media img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	transition: transform 0.25s ease;
 }
 
 /* Hover and keyboard focus use the same restrained media zoom. */
-.scouting-nederland-category-card:hover .scouting-nederland-category-card__media img,
-.scouting-nederland-category-card:focus-within .scouting-nederland-category-card__media img {
-  transform: scale(1.04);
+.scouting-nederland-category-card:hover .scouting-nederland-category-card-media img,
+.scouting-nederland-category-card:focus-within .scouting-nederland-category-card-media img {
+	transform: scale(1.04);
 }
 
-.scouting-nederland-category-card__date {
-  position: absolute;
-  left: 16px;
-  bottom: 14px;
-  color: #fff;
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: .92rem;
-  font-weight: 800;
-  line-height: 1.2;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, .45);
+.scouting-nederland-category-card-date {
+	position: absolute;
+	left: 16px;
+	bottom: 14px;
+	color: #fff;
+	font-family: "Poppins", Arial, sans-serif;
+	font-size: 0.92rem;
+	font-weight: 800;
+	line-height: 1.2;
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 
-.scouting-nederland-category-card__titlebar {
-  display: flex;
-  align-items: flex-start;
-  min-height: 150px;
-  padding: 18px 18px 20px;
-  background: var(--wp--preset--color--scouting-groen);
+.scouting-nederland-category-card-titlebar {
+	display: flex;
+	align-items: flex-start;
+	min-height: 150px;
+	padding: 18px 18px 20px;
+	background: var(--wp--preset--color--scouting-groen);
 }
 
-.scouting-nederland-category-card__titlebar h2 {
-  margin: 0;
-  color: #fff;
-  font-family: "Roboto Slab", Georgia, serif;
-  font-size: clamp(1.45rem, 2vw, 1.85rem);
-  font-weight: 700;
-  line-height: 1.08;
+.scouting-nederland-category-card-titlebar h2 {
+	margin: 0;
+	color: #fff;
+	font-family: "Roboto Slab", Georgia, serif;
+	font-size: clamp(1.45rem, 2vw, 1.85rem);
+	font-weight: 700;
+	line-height: 1.08;
 }
 
-.scouting-nederland-category-card__titlebar a,
-.scouting-nederland-category-card__titlebar a:visited {
-  color: #fff;
-  text-decoration: none;
+.scouting-nederland-category-card-titlebar a,
+.scouting-nederland-category-card-titlebar a:visited {
+	color: #fff;
+	text-decoration: none;
 }
 
-.scouting-nederland-category-card__titlebar a:hover,
-.scouting-nederland-category-card__titlebar a:focus {
-  color: #fff;
-  text-decoration: underline;
+.scouting-nederland-category-card-titlebar a:hover,
+.scouting-nederland-category-card-titlebar a:focus {
+	color: #fff;
+	text-decoration: underline;
 }
 
 /* The flexible body aligns variable excerpts while preserving a bottom action. */
-.scouting-nederland-category-card__body {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  padding: 24px 0 0;
+.scouting-nederland-category-card-body {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	padding: 24px 0 0;
 }
 
-.scouting-nederland-category-card__body p {
-  margin: 0 0 26px;
-  color: #1d1d1b;
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.8;
+.scouting-nederland-category-card-body p {
+	margin: 0 0 26px;
+	color: #1d1d1b;
+	font-family: "Poppins", Arial, sans-serif;
+	font-size: 1rem;
+	line-height: 1.8;
 }
 
-.scouting-nederland-category-card__readmore,
-.scouting-nederland-category-card__readmore:visited {
-  margin-top: auto;
-  color: #006fba;
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: .96rem;
-  font-weight: 500;
-  text-decoration: none;
+.scouting-nederland-category-card-readmore,
+.scouting-nederland-category-card-readmore:visited {
+	margin-top: auto;
+	color: #006fba;
+	font-family: "Poppins", Arial, sans-serif;
+	font-size: 0.96rem;
+	font-weight: 500;
+	text-decoration: none;
 }
 
-.scouting-nederland-category-card__readmore:hover,
-.scouting-nederland-category-card__readmore:focus {
-  color: var(--wp--preset--color--scouting-groen);
-  text-decoration: underline;
+.scouting-nederland-category-card-readmore:hover,
+.scouting-nederland-category-card-readmore:focus {
+	color: var(--wp--preset--color--scouting-groen);
+	text-decoration: underline;
 }
 
 .scouting-nederland-category-pagination {
-  margin-top: 54px;
+	margin-top: 54px;
 }
 
 .scouting-nederland-category-pagination .nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: center;
 }
 
 .scouting-nederland-category-pagination .page-numbers {
-  display: inline-flex;
-  min-width: 42px;
-  min-height: 42px;
-  align-items: center;
-  justify-content: center;
-  padding: .55rem .85rem;
-  border-radius: 999px;
-  background: #f3f6f8;
-  color: #006fba;
-  font-weight: 800;
-  text-decoration: none;
+	display: inline-flex;
+	min-width: 42px;
+	min-height: 42px;
+	align-items: center;
+	justify-content: center;
+	padding: 0.55rem 0.85rem;
+	border-radius: 999px;
+	background: #f3f6f8;
+	color: #006fba;
+	font-weight: 800;
+	text-decoration: none;
 }
 
 .scouting-nederland-category-pagination .page-numbers.current,
 .scouting-nederland-category-pagination a.page-numbers:hover,
 .scouting-nederland-category-pagination a.page-numbers:focus {
-  background: #006fba;
-  color: #fff;
+	background: #006fba;
+	color: #fff;
 }
 
 .scouting-nederland-category-empty {
-  max-width: 760px;
-  padding: 36px;
-  background: #f3f6f8;
+	max-width: 760px;
+	padding: 36px;
+	background: #f3f6f8;
 }
 
 .scouting-nederland-category-empty h2 {
-  margin-top: 0;
-  color: var(--wp--preset--color--scouting-groen);
-  font-family: "Roboto Slab", Georgia, serif;
+	margin-top: 0;
+	color: var(--wp--preset--color--scouting-groen);
+	font-family: "Roboto Slab", Georgia, serif;
 }
 
 /* Two columns fit tablet widths without shrinking card text below its design size. */
 @media (max-width: 991.98px) {
-  .scouting-nederland-category-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+	.scouting-nederland-category-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
 }
 
 /* Phone layout becomes a single column and releases the desktop title height. */
 @media (max-width: 640px) {
-  .scouting-nederland-category-page {
-    padding-top: 30px;
-  }
+	.scouting-nederland-category-page {
+		padding-top: 30px;
+	}
 
-  .scouting-nederland-category-grid {
-    grid-template-columns: 1fr;
-  }
+	.scouting-nederland-category-grid {
+		grid-template-columns: 1fr;
+	}
 
-  .scouting-nederland-category-card__titlebar {
-    min-height: 0;
-  }
+	.scouting-nederland-category-card-titlebar {
+		min-height: 0;
+	}
 }

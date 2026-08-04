@@ -88,7 +88,7 @@
         // Wrap media access in WordPress's permission-aware upload controls.
         return createElement(
             'div',
-            { className: 'scouting-nederland-acf-field' },
+            { className: 'scouting-nederland-editor-form-field' },
             createElement('label', {}, 'Afbeelding'),
             createElement(
                 MediaUploadCheck,
@@ -98,7 +98,7 @@
                     allowedTypes: ['image'],
                     render: ({ open }) => createElement(
                         'div',
-                        { className: 'scouting-nederland-acf-image-field' },
+                        { className: 'scouting-nederland-editor-image-picker' },
                         item.imageUrl
                             ? createElement('img', { src: item.imageUrl, alt: '', onClick: open })
                             : createElement(Button, { onClick: open, isSecondary: true }, 'Afbeelding kiezen'),
@@ -131,16 +131,16 @@
         // Explain the fixed label and expose only URL and target selection to editors.
         return createElement(
             'fieldset',
-            { className: 'scouting-nederland-acf-button-box' },
+            { className: 'scouting-nederland-editor-button' },
             createElement('legend', {}, 'Knop'),
             createElement(
                 'p',
-                { className: 'scouting-nederland-acf-help' },
+                { className: 'scouting-nederland-editor-form-help' },
                 'De knoptekst is altijd “Meer informatie”. Vul alleen een link in om de knop te tonen.'
             ),
             createElement(
                 'div',
-                { className: 'scouting-nederland-acf-field' },
+                { className: 'scouting-nederland-editor-form-field' },
                 createElement('label', {}, 'URL'),
                 createElement(LinkPickerField, {
                     url: item.buttonUrl,
@@ -171,14 +171,14 @@
         // Compose row actions, media, text, and link controls under one numbered card.
         return createElement(
             'div',
-            { className: 'scouting-nederland-acf-repeater-row', key: index },
-            createElement('div', { className: 'scouting-nederland-acf-row-number' }, index + 1),
+            { className: 'scouting-nederland-editor-repeater-row', key: index },
+            createElement('div', { className: 'scouting-nederland-editor-repeater-number' }, index + 1),
             createElement(
                 'div',
-                { className: 'scouting-nederland-acf-row-content' },
+                { className: 'scouting-nederland-editor-repeater-content' },
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-acf-row-actions' },
+                    { className: 'scouting-nederland-editor-repeater-actions' },
                     createElement(
                         Button,
                         {
@@ -210,7 +210,7 @@
                 renderImageField(normalizedItem, index, context.setItem),
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-acf-field' },
+                    { className: 'scouting-nederland-editor-form-field' },
                     createElement('label', {}, 'Titel'),
                     createElement(TextControl, {
                         value: normalizedItem.title,
@@ -219,7 +219,7 @@
                 ),
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-acf-field' },
+                    { className: 'scouting-nederland-editor-form-field' },
                     createElement('label', {}, 'Korte tekst'),
                     createElement(TextareaControl, {
                         value: normalizedItem.text,
@@ -378,7 +378,7 @@
                 {
                     onClick: addItem,
                     isPrimary: true,
-                    className: 'scouting-nederland-speltakken-add-button'
+                    className: 'scouting-nederland-editor-speltakken-grid-add'
                 },
                 '+ Speltak toevoegen'
             );
@@ -400,12 +400,12 @@
                 createElement(
                     'div',
                     {
-                        className: 'scouting-nederland-acf-like-block '
-                            + 'scouting-nederland-speltakken-editor-form'
+                        className: 'scouting-nederland-editor-form '
+                            + 'scouting-nederland-editor-speltakken-grid-form'
                     },
                     createElement(
                         'div',
-                        { className: 'scouting-nederland-acf-row' },
+                        { className: 'scouting-nederland-editor-form-row' },
                         createElement('label', {}, 'Kop'),
                         createElement(TextControl, {
                             value: attributes.title || '',
@@ -416,19 +416,19 @@
                     createElement(
                         'div',
                         {
-                            className: 'scouting-nederland-acf-section-title '
-                                + 'scouting-nederland-acf-section-title-with-action'
+                            className: 'scouting-nederland-editor-form-section-title '
+                                + 'scouting-nederland-editor-form-section-title-with-action'
                         },
                         createElement('span', {}, 'Kaarten (' + items.length + ')'),
                         addButton
                     ),
                     createElement(
                         'div',
-                        { className: 'scouting-nederland-acf-repeater' },
+                        { className: 'scouting-nederland-editor-repeater' },
                         items.map((item, index) => renderItemEditor(item, index, itemEditorContext)),
                         createElement(
                             'div',
-                            { className: 'scouting-nederland-acf-repeater-add' },
+                            { className: 'scouting-nederland-editor-repeater-add' },
                             createElement(Button, { onClick: addItem, isPrimary: true }, '+ Speltak toevoegen')
                         )
                     )

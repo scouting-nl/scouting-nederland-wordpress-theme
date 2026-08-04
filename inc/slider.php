@@ -204,10 +204,10 @@ function scoutingNederlandRenderHomeSlider($post_id = null) {
             $video_url = wp_get_attachment_url($video_id);
             if ($video_url) {
                 $video_heading = get_post_meta($post_id, '_scouting_nederland_slider_video_heading', true);
-                echo '<section class="scouting-nederland-homepage-slider scouting-nederland-homepage-video scouting-nederland-homepage-video--library ' . esc_attr($scouting_nederland_hero_font_class) . '">';
-                echo '<video class="scouting-nederland-homepage-video__player" src="' . esc_url($video_url) . '" muted loop playsinline controls data-autoplay></video>';
+                echo '<section class="scouting-nederland-homepage-slider scouting-nederland-homepage-video scouting-nederland-homepage-video-library ' . esc_attr($scouting_nederland_hero_font_class) . '">';
+                echo '<video class="scouting-nederland-homepage-video-player" src="' . esc_url($video_url) . '" muted loop playsinline controls data-autoplay></video>';
                 if ($video_heading) {
-                    echo '<div class="scouting-nederland-homepage-video__caption ' . esc_attr($scouting_nederland_hero_font_class) . '"><h1 class="' . esc_attr($scouting_nederland_hero_font_class) . '">' . esc_html($video_heading) . '</h1></div>';
+                    echo '<div class="scouting-nederland-homepage-video-caption ' . esc_attr($scouting_nederland_hero_font_class) . '"><h1 class="' . esc_attr($scouting_nederland_hero_font_class) . '">' . esc_html($video_heading) . '</h1></div>';
                 }
                 echo '</section>';
                 return true;
@@ -218,9 +218,9 @@ function scoutingNederlandRenderHomeSlider($post_id = null) {
             $embed = wp_oembed_get($video);
             if ($embed) {
                 $video_heading = get_post_meta($post_id, '_scouting_nederland_slider_video_heading', true);
-                echo '<section class="scouting-nederland-homepage-slider scouting-nederland-homepage-video ' . esc_attr($scouting_nederland_hero_font_class) . '"><div class="scouting-nederland-homepage-video__embed">' . $embed . '</div>';
+                echo '<section class="scouting-nederland-homepage-slider scouting-nederland-homepage-video ' . esc_attr($scouting_nederland_hero_font_class) . '"><div class="scouting-nederland-homepage-video-embed">' . $embed . '</div>';
                 if ($video_heading) {
-                    echo '<div class="scouting-nederland-homepage-video__caption ' . esc_attr($scouting_nederland_hero_font_class) . '"><h1 class="' . esc_attr($scouting_nederland_hero_font_class) . '">' . esc_html($video_heading) . '</h1></div>';
+                    echo '<div class="scouting-nederland-homepage-video-caption ' . esc_attr($scouting_nederland_hero_font_class) . '"><h1 class="' . esc_attr($scouting_nederland_hero_font_class) . '">' . esc_html($video_heading) . '</h1></div>';
                 }
                 echo '</section>';
                 return true;
@@ -257,12 +257,12 @@ function scoutingNederlandRenderHomeSlider($post_id = null) {
         $is_active = $index === 0;
         echo '<div class="scouting-nederland-homepage-slide' . ($is_active ? ' is-active' : '') . '" aria-hidden="' . ($is_active ? 'false' : 'true') . '" style="background-image:url(' . esc_url($slide['image']) . ')">';
         if ($slide['heading']) {
-            echo '<div class="scouting-nederland-homepage-slide__caption ' . esc_attr($scouting_nederland_hero_font_class) . '"><h1 class="' . esc_attr($scouting_nederland_hero_font_class) . '">' . esc_html($slide['heading']) . '</h1></div>';
+            echo '<div class="scouting-nederland-homepage-slide-caption ' . esc_attr($scouting_nederland_hero_font_class) . '"><h1 class="' . esc_attr($scouting_nederland_hero_font_class) . '">' . esc_html($slide['heading']) . '</h1></div>';
         }
         echo '</div>';
     }
     if (count($rendered_slides) > 1) {
-        echo '<button type="button" class="scouting-nederland-homepage-slider__toggle" aria-pressed="false" aria-label="' . esc_attr__('Diavoorstelling pauzeren', 'scouting-nederland') . '" data-pause-label="' . esc_attr__('Diavoorstelling pauzeren', 'scouting-nederland') . '" data-play-label="' . esc_attr__('Diavoorstelling starten', 'scouting-nederland') . '">';
+        echo '<button type="button" class="scouting-nederland-homepage-slider-toggle" aria-pressed="false" aria-label="' . esc_attr__('Diavoorstelling pauzeren', 'scouting-nederland') . '" data-pause-label="' . esc_attr__('Diavoorstelling pauzeren', 'scouting-nederland') . '" data-play-label="' . esc_attr__('Diavoorstelling starten', 'scouting-nederland') . '">';
         echo '<i class="fas fa-pause" aria-hidden="true"></i>';
         echo '</button>';
     }

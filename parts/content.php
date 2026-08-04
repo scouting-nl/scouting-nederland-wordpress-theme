@@ -1,9 +1,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(is_singular('post') ? 'scouting-nederland-single-post mb-5' : 'mb-5'); ?>>
     <?php if (is_singular('post')) : ?>
-        <header class="scouting-nederland-single-post__header">
-            <p class="scouting-nederland-single-post__eyebrow"><?php esc_html_e('Bericht', 'scouting-nederland'); ?></p>
-            <h1 class="scouting-nederland-single-post__title"><?php the_title(); ?></h1>
-            <div class="scouting-nederland-single-post__meta">
+        <header class="scouting-nederland-single-post-header">
+            <p class="scouting-nederland-single-post-eyebrow"><?php esc_html_e('Bericht', 'scouting-nederland'); ?></p>
+            <h1 class="scouting-nederland-single-post-title"><?php the_title(); ?></h1>
+            <div class="scouting-nederland-single-post-meta">
                 <span><?php echo esc_html(get_the_date()); ?></span>
                 <?php $scouting_nederland_author_name = get_the_author(); ?>
                 <?php if ($scouting_nederland_author_name) : ?>
@@ -12,20 +12,20 @@
             </div>
         </header>
 
-        <div class="entry-content scouting-nederland-single-post__content">
+        <div class="entry-content scouting-nederland-single-post-content">
             <?php the_content(); wp_link_pages(); ?>
         </div>
 
         <?php if (has_category() || has_tag()) : ?>
-            <footer class="scouting-nederland-single-post__footer">
+            <footer class="scouting-nederland-single-post-footer">
                 <?php if (has_category()) : ?>
-                    <div class="scouting-nederland-single-post__terms">
+                    <div class="scouting-nederland-single-post-terms">
                         <strong><?php esc_html_e('Categorieën:', 'scouting-nederland'); ?></strong>
                         <?php the_category(', '); ?>
                     </div>
                 <?php endif; ?>
                 <?php if (has_tag()) : ?>
-                    <div class="scouting-nederland-single-post__terms">
+                    <div class="scouting-nederland-single-post-terms">
                         <strong><?php esc_html_e('Tags:', 'scouting-nederland'); ?></strong>
                         <?php the_tags('', ', '); ?>
                     </div>
@@ -33,11 +33,11 @@
             </footer>
         <?php endif; ?>
 
-        <nav class="scouting-nederland-single-post__navigation" aria-label="<?php esc_attr_e('Berichtnavigatie', 'scouting-nederland'); ?>">
-            <div class="scouting-nederland-single-post__nav-item">
+        <nav class="scouting-nederland-single-post-navigation" aria-label="<?php esc_attr_e('Berichtnavigatie', 'scouting-nederland'); ?>">
+            <div class="scouting-nederland-single-post-nav-item">
                 <?php previous_post_link('<span>' . esc_html__('Vorige bericht', 'scouting-nederland') . '</span>%link'); ?>
             </div>
-            <div class="scouting-nederland-single-post__nav-item scouting-nederland-single-post__nav-item--next">
+            <div class="scouting-nederland-single-post-nav-item scouting-nederland-single-post-nav-item-next">
                 <?php next_post_link('<span>' . esc_html__('Volgende bericht', 'scouting-nederland') . '</span>%link'); ?>
             </div>
         </nav>

@@ -10,8 +10,8 @@
   const SLIDE_SELECTOR = '.scouting-nederland-homepage-slide';
   const SLIDER_SELECTOR = '[data-scouting-nederland-slider]';
   const SLIDE_DURATION_MS = 6000;
-  const TOGGLE_SELECTOR = '.scouting-nederland-homepage-slider__toggle';
-  const VIDEO_SELECTOR = '.scouting-nederland-homepage-video__player';
+  const TOGGLE_SELECTOR = '.scouting-nederland-homepage-slider-toggle';
+  const VIDEO_SELECTOR = '.scouting-nederland-homepage-video-player';
   const motionPreference = globalThis.matchMedia
     ? globalThis.matchMedia(REDUCED_MOTION_QUERY)
     : null;

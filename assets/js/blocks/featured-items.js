@@ -70,7 +70,7 @@
         // Route image selection and removal through the immutable item updater.
         return createElement(
             'div',
-            { className: 'scouting-nederland-acf-field' },
+            { className: 'scouting-nederland-editor-form-field' },
             createElement('label', {}, 'Beeld'),
             createElement(ImagePicker, {
                 url: item.imageUrl || '',
@@ -92,11 +92,11 @@
         // Keep all button-related values grouped in one fieldset for this card.
         return createElement(
             'fieldset',
-            { className: 'scouting-nederland-acf-button-box' },
+            { className: 'scouting-nederland-editor-button' },
             createElement('legend', {}, 'Knop'),
             createElement(
                 'div',
-                { className: 'scouting-nederland-acf-field' },
+                { className: 'scouting-nederland-editor-form-field' },
                 createElement('label', {}, 'Tekst'),
                 createElement(TextControl, {
                     value: item.buttonText || '',
@@ -105,10 +105,10 @@
             ),
             createElement(
                 'div',
-                { className: 'scouting-nederland-acf-button-grid' },
+                { className: 'scouting-nederland-editor-button-grid' },
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-acf-field' },
+                    { className: 'scouting-nederland-editor-form-field' },
                     createElement('label', {}, 'URL'),
                     createElement(LinkPickerField, {
                         url: item.buttonUrl || '',
@@ -123,7 +123,7 @@
                 ),
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-acf-field' },
+                    { className: 'scouting-nederland-editor-form-field' },
                     createElement('label', {}, 'Kleur'),
                     createElement(ColorRadioControl, {
                         value: item.buttonColor,
@@ -147,14 +147,14 @@
         // Compose the heading, image, rich text, and button fields under one numbered row.
         return createElement(
             'div',
-            { className: 'scouting-nederland-acf-repeater-row', key: index },
-            createElement('div', { className: 'scouting-nederland-acf-row-number' }, index + 1),
+            { className: 'scouting-nederland-editor-repeater-row', key: index },
+            createElement('div', { className: 'scouting-nederland-editor-repeater-number' }, index + 1),
             createElement(
                 'div',
-                { className: 'scouting-nederland-acf-row-content' },
+                { className: 'scouting-nederland-editor-repeater-content' },
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-acf-field' },
+                    { className: 'scouting-nederland-editor-form-field' },
                     createElement('label', {}, 'Kop'),
                     createElement(TextControl, {
                         value: item.title || '',
@@ -164,7 +164,7 @@
                 renderImageField(item, index, updateItem),
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-acf-field' },
+                    { className: 'scouting-nederland-editor-form-field' },
                     createElement('label', {}, 'Tekst'),
                     createElement(ClassicHtmlEditor, {
                         value: item.text || '',
@@ -220,12 +220,12 @@
             return createElement(
                 'div',
                 {
-                    className: 'scouting-nederland-acf-like-block '
-                        + 'scouting-nederland-featured-editor-form'
+                    className: 'scouting-nederland-editor-form '
+                        + 'scouting-nederland-editor-featured-items-form'
                 },
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-acf-row' },
+                    { className: 'scouting-nederland-editor-form-row' },
                     createElement('label', {}, 'Kop'),
                     createElement(TextControl, {
                         value: attributes.title || '',
@@ -235,12 +235,12 @@
                 ),
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-acf-section-title' },
+                    { className: 'scouting-nederland-editor-form-section-title' },
                     'Items'
                 ),
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-acf-repeater' },
+                    { className: 'scouting-nederland-editor-repeater' },
                     FEATURED_ITEM_INDEXES.map((index) => {
                         // Supply an empty object when an older block has fewer than three items.
                         const item = items[index] || {};

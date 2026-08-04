@@ -126,7 +126,7 @@
         // Render every supported color from the central list to keep blocks consistent.
         return createElement(
             'div',
-            { className: 'scouting-nederland-editor-radio-row' },
+            { className: 'scouting-nederland-editor-radio' },
             BUTTON_COLORS.map((color) => createElement(
                 'label',
                 { key: color },
@@ -161,7 +161,7 @@
                 allowedTypes: ['image'],
                 render: ({ open }) => createElement(
                     'div',
-                    { className: 'scouting-nederland-acf-image-field' },
+                    { className: 'scouting-nederland-editor-image-picker' },
                     url
                         ? createElement('img', { src: url, alt: '', onClick: open })
                         : createElement(
@@ -391,7 +391,7 @@
             return createElement(
                 'div',
                 {
-                    className: 'scouting-nederland-tinymce-editor-wrap',
+                    className: 'scouting-nederland-editor-tinymce',
                     onClick: this.handleEditorClick
                 },
                 createElement('textarea', {
@@ -674,10 +674,10 @@
             // Render either the selected link details or an explicit empty state.
             return createElement(
                 'div',
-                { className: 'scouting-nederland-link-field-acf' },
+                { className: 'scouting-nederland-editor-link' },
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-link-field-acf__summary' },
+                    { className: 'scouting-nederland-editor-link-summary' },
                     currentUrl
                         ? createElement(
                             Fragment,
@@ -687,13 +687,13 @@
                         )
                         : createElement(
                             'span',
-                            { className: 'scouting-nederland-link-field-acf__empty' },
+                            { className: 'scouting-nederland-editor-link-empty' },
                             'Geen link gekozen'
                         )
                 ),
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-link-field-acf__actions' },
+                    { className: 'scouting-nederland-editor-link-actions' },
                     createElement(
                         Button,
                         { variant: 'secondary', onClick: this.openLinkModal },

@@ -9,11 +9,11 @@ if (is_singular('post') && has_post_thumbnail(get_queried_object_id())) {
 <div class="scouting-nederland-base-widget-hero container-fluid px-0">
     <div class="row g-0"><div class="col">
         <?php if ($scouting_nederland_single_hero_url) : ?>
-            <div class="scouting-nederland-base-default-banner scouting-nederland-base-default-banner--low scouting-nederland-single-hero" style="background-image:url('<?php echo esc_url($scouting_nederland_single_hero_url); ?>')"></div>
+            <div class="scouting-nederland-base-default-banner scouting-nederland-base-default-banner-low scouting-nederland-single-hero" style="background-image:url('<?php echo esc_url($scouting_nederland_single_hero_url); ?>')"></div>
         <?php elseif (is_active_sidebar('hero')) : ?>
             <?php dynamic_sidebar('hero'); ?>
         <?php else : ?>
-            <div class="scouting-nederland-base-default-banner scouting-nederland-base-default-banner--low" style="background-image:url('<?php echo esc_url(scoutingNederlandGetDefaultHeroUrl()); ?>')"></div>
+            <div class="scouting-nederland-base-default-banner scouting-nederland-base-default-banner-low" style="background-image:url('<?php echo esc_url(scoutingNederlandGetDefaultHeroUrl()); ?>')"></div>
         <?php endif; ?>
     </div></div>
 </div>

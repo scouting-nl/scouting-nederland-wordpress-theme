@@ -134,7 +134,7 @@
 
                 return createElement(
                     'label',
-                    { key: category.id, className: 'scouting-nederland-editor-news-items__category' },
+                    { key: category.id, className: 'scouting-nederland-editor-news-items-category' },
                     createElement('input', {
                         type: 'checkbox',
                         checked: selectedCategoryIds.includes(categoryId),
@@ -148,11 +148,11 @@
         // Place all category choices in the block editor's standard row structure.
         return createElement(
             'div',
-            { className: 'scouting-nederland-editor-form__row' },
+            { className: 'scouting-nederland-editor-form-row' },
             createElement('label', {}, 'Categorieën'),
             createElement(
                 'div',
-                { className: 'scouting-nederland-editor-news-items__categories' },
+                { className: 'scouting-nederland-editor-news-items-categories' },
                 categoryOptions
             )
         );
@@ -169,10 +169,10 @@
         // Give every selected post an accessible removal button.
         return createElement(
             'div',
-            { className: 'scouting-nederland-editor-news-items__tokens' },
+            { className: 'scouting-nederland-editor-news-items-tokens' },
             selectedPosts.map((post) => createElement(
                 'span',
-                { key: post.id, className: 'scouting-nederland-editor-news-items__token' },
+                { key: post.id, className: 'scouting-nederland-editor-news-items-token' },
                 post.title,
                 createElement(
                     'button',
@@ -204,7 +204,7 @@
         return createElement(
             'select',
             {
-                className: 'scouting-nederland-editor-form__select',
+                className: 'scouting-nederland-editor-form-select',
                 value: '',
                 onChange: (event) => {
                     // Add the selected ID, then reset the control to its placeholder.
@@ -236,11 +236,11 @@
         // Compose the related selection controls under one labelled form row.
         return createElement(
             'div',
-            { className: 'scouting-nederland-editor-form__row' },
+            { className: 'scouting-nederland-editor-form-row' },
             createElement('label', {}, 'Nieuwsitems'),
             createElement(
                 'div',
-                { className: 'scouting-nederland-editor-news-items__selector' },
+                { className: 'scouting-nederland-editor-news-items-selector' },
                 renderSelectedPostTokens(context.selectedPosts, context.removePost),
                 renderPostSelector(context.availablePosts, context.selectedPostIds, context.addPost),
                 createElement(
@@ -263,7 +263,7 @@
         // Constrain the public query count to the supported one-through-six range.
         return createElement(
             'div',
-            { className: 'scouting-nederland-editor-form__row' },
+            { className: 'scouting-nederland-editor-form-row' },
             createElement('label', {}, 'Aantal'),
             createElement(RangeControl, {
                 value: attributes.count || 3,
@@ -285,17 +285,17 @@
         // Group all overview-button attributes in one fieldset.
         return createElement(
             'div',
-            { className: 'scouting-nederland-editor-form__row' },
+            { className: 'scouting-nederland-editor-form-row' },
             createElement('label', {}, 'Knop'),
             createElement(
                 'fieldset',
                 {
                     className: 'scouting-nederland-editor-button '
-                        + 'scouting-nederland-editor-news-items__button'
+                        + 'scouting-nederland-editor-news-items-button'
                 },
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-editor-form__field' },
+                    { className: 'scouting-nederland-editor-form-field' },
                     createElement('label', {}, 'Tekst'),
                     createElement(TextControl, {
                         value: attributes.buttonText || '',
@@ -304,10 +304,10 @@
                 ),
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-editor-button__grid' },
+                    { className: 'scouting-nederland-editor-button-grid' },
                     createElement(
                         'div',
-                        { className: 'scouting-nederland-editor-form__field' },
+                        { className: 'scouting-nederland-editor-form-field' },
                         createElement('label', {}, 'URL'),
                         createElement(LinkPickerField, {
                             url: attributes.buttonUrl || '',
@@ -320,7 +320,7 @@
                     ),
                     createElement(
                         'div',
-                        { className: 'scouting-nederland-editor-form__field' },
+                        { className: 'scouting-nederland-editor-form-field' },
                         createElement('label', {}, 'Kleur'),
                         createElement(ColorRadioControl, {
                             value: attributes.buttonColor,

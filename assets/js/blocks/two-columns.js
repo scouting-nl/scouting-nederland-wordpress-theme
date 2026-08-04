@@ -93,7 +93,7 @@
         // Bind the shared image picker to the attribute named by this column configuration.
         return createElement(
             'div',
-            { className: 'scouting-nederland-acf-field' },
+            { className: 'scouting-nederland-editor-form-field' },
             createElement('label', {}, 'Beeld'),
             createElement(ImagePicker, {
                 url: attributes[config.imageKey] || '',
@@ -120,13 +120,13 @@
         return createElement(
             'fieldset',
             {
-                className: 'scouting-nederland-acf-button-box '
-                    + 'scouting-nederland-two-button-box'
+                className: 'scouting-nederland-editor-button '
+                    + 'scouting-nederland-editor-two-columns-button'
             },
             createElement('legend', {}, 'Knop'),
             createElement(
                 'div',
-                { className: 'scouting-nederland-acf-field' },
+                { className: 'scouting-nederland-editor-form-field' },
                 createElement('label', {}, 'Tekst'),
                 createElement(TextControl, {
                     value: attributes[config.buttonTextKey] || '',
@@ -139,10 +139,10 @@
             ),
             createElement(
                 'div',
-                { className: 'scouting-nederland-acf-button-grid' },
+                { className: 'scouting-nederland-editor-button-grid' },
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-acf-field' },
+                    { className: 'scouting-nederland-editor-form-field' },
                     createElement('label', {}, 'URL'),
                     createElement(LinkPickerField, {
                         url: attributes[config.buttonUrlKey] || '',
@@ -167,7 +167,7 @@
                 ),
                 createElement(
                     'div',
-                    { className: 'scouting-nederland-acf-field' },
+                    { className: 'scouting-nederland-editor-form-field' },
                     createElement('label', {}, 'Kleur'),
                     createElement(ColorRadioControl, {
                         value: attributes[config.buttonColorKey],
@@ -195,12 +195,12 @@
         // Compose common fields while allowing the configuration to omit the image control.
         return createElement(
             'fieldset',
-            { className: 'scouting-nederland-two-column-fieldset', key: config.key },
+            { className: 'scouting-nederland-editor-two-columns-column', key: config.key },
             createElement('legend', {}, config.legend),
             renderImageField(config, attributes, setAttributes),
             createElement(
                 'div',
-                { className: 'scouting-nederland-acf-field' },
+                { className: 'scouting-nederland-editor-form-field' },
                 createElement('label', {}, 'Kop'),
                 createElement(TextControl, {
                     value: attributes[config.titleKey] || '',
@@ -209,7 +209,7 @@
             ),
             createElement(
                 'div',
-                { className: 'scouting-nederland-acf-field' },
+                { className: 'scouting-nederland-editor-form-field' },
                 createElement('label', {}, 'Tekst'),
                 createElement(ClassicHtmlEditor, {
                     value: attributes[config.textKey] || '',
@@ -257,8 +257,8 @@
             return createElement(
                 'div',
                 {
-                    className: 'scouting-nederland-acf-like-block '
-                        + 'scouting-nederland-two-columns-editor-form'
+                    className: 'scouting-nederland-editor-form '
+                        + 'scouting-nederland-editor-two-columns-form'
                 },
                 COLUMN_CONFIGS.map((config) => renderColumnEditor(
                     config,

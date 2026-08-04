@@ -3,7 +3,7 @@
 <div class="scouting-nederland-base-widget-hero container-fluid px-0">
     <div class="row g-0"><div class="col">
         <?php if (is_active_sidebar('hero')) { dynamic_sidebar('hero'); } else { ?>
-            <div class="scouting-nederland-base-default-banner scouting-nederland-base-default-banner--low" style="background-image:url('<?php echo esc_url(scoutingNederlandGetDefaultHeroUrl()); ?>')"></div>
+            <div class="scouting-nederland-base-default-banner scouting-nederland-base-default-banner-low" style="background-image:url('<?php echo esc_url(scoutingNederlandGetDefaultHeroUrl()); ?>')"></div>
         <?php } ?>
     </div></div>
 </div>

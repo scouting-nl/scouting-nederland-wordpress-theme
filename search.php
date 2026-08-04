@@ -7,7 +7,7 @@ $has_search_query = $search_query !== '';
 <div class="scouting-nederland-base-main"><div class="scouting-nederland-layout-shell">
 <main id="scouting-nederland-layout-content" class="scouting-nederland-search-page" role="main">
     <section class="scouting-nederland-search-hero">
-        <div class="container scouting-nederland-search-hero__inner">
+        <div class="container scouting-nederland-search-hero-inner">
             <span class="scouting-nederland-search-kicker">
                 <i class="fas fa-search" aria-hidden="true"></i>
                 <?php esc_html_e('Zoeken op de site', 'scouting-nederland'); ?>
@@ -36,13 +36,13 @@ $has_search_query = $search_query !== '';
                 <input
                     id="scouting-nederland-search-field"
                     type="search"
-                    class="scouting-nederland-search-form__input"
+                    class="scouting-nederland-search-form-input"
                     placeholder="<?php echo esc_attr__('Waar ben je naar op zoek?', 'scouting-nederland'); ?>"
                     value="<?php echo esc_attr($search_query); ?>"
                     name="s"
                     required
                 />
-                <button type="submit" class="scouting-nederland-search-form__button">
+                <button type="submit" class="scouting-nederland-search-form-button">
                     <i class="fas fa-search" aria-hidden="true"></i>
                     <span><?php esc_html_e('Zoeken', 'scouting-nederland'); ?></span>
                 </button>
@@ -53,7 +53,7 @@ $has_search_query = $search_query !== '';
     <section class="container scouting-nederland-search-content">
         <?php if (!$has_search_query) : ?>
             <div class="scouting-nederland-search-empty">
-                <div class="scouting-nederland-search-empty__icon">
+                <div class="scouting-nederland-search-empty-icon">
                     <i class="fas fa-compass" aria-hidden="true"></i>
                 </div>
                 <h2><?php esc_html_e('Nog geen zoekterm ingevuld', 'scouting-nederland'); ?></h2>
@@ -74,17 +74,17 @@ $has_search_query = $search_query !== '';
                 <?php while (have_posts()) : the_post(); ?>
                     <article <?php post_class('scouting-nederland-search-card'); ?>>
                         <?php if (has_post_thumbnail()) : ?>
-                            <a class="scouting-nederland-search-card__image" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+                            <a class="scouting-nederland-search-card-image" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
                                 <?php the_post_thumbnail('medium_large'); ?>
                             </a>
                         <?php else : ?>
-                            <div class="scouting-nederland-search-card__image scouting-nederland-search-card__image--fallback" aria-hidden="true">
+                            <div class="scouting-nederland-search-card-image scouting-nederland-search-card-image-fallback" aria-hidden="true">
                                 <i class="fas fa-compass" aria-hidden="true"></i>
                             </div>
                         <?php endif; ?>
 
-                        <div class="scouting-nederland-search-card__content">
-                            <div class="scouting-nederland-search-card__meta">
+                        <div class="scouting-nederland-search-card-content">
+                            <div class="scouting-nederland-search-card-meta">
                                 <?php
                                 $post_type = get_post_type_object(get_post_type());
                                 echo esc_html($post_type ? $post_type->labels->singular_name : __('Pagina', 'scouting-nederland'));
@@ -95,15 +95,15 @@ $has_search_query = $search_query !== '';
                                 <?php endif; ?>
                             </div>
 
-                            <h2 class="scouting-nederland-search-card__title">
+                            <h2 class="scouting-nederland-search-card-title">
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h2>
 
-                            <div class="scouting-nederland-search-card__excerpt">
+                            <div class="scouting-nederland-search-card-excerpt">
                                 <?php the_excerpt(); ?>
                             </div>
 
-                            <a class="scouting-nederland-search-card__link" href="<?php the_permalink(); ?>">
+                            <a class="scouting-nederland-search-card-link" href="<?php the_permalink(); ?>">
                                 <?php esc_html_e('Bekijk resultaat', 'scouting-nederland'); ?> <span aria-hidden="true">›</span>
                             </a>
                         </div>
@@ -120,13 +120,13 @@ $has_search_query = $search_query !== '';
             </div>
         <?php else : ?>
             <div class="scouting-nederland-search-empty">
-                <div class="scouting-nederland-search-empty__icon">
+                <div class="scouting-nederland-search-empty-icon">
                     <i class="fas fa-map-signs" aria-hidden="true"></i>
                 </div>
                 <h2><?php esc_html_e('De route loopt hier dood', 'scouting-nederland'); ?></h2>
                 <p><?php esc_html_e('Controleer je zoekterm, probeer een korter woord of ga terug naar de homepage.', 'scouting-nederland'); ?></p>
-                <div class="scouting-nederland-search-empty__actions">
-                    <a class="btn scouting-nederland-buttons-button scouting-nederland-buttons-button--blue" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Terug naar home', 'scouting-nederland'); ?></a>
+                <div class="scouting-nederland-search-empty-actions">
+                    <a class="btn scouting-nederland-buttons-button scouting-nederland-buttons-button-blue" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Terug naar home', 'scouting-nederland'); ?></a>
                 </div>
             </div>
         <?php endif; ?>

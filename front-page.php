@@ -25,7 +25,7 @@ if (!$scouting_nederland_hide_hero) {
     </div>
     <?php else : ?>
     <section class="scouting-nederland-homepage-hero <?php echo esc_attr($scouting_nederland_hero_font_class); ?>" style="background-image:url('<?php echo esc_url($hero_url); ?>')">
-        <div class="scouting-nederland-homepage-hero__inner <?php echo esc_attr($scouting_nederland_hero_font_class); ?>">
+        <div class="scouting-nederland-homepage-hero-inner <?php echo esc_attr($scouting_nederland_hero_font_class); ?>">
             <?php if (!$scouting_nederland_hide_page_title) : ?><h1 class="<?php echo esc_attr($scouting_nederland_hero_font_class); ?>"><?php the_title(); ?></h1><?php endif; ?>
         </div>
     </section>

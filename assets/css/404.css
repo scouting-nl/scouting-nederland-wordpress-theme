@@ -1,284 +1,284 @@
 /* The shared base wrapper owns fixed-header spacing for this template. */
 .scouting-nederland-404-page {
-  padding-top: 0;
+	padding-top: 0;
 }
 
 /* Relative positioning anchors the decorative skyline beneath centered hero content. */
 .scouting-nederland-404-hero {
-  position: relative;
-  padding: 112px 0 72px;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  margin-top: 0 !important;
+	position: relative;
+	padding: 112px 0 72px;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	margin-top: 0 !important;
 }
 
 /* Theme-color utility classes swap only the skyline bitmap, not its geometry. */
 .scouting-nederland-404-hero::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 82px;
-  background-image: url("../images/skyline-groen.png");
-  background-repeat: repeat-x;
-  background-position: 0 100%;
-  background-size: auto 78px;
-  animation: scoutingNederland404SkylineMove 130s linear infinite;
-  pointer-events: none;
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -1px;
+	height: 82px;
+	background-image: url("../images/skyline-groen.png");
+	background-repeat: repeat-x;
+	background-position: 0 100%;
+	background-size: auto 78px;
+	animation: scouting-nederland-404-skyline-move 130s linear infinite;
+	pointer-events: none;
 }
 
-@keyframes scoutingNederland404SkylineMove {
-  from {
-    background-position-x: 0;
-  }
+@keyframes scouting-nederland-404-skyline-move {
+	from {
+		background-position-x: 0;
+	}
 
-  to {
-    background-position-x: 2000px;
-  }
+	to {
+		background-position-x: 2000px;
+	}
 }
 
 body.scouting-nederland-utilities-main-blue .scouting-nederland-404-hero::after {
-  background-image: url("../images/skyline-blauw.png");
+	background-image: url("../images/skyline-blauw.png");
 }
 
 body.scouting-nederland-utilities-main-yellow .scouting-nederland-404-hero::after {
-  background-image: url("../images/skyline-geel.png");
+	background-image: url("../images/skyline-geel.png");
 }
 
 body.scouting-nederland-utilities-main-red .scouting-nederland-404-hero::after {
-  background-image: url("../images/skyline-rood.png");
+	background-image: url("../images/skyline-rood.png");
 }
 
 body.scouting-nederland-utilities-main-orange .scouting-nederland-404-hero::after {
-  background-image: url("../images/skyline-oranje.png");
+	background-image: url("../images/skyline-oranje.png");
 }
 
 body.scouting-nederland-utilities-main-purple .scouting-nederland-404-hero::after {
-  background-image: url("../images/skyline-paars.png");
+	background-image: url("../images/skyline-paars.png");
 }
 
 /* A local stacking context keeps copy above the absolutely positioned skyline. */
-.scouting-nederland-404-hero__inner {
-  position: relative;
-  z-index: 1;
-  max-width: 920px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 42px;
-  text-align: center;
+.scouting-nederland-404-hero-inner {
+	position: relative;
+	z-index: 1;
+	max-width: 920px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 42px;
+	text-align: center;
 }
 
 .scouting-nederland-404-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: .55rem;
-  margin: 0 auto 22px;
-  padding: .48rem .85rem;
-  border-radius: 999px;
-  background: #fff;
-  color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
-  font-size: .9rem;
-  font-weight: 800;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, .08);
+	display: inline-flex;
+	align-items: center;
+	gap: 0.55rem;
+	margin: 0 auto 22px;
+	padding: 0.48rem 0.85rem;
+	border-radius: 999px;
+	background: #fff;
+	color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
+	font-size: 0.9rem;
+	font-weight: 800;
+	box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
 }
 
 .scouting-nederland-404-hero h1 {
-  max-width: 920px;
-  margin: 0 auto;
-  color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
-  font-family: "Roboto Slab", Georgia, serif;
-  font-size: clamp(4.4rem, 10vw, 7rem);
-  font-weight: 700;
-  line-height: .95;
+	max-width: 920px;
+	margin: 0 auto;
+	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
+	font-family: "Roboto Slab", Georgia, serif;
+	font-size: clamp(4.4rem, 10vw, 7rem);
+	font-weight: 700;
+	line-height: 0.95;
 }
 
 .scouting-nederland-404-hero p {
-  max-width: 760px;
-  margin: 18px auto 0;
-  font-size: clamp(1.15rem, 2vw, 1.5rem);
-  font-weight: 500;
-  line-height: 1.8;
+	max-width: 760px;
+	margin: 18px auto 0;
+	font-size: clamp(1.15rem, 2vw, 1.5rem);
+	font-weight: 500;
+	line-height: 1.8;
 }
 
 /* Search controls are shared with search.css; this class only centers the 404 instance. */
 .scouting-nederland-404-search-form {
-  margin-left: auto !important;
-  margin-right: auto !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
 }
 
 .scouting-nederland-404-content {
-  padding-top: 54px;
-  padding-bottom: 76px;
+	padding-top: 54px;
+	padding-bottom: 76px;
 }
 
 /* Asymmetric Grid tracks prioritize recovery actions over secondary guidance. */
 .scouting-nederland-404-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(320px, .95fr);
-  gap: 32px;
-  align-items: start;
+	display: grid;
+	grid-template-columns: minmax(0, 1.55fr) minmax(320px, 0.95fr);
+	gap: 32px;
+	align-items: start;
 }
 
 .scouting-nederland-404-card {
-  background: #fff;
-  border-radius: 24px;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, .08);
+	background: #fff;
+	border-radius: 24px;
+	box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
 }
 
-.scouting-nederland-404-card--main {
-  padding: 34px 34px 30px;
+.scouting-nederland-404-card-main {
+	padding: 34px 34px 30px;
 }
 
-.scouting-nederland-404-card--side {
-  padding: 30px;
-  border: 2px dashed var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(250, 250, 250, 1) 100%);
+.scouting-nederland-404-card-side {
+	padding: 30px;
+	border: 2px dashed var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
+	background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(250, 250, 250, 1) 100%);
 }
 
 .scouting-nederland-404-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 0 16px;
-  padding: .52rem .88rem;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, .04);
-  color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
-  font-weight: 700;
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	margin: 0 0 16px;
+	padding: 0.52rem 0.88rem;
+	border-radius: 999px;
+	background: rgba(0, 0, 0, 0.04);
+	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
+	font-weight: 700;
 }
 
 .scouting-nederland-404-badge i {
-  color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
+	color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
 }
 
 .scouting-nederland-404-card h2,
 .scouting-nederland-404-card h3 {
-  margin: 0 0 14px;
-  color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
-  font-family: "Roboto Slab", Georgia, serif;
-  font-weight: 700;
-  line-height: 1.08;
+	margin: 0 0 14px;
+	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
+	font-family: "Roboto Slab", Georgia, serif;
+	font-weight: 700;
+	line-height: 1.08;
 }
 
 .scouting-nederland-404-card h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
+	font-size: clamp(2rem, 4vw, 3rem);
 }
 
 .scouting-nederland-404-card h3 {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+	font-size: clamp(1.6rem, 3vw, 2.2rem);
 }
 
 .scouting-nederland-404-card p,
 .scouting-nederland-404-card li {
-  font-size: 1.02rem;
-  line-height: 1.9;
+	font-size: 1.02rem;
+	line-height: 1.9;
 }
 
 .scouting-nederland-404-tips,
 .scouting-nederland-404-found {
-  list-style: none;
-  margin: 24px 0 0;
-  padding: 0;
+	list-style: none;
+	margin: 24px 0 0;
+	padding: 0;
 }
 
 /* Flex rows align each icon with multi-line guidance text. */
 .scouting-nederland-404-tips li {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, .08);
+	display: flex;
+	align-items: flex-start;
+	gap: 14px;
+	padding: 12px 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .scouting-nederland-404-tips li:last-child {
-  border-bottom: 0;
+	border-bottom: 0;
 }
 
 .scouting-nederland-404-tips i {
-  flex: 0 0 auto;
-  margin-top: 7px;
-  color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
-  font-size: 1.1rem;
+	flex: 0 0 auto;
+	margin-top: 7px;
+	color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
+	font-size: 1.1rem;
 }
 
 .scouting-nederland-404-small {
-  margin: 0 0 10px;
-  opacity: .82;
+	margin: 0 0 10px;
+	opacity: 0.82;
 }
 
 .scouting-nederland-404-found li {
-  position: relative;
-  padding: 0 0 0 22px;
-  margin: 0 0 10px;
+	position: relative;
+	padding: 0 0 0 22px;
+	margin: 0 0 10px;
 }
 
 .scouting-nederland-404-found li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: .8em;
-  width: .4rem;
-  height: .4rem;
-  border-radius: 50%;
-  background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.8em;
+	width: 0.4rem;
+	height: 0.4rem;
+	border-radius: 50%;
+	background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
 }
 
 .scouting-nederland-404-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 26px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	margin-top: 26px;
 }
 
 .scouting-nederland-404-actions .btn {
-  display: inline-block;
-  border: 0;
-  border-radius: 999px;
-  padding: .92rem 1.5rem;
-  color: #fff !important;
-  text-decoration: none;
-  font-size: .8rem;
-  font-weight: 800;
-  line-height: 1;
-  text-transform: uppercase;
+	display: inline-block;
+	border: 0;
+	border-radius: 999px;
+	padding: 0.92rem 1.5rem;
+	color: #fff !important;
+	text-decoration: none;
+	font-size: 0.8rem;
+	font-weight: 800;
+	line-height: 1;
+	text-transform: uppercase;
 }
 
 /* Tablet layout stacks the cards and reduces hero space. */
 @media (max-width: 991.98px) {
-  .scouting-nederland-404-hero {
-    padding-top: 88px;
-    padding-bottom: 64px;
-  }
+	.scouting-nederland-404-hero {
+		padding-top: 88px;
+		padding-bottom: 64px;
+	}
 
-  .scouting-nederland-404-hero__inner {
-    padding-top: 32px;
-  }
+	.scouting-nederland-404-hero-inner {
+		padding-top: 32px;
+	}
 
-  .scouting-nederland-404-grid {
-    grid-template-columns: 1fr;
-  }
+	.scouting-nederland-404-grid {
+		grid-template-columns: 1fr;
+	}
 }
 
 /* Phone layout reduces card padding while retaining comfortable tap targets. */
 @media (max-width: 767.98px) {
 
-  .scouting-nederland-404-card--main,
-  .scouting-nederland-404-card--side {
-    padding: 24px 22px;
-    border-radius: 20px;
-  }
+	.scouting-nederland-404-card-main,
+	.scouting-nederland-404-card-side {
+		padding: 24px 22px;
+		border-radius: 20px;
+	}
 
-  .scouting-nederland-404-content {
-    padding-top: 34px;
-    padding-bottom: 48px;
-  }
+	.scouting-nederland-404-content {
+		padding-top: 34px;
+		padding-bottom: 48px;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .scouting-nederland-404-hero::after {
-    animation: none;
-  }
+	.scouting-nederland-404-hero::after {
+		animation: none;
+	}
 }
