@@ -1,36 +1,38 @@
 <?php get_header(); ?>
 <?php
-$tc4_page_id = get_queried_object_id();
-$tc4_page_display_settings = scoutingtc4_get_page_display_settings($tc4_page_id);
-$tc4_hide_hero = !empty($tc4_page_display_settings['hide_hero']);
-$tc4_hide_page_title = !empty($tc4_page_display_settings['hide_page_title']);
-$rendered_slider = scoutingtc4_render_home_slider($tc4_page_id);
-$tc4_hero_font_class = scoutingtc4_get_hero_title_font_class($tc4_page_id);
+$scouting_nederland_page_id = get_queried_object_id();
+$scouting_nederland_page_display_settings = scoutingNederlandGetPageDisplaySettings($scouting_nederland_page_id);
+$scouting_nederland_hide_hero = !empty($scouting_nederland_page_display_settings['hide_hero']);
+$scouting_nederland_hide_page_title = !empty($scouting_nederland_page_display_settings['hide_page_title']);
+$rendered_slider = false;
+$scouting_nederland_hero_font_class = scoutingNederlandGetHeroTitleFontClass($scouting_nederland_page_id);
 $hero_url = '';
-if (!$tc4_hide_hero && !$rendered_slider) {
+if (!$scouting_nederland_hide_hero) {
     if (has_post_thumbnail()) {
-        $hero_url = get_the_post_thumbnail_url(get_the_ID(), 'tc4_home_hero');
+        $hero_url = get_the_post_thumbnail_url(get_the_ID(), 'scouting_nederland_home_hero');
     }
     if (!$hero_url) {
-        $hero_url = scoutingtc4_get_default_hero_url();
+        $hero_url = scoutingNederlandGetDefaultHeroUrl();
     }
 }
 ?>
-<?php if (!$tc4_hide_hero && !$rendered_slider) : ?>
+<div class="scouting-nederland-base-main"><div class="scouting-nederland-layout-shell">
+<?php $rendered_slider = scoutingNederlandRenderHomeSlider($scouting_nederland_page_id); ?>
+<?php if (!$scouting_nederland_hide_hero && !$rendered_slider) : ?>
     <?php if (is_active_sidebar('hero')) : ?>
-    <div id="tc4-hero" class="container-fluid px-0 <?php echo esc_attr($tc4_hero_font_class); ?>">
-        <div class="row no-gutters"><div class="col <?php echo esc_attr($tc4_hero_font_class); ?>"><?php dynamic_sidebar('hero'); ?></div></div>
+    <div class="scouting-nederland-base-widget-hero container-fluid px-0 <?php echo esc_attr($scouting_nederland_hero_font_class); ?>">
+        <div class="row g-0"><div class="col <?php echo esc_attr($scouting_nederland_hero_font_class); ?>"><?php dynamic_sidebar('hero'); ?></div></div>
     </div>
     <?php else : ?>
-    <section class="tc4-home-hero <?php echo esc_attr($tc4_hero_font_class); ?>" style="background-image:url('<?php echo esc_url($hero_url); ?>')">
-        <div class="tc4-home-hero__inner <?php echo esc_attr($tc4_hero_font_class); ?>">
-            <?php if (!$tc4_hide_page_title) : ?><h1 class="<?php echo esc_attr($tc4_hero_font_class); ?>"><?php the_title(); ?></h1><?php endif; ?>
+    <section class="scouting-nederland-homepage-hero <?php echo esc_attr($scouting_nederland_hero_font_class); ?>" style="background-image:url('<?php echo esc_url($hero_url); ?>')">
+        <div class="scouting-nederland-homepage-hero__inner <?php echo esc_attr($scouting_nederland_hero_font_class); ?>">
+            <?php if (!$scouting_nederland_hide_page_title) : ?><h1 class="<?php echo esc_attr($scouting_nederland_hero_font_class); ?>"><?php the_title(); ?></h1><?php endif; ?>
         </div>
     </section>
     <?php endif; ?>
 <?php endif; ?>
 
-<main id="content" class="tc4-home-content" role="main">
+<main id="scouting-nederland-layout-content" class="scouting-nederland-homepage-content" role="main">
     <?php
     if (have_posts()) :
         while (have_posts()) : the_post();
@@ -39,5 +41,7 @@ if (!$tc4_hide_hero && !$rendered_slider) {
     endif;
     ?>
 </main>
+</div><!-- .content -->
+</div><!-- .scouting-nederland-base-main -->
 
 <?php get_footer(); ?>

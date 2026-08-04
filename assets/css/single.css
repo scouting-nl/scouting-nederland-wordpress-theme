@@ -1,26 +1,28 @@
-.tc4-single-hero {
+/* Featured-image hero scales between a compact minimum and a bounded desktop height. */
+.scouting-nederland-single-hero {
   min-height: clamp(280px, 44vw, 520px);
   background-size: cover;
   background-position: center;
 }
 
-.tc4-single-post {
+/* Restrict long-form reading width independently of Bootstrap's outer container. */
+.scouting-nederland-single-post {
   max-width: 920px;
   margin: 0 auto 4.5rem;
   background: #fff;
 }
 
-.tc4-single-post__header {
+.scouting-nederland-single-post__header {
   padding: 1rem 0 1.4rem;
-  border-bottom: 2px solid rgba(0, 165, 81, .18);
+  border-bottom: 2px solid rgb(from var(--wp--preset--color--scouting-groen) r g b / .18);
 }
 
-.tc4-single-post__eyebrow {
+.scouting-nederland-single-post__eyebrow {
   display: inline-block;
   margin: 0 0 .75rem;
   padding: .35rem .85rem;
-  background: rgba(0, 165, 81, .12);
-  color: #00a551;
+  background: rgb(from var(--wp--preset--color--scouting-groen) r g b / .12);
+  color: var(--wp--preset--color--scouting-groen);
   border-radius: 999px;
   font-family: "Poppins", Arial, sans-serif;
   font-size: .75rem;
@@ -30,17 +32,18 @@
   text-transform: uppercase;
 }
 
-.tc4-single-post__title {
+.scouting-nederland-single-post__title {
   margin: 0;
-  color: #00a551;
+  color: var(--wp--preset--color--scouting-groen);
   font-family: "Roboto Slab", Georgia, serif;
   font-size: clamp(2rem, 4vw, 3.35rem);
   font-weight: 700;
-  letter-spacing: -.02em;
+  letter-spacing: 0;
   line-height: 1.05;
 }
 
-.tc4-single-post__meta {
+/* Metadata wraps naturally; generated separators are attached only between entries. */
+.scouting-nederland-single-post__meta {
   display: flex;
   flex-wrap: wrap;
   gap: .55rem 1.15rem;
@@ -50,100 +53,90 @@
   font-size: .95rem;
 }
 
-.tc4-single-post__meta span {
+.scouting-nederland-single-post__meta span {
   position: relative;
 }
 
-.tc4-single-post__meta span + span::before {
+.scouting-nederland-single-post__meta span+span::before {
   content: "";
   position: absolute;
   left: -.65rem;
   top: 50%;
   width: .25rem;
   height: .25rem;
-  background: #00a551;
+  background: var(--wp--preset--color--scouting-groen);
   border-radius: 50%;
   transform: translateY(-50%);
 }
 
-.tc4-single-post__image {
-  margin: 2rem 0 2.4rem;
-  overflow: hidden;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, .12);
-}
-
-.tc4-single-post__image img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.tc4-single-post__content {
+.scouting-nederland-single-post__content {
   color: #1d1d1b;
   font-family: "Poppins", Arial, sans-serif;
   font-size: 1.05rem;
   line-height: 1.85;
 }
 
-.tc4-single-post__content > *:first-child {
+.scouting-nederland-single-post__content>*:first-child {
   margin-top: 0;
 }
 
-.tc4-single-post__content h2,
-.tc4-single-post__content h3,
-.tc4-single-post__content h4 {
+.scouting-nederland-single-post__content h2,
+.scouting-nederland-single-post__content h3,
+.scouting-nederland-single-post__content h4 {
   margin-top: 2.4rem;
-  color: #00a551;
+  color: var(--wp--preset--color--scouting-groen);
   font-family: "Roboto Slab", Georgia, serif;
   font-weight: 700;
   line-height: 1.12;
 }
 
-.tc4-single-post__content a {
-  color: #006fb9;
+.scouting-nederland-single-post__content a {
+  color: var(--wp--preset--color--scouting-blauw-accent);
   font-weight: 700;
 }
 
-.tc4-single-post__content blockquote {
+/* The quote border and tinted background distinguish editorial emphasis semantically. */
+.scouting-nederland-single-post__content blockquote {
   margin: 2rem 0;
   padding: 1.4rem 1.6rem;
-  border-left: 6px solid #00a551;
-  background: rgba(0, 165, 81, .08);
+  border-left: 6px solid var(--wp--preset--color--scouting-groen);
+  background: rgb(from var(--wp--preset--color--scouting-groen) r g b / .08);
   color: #1d1d1b;
   font-family: "Roboto Slab", Georgia, serif;
   font-size: 1.2rem;
   line-height: 1.55;
 }
 
-.tc4-single-post__footer {
+.scouting-nederland-single-post__footer {
   margin-top: 2.8rem;
   padding-top: 1.4rem;
-  border-top: 2px solid rgba(0, 165, 81, .18);
+  border-top: 2px solid rgb(from var(--wp--preset--color--scouting-groen) r g b / .18);
   color: #1d1d1b;
   font-family: "Poppins", Arial, sans-serif;
 }
 
-.tc4-single-post__terms + .tc4-single-post__terms {
+.scouting-nederland-single-post__terms+.scouting-nederland-single-post__terms {
   margin-top: .5rem;
 }
 
-.tc4-single-post__footer a {
-  color: #006fb9;
+.scouting-nederland-single-post__footer a {
+  color: var(--wp--preset--color--scouting-blauw-accent);
   font-weight: 700;
 }
 
-.tc4-single-post__navigation {
+/* Two equal Grid tracks align previous and next navigation on desktop. */
+.scouting-nederland-single-post__navigation {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 2.8rem;
 }
 
-.tc4-single-post__nav-item {
+.scouting-nederland-single-post__nav-item {
   min-height: 100%;
 }
 
-.tc4-single-post__nav-item span {
+.scouting-nederland-single-post__nav-item span {
   display: block;
   margin-bottom: .35rem;
   color: #5f6b66;
@@ -153,44 +146,45 @@
   text-transform: uppercase;
 }
 
-.tc4-single-post__nav-item a {
+.scouting-nederland-single-post__nav-item a {
   display: block;
   height: 100%;
   padding: 1rem 1.15rem;
   background: #f4fbf7;
-  border: 2px solid rgba(0, 165, 81, .18);
-  color: #00a551;
+  border: 2px solid rgb(from var(--wp--preset--color--scouting-groen) r g b / .18);
+  color: var(--wp--preset--color--scouting-groen);
   font-family: "Roboto Slab", Georgia, serif;
   font-weight: 700;
   line-height: 1.2;
   text-decoration: none;
 }
 
-.tc4-single-post__nav-item--next {
+.scouting-nederland-single-post__nav-item--next {
   text-align: right;
 }
 
-.tc4-single-post__nav-item a:hover,
-.tc4-single-post__nav-item a:focus {
-  background: #00a551;
-  border-color: #00a551;
+.scouting-nederland-single-post__nav-item a:hover,
+.scouting-nederland-single-post__nav-item a:focus {
+  background: var(--wp--preset--color--scouting-groen);
+  border-color: var(--wp--preset--color--scouting-groen);
   color: #fff;
 }
 
+/* Stack navigation links and restore left alignment on narrow screens. */
 @media (max-width: 767px) {
-  .tc4-single-post {
+  .scouting-nederland-single-post {
     margin-bottom: 3rem;
   }
 
-  .tc4-single-post__header {
+  .scouting-nederland-single-post__header {
     padding-top: .5rem;
   }
 
-  .tc4-single-post__navigation {
+  .scouting-nederland-single-post__navigation {
     grid-template-columns: 1fr;
   }
 
-  .tc4-single-post__nav-item--next {
+  .scouting-nederland-single-post__nav-item--next {
     text-align: left;
   }
 }

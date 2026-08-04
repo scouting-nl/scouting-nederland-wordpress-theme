@@ -1,249 +1,1056 @@
-@keyframes tc4SkylineSlideX {
-  from { background-position-x: 0; }
-  to { background-position-x: -2000px; }
+/*
+ * Dynamic Gutenberg blocks.
+ *
+ * All frontend classes emitted by inc/blocks.php use this file's
+ * scouting-nederland-blocks-* namespace. Layout, palette states, responsive
+ * behavior, and component-specific controls remain co-located here.
+ */
+
+/* --------------------------------------------------------------------------
+ * Shared block button states
+ * -------------------------------------------------------------------------- */
+
+/* Component buttons share semantic states while retaining unique dimensions. */
+.scouting-nederland-blocks-featured-items__button,
+.scouting-nederland-blocks-callout__button,
+.scouting-nederland-blocks-news-items__button,
+.scouting-nederland-blocks-speltakken-grid__button,
+.scouting-nederland-blocks-two-columns__button {
+  border: 0;
+  color: #fff !important;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none !important;
+  text-transform: uppercase;
 }
 
-.tc4-block-callout.tc4-callout-style-2020::before,
-.tc4-callout-style-2020::before {
-  animation: tc4SkylineSlideX 90s linear infinite !important;
-  animation-play-state: running !important;
+.scouting-nederland-blocks-featured-items__button:visited,
+.scouting-nederland-blocks-featured-items__button:hover,
+.scouting-nederland-blocks-featured-items__button:focus,
+.scouting-nederland-blocks-callout__button:visited,
+.scouting-nederland-blocks-callout__button:hover,
+.scouting-nederland-blocks-callout__button:focus,
+.scouting-nederland-blocks-news-items__button:visited,
+.scouting-nederland-blocks-news-items__button:hover,
+.scouting-nederland-blocks-news-items__button:focus,
+.scouting-nederland-blocks-speltakken-grid__button:visited,
+.scouting-nederland-blocks-speltakken-grid__button:hover,
+.scouting-nederland-blocks-speltakken-grid__button:focus,
+.scouting-nederland-blocks-two-columns__button:visited,
+.scouting-nederland-blocks-two-columns__button:hover,
+.scouting-nederland-blocks-two-columns__button:focus {
+  color: #fff !important;
+  text-decoration: none !important;
 }
 
-.tc4-block-callout.tc4-callout-style-2020::before,
-.tc4-callout-style-2020::before {
-  -webkit-animation: animatedBackground 20000s linear infinite !important;
-  animation: animatedBackground 20000s linear infinite !important;
+/* Blue follows the selected support token; green and black are fixed variants. */
+.scouting-nederland-blocks-featured-items__button--blue,
+.scouting-nederland-blocks-callout__button--blue,
+.scouting-nederland-blocks-news-items__button--blue,
+.scouting-nederland-blocks-speltakken-grid__button--blue,
+.scouting-nederland-blocks-two-columns__button--blue {
+  background: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
 }
 
-.tc4-block-callout.tc4-callout-style-2020::before,
-.tc4-callout-style-2020::before {
-  -webkit-animation: tc4SkylineVisibleMove 140s linear infinite !important;
-  animation: tc4SkylineVisibleMove 140s linear infinite !important;
-  animation-play-state: running !important;
+.scouting-nederland-blocks-featured-items__button--green,
+.scouting-nederland-blocks-callout__button--green,
+.scouting-nederland-blocks-news-items__button--green,
+.scouting-nederland-blocks-two-columns__button--green {
+  background: var(--wp--preset--color--scouting-groen);
 }
 
-.tc4-block-callout.tc4-callout-style-2020::before,
-.tc4-callout-style-2020::before {
-  background-position-y: 100% !important;
-  -webkit-animation: tc4SkylineMoveX 110s linear infinite !important;
-  animation: tc4SkylineMoveX 110s linear infinite !important;
-  animation-play-state: running !important;
+.scouting-nederland-blocks-featured-items__button--black,
+.scouting-nederland-blocks-callout__button--black,
+.scouting-nederland-blocks-news-items__button--black,
+.scouting-nederland-blocks-two-columns__button--black {
+  background: #000;
 }
 
-.tc4-block-oidc {
-  display: block !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 1.5rem 0;
-  box-sizing: border-box;
+/* --------------------------------------------------------------------------
+ * Featured items
+ * -------------------------------------------------------------------------- */
+
+.scouting-nederland-blocks-featured-items {
+  margin: 0 0 78px;
 }
 
-.tc4-block-oidc,
-.tc4-block-oidc * {
-  box-sizing: border-box;
+.scouting-nederland-blocks-featured-items__title,
+.scouting-nederland-blocks-featured-items__item h2 {
+  margin: 0 0 1rem;
+  color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
+  font-family: "Roboto Slab", Georgia, serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: 0;
 }
 
-.tc4-block-oidc--center {
+/* Equal fractional Grid tracks prevent long content from widening one card. */
+.scouting-nederland-blocks-featured-items__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 28px;
+  row-gap: 40px;
+  align-items: start;
+}
+
+/* Flex pushes each optional action to the bottom of its own content column. */
+.scouting-nederland-blocks-featured-items__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.scouting-nederland-blocks-featured-items__item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 8.6;
+  margin: 0 0 22px;
+  object-fit: cover;
+}
+
+.scouting-nederland-blocks-featured-items__text,
+.scouting-nederland-blocks-featured-items__text p {
+  margin: 0;
+  color: #1d1d1b;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+.scouting-nederland-blocks-featured-items__text {
+  min-height: 142px;
+  margin-bottom: 28px;
+}
+
+.scouting-nederland-blocks-featured-items__button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px;
+  min-height: 52px;
+  margin-top: auto;
+  padding: 0 52px 0 30px;
+  border-radius: 999px;
+  font-size: .875rem;
+  box-shadow: 0 6px 10px rgba(0, 111, 186, .28);
+}
+
+/* Aria-hidden Font Awesome icon is positioned independently from the label. */
+.scouting-nederland-blocks-featured-items__button>i {
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  font-size: 1rem;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.scouting-nederland-blocks-featured-items__item--quicklinks img {
+  margin-bottom: 18px;
+}
+
+.scouting-nederland-blocks-featured-items__quicklinks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.scouting-nederland-blocks-featured-items__quicklinks li {
+  margin: 0 0 13px;
+}
+
+.scouting-nederland-blocks-featured-items__quicklinks a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding-left: 46px;
+  color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw)) !important;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.9;
+  text-decoration: none;
+}
+
+.scouting-nederland-blocks-featured-items__quicklinks a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .16);
+  transform: translateY(-50%);
+}
+
+.scouting-nederland-blocks-featured-items__quicklinks a>i {
+  position: absolute;
+  top: 50%;
+  left: 11px;
+  z-index: 1;
+  color: var(--wp--preset--color--scouting-groen);
+  font-size: .8rem;
+  transform: translateY(-50%);
+}
+
+/* --------------------------------------------------------------------------
+ * Callout
+ * -------------------------------------------------------------------------- */
+
+.scouting-nederland-blocks-callout {
+  position: relative;
+  width: 100vw;
+  margin-top: 2.5rem;
+  margin-bottom: 4rem;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+  background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
+  color: #fff;
+}
+
+/* One decorative skyline layer owns image, crop, and animation geometry. */
+.scouting-nederland-blocks-callout::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 90px;
+  margin-bottom: -2px;
+  border: 0;
+  background-color: #fff;
+  background-image: url("../images/skyline-groen.png");
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: auto 85px;
+  box-shadow: none;
+  animation: scoutingNederlandBlocksCalloutSkyline 110s linear infinite;
+  will-change: background-position-x;
+}
+
+@keyframes scoutingNederlandBlocksCalloutSkyline {
+  from {
+    background-position-x: 0;
+  }
+
+  to {
+    background-position-x: 2000px;
+  }
+}
+
+body.scouting-nederland-utilities-main-blue .scouting-nederland-blocks-callout::before {
+  background-image: url("../images/skyline-blauw.png");
+}
+
+body.scouting-nederland-utilities-main-yellow .scouting-nederland-blocks-callout::before {
+  background-image: url("../images/skyline-geel.png");
+}
+
+body.scouting-nederland-utilities-main-red .scouting-nederland-blocks-callout::before {
+  background-image: url("../images/skyline-rood.png");
+}
+
+body.scouting-nederland-utilities-main-orange .scouting-nederland-blocks-callout::before {
+  background-image: url("../images/skyline-oranje.png");
+}
+
+body.scouting-nederland-utilities-main-purple .scouting-nederland-blocks-callout::before {
+  background-image: url("../images/skyline-paars.png");
+}
+
+/* Centered Grid limits artwork and copy independently without fixed widths. */
+.scouting-nederland-blocks-callout__inner {
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) minmax(320px, 560px);
+  align-items: start;
+  justify-content: center;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 26px 40px 64px;
+  gap: 2rem;
+}
+
+.scouting-nederland-blocks-callout__image {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 18px;
   text-align: center;
 }
 
-.tc4-oidc-unavailable {
-  padding: .75rem 1rem;
-  border-left: 4px solid var(--tc4-main-color, #00a551);
-  background: rgba(0, 0, 0, .04);
+.scouting-nederland-blocks-callout__image img {
+  display: block;
+  width: min(100%, 255px);
+  max-width: 255px;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
 }
 
-.tc4-block-oidc > form,
-.tc4-block-oidc > p,
-.tc4-block-oidc > div {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
+.scouting-nederland-blocks-callout__content {
+  max-width: 560px;
+  padding-top: 14px;
 }
 
-.tc4-block-oidc--link {
-  width: auto !important;
-}
-
-.tc4-block-oidc--link .tc4-oidc-text-link {
-  display: inline !important;
-  width: auto !important;
-  min-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  color: var(--tc4-support-color, #0066b2) !important;
-  font: inherit !important;
-  line-height: inherit !important;
-  text-align: inherit !important;
-  text-decoration: underline !important;
-  text-transform: none !important;
-  box-shadow: none !important;
-}
-
-.tc4-block-oidc--link .tc4-oidc-text-link:hover,
-.tc4-block-oidc--link .tc4-oidc-text-link:focus {
-  color: var(--tc4-main-color, #00a551) !important;
-  text-decoration: none !important;
-}
-
-/* OIDC knopvariant: alleen de echte button-shortcode krijgt de zoekknopstijl. */
-.tc4-block-oidc--button > form,
-.tc4-block-oidc--button > p,
-.tc4-block-oidc--button > div {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.tc4-block-oidc--button > a,
-.tc4-block-oidc--button > button,
-.tc4-block-oidc--button > input[type="submit"],
-.tc4-block-oidc--button > form > a,
-.tc4-block-oidc--button > form > button,
-.tc4-block-oidc--button > form > input[type="submit"],
-.tc4-block-oidc--button > p > a,
-.tc4-block-oidc--button > p > button,
-.tc4-block-oidc--button > p > input[type="submit"],
-.tc4-block-oidc--button > div > a,
-.tc4-block-oidc--button > div > button,
-.tc4-block-oidc--button > div > input[type="submit"] {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 10px !important;
-  width: 100% !important;
-  min-width: 0 !important;
-  max-width: 100% !important;
-  min-height: 48px !important;
-  height: auto !important;
-  margin: 0 !important;
-  padding: 10px 18px !important;
-  border: 0 !important;
-  border-radius: 16px !important;
-  background: var(--tc4-main-color, #00a551) !important;
-  background-color: var(--tc4-main-color, #00a551) !important;
-  background-image: none !important;
+.scouting-nederland-blocks-callout h2 {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 10px;
   color: #fff !important;
-  font-family: "Poppins", Arial, sans-serif !important;
-  font-size: .9rem !important;
-  font-weight: 700 !important;
-  line-height: 1.15 !important;
-  text-align: center !important;
-  text-decoration: none !important;
-  text-transform: uppercase !important;
-  white-space: normal !important;
-  box-shadow: none !important;
-  overflow: hidden !important;
-  cursor: pointer !important;
-  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease !important;
+  font-family: "Roboto Slab", Georgia, serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.08;
+  text-shadow: none;
+  visibility: visible;
+  opacity: 1;
 }
 
-.tc4-block-oidc--button > a:hover,
-.tc4-block-oidc--button > a:focus,
-.tc4-block-oidc--button > button:hover,
-.tc4-block-oidc--button > button:focus,
-.tc4-block-oidc--button > input[type="submit"]:hover,
-.tc4-block-oidc--button > input[type="submit"]:focus,
-.tc4-block-oidc--button > form > a:hover,
-.tc4-block-oidc--button > form > a:focus,
-.tc4-block-oidc--button > form > button:hover,
-.tc4-block-oidc--button > form > button:focus,
-.tc4-block-oidc--button > form > input[type="submit"]:hover,
-.tc4-block-oidc--button > form > input[type="submit"]:focus,
-.tc4-block-oidc--button > p > a:hover,
-.tc4-block-oidc--button > p > a:focus,
-.tc4-block-oidc--button > p > button:hover,
-.tc4-block-oidc--button > p > button:focus,
-.tc4-block-oidc--button > p > input[type="submit"]:hover,
-.tc4-block-oidc--button > p > input[type="submit"]:focus,
-.tc4-block-oidc--button > div > a:hover,
-.tc4-block-oidc--button > div > a:focus,
-.tc4-block-oidc--button > div > button:hover,
-.tc4-block-oidc--button > div > button:focus,
-.tc4-block-oidc--button > div > input[type="submit"]:hover,
-.tc4-block-oidc--button > div > input[type="submit"]:focus {
-  transform: translateY(-1px) !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, .12) !important;
+.scouting-nederland-blocks-callout__copy,
+.scouting-nederland-blocks-callout__copy p {
+  color: #fff !important;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.9;
+  visibility: visible;
+  opacity: 1;
 }
 
-.tc4-block-oidc--button > a img,
-.tc4-block-oidc--button > a svg,
-.tc4-block-oidc--button > button img,
-.tc4-block-oidc--button > button svg,
-.tc4-block-oidc--button > form > a img,
-.tc4-block-oidc--button > form > a svg,
-.tc4-block-oidc--button > form > button img,
-.tc4-block-oidc--button > form > button svg,
-.tc4-block-oidc--button > p > a img,
-.tc4-block-oidc--button > p > a svg,
-.tc4-block-oidc--button > p > button img,
-.tc4-block-oidc--button > p > button svg,
-.tc4-block-oidc--button > div > a img,
-.tc4-block-oidc--button > div > a svg,
-.tc4-block-oidc--button > div > button img,
-.tc4-block-oidc--button > div > button svg {
-  display: inline-block !important;
-  flex: 0 0 auto !important;
-  width: auto !important;
-  max-width: 34px !important;
-  height: 26px !important;
-  max-height: 26px !important;
-  margin: 0 !important;
-  object-fit: contain !important;
-  vertical-align: middle !important;
+.scouting-nederland-blocks-callout__copy {
+  display: block;
 }
 
-.tc4-block-oidc--button > a span,
-.tc4-block-oidc--button > a strong,
-.tc4-block-oidc--button > a em,
-.tc4-block-oidc--button > button span,
-.tc4-block-oidc--button > button strong,
-.tc4-block-oidc--button > button em,
-.tc4-block-oidc--button > form > a span,
-.tc4-block-oidc--button > form > a strong,
-.tc4-block-oidc--button > form > a em,
-.tc4-block-oidc--button > form > button span,
-.tc4-block-oidc--button > form > button strong,
-.tc4-block-oidc--button > form > button em,
-.tc4-block-oidc--button > p > a span,
-.tc4-block-oidc--button > p > a strong,
-.tc4-block-oidc--button > p > a em,
-.tc4-block-oidc--button > p > button span,
-.tc4-block-oidc--button > p > button strong,
-.tc4-block-oidc--button > p > button em,
-.tc4-block-oidc--button > div > a span,
-.tc4-block-oidc--button > div > a strong,
-.tc4-block-oidc--button > div > a em,
-.tc4-block-oidc--button > div > button span,
-.tc4-block-oidc--button > div > button strong,
-.tc4-block-oidc--button > div > button em {
-  display: inline !important;
-  flex: 0 1 auto !important;
-  width: auto !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
+.scouting-nederland-blocks-callout__copy p {
+  display: block;
+  margin: 0 0 1.15rem;
+}
+
+.scouting-nederland-blocks-callout__button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 54px 0 24px;
+  border-radius: 999px;
+  font-size: .875rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+}
+
+/* Border-only chevron scales with text and slides on hover without reflow. */
+.scouting-nederland-blocks-callout__button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: .65em;
+  height: .65em;
+  border-width: 2px 2px 0 0;
+  border-style: solid;
+  transform: translateY(-50%) rotate(45deg);
+  transition: right .18s ease;
+}
+
+.scouting-nederland-blocks-callout__button:hover::after,
+.scouting-nederland-blocks-callout__button:focus::after {
+  right: 14px;
+}
+
+/* --------------------------------------------------------------------------
+ * News items
+ * -------------------------------------------------------------------------- */
+
+.scouting-nederland-blocks-news-items {
+  width: min(1140px, calc(100% - 2rem));
+  max-width: 1140px;
+  margin: 0 auto 78px;
+}
+
+.scouting-nederland-blocks-news-items__inner {
+  width: 100%;
+}
+
+.scouting-nederland-blocks-news-items__heading-link {
+  display: inline-block;
+  color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
+  text-decoration: none;
+}
+
+.scouting-nederland-blocks-news-items__heading-link:hover,
+.scouting-nederland-blocks-news-items__heading-link:focus {
+  color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw)) !important;
+}
+
+.scouting-nederland-blocks-news-items__heading-link h4 {
+  margin: 0;
+  font-family: "Roboto Slab", Georgia, serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+/* Cards stretch to equal row height while each card manages its own vertical flow. */
+.scouting-nederland-blocks-news-items__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  margin: 1.65rem 0 1.45rem;
+  gap: 15px;
+}
+
+.scouting-nederland-blocks-news-items__item {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+}
+
+.scouting-nederland-blocks-news-items__item-link {
+  display: grid;
+  grid-template-rows: 200px minmax(150px, auto);
   color: inherit !important;
-  font: inherit !important;
-  line-height: inherit !important;
-  text-align: center !important;
-  text-transform: inherit !important;
-  white-space: normal !important;
+  text-decoration: none;
 }
 
-.tc4-block-oidc--button > a br,
-.tc4-block-oidc--button > button br,
-.tc4-block-oidc--button > form > a br,
-.tc4-block-oidc--button > form > button br,
-.tc4-block-oidc--button > p > a br,
-.tc4-block-oidc--button > p > button br,
-.tc4-block-oidc--button > div > a br,
-.tc4-block-oidc--button > div > button br {
-  display: none !important;
+.scouting-nederland-blocks-news-items__image {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  overflow: hidden;
+  background-color: #e9f5ee;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Gradient protects date contrast over arbitrary featured images. */
+.scouting-nederland-blocks-news-items__image::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 55%;
+  background: linear-gradient(to top, rgba(0, 0, 0, .55), transparent);
+  pointer-events: none;
+}
+
+.scouting-nederland-blocks-news-items__date {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  padding: 1rem;
+  color: #fff;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: .9rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .45);
+}
+
+.scouting-nederland-blocks-news-items__item-link h5 {
+  min-height: 150px;
+  margin: 0;
+  padding: 1rem 1rem 1.1rem;
+  overflow: hidden;
+  background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
+  color: #fff !important;
+  font-family: "Roboto Slab", Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+.scouting-nederland-blocks-news-items__excerpt {
+  flex: 1 1 auto;
+  min-height: 176px;
+  margin: 1.65rem 0 1.35rem;
+  overflow: hidden;
+  color: #1d1d1b;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.9;
+}
+
+.scouting-nederland-blocks-news-items__read-more {
+  align-self: flex-start;
+  margin-top: auto;
+  color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw)) !important;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.scouting-nederland-blocks-news-items__read-more>i {
+  font-size: .75em;
+}
+
+.scouting-nederland-blocks-news-items__button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 202px;
+  min-height: 48px;
+  margin-top: .65rem;
+  padding: 0 58px 0 30px;
+  border-radius: 999px;
+  font-size: .875rem;
+}
+
+.scouting-nederland-blocks-news-items__button>i {
+  position: absolute;
+  top: 50%;
+  right: 26px;
+  font-size: 1rem;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+/* --------------------------------------------------------------------------
+ * Speltakken grid
+ * -------------------------------------------------------------------------- */
+
+.scouting-nederland-blocks-speltakken-grid {
+  width: min(1140px, calc(100% - 2rem));
+  max-width: 1140px;
+  margin: 0 auto 78px;
+}
+
+.scouting-nederland-blocks-speltakken-grid__title {
+  margin: 0 0 28px;
+  color: var(--wp--preset--color--scouting-groen);
+  font-family: "Roboto Slab", Georgia, serif;
+  font-size: clamp(2rem, 3vw, 2.85rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.scouting-nederland-blocks-speltakken-grid__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  margin-top: 20px;
+  gap: 28px;
+}
+
+.scouting-nederland-blocks-speltakken-grid__title+.scouting-nederland-blocks-speltakken-grid__grid {
+  margin-top: 0;
+}
+
+.scouting-nederland-blocks-speltakken-grid__card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .10);
+}
+
+.scouting-nederland-blocks-speltakken-grid__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  padding: 18px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.scouting-nederland-blocks-speltakken-grid__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.scouting-nederland-blocks-speltakken-grid__image--placeholder {
+  background: linear-gradient(135deg, rgba(0, 125, 74, .12), rgba(0, 111, 186, .12));
+}
+
+/* Flex body keeps the action aligned at the card bottom across variable copy lengths. */
+.scouting-nederland-blocks-speltakken-grid__body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 24px 28px;
+  text-align: center;
+}
+
+.scouting-nederland-blocks-speltakken-grid__body h3 {
+  margin: 0 0 12px;
+  color: var(--wp--preset--color--scouting-groen);
+  font-family: "Roboto Slab", Georgia, serif;
+  font-size: clamp(1.55rem, 2vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.scouting-nederland-blocks-speltakken-grid__text {
+  display: flex;
+  width: 100%;
+  color: #1d1d1b;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.scouting-nederland-blocks-speltakken-grid__text p {
+  margin: 0;
+}
+
+.scouting-nederland-blocks-speltakken-grid__button-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.scouting-nederland-blocks-speltakken-grid__button {
+  display: inline-flex;
+  padding: .8rem 1.55rem;
+  border-radius: 999px;
+  font-size: .78rem;
+}
+
+/* --------------------------------------------------------------------------
+ * Two columns
+ * -------------------------------------------------------------------------- */
+
+.scouting-nederland-blocks-two-columns {
+  display: block;
+  width: min(1140px, calc(100% - 2rem));
+  max-width: 1140px;
+  margin: 3rem auto 4.5rem;
+}
+
+.scouting-nederland-blocks-two-columns__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  width: 100%;
+  gap: 32px;
+}
+
+.scouting-nederland-blocks-two-columns__image-column,
+.scouting-nederland-blocks-two-columns__content-column {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.scouting-nederland-blocks-two-columns__image-column {
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  background: #c7e3d4;
+}
+
+.scouting-nederland-blocks-two-columns__image {
+  height: 320px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.scouting-nederland-blocks-two-columns__image h4,
+.scouting-nederland-blocks-two-columns__content-column>h4 {
+  font-family: "Roboto Slab", Georgia, serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.scouting-nederland-blocks-two-columns__image h4 {
+  max-width: 70%;
+  margin: 0;
+  padding: 2rem;
+  color: #fff;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+}
+
+.scouting-nederland-blocks-two-columns__image-column-text {
+  align-self: stretch;
+  padding: 1.9rem 2rem 1.2rem;
+  color: #1d1d1b;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.9;
+}
+
+.scouting-nederland-blocks-two-columns__image-column-text p {
+  margin: 0 0 1rem;
+}
+
+.scouting-nederland-blocks-two-columns__content-column {
+  grid-template-rows: auto 1fr auto;
+  min-height: 100%;
+  overflow: visible;
+  border: .125rem solid var(--wp--preset--color--scouting-groen);
+  background: transparent;
+}
+
+.scouting-nederland-blocks-two-columns__content-column>h4 {
+  margin: 0;
+  padding: 2rem 2rem .5rem;
+  overflow: visible;
+  color: #1d1d1b;
+  white-space: normal;
+  text-overflow: clip;
+}
+
+.scouting-nederland-blocks-two-columns__content {
+  display: block;
+  min-height: 0;
+  padding: .2rem 2rem 1rem;
+  color: #1d1d1b;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.9;
+}
+
+.scouting-nederland-blocks-two-columns__content:empty {
+  display: none;
+}
+
+.scouting-nederland-blocks-two-columns__content>*:first-child {
+  margin-top: 0;
+}
+
+.scouting-nederland-blocks-two-columns__content p {
+  margin: 0 0 1rem;
+}
+
+.scouting-nederland-blocks-two-columns__content ul,
+.scouting-nederland-blocks-two-columns__content ol {
+  margin: .5rem 0 1.4rem 1.45rem;
+}
+
+.scouting-nederland-blocks-two-columns__content li {
+  margin-bottom: .05rem;
+  font-size: 1.125rem;
+  line-height: 1.9;
+}
+
+.scouting-nederland-blocks-two-columns__content h1,
+.scouting-nederland-blocks-two-columns__content h2,
+.scouting-nederland-blocks-two-columns__content h3,
+.scouting-nederland-blocks-two-columns__content h4 {
+  margin: 1.25rem 0 .6rem;
+  color: var(--wp--preset--color--scouting-groen);
+  font-family: "Roboto Slab", Georgia, serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.scouting-nederland-blocks-two-columns__button-wrap {
+  align-self: end;
+  padding: 0 2rem 2rem;
+}
+
+.scouting-nederland-blocks-two-columns__button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 188px;
+  min-height: 46px;
+  padding: 0 62px 0 30px;
+  border-radius: 999px;
+  font-size: .875rem;
+}
+
+/* Custom arrow is real markup so assistive technology can ignore it explicitly. */
+.scouting-nederland-blocks-two-columns__button-arrow {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+}
+
+.scouting-nederland-blocks-two-columns__button-arrow::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 1px;
+  width: 11px;
+  height: 2px;
+  background: #fff;
+}
+
+.scouting-nederland-blocks-two-columns__button-arrow::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 1px;
+  width: 8px;
+  height: 8px;
+  border-width: 2px 2px 0 0;
+  border-style: solid;
+  border-color: #fff;
+  transform: rotate(45deg);
+}
+
+/* --------------------------------------------------------------------------
+ * Scouting OpenID Connect
+ * -------------------------------------------------------------------------- */
+
+/* The external plugin owns shortcode internals, so descendants are normalized by structure. */
+.scouting-nederland-blocks-oidc {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 1.5rem 0;
+}
+
+.scouting-nederland-blocks-oidc,
+.scouting-nederland-blocks-oidc * {
+  box-sizing: border-box;
+}
+
+.scouting-nederland-blocks-oidc--center {
+  text-align: center;
+}
+
+.scouting-nederland-blocks-oidc> :is(form, p, div),
+.scouting-nederland-blocks-oidc--button> :is(form, p, div) {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.scouting-nederland-blocks-oidc--link {
+  width: auto;
+}
+
+.scouting-nederland-blocks-oidc__text-link {
+  display: inline;
+  width: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw)) !important;
+  font: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  text-decoration: underline;
+  text-transform: none;
+  box-shadow: none;
+}
+
+.scouting-nederland-blocks-oidc__text-link:hover,
+.scouting-nederland-blocks-oidc__text-link:focus {
+  color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
+  text-decoration: none;
+}
+
+.scouting-nederland-blocks-oidc--button> :is(a, button, input[type="submit"]),
+.scouting-nederland-blocks-oidc--button> :is(form, p, div)> :is(a, button, input[type="submit"]) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 48px;
+  height: auto;
+  margin: 0;
+  padding: 10px 18px;
+  gap: 10px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 16px;
+  background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
+  color: #fff !important;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: .9rem;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: normal;
+  box-shadow: none;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+}
+
+.scouting-nederland-blocks-oidc--button> :is(a, button, input[type="submit"]):is(:hover, :focus),
+.scouting-nederland-blocks-oidc--button> :is(form, p, div)> :is(a, button, input[type="submit"]):is(:hover, :focus) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+}
+
+.scouting-nederland-blocks-oidc--button> :is(a, button) :is(img, svg),
+.scouting-nederland-blocks-oidc--button> :is(form, p, div)> :is(a, button) :is(img, svg) {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 34px;
+  height: 26px;
+  max-height: 26px;
+  margin: 0;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.scouting-nederland-blocks-oidc--button> :is(a, button) :is(span, strong, em),
+.scouting-nederland-blocks-oidc--button> :is(form, p, div)> :is(a, button) :is(span, strong, em) {
+  display: inline;
+  flex: 0 1 auto;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  text-align: center;
+  text-transform: inherit;
+  white-space: normal;
+}
+
+.scouting-nederland-blocks-oidc--button> :is(a, button) br,
+.scouting-nederland-blocks-oidc--button> :is(form, p, div)> :is(a, button) br {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+ * Responsive block behavior
+ * -------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+
+  .scouting-nederland-blocks-featured-items__title,
+  .scouting-nederland-blocks-featured-items__item h2,
+  .scouting-nederland-blocks-callout h2,
+  .scouting-nederland-blocks-news-items__heading-link h4,
+  .scouting-nederland-blocks-two-columns__image h4,
+  .scouting-nederland-blocks-two-columns__content-column>h4,
+  .scouting-nederland-blocks-two-columns__content h1,
+  .scouting-nederland-blocks-two-columns__content h2,
+  .scouting-nederland-blocks-two-columns__content h3,
+  .scouting-nederland-blocks-two-columns__content h4 {
+    font-size: 2.35rem;
+  }
+
+  .scouting-nederland-blocks-news-items,
+  .scouting-nederland-blocks-speltakken-grid,
+  .scouting-nederland-blocks-two-columns {
+    width: calc(100% - 2rem);
+    max-width: none;
+  }
+}
+
+@media (max-width: 980px) {
+
+  .scouting-nederland-blocks-news-items__grid,
+  .scouting-nederland-blocks-two-columns__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scouting-nederland-blocks-news-items__grid {
+    gap: 32px;
+  }
+
+  .scouting-nederland-blocks-news-items__item-link {
+    grid-template-rows: 200px auto;
+  }
+
+  .scouting-nederland-blocks-news-items__item-link h5,
+  .scouting-nederland-blocks-news-items__excerpt {
+    min-height: 0;
+  }
+
+  .scouting-nederland-blocks-two-columns__image {
+    height: 280px;
+  }
+
+  .scouting-nederland-blocks-two-columns__image h4 {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .scouting-nederland-blocks-featured-items__grid,
+  .scouting-nederland-blocks-speltakken-grid__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scouting-nederland-blocks-featured-items__text {
+    min-height: 0;
+  }
+
+  .scouting-nederland-blocks-callout::before {
+    height: 64px;
+    background-size: auto 85px;
+  }
+
+  .scouting-nederland-blocks-callout__inner {
+    grid-template-columns: 1fr;
+    padding: 26px 24px 42px;
+    text-align: center;
+  }
+
+  .scouting-nederland-blocks-callout__image {
+    margin-top: 0;
+  }
+
+  .scouting-nederland-blocks-callout__image img {
+    max-width: 220px;
+  }
+
+  .scouting-nederland-blocks-callout__content {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 575px) {
+
+  .scouting-nederland-blocks-featured-items__title,
+  .scouting-nederland-blocks-featured-items__item h2,
+  .scouting-nederland-blocks-callout h2,
+  .scouting-nederland-blocks-news-items__heading-link h4,
+  .scouting-nederland-blocks-two-columns__image h4,
+  .scouting-nederland-blocks-two-columns__content-column>h4,
+  .scouting-nederland-blocks-two-columns__content h1,
+  .scouting-nederland-blocks-two-columns__content h2,
+  .scouting-nederland-blocks-two-columns__content h3,
+  .scouting-nederland-blocks-two-columns__content h4 {
+    font-size: 2rem;
+  }
+}
+
+/* Remove decorative skyline motion when the operating system requests it. */
+@media (prefers-reduced-motion: reduce) {
+  .scouting-nederland-blocks-callout::before {
+    animation: none;
+  }
 }

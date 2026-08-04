@@ -1,7 +1,41 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
 
-function scoutingtc4_callout_image_options() {
+const SCOUTING_NEDERLAND_BLOCKS_NEW_TAB_ATTRIBUTES = ' target="_blank" rel="noopener noreferrer"';
+const SCOUTING_NEDERLAND_CALLOUT_DEFAULT_TEXT = 'Ben jij enthousiast, geef je goed leiding en vind je het leuk om kinderen en jongeren te begeleiden bij hun persoonlijke ontwikkeling? Of heb je misschien bestuurlijke kwaliteiten die je wilt inzetten? Dan zijn wij op zoek naar jou!';
+const SCOUTING_NEDERLAND_TWO_COLUMNS_LEFT_TEXT = 'Binnen onze Scoutinggroep hebben we sponsoracties om op die manier Scouting betaalbaar te maken voor iedereen.';
+const SCOUTING_NEDERLAND_TWO_COLUMNS_RIGHT_TEXT = 'Meer weten over vrijwilligerswerk bij Scouting? Laat je verrassen door één van de uitdagende vacatures of lees meer over vrijwilliger worden bij Scouting.<ul><li>Welpenleiding</li><li>Secretaris</li></ul><h2>Maatschappelijke stage</h2><p>Iedere scholier krijgt er wel mee te maken: de maatschappelijke stage.</p>';
+
+function scoutingNederlandFeaturedItemsDefaults() {
+    return array(
+        array(
+            'title' => 'Wie zijn wij?',
+            'text' => 'Scouting staat voor uitdaging! Scouting biedt leuke en spannende activiteiten waarmee meiden en jongens worden uitgedaagd zich persoonlijk te ontwikkelen.',
+            'imageUrl' => '',
+            'buttonText' => 'Meer informatie',
+            'buttonUrl' => '',
+            'buttonColor' => 'blauw',
+        ),
+        array(
+            'title' => 'Lid worden',
+            'text' => 'Laat je uitdagen en ontdek Scouting!',
+            'imageUrl' => '',
+            'buttonText' => 'Kom een keer meedoen',
+            'buttonUrl' => '',
+            'buttonColor' => 'blauw',
+        ),
+        array(
+            'title' => 'Snel naar',
+            'text' => 'Verhuur<br>Stockfoto’s<br>Scouting Nederland',
+            'imageUrl' => '',
+            'buttonText' => '',
+            'buttonUrl' => '',
+            'buttonColor' => 'blauw',
+        ),
+    );
+}
+
+function scoutingNederlandCalloutImageOptions() {
     return array(
         'bijl'    => array('label' => 'bijl', 'file' => 'callout-bijl.png'),
         'boei'    => array('label' => 'boei', 'file' => 'callout-boei.png'),
@@ -16,8 +50,8 @@ function scoutingtc4_callout_image_options() {
     );
 }
 
-function scoutingtc4_callout_image_url($preset) {
-    $options = scoutingtc4_callout_image_options();
+function scoutingNederlandCalloutImageUrl($preset) {
+    $options = scoutingNederlandCalloutImageOptions();
     if (!isset($options[$preset])) {
         $preset = 'kompas';
     }
@@ -25,39 +59,41 @@ function scoutingtc4_callout_image_url($preset) {
 }
 
 
-function scoutingtc4_blocks_button_class_from_color($color) {
+function scoutingNederlandBlocksButtonClassFromColor($component, $color) {
+    $modifier = 'blue';
+
     if ($color === 'groen') {
-        return 'tc4-btn-green';
+        $modifier = 'green';
+    } elseif ($color === 'zwart') {
+        $modifier = 'black';
     }
-    if ($color === 'zwart') {
-        return 'tc4-btn-black';
-    }
-    return 'tc4-btn-blue';
+
+    return 'scouting-nederland-blocks-' . $component . '__button--' . $modifier;
 }
 
-function scoutingtc4_is_scouting_oidc_available() {
+function scoutingNederlandIsScoutingOidcAvailable() {
     return shortcode_exists('scouting_oidc_button') || shortcode_exists('scouting_oidc_link') || defined('SCOUTING_OIDC_VERSION');
 }
 
-function scoutingtc4_register_editor_blocks() {
+function scoutingNederlandRegisterEditorBlocks() {
     $block_editor_dependencies = array('wp-blocks', 'wp-element', 'wp-editor', 'wp-block-editor', 'wp-components', 'wp-i18n', 'wp-server-side-render', 'wp-url', 'jquery', 'wplink', 'quicktags');
     $block_scripts = array(
-        'scoutingtc4-blocks-featured-items' => 'featured-items.js',
-        'scoutingtc4-blocks-callout' => 'callout.js',
-        'scoutingtc4-blocks-news-items' => 'news-items.js',
-        'scoutingtc4-blocks-speltakken-grid' => 'speltakken-grid.js',
-        'scoutingtc4-blocks-two-columns' => 'two-columns.js',
+        'scouting-nederland-blocks-featured-items' => 'featured-items.js',
+        'scouting-nederland-blocks-callout' => 'callout.js',
+        'scouting-nederland-blocks-news-items' => 'news-items.js',
+        'scouting-nederland-blocks-speltakken-grid' => 'speltakken-grid.js',
+        'scouting-nederland-blocks-two-columns' => 'two-columns.js',
     );
 
-    if (scoutingtc4_is_scouting_oidc_available()) {
-        $block_scripts['scoutingtc4-blocks-oidc'] = 'oidc.js';
+    if (scoutingNederlandIsScoutingOidcAvailable()) {
+        $block_scripts['scouting-nederland-blocks-oidc'] = 'oidc.js';
     }
 
     wp_register_script(
-        'scoutingtc4-blocks-common',
+        'scouting-nederland-blocks-common',
         get_template_directory_uri() . '/assets/js/blocks/common.js',
         $block_editor_dependencies,
-        SCOUTINGTC4_VERSION,
+        SCOUTING_NEDERLAND_VERSION,
         true
     );
 
@@ -65,21 +101,21 @@ function scoutingtc4_register_editor_blocks() {
         wp_register_script(
             $handle,
             get_template_directory_uri() . '/assets/js/blocks/' . $file,
-            array('scoutingtc4-blocks-common'),
-            SCOUTINGTC4_VERSION,
+            array('scouting-nederland-blocks-common'),
+            SCOUTING_NEDERLAND_VERSION,
             true
         );
     }
 
     wp_register_script(
-        'scoutingtc4-blocks',
-        get_template_directory_uri() . '/assets/js/blocks/index.js',
+        'scouting-nederland-blocks',
+        false,
         array_keys($block_scripts),
-        SCOUTINGTC4_VERSION,
+        SCOUTING_NEDERLAND_VERSION,
         true
     );
     $callout_options = array();
-    foreach (scoutingtc4_callout_image_options() as $key => $option) {
+    foreach (scoutingNederlandCalloutImageOptions() as $key => $option) {
         $callout_options[] = array(
             'label' => $option['label'],
             'value' => $key,
@@ -112,45 +148,39 @@ function scoutingtc4_register_editor_blocks() {
         );
     }
 
-    wp_localize_script('scoutingtc4-blocks-common', 'scoutingtc4Blocks', array(
+    wp_localize_script('scouting-nederland-blocks-common', 'scoutingNederlandBlocks', array(
         'calloutOptions' => $callout_options,
         'newsCategories' => $news_categories,
         'newsPosts' => $news_posts,
-        'oidcAvailable' => scoutingtc4_is_scouting_oidc_available(),
+        'oidcAvailable' => scoutingNederlandIsScoutingOidcAvailable(),
     ));
 
-    $common = array(
-        'editor_script' => 'scoutingtc4-blocks',
-        'supports' => array(
-            'anchor' => true,
-        ),
-    );
+    $common = array('editor_script' => 'scouting-nederland-blocks');
 
-    register_block_type('scoutingtc4/featured-items', array_merge($common, array(
+    register_block_type('scouting-nederland/featured-items', array_merge($common, array(
         'attributes' => array(
             'title' => array('type' => 'string', 'default' => ''),
-            'items' => array('type' => 'array', 'default' => array()),
+            'items' => array('type' => 'array', 'default' => scoutingNederlandFeaturedItemsDefaults()),
         ),
-        'render_callback' => 'scoutingtc4_render_featured_items_block',
+        'render_callback' => 'scoutingNederlandRenderFeaturedItemsBlock',
     )));
 
-    register_block_type('scoutingtc4/callout', array_merge($common, array(
+    register_block_type('scouting-nederland/callout', array_merge($common, array(
         'attributes' => array(
             'title' => array('type' => 'string', 'default' => 'Vrijwilligers gezocht'),
-            'text' => array('type' => 'string', 'default' => ''),
+            'text' => array('type' => 'string', 'default' => SCOUTING_NEDERLAND_CALLOUT_DEFAULT_TEXT),
             'buttonText' => array('type' => 'string', 'default' => 'Meld je aan'),
             'buttonUrl' => array('type' => 'string', 'default' => ''),
             'buttonTarget' => array('type' => 'string', 'default' => ''),
-            'buttonColor' => array('type' => 'string', 'default' => 'blauw'),
+            'buttonColor' => array('type' => 'string', 'default' => 'zwart'),
             'useOwnImage' => array('type' => 'boolean', 'default' => false),
-            'imageId' => array('type' => 'number', 'default' => 0),
             'imageUrl' => array('type' => 'string', 'default' => ''),
-            'calloutPreset' => array('type' => 'string', 'default' => ''),
+            'calloutPreset' => array('type' => 'string', 'default' => 'kompas'),
         ),
-        'render_callback' => 'scoutingtc4_render_callout_block',
+        'render_callback' => 'scoutingNederlandRenderCalloutBlock',
     )));
 
-    register_block_type('scoutingtc4/news-items', array_merge($common, array(
+    register_block_type('scouting-nederland/news-items', array_merge($common, array(
         'attributes' => array(
             'title' => array('type' => 'string', 'default' => 'Nieuws'),
             'categoryIds' => array('type' => 'array', 'default' => array()),
@@ -158,52 +188,53 @@ function scoutingtc4_register_editor_blocks() {
             'count' => array('type' => 'number', 'default' => 3),
             'buttonText' => array('type' => 'string', 'default' => 'Meer nieuws'),
             'buttonUrl' => array('type' => 'string', 'default' => ''),
+            'buttonTarget' => array('type' => 'string', 'default' => ''),
             'buttonColor' => array('type' => 'string', 'default' => 'blauw'),
         ),
-        'render_callback' => 'scoutingtc4_render_news_items_block',
+        'render_callback' => 'scoutingNederlandRenderNewsItemsBlock',
     )));
 
-    register_block_type('scoutingtc4/speltakken-grid', array_merge($common, array(
+    register_block_type('scouting-nederland/speltakken-grid', array_merge($common, array(
         'attributes' => array(
             'title' => array('type' => 'string', 'default' => ''),
             'items' => array('type' => 'array', 'default' => array()),
         ),
-        'render_callback' => 'scoutingtc4_render_speltakken_grid_block',
+        'render_callback' => 'scoutingNederlandRenderSpeltakkenGridBlock',
     )));
 
-    register_block_type('scoutingtc4/two-columns', array_merge($common, array(
+    register_block_type('scouting-nederland/two-columns', array_merge($common, array(
         'attributes' => array(
             'leftTitle' => array('type' => 'string', 'default' => 'Gratis sponsoren'),
-            'leftText' => array('type' => 'string', 'default' => ''),
+            'leftText' => array('type' => 'string', 'default' => SCOUTING_NEDERLAND_TWO_COLUMNS_LEFT_TEXT),
             'leftImageUrl' => array('type' => 'string', 'default' => ''),
             'leftButtonText' => array('type' => 'string', 'default' => 'Lees hier meer!'),
             'leftButtonUrl' => array('type' => 'string', 'default' => ''),
+            'leftButtonTarget' => array('type' => 'string', 'default' => ''),
             'leftButtonColor' => array('type' => 'string', 'default' => 'blauw'),
             'rightTitle' => array('type' => 'string', 'default' => 'Vacatures'),
-            'rightText' => array('type' => 'string', 'default' => ''),
-            'rightSecondTitle' => array('type' => 'string', 'default' => 'Maatschappelijke stage'),
-            'rightSecondText' => array('type' => 'string', 'default' => ''),
+            'rightText' => array('type' => 'string', 'default' => SCOUTING_NEDERLAND_TWO_COLUMNS_RIGHT_TEXT),
             'rightButtonText' => array('type' => 'string', 'default' => 'Meer vacatures'),
             'rightButtonUrl' => array('type' => 'string', 'default' => ''),
+            'rightButtonTarget' => array('type' => 'string', 'default' => ''),
             'rightButtonColor' => array('type' => 'string', 'default' => 'zwart'),
         ),
-        'render_callback' => 'scoutingtc4_render_two_columns_block',
+        'render_callback' => 'scoutingNederlandRenderTwoColumnsBlock',
     )));
 
 
-    if (scoutingtc4_is_scouting_oidc_available()) {
-        register_block_type('scoutingtc4/oidc', array_merge($common, array(
+    if (scoutingNederlandIsScoutingOidcAvailable()) {
+        register_block_type('scouting-nederland/oidc', array_merge($common, array(
             'attributes' => array(
                 'displayType' => array('type' => 'string', 'default' => 'button'),
                 'buttonText' => array('type' => 'string', 'default' => 'Inloggen met Scouting'),
                 'alignCenter' => array('type' => 'boolean', 'default' => false),
             ),
-            'render_callback' => 'scoutingtc4_render_oidc_block',
+            'render_callback' => 'scoutingNederlandRenderOidcBlock',
         )));
     }
 }
-add_action('init', 'scoutingtc4_register_editor_blocks');
-function scoutingtc4_render_featured_quicklinks($text) {
+add_action('init', 'scoutingNederlandRegisterEditorBlocks');
+function scoutingNederlandRenderFeaturedQuicklinks($text) {
     $text = trim((string) $text);
 
     if ($text === '') {
@@ -253,10 +284,10 @@ function scoutingtc4_render_featured_quicklinks($text) {
         return '';
     }
 
-    $output = '<ul class="tc4-quicklink-list">';
+    $output = '<ul class="scouting-nederland-blocks-featured-items__quicklinks">';
 
     foreach ($links as $link) {
-        $output .= '<li><a href="' . esc_url($link['href']) . '">' . esc_html($link['label']) . '</a></li>';
+        $output .= '<li><a href="' . esc_url($link['href']) . '"><i class="fas fa-chevron-right" aria-hidden="true"></i>' . esc_html($link['label']) . '</a></li>';
     }
 
     $output .= '</ul>';
@@ -265,57 +296,43 @@ function scoutingtc4_render_featured_quicklinks($text) {
 }
 
 
-
-function scoutingtc4_block_anchor_attribute($attrs) {
-    if (empty($attrs['anchor'])) {
-        return '';
-    }
-
-    $anchor = sanitize_title((string) $attrs['anchor']);
-    return $anchor !== '' ? ' id="' . esc_attr($anchor) . '"' : '';
-}
-
-function scoutingtc4_render_featured_items_block($attrs) {
+function scoutingNederlandRenderFeaturedItemsBlock($attrs) {
     $items = isset($attrs['items']) && is_array($attrs['items']) ? $attrs['items'] : array();
     if (empty($items)) {
-        $items = array(
-            array('title' => 'Wie zijn wij?', 'text' => 'Scouting staat voor uitdaging!', 'buttonText' => 'Meer informatie', 'buttonColor' => 'blauw'),
-            array('title' => 'Lid worden', 'text' => 'Laat je uitdagen en ontdek Scouting!', 'buttonText' => 'Kom een keer meedoen', 'buttonColor' => 'blauw'),
-            array('title' => 'Snel naar', 'text' => 'Verhuur<br>Stockfoto’s<br>Scouting Nederland', 'buttonText' => '', 'buttonColor' => 'blauw'),
-        );
+        $items = scoutingNederlandFeaturedItemsDefaults();
     }
 
     ob_start();
-    echo '<section' . scoutingtc4_block_anchor_attribute($attrs) . ' class="tc4-block-featured-items tc4-featured-style-2020">';
+    echo '<section class="scouting-nederland-blocks-featured-items">';
     if (!empty($attrs['title'])) {
-        echo '<h2 class="tc4-featured-main-title">' . esc_html($attrs['title']) . '</h2>';
+        echo '<h2 class="scouting-nederland-blocks-featured-items__title">' . esc_html($attrs['title']) . '</h2>';
     }
-    echo '<div class="tc4-featured-grid">';
+    echo '<div class="scouting-nederland-blocks-featured-items__grid">';
     foreach (array_slice($items, 0, 3) as $index => $item) {
         $title = isset($item['title']) ? $item['title'] : '';
         $text = isset($item['text']) ? $item['text'] : '';
         $image = isset($item['imageUrl']) ? $item['imageUrl'] : '';
         $button = isset($item['buttonText']) ? $item['buttonText'] : '';
         $url = isset($item['buttonUrl']) ? $item['buttonUrl'] : '';
-        $target = isset($item['buttonTarget']) && $item['buttonTarget'] === '_blank' ? '_blank' : '';
+        $target = isset($item['buttonTarget']) ? $item['buttonTarget'] : '';
         $color = isset($item['buttonColor']) ? $item['buttonColor'] : 'blauw';
         $is_quicklinks = empty($button) && $index === 2;
 
-        echo '<article class="tc4-featured-item' . ($is_quicklinks ? ' tc4-featured-quicklinks' : '') . '">';
+        echo '<article class="scouting-nederland-blocks-featured-items__item' . ($is_quicklinks ? ' scouting-nederland-blocks-featured-items__item--quicklinks' : '') . '">';
         if ($title) echo '<h2>' . wp_kses_post($title) . '</h2>';
         if ($image) echo '<img src="' . esc_url($image) . '" alt="">';
 
         if ($text) {
             if ($is_quicklinks) {
-                echo scoutingtc4_render_featured_quicklinks($text);
+                echo scoutingNederlandRenderFeaturedQuicklinks($text);
             } else {
-                echo '<div class="tc4-featured-text">' . wp_kses_post(wpautop($text)) . '</div>';
+                echo '<div class="scouting-nederland-blocks-featured-items__text">' . wp_kses_post(wpautop($text)) . '</div>';
             }
         }
 
         if ($button) {
-            $target_attr = $target === '_blank' ? ' target="_blank" rel="noopener noreferrer"' : '';
-            echo '<a class="tc4-btn ' . esc_attr(scoutingtc4_button_class_from_color($color)) . '" href="' . esc_url($url ?: '#') . '"' . $target_attr . '><span>' . esc_html($button) . '</span></a>';
+            $target_attr = $target === '_blank' ? SCOUTING_NEDERLAND_BLOCKS_NEW_TAB_ATTRIBUTES : '';
+            echo '<a class="scouting-nederland-blocks-featured-items__button ' . esc_attr(scoutingNederlandBlocksButtonClassFromColor('featured-items', $color)) . '" href="' . esc_url($url ?: '#') . '"' . $target_attr . '><span>' . esc_html($button) . '</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a>';
         }
         echo '</article>';
     }
@@ -323,41 +340,43 @@ function scoutingtc4_render_featured_items_block($attrs) {
     return ob_get_clean();
 }
 
-function scoutingtc4_render_callout_block($attrs) {
+function scoutingNederlandRenderCalloutBlock($attrs) {
     $image = !empty($attrs['useOwnImage']) && !empty($attrs['imageUrl']) ? $attrs['imageUrl'] : '';
     if (empty($image)) {
-        $image = scoutingtc4_callout_image_url(!empty($attrs['calloutPreset']) ? $attrs['calloutPreset'] : 'kompas');
+        $image = scoutingNederlandCalloutImageUrl(!empty($attrs['calloutPreset']) ? $attrs['calloutPreset'] : 'kompas');
     }
 
     $title = !empty($attrs['title']) ? $attrs['title'] : 'Vrijwilligers gezocht';
     $text = isset($attrs['text']) ? trim((string) $attrs['text']) : '';
     if ($text === '') {
-        $text = 'Ben jij enthousiast, geef je goed leiding en vind je het leuk om kinderen en jongeren te begeleiden bij hun persoonlijke ontwikkeling? Of heb je misschien bestuurlijke kwaliteiten die je wilt inzetten? Dan zijn wij op zoek naar jou!';
+        $text = SCOUTING_NEDERLAND_CALLOUT_DEFAULT_TEXT;
     }
 
     ob_start();
-    echo '<section' . scoutingtc4_block_anchor_attribute($attrs) . ' class="tc4-block-callout tc4-callout-style-2020">';
-    echo '<div class="tc4-callout-inner">';
-    echo '<div class="tc4-callout-image">';
+    echo '<section class="scouting-nederland-blocks-callout">';
+    echo '<div class="scouting-nederland-blocks-callout__inner">';
+    echo '<div class="scouting-nederland-blocks-callout__image">';
     if ($image) {
         echo '<img src="' . esc_url($image) . '" alt="">';
     }
     echo '</div>';
-    echo '<div class="tc4-callout-text">';
+    echo '<div class="scouting-nederland-blocks-callout__content">';
     if ($title) {
         echo '<h2>' . esc_html($title) . '</h2>';
     }
 
-    echo '<div class="tc4-callout-copy">' . wp_kses_post(wpautop($text)) . '</div>';
+    echo '<div class="scouting-nederland-blocks-callout__copy">' . wp_kses_post(wpautop($text)) . '</div>';
 
     if (!empty($attrs['buttonText'])) {
-        echo '<a class="tc4-btn ' . esc_attr(scoutingtc4_button_class_from_color(!empty($attrs['buttonColor']) ? $attrs['buttonColor'] : 'zwart')) . '" href="' . esc_url(!empty($attrs['buttonUrl']) ? $attrs['buttonUrl'] : '#') . '"><span>' . esc_html($attrs['buttonText']) . '</span></a>';
+        $button_target = !empty($attrs['buttonTarget']) ? $attrs['buttonTarget'] : '';
+        $target_attr = $button_target === '_blank' ? SCOUTING_NEDERLAND_BLOCKS_NEW_TAB_ATTRIBUTES : '';
+        echo '<a class="scouting-nederland-blocks-callout__button ' . esc_attr(scoutingNederlandBlocksButtonClassFromColor('callout', !empty($attrs['buttonColor']) ? $attrs['buttonColor'] : 'zwart')) . '" href="' . esc_url(!empty($attrs['buttonUrl']) ? $attrs['buttonUrl'] : '#') . '"' . $target_attr . '><span>' . esc_html($attrs['buttonText']) . '</span></a>';
     }
     echo '</div></div></section>';
     return ob_get_clean();
 }
 
-function scoutingtc4_render_news_items_block($attrs) {
+function scoutingNederlandRenderNewsItemsBlock($attrs) {
     $count = !empty($attrs['count']) ? absint($attrs['count']) : 3;
     $post_ids = !empty($attrs['postIds']) && is_array($attrs['postIds']) ? array_values(array_filter(array_map('absint', $attrs['postIds']))) : array();
     $category_ids = !empty($attrs['categoryIds']) && is_array($attrs['categoryIds']) ? array_values(array_filter(array_map('absint', $attrs['categoryIds']))) : array();
@@ -387,25 +406,25 @@ function scoutingtc4_render_news_items_block($attrs) {
 
     $query = new WP_Query($args);
     ob_start();
-    echo '<section' . scoutingtc4_block_anchor_attribute($attrs) . ' class="tc4-block-news tc4-news-style-2020">';
-    echo '<div class="gb-news-items">';
+    echo '<section class="scouting-nederland-blocks-news-items">';
+    echo '<div class="scouting-nederland-blocks-news-items__inner">';
     if (!empty($attrs['title'])) {
-        echo '<a class="tc4-news-heading-link" href="' . esc_url($category_link) . '"><h4>' . esc_html($attrs['title']) . '</h4></a>';
+        echo '<a class="scouting-nederland-blocks-news-items__heading-link" href="' . esc_url($category_link) . '"><h4>' . esc_html($attrs['title']) . '</h4></a>';
     }
 
-    echo '<div class="news-items">';
+    echo '<div class="scouting-nederland-blocks-news-items__grid">';
     while ($query->have_posts()) {
         $query->the_post();
-        $thumb = get_the_post_thumbnail_url(get_the_ID(), 'tc4_home_card');
-        echo '<div class="news-item">';
-            echo '<a class="titel" href="' . esc_url(get_permalink()) . '">';
-                echo '<div class="beeld"' . ($thumb ? ' style="background-image:url(' . esc_url($thumb) . ');"' : '') . '>';
-                    echo '<span class="datum">' . esc_html(get_the_date('d F Y')) . '</span>';
+        $thumb = get_the_post_thumbnail_url(get_the_ID(), 'scouting_nederland_home_card');
+        echo '<div class="scouting-nederland-blocks-news-items__item">';
+            echo '<a class="scouting-nederland-blocks-news-items__item-link" href="' . esc_url(get_permalink()) . '">';
+                echo '<div class="scouting-nederland-blocks-news-items__image"' . ($thumb ? ' style="background-image:url(' . esc_url($thumb) . ');"' : '') . '>';
+                    echo '<span class="scouting-nederland-blocks-news-items__date">' . esc_html(get_the_date('d F Y')) . '</span>';
                 echo '</div>';
                 echo '<h5>' . esc_html(get_the_title()) . '</h5>';
             echo '</a>';
-            echo '<div class="tekst">' . esc_html(scoutingtc4_trim_text_chars(get_the_excerpt(), 142)) . '</div>';
-            echo '<a class="lees-meer" href="' . esc_url(get_permalink()) . '">' . esc_html__('Lees meer', 'scoutingtc4') . '</a>';
+            echo '<div class="scouting-nederland-blocks-news-items__excerpt">' . esc_html(scoutingNederlandTrimTextChars(get_the_excerpt(), 142)) . '</div>';
+            echo '<a class="scouting-nederland-blocks-news-items__read-more" href="' . esc_url(get_permalink()) . '">' . esc_html__('Lees meer', 'scouting-nederland') . ' <i class="fas fa-chevron-right" aria-hidden="true"></i></a>';
         echo '</div>';
     }
     wp_reset_postdata();
@@ -415,8 +434,8 @@ function scoutingtc4_render_news_items_block($attrs) {
         $button_url = !empty($attrs['buttonUrl']) ? $attrs['buttonUrl'] : $category_link;
         $button_color = !empty($attrs['buttonColor']) ? $attrs['buttonColor'] : 'blauw';
         $button_target = !empty($attrs['buttonTarget']) ? $attrs['buttonTarget'] : '';
-        $target_attr = ($button_target === '_blank') ? ' target="_blank" rel="noopener noreferrer"' : '';
-        echo '<a class="meer-nieuws tc4-btn ' . esc_attr(scoutingtc4_blocks_button_class_from_color($button_color)) . '" href="' . esc_url($button_url) . '"' . $target_attr . '><span>' . esc_html($attrs['buttonText']) . '</span></a>';
+        $target_attr = $button_target === '_blank' ? SCOUTING_NEDERLAND_BLOCKS_NEW_TAB_ATTRIBUTES : '';
+        echo '<a class="scouting-nederland-blocks-news-items__button ' . esc_attr(scoutingNederlandBlocksButtonClassFromColor('news-items', $button_color)) . '" href="' . esc_url($button_url) . '"' . $target_attr . '><span>' . esc_html($attrs['buttonText']) . '</span><i class="fas fa-chevron-right" aria-hidden="true"></i></a>';
     }
 
     echo '</div>';
@@ -424,7 +443,7 @@ function scoutingtc4_render_news_items_block($attrs) {
     return ob_get_clean();
 }
 
-function scoutingtc4_render_speltakken_grid_block($attrs) {
+function scoutingNederlandRenderSpeltakkenGridBlock($attrs) {
     $items = isset($attrs['items']) && is_array($attrs['items']) ? $attrs['items'] : array();
 
     if (empty($items)) {
@@ -436,11 +455,11 @@ function scoutingtc4_render_speltakken_grid_block($attrs) {
     }
 
     ob_start();
-    echo '<section' . scoutingtc4_block_anchor_attribute($attrs) . ' class="tc4-block-speltakken-grid tc4-speltakken-grid-style-2020">';
+    echo '<section class="scouting-nederland-blocks-speltakken-grid">';
     if (!empty($attrs['title'])) {
-        echo '<h2 class="tc4-speltakken-main-title">' . esc_html($attrs['title']) . '</h2>';
+        echo '<h2 class="scouting-nederland-blocks-speltakken-grid__title">' . esc_html($attrs['title']) . '</h2>';
     }
-    echo '<div class="tc4-speltakken-grid">';
+    echo '<div class="scouting-nederland-blocks-speltakken-grid__grid">';
 
     foreach ($items as $item) {
         $title = isset($item['title']) ? $item['title'] : '';
@@ -450,22 +469,22 @@ function scoutingtc4_render_speltakken_grid_block($attrs) {
         $button_text = $button_url ? 'Meer informatie' : '';
         $button_target = isset($item['buttonTarget']) ? $item['buttonTarget'] : '';
 
-        echo '<article class="tc4-speltak-card">';
+        echo '<article class="scouting-nederland-blocks-speltakken-grid__card">';
         if ($image) {
-            echo '<div class="tc4-speltak-card__image"><img src="' . esc_url($image) . '" alt=""></div>';
+            echo '<div class="scouting-nederland-blocks-speltakken-grid__image"><img src="' . esc_url($image) . '" alt=""></div>';
         } else {
-            echo '<div class="tc4-speltak-card__image tc4-speltak-card__image--placeholder" aria-hidden="true"></div>';
+            echo '<div class="scouting-nederland-blocks-speltakken-grid__image scouting-nederland-blocks-speltakken-grid__image--placeholder" aria-hidden="true"></div>';
         }
-        echo '<div class="tc4-speltak-card__body">';
+        echo '<div class="scouting-nederland-blocks-speltakken-grid__body">';
         if ($title) {
             echo '<h3>' . esc_html($title) . '</h3>';
         }
         if ($text) {
-            echo '<div class="tc4-speltak-card__text">' . wp_kses_post(wpautop($text)) . '</div>';
+            echo '<div class="scouting-nederland-blocks-speltakken-grid__text">' . wp_kses_post(wpautop($text)) . '</div>';
         }
         if ($button_text && $button_url) {
-            $target_attr = $button_target === '_blank' ? ' target="_blank" rel="noopener noreferrer"' : '';
-            echo '<div class="tc4-speltak-card__button"><a class="tc4-btn tc4-btn-blue" href="' . esc_url($button_url) . '"' . $target_attr . '><span>' . esc_html($button_text) . '</span></a></div>';
+            $target_attr = $button_target === '_blank' ? SCOUTING_NEDERLAND_BLOCKS_NEW_TAB_ATTRIBUTES : '';
+            echo '<div class="scouting-nederland-blocks-speltakken-grid__button-wrap"><a class="scouting-nederland-blocks-speltakken-grid__button ' . esc_attr(scoutingNederlandBlocksButtonClassFromColor('speltakken-grid', 'blauw')) . '" href="' . esc_url($button_url) . '"' . $target_attr . '><span>' . esc_html($button_text) . '</span></a></div>';
         }
         echo '</div>';
         echo '</article>';
@@ -475,65 +494,102 @@ function scoutingtc4_render_speltakken_grid_block($attrs) {
     return ob_get_clean();
 }
 
-function scoutingtc4_render_two_columns_block($attrs) {
-    ob_start();
+function scoutingNederlandGetTwoColumnsBlockValues($attrs) {
+    $left_text = array_key_exists('leftText', $attrs)
+        ? (string) $attrs['leftText']
+        : SCOUTING_NEDERLAND_TWO_COLUMNS_LEFT_TEXT;
+    $right_text = array_key_exists('rightText', $attrs)
+        ? trim((string) $attrs['rightText'])
+        : SCOUTING_NEDERLAND_TWO_COLUMNS_RIGHT_TEXT;
 
-    $left_title  = !empty($attrs['leftTitle']) ? $attrs['leftTitle'] : '';
-    $left_text   = !empty($attrs['leftText']) ? $attrs['leftText'] : '';
-    $left_image  = !empty($attrs['leftImageUrl']) ? $attrs['leftImageUrl'] : '';
-    $left_btn_t  = !empty($attrs['leftButtonText']) ? $attrs['leftButtonText'] : '';
-    $left_btn_u  = !empty($attrs['leftButtonUrl']) ? $attrs['leftButtonUrl'] : '#';
-    $left_btn_c  = !empty($attrs['leftButtonColor']) ? $attrs['leftButtonColor'] : 'blauw';
-
-    $right_title = !empty($attrs['rightTitle']) ? $attrs['rightTitle'] : '';
-    $right_text  = isset($attrs['rightText']) ? trim((string) $attrs['rightText']) : '';
-    $right_btn_t = !empty($attrs['rightButtonText']) ? $attrs['rightButtonText'] : '';
-    $right_btn_u = !empty($attrs['rightButtonUrl']) ? $attrs['rightButtonUrl'] : '#';
-    $right_btn_c = !empty($attrs['rightButtonColor']) ? $attrs['rightButtonColor'] : 'zwart';
-
-    if ($right_text === '') {
-        $right_text = '<p>Meer weten over vrijwilligerswerk bij Scouting? Laat je verrassen door één van de uitdagende vacatures of lees meer over vrijwilliger worden bij Scouting.</p><ul><li>Welpenleiding</li><li>Secretaris</li></ul><h2>Maatschappelijke stage</h2><p>Iedere scholier krijgt er wel mee te maken: de maatschappelijke stage. Sommige scholieren gaan aan de slag in peuterspeelzalen, bejaardentehuizen of sociale werkplaatsen. Maar je kunt natuurlijk ook bij Scouting terecht.</p><p>Klik hier om je maatschappelijke stage bij onze Scoutinggroep te lopen.</p>';
-    }
-
-    echo '<section' . scoutingtc4_block_anchor_attribute($attrs) . ' class="tc4-block-two-columns tc4-two-columns-style-2020">';
-    echo '<div class="gb-two-columns">';
-
-    echo '<div class="col-headerimage">';
-    echo '<div class="beeld"' . ($left_image ? ' style="background-image:url(' . esc_url($left_image) . ');"' : '') . '>';
-    if ($left_title) {
-        echo '<h4>' . esc_html($left_title) . '</h4>';
-    }
-    echo '</div>';
-    echo '<div class="tekst">' . wp_kses_post(wpautop($left_text)) . '</div>';
-    if ($left_btn_t) {
-        echo '<div class="knop"><a class="btn tc4-two-btn ' . esc_attr(scoutingtc4_button_class_from_color($left_btn_c)) . '" href="' . esc_url($left_btn_u) . '"><span class="tc4-two-btn-label">' . esc_html($left_btn_t) . '</span><span class="tc4-two-btn-arrow" aria-hidden="true"></span></a></div>';
-    }
-    echo '</div>';
-
-    echo '<div class="col-wysiwyg">';
-    if ($right_title) {
-        echo '<h4>' . esc_html($right_title) . '</h4>';
-    }
-    echo '<div class="content">' . wp_kses_post(wpautop($right_text)) . '</div>';
-    if ($right_btn_t) {
-        echo '<div class="knop"><a class="btn tc4-two-btn ' . esc_attr(scoutingtc4_button_class_from_color($right_btn_c)) . '" href="' . esc_url($right_btn_u) . '"><span class="tc4-two-btn-label">' . esc_html($right_btn_t) . '</span><span class="tc4-two-btn-arrow" aria-hidden="true"></span></a></div>';
-    }
-    echo '</div>';
-
-    echo '</div>';
-    echo '</section>';
-
-    return ob_get_clean();
+    return array(
+        'leftTitle' => !empty($attrs['leftTitle']) ? $attrs['leftTitle'] : '',
+        'leftText' => $left_text,
+        'leftImageUrl' => !empty($attrs['leftImageUrl']) ? $attrs['leftImageUrl'] : '',
+        'leftButtonText' => !empty($attrs['leftButtonText']) ? $attrs['leftButtonText'] : '',
+        'leftButtonUrl' => !empty($attrs['leftButtonUrl']) ? $attrs['leftButtonUrl'] : '#',
+        'leftButtonTarget' => !empty($attrs['leftButtonTarget']) ? $attrs['leftButtonTarget'] : '',
+        'leftButtonColor' => !empty($attrs['leftButtonColor']) ? $attrs['leftButtonColor'] : 'blauw',
+        'rightTitle' => !empty($attrs['rightTitle']) ? $attrs['rightTitle'] : '',
+        'rightText' => $right_text,
+        'rightButtonText' => !empty($attrs['rightButtonText']) ? $attrs['rightButtonText'] : '',
+        'rightButtonUrl' => !empty($attrs['rightButtonUrl']) ? $attrs['rightButtonUrl'] : '#',
+        'rightButtonTarget' => !empty($attrs['rightButtonTarget']) ? $attrs['rightButtonTarget'] : '',
+        'rightButtonColor' => !empty($attrs['rightButtonColor']) ? $attrs['rightButtonColor'] : 'zwart',
+    );
 }
 
-function scoutingtc4_render_oidc_block($attrs) {
-    if (!scoutingtc4_is_scouting_oidc_available()) {
-        return current_user_can('edit_posts') ? '<p class="tc4-oidc-unavailable">Scouting OpenID Connect is niet actief.</p>' : '';
+function scoutingNederlandRenderTwoColumnsButton($text, $url, $target, $color) {
+    if ($text === '') {
+        return '';
+    }
+
+    $target_attr = $target === '_blank' ? SCOUTING_NEDERLAND_BLOCKS_NEW_TAB_ATTRIBUTES : '';
+    $classes = 'scouting-nederland-blocks-two-columns__button '
+        . scoutingNederlandBlocksButtonClassFromColor('two-columns', $color);
+
+    return '<div class="scouting-nederland-blocks-two-columns__button-wrap">'
+        . '<a class="' . esc_attr($classes) . '" href="' . esc_url($url) . '"' . $target_attr . '>'
+        . '<span>' . esc_html($text) . '</span>'
+        . '<span class="scouting-nederland-blocks-two-columns__button-arrow" aria-hidden="true"></span>'
+        . '</a></div>';
+}
+
+function scoutingNederlandRenderTwoColumnsImageColumn($values) {
+    $style = $values['leftImageUrl']
+        ? ' style="background-image:url(' . esc_url($values['leftImageUrl']) . ');"'
+        : '';
+    $title = $values['leftTitle'] ? '<h4>' . esc_html($values['leftTitle']) . '</h4>' : '';
+    $button = scoutingNederlandRenderTwoColumnsButton(
+        $values['leftButtonText'],
+        $values['leftButtonUrl'],
+        $values['leftButtonTarget'],
+        $values['leftButtonColor']
+    );
+
+    return '<div class="scouting-nederland-blocks-two-columns__image-column">'
+        . '<div class="scouting-nederland-blocks-two-columns__image"' . $style . '>' . $title . '</div>'
+        . '<div class="scouting-nederland-blocks-two-columns__image-column-text">'
+        . wp_kses_post(wpautop($values['leftText'])) . '</div>'
+        . $button
+        . '</div>';
+}
+
+function scoutingNederlandRenderTwoColumnsContentColumn($values) {
+    $title = $values['rightTitle'] ? '<h4>' . esc_html($values['rightTitle']) . '</h4>' : '';
+    $button = scoutingNederlandRenderTwoColumnsButton(
+        $values['rightButtonText'],
+        $values['rightButtonUrl'],
+        $values['rightButtonTarget'],
+        $values['rightButtonColor']
+    );
+
+    return '<div class="scouting-nederland-blocks-two-columns__content-column">'
+        . $title
+        . '<div class="scouting-nederland-blocks-two-columns__content">'
+        . wp_kses_post(wpautop($values['rightText'])) . '</div>'
+        . $button
+        . '</div>';
+}
+
+function scoutingNederlandRenderTwoColumnsBlock($attrs) {
+    $values = scoutingNederlandGetTwoColumnsBlockValues($attrs);
+
+    return '<section class="scouting-nederland-blocks-two-columns">'
+        . '<div class="scouting-nederland-blocks-two-columns__grid">'
+        . scoutingNederlandRenderTwoColumnsImageColumn($values)
+        . scoutingNederlandRenderTwoColumnsContentColumn($values)
+        . '</div></section>';
+}
+
+function scoutingNederlandRenderOidcBlock($attrs) {
+    if (!scoutingNederlandIsScoutingOidcAvailable()) {
+        return '';
     }
 
     $display_type = !empty($attrs['displayType']) ? sanitize_key($attrs['displayType']) : 'button';
     $align_center = !empty($attrs['alignCenter']);
-    $classes = 'tc4-block-oidc' . ($align_center ? ' tc4-block-oidc--center' : '');
+    $classes = 'scouting-nederland-blocks-oidc' . ($align_center ? ' scouting-nederland-blocks-oidc--center' : '');
 
     if ($display_type === 'link') {
         $login_url = shortcode_exists('scouting_oidc_link') ? trim(do_shortcode('[scouting_oidc_link]')) : '';
@@ -543,30 +599,30 @@ function scoutingtc4_render_oidc_block($attrs) {
             return '';
         }
 
-        return '<div' . scoutingtc4_block_anchor_attribute($attrs) . ' class="' . esc_attr($classes . ' tc4-block-oidc--link') . '"><a class="tc4-oidc-text-link" href="' . esc_url($login_url) . '">' . esc_html($button_text) . '</a></div>';
+        return '<div class="' . esc_attr($classes . ' scouting-nederland-blocks-oidc--link') . '"><a class="scouting-nederland-blocks-oidc__text-link" href="' . esc_url($login_url) . '">' . esc_html($button_text) . '</a></div>';
     }
 
     if (!shortcode_exists('scouting_oidc_button')) {
         return '';
     }
 
-    return '<div' . scoutingtc4_block_anchor_attribute($attrs) . ' class="' . esc_attr($classes . ' tc4-block-oidc--button') . '">' . do_shortcode('[scouting_oidc_button]') . '</div>';
+    return '<div class="' . esc_attr($classes . ' scouting-nederland-blocks-oidc--button') . '">' . do_shortcode('[scouting_oidc_button]') . '</div>';
 }
 
-function scoutingtc4_block_categories($categories, $post) {
+function scoutingNederlandBlockCategories($categories, $post) {
     return array_merge(
         array(
             array(
-                'slug'  => 'scoutingtc4',
-                'title' => __('Scouting TC4', 'scoutingtc4'),
+                'slug'  => 'scouting-nederland',
+                'title' => __('Scouting Nederland', 'scouting-nederland'),
                 'icon'  => null,
             ),
         ),
         $categories
     );
 }
-add_filter('block_categories_all', 'scoutingtc4_block_categories', 10, 2);
-function scoutingtc4_enqueue_block_editor_dependencies() {
+add_filter('block_categories_all', 'scoutingNederlandBlockCategories', 10, 2);
+function scoutingNederlandEnqueueBlockEditorDependencies() {
     wp_enqueue_editor();
 }
-add_action('enqueue_block_editor_assets', 'scoutingtc4_enqueue_block_editor_dependencies');
+add_action('enqueue_block_editor_assets', 'scoutingNederlandEnqueueBlockEditorDependencies');

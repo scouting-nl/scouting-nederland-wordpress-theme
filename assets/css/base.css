@@ -1,3 +1,9 @@
+/* Shared responsive page-width tokens consumed by component owners. */
+:root {
+  --scouting-nederland-page-width: 1140px;
+  --scouting-nederland-page-gutter: 1rem;
+}
+
 @font-face {
   font-family: "Urban Jungle";
   src: url("../fonts/urban-jungle.otf") format("opentype");
@@ -62,145 +68,94 @@
   font-display: swap;
 }
 
-.mainbody {
+/*
+ * Keyboard skip link.
+ *
+ * WordPress keeps the link visually hidden with screen-reader-text until focus.
+ * Fixed positioning then places it above the fixed header in the viewport.
+ */
+.scouting-nederland-base-skip-link:focus {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1040;
+  width: auto;
+  height: auto;
+  padding: .75rem 1rem;
+  color: #fff;
+  background: var(--wp--preset--color--scouting-blauw);
+  clip: auto;
+  clip-path: none;
+  text-decoration: none;
+}
+
+/* Reserve space for the fixed 84px navigation bar on every template. */
+.scouting-nederland-base-main {
   padding-top: 84px !important;
 }
 
-.mainbody {
-  padding-top: 84px !important;
+/* Shared fallback hero used when a template has no page-specific media. */
+.scouting-nederland-base-default-banner {
+  min-height: 360px;
+  background-position: center;
+  background-size: cover;
 }
 
-body .mainbody,
-body #content,
-body main#content {
+/* Fixed-height variant used by archive and singular fallback heroes. */
+.scouting-nederland-base-default-banner--low {
+  height: 350px;
+  background-repeat: no-repeat;
+}
+
+/* Prevent the page shell itself from adding a second fixed-header gap. */
+body .scouting-nederland-base-main {
   margin-top: 0 !important;
 }
 
-body .mainbody > *:first-child,
-body #content > *:first-child,
-body main#content > *:first-child {
+body .scouting-nederland-base-main>*:first-child {
   margin-top: 0 !important;
 }
 
-body #tc4-hero,
-body .tc4-home-hero,
-body .tc4-search-hero,
-body .tc4-404-hero,
-body .defaultbanner,
-body .home-slider,
-body .tc4-home-slider,
-body .tc4-video-banner {
-  margin-top: 0 !important;
-}
-
-body #tc4-hero.container-fluid,
-body #tc4-hero .row,
-body #tc4-hero .col,
-body #tc4-hero .col-sm-12,
-body #tc4-hero .col-md-12 {
+/* Bootstrap widget rows in the shared hero must meet the top edge of the shell. */
+.scouting-nederland-base-widget-hero,
+.scouting-nederland-base-widget-hero .row,
+.scouting-nederland-base-widget-hero .col,
+.scouting-nederland-base-widget-hero .col-sm-12,
+.scouting-nederland-base-widget-hero .col-md-12 {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
 
-body .mainbody > #tc4-hero:first-child,
-body .mainbody > .tc4-home-hero:first-child,
-body .mainbody > .tc4-search-hero:first-child,
-body .mainbody > .tc4-404-hero:first-child,
-body .mainbody > .defaultbanner:first-child,
-body main#content > .tc4-home-hero:first-child,
-body main#content > .tc4-search-hero:first-child,
-body main#content > .tc4-404-hero:first-child {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-body .tc4-search-page,
-body .tc4-404-page {
-  padding-top: 0 !important;
-}
-
-
-#tc4-hero h1,
-#tc4-hero h2,
-#tc4-hero h3,
-#tc4-hero p,
-.tc4-home-hero h1,
-.tc4-home-hero h2,
-.tc4-home-hero h3,
-.tc4-home-hero p,
-.defaultbanner h1,
-.defaultbanner h2,
-.defaultbanner h3,
-.defaultbanner p {
+/* Widget authors can provide several heading levels and copy inside this extension point. */
+.scouting-nederland-base-widget-hero h1,
+.scouting-nederland-base-widget-hero h2,
+.scouting-nederland-base-widget-hero h3,
+.scouting-nederland-base-widget-hero p {
   color: #fff !important;
-  text-shadow: 0 2px 12px rgba(0,0,0,.35);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .35);
 }
 
-
-#tc4-hero h1,
-#tc4-hero h2,
-#tc4-hero h3,
-.tc4-home-hero h1,
-.tc4-home-hero h2,
-.tc4-home-hero h3,
-.defaultbanner h1,
-.defaultbanner h2,
-.defaultbanner h3 {
+.scouting-nederland-base-widget-hero h1,
+.scouting-nederland-base-widget-hero h2,
+.scouting-nederland-base-widget-hero h3 {
   font-family: "Urban Jungle", "Roboto Slab", Georgia, serif !important;
   letter-spacing: .02em;
 }
 
-.tc4-hero-font-urban-jungle .tc4-page-hero__title h1,
-.tc4-hero-font-urban-jungle .tc4-home-hero__inner h1,
-.tc4-hero-font-urban-jungle h1 {
+/*
+ * Runtime hero font state.
+ *
+ * PHP can place the state on a hero ancestor or directly on its h1. :is()
+ * handles both placements without enumerating every hero component.
+ */
+:is(.scouting-nederland-hero-font-urban-jungle h1, h1.scouting-nederland-hero-font-urban-jungle) {
   font-family: "Urban Jungle", "Roboto Slab", Georgia, serif !important;
 }
 
-.tc4-hero-font-roboto-slab .tc4-page-hero__title h1,
-.tc4-hero-font-roboto-slab .tc4-home-hero__inner h1,
-.tc4-hero-font-roboto-slab h1 {
+:is(.scouting-nederland-hero-font-roboto-slab h1, h1.scouting-nederland-hero-font-roboto-slab) {
   font-family: "Roboto Slab", Georgia, serif !important;
 }
 
-.tc4-hero-font-poppins .tc4-page-hero__title h1,
-.tc4-hero-font-poppins .tc4-home-hero__inner h1,
-.tc4-hero-font-poppins h1 {
-  font-family: "Poppins", Arial, Helvetica, sans-serif !important;
-}
-
-/* Hero title font override: works for standard hero, slider hero and video hero. */
-#tc4-hero.tc4-hero-font-urban-jungle h1,
-.tc4-page-hero.tc4-hero-font-urban-jungle .tc4-page-hero__title h1,
-.tc4-page-hero__title.tc4-hero-font-urban-jungle h1,
-h1.tc4-hero-font-urban-jungle,
-.tc4-home-hero.tc4-hero-font-urban-jungle .tc4-home-hero__inner h1,
-.tc4-home-hero__inner.tc4-hero-font-urban-jungle h1,
-.tc4-home-slider.tc4-hero-font-urban-jungle h1,
-.tc4-home-slide__caption.tc4-hero-font-urban-jungle h1,
-.tc4-home-video-caption.tc4-hero-font-urban-jungle h1 {
-  font-family: "Urban Jungle", "Roboto Slab", Georgia, serif !important;
-}
-
-#tc4-hero.tc4-hero-font-roboto-slab h1,
-.tc4-page-hero.tc4-hero-font-roboto-slab .tc4-page-hero__title h1,
-.tc4-page-hero__title.tc4-hero-font-roboto-slab h1,
-h1.tc4-hero-font-roboto-slab,
-.tc4-home-hero.tc4-hero-font-roboto-slab .tc4-home-hero__inner h1,
-.tc4-home-hero__inner.tc4-hero-font-roboto-slab h1,
-.tc4-home-slider.tc4-hero-font-roboto-slab h1,
-.tc4-home-slide__caption.tc4-hero-font-roboto-slab h1,
-.tc4-home-video-caption.tc4-hero-font-roboto-slab h1 {
-  font-family: "Roboto Slab", Georgia, serif !important;
-}
-
-#tc4-hero.tc4-hero-font-poppins h1,
-.tc4-page-hero.tc4-hero-font-poppins .tc4-page-hero__title h1,
-.tc4-page-hero__title.tc4-hero-font-poppins h1,
-h1.tc4-hero-font-poppins,
-.tc4-home-hero.tc4-hero-font-poppins .tc4-home-hero__inner h1,
-.tc4-home-hero__inner.tc4-hero-font-poppins h1,
-.tc4-home-slider.tc4-hero-font-poppins h1,
-.tc4-home-slide__caption.tc4-hero-font-poppins h1,
-.tc4-home-video-caption.tc4-hero-font-poppins h1 {
+:is(.scouting-nederland-hero-font-poppins h1, h1.scouting-nederland-hero-font-poppins) {
   font-family: "Poppins", Arial, Helvetica, sans-serif !important;
 }

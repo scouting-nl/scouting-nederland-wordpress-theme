@@ -1,16 +1,23 @@
-.tc4-page-hero__media {
+/* Hero media establishes the positioning and minimum-height context for its title overlay. */
+.scouting-nederland-page-hero__media {
   position: relative;
   min-height: 260px;
 }
 
-.tc4-page-hero__media > .defaultbanner,
-.tc4-page-hero__media > .widget,
-.tc4-page-hero__media > section,
-.tc4-page-hero__media > div:not(.tc4-page-hero__title) {
+.scouting-nederland-page-hero__media>.scouting-nederland-page-hero__fallback,
+.scouting-nederland-page-hero__media>.widget,
+.scouting-nederland-page-hero__media>section,
+.scouting-nederland-page-hero__media>div:not(.scouting-nederland-page-hero__title) {
   min-height: 260px;
 }
 
-.tc4-page-hero__title {
+/* The page-owned fallback mirrors the desktop base banner and can override it responsively. */
+.scouting-nederland-page-hero__fallback {
+  height: 350px;
+}
+
+/* The absolute overlay centers the title without blocking links in widget media below it. */
+.scouting-nederland-page-hero__title {
   position: absolute;
   inset: 0;
   z-index: 3;
@@ -22,7 +29,7 @@
   text-align: center;
 }
 
-.tc4-page-hero__title h1 {
+.scouting-nederland-page-hero__title h1 {
   margin: 0;
   color: #fff;
   font-family: "Urban Jungle", "Roboto Slab", Georgia, serif;
@@ -33,7 +40,8 @@
   text-shadow: 0 6px 0 rgba(0, 0, 0, .18);
 }
 
-.tc4-page-hero__title::before {
+/* A transparent gradient protects white title contrast over arbitrary user imagery. */
+.scouting-nederland-page-hero__title::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -41,68 +49,40 @@
   background: linear-gradient(90deg, rgba(0, 0, 0, .28), rgba(0, 0, 0, .12), rgba(0, 0, 0, .28));
 }
 
+/* Reduce fixed hero space on narrow viewports while preserving overlay alignment. */
 @media (max-width: 767.98px) {
-  .tc4-page-hero__media,
-  .tc4-page-hero__media > .defaultbanner,
-  .tc4-page-hero__media > .widget,
-  .tc4-page-hero__media > section,
-  .tc4-page-hero__media > div:not(.tc4-page-hero__title) {
+
+  .scouting-nederland-page-hero__media,
+  .scouting-nederland-page-hero__media>.scouting-nederland-page-hero__fallback,
+  .scouting-nederland-page-hero__media>.widget,
+  .scouting-nederland-page-hero__media>section,
+  .scouting-nederland-page-hero__media>div:not(.scouting-nederland-page-hero__title) {
     min-height: 210px;
   }
 
-  .tc4-page-hero__title {
+  .scouting-nederland-page-hero__fallback {
+    height: 210px;
+  }
+
+  .scouting-nederland-page-hero__title {
     padding: 36px 16px;
   }
 }
 
-.tc4-page-hero,
-body.page .tc4-home-slider {
+/* Separate page content from image, slider, or video hero variants consistently. */
+.scouting-nederland-page-hero,
+.scouting-nederland-page-featured {
   margin-bottom: 48px;
 }
 
-body.page .tc4-page-hero + .container #tc4-featured {
+.scouting-nederland-page-hero+.container .scouting-nederland-page-featured {
   margin-top: 0;
 }
 
 @media (max-width: 767.98px) {
-  .tc4-page-hero,
-  body.page .tc4-home-slider {
+
+  .scouting-nederland-page-hero,
+  .scouting-nederland-page-featured {
     margin-bottom: 32px;
   }
-}
-
-#tc4-hero.tc4-hero-font-urban-jungle h1,
-.tc4-page-hero.tc4-hero-font-urban-jungle .tc4-page-hero__title h1,
-.tc4-page-hero__title.tc4-hero-font-urban-jungle h1,
-h1.tc4-hero-font-urban-jungle,
-.tc4-home-hero.tc4-hero-font-urban-jungle .tc4-home-hero__inner h1,
-.tc4-home-hero__inner.tc4-hero-font-urban-jungle h1,
-.tc4-home-slider.tc4-hero-font-urban-jungle h1,
-.tc4-home-slide__caption.tc4-hero-font-urban-jungle h1,
-.tc4-home-video-caption.tc4-hero-font-urban-jungle h1 {
-  font-family: "Urban Jungle", "Roboto Slab", Georgia, serif !important;
-}
-
-#tc4-hero.tc4-hero-font-roboto-slab h1,
-.tc4-page-hero.tc4-hero-font-roboto-slab .tc4-page-hero__title h1,
-.tc4-page-hero__title.tc4-hero-font-roboto-slab h1,
-h1.tc4-hero-font-roboto-slab,
-.tc4-home-hero.tc4-hero-font-roboto-slab .tc4-home-hero__inner h1,
-.tc4-home-hero__inner.tc4-hero-font-roboto-slab h1,
-.tc4-home-slider.tc4-hero-font-roboto-slab h1,
-.tc4-home-slide__caption.tc4-hero-font-roboto-slab h1,
-.tc4-home-video-caption.tc4-hero-font-roboto-slab h1 {
-  font-family: "Roboto Slab", Georgia, serif !important;
-}
-
-#tc4-hero.tc4-hero-font-poppins h1,
-.tc4-page-hero.tc4-hero-font-poppins .tc4-page-hero__title h1,
-.tc4-page-hero__title.tc4-hero-font-poppins h1,
-h1.tc4-hero-font-poppins,
-.tc4-home-hero.tc4-hero-font-poppins .tc4-home-hero__inner h1,
-.tc4-home-hero__inner.tc4-hero-font-poppins h1,
-.tc4-home-slider.tc4-hero-font-poppins h1,
-.tc4-home-slide__caption.tc4-hero-font-poppins h1,
-.tc4-home-video-caption.tc4-hero-font-poppins h1 {
-  font-family: "Poppins", Arial, Helvetica, sans-serif !important;
 }

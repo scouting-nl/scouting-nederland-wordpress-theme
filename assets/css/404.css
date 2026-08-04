@@ -1,8 +1,10 @@
-.tc4-404-page {
+/* The shared base wrapper owns fixed-header spacing for this template. */
+.scouting-nederland-404-page {
   padding-top: 0;
 }
 
-.tc4-404-hero {
+/* Relative positioning anchors the decorative skyline beneath centered hero content. */
+.scouting-nederland-404-hero {
   position: relative;
   padding: 112px 0 72px;
   background-position: center center;
@@ -12,7 +14,8 @@
   margin-top: 0 !important;
 }
 
-.tc4-404-hero::after {
+/* Theme-color utility classes swap only the skyline bitmap, not its geometry. */
+.scouting-nederland-404-hero::after {
   content: "";
   position: absolute;
   left: 0;
@@ -23,36 +26,42 @@
   background-repeat: repeat-x;
   background-position: 0 100%;
   background-size: auto 78px;
-  animation: tc4SkylineMoveX 130s linear infinite;
+  animation: scoutingNederland404SkylineMove 130s linear infinite;
   pointer-events: none;
 }
 
-body.mblauw .tc4-404-hero::after,
-body.blue-main .tc4-404-hero::after {
+@keyframes scoutingNederland404SkylineMove {
+  from {
+    background-position-x: 0;
+  }
+
+  to {
+    background-position-x: 2000px;
+  }
+}
+
+body.scouting-nederland-utilities-main-blue .scouting-nederland-404-hero::after {
   background-image: url("../images/skyline-blauw.png");
 }
 
-body.mgeel .tc4-404-hero::after,
-body.yellow-main .tc4-404-hero::after {
+body.scouting-nederland-utilities-main-yellow .scouting-nederland-404-hero::after {
   background-image: url("../images/skyline-geel.png");
 }
 
-body.mrood .tc4-404-hero::after,
-body.red-main .tc4-404-hero::after {
+body.scouting-nederland-utilities-main-red .scouting-nederland-404-hero::after {
   background-image: url("../images/skyline-rood.png");
 }
 
-body.moranje .tc4-404-hero::after,
-body.orange-main .tc4-404-hero::after {
+body.scouting-nederland-utilities-main-orange .scouting-nederland-404-hero::after {
   background-image: url("../images/skyline-oranje.png");
 }
 
-body.mpaars .tc4-404-hero::after,
-body.purple-main .tc4-404-hero::after {
+body.scouting-nederland-utilities-main-purple .scouting-nederland-404-hero::after {
   background-image: url("../images/skyline-paars.png");
 }
 
-.tc4-404-hero__inner {
+/* A local stacking context keeps copy above the absolutely positioned skyline. */
+.scouting-nederland-404-hero__inner {
   position: relative;
   z-index: 1;
   max-width: 920px;
@@ -62,7 +71,7 @@ body.purple-main .tc4-404-hero::after {
   text-align: center;
 }
 
-.tc4-404-kicker {
+.scouting-nederland-404-kicker {
   display: inline-flex;
   align-items: center;
   gap: .55rem;
@@ -70,23 +79,23 @@ body.purple-main .tc4-404-hero::after {
   padding: .48rem .85rem;
   border-radius: 999px;
   background: #fff;
-  color: var(--tc4-support-color, #0066b2);
+  color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
   font-size: .9rem;
   font-weight: 800;
-  box-shadow: 0 8px 22px rgba(0,0,0,.08);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .08);
 }
 
-.tc4-404-hero h1 {
+.scouting-nederland-404-hero h1 {
   max-width: 920px;
   margin: 0 auto;
-  color: var(--tc4-main-color, #00a551) !important;
+  color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
   font-family: "Roboto Slab", Georgia, serif;
   font-size: clamp(4.4rem, 10vw, 7rem);
   font-weight: 700;
   line-height: .95;
 }
 
-.tc4-404-hero p {
+.scouting-nederland-404-hero p {
   max-width: 760px;
   margin: 18px auto 0;
   font-size: clamp(1.15rem, 2vw, 1.5rem);
@@ -94,132 +103,137 @@ body.purple-main .tc4-404-hero::after {
   line-height: 1.8;
 }
 
-.tc4-404-search-form {
+/* Search controls are shared with search.css; this class only centers the 404 instance. */
+.scouting-nederland-404-search-form {
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
-.tc4-404-content {
+.scouting-nederland-404-content {
   padding-top: 54px;
   padding-bottom: 76px;
 }
 
-.tc4-404-grid {
+/* Asymmetric Grid tracks prioritize recovery actions over secondary guidance. */
+.scouting-nederland-404-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.55fr) minmax(320px, .95fr);
   gap: 32px;
   align-items: start;
 }
 
-.tc4-404-card {
+.scouting-nederland-404-card {
   background: #fff;
   border-radius: 24px;
-  box-shadow: 0 14px 36px rgba(0,0,0,.08);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, .08);
 }
 
-.tc4-404-card--main {
+.scouting-nederland-404-card--main {
   padding: 34px 34px 30px;
 }
 
-.tc4-404-card--side {
+.scouting-nederland-404-card--side {
   padding: 30px;
-  border: 2px dashed var(--tc4-main-color, #00a551);
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(250,250,250,1) 100%);
+  border: 2px dashed var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(250, 250, 250, 1) 100%);
 }
 
-.tc4-404-badge {
+.scouting-nederland-404-badge {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   margin: 0 0 16px;
   padding: .52rem .88rem;
   border-radius: 999px;
-  background: rgba(0,0,0,.04);
-  color: var(--tc4-main-color, #00a551);
+  background: rgba(0, 0, 0, .04);
+  color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
   font-weight: 700;
 }
 
-.tc4-404-badge i {
-  color: var(--tc4-support-color, #0066b2);
+.scouting-nederland-404-badge i {
+  color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
 }
 
-.tc4-404-card h2,
-.tc4-404-card h3 {
+.scouting-nederland-404-card h2,
+.scouting-nederland-404-card h3 {
   margin: 0 0 14px;
-  color: var(--tc4-main-color, #00a551) !important;
+  color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
   font-family: "Roboto Slab", Georgia, serif;
   font-weight: 700;
   line-height: 1.08;
 }
 
-.tc4-404-card h2 {
+.scouting-nederland-404-card h2 {
   font-size: clamp(2rem, 4vw, 3rem);
 }
 
-.tc4-404-card h3 {
+.scouting-nederland-404-card h3 {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
 }
 
-.tc4-404-card p,
-.tc4-404-card li {
+.scouting-nederland-404-card p,
+.scouting-nederland-404-card li {
   font-size: 1.02rem;
   line-height: 1.9;
 }
 
-.tc4-404-tips,
-.tc4-404-found {
+.scouting-nederland-404-tips,
+.scouting-nederland-404-found {
   list-style: none;
   margin: 24px 0 0;
   padding: 0;
 }
 
-.tc4-404-tips li {
+/* Flex rows align each icon with multi-line guidance text. */
+.scouting-nederland-404-tips li {
   display: flex;
   align-items: flex-start;
   gap: 14px;
   padding: 12px 0;
-  border-bottom: 1px solid rgba(0,0,0,.08);
+  border-bottom: 1px solid rgba(0, 0, 0, .08);
 }
 
-.tc4-404-tips li:last-child {
+.scouting-nederland-404-tips li:last-child {
   border-bottom: 0;
 }
 
-.tc4-404-tips i {
+.scouting-nederland-404-tips i {
   flex: 0 0 auto;
   margin-top: 7px;
-  color: var(--tc4-support-color, #0066b2);
+  color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
   font-size: 1.1rem;
 }
 
-.tc4-404-small {
+.scouting-nederland-404-small {
   margin: 0 0 10px;
   opacity: .82;
 }
 
-.tc4-404-found li {
+.scouting-nederland-404-found li {
   position: relative;
   padding: 0 0 0 22px;
   margin: 0 0 10px;
 }
 
-.tc4-404-found li::before {
-  content: "•";
+.scouting-nederland-404-found li::before {
+  content: "";
   position: absolute;
   left: 0;
-  top: 0;
-  color: var(--tc4-main-color, #00a551);
-  font-weight: 700;
+  top: .8em;
+  width: .4rem;
+  height: .4rem;
+  border-radius: 50%;
+  background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
 }
 
-.tc4-404-actions {
+.scouting-nederland-404-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 26px;
 }
 
-.tc4-404-actions .btn {
+.scouting-nederland-404-actions .btn {
   display: inline-block;
   border: 0;
   border-radius: 999px;
@@ -232,30 +246,39 @@ body.purple-main .tc4-404-hero::after {
   text-transform: uppercase;
 }
 
+/* Tablet layout stacks the cards and reduces hero space. */
 @media (max-width: 991.98px) {
-  .tc4-404-hero {
+  .scouting-nederland-404-hero {
     padding-top: 88px;
     padding-bottom: 64px;
   }
 
-  .tc4-404-hero__inner {
+  .scouting-nederland-404-hero__inner {
     padding-top: 32px;
   }
 
-  .tc4-404-grid {
+  .scouting-nederland-404-grid {
     grid-template-columns: 1fr;
   }
 }
 
+/* Phone layout reduces card padding while retaining comfortable tap targets. */
 @media (max-width: 767.98px) {
-  .tc4-404-card--main,
-  .tc4-404-card--side {
+
+  .scouting-nederland-404-card--main,
+  .scouting-nederland-404-card--side {
     padding: 24px 22px;
     border-radius: 20px;
   }
 
-  .tc4-404-content {
+  .scouting-nederland-404-content {
     padding-top: 34px;
     padding-bottom: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scouting-nederland-404-hero::after {
+    animation: none;
   }
 }
