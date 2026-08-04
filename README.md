@@ -69,10 +69,6 @@ Per pagina kunnen extra opties beschikbaar zijn, zoals:
 - Alternatief lettertype voor de hero
 - Slider wel of niet tonen
 
-## Elementor
-
-Wanneer een pagina met Elementor is gebouwd, verbergt het standaard paginatemplate automatisch de thema-hero, sidebar en extra widgetbanden zodat Elementor niet tegen de thema-layout werkt. Voor Elementor Canvas kan de paginatemplate van de Elementor-plugin zelf worden gebruikt.
-
 ## Gutenberg blokken
 
 Het thema bevat meerdere aangepaste Gutenberg-blokken onder de Scouting Nederland blokcategorie.
