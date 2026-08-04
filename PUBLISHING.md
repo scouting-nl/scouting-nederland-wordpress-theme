@@ -23,11 +23,11 @@ Dit thema is opgeschoond richting de WordPress Theme Developer Handbook, maar is
 ## Blokkers voor WordPress.org
 
 1. De custom Gutenberg-blokken in `inc/blocks.php` en `assets/js/blocks/` horen volgens de Theme Review-regels in een losse companion-plugin. Verplaats de registraties en render-callbacks pas samen met een migratieplan, zodat bestaande content blijft werken.
+Zie [Theme Review Required](https://make.wordpress.org/themes/handbook/review/required/#5-functionality-and-features).
 2. `assets/fonts/urban-jungle.otf` is door de maker alleen vrijgegeven voor persoonlijk gebruik. Voor WordPress.org is een GPL-compatibele herdistributielicentie of een visueel goedgekeurd alternatief nodig.
 3. Vul `== Resources ==` in `readme.txt` aan met volledige bron-, copyright-, licentie- en toestemminggegevens voor alle gebundelde assets, waaronder alle afbeeldingen, `screenshot.png`, `snl-logo.svg` en de Scouting-merken. De huidige lijst dekt alleen de externe libraries en fonts.
 4. Vervang `assets/images/default-slide.jpg` en `screenshot.png` door beelden zonder herkenbare kinderen. De huidige bestanden tonen herkenbare scouts; bronvermelding alleen maakt die beelden niet toegestaan in de directory. Houd voor de vervangende screenshot 1200 x 900 px en een 4:3-verhouding aan.
 5. Classic themes in de WordPress.org-directory moeten comments ondersteunen. Voeg `comments.php`, `comments_template()` op singular content, threaded comments, `comment-reply` en passende styling toe.
-6. Gebruik in de `Contributors`-header van `readme.txt` precies een WordPress.org-gebruikersnaam. Er staan nu twee gebruikersnamen (`geldwolfje216, jobvk`).
 
 ## Releasevalidatie
 
