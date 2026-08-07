@@ -31,6 +31,7 @@ Het thema gebruikt de native WordPress-templatehiërarchie met de volledige temp
 Voor volledige werking kunnen deze plugins nodig of handig zijn:
 
 - `scouting-openid-connect`, indien login via Scouting gewenst is. Het thema toont beheerders hiervoor ook een installatiemelding in WordPress.
+- `scouting-thema-blokken`, indien je gebruik wil maken van speciale Scouting Nederland blokken dien je deze plugin te installeren. Het thema toont beheerders hiervoor ook een installatiemelding in WordPress.
 - Eventuele SEO- of cachingplugin naar keuze
 
 ## Thema-structuur
