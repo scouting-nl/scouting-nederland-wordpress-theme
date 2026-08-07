@@ -71,7 +71,8 @@ Per pagina kunnen extra opties beschikbaar zijn, zoals:
 
 ## Gutenberg blokken
 
-Het thema bevat meerdere aangepaste Gutenberg-blokken onder de Scouting Nederland blokcategorie.
+Het thema bevat opmaak voor aangepaste Gutenberg-blokken onder de Scouting Nederland blokcategorie.
+Voor deze blokken heb je een extra plugin nodig welke bij installatie van het thema kan worden toegevoegd.
 
 ### Featured items
 
