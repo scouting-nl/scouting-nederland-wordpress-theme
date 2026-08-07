@@ -1,0 +1,414 @@
+/*
+ * Gutenberg editor controls for Scouting Nederland blocks.
+ *
+ * WordPress owns components-*, block-editor-*, wp-editor-*, mce-*, and Quicktags
+ * classes. Theme selectors use scouting-nederland-editor-* and style only the
+ * custom forms emitted by assets/js/blocks/.
+ */
+
+/* --------------------------------------------------------------------------
+ * Shared form structure
+ * -------------------------------------------------------------------------- */
+
+.editor-styles-wrapper .scouting-nederland-editor-form {
+	padding: 0;
+	border: 1px solid #ccd0d4;
+	background: #fff;
+	color: #1e1e1e;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+	font-size: 13px;
+	line-height: 1.4;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-form,
+.editor-styles-wrapper .scouting-nederland-editor-form input,
+.editor-styles-wrapper .scouting-nederland-editor-form textarea,
+.editor-styles-wrapper .scouting-nederland-editor-form select {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+	font-size: 13px;
+	line-height: 1.4;
+}
+
+/* Label and control occupy stable Grid tracks across repeated editor sections. */
+.editor-styles-wrapper .scouting-nederland-editor-form-row {
+	display: grid;
+	grid-template-columns: 90px minmax(0, 1fr);
+	align-items: start;
+	padding: 18px;
+	border-bottom: 1px solid #e2e4e7;
+	gap: 18px;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-form-row-editor {
+	align-items: start;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-form-row label,
+.editor-styles-wrapper .scouting-nederland-editor-form-field label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: 500;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-form-field {
+	min-width: 0;
+	margin-bottom: 22px;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-form-field:last-child {
+	margin-bottom: 0;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-form-section-title {
+	padding: 14px 18px;
+	border-bottom: 1px solid #e2e4e7;
+	font-weight: 600;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-form-section-title-with-action {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-form-select {
+	width: 100%;
+	min-height: 34px;
+	border: 1px solid #8c8f94;
+	border-radius: 3px;
+	background: #fff;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-form input[type="text"],
+.editor-styles-wrapper .scouting-nederland-editor-form textarea {
+	width: 100%;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-form-help {
+	margin: 0 0 12px;
+	color: #646970;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+ * Repeater rows
+ * -------------------------------------------------------------------------- */
+
+/* Root establishes one explicit editor-owned formatting context for repeated rows. */
+.editor-styles-wrapper .scouting-nederland-editor-repeater {
+	display: block;
+	background: #fff;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-repeater-row {
+	display: grid;
+	grid-template-columns: 48px minmax(0, 1fr);
+	border-bottom: 1px solid #e2e4e7;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-repeater-number {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-right: 1px solid #e2e4e7;
+	background: #f6f7f7;
+	color: #646970;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-repeater-content {
+	min-width: 0;
+	padding: 18px;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-repeater-actions {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 16px;
+	gap: 8px;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-repeater-add {
+	padding: 18px;
+	border-top: 1px solid #e2e4e7;
+	background: #f6f7f7;
+}
+
+/* --------------------------------------------------------------------------
+ * Shared media, button, radio, and link controls
+ * -------------------------------------------------------------------------- */
+
+.editor-styles-wrapper .scouting-nederland-editor-image-picker {
+	display: grid;
+	place-items: start;
+	min-height: 90px;
+	background: rgba(0, 0, 0, 0.035);
+	cursor: pointer;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-image-picker img {
+	display: block;
+	width: 220px;
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 8px;
+	cursor: pointer;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-button {
+	margin: 20px 0 0;
+	padding: 14px;
+	border: 1px solid #ccd0d4;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-button legend {
+	padding: 0 6px;
+	font-weight: 600;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-button-grid {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 18px;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-radio label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: 400;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-radio-inline {
+	display: flex;
+	align-items: center;
+	gap: 22px;
+}
+
+.scouting-nederland-editor-link {
+	display: grid;
+	gap: 8px;
+}
+
+.scouting-nederland-editor-link-summary {
+	min-height: 38px;
+	padding: 8px 10px;
+	border: 1px solid #8c8f94;
+	border-radius: 2px;
+	background: #fff;
+}
+
+.scouting-nederland-editor-link-summary strong {
+	display: block;
+	color: #1d2327;
+	font-weight: 600;
+}
+
+.scouting-nederland-editor-link-summary span {
+	display: block;
+	color: #646970;
+	font-size: 12px;
+	overflow-wrap: anywhere;
+}
+
+.scouting-nederland-editor-link-empty {
+	color: #646970;
+}
+
+.scouting-nederland-editor-link-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+}
+
+/* --------------------------------------------------------------------------
+ * WordPress classic editor integration
+ * -------------------------------------------------------------------------- */
+
+/* WordPress enhances the persistent textarea in place; this wrapper stabilizes width. */
+.scouting-nederland-editor-tinymce {
+	position: relative;
+	width: 100%;
+}
+
+.scouting-nederland-editor-tinymce .wp-editor-wrap,
+.scouting-nederland-editor-tinymce .wp-editor-tabs {
+	margin: 0;
+}
+
+.scouting-nederland-editor-tinymce .wp-switch-editor {
+	height: 29px;
+	margin: 0 0 0 4px;
+	padding: 6px 12px 5px;
+	border-color: #c3c4c7;
+	background: #f6f7f7;
+	color: #50575e;
+	font-size: 13px;
+	line-height: 1;
+}
+
+.scouting-nederland-editor-tinymce .tmce-active .switch-tmce,
+.scouting-nederland-editor-tinymce .html-active .switch-html {
+	background: #fff;
+	color: #1d2327;
+}
+
+.scouting-nederland-editor-tinymce .wp-editor-container {
+	border-color: #c3c4c7;
+}
+
+.scouting-nederland-editor-tinymce .mce-toolbar-grp,
+.scouting-nederland-editor-tinymce .quicktags-toolbar {
+	border-bottom-color: #dcdcde;
+	background: #f6f7f7;
+}
+
+.scouting-nederland-editor-tinymce iframe,
+.scouting-nederland-editor-tinymce textarea.wp-editor-area {
+	min-height: 300px;
+}
+
+.scouting-nederland-editor-tinymce textarea.wp-editor-area {
+	font-family: Consolas, Monaco, monospace;
+	font-size: 13px;
+}
+
+/* --------------------------------------------------------------------------
+ * Block-specific editor layouts
+ * -------------------------------------------------------------------------- */
+
+.editor-styles-wrapper .scouting-nederland-editor-callout-form .scouting-nederland-editor-form-row {
+	grid-template-columns: 150px minmax(0, 1fr);
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-callout-button,
+.editor-styles-wrapper .scouting-nederland-editor-news-items-button {
+	width: 100%;
+	max-width: 760px;
+}
+
+.scouting-nederland-editor-callout-form .scouting-nederland-editor-link,
+.scouting-nederland-editor-news-items-form .scouting-nederland-editor-link,
+.scouting-nederland-editor-two-columns-form .scouting-nederland-editor-link {
+	max-width: 100%;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-featured-items-form .scouting-nederland-editor-form-field>label {
+	display: block;
+	margin: 0 0 14px;
+	color: #1d2327;
+	font-size: 13px;
+	font-weight: 400;
+}
+
+/* Server-rendered OIDC preview keeps its editor-only heading and copy compact. */
+.editor-styles-wrapper .scouting-nederland-editor-oidc-form {
+	padding: 18px;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-oidc-form> :first-child {
+	margin-top: 0;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-news-items-form .scouting-nederland-editor-form-row {
+	grid-template-columns: 140px minmax(0, 1fr);
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-news-items-categories {
+	padding: 14px;
+	border: 1px solid #ccd0d4;
+	border-radius: 3px;
+	background: #fff;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-news-items-category {
+	display: block;
+	margin: 0 0 8px;
+	font-weight: 400;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-news-items-selector {
+	padding: 6px;
+	border: 1px solid #8c8f94;
+	border-radius: 3px;
+	background: #fff;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-news-items-tokens {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 6px;
+	gap: 6px;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-news-items-token {
+	display: inline-flex;
+	align-items: center;
+	padding: 3px 6px;
+	border: 1px solid #ccd0d4;
+	border-radius: 3px;
+	background: #f6f7f7;
+	font-size: 12px;
+	gap: 4px;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-news-items-token button {
+	padding: 0 2px;
+	border: 0;
+	background: transparent;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-news-items-selector .scouting-nederland-editor-form-select {
+	margin-top: 4px;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-two-columns-form {
+	padding: 14px;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-two-columns-column {
+	margin: 0 0 20px;
+	padding: 16px 18px 18px;
+	border: 1px solid #ccd0d4;
+	background: #fff;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-two-columns-column>legend {
+	padding: 0 6px;
+	font-weight: 600;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-two-columns-form .scouting-nederland-editor-image-picker img {
+	width: 260px;
+	max-width: 100%;
+	height: auto;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-two-columns-button {
+	max-width: none;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-speltakken-grid-form .components-textarea-control__input {
+	width: 100%;
+}
+
+.editor-styles-wrapper .scouting-nederland-editor-speltakken-grid-add {
+	white-space: nowrap;
+}
+
+/* Stack label and control tracks when the editor sidebar leaves little inline room. */
+@media (max-width: 782px) {
+
+	.editor-styles-wrapper .scouting-nederland-editor-form-row,
+	.editor-styles-wrapper .scouting-nederland-editor-callout-form .scouting-nederland-editor-form-row,
+	.editor-styles-wrapper .scouting-nederland-editor-news-items-form .scouting-nederland-editor-form-row {
+		grid-template-columns: 1fr;
+	}
+
+	.editor-styles-wrapper .scouting-nederland-editor-button-grid {
+		grid-template-columns: 1fr;
+	}
+}
