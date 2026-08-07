@@ -1,0 +1,265 @@
+/*
+ * WordPress and Bootstrap compatibility layer.
+ *
+ * Selectors in this file intentionally retain platform-owned names. It supplies
+ * theme typography and palette defaults, normalizes Bootstrap controls, and
+ * supports standard WordPress media, widget, alignment, and accessibility output.
+ */
+
+/* Root metrics provide a predictable rem baseline in both editor and frontend markup. */
+.wp-site-blocks,
+html {
+	font-size: 16px;
+	line-height: 1.9em;
+}
+
+html {
+	overflow-y: scroll;
+}
+
+/* Document typography uses locally bundled Poppins weights registered in base.css. */
+body {
+	color: var(--wp--custom--color--text);
+	font-family: "Poppins", sans-serif;
+	font-size: 1.125rem;
+	font-kerning: normal;
+	font-variant-ligatures: common-ligatures;
+	font-weight: 300;
+	line-height: 1.9em;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Font Awesome 7 uses this custom property to size non-fixed-width glyphs naturally. */
+body :is(.fa, .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands, .fa-classic):not(.fa-fw):not(.fa-width-fixed) {
+	--fa-width: auto;
+}
+
+/* Bootstrap semantic color utilities consume the active theme palette. */
+.text-primary,
+.text-secondary {
+	color: var(--wp--preset--color--scouting-blauw) !important;
+}
+
+.bg-primary {
+	background-color: var(--wp--preset--color--scouting-blauw) !important;
+}
+
+.text-success {
+	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
+}
+
+.bg-success {
+	background-color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
+}
+
+.text-danger {
+	color: var(--wp--custom--color--danger) !important;
+}
+
+.bg-danger {
+	background-color: var(--wp--custom--color--danger) !important;
+}
+
+a.text-success:focus,
+a.text-success:hover {
+	color: var(--wp--preset--color--scouting-blauw) !important;
+}
+
+/* Global heading scale; component owners can refine geometry inside their namespace. */
+h1,
+.h1 {
+	margin: 0.67em 0;
+	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
+	font-family: "Roboto Slab", serif;
+	font-size: 2.8125rem;
+	line-height: 1em;
+}
+
+h2,
+.h2 {
+	margin: 0.67em 0;
+	font-family: "Roboto Slab", serif;
+	font-size: 2rem;
+	line-height: 1em;
+}
+
+h3,
+.h3 {
+	margin: 0.67em 0;
+	font-family: "Roboto Slab", serif;
+	font-size: 1.5rem;
+	line-height: 1em;
+}
+
+/* Links inherit the selected support color and preserve visible underline affordance. */
+a {
+	color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
+	text-decoration: underline;
+	text-decoration-skip-ink: auto;
+}
+
+a:hover {
+	color: var(--wp--custom--color--link-hover);
+}
+
+/* Intrinsic media sizing prevents images from overflowing responsive containers. */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+ul li {
+	list-style-position: inside;
+}
+
+/* Bootstrap navigation normalization used by the custom header component. */
+.navbar-expand-lg {
+	justify-content: flex-end;
+}
+
+.navbar-brand {
+	position: relative;
+	padding: 0;
+	color: var(--wp--custom--color--navbar-text);
+}
+
+.btn-close,
+.form-control,
+.form-select,
+.navbar-toggler,
+.page-link {
+	border-radius: 0.25rem;
+}
+
+.form-control,
+.form-select {
+	border-color: var(--wp--custom--color--bootstrap-border);
+}
+
+.offcanvas-header .btn-close {
+	margin: -0.5rem -0.5rem -0.5rem 0;
+}
+
+.offcanvas-header {
+	justify-content: space-between;
+}
+
+.pagination {
+	--bs-pagination-border-radius: 0.25rem;
+}
+
+.page-link {
+	font-size: inherit;
+	line-height: inherit;
+}
+
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
+	outline: 0;
+}
+
+@media only screen and (min-width: 992px) {
+	.dropdown-item {
+		margin-bottom: 10px;
+	}
+}
+
+/* Shared Bootstrap button geometry; semantic color modifiers live in buttons.css. */
+.btn {
+	padding: 12px 30px;
+	border-radius: 50px;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	font-weight: 600;
+	line-height: 1.2em;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn::after {
+	position: relative;
+	display: inline-block;
+	width: 0.8em;
+	height: 0.8em;
+	margin-left: 20px;
+	border-width: 2px 2px 0 0;
+	border-style: solid;
+	content: "";
+	transform: rotate(45deg);
+	transition: margin 0.3s ease;
+	vertical-align: top;
+}
+
+.btn-primary,
+.btn-primary:hover {
+	border-color: var(--wp--preset--color--scouting-blauw);
+	background-color: var(--wp--preset--color--scouting-blauw);
+}
+
+.btn-secondary,
+.btn-secondary:hover {
+	border-color: var(--wp--preset--color--zwart);
+	background-color: var(--wp--preset--color--zwart);
+}
+
+.btn-primary:hover::after,
+.btn:hover::after {
+	margin-right: -10px;
+	margin-left: 30px;
+}
+
+/* Legacy Bootstrap badge compatibility retained for authored content. */
+.badge-info {
+	padding: 0.5rem;
+	color: #444;
+	background-color: var(--wp--custom--color--surface-muted);
+}
+
+/* Standard WordPress widget rhythm. */
+.widget {
+	margin-bottom: 1.5rem;
+}
+
+.widget ul {
+	padding-left: 1.2rem;
+}
+
+/* WordPress caption and alignment classes are public platform contracts. */
+.wp-caption,
+.gallery-caption {
+	max-width: 100%;
+}
+
+.aligncenter {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.alignleft {
+	float: left;
+	margin-right: 1rem;
+}
+
+.alignright {
+	float: right;
+	margin-left: 1rem;
+}
+
+/* Visually hidden content remains available to assistive technology. */
+.screen-reader-text {
+	position: absolute;
+	left: -9999px;
+}
+
+/* Featured and entry-content media remain fluid inside user-authored content. */
+.post-thumbnail img,
+.entry-content img {
+	max-width: 100%;
+	height: auto;
+}

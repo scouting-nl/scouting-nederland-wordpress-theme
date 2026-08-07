@@ -1,492 +1,418 @@
-.tc4-search-page {
-  padding-top: 0;
+/* Remove template-level spacing because the fixed-header offset is owned by base.css. */
+.scouting-nederland-search-page {
+	padding-top: 0 !important;
 }
 
-.tc4-search-hero {
-  position: relative;
-  padding: 86px 0 72px;
-  background: linear-gradient(180deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.88) 100%), url("../images/default-slide.jpg") center center / cover no-repeat;
-  overflow: hidden;
+/*
+ * Search hero.
+ *
+ * The layered background keeps text readable over the fallback photograph. The
+ * relative positioning creates the containing block for the animated skyline.
+ */
+.scouting-nederland-search-hero {
+	position: relative;
+	margin-top: 0 !important;
+	padding: 112px 0 72px;
+	background-image:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.88) 100%),
+		url("../images/default-slide.jpg") !important;
+	background-position: center center !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	overflow: hidden;
 }
 
-.tc4-search-hero::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 82px;
-  background-image: url("../images/skyline-groen.png");
-  background-repeat: repeat-x;
-  background-position: 0 100%;
-  background-size: auto 78px;
-  animation: tc4SkylineMoveX 130s linear infinite;
-  pointer-events: none;
+/* The pseudo-element is decorative and cannot intercept pointer input. */
+.scouting-nederland-search-hero::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -1px;
+	height: 82px;
+	background-image: url("../images/skyline-groen.png");
+	background-repeat: repeat-x;
+	background-position: 0 100%;
+	background-size: auto 78px;
+	animation: scouting-nederland-search-skyline-move 130s linear infinite;
+	pointer-events: none;
 }
 
-body.mblauw .tc4-search-hero::after,
-body.blue-main .tc4-search-hero::after {
-  background-image: url("../images/skyline-blauw.png");
+@keyframes scouting-nederland-search-skyline-move {
+	from {
+		background-position-x: 0;
+	}
+
+	to {
+		background-position-x: 2000px;
+	}
 }
 
-body.mgeel .tc4-search-hero::after,
-body.yellow-main .tc4-search-hero::after {
-  background-image: url("../images/skyline-geel.png");
+body.scouting-nederland-utilities-main-blue .scouting-nederland-search-hero::after {
+	background-image: url("../images/skyline-blauw.png");
 }
 
-body.mrood .tc4-search-hero::after,
-body.red-main .tc4-search-hero::after {
-  background-image: url("../images/skyline-rood.png");
+body.scouting-nederland-utilities-main-yellow .scouting-nederland-search-hero::after {
+	background-image: url("../images/skyline-geel.png");
 }
 
-body.moranje .tc4-search-hero::after,
-body.orange-main .tc4-search-hero::after {
-  background-image: url("../images/skyline-oranje.png");
+body.scouting-nederland-utilities-main-red .scouting-nederland-search-hero::after {
+	background-image: url("../images/skyline-rood.png");
 }
 
-body.mpaars .tc4-search-hero::after,
-body.purple-main .tc4-search-hero::after {
-  background-image: url("../images/skyline-paars.png");
+body.scouting-nederland-utilities-main-orange .scouting-nederland-search-hero::after {
+	background-image: url("../images/skyline-oranje.png");
 }
 
-.tc4-search-hero__inner {
-  position: relative;
-  z-index: 1;
-  max-width: 980px;
+body.scouting-nederland-utilities-main-purple .scouting-nederland-search-hero::after {
+	background-image: url("../images/skyline-paars.png");
 }
 
-.tc4-search-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: .55rem;
-  margin: 0 0 14px;
-  padding: .48rem .85rem;
-  border-radius: 999px;
-  background: #fff;
-  color: var(--tc4-support-color, #0066b2);
-  font-size: .9rem;
-  font-weight: 800;
-  box-shadow: 0 8px 22px rgba(0,0,0,.08);
+/* Keep hero content above the absolutely positioned skyline layer. */
+.scouting-nederland-search-hero-inner {
+	position: relative;
+	z-index: 1;
+	max-width: 920px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 42px;
+	text-align: center;
 }
 
-.tc4-search-hero h1 {
-  margin: 0;
-  color: var(--tc4-main-color, #00a551) !important;
-  font-family: "Roboto Slab", Georgia, serif;
-  font-size: clamp(2.3rem, 5vw, 4.2rem);
-  font-weight: 700;
-  line-height: 1.05;
+/* Pill-shaped context label above the result heading. */
+.scouting-nederland-search-kicker {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.55rem;
+	margin: 0 auto 22px;
+	padding: 0.48rem 0.85rem;
+	border-radius: 999px;
+	background: #fff;
+	color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
+	font-size: 0.9rem;
+	font-weight: 800;
+	box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
 }
 
-.tc4-search-hero h1 span {
-  color: var(--tc4-support-color, #0066b2);
+.scouting-nederland-search-hero h1 {
+	margin: 0 auto;
+	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
+	font-family: "Roboto Slab", Georgia, serif;
+	font-size: clamp(2.3rem, 5vw, 4.2rem);
+	font-weight: 700;
+	line-height: 1.05;
+	text-align: center;
 }
 
-.tc4-search-hero p {
-  max-width: 760px;
-  margin: 18px 0 0;
-  font-size: 1.16rem;
-  line-height: 1.8;
+.scouting-nederland-search-hero h1 span {
+	color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
 }
 
-.tc4-search-form {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 12px;
-  max-width: 760px;
-  margin-top: 28px;
-  padding: 8px;
-  border-radius: 999px;
-  background: #fff;
-  box-shadow: 0 12px 36px rgba(0,0,0,.12);
+.scouting-nederland-search-hero p {
+	max-width: 760px;
+	margin: 18px auto 0;
+	font-size: 1.16rem;
+	line-height: 1.8;
+	text-align: center;
 }
 
-.tc4-search-form__input {
-  min-width: 0;
-  width: 100%;
-  border: 0;
-  outline: 0;
-  padding: 0 18px;
-  border-radius: 999px;
-  background: transparent;
-  font-size: 1rem;
-  line-height: 48px;
+/* Two-column search control; the text field consumes remaining inline space. */
+.scouting-nederland-search-form {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	gap: 12px;
+	max-width: 760px;
+	margin: 28px auto 0;
+	padding: 8px;
+	border-radius: 999px;
+	background: #fff;
+	box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
 }
 
-.tc4-search-form__button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: .55rem;
-  min-height: 48px;
-  padding: 0 24px;
-  border: 0;
-  border-radius: 999px;
-  background: var(--tc4-support-color, #0066b2);
-  color: #fff;
-  font-size: .82rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  cursor: pointer;
+.scouting-nederland-search-form-input {
+	min-width: 0;
+	width: 100%;
+	border: 0;
+	outline: 0;
+	padding: 0 18px;
+	border-radius: 999px;
+	background: transparent;
+	font-size: 1rem;
+	line-height: 48px;
 }
 
-.tc4-search-content {
-  padding-top: 54px;
-  padding-bottom: 76px;
+.scouting-nederland-search-form-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.55rem;
+	min-height: 48px;
+	padding: 0 24px;
+	border: 0;
+	border-radius: 999px;
+	background: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
+	color: #fff;
+	font-size: 0.82rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	cursor: pointer;
 }
 
-.tc4-search-count {
-  display: inline-block;
-  margin-bottom: 24px;
-  padding: .5rem .85rem;
-  border-radius: 999px;
-  background: rgba(0,0,0,.05);
-  color: var(--tc4-main-color, #00a551);
-  font-weight: 800;
+/* Center the result region independently of Bootstrap's outer container width. */
+.scouting-nederland-search-content {
+	max-width: 920px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 54px;
+	padding-bottom: 76px;
 }
 
-.tc4-search-results {
-  display: grid;
-  gap: 24px;
+.scouting-nederland-search-count {
+	display: table;
+	margin: 0 auto 24px;
+	padding: 0.5rem 0.85rem;
+	border-radius: 999px;
+	background: rgba(0, 0, 0, 0.05);
+	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
+	font-weight: 800;
 }
 
-.tc4-search-card {
-  display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: 24px;
-  align-items: stretch;
-  padding: 18px;
-  border-radius: 24px;
-  background: #fff;
-  box-shadow: 0 12px 34px rgba(0,0,0,.08);
+.scouting-nederland-search-results {
+	display: grid;
+	width: 100%;
+	gap: 24px;
 }
 
-.tc4-search-card__image {
-  display: flex;
-  min-height: 160px;
-  border-radius: 18px;
-  overflow: hidden;
-  background: rgba(0,0,0,.04);
-  text-decoration: none;
+/* Result cards use Grid so media and copy remain aligned without fixed content heights. */
+.scouting-nederland-search-card {
+	display: grid;
+	grid-template-columns: 220px minmax(0, 1fr);
+	gap: 24px;
+	align-items: stretch;
+	padding: 18px;
+	border-radius: 24px;
+	background: #fff;
+	box-shadow: 0 12px 34px rgba(0, 0, 0, 0.08);
 }
 
-.tc4-search-card__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.scouting-nederland-search-card-image {
+	display: flex;
+	min-height: 160px;
+	border-radius: 18px;
+	overflow: hidden;
+	background: rgba(0, 0, 0, 0.04);
+	text-decoration: none;
 }
 
-.tc4-search-card__image--fallback {
-  align-items: center;
-  justify-content: center;
-  background: var(--tc4-main-color, #00a551);
-  color: #fff !important;
-  font-size: 3rem;
+.scouting-nederland-search-card-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
-.tc4-search-card__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-width: 0;
-  padding: 8px 8px 8px 0;
+.scouting-nederland-search-card-image-fallback {
+	align-items: center;
+	justify-content: center;
+	background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
+	color: #fff !important;
+	font-size: 3rem;
 }
 
-.tc4-search-card__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .45rem;
-  margin-bottom: 8px;
-  color: var(--tc4-support-color, #0066b2);
-  font-size: .86rem;
-  font-weight: 800;
-  text-transform: uppercase;
+.scouting-nederland-search-card-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-width: 0;
+	padding: 8px 8px 8px 0;
 }
 
-.tc4-search-card__title {
-  margin: 0 0 10px;
-  font-family: "Roboto Slab", Georgia, serif;
-  font-size: clamp(1.45rem, 2vw, 2rem);
-  line-height: 1.13;
+.scouting-nederland-search-card-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45rem;
+	margin-bottom: 8px;
+	color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
+	font-size: 0.86rem;
+	font-weight: 800;
+	text-transform: uppercase;
 }
 
-.tc4-search-card__title a {
-  color: var(--tc4-main-color, #00a551) !important;
-  text-decoration: none;
+.scouting-nederland-search-card-title {
+	margin: 0 0 10px;
+	font-family: "Roboto Slab", Georgia, serif;
+	font-size: clamp(1.45rem, 2vw, 2rem);
+	line-height: 1.13;
 }
 
-.tc4-search-card__title a:hover {
-  color: var(--tc4-support-color, #0066b2) !important;
+.scouting-nederland-search-card-title a {
+	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
+	text-decoration: none;
 }
 
-.tc4-search-card__excerpt,
-.tc4-search-card__excerpt p {
-  margin: 0;
-  color: #222;
-  font-size: 1rem;
-  line-height: 1.8;
+.scouting-nederland-search-card-title a:hover {
+	color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw)) !important;
 }
 
-.tc4-search-card__link {
-  display: inline-block;
-  align-self: flex-start;
-  margin-top: 14px;
-  color: var(--tc4-support-color, #0066b2) !important;
-  font-weight: 700;
-  text-decoration: none;
+.scouting-nederland-search-card-excerpt,
+.scouting-nederland-search-card-excerpt p {
+	margin: 0;
+	color: #222;
+	font-size: 1rem;
+	line-height: 1.8;
 }
 
-.tc4-search-card__link span {
-  display: inline-block;
-  transition: transform .18s ease;
+.scouting-nederland-search-card-link {
+	display: inline-block;
+	align-self: flex-start;
+	margin-top: 14px;
+	color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw)) !important;
+	font-weight: 700;
+	text-decoration: none;
 }
 
-.tc4-search-card__link:hover span {
-  transform: translateX(4px);
+.scouting-nederland-search-card-link span {
+	display: inline-block;
+	transition: transform 0.18s ease;
 }
 
-.tc4-search-pagination {
-  margin-top: 34px;
+.scouting-nederland-search-card-link:hover span {
+	transform: translateX(4px);
 }
 
-.tc4-search-pagination .nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+/* WordPress pagination classes remain platform-owned inside the search component. */
+.scouting-nederland-search-pagination {
+	margin-top: 34px;
 }
 
-.tc4-search-pagination .page-numbers {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 42px;
-  min-height: 42px;
-  padding: 0 .85rem;
-  border-radius: 999px;
-  background: #fff;
-  color: var(--tc4-support-color, #0066b2) !important;
-  text-decoration: none;
-  font-weight: 800;
-  box-shadow: 0 5px 14px rgba(0,0,0,.08);
+.scouting-nederland-search-pagination .nav-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
 }
 
-.tc4-search-pagination .page-numbers.current {
-  background: var(--tc4-main-color, #00a551);
-  color: #fff !important;
+.scouting-nederland-search-pagination .page-numbers {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 42px;
+	min-height: 42px;
+	padding: 0 0.85rem;
+	border-radius: 999px;
+	background: #fff;
+	color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw)) !important;
+	text-decoration: none;
+	font-weight: 800;
+	box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
 }
 
-.tc4-search-empty {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 44px;
-  border-radius: 28px;
-  background: #fff;
-  text-align: center;
-  box-shadow: 0 14px 38px rgba(0,0,0,.08);
+.scouting-nederland-search-pagination .page-numbers.current {
+	background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
+	color: #fff !important;
 }
 
-.tc4-search-empty__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 86px;
-  height: 86px;
-  margin-bottom: 20px;
-  border-radius: 50%;
-  background: var(--tc4-main-color, #00a551);
-  color: #fff;
-  font-size: 2.2rem;
+.scouting-nederland-search-empty {
+	max-width: 760px;
+	margin: 0 auto;
+	padding: 44px;
+	border-radius: 28px;
+	background: #fff;
+	text-align: center;
+	box-shadow: 0 14px 38px rgba(0, 0, 0, 0.08);
 }
 
-.tc4-search-empty h2 {
-  margin: 0 0 12px;
-  color: var(--tc4-main-color, #00a551) !important;
-  font-family: "Roboto Slab", Georgia, serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+.scouting-nederland-search-empty-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 86px;
+	height: 86px;
+	margin-bottom: 20px;
+	border-radius: 50%;
+	background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
+	color: #fff;
+	font-size: 2.2rem;
 }
 
-.tc4-search-empty p {
-  margin: 0;
-  font-size: 1.08rem;
-  line-height: 1.8;
+.scouting-nederland-search-empty h2 {
+	margin: 0 0 12px;
+	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
+	font-family: "Roboto Slab", Georgia, serif;
+	font-size: clamp(2rem, 4vw, 3rem);
 }
 
-.tc4-search-empty__actions {
-  margin-top: 24px;
+.scouting-nederland-search-empty p {
+	margin: 0;
+	font-size: 1.08rem;
+	line-height: 1.8;
 }
 
+.scouting-nederland-search-empty-actions {
+	margin-top: 24px;
+}
+
+/* Tablet layout reduces hero spacing and media width while retaining two card columns. */
 @media (max-width: 900px) {
-  .tc4-search-page {
-    padding-top: 0;
-  }
+	.scouting-nederland-search-hero {
+		padding: 88px 0 64px;
+	}
 
-  .tc4-search-hero {
-    padding: 62px 0 64px;
-  }
+	.scouting-nederland-search-hero-inner {
+		padding-top: 32px;
+	}
 
-  .tc4-search-card {
-    grid-template-columns: 160px minmax(0, 1fr);
-  }
+	.scouting-nederland-search-card {
+		grid-template-columns: 160px minmax(0, 1fr);
+	}
 }
 
+/* Phone layout stacks form controls and result-card regions for readable tap targets. */
 @media (max-width: 700px) {
-  .tc4-search-form {
-    grid-template-columns: 1fr;
-    border-radius: 24px;
-  }
 
-  .tc4-search-form__input {
-    line-height: 44px;
-  }
+	.scouting-nederland-search-hero-inner,
+	.scouting-nederland-search-hero h1,
+	.scouting-nederland-search-hero p {
+		text-align: left;
+	}
 
-  .tc4-search-form__button {
-    width: 100%;
-  }
+	.scouting-nederland-search-kicker,
+	.scouting-nederland-search-form,
+	.scouting-nederland-search-empty {
+		margin-right: 0;
+		margin-left: 0;
+	}
 
-  .tc4-search-card {
-    grid-template-columns: 1fr;
-  }
+	.scouting-nederland-search-form {
+		grid-template-columns: 1fr;
+		border-radius: 24px;
+	}
 
-  .tc4-search-card__content {
-    padding: 0;
-  }
+	.scouting-nederland-search-form-input {
+		line-height: 44px;
+	}
 
-  .tc4-search-card__image {
-    min-height: 190px;
-  }
+	.scouting-nederland-search-form-button {
+		width: 100%;
+	}
 
-  .tc4-search-empty {
-    padding: 30px 22px;
-  }
+	.scouting-nederland-search-card {
+		grid-template-columns: 1fr;
+	}
+
+	.scouting-nederland-search-card-content {
+		padding: 0;
+	}
+
+	.scouting-nederland-search-card-image {
+		min-height: 190px;
+	}
+
+	.scouting-nederland-search-empty {
+		padding: 30px 22px;
+	}
 }
 
-.tc4-search-page {
-  padding-top: 0 !important;
-}
-
-.tc4-search-hero {
-  margin-top: 0 !important;
-}
-
-@media (max-width: 900px) {
-  .tc4-search-page {
-    padding-top: 0 !important;
-  }
-}
-
-.tc4-home-hero,
-.tc4-search-hero,
-.tc4-404-hero,
-#tc4-hero,
-.defaultbanner,
-.tc4-home-slider,
-.home-slider,
-.tc4-video-banner {
-  margin-top: 0 !important;
-}
-
-.tc4-search-hero {
-  background-image:
-    linear-gradient(180deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.88) 100%),
-    url("../images/default-slide.jpg") !important;
-  background-position: center center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-}
-
-.tc4-search-hero {
-  background-image:
-    linear-gradient(180deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.88) 100%),
-    url("../images/default-slide.jpg") !important;
-  background-position: center center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-}
-
-
-.tc4-search-hero {
-  padding-top: 112px !important;
-}
-
-@media (max-width: 900px) {
-  .tc4-search-hero {
-    padding-top: 88px !important;
-  }
-}
-
-
-.tc4-search-hero__inner {
-  padding-top: 42px !important;
-}
-
-.tc4-search-kicker {
-  margin-top: 0 !important;
-  margin-bottom: 22px !important;
-}
-
-@media (max-width: 900px) {
-  .tc4-search-hero__inner {
-    padding-top: 32px !important;
-  }
-}
-
-
-.tc4-search-hero__inner {
-  max-width: 920px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  text-align: center !important;
-}
-
-.tc4-search-kicker {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-.tc4-search-hero h1,
-.tc4-search-hero p {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  text-align: center !important;
-}
-
-.tc4-search-form {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-.tc4-search-content {
-  max-width: 920px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-.tc4-search-count {
-  display: table !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-.tc4-search-empty {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-.tc4-search-results {
-  width: 100% !important;
-}
-
-@media (max-width: 700px) {
-  .tc4-search-hero__inner,
-  .tc4-search-hero h1,
-  .tc4-search-hero p {
-    text-align: left !important;
-  }
-
-  .tc4-search-kicker,
-  .tc4-search-form,
-  .tc4-search-empty {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
+@media (prefers-reduced-motion: reduce) {
+	.scouting-nederland-search-hero::after {
+		animation: none;
+	}
 }

@@ -1,94 +1,103 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
 
-function scoutingtc4_sanitize_checkbox($checked) {
+function scoutingNederlandSanitizeCheckbox($checked) {
     return ((isset($checked) && true == $checked) ? 1 : 0);
 }
 
-function scoutingtc4_customize_register($wp_customize) {
+function scoutingNederlandCustomizeRegister($wp_customize) {
 
 
-    $wp_customize->add_section('scoutingtc4_options', array('title' => __('Scouting TC4 opties', 'scoutingtc4'), 'priority' => 30));
+    $wp_customize->add_section('scouting_nederland_options', array('title' => __('Scouting Nederland opties', 'scouting-nederland'), 'priority' => 30));
     $colors = array('mgroen'=>'Groen', 'mblauw'=>'Blauw', 'mgeel'=>'Geel', 'mrood'=>'Rood', 'moranje'=>'Oranje', 'mpaars'=>'Paars');
     $subcolors = array('sgroen'=>'Groen', 'sblauw'=>'Blauw', 'sgeel'=>'Geel', 'srood'=>'Rood', 'soranje'=>'Oranje', 'spaars'=>'Paars');
-    $wp_customize->add_setting('scoutingtc4_main_color', array('default'=>'mgroen', 'sanitize_callback'=>'sanitize_key'));
-    $wp_customize->add_control('scoutingtc4_main_color', array('type'=>'select', 'section'=>'scoutingtc4_options', 'label'=>__('Hoofdkleur', 'scoutingtc4'), 'choices'=>$colors));
-    $wp_customize->add_setting('scoutingtc4_sub_color', array('default'=>'sgroen', 'sanitize_callback'=>'sanitize_key'));
-    $wp_customize->add_control('scoutingtc4_sub_color', array('type'=>'select', 'section'=>'scoutingtc4_options', 'label'=>__('Steunkleur', 'scoutingtc4'), 'choices'=>$subcolors));
-    $wp_customize->add_setting('scoutingtc4_logo_stamp', array('default'=>1, 'sanitize_callback'=>'scoutingtc4_sanitize_checkbox'));
-    $wp_customize->add_control('scoutingtc4_logo_stamp', array('type'=>'checkbox', 'section'=>'scoutingtc4_options', 'label'=>__('Logo stempel gebruiken', 'scoutingtc4'), 'description'=>__('Toont de stempel/schaduw onder het logo.', 'scoutingtc4')));
+    $wp_customize->add_setting('scouting_nederland_main_color', array('default'=>'mgroen', 'sanitize_callback'=>'sanitize_key'));
+    $wp_customize->add_control('scouting_nederland_main_color', array('type'=>'select', 'section'=>'scouting_nederland_options', 'label'=>__('Hoofdkleur', 'scouting-nederland'), 'choices'=>$colors));
+    $wp_customize->add_setting('scouting_nederland_sub_color', array('default'=>'sgroen', 'sanitize_callback'=>'sanitize_key'));
+    $wp_customize->add_control('scouting_nederland_sub_color', array('type'=>'select', 'section'=>'scouting_nederland_options', 'label'=>__('Steunkleur', 'scouting-nederland'), 'choices'=>$subcolors));
+    $wp_customize->add_setting('scouting_nederland_logo_stamp', array('default'=>1, 'sanitize_callback'=>'scoutingNederlandSanitizeCheckbox'));
+    $wp_customize->add_control('scouting_nederland_logo_stamp', array('type'=>'checkbox', 'section'=>'scouting_nederland_options', 'label'=>__('Logo stempel gebruiken', 'scouting-nederland'), 'description'=>__('Toont de stempel/schaduw onder het logo.', 'scouting-nederland')));
     
-    $wp_customize->add_setting('scoutingtc4_header_width', array(
+    $wp_customize->add_setting('scouting_nederland_header_width', array(
         'default'           => 'narrow',
         'sanitize_callback' => function($value) {
             return in_array($value, array('narrow', 'wide'), true) ? $value : 'narrow';
         },
     ));
 
-    $wp_customize->add_control('scoutingtc4_header_width', array(
-        'label'       => __('Header breedte', 'scoutingtc4'),
-        'description' => __('Kies Smal voor de scouting.nl-achtige header met standaard hamburgermenu of breed met de mogelijkheid voor een horizontaal menu.', 'scoutingtc4'),
-        'section'     => 'scoutingtc4_options',
+    $wp_customize->add_control('scouting_nederland_header_width', array(
+        'label'       => __('Header breedte', 'scouting-nederland'),
+        'description' => __('Kies Smal voor de scouting.nl-achtige header met standaard hamburgermenu of breed met de mogelijkheid voor een horizontaal menu.', 'scouting-nederland'),
+        'section'     => 'scouting_nederland_options',
         'type'        => 'radio',
         'choices'     => array(
-            'narrow' => __('Smal', 'scoutingtc4'),
-            'wide'   => __('Breed', 'scoutingtc4'),
+            'narrow' => __('Smal', 'scouting-nederland'),
+            'wide'   => __('Breed', 'scouting-nederland'),
         ),
     ));
     
-    $wp_customize->add_setting('scoutingtc4_default_hero_image', array(
+    $wp_customize->add_setting('scouting_nederland_default_hero_image', array(
         'default'           => 0,
         'sanitize_callback' => 'absint',
     ));
 
-    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'scoutingtc4_default_hero_image', array(
-        'label'       => __('Standaard hero-afbeelding', 'scoutingtc4'),
-        'description' => __('Deze afbeelding wordt gebruikt als er geen eigen pagina-afbeelding, slider of hero-widget is ingesteld.', 'scoutingtc4'),
-        'section'     => 'scoutingtc4_options',
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'scouting_nederland_default_hero_image', array(
+        'label'       => __('Standaard hero-afbeelding', 'scouting-nederland'),
+        'description' => __('Deze afbeelding wordt gebruikt als er geen eigen pagina-afbeelding, slider of hero-widget is ingesteld.', 'scouting-nederland'),
+        'section'     => 'scouting_nederland_options',
         'mime_type'   => 'image',
     )));
 
-    $wp_customize->add_setting('scoutingtc4_hamburger_desktop', array('default'=>0, 'sanitize_callback'=>'scoutingtc4_sanitize_checkbox'));
-    $wp_customize->add_control('scoutingtc4_hamburger_desktop', array('type'=>'checkbox', 'section'=>'scoutingtc4_options', 'label'=>__('Hamburger menu ook op desktop', 'scoutingtc4'), 'description'=>__('Uit = horizontaal menu op desktop. Aan = op desktop hamburger-menu. alleen van toepassing op brede headers.', 'scoutingtc4')));
+    $wp_customize->add_setting('scouting_nederland_hamburger_desktop', array('default'=>0, 'sanitize_callback'=>'scoutingNederlandSanitizeCheckbox'));
+    $wp_customize->add_control('scouting_nederland_hamburger_desktop', array('type'=>'checkbox', 'section'=>'scouting_nederland_options', 'label'=>__('Hamburger menu ook op desktop', 'scouting-nederland'), 'description'=>__('Uit = horizontaal menu op desktop. Aan = op desktop hamburger-menu. alleen van toepassing op brede headers.', 'scouting-nederland')));
 
-    $wp_customize->add_setting('scoutingtc4_show_search', array('default'=>1, 'sanitize_callback'=>'scoutingtc4_sanitize_checkbox'));
-    $wp_customize->add_control('scoutingtc4_show_search', array('type'=>'checkbox', 'section'=>'scoutingtc4_options', 'label'=>__('Zoek-icoon tonen', 'scoutingtc4')));
-    $wp_customize->add_setting('scoutingtc4_search_url', array('default'=>'', 'sanitize_callback'=>'esc_url_raw'));
-    $wp_customize->add_control('scoutingtc4_search_url', array('type'=>'url', 'section'=>'scoutingtc4_options', 'label'=>__('Zoekpagina URL', 'scoutingtc4'), 'description'=>__('Leeg laten gebruikt de WordPress zoekpagina.', 'scoutingtc4')));
+    $wp_customize->add_setting('scouting_nederland_show_search', array('default'=>1, 'sanitize_callback'=>'scoutingNederlandSanitizeCheckbox'));
+    $wp_customize->add_control('scouting_nederland_show_search', array('type'=>'checkbox', 'section'=>'scouting_nederland_options', 'label'=>__('Zoek-icoon tonen', 'scouting-nederland')));
+    $wp_customize->add_setting('scouting_nederland_search_url', array('default'=>'', 'sanitize_callback'=>'esc_url_raw'));
+    $wp_customize->add_control('scouting_nederland_search_url', array('type'=>'url', 'section'=>'scouting_nederland_options', 'label'=>__('Zoekpagina URL', 'scouting-nederland'), 'description'=>__('Leeg laten gebruikt de WordPress zoekpagina.', 'scouting-nederland')));
 
-    $wp_customize->add_setting('scoutingtc4_show_phone', array('default'=>1, 'sanitize_callback'=>'scoutingtc4_sanitize_checkbox'));
-    $wp_customize->add_control('scoutingtc4_show_phone', array('type'=>'checkbox', 'section'=>'scoutingtc4_options', 'label'=>__('Telefoon-icoon tonen', 'scoutingtc4')));
-    $wp_customize->add_setting('scoutingtc4_phone', array('default'=>'', 'sanitize_callback'=>'sanitize_text_field'));
-    $wp_customize->add_control('scoutingtc4_phone', array('type'=>'text', 'section'=>'scoutingtc4_options', 'label'=>__('Telefoonnummer', 'scoutingtc4')));
+    $wp_customize->add_setting('scouting_nederland_show_phone', array('default'=>1, 'sanitize_callback'=>'scoutingNederlandSanitizeCheckbox'));
+    $wp_customize->add_control('scouting_nederland_show_phone', array('type'=>'checkbox', 'section'=>'scouting_nederland_options', 'label'=>__('Telefoon-icoon tonen', 'scouting-nederland')));
+    $wp_customize->add_setting('scouting_nederland_phone', array('default'=>'', 'sanitize_callback'=>'sanitize_text_field'));
+    $wp_customize->add_control('scouting_nederland_phone', array('type'=>'text', 'section'=>'scouting_nederland_options', 'label'=>__('Telefoonnummer', 'scouting-nederland')));
 
-    $wp_customize->add_setting('scoutingtc4_show_contact', array('default'=>1, 'sanitize_callback'=>'scoutingtc4_sanitize_checkbox'));
-    $wp_customize->add_control('scoutingtc4_show_contact', array('type'=>'checkbox', 'section'=>'scoutingtc4_options', 'label'=>__('Contact-icoon tonen', 'scoutingtc4')));
-    $wp_customize->add_setting('scoutingtc4_contact_url', array('default'=>'', 'sanitize_callback'=>'esc_url_raw'));
-    $wp_customize->add_control('scoutingtc4_contact_url', array('type'=>'url', 'section'=>'scoutingtc4_options', 'label'=>__('Contactpagina URL', 'scoutingtc4')));
+    $wp_customize->add_setting('scouting_nederland_show_contact', array('default'=>1, 'sanitize_callback'=>'scoutingNederlandSanitizeCheckbox'));
+    $wp_customize->add_control('scouting_nederland_show_contact', array('type'=>'checkbox', 'section'=>'scouting_nederland_options', 'label'=>__('Contact-icoon tonen', 'scouting-nederland')));
+    $wp_customize->add_setting('scouting_nederland_contact_url', array('default'=>'', 'sanitize_callback'=>'esc_url_raw'));
+    $wp_customize->add_control('scouting_nederland_contact_url', array('type'=>'url', 'section'=>'scouting_nederland_options', 'label'=>__('Contactpagina URL', 'scouting-nederland')));
 
-    $wp_customize->add_setting('scoutingtc4_show_header_message', array('default'=>1, 'sanitize_callback'=>'scoutingtc4_sanitize_checkbox'));
-    $wp_customize->add_control('scoutingtc4_show_header_message', array('type'=>'checkbox', 'section'=>'scoutingtc4_options', 'label'=>__('Melding in header gebruiken', 'scoutingtc4')));
-    $wp_customize->add_setting('scoutingtc4_header_message', array('default'=>'', 'sanitize_callback'=>'sanitize_text_field'));
-    $wp_customize->add_control('scoutingtc4_header_message', array('type'=>'text', 'section'=>'scoutingtc4_options', 'label'=>__('Melding in de header', 'scoutingtc4')));
-    $wp_customize->add_setting('scoutingtc4_header_message_url', array('default'=>'', 'sanitize_callback'=>'esc_url_raw'));
-    $wp_customize->add_control('scoutingtc4_header_message_url', array('type'=>'url', 'section'=>'scoutingtc4_options', 'label'=>__('Link header melding', 'scoutingtc4')));
+    $wp_customize->add_setting('scouting_nederland_show_header_message', array('default'=>1, 'sanitize_callback'=>'scoutingNederlandSanitizeCheckbox'));
+    $wp_customize->add_control('scouting_nederland_show_header_message', array('type'=>'checkbox', 'section'=>'scouting_nederland_options', 'label'=>__('Melding in header gebruiken', 'scouting-nederland')));
+    $wp_customize->add_setting('scouting_nederland_header_message', array('default'=>'', 'sanitize_callback'=>'sanitize_text_field'));
+    $wp_customize->add_control('scouting_nederland_header_message', array('type'=>'text', 'section'=>'scouting_nederland_options', 'label'=>__('Melding in de header', 'scouting-nederland')));
+    $wp_customize->add_setting('scouting_nederland_header_message_url', array('default'=>'', 'sanitize_callback'=>'esc_url_raw'));
+    $wp_customize->add_control('scouting_nederland_header_message_url', array('type'=>'url', 'section'=>'scouting_nederland_options', 'label'=>__('Link header melding', 'scouting-nederland')));
 
-    $wp_customize->add_setting('scoutingtc4_hero_title_font', array(
+    $wp_customize->add_setting('scouting_nederland_hero_title_font', array(
         'default'           => 'urban-jungle',
-        'sanitize_callback' => 'scoutingtc4_sanitize_hero_font',
+        'sanitize_callback' => 'scoutingNederlandSanitizeHeroFont',
     ));
-    $wp_customize->add_control('scoutingtc4_hero_title_font', array(
+    $wp_customize->add_control('scouting_nederland_hero_title_font', array(
         'type'        => 'select',
-        'section'     => 'scoutingtc4_options',
-        'label'       => __('Standaard lettertype hero-koptekst', 'scoutingtc4'),
-        'description' => __('Dit lettertype wordt gebruikt voor hero-koppen, tenzij je op een pagina een afwijkend lettertype kiest.', 'scoutingtc4'),
-        'choices'     => scoutingtc4_get_hero_font_choices(),
+        'section'     => 'scouting_nederland_options',
+        'label'       => __('Standaard lettertype hero-koptekst', 'scouting-nederland'),
+        'description' => __('Dit lettertype wordt gebruikt voor hero-koppen, tenzij je op een pagina een afwijkend lettertype kiest.', 'scouting-nederland'),
+        'choices'     => scoutingNederlandGetHeroFontChoices(),
     ));
 
-    foreach (array('facebook','twitter','linkedin','youtube','instagram') as $network) {
-        $wp_customize->add_setting('scoutingtc4_' . $network . '_url', array('default'=>'', 'sanitize_callback'=>'esc_url_raw'));
-        $wp_customize->add_control('scoutingtc4_' . $network . '_url', array('type'=>'url', 'section'=>'scoutingtc4_options', 'label'=>ucfirst($network) . ' URL'));
+    $social_networks = array(
+        'facebook'  => 'Facebook',
+        'x'         => 'X',
+        'linkedin'  => 'LinkedIn',
+        'youtube'   => 'YouTube',
+        'instagram' => 'Instagram',
+        'tiktok'    => 'TikTok',
+    );
+
+    foreach ($social_networks as $network => $label) {
+        $wp_customize->add_setting('scouting_nederland_' . $network . '_url', array('default'=>'', 'sanitize_callback'=>'esc_url_raw'));
+        $wp_customize->add_control('scouting_nederland_' . $network . '_url', array('type'=>'url', 'section'=>'scouting_nederland_options', 'label'=>$label . ' URL'));
     }
 
 }
-add_action('customize_register', 'scoutingtc4_customize_register');
+add_action('customize_register', 'scoutingNederlandCustomizeRegister');
