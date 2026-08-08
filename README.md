@@ -34,6 +34,8 @@ Het thema gebruikt de native WordPress-templatehiërarchie met de volledige temp
 Voor aanvullende functionaliteit kunnen deze plugins handig zijn:
 
 - `scouting-openid-connect`, indien login via Scouting gewenst is. Het thema toont beheerders hiervoor ook een installatiemelding in WordPress.
+- `scouting-thema-blokken`, indien je gebruik wil maken van speciale Scouting Nederland blokken dien je deze plugin te installeren. Het thema toont beheerders hiervoor ook een installatiemelding in WordPress.
+- Eventuele SEO- of cachingplugin naar keuze
 - Een SEO- of cachingplugin naar keuze.
 
 ## Thema-structuur
@@ -74,27 +76,33 @@ Per pagina kunnen extra opties beschikbaar zijn, zoals:
 - Alternatief lettertype voor de hero
 - Slider wel of niet tonen
 
-## Block editor
+## Gutenberg blokken
 
-Dit is geen block theme en het thema registreert geen eigen Gutenberg block types. Het ondersteunt de WordPress block editor wel met `theme.json`, editor-styles, block styles en een herbruikbaar block pattern.
+Het thema bevat meerdere aangepaste Gutenberg-blokken onder de Scouting Nederland blokcategorie.
 
-Functionaliteit die een eigen custom block type nodig heeft, hoort in een plugin te worden geregistreerd in plaats van in het thema.
+### Featured items
 
-## Reacties
+Toont uitgelichte onderdelen of snelle links, bijvoorbeeld naar belangrijke pagina's.
 
-Op individuele berichten wordt de standaard WordPress-commentfunctionaliteit gebruikt. Het thema ondersteunt:
+### Callout
 
-- bestaande reacties tonen;
-- threaded/nested replies;
-- reactiepagina's wanneer er veel reacties zijn;
-- het standaard WordPress-reactieformulier;
-- het WordPress `comment-reply` script wanneer threaded comments zijn ingeschakeld.
+Een opvallend tekstblok met titel, tekst, knop en optionele scouting-afbeelding.
 
-## Lettertypes en licenties
+### Nieuwsitems
 
-Het thema bevat meerdere lokale lettertypes, waaronder Poppins, Roboto Slab en Urban Jungle Demo.
+Toont nieuwsberichten uit WordPress, bijvoorbeeld de nieuwste berichten of berichten uit een bepaalde categorie.
 
-Urban Jungle Demo blijft bewust onderdeel van dit project en wordt gebruikt als decoratief lettertype. Volgens de vermelde bron is dit font gratis voor persoonlijk gebruik. Controleer daarom zelf of de licentie past bij de manier waarop je het thema publiceert of distribueert.
+### Speltakken-grid
+
+Toont meerdere speltakken met naam, leeftijd, opkomsttijd, locatie, afbeelding en knop.
+
+### Twee kolommen
+
+Een layoutblok waarmee content in twee kolommen kan worden geplaatst.
+
+### Scouting OIDC
+
+Toont een login-knop of login-link wanneer de Scouting OIDC plugin beschikbaar is.
 
 ## Publiceren
 
