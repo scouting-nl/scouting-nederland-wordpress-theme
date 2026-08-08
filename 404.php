@@ -16,22 +16,7 @@ $hero_url = get_template_directory_uri() . '/assets/images/default-slide.jpg';
 
             <h1><?php esc_html_e('404', 'scouting-nederland'); ?></h1>
             <p><?php esc_html_e('Deze pagina is op hike zonder routekaart vertrokken.', 'scouting-nederland'); ?></p>
-
-            <form role="search" method="get" class="scouting-nederland-search-form scouting-nederland-404-search-form" action="<?php echo esc_url(home_url('/')); ?>">
-                <label class="screen-reader-text" for="scouting-nederland-404-search-field"><?php esc_html_e('Zoeken naar:', 'scouting-nederland'); ?></label>
-                <input
-                    id="scouting-nederland-404-search-field"
-                    type="search"
-                    class="scouting-nederland-search-form-input"
-                    placeholder="<?php echo esc_attr__('Zoek op de site…', 'scouting-nederland'); ?>"
-                    value="<?php echo esc_attr($search_query); ?>"
-                    name="s"
-                />
-                <button type="submit" class="scouting-nederland-search-form-button">
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                    <span><?php esc_html_e('Zoeken', 'scouting-nederland'); ?></span>
-                </button>
-            </form>
+            <?php get_search_form(); ?>
         </div>
     </section>
 

@@ -188,3 +188,120 @@
 		text-align: left;
 	}
 }
+/* Simple WordPress comments section. */
+.scouting-nederland-comments {
+	max-width: 920px;
+	margin: -2rem auto 4.5rem;
+	padding-top: 2rem;
+	border-top: 2px solid rgb(from var(--wp--preset--color--scouting-groen) r g b / 0.18);
+	font-family: "Poppins", Arial, sans-serif;
+}
+
+.scouting-nederland-comments-title {
+	margin: 0 0 1.5rem;
+	color: var(--wp--preset--color--scouting-groen);
+	font-family: "Roboto Slab", Georgia, serif;
+	font-size: clamp(1.5rem, 3vw, 2rem);
+	font-weight: 700;
+}
+
+.scouting-nederland-comment-list,
+.scouting-nederland-comment-list .children {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.scouting-nederland-comment-list .children {
+	margin-left: 2rem;
+}
+
+.scouting-nederland-comment-list .comment-body {
+	margin-bottom: 1.25rem;
+	padding: 1.25rem;
+	background: #f4fbf7;
+	border: 1px solid rgb(from var(--wp--preset--color--scouting-groen) r g b / 0.18);
+	border-radius: 0.4rem;
+}
+
+.scouting-nederland-comment-list .comment-author {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	font-weight: 700;
+}
+
+.scouting-nederland-comment-list .avatar {
+	border-radius: 50%;
+}
+
+.scouting-nederland-comment-list .comment-metadata {
+	margin: 0.35rem 0 0.8rem 3.75rem;
+	font-size: 0.85rem;
+}
+
+.scouting-nederland-comment-list a,
+.scouting-nederland-comment-form a {
+	color: var(--wp--preset--color--scouting-blauw-accent);
+}
+
+.scouting-nederland-comment-list .reply a {
+	font-weight: 700;
+}
+
+.scouting-nederland-comment-form label {
+	display: block;
+	margin-bottom: 0.35rem;
+	font-weight: 700;
+}
+
+.scouting-nederland-comment-form input[type="text"],
+.scouting-nederland-comment-form input[type="email"],
+.scouting-nederland-comment-form input[type="url"],
+.scouting-nederland-comment-form textarea {
+	width: 100%;
+	padding: 0.75rem;
+	border: 1px solid #a8b4ae;
+	border-radius: 0.3rem;
+	background: #fff;
+}
+
+.scouting-nederland-comment-form textarea {
+	min-height: 150px;
+	resize: vertical;
+}
+
+.scouting-nederland-comment-form input:focus,
+.scouting-nederland-comment-form textarea:focus {
+	outline: 3px solid rgb(from var(--wp--preset--color--scouting-groen) r g b / 0.2);
+	border-color: var(--wp--preset--color--scouting-groen);
+}
+
+.scouting-nederland-comment-form .form-submit input {
+	padding: 0.7rem 1.1rem;
+	border: 0;
+	border-radius: 0.3rem;
+	background: var(--wp--preset--color--scouting-groen);
+	color: #fff;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.scouting-nederland-comment-form .form-submit input:hover,
+.scouting-nederland-comment-form .form-submit input:focus {
+	filter: brightness(0.92);
+}
+
+.scouting-nederland-comments-closed {
+	color: #5f6b66;
+}
+
+@media (max-width: 767px) {
+	.scouting-nederland-comments {
+		margin-bottom: 3rem;
+	}
+
+	.scouting-nederland-comment-list .children {
+		margin-left: 1rem;
+	}
+}

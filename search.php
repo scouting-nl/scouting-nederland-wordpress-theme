@@ -30,23 +30,7 @@ $has_search_query = $search_query !== '';
                 <h1><?php esc_html_e('Geen spoor gevonden', 'scouting-nederland'); ?></h1>
                 <p><?php esc_html_e('Deze zoekterm zit waarschijnlijk nog ergens in de hike-rugzak. Probeer eens een andere route.', 'scouting-nederland'); ?></p>
             <?php endif; ?>
-
-            <form role="search" method="get" class="scouting-nederland-search-form" action="<?php echo esc_url(home_url('/')); ?>">
-                <label class="screen-reader-text" for="scouting-nederland-search-field"><?php esc_html_e('Zoeken naar:', 'scouting-nederland'); ?></label>
-                <input
-                    id="scouting-nederland-search-field"
-                    type="search"
-                    class="scouting-nederland-search-form-input"
-                    placeholder="<?php echo esc_attr__('Waar ben je naar op zoek?', 'scouting-nederland'); ?>"
-                    value="<?php echo esc_attr($search_query); ?>"
-                    name="s"
-                    required
-                />
-                <button type="submit" class="scouting-nederland-search-form-button">
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                    <span><?php esc_html_e('Zoeken', 'scouting-nederland'); ?></span>
-                </button>
-            </form>
+            <?php get_search_form(); ?>
         </div>
     </section>
 

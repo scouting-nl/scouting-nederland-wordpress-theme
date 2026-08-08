@@ -22,7 +22,6 @@ Dit thema is opgeschoond richting de WordPress Theme Developer Handbook, maar is
 
 ## Blokkers voor WordPress.org
 
-1. De custom Gutenberg-blokken in `inc/blocks.php` en `assets/js/blocks/` horen volgens de Theme Review-regels in een losse companion-plugin. Verplaats de registraties en render-callbacks pas samen met een migratieplan, zodat bestaande content blijft werken.
 Zie [Theme Review Required](https://make.wordpress.org/themes/handbook/review/required/#5-functionality-and-features).
 2. `assets/fonts/urban-jungle.otf` is door de maker alleen vrijgegeven voor persoonlijk gebruik. Voor WordPress.org is een GPL-compatibele herdistributielicentie of een visueel goedgekeurd alternatief nodig.
 3. Vul `== Resources ==` in `readme.txt` aan met volledige bron-, copyright-, licentie- en toestemminggegevens voor alle gebundelde assets, waaronder alle afbeeldingen, `screenshot.png`, `snl-logo.svg` en de Scouting-merken. De huidige lijst dekt alleen de externe libraries en fonts.

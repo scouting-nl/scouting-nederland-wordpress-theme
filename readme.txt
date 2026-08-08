@@ -1,6 +1,6 @@
 === Scouting Nederland ===
 Contributors: geldwolfje216, jobvk
-Tags: custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, one-column, right-sidebar, theme-options, translation-ready, two-columns, wide-blocks, block-styles
+Tags: custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, one-column, right-sidebar, theme-options, translation-ready, two-columns, wide-blocks, block-styles
 Requires at least: 7.0
 Tested up to: 7.0
 Stable tag: 1.0.0
@@ -12,19 +12,27 @@ Classic WordPress theme for Scouting Nederland websites.
 
 == Description ==
 
-Scouting Nederland is a classic WordPress theme for Scouting Nederland websites. It includes responsive templates, widget areas, editor styles, custom blocks, sliders, custom colors, and page-level display settings for local scouting groups and national sites.
+Scouting Nederland is a classic WordPress theme for Scouting Nederland websites. It includes responsive templates, widget areas, editor styles, block styles, a block pattern, sliders, custom colors, comments, and page-level display settings for local scouting groups and national sites.
 
-The theme uses the native classic WordPress template hierarchy with complete templates in the theme root. Reusable template parts live in `parts/`, custom PHP lives in `inc/`, and assets live in `assets/`.
+The theme uses the native classic WordPress template hierarchy with complete templates in the theme root. Reusable template parts live in `parts/`, custom PHP modules live in `inc/`, and assets live in `assets/`.
 
 == Frequently Asked Questions ==
 
 = Is this a block theme? =
 
-No. This is a classic PHP theme with block editor support, custom blocks, editor styles, and `theme.json` settings.
+No. This is a classic PHP theme with block editor support, editor styles, block styles, a custom block pattern, and `theme.json` settings.
 
 = Does this theme work with Elementor? =
 
 Yes. The default page template detects Elementor-built pages and suppresses the theme hero, sidebar, and extra widget bands. Elementor Canvas remains available through the Elementor plugin.
+
+= Does the theme support comments? =
+
+Yes. Single posts support WordPress comments, threaded replies, comment pagination, and the standard WordPress comment form.
+
+= Does the theme include custom Gutenberg blocks? =
+
+No. Custom block types are not registered by the theme. The theme provides styling for the block editor and includes a reusable block pattern instead.
 
 == Screenshots ==
 
@@ -33,7 +41,12 @@ Yes. The default page template detects Elementor-built pages and suppresses the 
 == Changelog ==
 
 = 1.0.0 =
-* Initial release
+* Classic WordPress theme templates and responsive layout.
+* Theme Customizer and page-level display settings.
+* Slider support and Elementor page detection.
+* Block editor styles, theme.json settings, and a reusable block pattern.
+* WordPress comments with threaded replies and pagination.
+* Search form using the standard WordPress search API.
 
 == Resources ==
 

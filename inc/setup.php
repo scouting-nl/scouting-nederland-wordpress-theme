@@ -139,3 +139,25 @@ function scoutingNederlandDefaultFavicon() {
     echo '<link rel="icon" type="image/png" sizes="512x512" href="' . esc_url($favicon_png) . '">' . "\n";
 }
 add_action('wp_head', 'scoutingNederlandDefaultFavicon', 1);
+
+/**
+ * Register a small starter pattern using only Core blocks.
+ */
+function scoutingNederlandRegisterBlockPatterns() {
+    if (!function_exists('register_block_pattern')) {
+        return;
+    }
+
+    register_block_pattern(
+        'scouting-nederland/intro',
+        array(
+            'title'       => __('Scouting intro', 'scouting-nederland'),
+            'description' => __('Een eenvoudige introductie met kop, tekst en knop.', 'scouting-nederland'),
+            'categories'  => array('text'),
+            'content'     => '<!-- wp:heading --><h2>' . esc_html__('Welkom bij onze Scoutinggroep', 'scouting-nederland') . '</h2><!-- /wp:heading -->'
+                . '<!-- wp:paragraph --><p>' . esc_html__('Ontdek onze activiteiten, speltakken en mogelijkheden om mee te doen.', 'scouting-nederland') . '</p><!-- /wp:paragraph -->'
+                . '<!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button">' . esc_html__('Meer informatie', 'scouting-nederland') . '</a></div><!-- /wp:button --></div><!-- /wp:buttons -->',
+        )
+    );
+}
+add_action('init', 'scoutingNederlandRegisterBlockPatterns');
