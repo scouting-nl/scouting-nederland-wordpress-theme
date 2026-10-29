@@ -130,15 +130,6 @@ function scoutingNederlandHeaderWidthBodyClass($classes) {
 }
 add_filter('body_class', 'scoutingNederlandHeaderWidthBodyClass');
 
-function scoutingNederlandDefaultFavicon() {
-    if (function_exists('has_site_icon') && has_site_icon()) {
-        return;
-    }
-
-    $favicon_png = get_template_directory_uri() . '/assets/images/favicon.png';
-    echo '<link rel="icon" type="image/png" sizes="512x512" href="' . esc_url($favicon_png) . '">' . "\n";
-}
-add_action('wp_head', 'scoutingNederlandDefaultFavicon', 1);
 
 /**
  * Register a small starter pattern using only Core blocks.

@@ -1,57 +1,73 @@
 === Scouting Nederland ===
-Contributors: geldwolfje216, jobvk
+Contributors: geldwolfje216
 Tags: custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, one-column, right-sidebar, theme-options, translation-ready, two-columns, wide-blocks, block-styles
 Requires at least: 7.0
 Tested up to: 7.0
 Stable tag: 1.0.0
 Requires PHP: 7.4
-License: GPLv3
+License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Classic WordPress theme for Scouting Nederland websites.
+Classic WordPress theme officially developed and published by Scouting Nederland for Scouting websites.
 
 == Description ==
 
-Scouting Nederland is a classic WordPress theme for Scouting Nederland websites. It includes responsive templates, widget areas, editor styles, block styles, a block pattern, sliders, custom colors, comments, and page-level display settings for local scouting groups and national sites.
+Scouting Nederland is a classic WordPress theme published by Scouting Nederland. It provides responsive page and post templates, menu locations, widget areas, a slider, Customizer settings, support for comments, block editor styles, and page-level presentation settings.
 
-The theme uses the native classic WordPress template hierarchy with complete templates in the theme root. Reusable template parts live in `parts/`, custom PHP modules live in `inc/`, and assets live in `assets/`.
+The theme works without additional plugins. It supports the WordPress block editor but does not register custom block types or bundle companion-plugin block source files. Scouting Nederland Blocks is an optional companion plugin, planned for release alongside the theme via WordPress.org, that adds Scouting-specific Gutenberg blocks. The theme offers an optional installation or activation notice. Scouting OpenID Connect is another optional plugin.
+
+Scouting Nederland is the creator and publisher of the original images and graphics bundled with this theme. Distribution of those assets through WordPress.org requires a verified GPL-compatible grant for redistribution, modification and reuse; see Resources and the pre-release note below.
+
+== Installation ==
+
+1. Install and activate the theme in Appearance > Themes.
+2. Set menus, logo and other design preferences in Appearance > Customize where available.
+3. Configure a home page and widgets as desired.
+4. Optionally install Scouting Nederland Blocks from WordPress.org to add Scouting-specific Gutenberg blocks.
+5. Optionally install Scouting OpenID Connect from WordPress.org if Scouting login is needed.
 
 == Frequently Asked Questions ==
 
 = Is this a block theme? =
 
-No. This is a classic PHP theme with block editor support, editor styles, block styles, a custom block pattern, and `theme.json` settings.
+No. This is a classic PHP theme with block editor support, editor styles, block styles, a reusable block pattern and theme.json settings.
 
-= Does this theme work with Elementor? =
+= Does this theme require additional plugins? =
 
-Yes. The default page template detects Elementor-built pages and suppresses the theme hero, sidebar, and extra widget bands. Elementor Canvas remains available through the Elementor plugin.
+No. The theme works on its own. Scouting OpenID Connect is optional. Scouting Nederland Blocks is the optional companion plugin for additional Scouting-specific Gutenberg blocks. Scouting Nederland intends to release it separately alongside the theme through the WordPress.org Plugin Directory; the installation link becomes usable once the plugin is listed. The theme displays an optional installation or activation recommendation in the WordPress dashboard.
 
-= Does the theme support comments? =
+= Does this theme support comments? =
 
-Yes. Single posts support WordPress comments, threaded replies, comment pagination, and the standard WordPress comment form.
+Yes. The theme supports WordPress comments and threaded replies on posts, subject to site settings.
 
-= Does the theme include custom Gutenberg blocks? =
+= Does the theme work with Elementor? =
 
-No. Custom block types are not registered by the theme. The theme provides styling for the block editor and includes a reusable block pattern instead.
+The page template contains presentation adjustments for pages built with Elementor. Elementor is not required.
 
 == Screenshots ==
 
-1. Front page
+1. Front page of the theme.
 
 == Changelog ==
 
 = 1.0.0 =
-* Classic WordPress theme templates and responsive layout.
-* Theme Customizer and page-level display settings.
-* Slider support and Elementor page detection.
-* Block editor styles, theme.json settings, and a reusable block pattern.
-* WordPress comments with threaded replies and pagination.
-* Search form using the standard WordPress search API.
+* Initial classic-theme release with responsive templates and Customizer settings.
+* Slider and page-level display settings.
+* Block editor styling, theme.json settings and a reusable block pattern.
+* WordPress comments, search and Elementor-related presentation adjustments.
 
 == Resources ==
 
+* Scouting Nederland original theme illustrations, decorative graphics, logo and other bundled original image assets (assets/images/): Copyright Scouting Nederland. Creator and publisher: Scouting Nederland. License: TO BE CONFIRMED before submission; release requires an explicit GPL-compatible license covering redistribution and modification of each included asset. Source: original artwork created for Scouting Nederland.
+* screenshot.png: Screenshot of the Scouting Nederland theme, produced by Scouting Nederland. License for underlying original artwork and any included photographs: TO BE CONFIRMED before submission; must be GPL-compatible. Source: Scouting Nederland theme screenshot.
 * Bootstrap 5.3.8, Copyright 2011-2025 The Bootstrap Authors, MIT License, https://getbootstrap.com/
 * Font Awesome Free 7.3.1, Copyright Fonticons, Inc., icons: CC BY 4.0, fonts: SIL OFL 1.1, code: MIT License, https://fontawesome.com/
 * Poppins, Copyright 2014-2020 Indian Type Foundry, SIL Open Font License 1.1, https://github.com/itfoundry/Poppins
 * Roboto Slab, Copyright 2013 The Roboto Slab Project Authors, Apache License 2.0, https://github.com/googlefonts/robotoslab
-* Urban Jungle Demo, Copyright KC Fonts, free for personal use only, https://www.dafont.com/urban-jungle.font
+* Urban Jungle Demo (assets/fonts/urban-jungle.otf), Copyright KC Fonts, PERSONAL USE ONLY; NOT suitable for WordPress.org distribution. Replace with a GPL-compatible alternative before submitting. https://www.dafont.com/urban-jungle.font
+
+* callout-bijl.png was omitted from the theme distribution because its embedded stock-asset attribution could not establish a GPL-compatible license. Any replacement should be original or demonstrably GPL-compatible.
+
+== Pre-release checks ==
+
+Before submitting to WordPress.org, Scouting Nederland must authorize and document a GPL-compatible license for the bundled original graphics, logo, photographs, and screenshot. Replace images depicting identifiable children in the theme package, including the screenshot where applicable. Replace Urban Jungle Demo with a suitable freely redistributable font and update this resource list. Confirm the WordPress.org theme directory requirements and test the final release package. The release folder is scouting-nederland and custom block registrations/source files have been removed from the theme. Custom headers and backgrounds are not advertised because the theme does not currently implement those optional Customizer features. Site icons use the WordPress core Site Icon setting. The theme is not yet ready for submission.
