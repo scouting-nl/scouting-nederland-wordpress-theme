@@ -1,5 +1,5 @@
 === Scouting Nederland ===
-Contributors: geldwolfje216
+Contributors: scoutingnederland
 Tags: custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, one-column, right-sidebar, theme-options, translation-ready, two-columns, wide-blocks, block-styles
 Requires at least: 7.0
 Tested up to: 7.0
