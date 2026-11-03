@@ -10,6 +10,7 @@ Dit thema is opgeschoond richting de WordPress Theme Developer Handbook, maar is
 - De verplichte classic-theme hooks en template-markup zijn aanwezig: `language_attributes()`, `wp_head()`, `body_class()`, `wp_body_open()`, `post_class()`, `wp_link_pages()` en `wp_footer()`.
 - Bootstrap en Font Awesome worden lokaal geladen in plaats van via CDN's.
 - De niet-geminificeerde Bootstrap- en Font Awesome-CSS staat naast de gebruikte geminificeerde bestanden.
+- Hero-koppen gebruiken Impact als systeemlettertype met lokale fallbacks. Er wordt geen Impact-fontbestand gebundeld of extern gedownload.
 - Merkkleuren worden in `theme.json` beheerd en via WordPress-presetvariabelen in de CSS gebruikt.
 - De legacy `template.css`-bundel is vervangen door Bootstrap 5.3.8 en een kleine WordPress-compatibiliteitslaag.
 - De front-end bevat een toetsenbordtoegankelijke skiplink.
@@ -23,10 +24,10 @@ Dit thema is opgeschoond richting de WordPress Theme Developer Handbook, maar is
 ## Blokkers voor WordPress.org
 
 Zie [Theme Review Required](https://make.wordpress.org/themes/handbook/review/required/#5-functionality-and-features).
-2. `assets/fonts/urban-jungle.otf` is door de maker alleen vrijgegeven voor persoonlijk gebruik. Voor WordPress.org is een GPL-compatibele herdistributielicentie of een visueel goedgekeurd alternatief nodig.
-3. Vul `== Resources ==` in `readme.txt` aan met volledige bron-, copyright-, licentie- en toestemminggegevens voor alle gebundelde assets, waaronder alle afbeeldingen, `screenshot.png`, `snl-logo.svg` en de Scouting-merken. De huidige lijst dekt alleen de externe libraries en fonts.
-4. Vervang `assets/images/default-slide.jpg` en `screenshot.png` door beelden zonder herkenbare kinderen. De huidige bestanden tonen herkenbare scouts; bronvermelding alleen maakt die beelden niet toegestaan in de directory. Houd voor de vervangende screenshot 1200 x 900 px en een 4:3-verhouding aan.
-5. Classic themes in de WordPress.org-directory moeten comments ondersteunen. Voeg `comments.php`, `comments_template()` op singular content, threaded comments, `comment-reply` en passende styling toe.
+
+1. Vul `== Resources ==` in `readme.txt` aan met volledige bron-, copyright-, licentie- en toestemminggegevens voor alle gebundelde assets, waaronder alle afbeeldingen, `screenshot.png`, `snl-logo.svg` en de Scouting-merken. Leg een GPL-compatibele licentie vast voor herdistributie, wijziging en hergebruik van ieder oorspronkelijk beeldbestand en de screenshot; die rechten zijn nog niet gedocumenteerd.
+2. Vervang `assets/images/default-slide.jpg` en `screenshot.png` door beelden zonder herkenbare kinderen. De huidige bestanden tonen herkenbare scouts; bronvermelding alleen maakt die beelden niet toegestaan in de directory. Houd voor de vervangende screenshot 1200 x 900 px en een 4:3-verhouding aan.
+3. Classic themes in de WordPress.org-directory moeten comments ondersteunen. Voeg `comments.php`, `comments_template()` op singular content, threaded comments, `comment-reply` en passende styling toe.
 
 ## Releasevalidatie
 

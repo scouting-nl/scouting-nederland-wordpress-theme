@@ -1,109 +1,79 @@
-# Scouting Nederland
+# Scouting Nederland WordPress Theme
 
-Een classic WordPress-thema voor Scouting Nederland-websites, met ondersteuning voor hero-secties, sliders, sidebar-instellingen, reacties, editor-styles, block styles, een block pattern en `theme.json`.
+[![Build and test](https://github.com/scouting-nl/wordpress-theme/actions/workflows/build-test.yml/badge.svg)](https://github.com/scouting-nl/wordpress-theme/actions/workflows/build-test.yml)
+[![License](https://img.shields.io/github/license/scouting-nl/wordpress-theme)](https://github.com/scouting-nl/wordpress-theme/blob/main/LICENSE)
 
-Het thema gebruikt de native WordPress-templatehiërarchie met de volledige templates in de root. Herbruikbare template parts staan in `parts/`, custom PHP-modules staan in `inc/` en assets staan in `assets/`.
+Een responsive classic theme voor WordPress-sites van Scoutinggroepen. Het theme biedt een configureerbare vormgeving, widgets, hero-secties, sliders en ondersteuning voor de WordPress block editor.
 
-## Functies
+## Inhoud
 
-- Aanpasbare hero per pagina
-- Sliderondersteuning
-- Optie om de sidebar per pagina te verbergen
-- Thema-instellingen via de WordPress Customizer
-- Centrale kleuren, lettertypes en layoutinstellingen in `theme.json`
-- Block editor-styles en block styles
-- Een herbruikbaar WordPress block pattern
-- Reacties op berichten, inclusief threaded replies en commentpaginering
-- Standaard WordPress-zoekformulier via `get_search_form()`
-- Responsive ontwerp voor desktop, tablet en mobiel
-- Automatische ondersteuning voor pagina's die met Elementor zijn opgebouwd
+- [Beschrijving](#beschrijving)
+- [Screenshots](#screenshots)
+- [Installatie](#installatie)
+- [Instellingen](#instellingen)
+- [Veelgestelde vragen](#veelgestelde-vragen)
+- [Beveiliging](#beveiliging)
+
+## Beschrijving
+
+Scouting Nederland is een classic theme met PHP-templates volgens de standaard WordPress-templatehiërarchie. Het werkt zelfstandig; aanvullende plugins zijn optioneel.
+
+Het theme bevat onder andere:
+
+- Responsive templates voor de homepage, pagina's, berichten, archieven, categorieën, zoekresultaten en 404-pagina's.
+- Configureerbare hero en slider, met instellingen voor weergave per pagina.
+- Widgetgebieden voor onder meer de hero, nieuwssectie, zijbalk en footer.
+- Instellingen voor logo, kleuren, header, lettertypes en footer via de Customizer.
+- `theme.json`-instellingen, editor-stijlen, block styles en een herbruikbaar block pattern.
+- Reacties met threaded replies en paginering.
+- Presentatie-aanpassingen voor pagina's die met Elementor zijn opgebouwd. Elementor is niet vereist.
+
+Het theme registreert zelf **geen aangepaste Gutenberg-blokken**. Scouting-specifieke blokken worden als afzonderlijke companion-plugin aangeboden en maken geen deel uit van het theme-pakket.
+
+## Screenshots
+
+### Themaweergave
+
+![Scouting Nederland theme](screenshot.png)
 
 ## Installatie
 
-1. Download het zipbestand van het thema.
-2. Ga in WordPress naar **Weergave > Thema's**.
-3. Klik op **Nieuw thema toevoegen**.
-4. Klik op **Thema uploaden**.
-5. Upload het `.zip`-bestand.
-6. Activeer het thema.
-7. Installeer optioneel de plugin `scouting-openid-connect` wanneer inloggen via Scouting gewenst is.
-8. Configureer het thema via **Weergave > Customizer** en wijs het hoofdmenu en footermenu toe.
+1. Download het theme-ZIP-bestand via [GitHub Releases](https://github.com/scouting-nl/wordpress-theme/releases/latest).
+2. Open in WordPress **Weergave > Thema's > Nieuw thema toevoegen > Thema uploaden**.
+3. Upload het ZIP-bestand en activeer **Scouting Nederland**.
+4. Wijs de hoofd- en footermenu's toe en pas de vormgeving aan via **Weergave > Customizer**.
 
-## Aanbevolen plugins
+Het theme vereist WordPress 7.0 of hoger en PHP 7.4 of hoger.
 
-Voor aanvullende functionaliteit kunnen deze plugins handig zijn:
+## Instellingen
 
-- `scouting-openid-connect`, indien login via Scouting gewenst is. Het thema toont beheerders hiervoor ook een installatiemelding in WordPress.
-- `scouting-thema-blokken`, indien je gebruik wil maken van speciale Scouting Nederland blokken dien je deze plugin te installeren. Het thema toont beheerders hiervoor ook een installatiemelding in WordPress.
-- Eventuele SEO- of cachingplugin naar keuze
-- Een SEO- of cachingplugin naar keuze.
+Gebruik **Weergave > Customizer** om onder meer het logo, kleuren, header, standaard hero, lettertypes en footerinformatie in te stellen.
 
-## Thema-structuur
+Per pagina kunnen aanvullende instellingen beschikbaar zijn voor de hero, paginatitel, zijbalk, hero-lettertype en slider.
 
-- `style.css` - verplichte stylesheet met de WordPress-themaheader.
-- `index.php`, `front-page.php`, `page.php`, `single.php`, `archive.php`, `category.php`, `search.php` en `404.php` - standaard WordPress-templatehiërarchie.
-- `header.php`, `footer.php` en `sidebar.php` - standaard classic-theme entry points.
-- `comments.php` - weergave van reacties en het standaard WordPress-reactieformulier.
-- `searchform.php` - het zoekformulier dat via `get_search_form()` wordt gebruikt.
-- `functions.php` - laadpunt voor theme setup, assets en losse modules.
-- `theme.json` - bron voor globale editorinstellingen, merkkleuren, lettertypes en layoutmaten.
-- `parts/` - herbruikbare template parts, waaronder de gedeelde contentweergave.
-- `assets/` - modulaire CSS, JavaScript, fonts, afbeeldingen en lokale vendorbestanden.
-- `inc/` - setup, Customizer, navigatie, zoeklogica, slider, page settings, assets en admin notices.
-- `screenshot.png` - screenshot voor **Weergave > Thema's**.
-- `readme.txt` - WordPress-thema-informatie, requirements, changelog en bronvermeldingen.
+## Optionele plugins
 
-## Thema-instellingen
+- [Scouting OpenID Connect](https://wordpress.org/plugins/scouting-openid-connect/) voegt aanmelden met Scouting Nederland toe.
+- Scouting Nederland Blocks is een afzonderlijke companion-plugin voor Scouting-specifieke Gutenberg-blokken. Deze blokken zijn niet opgenomen in dit theme.
 
-De meeste instellingen zijn te vinden via **Weergave > Customizer**.
+## Veelgestelde vragen
 
-Daar kun je onder andere instellen:
+### Is dit een block theme?
 
-- Logo
-- Kleuren
-- Headerinstellingen
-- Standaard hero-instellingen
-- Lettertypes
-- Footerinformatie
+Nee. Dit is een classic PHP theme met ondersteuning voor de block editor, editor-stijlen, block styles, een herbruikbaar pattern en instellingen in `theme.json`.
 
-## Pagina-instellingen
+### Heb ik plugins nodig?
 
-Per pagina kunnen extra opties beschikbaar zijn, zoals:
+Nee. Het theme werkt zelfstandig. Scouting OpenID Connect en Scouting Nederland Blocks zijn optioneel en worden afzonderlijk geïnstalleerd.
 
-- Hero verbergen
-- Paginatitel verbergen
-- Sidebar verbergen
-- Alternatief lettertype voor de hero
-- Slider wel of niet tonen
+### Bevat het theme Scouting Nederland-blokken?
 
-## Gutenberg blokken
+Nee. Het theme registreert geen aangepaste bloktypen. Installeer daarvoor de afzonderlijke Scouting Nederland Blocks-plugin wanneer die voor je WordPress-installatie beschikbaar is.
 
-Het thema bevat meerdere aangepaste Gutenberg-blokken onder de Scouting Nederland blokcategorie.
+### Werkt het theme met Elementor?
 
-### Featured items
+Het theme bevat enkele presentatie-aanpassingen voor Elementor-pagina's. Elementor zelf is niet vereist.
 
-Toont uitgelichte onderdelen of snelle links, bijvoorbeeld naar belangrijke pagina's.
+## Beveiliging
 
-### Callout
-
-Een opvallend tekstblok met titel, tekst, knop en optionele scouting-afbeelding.
-
-### Nieuwsitems
-
-Toont nieuwsberichten uit WordPress, bijvoorbeeld de nieuwste berichten of berichten uit een bepaalde categorie.
-
-### Speltakken-grid
-
-Toont meerdere speltakken met naam, leeftijd, opkomsttijd, locatie, afbeelding en knop.
-
-### Twee kolommen
-
-Een layoutblok waarmee content in twee kolommen kan worden geplaatst.
-
-### Scouting OIDC
-
-Toont een login-knop of login-link wanneer de Scouting OIDC plugin beschikbaar is.
-
-## Publiceren
-
-De technische publicatiecheck en aandachtspunten voor distributie staan in `PUBLISHING.md`.
+Meld vermoedelijke kwetsbaarheden privé volgens de [beveiligingsrichtlijnen](.github/SECURITY.md). Plaats geen kwetsbaarheidsdetails, geheimen, tokens of persoonsgegevens in openbare issues of discussies.

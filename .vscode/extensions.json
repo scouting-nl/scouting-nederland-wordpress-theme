@@ -2,6 +2,7 @@
     "recommendations": [
         "EditorConfig.EditorConfig",
         "bmewburn.vscode-intelephense-client",
-        "redhat.vscode-yaml"
+        "redhat.vscode-yaml",
+        "stylelint.vscode-stylelint"
     ]
 }

@@ -15,8 +15,34 @@ logs in issues, pull requests, or discussions.
 ## Development
 
 Use a WordPress test installation with content and accounts that you are authorized to use.
-Refer to [README.md](../README.md) for the theme structure and supported WordPress and PHP versions.
+Refer to [README.md](../README.md) for installation and supported WordPress and PHP versions.
 Review [PUBLISHING.md](../PUBLISHING.md) for the current release blockers and validation checklist.
+
+Native PHP templates live in the repository root, reusable template parts in `parts/`, PHP modules
+in `inc/`, and frontend assets in `assets/`.
+
+Build a local distribution ZIP with PowerShell:
+
+```powershell
+pwsh -NoProfile -File .\scripts\build-zip.ps1
+```
+
+The ZIP is created in `scripts/`. Do not commit generated archives.
+
+CSS uses the official WordPress Stylelint configuration, including formatting rules. With Node.js
+22.13 or newer, install the pinned tools and format the theme-owned stylesheets:
+
+```powershell
+npm install --global --ignore-scripts --omit=peer --no-audit --no-fund `
+ stylelint@17.14.1 @wordpress/stylelint-config@27.0.0 stylelint-scss@7.2.0
+stylelint --fix style.css "assets/css/**/*.css"
+```
+
+Omit `--fix` to check without modifying files. The recommended VS Code Stylelint extension applies
+fixable rules on explicit save. Vendored stylesheets are excluded from linting and formatting.
+
+GitHub Actions checks PHP syntax, WordPress PHP, JavaScript and CSS coding standards, workflow
+configuration, and WordPress Theme Check against the packaged theme.
 
 Keep changes focused and consistent with the existing WordPress coding and security practices.
 In particular:

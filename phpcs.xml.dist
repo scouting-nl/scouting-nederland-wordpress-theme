@@ -3,7 +3,7 @@
 	name="Scouting Nederland WordPress Theme"
 	xsi:noNamespaceSchemaLocation="https://schema.phpcodesniffer.com/phpcs.xsd">
 
-	<description>WordPress Coding Standards checks supported by the current codebase.</description>
+	<description>Enforce WordPress Coding Standards for the Scouting Nederland theme.</description>
 
 	<file>.</file>
 
@@ -14,9 +14,8 @@
 	<arg name="extensions" value="php" />
 	<arg value="ps" />
 
-	<!-- Load WordPress-specific sniff configuration without enforcing the legacy baseline. -->
+	<!-- Enforce the complete WordPress standard. -->
 	<rule ref="WordPress">
-		<severity>0</severity>
 	</rule>
 
 	<!-- Enforce the standards already migrated in this codebase. -->
@@ -63,7 +62,6 @@
 	<rule ref="WordPress.Arrays.ArrayIndentation.CloseBraceNotAligned"><severity>5</severity></rule>
 	<rule ref="WordPress.Arrays.ArrayKeySpacingRestrictions.NoSpacesAroundArrayKeys"><severity>5</severity></rule>
 	<rule ref="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned"><severity>5</severity></rule>
-	<rule ref="WordPress.NamingConventions.ValidFunctionName"><severity>5</severity></rule>
 	<rule ref="WordPress.WhiteSpace.CastStructureSpacing.NoSpaceBeforeOpenParenthesis"><severity>5</severity></rule>
 	<rule ref="WordPress.WhiteSpace.ControlStructureSpacing.ExtraSpaceBeforeOpenParenthesis"><severity>5</severity></rule>
 	<rule ref="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterOpenParenthesis"><severity>5</severity></rule>

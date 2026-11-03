@@ -1,11 +1,17 @@
-/* Featured-image hero scales between a compact minimum and a bounded desktop height. */
+/*
+ * Featured-image hero scales between a compact minimum and a bounded desktop
+ * height.
+ */
 .scouting-nederland-single-hero {
 	min-height: clamp(280px, 44vw, 520px);
 	background-size: cover;
 	background-position: center;
 }
 
-/* Restrict long-form reading width independently of Bootstrap's outer container. */
+/*
+ * Restrict long-form reading width independently of Bootstrap's outer
+ * container.
+ */
 .scouting-nederland-single-post {
 	max-width: 920px;
 	margin: 0 auto 4.5rem;
@@ -24,7 +30,7 @@
 	background: rgb(from var(--wp--preset--color--scouting-groen) r g b / 0.12);
 	color: var(--wp--preset--color--scouting-groen);
 	border-radius: 999px;
-	font-family: "Poppins", Arial, sans-serif;
+	font-family: Poppins, Arial, sans-serif;
 	font-size: 0.75rem;
 	font-weight: 800;
 	letter-spacing: 0.08em;
@@ -42,42 +48,53 @@
 	line-height: 1.05;
 }
 
-/* Metadata wraps naturally; generated separators are attached only between entries. */
+/*
+ * Metadata wraps naturally; generated separators are attached only between
+ * entries.
+ */
 .scouting-nederland-single-post-meta {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.55rem 1.15rem;
 	margin-top: 1rem;
 	color: #5f6b66;
-	font-family: "Poppins", Arial, sans-serif;
+	font-family: Poppins, Arial, sans-serif;
 	font-size: 0.95rem;
-}
-
-.scouting-nederland-single-post-meta span {
-	position: relative;
-}
-
-.scouting-nederland-single-post-meta span+span::before {
-	content: "";
-	position: absolute;
-	left: -0.65rem;
-	top: 50%;
-	width: 0.25rem;
-	height: 0.25rem;
-	background: var(--wp--preset--color--scouting-groen);
-	border-radius: 50%;
-	transform: translateY(-50%);
 }
 
 .scouting-nederland-single-post-content {
 	color: #1d1d1b;
-	font-family: "Poppins", Arial, sans-serif;
+	font-family: Poppins, Arial, sans-serif;
 	font-size: 1.05rem;
 	line-height: 1.85;
 }
 
-.scouting-nederland-single-post-content>*:first-child {
-	margin-top: 0;
+.scouting-nederland-single-post-footer {
+	margin-top: 2.8rem;
+	padding-top: 1.4rem;
+	border-top: 2px solid rgb(from var(--wp--preset--color--scouting-groen) r g b / 0.18);
+	color: #1d1d1b;
+	font-family: Poppins, Arial, sans-serif;
+}
+
+/* Two equal Grid tracks align previous and next navigation on desktop. */
+.scouting-nederland-single-post-navigation {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1rem;
+	margin-top: 2.8rem;
+}
+
+.scouting-nederland-single-post-nav-item {
+	min-height: 100%;
+}
+
+.scouting-nederland-single-post-nav-item-next {
+	text-align: right;
+}
+
+.scouting-nederland-single-post-meta span {
+	position: relative;
 }
 
 .scouting-nederland-single-post-content h2,
@@ -95,7 +112,10 @@
 	font-weight: 700;
 }
 
-/* The quote border and tinted background distinguish editorial emphasis semantically. */
+/*
+ * The quote border and tinted background distinguish editorial emphasis
+ * semantically.
+ */
 .scouting-nederland-single-post-content blockquote {
 	margin: 2rem 0;
 	padding: 1.4rem 1.6rem;
@@ -107,33 +127,9 @@
 	line-height: 1.55;
 }
 
-.scouting-nederland-single-post-footer {
-	margin-top: 2.8rem;
-	padding-top: 1.4rem;
-	border-top: 2px solid rgb(from var(--wp--preset--color--scouting-groen) r g b / 0.18);
-	color: #1d1d1b;
-	font-family: "Poppins", Arial, sans-serif;
-}
-
-.scouting-nederland-single-post-terms+.scouting-nederland-single-post-terms {
-	margin-top: 0.5rem;
-}
-
 .scouting-nederland-single-post-footer a {
 	color: var(--wp--preset--color--scouting-blauw-accent);
 	font-weight: 700;
-}
-
-/* Two equal Grid tracks align previous and next navigation on desktop. */
-.scouting-nederland-single-post-navigation {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 1rem;
-	margin-top: 2.8rem;
-}
-
-.scouting-nederland-single-post-nav-item {
-	min-height: 100%;
 }
 
 .scouting-nederland-single-post-nav-item span {
@@ -159,19 +155,29 @@
 	text-decoration: none;
 }
 
-.scouting-nederland-single-post-nav-item-next {
-	text-align: right;
+.scouting-nederland-single-post-meta span + span::before {
+	content: "";
+	position: absolute;
+	left: -0.65rem;
+	top: 50%;
+	width: 0.25rem;
+	height: 0.25rem;
+	background: var(--wp--preset--color--scouting-groen);
+	border-radius: 50%;
+	transform: translateY(-50%);
 }
 
-.scouting-nederland-single-post-nav-item a:hover,
-.scouting-nederland-single-post-nav-item a:focus {
-	background: var(--wp--preset--color--scouting-groen);
-	border-color: var(--wp--preset--color--scouting-groen);
-	color: #fff;
+.scouting-nederland-single-post-content > *:first-child {
+	margin-top: 0;
+}
+
+.scouting-nederland-single-post-terms + .scouting-nederland-single-post-terms {
+	margin-top: 0.5rem;
 }
 
 /* Stack navigation links and restore left alignment on narrow screens. */
 @media (max-width: 767px) {
+
 	.scouting-nederland-single-post {
 		margin-bottom: 3rem;
 	}
@@ -188,13 +194,14 @@
 		text-align: left;
 	}
 }
+
 /* Simple WordPress comments section. */
 .scouting-nederland-comments {
 	max-width: 920px;
 	margin: -2rem auto 4.5rem;
 	padding-top: 2rem;
 	border-top: 2px solid rgb(from var(--wp--preset--color--scouting-groen) r g b / 0.18);
-	font-family: "Poppins", Arial, sans-serif;
+	font-family: Poppins, Arial, sans-serif;
 }
 
 .scouting-nederland-comments-title {
@@ -205,14 +212,48 @@
 	font-weight: 700;
 }
 
-.scouting-nederland-comment-list,
-.scouting-nederland-comment-list .children {
+.scouting-nederland-comment-list {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
+.scouting-nederland-comments-closed {
+	color: #5f6b66;
+}
+
+.scouting-nederland-comment-list a,
+.scouting-nederland-comment-form a {
+	color: var(--wp--preset--color--scouting-blauw-accent);
+}
+
+.scouting-nederland-single-post-nav-item a:hover,
+.scouting-nederland-single-post-nav-item a:focus {
+	background: var(--wp--preset--color--scouting-groen);
+	border-color: var(--wp--preset--color--scouting-groen);
+	color: #fff;
+}
+
+.scouting-nederland-comment-form label {
+	display: block;
+	margin-bottom: 0.35rem;
+	font-weight: 700;
+}
+
+.scouting-nederland-comment-form textarea {
+	width: 100%;
+	padding: 0.75rem;
+	border: 1px solid #a8b4ae;
+	border-radius: 0.3rem;
+	background: #fff;
+	min-height: 150px;
+	resize: vertical;
+}
+
 .scouting-nederland-comment-list .children {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 	margin-left: 2rem;
 }
 
@@ -240,35 +281,18 @@
 	font-size: 0.85rem;
 }
 
-.scouting-nederland-comment-list a,
-.scouting-nederland-comment-form a {
-	color: var(--wp--preset--color--scouting-blauw-accent);
-}
-
 .scouting-nederland-comment-list .reply a {
-	font-weight: 700;
-}
-
-.scouting-nederland-comment-form label {
-	display: block;
-	margin-bottom: 0.35rem;
 	font-weight: 700;
 }
 
 .scouting-nederland-comment-form input[type="text"],
 .scouting-nederland-comment-form input[type="email"],
-.scouting-nederland-comment-form input[type="url"],
-.scouting-nederland-comment-form textarea {
+.scouting-nederland-comment-form input[type="url"] {
 	width: 100%;
 	padding: 0.75rem;
 	border: 1px solid #a8b4ae;
 	border-radius: 0.3rem;
 	background: #fff;
-}
-
-.scouting-nederland-comment-form textarea {
-	min-height: 150px;
-	resize: vertical;
 }
 
 .scouting-nederland-comment-form input:focus,
@@ -292,11 +316,8 @@
 	filter: brightness(0.92);
 }
 
-.scouting-nederland-comments-closed {
-	color: #5f6b66;
-}
-
 @media (max-width: 767px) {
+
 	.scouting-nederland-comments {
 		margin-bottom: 3rem;
 	}

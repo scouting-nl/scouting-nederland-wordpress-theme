@@ -1,22 +1,24 @@
-/* Hero media establishes the positioning and minimum-height context for its title overlay. */
+/*
+ * Hero media establishes the positioning and minimum-height context for its
+ * title overlay.
+ */
 .scouting-nederland-page-hero-media {
 	position: relative;
 	min-height: 260px;
 }
 
-.scouting-nederland-page-hero-media>.scouting-nederland-page-hero-fallback,
-.scouting-nederland-page-hero-media>.widget,
-.scouting-nederland-page-hero-media>section,
-.scouting-nederland-page-hero-media>div:not(.scouting-nederland-page-hero-title) {
-	min-height: 260px;
-}
-
-/* The page-owned fallback mirrors the desktop base banner and can override it responsively. */
+/*
+ * The page-owned fallback mirrors the desktop base banner and can override it
+ * responsively.
+ */
 .scouting-nederland-page-hero-fallback {
 	height: 350px;
 }
 
-/* The absolute overlay centers the title without blocking links in widget media below it. */
+/*
+ * The absolute overlay centers the title without blocking links in widget media
+ * below it.
+ */
 .scouting-nederland-page-hero-title {
 	position: absolute;
 	inset: 0;
@@ -29,10 +31,14 @@
 	text-align: center;
 }
 
+.scouting-nederland-page-hero-media > section {
+	min-height: 260px;
+}
+
 .scouting-nederland-page-hero-title h1 {
 	margin: 0;
 	color: #fff;
-	font-family: "Urban Jungle", "Roboto Slab", Georgia, serif;
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	font-size: clamp(2.2rem, 7vw, 4.6rem);
 	font-weight: 400;
 	line-height: 0.95;
@@ -40,7 +46,10 @@
 	text-shadow: 0 6px 0 rgba(0, 0, 0, 0.18);
 }
 
-/* A transparent gradient protects white title contrast over arbitrary user imagery. */
+/*
+ * A transparent gradient protects white title contrast over arbitrary user
+ * imagery.
+ */
 .scouting-nederland-page-hero-title::before {
 	content: "";
 	position: absolute;
@@ -49,14 +58,22 @@
 	background: linear-gradient(90deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.28));
 }
 
-/* Reduce fixed hero space on narrow viewports while preserving overlay alignment. */
+.scouting-nederland-page-hero-media > .scouting-nederland-page-hero-fallback,
+.scouting-nederland-page-hero-media > .widget {
+	min-height: 260px;
+}
+
+.scouting-nederland-page-hero-media > div:not(.scouting-nederland-page-hero-title) {
+	min-height: 260px;
+}
+
+/*
+ * Reduce fixed hero space on narrow viewports while preserving overlay
+ * alignment.
+ */
 @media (max-width: 767.98px) {
 
-	.scouting-nederland-page-hero-media,
-	.scouting-nederland-page-hero-media>.scouting-nederland-page-hero-fallback,
-	.scouting-nederland-page-hero-media>.widget,
-	.scouting-nederland-page-hero-media>section,
-	.scouting-nederland-page-hero-media>div:not(.scouting-nederland-page-hero-title) {
+	.scouting-nederland-page-hero-media {
 		min-height: 210px;
 	}
 
@@ -67,15 +84,31 @@
 	.scouting-nederland-page-hero-title {
 		padding: 36px 16px;
 	}
+
+	.scouting-nederland-page-hero-media > section {
+		min-height: 210px;
+	}
+
+	.scouting-nederland-page-hero-media > .scouting-nederland-page-hero-fallback,
+	.scouting-nederland-page-hero-media > .widget {
+		min-height: 210px;
+	}
+
+	.scouting-nederland-page-hero-media > div:not(.scouting-nederland-page-hero-title) {
+		min-height: 210px;
+	}
 }
 
-/* Separate page content from image, slider, or video hero variants consistently. */
+/*
+ * Separate page content from image, slider, or video hero variants
+ * consistently.
+ */
 .scouting-nederland-page-hero,
 .scouting-nederland-page-featured {
 	margin-bottom: 48px;
 }
 
-.scouting-nederland-page-hero+.container .scouting-nederland-page-featured {
+.scouting-nederland-page-hero + .container .scouting-nederland-page-featured {
 	margin-top: 0;
 }
 

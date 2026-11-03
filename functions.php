@@ -1,7 +1,14 @@
 <?php
-if (!defined('ABSPATH')) { exit; }
+/**
+ * Loads the theme setup and feature modules.
+ *
+ * @package Scouting_Nederland
+ */
 
-define('SCOUTING_NEDERLAND_VERSION', wp_get_theme(get_template())->get('Version'));
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; }
+
+define( 'SCOUTING_NEDERLAND_VERSION', wp_get_theme( get_template() )->get( 'Version' ) );
 
 require_once get_template_directory() . '/inc/setup.php';
 require_once get_template_directory() . '/inc/enqueue.php';

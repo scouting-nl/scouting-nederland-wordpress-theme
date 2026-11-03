@@ -15,11 +15,15 @@ const wordpress = require( '@wordpress/eslint-plugin' );
 
 export default [
 	{
-		ignores: [ 'eslint.config.mjs', '**/node_modules/**', '**/vendor/**' ],
+		ignores: [
+			'eslint.config.mjs',
+			'**/node_modules/**',
+			'**/vendor/**',
+		],
 	},
 	...wordpress.configs[ 'recommended-with-formatting' ],
 	{
-		files: [ 'src/**/*.js' ],
+		files: [ 'assets/js/**/*.js' ],
 		languageOptions: {
 			globals: globals.browser,
 		},

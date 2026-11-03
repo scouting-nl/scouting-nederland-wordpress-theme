@@ -2,17 +2,27 @@
  * Footer root.
  *
  * The component inherits the Customizer-selected main color through a shared
- * custom property. Typography is scoped here so WordPress widget markup inherits
+ * custom property. Typography is scoped here so WordPress widget markup
+ * inherits
  * the same readable baseline without requiring widget-specific resets.
  */
 .scouting-nederland-footer-root {
 	margin-top: 0;
 	background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
 	color: #fff;
-	font-family: "Poppins", Arial, Helvetica, sans-serif;
+	font-family: Poppins, Arial, Helvetica, sans-serif;
 	font-size: 0.875rem;
 	font-weight: 400;
 	line-height: 2;
+}
+
+.scouting-nederland-footer-root h5 {
+	margin: 0 0 1.4rem;
+	color: #fff;
+	font-family: Poppins, Arial, Helvetica, sans-serif;
+	font-size: 1.35rem;
+	font-weight: 700;
+	line-height: 1.2;
 }
 
 /* Decorative repeating grass strip cropped to its final visible height. */
@@ -23,7 +33,7 @@
 	height: 110px;
 	margin-bottom: -1px;
 	background-color: #fff;
-	background-image: url("../images/footer-grass.png");
+	background-image: url(../images/footer-grass.png);
 	background-position: left calc(100% + 22px);
 	background-repeat: repeat-x;
 	background-size: auto 135px;
@@ -37,7 +47,9 @@
 	padding: 2.5rem 0 3rem;
 }
 
-/* Two asymmetric Grid tracks give partner logos slightly more horizontal room. */
+/*
+ * Two asymmetric Grid tracks give partner logos slightly more horizontal room.
+ */
 .scouting-nederland-footer-root .scouting-nederland-footer-inner {
 	width: min(var(--scouting-nederland-page-width), calc(100% - 2rem));
 	max-width: var(--scouting-nederland-page-width);
@@ -48,50 +60,15 @@
 	align-items: start;
 }
 
-.scouting-nederland-footer-root h5 {
-	margin: 0 0 1.4rem;
-	color: #fff;
-	font-family: "Poppins", Arial, Helvetica, sans-serif;
-	font-size: 1.35rem;
-	font-weight: 700;
-	line-height: 1.2;
-}
-
-/* Social links use Flex so icon spacing remains independent of list semantics. */
-.scouting-nederland-footer-root .scouting-nederland-footer-social ul {
-	display: flex;
-	align-items: center;
-	gap: 1.65rem;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-.scouting-nederland-footer-root .scouting-nederland-footer-social a {
-	color: #fff;
-	text-decoration: none;
-	font-size: 1.15rem;
-	line-height: 1;
-}
-
-.scouting-nederland-footer-root .scouting-nederland-footer-social i {
-	color: #fff;
-}
-
 .scouting-nederland-footer-root .scouting-nederland-footer-copyright {
 	margin-top: 2.4rem;
 	max-width: 360px;
 }
 
-.scouting-nederland-footer-root .scouting-nederland-footer-copyright p {
-	margin: 0 0 0.65rem;
-	color: #fff;
-	font-size: 0.95rem;
-	line-height: 1.65;
-	font-weight: 400;
-}
-
-/* Bottom navigation switches back to a white surface using the active main color. */
+/*
+ * Bottom navigation switches back to a white surface using the active main
+ * color.
+ */
 .scouting-nederland-footer-root .scouting-nederland-footer-bottom {
 	background: #fff;
 	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
@@ -117,22 +94,50 @@
 	padding: 0;
 }
 
+/* Real partner content is supplied through the footer-partners widget area. */
+.scouting-nederland-footer-root .scouting-nederland-footer-partners-widget-area {
+	color: #fff;
+}
+
+/*
+ * Social links use Flex so icon spacing remains independent of list semantics.
+ */
+.scouting-nederland-footer-root .scouting-nederland-footer-social ul {
+	display: flex;
+	align-items: center;
+	gap: 1.65rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.scouting-nederland-footer-root .scouting-nederland-footer-social a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.15rem;
+	line-height: 1;
+}
+
+.scouting-nederland-footer-root .scouting-nederland-footer-social i {
+	color: #fff;
+}
+
+.scouting-nederland-footer-root .scouting-nederland-footer-copyright p {
+	margin: 0 0 0.65rem;
+	color: #fff;
+	font-size: 0.95rem;
+	line-height: 1.65;
+	font-weight: 400;
+}
+
 .scouting-nederland-footer-root .scouting-nederland-footer-menu li {
 	display: inline-flex;
 	align-items: center;
 }
 
-.scouting-nederland-footer-root .scouting-nederland-footer-menu li+li::before {
-	content: "";
-	display: inline-block;
-	width: 1px;
-	height: 22px;
-	margin: 0 1rem;
-	background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
-	opacity: 1;
-}
-
-/* WordPress can add nav-link; all footer-menu link states share the same color. */
+/*
+ * WordPress can add nav-link; all footer-menu link states share the same color.
+ */
 .scouting-nederland-footer-root .scouting-nederland-footer-menu a {
 	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
 	font-size: 0.85rem;
@@ -141,32 +146,13 @@
 	text-decoration: none;
 }
 
-.scouting-nederland-footer-root .scouting-nederland-footer-menu a:hover {
-	text-decoration: underline;
-}
-
-/* Real partner content is supplied through the footer-partners widget area. */
-.scouting-nederland-footer-root .scouting-nederland-footer-partners-widget-area {
-	color: #fff;
-}
-
-.scouting-nederland-footer-root .scouting-nederland-footer-partners-widget-area .widget {
-	margin: 0;
-	color: #fff;
-}
-
-.scouting-nederland-footer-root .scouting-nederland-footer-partners-widget-area .widget+.widget {
-	margin-top: 1.5rem;
-}
-
-.scouting-nederland-footer-root .scouting-nederland-footer-partners-widget-area .widget-title,
 .scouting-nederland-footer-root .scouting-nederland-footer-partners-widget-area h2,
 .scouting-nederland-footer-root .scouting-nederland-footer-partners-widget-area h3,
 .scouting-nederland-footer-root .scouting-nederland-footer-partners-widget-area h4,
 .scouting-nederland-footer-root .scouting-nederland-footer-partners-widget-area h5 {
 	margin: 0 0 1.8rem;
 	color: #fff;
-	font-family: "Poppins", Arial, Helvetica, sans-serif;
+	font-family: Poppins, Arial, Helvetica, sans-serif;
 	font-size: 1.35rem;
 	font-weight: 700;
 	line-height: 1.2;
@@ -176,7 +162,10 @@
 	color: #fff;
 }
 
-/* Bound arbitrary widget images without distorting their intrinsic aspect ratio. */
+/*
+ * Bound arbitrary widget images without distorting their intrinsic aspect
+ * ratio.
+ */
 .scouting-nederland-footer-root .scouting-nederland-footer-partners-widget-area img {
 	width: auto;
 	max-width: 100%;
@@ -191,13 +180,48 @@
 	color: #fff;
 }
 
+.scouting-nederland-footer-root .scouting-nederland-footer-menu li + li::before {
+	content: "";
+	display: inline-block;
+	width: 1px;
+	height: 22px;
+	margin: 0 1rem;
+	background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
+	opacity: 1;
+}
+
+.scouting-nederland-footer-root .scouting-nederland-footer-partners-widget-area .widget {
+	margin: 0;
+	color: #fff;
+}
+
+.scouting-nederland-footer-root .scouting-nederland-footer-partners-widget-area .widget-title {
+	margin: 0 0 1.8rem;
+	color: #fff;
+	font-family: Poppins, Arial, Helvetica, sans-serif;
+	font-size: 1.35rem;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
 .scouting-nederland-footer-root .scouting-nederland-footer-partners-widget-area .wp-block-gallery,
 .scouting-nederland-footer-root .scouting-nederland-footer-partners-widget-area .wp-block-image {
 	margin-bottom: 1rem;
 }
 
-/* Collapse footer columns and menu rows once two desktop tracks no longer fit. */
+.scouting-nederland-footer-root .scouting-nederland-footer-menu a:hover {
+	text-decoration: underline;
+}
+
+.scouting-nederland-footer-root .scouting-nederland-footer-partners-widget-area .widget + .widget {
+	margin-top: 1.5rem;
+}
+
+/*
+ * Collapse footer columns and menu rows once two desktop tracks no longer fit.
+ */
 @media (max-width: 900px) {
+
 	.scouting-nederland-footer-root .scouting-nederland-footer-grass {
 		height: 90px;
 		background-position-y: calc(100% + 18px);
@@ -224,32 +248,32 @@
 		text-align: center;
 	}
 
-	.scouting-nederland-footer-root .scouting-nederland-footer-menu li+li::before {
+	.scouting-nederland-footer-root .scouting-nederland-footer-menu li + li::before {
 		content: none;
 	}
 }
 
 /* Customizer main-color choices select matching grass artwork. */
 body.scouting-nederland-utilities-main-green .scouting-nederland-footer-root .scouting-nederland-footer-grass {
-	background-image: url("../images/grass-groen.png");
+	background-image: url(../images/grass-groen.png);
 }
 
 body.scouting-nederland-utilities-main-blue .scouting-nederland-footer-root .scouting-nederland-footer-grass {
-	background-image: url("../images/grass-blauw.png");
+	background-image: url(../images/grass-blauw.png);
 }
 
 body.scouting-nederland-utilities-main-yellow .scouting-nederland-footer-root .scouting-nederland-footer-grass {
-	background-image: url("../images/grass-geel.png");
+	background-image: url(../images/grass-geel.png);
 }
 
 body.scouting-nederland-utilities-main-red .scouting-nederland-footer-root .scouting-nederland-footer-grass {
-	background-image: url("../images/grass-rood.png");
+	background-image: url(../images/grass-rood.png);
 }
 
 body.scouting-nederland-utilities-main-orange .scouting-nederland-footer-root .scouting-nederland-footer-grass {
-	background-image: url("../images/grass-oranje.png");
+	background-image: url(../images/grass-oranje.png);
 }
 
 body.scouting-nederland-utilities-main-purple .scouting-nederland-footer-root .scouting-nederland-footer-grass {
-	background-image: url("../images/grass-paars.png");
+	background-image: url(../images/grass-paars.png);
 }
