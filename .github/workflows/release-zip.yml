@@ -1,0 +1,56 @@
+name: release-zip
+
+on:
+  push:
+    tags:
+      - "*.*.*"
+
+permissions: {}
+
+jobs:
+  package:
+    name: Build theme zip
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Build zip archive
+        shell: pwsh
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          $version = $env:RELEASE_TAG -replace '^[vV]', ''
+          $packagePath = & ./scripts/build-zip.ps1 -Version $version
+          if ($LASTEXITCODE -ne 0) {
+            throw 'Theme package build failed.'
+          }
+          $zipName = Split-Path -Leaf $packagePath
+          Add-Content -Path $env:GITHUB_ENV -Value "ZIP_PATH=$packagePath"
+          Add-Content -Path $env:GITHUB_ENV -Value "ZIP_NAME=$zipName"
+
+      - name: Upload zip as artifact
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: ${{ env.ZIP_NAME }}
+          path: ${{ env.ZIP_PATH }}
+          if-no-files-found: error
+
+      - name: Attach zip to release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+
+          if gh release view "${RELEASE_TAG}" --json id >/dev/null 2>&1; then
+            gh release upload "${RELEASE_TAG}" "${ZIP_PATH}" --clobber
+          else
+            gh release create "${RELEASE_TAG}" "${ZIP_PATH}" --generate-notes --verify-tag
+          fi

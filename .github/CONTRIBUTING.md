@@ -15,8 +15,8 @@ logs in issues, pull requests, or discussions.
 ## Development
 
 Use a WordPress test installation with content and accounts that you are authorized to use.
-Refer to [README.md](README.md) for the theme structure and supported WordPress and PHP versions.
-Review [PUBLISHING.md](PUBLISHING.md) for the current release blockers and validation checklist.
+Refer to [README.md](../README.md) for the theme structure and supported WordPress and PHP versions.
+Review [PUBLISHING.md](../PUBLISHING.md) for the current release blockers and validation checklist.
 
 Keep changes focused and consistent with the existing WordPress coding and security practices.
 In particular:
@@ -25,7 +25,7 @@ In particular:
 - Preserve the native classic-theme template hierarchy and compatibility with the Customizer, widgets, editor styles, and `theme.json`.
 - Keep custom blocks and their editor and render behavior compatible with existing content.
 - Update translations when changing user-facing strings.
-- Update [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), `readme.txt`, or other documentation when user-visible behavior, configuration, or release information changes.
+- Update [README.md](../README.md), [CHANGELOG.md](../CHANGELOG.md), `readme.txt`, or other documentation when user-visible behavior, configuration, or release information changes.
 
 ## Pull Requests
 

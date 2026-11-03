@@ -1,0 +1,260 @@
+name: Build and test
+
+on:
+  push:
+    branches:
+      - "**"
+
+permissions: {}
+
+jobs:
+  format:
+    name: Configuration formatting and workflow lint
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Check YAML formatting
+        run: npx --yes prettier@3.6.2 --check --tab-width 2 .github/workflows/*.yml .github/dependabot.yml
+
+      - name: Check VS Code settings formatting
+        run: npx --yes prettier@3.6.2 --check --tab-width 4 .vscode/*.json
+
+      - name: Install Actionlint
+        shell: bash
+        env:
+          ACTIONLINT_VERSION: "1.7.12"
+          ACTIONLINT_SHA256: "8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8"
+        run: |
+          set -euo pipefail
+
+          archive="${RUNNER_TEMP}/actionlint.tar.gz"
+          destination="${RUNNER_TEMP}/actionlint"
+          mkdir -p "${destination}"
+
+          curl --fail-with-body --location --retry 3 \
+            --output "${archive}" \
+            "https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz"
+          echo "${ACTIONLINT_SHA256}  ${archive}" | sha256sum --check
+          tar -xzf "${archive}" -C "${destination}" actionlint
+          "${destination}/actionlint" -color
+
+  php-lint:
+    name: PHP syntax
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # 2.40.0
+        with:
+          php-version: "8.2"
+          coverage: none
+
+      - name: Lint PHP files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          while IFS= read -r -d '' file; do
+            php -l "$file"
+          done < <(find . -type f -name '*.php' -not -path './assets/vendor/*' -print0)
+
+  javascript-coding-standards:
+    name: WordPress JavaScript Coding Standards
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install ESLint and WordPress ESLint plugin
+        shell: bash
+        env:
+          BABEL_CORE_VERSION: "7.29.7"
+          ESLINT_VERSION: "9.39.2"
+          WORDPRESS_ESLINT_PLUGIN_VERSION: "25.8.0"
+        run: |
+          set -euo pipefail
+
+          tools_dir="${RUNNER_TEMP}/eslint-tools"
+          npm install \
+            --prefix "${tools_dir}" \
+            --no-save \
+            --no-package-lock \
+            --ignore-scripts \
+            --omit=peer \
+            --no-audit \
+            --no-fund \
+            "@babel/core@${BABEL_CORE_VERSION}" \
+            "eslint@${ESLINT_VERSION}" \
+            "@wordpress/eslint-plugin@${WORDPRESS_ESLINT_PLUGIN_VERSION}"
+
+          echo "ESLINT_MODULE_ROOT=${tools_dir}/node_modules" >> "${GITHUB_ENV}"
+
+      - name: Enforce WordPress JavaScript Coding Standards
+        run: node "${ESLINT_MODULE_ROOT}/eslint/bin/eslint.js" assets/js
+
+  wordpress-coding-standards:
+    name: WordPress PHP Coding Standards
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # 2.40.0
+        with:
+          php-version: "8.2"
+          coverage: none
+          extensions: filter, libxml, tokenizer, xmlreader, iconv, mbstring
+
+      - name: Install PHPCS and WordPress Coding Standards
+        shell: bash
+        env:
+          PHPCS_VERSION: "3.13.6"
+          PHPCS_SHA256: "aed4148cee26285a73e694a98d4675b84f81ef86b2581f811d3c402c0d3d7d23"
+          WPCS_VERSION: "3.4.1"
+          WPCS_COMMIT: "ec2ff942335f33683a5957a85d138753876a05cf"
+          PHPCSUTILS_VERSION: "1.2.3"
+          PHPCSUTILS_COMMIT: "5f35d9408c54d7b529501f3c688b6eae562aea1f"
+          PHPCSEXTRA_VERSION: "1.5.1"
+          PHPCSEXTRA_COMMIT: "39467533fdb742446d68c1d10ac33d625ee0311c"
+        run: |
+          set -euo pipefail
+
+          tools_dir="${RUNNER_TEMP}/phpcs-tools"
+          mkdir -p "${tools_dir}"
+
+          curl --fail-with-body --location --retry 3 \
+            --output "${tools_dir}/phpcs.phar" \
+            "https://github.com/PHPCSStandards/PHP_CodeSniffer/releases/download/${PHPCS_VERSION}/phpcs.phar"
+          echo "${PHPCS_SHA256}  ${tools_dir}/phpcs.phar" | sha256sum --check
+
+          clone_and_verify() {
+            local repository="$1"
+            local version="$2"
+            local expected_commit="$3"
+            local destination="$4"
+
+            git clone --quiet --depth 1 --branch "${version}" "${repository}" "${destination}"
+            test "$(git -C "${destination}" rev-parse HEAD)" = "${expected_commit}"
+            rm -rf "${destination}/.git"
+          }
+
+          clone_and_verify \
+            'https://github.com/WordPress/WordPress-Coding-Standards.git' \
+            "${WPCS_VERSION}" "${WPCS_COMMIT}" "${tools_dir}/wpcs"
+          clone_and_verify \
+            'https://github.com/PHPCSStandards/PHPCSUtils.git' \
+            "${PHPCSUTILS_VERSION}" "${PHPCSUTILS_COMMIT}" "${tools_dir}/phpcsutils"
+          clone_and_verify \
+            'https://github.com/PHPCSStandards/PHPCSExtra.git' \
+            "${PHPCSEXTRA_VERSION}" "${PHPCSEXTRA_COMMIT}" "${tools_dir}/phpcsextra"
+
+          installed_paths="${tools_dir}/wpcs,${tools_dir}/phpcsutils,${tools_dir}/phpcsextra"
+          php "${tools_dir}/phpcs.phar" --config-set installed_paths "${installed_paths}"
+          php "${tools_dir}/phpcs.phar" -i | grep -q 'WordPress'
+
+          echo "PHPCS_PHAR=${tools_dir}/phpcs.phar" >> "${GITHUB_ENV}"
+
+      - name: Enforce the theme PHPCS ruleset
+        run: php "${PHPCS_PHAR}" --standard=phpcs.xml.dist --report=summary .
+
+  theme-check:
+    name: WordPress Theme Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: wordpress
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -proot"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # 2.40.0
+        with:
+          php-version: "8.2"
+          coverage: none
+          extensions: curl, dom, mysqli, zip
+
+      - name: Build theme package
+        id: package
+        shell: pwsh
+        run: |
+          $packagePath = & ./scripts/build-zip.ps1
+          "zip-path=$packagePath" >> $env:GITHUB_OUTPUT
+
+      - name: Install WordPress and Theme Check
+        shell: bash
+        env:
+          THEME_ZIP: ${{ steps.package.outputs.zip-path }}
+          WP_DB_PASSWORD: root
+          WP_ADMIN_PASSWORD: test-password-123!
+        run: |
+          set -euo pipefail
+
+          wp_cli="${RUNNER_TEMP}/wp-cli.phar"
+          wordpress_path="${RUNNER_TEMP}/wordpress"
+          curl --fail-with-body --location --retry 3 \
+            --output "${wp_cli}" \
+            'https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar'
+
+          php "${wp_cli}" core download --path="${wordpress_path}"
+          php "${wp_cli}" config create \
+            --path="${wordpress_path}" \
+            --dbname=wordpress \
+            --dbuser=root \
+            --dbpass="${WP_DB_PASSWORD}" \
+            --dbhost=127.0.0.1:3306
+          php "${wp_cli}" core install \
+            --path="${wordpress_path}" \
+            --url=http://localhost \
+            --title='Theme Check' \
+            --admin_user=theme-check \
+            --admin_password="${WP_ADMIN_PASSWORD}" \
+            --admin_email=theme-check@example.invalid \
+            --skip-email
+
+          unzip -q "${THEME_ZIP}" -d "${wordpress_path}/wp-content/themes"
+          php "${wp_cli}" plugin install theme-check --activate --path="${wordpress_path}"
+          php "${wp_cli}" theme-check run scouting-nederland --format=json --path="${wordpress_path}"
+
+      - name: Upload theme package
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: scouting-nederland-theme
+          path: ${{ steps.package.outputs.zip-path }}
+          if-no-files-found: error

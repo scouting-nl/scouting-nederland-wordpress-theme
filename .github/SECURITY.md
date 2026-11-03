@@ -49,9 +49,9 @@ the publication of an advisory when appropriate.
 
 ## Security Releases and Migration Guidance
 
-Security release details remain in the private advisory until a fixed theme package has been
-published and verified on GitHub Releases and, when applicable, WordPress.org. A version bump
-or source change alone does not satisfy this publication requirement.
+Security release details remain in the private advisory until a fixed theme package has
+been published and verified on GitHub Releases and, when applicable, WordPress.org. A version
+bump or source change alone does not satisfy this publication requirement.
 
 After patched installations are available, the maintainers will publish release and migration
 guidance that includes:
