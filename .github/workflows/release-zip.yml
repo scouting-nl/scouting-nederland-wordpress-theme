@@ -35,9 +35,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           RELEASE_TAG: ${{ github.ref_name }}
-          ZIP_PATH: ${{ runner.temp }}/theme-artifact/${{ needs.package.outputs.zip-name }}
+          THEME_PACKAGE_DIR: ${{ runner.temp }}/theme-artifact
+          ZIP_PATH: ${{ runner.temp }}/${{ needs.package.outputs.zip-name }}
         run: |
           set -euo pipefail
+
+          cd "${THEME_PACKAGE_DIR}"
+          zip -q -r "${ZIP_PATH}" scouting-nederland
 
           if gh release view "${RELEASE_TAG}" --json id >/dev/null 2>&1; then
             gh release upload "${RELEASE_TAG}" "${ZIP_PATH}" --clobber

@@ -34,7 +34,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Build ZIP archive
+      - name: Prepare theme package
         id: archive
         shell: pwsh
         env:
@@ -75,13 +75,9 @@ jobs:
 
           $stagingRoot = Join-Path $env:RUNNER_TEMP 'theme-package'
           $themeDirectory = Join-Path $stagingRoot 'scouting-nederland'
-          $packagePath = Join-Path $env:RUNNER_TEMP $zipName
 
           if (Test-Path -LiteralPath $stagingRoot) {
             Remove-Item -LiteralPath $stagingRoot -Recurse -Force
-          }
-          if (Test-Path -LiteralPath $packagePath) {
-            Remove-Item -LiteralPath $packagePath -Force
           }
           New-Item -ItemType Directory -Path $themeDirectory | Out-Null
 
@@ -95,24 +91,7 @@ jobs:
               -Destination $themeDirectory -Recurse
           }
 
-          Add-Type -AssemblyName System.IO.Compression.FileSystem
-          $archive = [System.IO.Compression.ZipFile]::Open($packagePath, [System.IO.Compression.ZipArchiveMode]::Create)
-          try {
-            foreach ($file in Get-ChildItem -LiteralPath $themeDirectory -File -Recurse) {
-              $entryName = $file.FullName.Substring($stagingRoot.Length).TrimStart([char[]]@('\', '/')) -replace '\\', '/'
-              [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile(
-                $archive,
-                $file.FullName,
-                $entryName,
-                [System.IO.Compression.CompressionLevel]::Optimal
-              ) | Out-Null
-            }
-          }
-          finally {
-            $archive.Dispose()
-          }
-
-          Add-Content -Path $env:GITHUB_OUTPUT -Value "zip-path=$packagePath"
+          Add-Content -Path $env:GITHUB_OUTPUT -Value "package-path=$stagingRoot"
           Add-Content -Path $env:GITHUB_OUTPUT -Value "zip-name=$zipName"
           Add-Content -Path $env:GITHUB_OUTPUT -Value "artifact-name=$artifactName"
 
@@ -120,5 +99,5 @@ jobs:
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: ${{ steps.archive.outputs.artifact-name }}
-          path: ${{ steps.archive.outputs.zip-path }}
+          path: ${{ steps.archive.outputs.package-path }}
           if-no-files-found: error

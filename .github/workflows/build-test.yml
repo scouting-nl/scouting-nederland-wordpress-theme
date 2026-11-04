@@ -270,7 +270,7 @@ jobs:
       - name: Install WordPress and Theme Check
         shell: bash
         env:
-          THEME_ZIP: ${{ runner.temp }}/theme-artifact/${{ needs.package.outputs.zip-name }}
+          THEME_PACKAGE_DIR: ${{ runner.temp }}/theme-artifact
           WP_DB_PASSWORD: root
           WP_ADMIN_PASSWORD: test-password-123!
         run: |
@@ -298,6 +298,6 @@ jobs:
             --admin_email=theme-check@example.invalid \
             --skip-email
 
-          unzip -q "${THEME_ZIP}" -d "${wordpress_path}/wp-content/themes"
+          cp -a "${THEME_PACKAGE_DIR}/scouting-nederland" "${wordpress_path}/wp-content/themes/"
           php "${wp_cli}" plugin install theme-check --activate --path="${wordpress_path}"
           php "${wp_cli}" theme-check run scouting-nederland --format=json --path="${wordpress_path}"
