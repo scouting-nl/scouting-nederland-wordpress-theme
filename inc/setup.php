@@ -141,9 +141,15 @@ function scouting_nederland_register_block_patterns() {
 			'categories'  => array( 'scouting-nederland' ),
 			'content'     => '<!-- wp:group {"className":"scouting-nederland-pattern-information-panel","layout":{"type":"constrained"}} -->'
 				. '<div class="wp-block-group scouting-nederland-pattern-information-panel">'
-				. '<!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Belangrijke informatie</h2><!-- /wp:heading -->'
-				. '<!-- wp:paragraph --><p>Voeg hier een korte toelichting toe voor bezoekers van de website.</p><!-- /wp:paragraph -->'
-				. '<!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Lees meer</a></div><!-- /wp:button --></div><!-- /wp:buttons -->'
+				. '<!-- wp:heading {"level":2} --><h2 class="wp-block-heading">'
+				. esc_html__( 'Belangrijke informatie', 'scouting-nederland' )
+				. '</h2><!-- /wp:heading -->'
+				. '<!-- wp:paragraph --><p>'
+				. esc_html__( 'Voeg hier een korte toelichting toe voor bezoekers van de website.', 'scouting-nederland' )
+				. '</p><!-- /wp:paragraph -->'
+				. '<!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button">'
+				. esc_html__( 'Lees meer', 'scouting-nederland' )
+				. '</a></div><!-- /wp:button --></div><!-- /wp:buttons -->'
 				. '</div><!-- /wp:group -->',
 		)
 	);

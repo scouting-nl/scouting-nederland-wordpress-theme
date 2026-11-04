@@ -43,7 +43,7 @@ Het theme registreert zelf **geen aangepaste Gutenberg-blokken**. Scouting-speci
 3. Upload het ZIP-bestand en activeer **Scouting Nederland**.
 4. Wijs de hoofd- en footermenu's toe en pas de vormgeving aan via **Weergave > Customizer**.
 
-Het theme vereist WordPress 7.0 of hoger en PHP 7.4 of hoger.
+Het theme vereist WordPress 7.0 of hoger en PHP 8.2 of hoger.
 
 ## Instellingen
 

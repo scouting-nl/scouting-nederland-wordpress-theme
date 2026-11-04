@@ -1,6 +1,6 @@
 # Scouting Nederland WordPress Theme Instructions
 
-This repository is a classic WordPress theme targeting PHP 7.4 and newer. Keep
+This repository is a classic WordPress theme targeting PHP 8.2 and newer. Keep
 changes focused, preserve the native template hierarchy, and follow
 [`.editorconfig`](../.editorconfig).
 

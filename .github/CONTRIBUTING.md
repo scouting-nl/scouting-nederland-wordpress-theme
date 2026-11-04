@@ -53,6 +53,17 @@ In particular:
 - Update translations when changing user-facing strings.
 - Update [README.md](../README.md), [CHANGELOG.md](../CHANGELOG.md), `readme.txt`, or other documentation when user-visible behavior, configuration, or release information changes.
 
+## Optional Plugin Recommendations
+
+Add recommendations to `scouting_nederland_get_plugin_recommendations()` in
+[inc/admin-notices.php](../inc/admin-notices.php), keyed by the WordPress.org plugin slug.
+Provide translated `title`, `description`, `install_text`, and `activate_text` values, plus a unique,
+stable `dismissed_meta_key`. Preserve existing dismissal keys so users' preferences survive updates.
+
+The shared code handles installed and active plugins, permissions, action links, rendering, and
+per-user dismissal. Recommend only plugins with a verified WordPress.org listing; keep them optional
+and do not add automatic installation, activation, or remote directory checks.
+
 ## Pull Requests
 
 Before opening a pull request:
