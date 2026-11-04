@@ -4,7 +4,7 @@ on:
   workflow_call:
     inputs:
       version:
-        description: Git release tag; defaults to the nearest reachable version tag
+        description: Git release tag; nearest reachable tag or temporary 1.0.0 fallback
         required: false
         default: ""
         type: string
@@ -52,7 +52,8 @@ jobs:
               }
             }
             catch {
-              throw 'Could not find a reachable Git version tag. Create a version tag before packaging.'
+              # TODO: Remove this fallback once Git version tags are in use.
+              $version = '1.0.0'
             }
             $version = $version -replace '^[vV]', ''
           }
