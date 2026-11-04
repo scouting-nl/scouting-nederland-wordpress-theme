@@ -8,6 +8,12 @@ on:
 permissions: {}
 
 jobs:
+  package:
+    name: Theme ZIP artifact
+    permissions:
+      contents: read
+    uses: ./.github/workflows/package-theme.yml
+
   format:
     name: Configuration formatting and workflow lint
     runs-on: ubuntu-latest
@@ -224,6 +230,7 @@ jobs:
 
   theme-check:
     name: WordPress Theme Check
+    needs: package
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
@@ -254,17 +261,16 @@ jobs:
           coverage: none
           extensions: curl, dom, mysqli, zip
 
-      - name: Build theme package
-        id: package
-        shell: pwsh
-        run: |
-          $packagePath = & ./scripts/build-zip.ps1
-          "zip-path=$packagePath" >> $env:GITHUB_OUTPUT
+      - name: Download theme package
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: ${{ needs.package.outputs.artifact-name }}
+          path: ${{ runner.temp }}/theme-artifact
 
       - name: Install WordPress and Theme Check
         shell: bash
         env:
-          THEME_ZIP: ${{ steps.package.outputs.zip-path }}
+          THEME_ZIP: ${{ runner.temp }}/theme-artifact/${{ needs.package.outputs.zip-name }}
           WP_DB_PASSWORD: root
           WP_ADMIN_PASSWORD: test-password-123!
         run: |
@@ -295,10 +301,3 @@ jobs:
           unzip -q "${THEME_ZIP}" -d "${wordpress_path}/wp-content/themes"
           php "${wp_cli}" plugin install theme-check --activate --path="${wordpress_path}"
           php "${wp_cli}" theme-check run scouting-nederland --format=json --path="${wordpress_path}"
-
-      - name: Upload theme package
-        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
-        with:
-          name: scouting-nederland-theme
-          path: ${{ steps.package.outputs.zip-path }}
-          if-no-files-found: error

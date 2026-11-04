@@ -1,0 +1,123 @@
+name: Package theme
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        description: Git release tag; defaults to the nearest reachable version tag
+        required: false
+        default: ""
+        type: string
+    outputs:
+      artifact-name:
+        description: Name of the uploaded theme artifact
+        value: ${{ jobs.package.outputs.artifact-name }}
+      zip-name:
+        description: Filename of the packaged theme ZIP
+        value: ${{ jobs.package.outputs.zip-name }}
+
+permissions: {}
+
+jobs:
+  package:
+    name: Build theme ZIP
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      artifact-name: ${{ steps.archive.outputs.artifact-name }}
+      zip-name: ${{ steps.archive.outputs.zip-name }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Build ZIP archive
+        id: archive
+        shell: pwsh
+        env:
+          PACKAGE_VERSION: ${{ inputs.version }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+
+          $version = $env:PACKAGE_VERSION -replace '^[vV]', ''
+          if (-not $version) {
+            try {
+              $version = git -C $env:GITHUB_WORKSPACE describe --tags --abbrev=0 `
+                --match '[vV][0-9]*.[0-9]*.[0-9]*' --match '[0-9]*.[0-9]*.[0-9]*' 2>$null
+              if ($LASTEXITCODE -ne 0) {
+                throw 'Git tag lookup failed.'
+              }
+            }
+            catch {
+              throw 'Could not find a reachable Git version tag. Create a version tag before packaging.'
+            }
+            $version = $version -replace '^[vV]', ''
+          }
+          if ($version -notmatch '^[A-Za-z0-9][A-Za-z0-9._+-]*$') {
+            throw "Invalid package version: $version"
+          }
+
+          $commitCount = git -C $env:GITHUB_WORKSPACE rev-list --count HEAD
+          if ($LASTEXITCODE -ne 0 -or $commitCount -notmatch '^\d+$') {
+            throw 'Could not determine the Git commit count.'
+          }
+          $changes = @(git -C $env:GITHUB_WORKSPACE status --porcelain=v1)
+          if ($LASTEXITCODE -ne 0) {
+            throw 'Could not determine whether the checkout is dirty.'
+          }
+          $dirtySuffix = if ($changes.Count -gt 0) { '-dirty' } else { '' }
+          $artifactName = "scouting-nederland-theme-$version.$commitCount$dirtySuffix"
+          $zipName = "$artifactName.zip"
+
+          $stagingRoot = Join-Path $env:RUNNER_TEMP 'theme-package'
+          $themeDirectory = Join-Path $stagingRoot 'scouting-nederland'
+          $packagePath = Join-Path $env:RUNNER_TEMP $zipName
+
+          if (Test-Path -LiteralPath $stagingRoot) {
+            Remove-Item -LiteralPath $stagingRoot -Recurse -Force
+          }
+          if (Test-Path -LiteralPath $packagePath) {
+            Remove-Item -LiteralPath $packagePath -Force
+          }
+          New-Item -ItemType Directory -Path $themeDirectory | Out-Null
+
+          $rootFiles = @('style.css', 'theme.json', 'readme.txt', 'screenshot.png', 'LICENSE')
+          Get-ChildItem -LiteralPath $env:GITHUB_WORKSPACE -File |
+            Where-Object { $_.Extension -eq '.php' -or $_.Name -in $rootFiles } |
+            Copy-Item -Destination $themeDirectory
+
+          foreach ($directory in @('assets', 'inc', 'parts')) {
+            Copy-Item -LiteralPath (Join-Path $env:GITHUB_WORKSPACE $directory) `
+              -Destination $themeDirectory -Recurse
+          }
+
+          Add-Type -AssemblyName System.IO.Compression.FileSystem
+          $archive = [System.IO.Compression.ZipFile]::Open($packagePath, [System.IO.Compression.ZipArchiveMode]::Create)
+          try {
+            foreach ($file in Get-ChildItem -LiteralPath $themeDirectory -File -Recurse) {
+              $entryName = $file.FullName.Substring($stagingRoot.Length).TrimStart([char[]]@('\', '/')) -replace '\\', '/'
+              [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile(
+                $archive,
+                $file.FullName,
+                $entryName,
+                [System.IO.Compression.CompressionLevel]::Optimal
+              ) | Out-Null
+            }
+          }
+          finally {
+            $archive.Dispose()
+          }
+
+          Add-Content -Path $env:GITHUB_OUTPUT -Value "zip-path=$packagePath"
+          Add-Content -Path $env:GITHUB_OUTPUT -Value "zip-name=$zipName"
+          Add-Content -Path $env:GITHUB_OUTPUT -Value "artifact-name=$artifactName"
+
+      - name: Upload theme ZIP
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: ${{ steps.archive.outputs.artifact-name }}
+          path: ${{ steps.archive.outputs.zip-path }}
+          if-no-files-found: error

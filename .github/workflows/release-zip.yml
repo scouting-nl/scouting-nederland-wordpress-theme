@@ -9,43 +9,33 @@ permissions: {}
 
 jobs:
   package:
-    name: Build theme zip
+    name: Theme ZIP artifact
+    permissions:
+      contents: read
+    uses: ./.github/workflows/package-theme.yml
+    with:
+      version: ${{ github.ref_name }}
+
+  release:
+    name: Publish theme release
+    needs: package
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Download theme package
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
         with:
-          fetch-depth: 0
-          persist-credentials: false
-
-      - name: Build zip archive
-        shell: pwsh
-        env:
-          RELEASE_TAG: ${{ github.ref_name }}
-        run: |
-          $version = $env:RELEASE_TAG -replace '^[vV]', ''
-          $packagePath = & ./scripts/build-zip.ps1 -Version $version
-          if ($LASTEXITCODE -ne 0) {
-            throw 'Theme package build failed.'
-          }
-          $zipName = Split-Path -Leaf $packagePath
-          Add-Content -Path $env:GITHUB_ENV -Value "ZIP_PATH=$packagePath"
-          Add-Content -Path $env:GITHUB_ENV -Value "ZIP_NAME=$zipName"
-
-      - name: Upload zip as artifact
-        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
-        with:
-          name: ${{ env.ZIP_NAME }}
-          path: ${{ env.ZIP_PATH }}
-          if-no-files-found: error
+          name: ${{ needs.package.outputs.artifact-name }}
+          path: ${{ runner.temp }}/theme-artifact
 
       - name: Attach zip to release
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
           RELEASE_TAG: ${{ github.ref_name }}
+          ZIP_PATH: ${{ runner.temp }}/theme-artifact/${{ needs.package.outputs.zip-name }}
         run: |
           set -euo pipefail
 
