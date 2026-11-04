@@ -103,7 +103,3 @@ Een layoutblok waarmee content in twee kolommen kan worden geplaatst.
 ### Scouting OIDC
 
 Toont een login-knop of login-link wanneer de Scouting OIDC plugin beschikbaar is.
-
-## Publiceren
-
-De technische publicatiecheck en aandachtspunten voor distributie staan in `PUBLISHING.md`.

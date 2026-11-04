@@ -130,7 +130,7 @@ body .scouting-nederland-base-main>*:first-child {
 .scouting-nederland-base-widget-hero h1,
 .scouting-nederland-base-widget-hero h2,
 .scouting-nederland-base-widget-hero h3 {
-	font-family: "Roboto Slab", Georgia, serif !important;
+	font-family: Impact, "Arial Narrow", sans-serif !important;
 	letter-spacing: 0.02em;
 }
 
@@ -146,4 +146,8 @@ body .scouting-nederland-base-main>*:first-child {
 
 :is(.scouting-nederland-hero-font-poppins h1, h1.scouting-nederland-hero-font-poppins) {
 	font-family: "Poppins", Arial, Helvetica, sans-serif !important;
+}
+/* Default Impact is scoped to hero headings. Optional fonts remain available. */
+:is(.scouting-nederland-hero-font-impact h1, h1.scouting-nederland-hero-font-impact) {
+	font-family: Impact, "Arial Narrow", sans-serif !important;
 }

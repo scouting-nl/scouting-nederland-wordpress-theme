@@ -85,6 +85,11 @@
             "customFontSize": true,
             "fontFamilies": [
                 {
+                    "name": "Impact",
+                    "slug": "impact",
+                    "fontFamily": "Impact, \"Arial Narrow\", sans-serif"
+                },
+                {
                     "name": "Poppins",
                     "slug": "poppins",
                     "fontFamily": "Poppins, Arial, Helvetica, sans-serif"
@@ -103,7 +108,7 @@
             "text": "var:preset|color|zwart"
         },
         "typography": {
-            "fontFamily": "var(--wp--preset--font-family--poppins)"
+            "fontFamily": "var:preset|font-family|poppins"
         },
         "elements": {
             "button": {
