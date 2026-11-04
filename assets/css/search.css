@@ -97,7 +97,7 @@ body.scouting-nederland-utilities-main-purple .scouting-nederland-search-hero::a
 .scouting-nederland-search-hero h1 {
 	margin: 0 auto;
 	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
-	font-family: "Roboto Slab", Georgia, serif;
+	font-family: Impact, "Arial Narrow", sans-serif;
 	font-size: clamp(2.3rem, 5vw, 4.2rem);
 	font-weight: 700;
 	line-height: 1.05;
@@ -239,7 +239,7 @@ body.scouting-nederland-utilities-main-purple .scouting-nederland-search-hero::a
 
 .scouting-nederland-search-card-title {
 	margin: 0 0 10px;
-	font-family: "Roboto Slab", Georgia, serif;
+	font-family: Impact, "Arial Narrow", sans-serif;
 	font-size: clamp(1.45rem, 2vw, 2rem);
 	line-height: 1.13;
 }
@@ -336,7 +336,7 @@ body.scouting-nederland-utilities-main-purple .scouting-nederland-search-hero::a
 .scouting-nederland-search-empty h2 {
 	margin: 0 0 12px;
 	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
-	font-family: "Roboto Slab", Georgia, serif;
+	font-family: Impact, "Arial Narrow", sans-serif;
 	font-size: clamp(2rem, 4vw, 3rem);
 }
 

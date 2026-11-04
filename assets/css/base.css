@@ -5,14 +5,6 @@
 }
 
 @font-face {
-	font-family: "Urban Jungle";
-	src: url("../fonts/urban-jungle.otf") format("opentype");
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
 	font-family: "Poppins";
 	src: url("../fonts/poppins-300.woff2") format("woff2");
 	font-weight: 300;
@@ -138,7 +130,7 @@ body .scouting-nederland-base-main>*:first-child {
 .scouting-nederland-base-widget-hero h1,
 .scouting-nederland-base-widget-hero h2,
 .scouting-nederland-base-widget-hero h3 {
-	font-family: "Urban Jungle", "Roboto Slab", Georgia, serif !important;
+	font-family: Impact, "Arial Narrow", sans-serif;
 	letter-spacing: 0.02em;
 }
 
@@ -148,14 +140,13 @@ body .scouting-nederland-base-main>*:first-child {
  * PHP can place the state on a hero ancestor or directly on its h1. :is()
  * handles both placements without enumerating every hero component.
  */
-:is(.scouting-nederland-hero-font-urban-jungle h1, h1.scouting-nederland-hero-font-urban-jungle) {
-	font-family: "Urban Jungle", "Roboto Slab", Georgia, serif !important;
-}
-
 :is(.scouting-nederland-hero-font-roboto-slab h1, h1.scouting-nederland-hero-font-roboto-slab) {
-	font-family: "Roboto Slab", Georgia, serif !important;
+	font-family: Impact, "Arial Narrow", sans-serif;
 }
 
 :is(.scouting-nederland-hero-font-poppins h1, h1.scouting-nederland-hero-font-poppins) {
-	font-family: "Poppins", Arial, Helvetica, sans-serif !important;
+	font-family: Impact, "Arial Narrow", sans-serif;
+}
+:is(.scouting-nederland-hero-font-impact h1, h1.scouting-nederland-hero-font-impact) {
+	font-family: Impact, "Arial Narrow", sans-serif !important;
 }

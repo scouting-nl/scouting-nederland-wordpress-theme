@@ -85,6 +85,11 @@
             "customFontSize": true,
             "fontFamilies": [
                 {
+                    "name": "Impact",
+                    "slug": "impact",
+                    "fontFamily": "Impact, \"Arial Narrow\", sans-serif"
+                },
+                {
                     "name": "Poppins",
                     "slug": "poppins",
                     "fontFamily": "Poppins, Arial, Helvetica, sans-serif"
@@ -93,11 +98,6 @@
                     "name": "Roboto Slab",
                     "slug": "roboto-slab",
                     "fontFamily": "'Roboto Slab', Georgia, serif"
-                },
-                {
-                    "name": "Urban Jungle",
-                    "slug": "urban-jungle",
-                    "fontFamily": "'Urban Jungle', 'Roboto Slab', Georgia, serif"
                 }
             ]
         }
@@ -108,7 +108,7 @@
             "text": "var:preset|color|zwart"
         },
         "typography": {
-            "fontFamily": "var(--wp--preset--font-family--poppins)"
+            "fontFamily": "var:preset|font-family|impact"
         },
         "elements": {
             "button": {
@@ -122,7 +122,7 @@
                     "text": "var:preset|color|scouting-groen"
                 },
                 "typography": {
-                    "fontFamily": "var:preset|font-family|roboto-slab",
+                    "fontFamily": "var:preset|font-family|impact",
                     "fontWeight": "700"
                 }
             },

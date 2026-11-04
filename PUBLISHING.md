@@ -23,7 +23,6 @@ Dit thema is opgeschoond richting de WordPress Theme Developer Handbook, maar is
 ## Blokkers voor WordPress.org
 
 Zie [Theme Review Required](https://make.wordpress.org/themes/handbook/review/required/#5-functionality-and-features).
-2. `assets/fonts/urban-jungle.otf` is door de maker alleen vrijgegeven voor persoonlijk gebruik. Voor WordPress.org is een GPL-compatibele herdistributielicentie of een visueel goedgekeurd alternatief nodig.
 3. Vul `== Resources ==` in `readme.txt` aan met volledige bron-, copyright-, licentie- en toestemminggegevens voor alle gebundelde assets, waaronder alle afbeeldingen, `screenshot.png`, `snl-logo.svg` en de Scouting-merken. De huidige lijst dekt alleen de externe libraries en fonts.
 4. Vervang `assets/images/default-slide.jpg` en `screenshot.png` door beelden zonder herkenbare kinderen. De huidige bestanden tonen herkenbare scouts; bronvermelding alleen maakt die beelden niet toegestaan in de directory. Houd voor de vervangende screenshot 1200 x 900 px en een 4:3-verhouding aan.
 5. Classic themes in de WordPress.org-directory moeten comments ondersteunen. Voeg `comments.php`, `comments_template()` op singular content, threaded comments, `comment-reply` en passende styling toe.
@@ -52,3 +51,7 @@ De custom blocks zijn vanaf themeversie 1.0.1 verplaatst naar de losse plugin **
 Voor publicatie op WordPress.org geldt dat het theme de plugin alleen als **optioneel aanbevolen** mag tonen wanneer de plugin zelf in de WordPress.org Plugin Directory staat. De plugin mag niet als ZIP in het theme worden opgenomen en niet automatisch worden geïnstalleerd.
 
 Tijdens lokale ontwikkeling kan `scouting-nederland-blocks.zip` handmatig worden geïnstalleerd via **Plugins > Nieuwe plugin > Plugin uploaden**. Zodra de plugin onder slug `scouting-nederland-blocks` op WordPress.org staat, werkt de installatieknop in de beheerder rechtstreeks.
+
+## Typography
+
+Impact is the default font throughout the theme. It is not bundled or redistributed; the fallback is Arial Narrow / sans-serif. Optional hero-title fonts Poppins and Roboto Slab remain bundled.

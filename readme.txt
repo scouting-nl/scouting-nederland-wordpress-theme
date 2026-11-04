@@ -64,10 +64,5 @@ The page template contains presentation adjustments for pages built with Element
 * Font Awesome Free 7.3.1, Copyright Fonticons, Inc., icons: CC BY 4.0, fonts: SIL OFL 1.1, code: MIT License, https://fontawesome.com/
 * Poppins, Copyright 2014-2020 Indian Type Foundry, SIL Open Font License 1.1, https://github.com/itfoundry/Poppins
 * Roboto Slab, Copyright 2013 The Roboto Slab Project Authors, Apache License 2.0, https://github.com/googlefonts/robotoslab
-* Urban Jungle Demo (assets/fonts/urban-jungle.otf), Copyright KC Fonts, PERSONAL USE ONLY; NOT suitable for WordPress.org distribution. Replace with a GPL-compatible alternative before submitting. https://www.dafont.com/urban-jungle.font
 
 * callout-bijl.png was omitted from the theme distribution because its embedded stock-asset attribution could not establish a GPL-compatible license. Any replacement should be original or demonstrably GPL-compatible.
-
-== Pre-release checks ==
-
-Before submitting to WordPress.org, Scouting Nederland must authorize and document a GPL-compatible license for the bundled original graphics, logo, photographs, and screenshot. Replace images depicting identifiable children in the theme package, including the screenshot where applicable. Replace Urban Jungle Demo with a suitable freely redistributable font and update this resource list. Confirm the WordPress.org theme directory requirements and test the final release package. The release folder is scouting-nederland and custom block registrations/source files have been removed from the theme. Custom headers and backgrounds are not advertised because the theme does not currently implement those optional Customizer features. Site icons use the WordPress core Site Icon setting. The theme is not yet ready for submission.

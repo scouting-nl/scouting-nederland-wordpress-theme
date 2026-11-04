@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) { exit; }
 
 function scoutingNederlandGetHeroFontChoices() {
     return array(
-        'urban-jungle' => __('Urban Jungle', 'scouting-nederland'),
+        'impact'       => __('Impact', 'scouting-nederland'),
         'roboto-slab'  => __('Roboto Slab', 'scouting-nederland'),
         'poppins'      => __('Poppins', 'scouting-nederland'),
     );
@@ -13,7 +13,7 @@ function scoutingNederlandGetHeroFontChoices() {
 function scoutingNederlandSanitizeHeroFont($value) {
     $value = sanitize_key($value);
     $choices = scoutingNederlandGetHeroFontChoices();
-    return array_key_exists($value, $choices) ? $value : 'urban-jungle';
+    return array_key_exists($value, $choices) ? $value : 'impact';
 }
 
 function scoutingNederlandSanitizePageHeroFont($value) {
@@ -26,7 +26,7 @@ function scoutingNederlandSanitizePageHeroFont($value) {
 }
 
 function scoutingNederlandGetDefaultHeroTitleFont() {
-    return scoutingNederlandSanitizeHeroFont(get_theme_mod('scouting_nederland_hero_title_font', 'urban-jungle'));
+    return scoutingNederlandSanitizeHeroFont(get_theme_mod('scouting_nederland_hero_title_font', 'impact'));
 }
 
 function scoutingNederlandGetHeroTitleFont($post_id = null) {
