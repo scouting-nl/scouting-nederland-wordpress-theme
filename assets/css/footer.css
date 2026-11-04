@@ -9,7 +9,7 @@
 	margin-top: 0;
 	background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
 	color: #fff;
-	font-family: Impact, "Arial Narrow", sans-serif;
+	font-family: "Poppins", Arial, Helvetica, sans-serif;
 	font-size: 0.875rem;
 	font-weight: 400;
 	line-height: 2;
@@ -51,7 +51,7 @@
 .scouting-nederland-footer-root h5 {
 	margin: 0 0 1.4rem;
 	color: #fff;
-	font-family: Impact, "Arial Narrow", sans-serif;
+	font-family: "Poppins", Arial, Helvetica, sans-serif;
 	font-size: 1.35rem;
 	font-weight: 700;
 	line-height: 1.2;
@@ -166,7 +166,7 @@
 .scouting-nederland-footer-root .scouting-nederland-footer-partners-widget-area h5 {
 	margin: 0 0 1.8rem;
 	color: #fff;
-	font-family: Impact, "Arial Narrow", sans-serif;
+	font-family: "Poppins", Arial, Helvetica, sans-serif;
 	font-size: 1.35rem;
 	font-weight: 700;
 	line-height: 1.2;

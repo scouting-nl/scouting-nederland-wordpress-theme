@@ -130,7 +130,7 @@ body .scouting-nederland-base-main>*:first-child {
 .scouting-nederland-base-widget-hero h1,
 .scouting-nederland-base-widget-hero h2,
 .scouting-nederland-base-widget-hero h3 {
-	font-family: Impact, "Arial Narrow", sans-serif;
+	font-family: "Roboto Slab", Georgia, serif !important;
 	letter-spacing: 0.02em;
 }
 
@@ -141,12 +141,9 @@ body .scouting-nederland-base-main>*:first-child {
  * handles both placements without enumerating every hero component.
  */
 :is(.scouting-nederland-hero-font-roboto-slab h1, h1.scouting-nederland-hero-font-roboto-slab) {
-	font-family: Impact, "Arial Narrow", sans-serif;
+	font-family: "Roboto Slab", Georgia, serif !important;
 }
 
 :is(.scouting-nederland-hero-font-poppins h1, h1.scouting-nederland-hero-font-poppins) {
-	font-family: Impact, "Arial Narrow", sans-serif;
-}
-:is(.scouting-nederland-hero-font-impact h1, h1.scouting-nederland-hero-font-impact) {
-	font-family: Impact, "Arial Narrow", sans-serif !important;
+	font-family: "Poppins", Arial, Helvetica, sans-serif !important;
 }

@@ -20,7 +20,7 @@ html {
 /* Document typography uses locally bundled Poppins weights registered in base.css. */
 body {
 	color: var(--wp--custom--color--text);
-	font-family: Impact, "Arial Narrow", sans-serif;
+	font-family: "Poppins", sans-serif;
 	font-size: 1.125rem;
 	font-kerning: normal;
 	font-variant-ligatures: common-ligatures;
@@ -72,7 +72,7 @@ h1,
 .h1 {
 	margin: 0.67em 0;
 	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
-	font-family: Impact, "Arial Narrow", sans-serif;
+	font-family: "Roboto Slab", serif;
 	font-size: 2.8125rem;
 	line-height: 1em;
 }
@@ -80,7 +80,7 @@ h1,
 h2,
 .h2 {
 	margin: 0.67em 0;
-	font-family: Impact, "Arial Narrow", sans-serif;
+	font-family: "Roboto Slab", serif;
 	font-size: 2rem;
 	line-height: 1em;
 }
@@ -88,7 +88,7 @@ h2,
 h3,
 .h3 {
 	margin: 0.67em 0;
-	font-family: Impact, "Arial Narrow", sans-serif;
+	font-family: "Roboto Slab", serif;
 	font-size: 1.5rem;
 	line-height: 1em;
 }

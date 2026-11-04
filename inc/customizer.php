@@ -74,7 +74,7 @@ function scoutingNederlandCustomizeRegister($wp_customize) {
     $wp_customize->add_control('scouting_nederland_header_message_url', array('type'=>'url', 'section'=>'scouting_nederland_options', 'label'=>__('Link header melding', 'scouting-nederland')));
 
     $wp_customize->add_setting('scouting_nederland_hero_title_font', array(
-        'default'           => 'impact',
+        'default'           => 'roboto-slab',
         'sanitize_callback' => 'scoutingNederlandSanitizeHeroFont',
     ));
     $wp_customize->add_control('scouting_nederland_hero_title_font', array(

@@ -51,7 +51,3 @@ De custom blocks zijn vanaf themeversie 1.0.1 verplaatst naar de losse plugin **
 Voor publicatie op WordPress.org geldt dat het theme de plugin alleen als **optioneel aanbevolen** mag tonen wanneer de plugin zelf in de WordPress.org Plugin Directory staat. De plugin mag niet als ZIP in het theme worden opgenomen en niet automatisch worden geïnstalleerd.
 
 Tijdens lokale ontwikkeling kan `scouting-nederland-blocks.zip` handmatig worden geïnstalleerd via **Plugins > Nieuwe plugin > Plugin uploaden**. Zodra de plugin onder slug `scouting-nederland-blocks` op WordPress.org staat, werkt de installatieknop in de beheerder rechtstreeks.
-
-## Typography
-
-Impact is the default font throughout the theme. It is not bundled or redistributed; the fallback is Arial Narrow / sans-serif. Optional hero-title fonts Poppins and Roboto Slab remain bundled.

@@ -115,7 +115,7 @@ body.scouting-nederland-utilities-main-purple .scouting-nederland-layout-showcas
 	display: block;
 	margin: 0 0 16px;
 	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
-	font-family: Impact, "Arial Narrow", sans-serif;
+	font-family: "Roboto Slab", Georgia, serif;
 	font-size: 1.25rem;
 	font-weight: 700;
 	line-height: 1.2;

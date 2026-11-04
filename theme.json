@@ -85,11 +85,6 @@
             "customFontSize": true,
             "fontFamilies": [
                 {
-                    "name": "Impact",
-                    "slug": "impact",
-                    "fontFamily": "Impact, \"Arial Narrow\", sans-serif"
-                },
-                {
                     "name": "Poppins",
                     "slug": "poppins",
                     "fontFamily": "Poppins, Arial, Helvetica, sans-serif"
@@ -108,7 +103,7 @@
             "text": "var:preset|color|zwart"
         },
         "typography": {
-            "fontFamily": "var:preset|font-family|impact"
+            "fontFamily": "var(--wp--preset--font-family--poppins)"
         },
         "elements": {
             "button": {
@@ -122,7 +117,7 @@
                     "text": "var:preset|color|scouting-groen"
                 },
                 "typography": {
-                    "fontFamily": "var:preset|font-family|impact",
+                    "fontFamily": "var:preset|font-family|roboto-slab",
                     "fontWeight": "700"
                 }
             },

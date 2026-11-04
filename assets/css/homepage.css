@@ -85,7 +85,7 @@ html:not(.scouting-nederland-homepage-media-ready) .scouting-nederland-homepage-
 .scouting-nederland-homepage-hero-inner h1 {
 	margin: 0;
 	color: #fff !important;
-	font-family: Impact, "Arial Narrow", sans-serif;
+	font-family: "Roboto Slab", Georgia, serif;
 	font-size: clamp(2.2rem, 7vw, 4.6rem);
 	font-weight: 700;
 	line-height: 0.95;
@@ -187,14 +187,14 @@ html:not(.scouting-nederland-homepage-media-ready) .scouting-nederland-homepage-
 	margin: 0 auto;
 	padding: 70px 0;
 	color: #1d1d1b;
-	font-family: Impact, "Arial Narrow", sans-serif;
+	font-family: "Poppins", Arial, sans-serif;
 	font-size: 1.125rem;
 	line-height: 1.9;
 }
 
 .scouting-nederland-homepage-content h2 {
 	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
-	font-family: Impact, "Arial Narrow", sans-serif;
+	font-family: "Roboto Slab", Georgia, serif;
 	font-weight: 700;
 	line-height: 1.1;
 }
@@ -318,7 +318,7 @@ html:not(.scouting-nederland-homepage-media-ready) .scouting-nederland-homepage-
 	padding: 1rem;
 	background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
 	color: #fff;
-	font-family: Impact, "Arial Narrow", sans-serif;
+	font-family: "Roboto Slab", Georgia, serif;
 	font-size: 1.35rem;
 	line-height: 1.15;
 }
