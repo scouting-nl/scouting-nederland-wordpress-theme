@@ -71,22 +71,6 @@ function scouting_nederland_setup() {
 			'flex-width'  => true,
 		)
 	);
-	add_theme_support(
-		'custom-header',
-		array(
-			'default-image' => get_template_directory_uri() . '/assets/images/default-slide.jpg',
-			'width'         => 1920,
-			'height'        => 520,
-			'flex-width'    => true,
-			'flex-height'   => true,
-		)
-	);
-	add_theme_support(
-		'custom-background',
-		array(
-			'default-color' => 'ffffff',
-		)
-	);
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script' ) );
 	register_nav_menus(
 		array(

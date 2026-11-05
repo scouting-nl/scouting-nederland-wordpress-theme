@@ -14,22 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param mixed $checked The submitted checkbox value.
  * @return int 1 when checked, otherwise 0.
  */
-/**
- * Sanitizes a Customizer checkbox value.
- *
- * @param mixed $checked The submitted checkbox value.
- * @return int 1 when checked, otherwise 0.
- */
 function scouting_nederland_sanitize_checkbox( $checked ) {
 	return ( ( isset( $checked ) && true === $checked ) ? 1 : 0 );
 }
 
-/**
- * Registers Scouting Nederland appearance controls.
- *
- * @param WP_Customize_Manager $wp_customize The active Customizer manager.
- * @return void
- */
 /**
  * Registers Scouting Nederland appearance controls.
  *
@@ -124,7 +112,7 @@ function scouting_nederland_customize_register( $wp_customize ) {
 		'scouting_nederland_header_width',
 		array(
 			'label'       => __( 'Header breedte', 'scouting-nederland' ),
-			'description' => __( 'Kies Smal voor de scouting.nl-achtige header met standaard hamburgermenu of breed met de mogelijkheid voor een horizontaal menu.', 'scouting-nederland' ),
+			'description' => __( 'Smal toont een compacte header met hamburgermenu. Breed gebruikt de volle breedte met een horizontaal menu op desktop. Op tablet en mobiel gebruiken beide een hamburgermenu.', 'scouting-nederland' ),
 			'section'     => 'scouting_nederland_options',
 			'type'        => 'radio',
 			'choices'     => array(
@@ -156,38 +144,6 @@ function scouting_nederland_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'scouting_nederland_hamburger_desktop',
-		array(
-			'default'           => 0,
-			'sanitize_callback' => 'scouting_nederland_sanitize_checkbox',
-		)
-	);
-	$wp_customize->add_control(
-		'scouting_nederland_hamburger_desktop',
-		array(
-			'type'        => 'checkbox',
-			'section'     => 'scouting_nederland_options',
-			'label'       => __( 'Hamburger menu ook op desktop', 'scouting-nederland' ),
-			'description' => __( 'Uit = horizontaal menu op desktop. Aan = op desktop hamburger-menu. alleen van toepassing op brede headers.', 'scouting-nederland' ),
-		)
-	);
-
-	$wp_customize->add_setting(
-		'scouting_nederland_show_search',
-		array(
-			'default'           => 1,
-			'sanitize_callback' => 'scouting_nederland_sanitize_checkbox',
-		)
-	);
-	$wp_customize->add_control(
-		'scouting_nederland_show_search',
-		array(
-			'type'    => 'checkbox',
-			'section' => 'scouting_nederland_options',
-			'label'   => __( 'Zoek-icoon tonen', 'scouting-nederland' ),
-		)
-	);
-	$wp_customize->add_setting(
 		'scouting_nederland_search_url',
 		array(
 			'default'           => '',
@@ -200,25 +156,10 @@ function scouting_nederland_customize_register( $wp_customize ) {
 			'type'        => 'url',
 			'section'     => 'scouting_nederland_options',
 			'label'       => __( 'Zoekpagina URL', 'scouting-nederland' ),
-			'description' => __( 'Leeg laten gebruikt de WordPress zoekpagina.', 'scouting-nederland' ),
+			'description' => __( 'Leeg laten verbergt het zoek-icoon.', 'scouting-nederland' ),
 		)
 	);
 
-	$wp_customize->add_setting(
-		'scouting_nederland_show_phone',
-		array(
-			'default'           => 1,
-			'sanitize_callback' => 'scouting_nederland_sanitize_checkbox',
-		)
-	);
-	$wp_customize->add_control(
-		'scouting_nederland_show_phone',
-		array(
-			'type'    => 'checkbox',
-			'section' => 'scouting_nederland_options',
-			'label'   => __( 'Telefoon-icoon tonen', 'scouting-nederland' ),
-		)
-	);
 	$wp_customize->add_setting(
 		'scouting_nederland_phone',
 		array(
@@ -229,27 +170,12 @@ function scouting_nederland_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'scouting_nederland_phone',
 		array(
-			'type'    => 'text',
+			'type'    => 'tel',
 			'section' => 'scouting_nederland_options',
 			'label'   => __( 'Telefoonnummer', 'scouting-nederland' ),
 		)
 	);
 
-	$wp_customize->add_setting(
-		'scouting_nederland_show_contact',
-		array(
-			'default'           => 1,
-			'sanitize_callback' => 'scouting_nederland_sanitize_checkbox',
-		)
-	);
-	$wp_customize->add_control(
-		'scouting_nederland_show_contact',
-		array(
-			'type'    => 'checkbox',
-			'section' => 'scouting_nederland_options',
-			'label'   => __( 'Contact-icoon tonen', 'scouting-nederland' ),
-		)
-	);
 	$wp_customize->add_setting(
 		'scouting_nederland_contact_url',
 		array(
@@ -266,21 +192,6 @@ function scouting_nederland_customize_register( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_setting(
-		'scouting_nederland_show_header_message',
-		array(
-			'default'           => 1,
-			'sanitize_callback' => 'scouting_nederland_sanitize_checkbox',
-		)
-	);
-	$wp_customize->add_control(
-		'scouting_nederland_show_header_message',
-		array(
-			'type'    => 'checkbox',
-			'section' => 'scouting_nederland_options',
-			'label'   => __( 'Melding in header gebruiken', 'scouting-nederland' ),
-		)
-	);
 	$wp_customize->add_setting(
 		'scouting_nederland_header_message',
 		array(

@@ -14,11 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @return array<string, string> Font keys and translated labels.
  */
-/**
- * Returns the available hero font choices.
- *
- * @return array<string, string> Font keys and translated labels.
- */
 function scouting_nederland_get_hero_font_choices() {
 	return array(
 		'impact'      => __( 'Impact', 'scouting-nederland' ),
@@ -33,24 +28,12 @@ function scouting_nederland_get_hero_font_choices() {
  * @param string $value The submitted font key.
  * @return string A supported font key.
  */
-/**
- * Sanitizes a global hero font choice.
- *
- * @param string $value The submitted font key.
- * @return string A supported font key.
- */
 function scouting_nederland_sanitize_hero_font( $value ) {
 	$value   = sanitize_key( $value );
 	$choices = scouting_nederland_get_hero_font_choices();
 	return array_key_exists( $value, $choices ) ? $value : 'impact';
 }
 
-/**
- * Sanitizes a page-specific hero font choice.
- *
- * @param string $value The submitted font key.
- * @return string A supported font key or an empty string for the default.
- */
 /**
  * Sanitizes a page-specific hero font choice.
  *
@@ -74,21 +57,10 @@ function scouting_nederland_sanitize_page_hero_font( $value ) {
  *
  * @return string The supported font key.
  */
-/**
- * Returns the configured default hero font.
- *
- * @return string The supported font key.
- */
 function scouting_nederland_get_default_hero_title_font() {
 	return scouting_nederland_sanitize_hero_font( get_theme_mod( 'scouting_nederland_hero_title_font', 'impact' ) );
 }
 
-/**
- * Returns the hero font for a page or the theme default.
- *
- * @param int|null $post_id The page ID, or null for the current page.
- * @return string The supported font key.
- */
 /**
  * Returns the hero font for a page or the theme default.
  *
@@ -110,22 +82,10 @@ function scouting_nederland_get_hero_title_font( $post_id = null ) {
  * @param int|null $post_id The page ID, or null for the current page.
  * @return string The hero font CSS class.
  */
-/**
- * Returns the CSS class for a page's hero font.
- *
- * @param int|null $post_id The page ID, or null for the current page.
- * @return string The hero font CSS class.
- */
 function scouting_nederland_get_hero_title_font_class( $post_id = null ) {
 	return 'scouting-nederland-hero-font-' . scouting_nederland_get_hero_title_font( $post_id );
 }
 
-/**
- * Returns saved display settings for a page.
- *
- * @param int|null $post_id The page ID, or null for the current page.
- * @return array<string, bool|string> The page display settings.
- */
 /**
  * Returns saved display settings for a page.
  *
@@ -151,23 +111,11 @@ function scouting_nederland_get_page_display_settings( $post_id = null ) {
  * @param int|null $post_id The page ID, or null for the current page.
  * @return bool Whether the hero is hidden.
  */
-/**
- * Checks whether a page hides its hero.
- *
- * @param int|null $post_id The page ID, or null for the current page.
- * @return bool Whether the hero is hidden.
- */
 function scouting_nederland_page_hides_hero( $post_id = null ) {
 	$settings = scouting_nederland_get_page_display_settings( $post_id );
 	return ! empty( $settings['hide_hero'] );
 }
 
-/**
- * Checks whether a page hides its title.
- *
- * @param int|null $post_id The page ID, or null for the current page.
- * @return bool Whether the title is hidden.
- */
 /**
  * Checks whether a page hides its title.
  *
@@ -185,22 +133,11 @@ function scouting_nederland_page_hides_title( $post_id = null ) {
  * @param int|null $post_id The page ID, or null for the current page.
  * @return bool Whether the sidebar is hidden.
  */
-/**
- * Checks whether a page hides its sidebar.
- *
- * @param int|null $post_id The page ID, or null for the current page.
- * @return bool Whether the sidebar is hidden.
- */
 function scouting_nederland_page_hides_sidebar( $post_id = null ) {
 	$settings = scouting_nederland_get_page_display_settings( $post_id );
 	return ! empty( $settings['hide_sidebar'] );
 }
 
-/**
- * Registers the page display settings metabox.
- *
- * @return void
- */
 /**
  * Registers the page display settings metabox.
  *
@@ -218,12 +155,6 @@ function scouting_nederland_add_page_display_metabox() {
 }
 add_action( 'add_meta_boxes', 'scouting_nederland_add_page_display_metabox' );
 
-/**
- * Renders controls for page display settings.
- *
- * @param WP_Post $post The page being edited.
- * @return void
- */
 /**
  * Renders controls for page display settings.
  *
@@ -268,12 +199,6 @@ function scouting_nederland_render_page_display_metabox( $post ) {
 	<?php
 }
 
-/**
- * Validates and saves page display settings.
- *
- * @param int $post_id The page ID being saved.
- * @return void
- */
 /**
  * Validates and saves page display settings.
  *
