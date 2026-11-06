@@ -226,7 +226,7 @@ jobs:
           echo "PHPCS_PHAR=${tools_dir}/phpcs.phar" >> "${GITHUB_ENV}"
 
       - name: Enforce the theme PHPCS ruleset
-        run: php "${PHPCS_PHAR}" --standard=phpcs.xml.dist --report=summary .
+        run: php "${PHPCS_PHAR}" --standard=phpcs.xml.dist --report=full -s .
 
   theme-check:
     name: WordPress Theme Check
