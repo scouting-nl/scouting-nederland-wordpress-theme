@@ -107,11 +107,21 @@ function scouting_nederland_get_page_display_settings( $post_id = null ) {
 }
 
 /**
- * Checks whether a page hides its hero.
+ * Returns the page excerpt only when its hero summary has been enabled.
  *
- * @param int|null $post_id The page ID, or null for the current page.
- * @return bool Whether the hero is hidden.
+ * An empty manual excerpt never triggers an automatically generated summary.
+ *
+ * @param int|null $post_id Page ID.
+ * @return string Plain-text summary, or an empty string.
  */
+function scouting_nederland_get_hero_summary( $post_id = null ) {
+	$post_id = $post_id ? absint( $post_id ) : get_queried_object_id();
+	if ( ! $post_id || '1' !== get_post_meta( $post_id, '_scouting_nederland_show_hero_summary', true ) ) {
+		return '';
+	}
+	return trim( wp_strip_all_tags( (string) get_post_field( 'post_excerpt', $post_id ) ) );
+}
+
 /**
  * Checks whether a page hides its hero.
  *

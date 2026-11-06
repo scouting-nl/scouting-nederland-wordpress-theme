@@ -65,7 +65,7 @@ $header_search_url   = $header_search_url ? $header_search_url : add_query_arg( 
 		<div id="scouting-nederland-header-actions">
 			<?php
 			$phone = get_theme_mod( 'scouting_nederland_phone', '' );
-			if ( get_theme_mod( 'scouting_nederland_show_phone', 1 ) && $phone ) :
+			if ( $header_show_phone && $phone ) :
 				?>
 				<a href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', $phone ) ); ?>" class="scouting-nederland-header-action-phone" aria-label="<?php esc_attr_e( 'Bellen', 'scouting-nederland' ); ?>">
 					<i class="fas fa-phone scouting-nederland-header-action-icon" aria-hidden="true"></i>
@@ -73,17 +73,16 @@ $header_search_url   = $header_search_url ? $header_search_url : add_query_arg( 
 			<?php endif; ?>
 			<?php
 			$contact = get_theme_mod( 'scouting_nederland_contact_url', '' );
-			if ( get_theme_mod( 'scouting_nederland_show_contact', 1 ) && $contact ) :
+			if ( $header_show_contact && $contact ) :
 				?>
 				<a href="<?php echo esc_url( $contact ); ?>" class="scouting-nederland-header-action-contact" aria-label="<?php esc_attr_e( 'Contact', 'scouting-nederland' ); ?>">
 					<i class="fas fa-envelope scouting-nederland-header-action-icon" aria-hidden="true"></i>
 				</a>
 			<?php endif; ?>
 			<?php
-			if ( get_theme_mod( 'scouting_nederland_show_search', 1 ) ) :
-				$search_url = get_theme_mod( 'scouting_nederland_search_url', '' );
+			if ( $header_show_search ) :
 				?>
-				<a href="<?php echo esc_url( $search_url ? $search_url : home_url( '/?s=' ) ); ?>" class="scouting-nederland-header-action-search" aria-label="<?php esc_attr_e( 'Zoeken', 'scouting-nederland' ); ?>">
+				<a href="<?php echo esc_url( $header_search_url ); ?>" class="scouting-nederland-header-action-search" aria-label="<?php esc_attr_e( 'Zoeken', 'scouting-nederland' ); ?>">
 					<i class="fas fa-search scouting-nederland-header-action-icon" aria-hidden="true"></i>
 				</a>
 			<?php endif; ?>
@@ -142,7 +141,7 @@ $header_search_url   = $header_search_url ? $header_search_url : add_query_arg( 
 		<div class="scouting-nederland-header-offcanvas-actions">
 			<?php
 			$mobile_phone = get_theme_mod( 'scouting_nederland_phone', '' );
-			if ( get_theme_mod( 'scouting_nederland_show_phone', 1 ) && $mobile_phone ) :
+			if ( $header_show_phone && $mobile_phone ) :
 				?>
 				<a href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', $mobile_phone ) ); ?>" class="scouting-nederland-header-action-phone" aria-label="<?php esc_attr_e( 'Bellen', 'scouting-nederland' ); ?>">
 					<i class="fas fa-phone" aria-hidden="true"></i>
@@ -152,7 +151,7 @@ $header_search_url   = $header_search_url ? $header_search_url : add_query_arg( 
 
 			<?php
 			$mobile_contact = get_theme_mod( 'scouting_nederland_contact_url', '' );
-			if ( get_theme_mod( 'scouting_nederland_show_contact', 1 ) && $mobile_contact ) :
+			if ( $header_show_contact && $mobile_contact ) :
 				?>
 				<a href="<?php echo esc_url( $mobile_contact ); ?>" class="scouting-nederland-header-action-contact" aria-label="<?php esc_attr_e( 'Contact', 'scouting-nederland' ); ?>">
 					<i class="fas fa-envelope" aria-hidden="true"></i>
@@ -161,10 +160,9 @@ $header_search_url   = $header_search_url ? $header_search_url : add_query_arg( 
 			<?php endif; ?>
 
 			<?php
-			if ( get_theme_mod( 'scouting_nederland_show_search', 1 ) ) :
-				$mobile_search_url = get_theme_mod( 'scouting_nederland_search_url', '' );
+			if ( $header_show_search ) :
 				?>
-				<a href="<?php echo esc_url( $mobile_search_url ? $mobile_search_url : home_url( '/?s=' ) ); ?>" class="scouting-nederland-header-action-search" aria-label="<?php esc_attr_e( 'Zoeken', 'scouting-nederland' ); ?>">
+				<a href="<?php echo esc_url( $header_search_url ); ?>" class="scouting-nederland-header-action-search" aria-label="<?php esc_attr_e( 'Zoeken', 'scouting-nederland' ); ?>">
 					<i class="fas fa-search" aria-hidden="true"></i>
 					<span><?php esc_html_e( 'Zoeken', 'scouting-nederland' ); ?></span>
 				</a>
