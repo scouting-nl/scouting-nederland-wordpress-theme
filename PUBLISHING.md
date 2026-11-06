@@ -26,6 +26,7 @@ Deze checklist is op 2026-11-04 vergeleken met [Theme Review Required](https://m
 - De optionele OpenID-notice beveelt uitsluitend de gepubliceerde plugin [Scouting OpenID Connect](https://wordpress.org/plugins/scouting-openid-connect/) aan. Niet geinstalleerd: installeren; geinstalleerd maar inactief: activeren met de juiste pluginrechten. Een actieve of netwerkactieve plugin en een expliciet verborgen melding tonen geen aanbeveling. Installatie/activatie gebeurt alleen na een gebruikersactie; permanent verbergen gebruikt een nonce en gebruikersmeta. Voor het tonen van de melding worden geen externe API-calls uitgevoerd.
 - De aanbeveling en installatie-/activatieknoppen voor de nog niet gepubliceerde Blocks-plugin zijn verwijderd. Voeg die pas opnieuw toe na bevestiging van een daadwerkelijke WordPress.org-vermelding.
 - De drie standaardteksten in het informatiepattern worden met `esc_html__()` en textdomain `scouting-nederland` vertaald en ge-escaped. De Nederlandse terugvaltekst en blokstructuur zijn behouden; er wordt geen site- of gebruikerstaal afgedwongen.
+- Het thema schakelt `custom-header` en `custom-background` niet in, zodat hun standaard Customizer-controls niet beschikbaar zijn en Colors als lege sectie niet wordt getoond. Handmatige `remove_section()`-aanroepen zijn verwijderd. De Scouting-kleur- en hero-instellingen, opgeslagen waarden en de terugval naar eerder opgeslagen headerbeelden blijven behouden; de core-achtergrondfunctie is niet meer actief.
 - De licentieteksten en credits voor Poppins 4.004, Roboto Slab 2.002 en de in Bootstrap opgenomen Popper 2.11.8 zijn toegevoegd of gecorrigeerd. De hieronder beschreven assetcontrole laat de beeldrechten expliciet open.
 - `screenshot.png` voldoet technisch aan de maximumafmeting en 4:3-verhouding: 1200 x 900 px.
 
@@ -34,7 +35,6 @@ Deze checklist is op 2026-11-04 vergeleken met [Theme Review Required](https://m
 Deze punten volgen uit de hieronder gelinkte eisen; reeds aanwezige implementaties staan niet meer als ontbrekende functionaliteit vermeld.
 
 1. **Beeldrechten en oorspronkelijke bronnen:** de technische font- en librarylicenties zijn aangevuld; de beeldrechten zijn nog niet aangetoond. Vier callouts bevatten metadata van externe makers, waardoor de eerdere algemene toeschrijving aan Scouting Nederland is gecorrigeerd. Lever per beeld de oorspronkelijke bron, rechthebbende en GPL-compatibele herdistributietoestemming aan, inclusief eventuele merkrechten en rechten op afgebeelde personen. De beheerder heeft aangegeven brongegevens te kunnen leveren, maar concrete links of documentpaden zijn nog niet aangeleverd. Een stockfoto- of websitegebruikslicentie is niet automatisch toestemming voor verspreiding in een vrij themepakket. Zie de inventaris hieronder en [Licensing & copyright](https://make.wordpress.org/themes/handbook/review/required/#1-licensing-copyright).
-2. Controleer de leeftijden van herkenbare personen in de meegeleverde foto's en de screenshot. De [WordPress.org-eis onder Files > Images](https://make.wordpress.org/themes/handbook/review/required/#9-files) zegt expliciet: "images that show children with recognizable facial or body features are not permitted." Dit betreft assets in het pakket voor de WordPress.org Theme Directory, niet alle foto's op een eigen WordPress-site. Uit de beelden alleen zijn de leeftijden niet vastgesteld. Als herkenbare kinderen zijn afgebeeld, vervang die beelden; bronvermelding of toestemming vervangt deze directory-eis niet. Controleer dit voor `assets/images/default-slide.jpg`, `screenshot.png` en de overige meegeleverde foto's. Houd voor een nieuwe screenshot maximaal 1200 x 900 px en een 4:3-verhouding aan.
 
 ## Asset- en licentiecontrole
 
@@ -62,7 +62,7 @@ Voor de beeldbestanden is de openstaande inventaris:
 | `default-slide.jpg` | Geen bruikbare bron-/rechtenmetadata aangetroffen. | Fotograaf, bron, licentie, portretrechten en controle op de directorybeeldregels. |
 | `screenshot.png` | Een screenshot erft niet automatisch rechten op de getoonde beelden. | Maker, onderliggende beeldbronnen en bijbehorende rechten aantonen. |
 
-De bestandsnamen in de beeldinventaris zijn relatief aan `assets/images/`, behalve `screenshot.png` in de root. Er zijn geen beeld- of fontbinaries gewijzigd. Ontbrekend bewijs is niet vervangen door een zelfbedachte GPL-, Creative Commons- of andere licentie.
+De bestandsnamen in de beeldinventaris zijn relatief aan `assets/images/`, behalve `screenshot.png` in de root. Tijdens de licentiecontrole van 2026-11-04 zijn geen beeld- of fontbinaries gewijzigd; de banner en screenshot zijn daarna door de beheerder vernieuwd en op 2026-11-05 opnieuw bekeken. Ontbrekend bewijs is niet vervangen door een zelfbedachte GPL-, Creative Commons- of andere licentie.
 
 ## Uitgevoerde compatibiliteitsvalidatie
 
