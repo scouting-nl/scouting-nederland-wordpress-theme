@@ -39,7 +39,9 @@ if ( ! $scouting_nederland_hide_hero ) {
 			if ( ! $scouting_nederland_hide_page_title ) :
 				?>
 				<h1 class="<?php echo esc_attr( $scouting_nederland_hero_font_class ); ?>"><?php the_title(); ?></h1>
-				<?php if ( $scouting_nederland_hero_summary ) : ?><p class="scouting-nederland-hero-summary"><?php echo esc_html( $scouting_nederland_hero_summary ); ?></p><?php endif; ?>
+				<?php if ( $scouting_nederland_hero_summary ) : ?>
+					<p class="scouting-nederland-hero-summary"><?php echo esc_html( $scouting_nederland_hero_summary ); ?></p>
+				<?php endif; ?>
 			<?php endif; ?>
 		</div>
 	</section>

@@ -6,7 +6,8 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; }
+	exit;
+}
 
 /**
  * Sanitizes a Customizer checkbox value.
@@ -16,6 +17,57 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function scouting_nederland_sanitize_checkbox( $checked ) {
 	return ! empty( $checked ) ? 1 : 0;
+}
+
+/**
+ * A Customizer control for a header action and its visibility switch.
+ */
+class Scouting_Nederland_Header_Action_Control extends WP_Customize_Control {
+	/**
+	 * Customizer control type.
+	 *
+	 * @var string
+	 */
+	public $type = 'scouting_header_action';
+
+	/**
+	 * HTML input type.
+	 *
+	 * @var string
+	 */
+	public $field_type = 'url';
+
+	/**
+	 * Text displayed beside the visibility checkbox.
+	 *
+	 * @var string
+	 */
+	public $toggle_label = '';
+
+	/**
+	 * Renders the field and its visibility toggle.
+	 *
+	 * @return void
+	 */
+	public function render_content() {
+		?>
+		<div class="scouting-header-action-setting">
+			<?php if ( $this->label ) : ?>
+				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<?php endif; ?>
+			<div style="display:flex;align-items:center;gap:12px;">
+				<input type="<?php echo esc_attr( $this->field_type ); ?>" style="flex:1;min-width:0;" <?php $this->link( 'field' ); ?> value="<?php echo esc_attr( $this->value( 'field' ) ); ?>" aria-label="<?php echo esc_attr( $this->label ); ?>" />
+				<label style="display:flex;align-items:center;gap:5px;white-space:nowrap;">
+					<input type="checkbox" value="1" <?php checked( $this->value( 'enabled' ), 1 ); ?> <?php $this->link( 'enabled' ); ?> />
+					<?php echo esc_html( $this->toggle_label ); ?>
+				</label>
+			</div>
+			<?php if ( $this->description ) : ?>
+				<p class="description customize-control-description"><?php echo esc_html( $this->description ); ?></p>
+			<?php endif; ?>
+		</div>
+		<?php
+	}
 }
 
 /**
@@ -143,35 +195,7 @@ function scouting_nederland_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Keep each header action toggle next to the field it controls.
-	// Both inputs are connected to their own Customizer settings.
-	if ( ! class_exists( 'Scouting_Nederland_Header_Action_Control' ) ) {
-		class Scouting_Nederland_Header_Action_Control extends WP_Customize_Control {
-			public $type = 'scouting_header_action';
-			public $field_type = 'url';
-			public $toggle_label = '';
-
-			public function render_content() {
-				?>
-				<div class="scouting-header-action-setting">
-					<?php if ( $this->label ) : ?>
-						<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-					<?php endif; ?>
-					<div style="display:flex;align-items:center;gap:12px;">
-						<input type="<?php echo esc_attr( $this->field_type ); ?>" style="flex:1;min-width:0;" <?php $this->link( 'field' ); ?> value="<?php echo esc_attr( $this->value( 'field' ) ); ?>" aria-label="<?php echo esc_attr( $this->label ); ?>" />
-						<label style="display:flex;align-items:center;gap:5px;white-space:nowrap;">
-							<input type="checkbox" value="1" <?php checked( $this->value( 'enabled' ), 1 ); ?> <?php $this->link( 'enabled' ); ?> />
-							<?php echo esc_html( $this->toggle_label ); ?>
-						</label>
-					</div>
-					<?php if ( $this->description ) : ?>
-						<p class="description customize-control-description"><?php echo esc_html( $this->description ); ?></p>
-					<?php endif; ?>
-				</div>
-				<?php
-			}
-		}
-	}
+	// Keep each action toggle beside its corresponding input field.
 
 	$header_actions = array(
 		array(
@@ -203,26 +227,37 @@ function scouting_nederland_customize_register( $wp_customize ) {
 		),
 	);
 	foreach ( $header_actions as $action ) {
-		$wp_customize->add_setting( $action['field'], array(
-			'default'           => '',
-			'sanitize_callback' => $action['sanitize'],
-		) );
-		$wp_customize->add_setting( $action['enabled'], array(
-			'default'           => 1,
-			'sanitize_callback' => 'scouting_nederland_sanitize_checkbox',
-		) );
-		$wp_customize->add_control( new Scouting_Nederland_Header_Action_Control(
-			$wp_customize,
-			'scouting_nederland_header_action_' . $action['id'],
+		$wp_customize->add_setting(
+			$action['field'],
 			array(
-				'label'        => $action['label'],
-				'description'  => $action['description'],
-				'section'      => 'scouting_nederland_options',
-				'settings'     => array( 'field' => $action['field'], 'enabled' => $action['enabled'] ),
-				'field_type'   => $action['field_type'],
-				'toggle_label' => __( 'Tonen', 'scouting-nederland' ),
+				'default'           => '',
+				'sanitize_callback' => $action['sanitize'],
 			)
-		) );
+		);
+		$wp_customize->add_setting(
+			$action['enabled'],
+			array(
+				'default'           => 1,
+				'sanitize_callback' => 'scouting_nederland_sanitize_checkbox',
+			)
+		);
+		$wp_customize->add_control(
+			new Scouting_Nederland_Header_Action_Control(
+				$wp_customize,
+				'scouting_nederland_header_action_' . $action['id'],
+				array(
+					'label'        => $action['label'],
+					'description'  => $action['description'],
+					'section'      => 'scouting_nederland_options',
+					'settings'     => array(
+						'field'   => $action['field'],
+						'enabled' => $action['enabled'],
+					),
+					'field_type'   => $action['field_type'],
+					'toggle_label' => __( 'Tonen', 'scouting-nederland' ),
+				)
+			)
+		);
 	}
 
 	$wp_customize->add_setting(

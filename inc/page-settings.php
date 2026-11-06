@@ -6,7 +6,8 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; }
+	exit;
+}
 
 
 /**
@@ -98,11 +99,11 @@ function scouting_nederland_get_page_display_settings( $post_id = null ) {
 	}
 
 	return array(
-		'hide_hero'       => get_post_meta( $post_id, '_scouting_nederland_hide_hero', true ) === '1',
-		'hide_page_title' => get_post_meta( $post_id, '_scouting_nederland_hide_page_title', true ) === '1',
-		'hide_sidebar'    => get_post_meta( $post_id, '_scouting_nederland_hide_sidebar', true ) === '1',
+		'hide_hero'         => get_post_meta( $post_id, '_scouting_nederland_hide_hero', true ) === '1',
+		'hide_page_title'   => get_post_meta( $post_id, '_scouting_nederland_hide_page_title', true ) === '1',
+		'hide_sidebar'      => get_post_meta( $post_id, '_scouting_nederland_hide_sidebar', true ) === '1',
 		'show_hero_summary' => get_post_meta( $post_id, '_scouting_nederland_show_hero_summary', true ) === '1',
-		'hero_title_font' => scouting_nederland_sanitize_page_hero_font( (string) get_post_meta( $post_id, '_scouting_nederland_hero_title_font', true ) ),
+		'hero_title_font'   => scouting_nederland_sanitize_page_hero_font( (string) get_post_meta( $post_id, '_scouting_nederland_hero_title_font', true ) ),
 	);
 }
 
