@@ -30,12 +30,16 @@ if ( $show_stamp ) {
 }
 $custom_logo_id  = get_theme_mod( 'custom_logo' );
 $custom_logo_url = $custom_logo_id ? wp_get_attachment_image_url( $custom_logo_id, 'full' ) : '';
-$header_show_phone   = (bool) get_theme_mod( 'scouting_nederland_show_phone', 1 );
+
+$header_show_phone = (bool) get_theme_mod( 'scouting_nederland_show_phone', 1 );
+
 $header_show_contact = (bool) get_theme_mod( 'scouting_nederland_show_contact', 1 );
-$header_show_search  = (bool) get_theme_mod( 'scouting_nederland_show_search', 1 );
-$header_search_url   = get_theme_mod( 'scouting_nederland_search_url', '' );
+
+$header_show_search = (bool) get_theme_mod( 'scouting_nederland_show_search', 1 );
+
+$header_search_url = get_theme_mod( 'scouting_nederland_search_url', '' );
 // An empty custom URL opens WordPress's own search page, including its search form.
-$header_search_url   = $header_search_url ? $header_search_url : add_query_arg( 's', '', home_url( '/' ) );
+$header_search_url = $header_search_url ? $header_search_url : add_query_arg( 's', '', home_url( '/' ) );
 ?>
 <nav id="scouting-nederland-header-nav" class="navbar navbar-light fixed-top <?php echo esc_attr( $navclass ); ?>" aria-label="<?php esc_attr_e( 'Hoofdnavigatie', 'scouting-nederland' ); ?>">
 	<div class="container-fluid">
