@@ -119,3 +119,11 @@
 		margin-bottom: 32px;
 	}
 }
+
+/* A page's optional excerpt appears directly below the hero heading. */
+.scouting-nederland-page-hero-title > .container {
+	max-width: 900px;
+}
+.scouting-nederland-page-hero-title .scouting-nederland-hero-summary {
+	margin: 0.85rem auto 0;
+}

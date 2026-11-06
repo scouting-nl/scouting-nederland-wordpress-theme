@@ -29,13 +29,14 @@ if ( $scouting_nederland_is_elementor_page ) {
 $scouting_nederland_has_sidebar          = is_active_sidebar( 'sidebar' ) && ! $scouting_nederland_hide_sidebar;
 $scouting_nederland_rendered_slider      = false;
 $scouting_nederland_hero_font_class      = scouting_nederland_get_hero_title_font_class( $scouting_nederland_page_id );
+$scouting_nederland_hero_summary         = scouting_nederland_get_hero_summary( $scouting_nederland_page_id );
 $scouting_nederland_page_container_class = $scouting_nederland_is_elementor_page ? '' : 'container';
 $scouting_nederland_maincontent_class    = $scouting_nederland_is_elementor_page ? '' : 'row';
 $scouting_nederland_content_class        = 'col-md-12';
 if ( $scouting_nederland_is_elementor_page ) {
 	$scouting_nederland_content_class = '';
 } elseif ( $scouting_nederland_has_sidebar ) {
-	$scouting_nederland_content_class = 'col-md-8 col-lg-9';
+	$scouting_nederland_content_class = 'col-md-8 col-lg-9 scouting-nederland-sidebar-content';
 }
 ?>
 <div class="scouting-nederland-base-main"><div class="scouting-nederland-layout-shell">
@@ -56,6 +57,7 @@ if ( ! $scouting_nederland_is_elementor_page ) {
 			<div class="scouting-nederland-page-hero-title <?php echo esc_attr( $scouting_nederland_hero_font_class ); ?>" aria-hidden="false">
 				<div class="container">
 					<h1 class="<?php echo esc_attr( $scouting_nederland_hero_font_class ); ?>"><?php echo esc_html( $scouting_nederland_page_title ); ?></h1>
+					<?php if ( $scouting_nederland_hero_summary ) : ?><p class="scouting-nederland-hero-summary"><?php echo esc_html( $scouting_nederland_hero_summary ); ?></p><?php endif; ?>
 				</div>
 			</div>
 		<?php endif; ?>

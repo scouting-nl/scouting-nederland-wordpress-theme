@@ -439,3 +439,22 @@ body.scouting-nederland-utilities-main-purple .scouting-nederland-homepage-volun
 	}
 
 }
+
+/* Optional page excerpt; preserve Arial rather than the Impact hero title face. */
+.scouting-nederland-hero-summary {
+	max-width: 760px;
+	margin: 0.85rem auto 0;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: clamp(1rem, 1.8vw, 1.3rem);
+	font-weight: 400;
+	line-height: 1.5;
+	letter-spacing: normal;
+	text-transform: none;
+	text-shadow: 0 2px 5px rgba(0, 0, 0, 0.65);
+	overflow-wrap: anywhere;
+}
+.scouting-nederland-homepage-video-caption,
+.scouting-nederland-homepage-slide-caption {
+	flex-direction: column;
+}

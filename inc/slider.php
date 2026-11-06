@@ -249,6 +249,8 @@ function scouting_nederland_render_home_slider( $post_id = null ) {
 	$type                               = get_post_meta( $post_id, '_scouting_nederland_slider_type', true );
 	$type                               = $type ? $type : 'slider';
 	$scouting_nederland_hero_font_class = scouting_nederland_get_hero_title_font_class( $post_id );
+	$scouting_nederland_hero_summary    = scouting_nederland_get_hero_summary( $post_id );
+	$scouting_nederland_hide_title      = scouting_nederland_page_hides_title( $post_id );
 
 	if ( 'video' === $type ) {
 		$video_id = absint( get_post_meta( $post_id, '_scouting_nederland_slider_video_id', true ) );
@@ -261,7 +263,7 @@ function scouting_nederland_render_home_slider( $post_id = null ) {
 				echo '<section class="scouting-nederland-homepage-slider scouting-nederland-homepage-video scouting-nederland-homepage-video-library ' . esc_attr( $scouting_nederland_hero_font_class ) . '">';
 				echo '<video class="scouting-nederland-homepage-video-player" src="' . esc_url( $video_url ) . '" muted loop playsinline controls data-autoplay></video>';
 				if ( $video_heading ) {
-					echo '<div class="scouting-nederland-homepage-video-caption ' . esc_attr( $scouting_nederland_hero_font_class ) . '"><h1 class="' . esc_attr( $scouting_nederland_hero_font_class ) . '">' . esc_html( $video_heading ) . '</h1></div>';
+					echo '<div class="scouting-nederland-homepage-video-caption ' . esc_attr( $scouting_nederland_hero_font_class ) . '"><h1 class="' . esc_attr( $scouting_nederland_hero_font_class ) . '">' . esc_html( $video_heading ) . '</h1>' . ( ! $scouting_nederland_hide_title && $scouting_nederland_hero_summary ? '<p class="scouting-nederland-hero-summary">' . esc_html( $scouting_nederland_hero_summary ) . '</p>' : '' ) . '</div>';
 				}
 				echo '</section>';
 				return true;
@@ -275,7 +277,7 @@ function scouting_nederland_render_home_slider( $post_id = null ) {
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- WordPress returns embed markup from a registered oEmbed provider.
 				echo '<section class="scouting-nederland-homepage-slider scouting-nederland-homepage-video ' . esc_attr( $scouting_nederland_hero_font_class ) . '"><div class="scouting-nederland-homepage-video-embed">' . $embed . '</div>';
 				if ( $video_heading ) {
-					echo '<div class="scouting-nederland-homepage-video-caption ' . esc_attr( $scouting_nederland_hero_font_class ) . '"><h1 class="' . esc_attr( $scouting_nederland_hero_font_class ) . '">' . esc_html( $video_heading ) . '</h1></div>';
+					echo '<div class="scouting-nederland-homepage-video-caption ' . esc_attr( $scouting_nederland_hero_font_class ) . '"><h1 class="' . esc_attr( $scouting_nederland_hero_font_class ) . '">' . esc_html( $video_heading ) . '</h1>' . ( ! $scouting_nederland_hide_title && $scouting_nederland_hero_summary ? '<p class="scouting-nederland-hero-summary">' . esc_html( $scouting_nederland_hero_summary ) . '</p>' : '' ) . '</div>';
 				}
 				echo '</section>';
 				return true;
@@ -312,7 +314,7 @@ function scouting_nederland_render_home_slider( $post_id = null ) {
 		$is_active = 0 === $index;
 		echo '<div class="scouting-nederland-homepage-slide' . ( $is_active ? ' is-active' : '' ) . '" aria-hidden="' . ( $is_active ? 'false' : 'true' ) . '" style="background-image:url(' . esc_url( $slide['image'] ) . ')">';
 		if ( $slide['heading'] ) {
-			echo '<div class="scouting-nederland-homepage-slide-caption ' . esc_attr( $scouting_nederland_hero_font_class ) . '"><h1 class="' . esc_attr( $scouting_nederland_hero_font_class ) . '">' . esc_html( $slide['heading'] ) . '</h1></div>';
+			echo '<div class="scouting-nederland-homepage-slide-caption ' . esc_attr( $scouting_nederland_hero_font_class ) . '"><h1 class="' . esc_attr( $scouting_nederland_hero_font_class ) . '">' . esc_html( $slide['heading'] ) . '</h1>' . ( ! $scouting_nederland_hide_title && $scouting_nederland_hero_summary ? '<p class="scouting-nederland-hero-summary">' . esc_html( $scouting_nederland_hero_summary ) . '</p>' : '' ) . '</div>';
 		}
 		echo '</div>';
 	}

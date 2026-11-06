@@ -47,7 +47,7 @@ if ( is_singular( 'post' ) && has_post_thumbnail( get_queried_object_id() ) ) {
 		?>
 		<div class="row"><div class="col-sm-12"><?php dynamic_sidebar( 'breadcrumbs' ); ?></div></div><?php endif; ?>
 	<div class="row">
-		<main id="scouting-nederland-layout-content" role="main" class="<?php echo is_active_sidebar( 'sidebar' ) ? 'col-md-8 col-lg-9' : 'col-md-12'; ?>">
+		<main id="scouting-nederland-layout-content" role="main" class="<?php echo is_active_sidebar( 'sidebar' ) ? 'col-md-8 col-lg-9 scouting-nederland-sidebar-content' : 'col-md-12 scouting-nederland-fullwidth-content'; ?>">
 			<?php
 			if ( have_posts() ) :
 				while ( have_posts() ) :

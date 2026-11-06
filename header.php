@@ -20,7 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php wp_body_open(); ?>
 <a class="scouting-nederland-base-skip-link screen-reader-text" href="#scouting-nederland-layout-content"><?php esc_html_e( 'Ga naar de inhoud', 'scouting-nederland' ); ?></a>
 <?php
-$navclass   = get_theme_mod( 'scouting_nederland_hamburger_desktop', 0 ) ? 'scouting-nederland-header-desktop-collapsed' : 'navbar-expand-lg';
+$navclass   = 'narrow' === get_theme_mod( 'scouting_nederland_header_width', 'narrow' )
+	? 'scouting-nederland-header-desktop-collapsed'
+	: 'navbar-expand-lg';
 $show_stamp = get_theme_mod( 'scouting_nederland_logo_stamp', 1 );
 $logoclass  = 'navbar-brand scouting-nederland-header-logo-link';
 if ( $show_stamp ) {
@@ -28,6 +30,12 @@ if ( $show_stamp ) {
 }
 $custom_logo_id  = get_theme_mod( 'custom_logo' );
 $custom_logo_url = $custom_logo_id ? wp_get_attachment_image_url( $custom_logo_id, 'full' ) : '';
+$header_show_phone   = (bool) get_theme_mod( 'scouting_nederland_show_phone', 1 );
+$header_show_contact = (bool) get_theme_mod( 'scouting_nederland_show_contact', 1 );
+$header_show_search  = (bool) get_theme_mod( 'scouting_nederland_show_search', 1 );
+$header_search_url   = get_theme_mod( 'scouting_nederland_search_url', '' );
+// An empty custom URL opens WordPress's own search page, including its search form.
+$header_search_url   = $header_search_url ? $header_search_url : add_query_arg( 's', '', home_url( '/' ) );
 ?>
 <nav id="scouting-nederland-header-nav" class="navbar navbar-light fixed-top <?php echo esc_attr( $navclass ); ?>" aria-label="<?php esc_attr_e( 'Hoofdnavigatie', 'scouting-nederland' ); ?>">
 	<div class="container-fluid">
@@ -49,7 +57,7 @@ $custom_logo_url = $custom_logo_id ? wp_get_attachment_image_url( $custom_logo_i
 			$msg = get_theme_mod( 'scouting_nederland_header_message', '' );
 			$url = get_theme_mod( 'scouting_nederland_header_message_url', '' );
 			?>
-			<?php if ( get_theme_mod( 'scouting_nederland_show_header_message', 1 ) && $msg ) : ?>
+			<?php if ( $msg ) : ?>
 				<a class="scouting-nederland-header-message-link text-danger" href="<?php echo esc_url( $url ? $url : home_url( '/' ) ); ?>"><?php echo esc_html( $msg ); ?> <i class="fas fa-exclamation-triangle" aria-hidden="true"></i></a>
 			<?php endif; ?>
 		</div>
@@ -57,7 +65,7 @@ $custom_logo_url = $custom_logo_id ? wp_get_attachment_image_url( $custom_logo_i
 		<div id="scouting-nederland-header-actions">
 			<?php
 			$phone = get_theme_mod( 'scouting_nederland_phone', '' );
-			if ( get_theme_mod( 'scouting_nederland_show_phone', 1 ) && $phone ) :
+			if ( $header_show_phone && $phone ) :
 				?>
 				<a href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', $phone ) ); ?>" class="scouting-nederland-header-action-phone" aria-label="<?php esc_attr_e( 'Bellen', 'scouting-nederland' ); ?>">
 					<i class="fas fa-phone scouting-nederland-header-action-icon" aria-hidden="true"></i>
@@ -65,21 +73,20 @@ $custom_logo_url = $custom_logo_id ? wp_get_attachment_image_url( $custom_logo_i
 			<?php endif; ?>
 			<?php
 			$contact = get_theme_mod( 'scouting_nederland_contact_url', '' );
-			if ( get_theme_mod( 'scouting_nederland_show_contact', 1 ) && $contact ) :
+			if ( $header_show_contact && $contact ) :
 				?>
 				<a href="<?php echo esc_url( $contact ); ?>" class="scouting-nederland-header-action-contact" aria-label="<?php esc_attr_e( 'Contact', 'scouting-nederland' ); ?>">
 					<i class="fas fa-envelope scouting-nederland-header-action-icon" aria-hidden="true"></i>
 				</a>
 			<?php endif; ?>
 			<?php
-			if ( get_theme_mod( 'scouting_nederland_show_search', 1 ) ) :
-				$search_url = get_theme_mod( 'scouting_nederland_search_url', '' );
+			if ( $header_show_search ) :
 				?>
-				<a href="<?php echo esc_url( $search_url ? $search_url : home_url( '/?s=' ) ); ?>" class="scouting-nederland-header-action-search" aria-label="<?php esc_attr_e( 'Zoeken', 'scouting-nederland' ); ?>">
+				<a href="<?php echo esc_url( $header_search_url ); ?>" class="scouting-nederland-header-action-search" aria-label="<?php esc_attr_e( 'Zoeken', 'scouting-nederland' ); ?>">
 					<i class="fas fa-search scouting-nederland-header-action-icon" aria-hidden="true"></i>
 				</a>
 			<?php endif; ?>
-			<button class="navbar-toggler navbar-toggler-right scouting-nederland-header-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#scouting-nederland-header-offcanvas" aria-controls="scouting-nederland-header-offcanvas" aria-expanded="false" aria-label="<?php esc_attr_e( 'Navigatie tonen', 'scouting-nederland' ); ?>">
+			<button class="navbar-toggler navbar-toggler-right scouting-nederland-header-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#scouting-nederland-header-offcanvas" aria-controls="scouting-nederland-header-offcanvas" aria-label="<?php esc_attr_e( 'Navigatie tonen', 'scouting-nederland' ); ?>">
 				<i id="scouting-nederland-header-toggle-icon" class="fa fa-bars scouting-nederland-header-action-icon" aria-hidden="true"></i><span class="scouting-nederland-header-menu-label"><?php esc_html_e( 'Menu', 'scouting-nederland' ); ?></span>
 			</button>
 		</div>
@@ -110,7 +117,7 @@ $custom_logo_url = $custom_logo_id ? wp_get_attachment_image_url( $custom_logo_i
 		$mobile_msg     = get_theme_mod( 'scouting_nederland_header_message', '' );
 		$mobile_msg_url = get_theme_mod( 'scouting_nederland_header_message_url', '' );
 		?>
-		<?php if ( get_theme_mod( 'scouting_nederland_show_header_message', 1 ) && $mobile_msg ) : ?>
+		<?php if ( $mobile_msg ) : ?>
 			<div class="scouting-nederland-header-offcanvas-message">
 				<a href="<?php echo esc_url( $mobile_msg_url ? $mobile_msg_url : home_url( '/' ) ); ?>">
 					<?php echo esc_html( $mobile_msg ); ?> <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
@@ -134,7 +141,7 @@ $custom_logo_url = $custom_logo_id ? wp_get_attachment_image_url( $custom_logo_i
 		<div class="scouting-nederland-header-offcanvas-actions">
 			<?php
 			$mobile_phone = get_theme_mod( 'scouting_nederland_phone', '' );
-			if ( get_theme_mod( 'scouting_nederland_show_phone', 1 ) && $mobile_phone ) :
+			if ( $header_show_phone && $mobile_phone ) :
 				?>
 				<a href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', $mobile_phone ) ); ?>" class="scouting-nederland-header-action-phone" aria-label="<?php esc_attr_e( 'Bellen', 'scouting-nederland' ); ?>">
 					<i class="fas fa-phone" aria-hidden="true"></i>
@@ -144,7 +151,7 @@ $custom_logo_url = $custom_logo_id ? wp_get_attachment_image_url( $custom_logo_i
 
 			<?php
 			$mobile_contact = get_theme_mod( 'scouting_nederland_contact_url', '' );
-			if ( get_theme_mod( 'scouting_nederland_show_contact', 1 ) && $mobile_contact ) :
+			if ( $header_show_contact && $mobile_contact ) :
 				?>
 				<a href="<?php echo esc_url( $mobile_contact ); ?>" class="scouting-nederland-header-action-contact" aria-label="<?php esc_attr_e( 'Contact', 'scouting-nederland' ); ?>">
 					<i class="fas fa-envelope" aria-hidden="true"></i>
@@ -153,10 +160,9 @@ $custom_logo_url = $custom_logo_id ? wp_get_attachment_image_url( $custom_logo_i
 			<?php endif; ?>
 
 			<?php
-			if ( get_theme_mod( 'scouting_nederland_show_search', 1 ) ) :
-				$mobile_search_url = get_theme_mod( 'scouting_nederland_search_url', '' );
+			if ( $header_show_search ) :
 				?>
-				<a href="<?php echo esc_url( $mobile_search_url ? $mobile_search_url : home_url( '/?s=' ) ); ?>" class="scouting-nederland-header-action-search" aria-label="<?php esc_attr_e( 'Zoeken', 'scouting-nederland' ); ?>">
+				<a href="<?php echo esc_url( $header_search_url ); ?>" class="scouting-nederland-header-action-search" aria-label="<?php esc_attr_e( 'Zoeken', 'scouting-nederland' ); ?>">
 					<i class="fas fa-search" aria-hidden="true"></i>
 					<span><?php esc_html_e( 'Zoeken', 'scouting-nederland' ); ?></span>
 				</a>

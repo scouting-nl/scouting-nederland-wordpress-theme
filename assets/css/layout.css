@@ -219,3 +219,41 @@ body.scouting-nederland-utilities-main-purple .scouting-nederland-layout-showcas
 	transform: translateY(-1px);
 	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
+
+/*
+ * Gutenberg block alignment: a block can opt into wide or edge-to-edge
+ * presentation through its standard Alignment control. Keep this scoped to
+ * post/page content so widgets, navigation and hero components are unaffected.
+ */
+.scouting-nederland-homepage-content > .alignfull,
+.scouting-nederland-fullwidth-content .entry-content > .alignfull {
+	position: relative;
+	left: 50%;
+	width: 100vw;
+	max-width: none;
+	margin-left: -50vw;
+	margin-right: 0;
+}
+
+.scouting-nederland-homepage-content > .alignwide,
+.scouting-nederland-fullwidth-content .entry-content > .alignwide {
+	position: relative;
+	left: 50%;
+	width: min(var(--wp--style--global--wide-size, 1320px), 100vw - 2rem);
+	max-width: none;
+	margin-left: 0;
+	transform: translateX(-50%);
+}
+
+/* A sidebar occupies its own Bootstrap column, so don't cover that column. */
+.scouting-nederland-sidebar-content .entry-content > .alignfull,
+.scouting-nederland-sidebar-content .entry-content > .alignwide {
+	width: 100%;
+	max-width: 100%;
+}
+
+/* The image itself must fill an intentionally edge-to-edge image block. */
+.scouting-nederland-homepage-content > .wp-block-image.alignfull img,
+.scouting-nederland-fullwidth-content .entry-content > .wp-block-image.alignfull img {
+	width: 100%;
+}

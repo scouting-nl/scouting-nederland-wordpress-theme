@@ -14,6 +14,7 @@ $scouting_nederland_hide_hero             = ! empty( $scouting_nederland_page_di
 $scouting_nederland_hide_page_title       = ! empty( $scouting_nederland_page_display_settings['hide_page_title'] );
 $rendered_slider                          = false;
 $scouting_nederland_hero_font_class       = scouting_nederland_get_hero_title_font_class( $scouting_nederland_page_id );
+$scouting_nederland_hero_summary          = scouting_nederland_get_hero_summary( $scouting_nederland_page_id );
 $hero_url                                 = '';
 if ( ! $scouting_nederland_hide_hero ) {
 	if ( has_post_thumbnail() ) {
@@ -37,7 +38,9 @@ if ( ! $scouting_nederland_hide_hero ) {
 			<?php
 			if ( ! $scouting_nederland_hide_page_title ) :
 				?>
-				<h1 class="<?php echo esc_attr( $scouting_nederland_hero_font_class ); ?>"><?php the_title(); ?></h1><?php endif; ?>
+				<h1 class="<?php echo esc_attr( $scouting_nederland_hero_font_class ); ?>"><?php the_title(); ?></h1>
+				<?php if ( $scouting_nederland_hero_summary ) : ?><p class="scouting-nederland-hero-summary"><?php echo esc_html( $scouting_nederland_hero_summary ); ?></p><?php endif; ?>
+			<?php endif; ?>
 		</div>
 	</section>
 	<?php endif; ?>
