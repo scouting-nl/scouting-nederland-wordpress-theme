@@ -192,14 +192,14 @@ function scouting_nederland_customize_register( $wp_customize ) {
 			)
 		);
 		$wp_customize->add_control(
-			new Scouting_Nederland_Header_Action_Control(
+			new Scouting_Nederland_Header_Action_Control( 
 				$wp_customize,
 				'scouting_nederland_header_action_' . $action['id'],
 				array(
 					'label'        => $action['label'],
 					'description'  => $action['description'],
 					'section'      => 'scouting_nederland_options',
-					'settings'     => array(
+					'settings'     => array( 
 						'field'   => $action['field'],
 						'enabled' => $action['enabled'],
 					),
