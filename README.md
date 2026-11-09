@@ -26,7 +26,6 @@ Het theme bevat onder andere:
 - Instellingen voor logo, kleuren, header, lettertypes en footer via de Customizer.
 - `theme.json`-instellingen, editor-stijlen, block styles en een herbruikbaar block pattern.
 - Reacties met threaded replies en paginering.
-- Presentatie-aanpassingen voor pagina's die met Elementor zijn opgebouwd. Elementor is niet vereist.
 
 Het theme registreert zelf **geen aangepaste Gutenberg-blokken**. Scouting-specifieke blokken worden als afzonderlijke companion-plugin aangeboden en maken geen deel uit van het theme-pakket.
 
@@ -64,7 +63,7 @@ Nee. Dit is een classic PHP theme met ondersteuning voor de block editor, editor
 
 ### Heb ik plugins nodig?
 
-Nee. Het theme werkt zelfstandig. Scouting OpenID Connect en Scouting Nederland Blocks zijn optioneel en worden afzonderlijk geïnstalleerd.
+Nee. Het theme werkt zelfstandig. [Scouting OpenID Connect](https://wordpress.org/plugins/scouting-openid-connect/) en Scouting Nederland Blocks zijn optioneel en worden afzonderlijk geïnstalleerd.
 
 ### Bevat het theme Scouting Nederland-blokken?
 
