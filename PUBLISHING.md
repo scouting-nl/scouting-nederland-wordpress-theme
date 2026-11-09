@@ -34,7 +34,7 @@ Deze checklist is op 2026-11-04 vergeleken met [Theme Review Required](https://m
 
 Deze punten volgen uit de hieronder gelinkte eisen; reeds aanwezige implementaties staan niet meer als ontbrekende functionaliteit vermeld.
 
-1. **Beeldrechten en oorspronkelijke bronnen:** de technische font- en librarylicenties zijn aangevuld; de beeldrechten zijn nog niet aangetoond. Vier callouts bevatten metadata van externe makers, waardoor de eerdere algemene toeschrijving aan Scouting Nederland is gecorrigeerd. Lever per beeld de oorspronkelijke bron, rechthebbende en GPL-compatibele herdistributietoestemming aan, inclusief eventuele merkrechten en rechten op afgebeelde personen. De beheerder heeft aangegeven brongegevens te kunnen leveren, maar concrete links of documentpaden zijn nog niet aangeleverd. Een stockfoto- of websitegebruikslicentie is niet automatisch toestemming voor verspreiding in een vrij themepakket. Zie de inventaris hieronder en [Licensing & copyright](https://make.wordpress.org/themes/handbook/review/required/#1-licensing-copyright).
+1. **Beeldrechten en oorspronkelijke bronnen:** de technische font- en librarylicenties zijn aangevuld. De beheerder heeft de hieronder genoemde eigen huisstijlelementen, merkafbeeldingen, banner en screenshot op 2026-11-09 vrijgegeven onder GPL-3.0-or-later. Deze vrijgave geldt niet voor de callouts van derden; hun oorspronkelijke bronnen en GPL-compatibele herdistributierechten blijven afzonderlijk te controleren. Merk- en portretrechten vallen niet automatisch onder de auteursrechtelijke GPL-vrijgave. Een stockfoto- of websitegebruikslicentie is niet automatisch toestemming voor verspreiding in een vrij themepakket. Zie de inventaris hieronder en [Licensing & copyright](https://make.wordpress.org/themes/handbook/review/required/#1-licensing-copyright).
 
 ## Asset- en licentiecontrole
 
@@ -48,7 +48,7 @@ Op 2026-11-04 zijn alle elf WOFF2-fonts, de 26 bestanden onder `assets/images/`,
 | Popper 2.11.8 | De versie volgt uit de Bootstrap 5.3.8-lockfile. De volledige MIT-notice van Federico Zivolo is toegevoegd buiten de vendormap. | [Releasebron](https://github.com/floating-ui/floating-ui/tree/v2.11.8), `assets/licenses/Popper-MIT.txt`. |
 | Font Awesome Free 7.3.1 | CSS en licentie komen overeen met de Git-tag; de vier fonts zijn bytegelijk aan het officiele npm-pakket waarvan de SHA-512-integriteit is geverifieerd. De Git-tag bevat andere WOFF2-builds; die afwijking is dus geen reden geweest om werkende vendorfonts te vervangen. | [npm-release](https://www.npmjs.com/package/@fortawesome/fontawesome-free/v/7.3.1), `assets/vendor/font-awesome/LICENSE.txt`: code MIT, fonts SIL OFL 1.1, iconen CC BY 4.0 en aparte merknotitie. |
 
-Voor de beeldbestanden is de openstaande inventaris:
+Voor de beeldbestanden is de inventaris:
 
 | Bestanden | Aangetroffen credit of bronverwijzing | Nog nodig |
 | --- | --- | --- |
@@ -57,12 +57,12 @@ Voor de beeldbestanden is de openstaande inventaris:
 | `callout-touw.png` | Ingebedde maker: Serhiy Stakhnyk; rechtenverwijzing `www.sergofoto.com`. | Oorspronkelijk beeld en GPL-compatibele verspreidingslicentie. |
 | `callout-zakmes.png` | Ingebedde maker/eigenaar: Dmitry Rukhlenko; copyright 2014; `http://www.f9photos.com`. | Oorspronkelijk beeld en GPL-compatibele verspreidingslicentie. |
 | `callout-boei.png`, `callout-haken.png`, `callout-hout.png`, `callout-kompas.png`, `callout-zaklamp.png` | Geen bruikbare bron-/rechtenmetadata aangetroffen. | Maker, rechthebbende, oorspronkelijke bron en GPL-compatibele licentie. |
-| `footer-grass.png`, `grass-*.png`, `skyline-*.png`, `stamp-shadow.png` | Geen bruikbare bron-/rechtenmetadata aangetroffen. | Maker, rechthebbende, oorspronkelijke bron en GPL-compatibele licentie. |
-| `favicon.png`, `snl-logo.svg` | Scouting-merkuitingen; geen distributielicentie aangetroffen in de bestandsmetadata. | Auteursrechtelijke licentie en toepasselijke merktoestemming afzonderlijk bevestigen. |
-| `default-slide.jpg` | Geen bruikbare bron-/rechtenmetadata aangetroffen. | Fotograaf, bron, licentie, portretrechten en controle op de directorybeeldregels. |
-| `screenshot.png` | Een screenshot erft niet automatisch rechten op de getoonde beelden. | Maker, onderliggende beeldbronnen en bijbehorende rechten aantonen. |
+| `footer-grass.png`, `grass-*.png`, `skyline-*.png`, `stamp-shadow.png` | Eigen Scouting Nederland-huisstijlelementen; copyright Scouting Nederland. Door de beheerder vrijgegeven onder GPL-3.0-or-later. | Geen openstaande auteursrechtelijke licentievraag op basis van deze bevestigde vrijgave. |
+| `favicon.png`, `snl-logo.svg` | Scouting-merkuitingen; copyright Scouting Nederland. Artwork vrijgegeven onder GPL-3.0-or-later. | Toepasselijke merkrechten afzonderlijk beoordelen; de GPL is een auteursrechtelijke licentie. |
+| `default-slide.jpg` | Uitsnede van [Roverway 2018 (91)](https://www.flickr.com/photos/scoutingnederland/53558323048/) uit het [Roverway 2018-album](https://www.flickr.com/photos/scoutingnederland/albums/72177720315134523). Copyright Scouting Nederland; voor deze distributie vrijgegeven onder GPL-3.0-or-later, los van de Flickr-notice. Camera- en opnamemetadata zijn uit het origineel overgenomen; de individuele fotograaf is niet vermeld. | Portretrechten en de directorybeeldregels blijven afzonderlijk te controleren. |
+| `screenshot.png` | Screenshot door Scouting Nederland; copyright Scouting Nederland en vrijgegeven onder GPL-3.0-or-later. | Rechten en licenties van eventueel getoonde beelden van derden afzonderlijk controleren. |
 
-De bestandsnamen in de beeldinventaris zijn relatief aan `assets/images/`, behalve `screenshot.png` in de root. Tijdens de licentiecontrole van 2026-11-04 zijn geen beeld- of fontbinaries gewijzigd; de banner en screenshot zijn daarna door de beheerder vernieuwd en op 2026-11-05 opnieuw bekeken. Ontbrekend bewijs is niet vervangen door een zelfbedachte GPL-, Creative Commons- of andere licentie.
+De bestandsnamen in de beeldinventaris zijn relatief aan `assets/images/`, behalve `screenshot.png` in de root. Tijdens de licentiecontrole van 2026-11-04 zijn geen beeld- of fontbinaries gewijzigd; de banner en screenshot zijn daarna door de beheerder vernieuwd en op 2026-11-05 opnieuw bekeken. De GPL-vrijgave voor de hierboven genoemde eigen beelden is op 2026-11-09 expliciet door de beheerder bevestigd. Niet geverifieerde rechten op beelden van derden blijven open.
 
 ## Uitgevoerde compatibiliteitsvalidatie
 
