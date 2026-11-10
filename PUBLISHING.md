@@ -64,6 +64,8 @@ Voor de beeldbestanden is de inventaris:
 
 De bestandsnamen in de beeldinventaris zijn relatief aan `assets/images/`, behalve `screenshot.png` in de root. Tijdens de licentiecontrole van 2026-11-04 zijn geen beeld- of fontbinaries gewijzigd; de banner en screenshot zijn daarna door de beheerder vernieuwd en op 2026-11-05 opnieuw bekeken. De GPL-vrijgave voor de hierboven genoemde eigen beelden is op 2026-11-09 expliciet door de beheerder bevestigd. Niet geverifieerde rechten op beelden van derden blijven open.
 
+Op 2026-11-10 zijn alleen `default-slide.jpg` en `screenshot.png` gecomprimeerd met sharp 0.34.5. De banner is verkleind van 719.793 naar 133.957 bytes, met behoud van 1800 x 400 pixels en de aanwezige auteursrecht- en camerametadata. De screenshot is als geoptimaliseerde PNG verkleind van 1.273.099 naar 328.140 bytes, met behoud van 1200 x 900 pixels. De uitsnede, inhoud, bronvermelding en licenties zijn niet gewijzigd.
+
 ## Uitgevoerde compatibiliteitsvalidatie
 
 Op 2026-11-04 is een snapshot van de werkboom getest met **WordPress 7.1.4**, **PHP 8.2.35** en `WP_DEBUG`, `WP_DEBUG_LOG` en `SCRIPT_DEBUG` ingeschakeld. Git-basis: `ed6c0ba`, met lokale wijzigingen. De geisoleerde Docker-installatie gebruikte dezelfde 99 theme-bestanden als de CI-package-allowlist, zonder de optionele OpenID- of Blocks-plugin.
@@ -112,7 +114,7 @@ Deze praktijktests zijn niet als afgerond gemarkeerd door de bovenstaande statis
 - [ ] Test toetsenbordnavigatie, zichtbare focus en focusverplaatsing via de skiplink, en voer een toegankelijkheidsscan uit met bijvoorbeeld axe of WAVE.
 - [ ] Controleer externe video-embeds op uitgaande requests, cookies en de vereiste toestemming voordat de externe inhoud wordt geladen.
 - [ ] Controleer met een performance-tool dat gebundelde media en CSS/JavaScript geen onnodige laadtijd veroorzaken.
-- [ ] Controleer de uiteindelijke download als direct installeerbare ZIP met `scouting-nederland/style.css`, zonder geneste ZIP, ontwikkelbestanden, verborgen bestanden, verboden bestandstypen of de companion-plugin. Controleer alle licentieteksten en bronvermeldingen.
+- [ ] Controleer de uiteindelijke download als direct installeerbare ZIP met `scouting-nederland-wordpress-theme/style.css`, zonder geneste ZIP, ontwikkelbestanden, verborgen bestanden, verboden bestandstypen of de companion-plugin. Controleer alle licentieteksten en bronvermeldingen. Theme Check meldt nog dat de mapnaam niet overeenkomt met de uit de ongewijzigde themanaam `Scouting Nederland` afgeleide slug `scouting-nederland`; voor het oplossen hiervan is een expliciete keuze over de thema-identiteit nodig.
 - [ ] Actualiseer de screenshot na visuele wijzigingen; de juiste afmetingen alleen bewijzen niet dat de afbeelding de actuele themavormgeving weergeeft.
 
 ## Bronnen
