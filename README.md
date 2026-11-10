@@ -11,7 +11,6 @@ Een responsive classic theme voor WordPress-sites van Scoutinggroepen. Het theme
 - [Screenshots](#screenshots)
 - [Installatie](#installatie)
 - [Instellingen](#instellingen)
-- [Vertalingen](#vertalingen)
 - [Veelgestelde vragen](#veelgestelde-vragen)
 - [Beveiliging](#beveiliging)
 
@@ -55,34 +54,6 @@ Per pagina kunnen aanvullende instellingen beschikbaar zijn voor de hero, pagina
 
 - [Scouting OpenID Connect](https://wordpress.org/plugins/scouting-openid-connect/) voegt aanmelden met Scouting Nederland toe.
 - Scouting Nederland Blocks is een afzonderlijke companion-plugin voor Scouting-specifieke Gutenberg-blokken. Deze blokken zijn niet opgenomen in dit theme.
-
-## Vertalingen
-
-De bronteksten zijn Nederlands. Het vertaaltemplate staat in [languages/scouting-nederland-wordpress-theme.pot](languages/scouting-nederland-wordpress-theme.pot) en gebruikt het textdomain `scouting-nederland-wordpress-theme`.
-
-De Engelse vertaling (`en_US`) staat in [languages/en_US.po](languages/en_US.po) en het bijbehorende gecompileerde MO-bestand. Kies **English (United States)** bij **Instellingen > Algemeen > Sitetaal** om deze vertaling te gebruiken.
-
-Werk het template vanuit de repositoryroot bij met [WP-CLI](https://developer.wordpress.org/cli/commands/i18n/make-pot/):
-
-```sh
-wp i18n make-pot . languages/scouting-nederland-wordpress-theme.pot --domain=scouting-nederland-wordpress-theme --exclude=.github,.vscode,assets/vendor,scripts
-```
-
-Werk daarna de PO-bestanden bij met GNU gettext, bijvoorbeeld voor Engels:
-
-```sh
-msgmerge --update --backup=none --no-fuzzy-matching languages/en_US.po languages/scouting-nederland-wordpress-theme.pot
-```
-
-Vertaal nieuwe of gewijzigde teksten en compileer het MO-bestand opnieuw:
-
-```sh
-msgfmt --check --no-hash -o languages/en_US.mo languages/en_US.po
-```
-
-Maak voor een extra taal een PO-bestand op basis van het template. Plaats PO- en MO-bestanden in `languages/` met de locale als bestandsnaam, bijvoorbeeld `en_US.po` en `en_US.mo`.
-
-De GitHub-check **Translation freshness** controleert of het POT-bestand nog overeenkomt met de bronteksten, alle PO-bestanden volledig vertaald zijn zonder fuzzy-markeringen en met geldige plaatsaanduidingen en meervoudsvormen, en de MO-bestanden opnieuw zijn gecompileerd. Generatiedatums en gewijzigde regelnummers veroorzaken geen foutmelding.
 
 ## Veelgestelde vragen
 
