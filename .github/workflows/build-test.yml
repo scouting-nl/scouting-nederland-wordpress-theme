@@ -393,6 +393,6 @@ jobs:
             --admin_email=theme-check@example.invalid \
             --skip-email
 
-          cp -a "${THEME_PACKAGE_DIR}/scouting-nederland" "${wordpress_path}/wp-content/themes/"
+          cp -a "${THEME_PACKAGE_DIR}/scouting-nederland-wordpress-theme" "${wordpress_path}/wp-content/themes/"
           php "${wp_cli}" plugin install theme-check --activate --path="${wordpress_path}"
-          php "${wp_cli}" theme-check run scouting-nederland --format=json --path="${wordpress_path}"
+          php "${wp_cli}" theme-check run scouting-nederland-wordpress-theme --format=json --path="${wordpress_path}"

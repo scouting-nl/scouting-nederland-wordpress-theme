@@ -69,12 +69,11 @@ jobs:
           if ($LASTEXITCODE -ne 0) {
             throw 'Could not determine whether the checkout is dirty.'
           }
-          $dirtySuffix = if ($changes.Count -gt 0) { '-dirty' } else { '' }
-          $artifactName = "scouting-nederland-theme-$version.$commitCount$dirtySuffix"
+          $artifactName = "scouting-nederland-wordpress-theme-$version.$commitCount"
           $zipName = "$artifactName.zip"
 
           $stagingRoot = Join-Path $env:RUNNER_TEMP 'theme-package'
-          $themeDirectory = Join-Path $stagingRoot 'scouting-nederland'
+          $themeDirectory = Join-Path $stagingRoot 'scouting-nederland-wordpress-theme'
 
           if (Test-Path -LiteralPath $stagingRoot) {
             Remove-Item -LiteralPath $stagingRoot -Recurse -Force

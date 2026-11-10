@@ -41,7 +41,7 @@ jobs:
           set -euo pipefail
 
           cd "${THEME_PACKAGE_DIR}"
-          zip -q -r "${ZIP_PATH}" scouting-nederland
+          zip -q -r "${ZIP_PATH}" scouting-nederland-wordpress-theme
 
           if gh release view "${RELEASE_TAG}" --json id >/dev/null 2>&1; then
             gh release upload "${RELEASE_TAG}" "${ZIP_PATH}" --clobber
