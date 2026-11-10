@@ -7,6 +7,7 @@
  * the same readable baseline without requiring widget-specific resets.
  */
 .scouting-nederland-footer-root {
+	position: relative;
 	margin-top: 0;
 	background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
 	color: #fff;
@@ -276,4 +277,210 @@ body.scouting-nederland-utilities-main-orange .scouting-nederland-footer-root .s
 
 body.scouting-nederland-utilities-main-purple .scouting-nederland-footer-root .scouting-nederland-footer-grass {
 	background-image: url(../images/grass-paars.png);
+}
+
+.scouting-nederland-footer-butterfly {
+	position: absolute;
+	inset: -70px 0 0;
+	overflow: clip;
+	pointer-events: none;
+}
+
+.scouting-nederland-footer-butterfly-flight {
+	position: absolute;
+	top: 105px;
+	left: 65%;
+	width: 100px;
+	height: 100px;
+	transform: scale(-0.35, 0.35);
+	transform-origin: top left;
+}
+
+.scouting-nederland-footer-butterfly-body {
+	position: relative;
+	display: block;
+	width: 30px;
+	height: 100px;
+	transform: rotateX(50deg) rotateY(20deg) rotateZ(-50deg);
+	transform-style: preserve-3d;
+}
+
+.scouting-nederland-footer-butterfly-body::before {
+	content: "";
+	position: absolute;
+	top: -15px;
+	left: 50%;
+	z-index: 2;
+	width: 20px;
+	height: 110px;
+	margin-left: -10px;
+	border-radius: 50%;
+	background: #362c13;
+	transform: rotateY(100deg);
+}
+
+.scouting-nederland-footer-butterfly-wing {
+	position: absolute;
+	top: 0;
+	width: 1px;
+	height: 1px;
+	opacity: 0.9;
+	transform-style: preserve-3d;
+}
+
+.scouting-nederland-footer-butterfly-wing-left {
+	left: 0;
+	z-index: 3;
+	transform: rotateY(-20deg);
+	transform-origin: 700% 50%;
+}
+
+.scouting-nederland-footer-butterfly-wing-right {
+	right: 0;
+	z-index: 1;
+	transform: rotateY(200deg);
+	transform-origin: 0 50%;
+}
+
+.scouting-nederland-footer-butterfly-upper,
+.scouting-nederland-footer-butterfly-lower {
+	position: absolute;
+	top: 0;
+	right: 0;
+	overflow: hidden;
+	border-radius: 50%;
+	background: #ffca1e;
+	transform-origin: 100% 50%;
+}
+
+.scouting-nederland-footer-butterfly-upper {
+	top: 15px;
+	width: 130px;
+	height: 70px;
+	transform: rotateZ(40deg);
+}
+
+.scouting-nederland-footer-butterfly-lower {
+	width: 100px;
+	height: 55px;
+	transform: rotateZ(-40deg);
+}
+
+.scouting-nederland-footer-butterfly-upper::after,
+.scouting-nederland-footer-butterfly-lower::after {
+	content: "";
+	position: absolute;
+	top: 5px;
+	border-radius: 50%;
+	background: #ffd651;
+}
+
+.scouting-nederland-footer-butterfly-upper::after {
+	left: -30px;
+	width: 100px;
+	height: 60px;
+}
+
+.scouting-nederland-footer-butterfly-lower::after {
+	left: -24px;
+	width: 60px;
+	height: 45px;
+}
+
+.scouting-nederland-footer-butterfly-shadow {
+	position: absolute;
+	top: 100px;
+	left: -10px;
+	width: 100px;
+	height: 10px;
+	border-radius: 50%;
+	background: #000;
+	opacity: 0.1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+	.scouting-nederland-footer-butterfly.scouting-nederland-motion-reveal .scouting-nederland-footer-butterfly-flight {
+		animation: scouting-nederland-footer-butterfly-flight 20s linear infinite;
+	}
+
+	.scouting-nederland-footer-butterfly.scouting-nederland-motion-reveal .scouting-nederland-footer-butterfly-body {
+		animation: scouting-nederland-footer-butterfly-float 1.2s ease-in-out infinite;
+	}
+
+	.scouting-nederland-footer-butterfly.scouting-nederland-motion-reveal .scouting-nederland-footer-butterfly-wing-left {
+		animation: scouting-nederland-footer-butterfly-left 0.24s ease-in-out infinite alternate;
+	}
+
+	.scouting-nederland-footer-butterfly.scouting-nederland-motion-reveal .scouting-nederland-footer-butterfly-wing-right {
+		animation: scouting-nederland-footer-butterfly-right 0.24s ease-in-out infinite alternate;
+	}
+
+	.scouting-nederland-footer-butterfly.scouting-nederland-motion-reveal .scouting-nederland-footer-butterfly-shadow {
+		animation: scouting-nederland-footer-butterfly-shadow 1.2s ease-in-out infinite;
+	}
+}
+
+.scouting-nederland-footer-butterfly.scouting-nederland-footer-butterfly-paused .scouting-nederland-footer-butterfly-flight,
+.scouting-nederland-footer-butterfly.scouting-nederland-footer-butterfly-paused .scouting-nederland-footer-butterfly-body,
+.scouting-nederland-footer-butterfly.scouting-nederland-footer-butterfly-paused .scouting-nederland-footer-butterfly-wing,
+.scouting-nederland-footer-butterfly.scouting-nederland-footer-butterfly-paused .scouting-nederland-footer-butterfly-shadow {
+	animation-play-state: paused;
+}
+
+@keyframes scouting-nederland-footer-butterfly-flight {
+
+	from {
+		left: -100px;
+	}
+
+	to {
+		left: calc(100% + 100px);
+	}
+}
+
+@keyframes scouting-nederland-footer-butterfly-float {
+
+	50% {
+		transform: rotateX(50deg) rotateY(20deg) rotateZ(-50deg) translateY(-30px);
+	}
+}
+
+@keyframes scouting-nederland-footer-butterfly-left {
+
+	from {
+		transform: rotateY(-20deg);
+	}
+
+	to {
+		transform: rotateY(90deg);
+	}
+}
+
+@keyframes scouting-nederland-footer-butterfly-right {
+
+	from {
+		transform: rotateY(200deg);
+	}
+
+	to {
+		transform: rotateY(90deg);
+	}
+}
+
+@keyframes scouting-nederland-footer-butterfly-shadow {
+
+	50% {
+		transform: scale(0.7);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.scouting-nederland-footer-butterfly.scouting-nederland-motion-reveal .scouting-nederland-footer-butterfly-flight,
+	.scouting-nederland-footer-butterfly.scouting-nederland-motion-reveal .scouting-nederland-footer-butterfly-body,
+	.scouting-nederland-footer-butterfly.scouting-nederland-motion-reveal .scouting-nederland-footer-butterfly-wing,
+	.scouting-nederland-footer-butterfly.scouting-nederland-motion-reveal .scouting-nederland-footer-butterfly-shadow {
+		animation: none;
+	}
 }

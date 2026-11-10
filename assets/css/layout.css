@@ -16,6 +16,27 @@
 	min-height: 300px;
 }
 
+.scouting-nederland-layout-motion-reveal {
+	animation: scouting-nederland-layout-motion-reveal 1.2s ease-out;
+}
+
+.scouting-nederland-layout-motion-reveal:focus-within {
+	animation: none;
+}
+
+@keyframes scouting-nederland-layout-motion-reveal {
+
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 /*
  * Cross-template showcase skyline.
  *
@@ -87,6 +108,7 @@ body.scouting-nederland-utilities-main-purple .scouting-nederland-layout-showcas
 
 @media (prefers-reduced-motion: reduce) {
 
+	.scouting-nederland-layout-motion-reveal,
 	.scouting-nederland-layout-showcase-skyline::before {
 		animation: none;
 	}

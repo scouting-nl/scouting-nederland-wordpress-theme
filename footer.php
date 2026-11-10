@@ -6,7 +6,23 @@
  */
 
 ?><footer class="scouting-nederland-footer-root" role="contentinfo">
-	<div class="scouting-nederland-footer-grass" aria-hidden="true"></div>
+	<div class="scouting-nederland-footer-grass" aria-hidden="true">
+		<div id="scouting-nederland-footer-butterfly" class="scouting-nederland-footer-butterfly">
+			<span class="scouting-nederland-footer-butterfly-flight">
+				<span class="scouting-nederland-footer-butterfly-body">
+					<span class="scouting-nederland-footer-butterfly-wing scouting-nederland-footer-butterfly-wing-left">
+						<span class="scouting-nederland-footer-butterfly-upper"></span>
+						<span class="scouting-nederland-footer-butterfly-lower"></span>
+					</span>
+					<span class="scouting-nederland-footer-butterfly-wing scouting-nederland-footer-butterfly-wing-right">
+						<span class="scouting-nederland-footer-butterfly-upper"></span>
+						<span class="scouting-nederland-footer-butterfly-lower"></span>
+					</span>
+				</span>
+				<span class="scouting-nederland-footer-butterfly-shadow"></span>
+			</span>
+		</div>
+	</div>
 
 	<div class="scouting-nederland-footer-main">
 		<div class="scouting-nederland-footer-inner">
