@@ -49,7 +49,7 @@ get_header();
 endwhile;
 				the_posts_pagination(); else :
 					?>
-				<p><?php esc_html_e( 'Geen inhoud gevonden.', 'scouting-nederland' ); ?></p><?php endif; ?>
+				<p><?php esc_html_e( 'Geen inhoud gevonden.', 'scouting-nederland-wordpress-theme' ); ?></p><?php endif; ?>
 		</main>
 		<?php get_sidebar(); ?>
 	</div>

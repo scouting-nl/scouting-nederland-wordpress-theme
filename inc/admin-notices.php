@@ -17,10 +17,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 function scouting_nederland_get_plugin_recommendations() {
 	return array(
 		'scouting-openid-connect' => array(
-			'title'              => __( 'Scouting login beschikbaar', 'scouting-nederland' ),
-			'description'        => __( 'Met de optionele plugin Scouting OpenID Connect kunnen gebruikers via Scouting Nederland inloggen. Het theme werkt ook zonder deze plugin.', 'scouting-nederland' ),
-			'install_text'       => __( 'Scouting OpenID Connect installeren', 'scouting-nederland' ),
-			'activate_text'      => __( 'Scouting OpenID Connect activeren', 'scouting-nederland' ),
+			'title'              => __( 'Scouting login beschikbaar', 'scouting-nederland-wordpress-theme' ),
+			'description'        => __( 'Met de optionele plugin Scouting OpenID Connect kunnen gebruikers via Scouting Nederland inloggen. Het theme werkt ook zonder deze plugin.', 'scouting-nederland-wordpress-theme' ),
+			'install_text'       => __( 'Scouting OpenID Connect installeren', 'scouting-nederland-wordpress-theme' ),
+			'activate_text'      => __( 'Scouting OpenID Connect activeren', 'scouting-nederland-wordpress-theme' ),
 			'dismissed_meta_key' => 'scouting_nederland_openid_notice_dismissed',
 		),
 	);
@@ -111,10 +111,10 @@ function scouting_nederland_render_plugin_recommendation_notice( $slug, $recomme
 				<?php echo esc_html( $button_text ); ?>
 			</a>
 			<a class="button button-secondary" href="<?php echo esc_url( 'https://wordpress.org/plugins/' . $slug . '/' ); ?>">
-				<?php esc_html_e( 'Meer informatie', 'scouting-nederland' ); ?>
+				<?php esc_html_e( 'Meer informatie', 'scouting-nederland-wordpress-theme' ); ?>
 			</a>
 			<a class="button button-link" href="<?php echo esc_url( $dismiss_url ); ?>">
-				<?php esc_html_e( 'Niet meer tonen', 'scouting-nederland' ); ?>
+				<?php esc_html_e( 'Niet meer tonen', 'scouting-nederland-wordpress-theme' ); ?>
 			</a>
 		</p>
 	</div>
@@ -140,13 +140,13 @@ add_action( 'admin_notices', 'scouting_nederland_plugin_recommendation_notices' 
  */
 function scouting_nederland_dismiss_plugin_notice() {
 	if ( ! current_user_can( 'edit_theme_options' ) ) {
-		wp_die( esc_html__( 'Je hebt geen rechten om deze melding te verbergen.', 'scouting-nederland' ) );
+		wp_die( esc_html__( 'Je hebt geen rechten om deze melding te verbergen.', 'scouting-nederland-wordpress-theme' ) );
 	}
 
 	$slug            = isset( $_GET['plugin'] ) && is_string( $_GET['plugin'] ) ? sanitize_key( wp_unslash( $_GET['plugin'] ) ) : '';
 	$recommendations = scouting_nederland_get_plugin_recommendations();
 	if ( ! isset( $recommendations[ $slug ] ) ) {
-		wp_die( esc_html__( 'Ongeldige pluginaanbeveling.', 'scouting-nederland' ), '', array( 'response' => 400 ) );
+		wp_die( esc_html__( 'Ongeldige pluginaanbeveling.', 'scouting-nederland-wordpress-theme' ), '', array( 'response' => 400 ) );
 	}
 
 	check_admin_referer( 'scouting_nederland_dismiss_plugin_notice_' . $slug );

@@ -4,9 +4,9 @@ Thank you for helping improve the Scouting Nederland WordPress theme.
 
 ## Where to Contribute
 
-- Report reproducible theme bugs through the [bug report form](https://github.com/scouting-nl/wordpress-theme/issues/new/choose).
-- Ask for help through the [support discussions](https://github.com/scouting-nl/wordpress-theme/discussions/categories/support).
-- Share feature requests and ideas through the [ideas discussions](https://github.com/scouting-nl/wordpress-theme/discussions/categories/ideas).
+- Report reproducible theme bugs through the [bug report form](https://github.com/scouting-nl/scouting-nederland-wordpress-theme/issues/new/choose).
+- Ask for help through the [support discussions](https://github.com/scouting-nl/scouting-nederland-wordpress-theme/discussions/categories/support).
+- Share feature requests and ideas through the [ideas discussions](https://github.com/scouting-nl/scouting-nederland-wordpress-theme/discussions/categories/ideas).
 - Report security vulnerabilities privately according to [SECURITY.md](SECURITY.md). Do not open a public issue or discussion for a suspected vulnerability.
 
 Do not include passwords, API keys, client secrets, access tokens, personal data, or production

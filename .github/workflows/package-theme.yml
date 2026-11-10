@@ -86,7 +86,7 @@ jobs:
             Where-Object { $_.Extension -eq '.php' -or $_.Name -in $rootFiles } |
             Copy-Item -Destination $themeDirectory
 
-          foreach ($directory in @('assets', 'inc', 'parts')) {
+          foreach ($directory in @('assets', 'inc', 'languages', 'parts')) {
             Copy-Item -LiteralPath (Join-Path $env:GITHUB_WORKSPACE $directory) `
               -Destination $themeDirectory -Recurse
           }

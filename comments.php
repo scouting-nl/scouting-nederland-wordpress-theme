@@ -17,7 +17,7 @@ if ( post_password_required() ) {
 			printf(
 				esc_html(
 					/* translators: %s: Number of comments. */
-					_n( '%s reactie', '%s reacties', $scouting_nederland_comment_count, 'scouting-nederland' )
+					_n( '%s reactie', '%s reacties', $scouting_nederland_comment_count, 'scouting-nederland-wordpress-theme' )
 				),
 				esc_html( number_format_i18n( $scouting_nederland_comment_count ) )
 			);
@@ -39,23 +39,23 @@ if ( post_password_required() ) {
 		<?php
 		the_comments_pagination(
 			array(
-				'prev_text' => esc_html__( 'Oudere reacties', 'scouting-nederland' ),
-				'next_text' => esc_html__( 'Nieuwere reacties', 'scouting-nederland' ),
+				'prev_text' => esc_html__( 'Oudere reacties', 'scouting-nederland-wordpress-theme' ),
+				'next_text' => esc_html__( 'Nieuwere reacties', 'scouting-nederland-wordpress-theme' ),
 			)
 		);
 		?>
 	<?php endif; ?>
 
 	<?php if ( ! comments_open() && get_comments_number() ) : ?>
-		<p class="scouting-nederland-comments-closed"><?php esc_html_e( 'Reacties zijn gesloten.', 'scouting-nederland' ); ?></p>
+		<p class="scouting-nederland-comments-closed"><?php esc_html_e( 'Reacties zijn gesloten.', 'scouting-nederland-wordpress-theme' ); ?></p>
 	<?php endif; ?>
 
 	<?php
 	comment_form(
 		array(
 			'class_form'   => 'scouting-nederland-comment-form',
-			'title_reply'  => __( 'Laat een reactie achter', 'scouting-nederland' ),
-			'label_submit' => __( 'Reactie plaatsen', 'scouting-nederland' ),
+			'title_reply'  => __( 'Laat een reactie achter', 'scouting-nederland-wordpress-theme' ),
+			'label_submit' => __( 'Reactie plaatsen', 'scouting-nederland-wordpress-theme' ),
 		)
 	);
 	?>

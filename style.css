@@ -1,6 +1,6 @@
 /*
 Theme Name: Scouting Nederland
-Theme URI: https://github.com/scouting-nl/wordpress-theme
+Theme URI: https://github.com/scouting-nl/scouting-nederland-wordpress-theme
 Description: Classic WordPress theme for Scouting Nederland websites, with responsive layouts, editor styles, widget areas, sliders, and Scouting-specific presentation options.
 Version: 1.0.0
 Author: Scouting Nederland
@@ -11,5 +11,6 @@ Requires at least: 7.0
 Requires PHP: 8.2
 License: GNU General Public License v3.0 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
-Text Domain: scouting-nederland
+Text Domain: scouting-nederland-wordpress-theme
+Domain Path: /languages
 */

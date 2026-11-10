@@ -13,19 +13,19 @@ body:
         This issue form is for reporting bugs only!
 
         For support, please contact [cms@support.scouting.nl](mailto:cms@support.scouting.nl?subject=WordPress%20Scouting%20Theme%20Support).
-        or ask the community on the [support page](https://github.com/scouting-nl/wordpress-theme/discussions/categories/support).
+        or ask the community on the [support page](https://github.com/scouting-nl/scouting-nederland-wordpress-theme/discussions/categories/support).
 
-        If you have a feature or enhancement request, please use the [discussions ideas page](https://github.com/scouting-nl/wordpress-theme/discussions/categories/ideas).
-        If you need help anything else please have a look on our [discussions page](https://github.com/scouting-nl/wordpress-theme/discussions/).
+        If you have a feature or enhancement request, please use the [discussions ideas page](https://github.com/scouting-nl/scouting-nederland-wordpress-theme/discussions/categories/ideas).
+        If you need help anything else please have a look on our [discussions page](https://github.com/scouting-nl/scouting-nederland-wordpress-theme/discussions/).
   - type: checkboxes
     attributes:
       label: Checklist
       options:
-        - label: I'm running the [latest](https://github.com/scouting-nl/wordpress-theme/releases/latest) version of the WordPress Scouting Theme.
+        - label: I'm running the [latest](https://github.com/scouting-nl/scouting-nederland-wordpress-theme/releases/latest) version of the WordPress Scouting Theme.
           required: true
         - label: I checked if there is not a duplicate issue with the same question.
           required: true
-        - label: I have read the [README.md](https://github.com/scouting-nl/wordpress-theme/blob/main/README.md) page.
+        - label: I have read the [README.md](https://github.com/scouting-nl/scouting-nederland-wordpress-theme/blob/main/README.md) page.
           required: true
         - label: This issue is a bug related to the WordPress Scouting Theme.
           required: true

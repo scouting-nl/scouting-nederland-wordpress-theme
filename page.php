@@ -108,7 +108,7 @@ if ( ! $scouting_nederland_is_elementor_page ) {
 					<?php the_posts_pagination(); ?>
 				<?php endif; ?>
 			<?php else : ?>
-				<p><?php esc_html_e( 'Geen inhoud gevonden.', 'scouting-nederland' ); ?></p>
+				<p><?php esc_html_e( 'Geen inhoud gevonden.', 'scouting-nederland-wordpress-theme' ); ?></p>
 			<?php endif; ?>
 		</main>
 		<?php if ( $scouting_nederland_has_sidebar ) : ?>

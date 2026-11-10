@@ -76,6 +76,101 @@ jobs:
             php -l "$file"
           done < <(find . -type f -name '*.php' -not -path './assets/vendor/*' -print0)
 
+  translations:
+    name: Translation freshness
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # 2.40.0
+        with:
+          php-version: "8.2"
+          coverage: none
+          extensions: curl, mbstring
+
+      - name: Install gettext and WP-CLI
+        shell: bash
+        env:
+          WP_CLI_VERSION: "2.12.0"
+          WP_CLI_SHA256: "ce34ddd838f7351d6759068d09793f26755463b4a4610a5a5c0a97b68220d85c"
+        run: |
+          set -euo pipefail
+
+          sudo apt-get update -qq
+          sudo apt-get install --no-install-recommends --yes gettext
+
+          wp_cli="${RUNNER_TEMP}/wp-cli.phar"
+          curl --fail-with-body --location --retry 3 \
+            --output "${wp_cli}" \
+            "https://github.com/wp-cli/wp-cli/releases/download/v${WP_CLI_VERSION}/wp-cli-${WP_CLI_VERSION}.phar"
+          echo "${WP_CLI_SHA256}  ${wp_cli}" | sha256sum --check
+
+      - name: Extract current source messages
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          wp_cli="${RUNNER_TEMP}/wp-cli.phar"
+          work_dir="${RUNNER_TEMP}/theme-translations"
+          mkdir -p "${work_dir}"
+
+          php "${wp_cli}" i18n make-pot . "${work_dir}/messages.pot" \
+            --slug=scouting-nederland-wordpress-theme \
+            --domain=scouting-nederland-wordpress-theme \
+            --exclude=.github,.vscode,assets/vendor,scripts
+
+      - name: Compare source message signatures
+        shell: php {0}
+        env:
+          WP_CLI_PHAR: ${{ runner.temp }}/wp-cli.phar
+          GENERATED_POT: ${{ runner.temp }}/theme-translations/messages.pot
+        run: |
+          <?php
+          require 'phar://' . getenv( 'WP_CLI_PHAR' ) . '/vendor/autoload.php';
+
+          $source = Gettext\Translations::fromPoFile( getenv( 'GENERATED_POT' ) );
+          $files  = array_merge(
+              array( 'languages/scouting-nederland-wordpress-theme.pot' ),
+              glob( 'languages/*.po' )
+          );
+
+          foreach ( $files as $file ) {
+              $catalog = Gettext\Translations::fromPoFile( $file );
+              if ( count( $catalog ) !== count( $source ) ) {
+                throw new RuntimeException( $file . ' has missing or obsolete source messages.' );
+              }
+              foreach ( $source as $message ) {
+                $current = $catalog->find( $message->getContext(), $message->getOriginal() );
+                if ( ! $current || $current->getPlural() !== $message->getPlural() ) {
+                  throw new RuntimeException( $file . ' does not match source message: ' . $message->getOriginal() );
+                }
+              }
+          }
+
+      - name: Check translation catalogs
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          work_dir="${RUNNER_TEMP}/theme-translations"
+
+          for po in languages/*.po; do
+            locale="$(basename "${po}" .po)"
+            msgcmp --no-fuzzy-matching "${po}" "${work_dir}/messages.pot"
+            msgmerge --no-fuzzy-matching --no-wrap \
+              "${po}" "${work_dir}/messages.pot" --output-file="${work_dir}/${locale}.po"
+            msgfmt --check --output-file=/dev/null "${work_dir}/${locale}.po"
+            msgfmt --check --no-hash --statistics \
+              --output-file="${work_dir}/${locale}.mo" "${po}"
+            cmp "languages/${locale}.mo" "${work_dir}/${locale}.mo"
+          done
+
   javascript-coding-standards:
     name: WordPress JavaScript Coding Standards
     runs-on: ubuntu-latest

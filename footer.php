@@ -12,7 +12,7 @@
 		<div class="scouting-nederland-footer-inner">
 			<div>
 				<div class="scouting-nederland-footer-social">
-					<h5><?php esc_html_e( 'Vind Scouting op:', 'scouting-nederland' ); ?></h5>
+					<h5><?php esc_html_e( 'Vind Scouting op:', 'scouting-nederland-wordpress-theme' ); ?></h5>
 					<ul>
 						<?php
 						$socials = array(
@@ -61,7 +61,7 @@
 					<p>
 					<?php
 					/* translators: %s: Association name. */
-					printf( esc_html__( 'Dit is de officiële website van de vereniging %s.', 'scouting-nederland' ), esc_html( get_bloginfo( 'name' ) ) );
+					printf( esc_html__( 'Dit is de officiële website van de vereniging %s.', 'scouting-nederland-wordpress-theme' ), esc_html( get_bloginfo( 'name' ) ) );
 					?>
 					</p>
 				</div>

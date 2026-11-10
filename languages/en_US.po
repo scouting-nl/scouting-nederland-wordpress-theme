@@ -1,0 +1,732 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Scouting Nederland 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/scouting-nl/scouting-nederland-wordpress-theme/issues\n"
+"Last-Translator: Scouting Nederland\n"
+"Language-Team: English\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-10T10:49:50+00:00\n"
+"PO-Revision-Date: 2026-11-10 00:00+0000\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: scouting-nederland-wordpress-theme\n"
+
+#. Theme Name of the theme
+#. Author of the theme
+#: style.css
+#: inc/setup.php:116
+msgid "Scouting Nederland"
+msgstr "Scouting Nederland"
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://github.com/scouting-nl/scouting-nederland-wordpress-theme"
+msgstr "https://github.com/scouting-nl/scouting-nederland-wordpress-theme"
+
+#. Description of the theme
+#: style.css
+msgid "Classic WordPress theme for Scouting Nederland websites, with responsive layouts, editor styles, widget areas, sliders, and Scouting-specific presentation options."
+msgstr "Classic WordPress theme for Scouting Nederland websites, with responsive layouts, editor styles, widget areas, sliders, and Scouting-specific presentation options."
+
+#. Author URI of the theme
+#: style.css
+msgid "https://www.scouting.nl"
+msgstr "https://www.scouting.nl"
+
+#: 404.php:21
+msgid "Oeps, verkeerd gelopen"
+msgstr "Oops, wrong turn"
+
+#: 404.php:24
+msgid "404"
+msgstr "404"
+
+#: 404.php:25
+msgid "Deze pagina is op hike zonder routekaart vertrokken."
+msgstr "This page went hiking without a route map."
+
+#: 404.php:35
+msgid "Zoek op de site…"
+msgstr "Search the site…"
+
+#: 404.php:36
+#: header.php:89
+#: header.php:169
+#: header.php:171
+#: search.php:52
+#: searchform.php:29
+msgid "Zoeken"
+msgstr "Search"
+
+#: 404.php:46
+msgid "Spoor bijster"
+msgstr "Off the trail"
+
+#: 404.php:47
+msgid "We zijn het spoor even kwijt"
+msgstr "We have lost the trail"
+
+#: 404.php:48
+msgid "Misschien heeft een welp de routemarkering omgedraaid, is de kaart natgeregend of ligt deze pagina nog bij het kampvuur. Geen zorgen: we helpen je terug naar het goede pad."
+msgstr "Maybe a Cub Scout turned a trail marker around, the map got soaked, or this page is still by the campfire. No worries: we will help you find your way back."
+
+#: 404.php:51
+msgid "Ga terug naar de homepage en begin opnieuw."
+msgstr "Return to the homepage and start again."
+
+#: 404.php:52
+msgid "Zoek op een onderwerp, pagina of activiteit."
+msgstr "Search for a topic, page, or activity."
+
+#: 404.php:53
+msgid "Of neem contact op met de groep als je iets specifieks zoekt."
+msgstr "Or contact the group if you are looking for something specific."
+
+#: 404.php:57
+#: search.php:146
+msgid "Terug naar home"
+msgstr "Back to home"
+
+#: 404.php:59
+#: header.php:82
+#: header.php:160
+#: header.php:162
+msgid "Contact"
+msgstr "Contact"
+
+#: 404.php:65
+msgid "Verloren voorwerpen"
+msgstr "Lost and found"
+
+#: 404.php:66
+msgid "We hebben al gevonden op het terrein:"
+msgstr "We have already found these around the campsite:"
+
+#: 404.php:68
+msgid "een routekaart zonder route"
+msgstr "a route map without a route"
+
+#: 404.php:69
+msgid "drie marshmallows en een halve pionierpaal"
+msgstr "three marshmallows and half a pioneering pole"
+
+#: 404.php:70
+msgid "een verdwaalde hike-opdracht"
+msgstr "a lost hiking challenge"
+
+#: 404.php:71
+msgid "maar helaas niet deze pagina"
+msgstr "but sadly not this page"
+
+#: archive.php:52
+#: index.php:52
+#: page.php:111
+#: single.php:61
+msgid "Geen inhoud gevonden."
+msgstr "No content found."
+
+#: category.php:40
+msgid "Categorie"
+msgstr "Category"
+
+#: category.php:75
+#: inc/setup.php:135
+msgid "Lees meer"
+msgstr "Read more"
+
+#: category.php:85
+msgid "Vorige"
+msgstr "Previous"
+
+#: category.php:86
+msgid "Volgende"
+msgstr "Next"
+
+#: category.php:93
+msgid "Geen berichten gevonden"
+msgstr "No posts found"
+
+#: category.php:94
+msgid "Er zijn nog geen berichten binnen deze categorie."
+msgstr "There are no posts in this category yet."
+
+#. translators: %s: Number of comments.
+#: comments.php:20
+#, php-format
+msgid "%s reactie"
+msgid_plural "%s reacties"
+msgstr[0] "%s comment"
+msgstr[1] "%s comments"
+
+#: comments.php:42
+msgid "Oudere reacties"
+msgstr "Older comments"
+
+#: comments.php:43
+msgid "Nieuwere reacties"
+msgstr "Newer comments"
+
+#: comments.php:50
+msgid "Reacties zijn gesloten."
+msgstr "Comments are closed."
+
+#: comments.php:57
+msgid "Laat een reactie achter"
+msgstr "Leave a comment"
+
+#: comments.php:58
+msgid "Reactie plaatsen"
+msgstr "Post comment"
+
+#: footer.php:15
+msgid "Vind Scouting op:"
+msgstr "Find Scouting on:"
+
+#. translators: %s: Association name.
+#: footer.php:64
+#, php-format
+msgid "Dit is de officiële website van de vereniging %s."
+msgstr "This is the official website of the association %s."
+
+#: header.php:21
+msgid "Ga naar de inhoud"
+msgstr "Skip to content"
+
+#: header.php:44
+msgid "Hoofdnavigatie"
+msgstr "Main navigation"
+
+#: header.php:74
+#: header.php:150
+#: header.php:152
+msgid "Bellen"
+msgstr "Call"
+
+#: header.php:93
+msgid "Navigatie tonen"
+msgstr "Show navigation"
+
+#: header.php:94
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:117
+msgid "Sluiten"
+msgstr "Close"
+
+#: header.php:132
+msgid "Mobiele navigatie"
+msgstr "Mobile navigation"
+
+#: inc/admin-notices.php:20
+msgid "Scouting login beschikbaar"
+msgstr "Scouting sign-in available"
+
+#: inc/admin-notices.php:21
+msgid "Met de optionele plugin Scouting OpenID Connect kunnen gebruikers via Scouting Nederland inloggen. Het theme werkt ook zonder deze plugin."
+msgstr "The optional Scouting OpenID Connect plugin lets users sign in through Scouting Nederland. The theme also works without this plugin."
+
+#: inc/admin-notices.php:22
+msgid "Scouting OpenID Connect installeren"
+msgstr "Install Scouting OpenID Connect"
+
+#: inc/admin-notices.php:23
+msgid "Scouting OpenID Connect activeren"
+msgstr "Activate Scouting OpenID Connect"
+
+#: inc/admin-notices.php:114
+msgid "Meer informatie"
+msgstr "More information"
+
+#: inc/admin-notices.php:117
+msgid "Niet meer tonen"
+msgstr "Do not show again"
+
+#: inc/admin-notices.php:143
+msgid "Je hebt geen rechten om deze melding te verbergen."
+msgstr "You do not have permission to hide this notice."
+
+#: inc/admin-notices.php:149
+msgid "Ongeldige pluginaanbeveling."
+msgstr "Invalid plugin recommendation."
+
+#: inc/customizer.php:34
+msgid "Scouting Nederland opties"
+msgstr "Scouting Nederland options"
+
+#: inc/customizer.php:66
+msgid "Hoofdkleur"
+msgstr "Primary color"
+
+#: inc/customizer.php:82
+msgid "Steunkleur"
+msgstr "Accent color"
+
+#: inc/customizer.php:98
+msgid "Logo stempel gebruiken"
+msgstr "Use logo stamp"
+
+#: inc/customizer.php:99
+msgid "Toont de stempel/schaduw onder het logo."
+msgstr "Displays the stamp/shadow below the logo."
+
+#: inc/customizer.php:116
+msgid "Header breedte"
+msgstr "Header width"
+
+#: inc/customizer.php:117
+msgid "Smal toont een compacte header met hamburgermenu. Breed gebruikt de volle breedte met een horizontaal menu op desktop. Op tablet en mobiel gebruiken beide een hamburgermenu."
+msgstr "Narrow displays a compact header with a hamburger menu. Wide uses the full width with a horizontal menu on desktop. Both use a hamburger menu on tablets and mobile devices."
+
+#: inc/customizer.php:121
+msgid "Smal"
+msgstr "Narrow"
+
+#: inc/customizer.php:122
+msgid "Breed"
+msgstr "Wide"
+
+#: inc/customizer.php:140
+msgid "Standaard hero-afbeelding"
+msgstr "Default hero image"
+
+#: inc/customizer.php:141
+msgid "Deze afbeelding wordt gebruikt als er geen eigen pagina-afbeelding, slider of hero-widget is ingesteld."
+msgstr "This image is used when no custom page image, slider, or hero widget is set."
+
+#: inc/customizer.php:153
+msgid "Zoekpagina URL"
+msgstr "Search page URL"
+
+#: inc/customizer.php:154
+msgid "Leeg laten gebruikt de standaard WordPress-zoekpagina."
+msgstr "Leave empty to use the default WordPress search page."
+
+#: inc/customizer.php:162
+msgid "Telefoonnummer"
+msgstr "Phone number"
+
+#: inc/customizer.php:163
+msgid "Vul een nummer in om de telefoonknop te gebruiken."
+msgstr "Enter a number to enable the call button."
+
+#: inc/customizer.php:171
+msgid "Contactpagina URL"
+msgstr "Contact page URL"
+
+#: inc/customizer.php:172
+msgid "Vul een link in om de contactknop te gebruiken."
+msgstr "Enter a link to enable the contact button."
+
+#: inc/customizer.php:207
+msgid "Tonen"
+msgstr "Show"
+
+#: inc/customizer.php:225
+msgid "Melding in de header"
+msgstr "Header notice"
+
+#: inc/customizer.php:240
+msgid "Link header melding"
+msgstr "Header notice link"
+
+#: inc/customizer.php:256
+msgid "Standaard lettertype hero-koptekst"
+msgstr "Default hero heading font"
+
+#: inc/customizer.php:257
+msgid "Dit lettertype wordt gebruikt voor hero-koppen, tenzij je op een pagina een afwijkend lettertype kiest."
+msgstr "This font is used for hero headings unless you choose a different font for a page."
+
+#: inc/page-settings.php:20
+msgid "Impact"
+msgstr "Impact"
+
+#: inc/page-settings.php:21
+msgid "Roboto Slab"
+msgstr "Roboto Slab"
+
+#: inc/page-settings.php:22
+msgid "Poppins"
+msgstr "Poppins"
+
+#: inc/page-settings.php:167
+msgid "Pagina weergave"
+msgstr "Page display"
+
+#: inc/page-settings.php:189
+msgid "Standaard hero verbergen"
+msgstr "Hide default hero"
+
+#: inc/page-settings.php:195
+msgid "Paginatitel in hero verbergen"
+msgstr "Hide page title in hero"
+
+#: inc/page-settings.php:201
+msgid "Sidebar verbergen"
+msgstr "Hide sidebar"
+
+#: inc/page-settings.php:207
+msgid "Samenvatting in HERO tonen"
+msgstr "Show excerpt in hero"
+
+#: inc/page-settings.php:209
+msgid "Gebruik het veld Samenvatting in de pagina-editor. De tekst verschijnt onder de HERO-kop als deze optie is ingeschakeld."
+msgstr "Use the Excerpt field in the page editor. The text appears below the hero heading when this option is enabled."
+
+#: inc/page-settings.php:212
+msgid "Lettertype hero-koptekst"
+msgstr "Hero heading font"
+
+#. translators: %s: The default hero font name configured in the Customizer.
+#: inc/page-settings.php:215
+#, php-format
+msgid "Standaard uit Customizer (%s)"
+msgstr "Customizer default (%s)"
+
+#: inc/page-settings.php:222
+msgid "Gebruik deze opties om de standaard hero, de titel-overlay, de sidebar of het lettertype van de hero-koptekst voor deze pagina aan te passen. Een ingestelde slider of video blijft zichtbaar."
+msgstr "Use these options to adjust the default hero, title overlay, sidebar, or hero heading font for this page. Any configured slider or video remains visible."
+
+#: inc/setup.php:77
+msgid "Hoofdmenu"
+msgstr "Main menu"
+
+#: inc/setup.php:78
+msgid "Footermenu"
+msgstr "Footer menu"
+
+#: inc/setup.php:94
+msgid "Scouting blauw"
+msgstr "Scouting blue"
+
+#: inc/setup.php:101
+msgid "Scouting zwart"
+msgstr "Scouting black"
+
+#: inc/setup.php:123
+msgid "Informatieblok"
+msgstr "Information panel"
+
+#: inc/setup.php:124
+msgid "Een kop, tekst en knop voor belangrijke informatie."
+msgstr "A heading, text, and button for important information."
+
+#: inc/setup.php:129
+msgid "Belangrijke informatie"
+msgstr "Important information"
+
+#: inc/setup.php:132
+msgid "Voeg hier een korte toelichting toe voor bezoekers van de website."
+msgstr "Add a short explanation for website visitors here."
+
+#: inc/setup.php:173
+msgid "Hero"
+msgstr "Hero"
+
+#: inc/setup.php:174
+msgid "Featured A"
+msgstr "Featured A"
+
+#: inc/setup.php:175
+msgid "Featured B"
+msgstr "Featured B"
+
+#: inc/setup.php:176
+msgid "Featured C"
+msgstr "Featured C"
+
+#: inc/setup.php:177
+msgid "Showcase"
+msgstr "Showcase"
+
+#: inc/setup.php:178
+msgid "Nieuws"
+msgstr "News"
+
+#: inc/setup.php:179
+msgid "Breadcrumbs"
+msgstr "Breadcrumbs"
+
+#: inc/setup.php:180
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: inc/setup.php:181
+msgid "Bottom A"
+msgstr "Bottom A"
+
+#: inc/setup.php:182
+msgid "Bottom B"
+msgstr "Bottom B"
+
+#: inc/setup.php:183
+msgid "Footer"
+msgstr "Footer"
+
+#: inc/setup.php:184
+msgid "Footer - Partners van Scouting"
+msgstr "Footer - Scouting partners"
+
+#. translators: %s: Widget area name.
+#: inc/setup.php:192
+#, php-format
+msgid "Widgetgebied %s"
+msgstr "Widget area %s"
+
+#: inc/slider.php:32
+msgid "Slider"
+msgstr "Slider"
+
+#: inc/slider.php:64
+msgid "Slider tonen"
+msgstr "Show slider"
+
+#: inc/slider.php:69
+msgid "Type"
+msgstr "Type"
+
+#: inc/slider.php:70
+msgid "video"
+msgstr "video"
+
+#: inc/slider.php:72
+msgid "slider"
+msgstr "slider"
+
+#: inc/slider.php:76
+msgid "Video"
+msgstr "Video"
+
+#: inc/slider.php:92
+msgid "Video kiezen uit bibliotheek"
+msgstr "Choose video from library"
+
+#: inc/slider.php:93
+msgid "Video verwijderen"
+msgstr "Remove video"
+
+#: inc/slider.php:96
+msgid "Kop over video"
+msgstr "Heading over video"
+
+#: inc/slider.php:97
+#: inc/slider.php:137
+#: inc/slider.php:157
+msgid "Plaats hier ..."
+msgstr "Enter text here ..."
+
+#: inc/slider.php:98
+msgid "Deze tekst wordt over de videobanner heen getoond."
+msgstr "This text is displayed over the video banner."
+
+#: inc/slider.php:102
+msgid "Of externe video URL"
+msgstr "Or an external video URL"
+
+#: inc/slider.php:104
+msgid "Gebruik dit alleen voor bijvoorbeeld YouTube/Vimeo. Een gekozen bibliotheekvideo heeft voorrang."
+msgstr "Use this only for services such as YouTube or Vimeo. A selected library video takes priority."
+
+#: inc/slider.php:112
+msgid "Achtergrondbeeld"
+msgstr "Background image"
+
+#: inc/slider.php:113
+msgid "Kop"
+msgstr "Heading"
+
+#: inc/slider.php:134
+#: inc/slider.php:154
+msgid "Afbeelding kiezen"
+msgstr "Choose image"
+
+#: inc/slider.php:139
+#: inc/slider.php:159
+msgid "Verwijder"
+msgstr "Remove"
+
+#: inc/slider.php:145
+msgid "Slide toevoegen"
+msgstr "Add slide"
+
+#: inc/slider.php:322
+msgid "Diavoorstelling pauzeren"
+msgstr "Pause slideshow"
+
+#: inc/slider.php:322
+msgid "Diavoorstelling starten"
+msgstr "Start slideshow"
+
+#: parts/content.php:11
+msgid "Bericht"
+msgstr "Post"
+
+#: parts/content.php:17
+msgid "door"
+msgstr "by"
+
+#: parts/content.php:33
+msgid "Categorieën:"
+msgstr "Categories:"
+
+#: parts/content.php:39
+msgid "Tags:"
+msgstr "Tags:"
+
+#: parts/content.php:46
+msgid "Berichtnavigatie"
+msgstr "Post navigation"
+
+#: parts/content.php:48
+msgid "Vorige bericht"
+msgstr "Previous post"
+
+#: parts/content.php:51
+msgid "Volgende bericht"
+msgstr "Next post"
+
+#: search.php:21
+#: searchform.php:32
+msgid "Zoeken op de site"
+msgstr "Search the site"
+
+#: search.php:25
+msgid "Waar wil je naar zoeken?"
+msgstr "What would you like to search for?"
+
+#: search.php:26
+msgid "Vul een zoekterm in, dan pakken we de kaart erbij."
+msgstr "Enter a search term and we will get the map out."
+
+#. translators: %s: Search query.
+#: search.php:32
+#, php-format
+msgid "Zoekresultaten voor: %s"
+msgstr "Search results for: %s"
+
+#: search.php:37
+msgid "We hebben de kaart erbij gepakt en dit spoor gevonden."
+msgstr "We checked the map and found this trail."
+
+#: search.php:39
+msgid "Geen spoor gevonden"
+msgstr "No trail found"
+
+#: search.php:40
+msgid "Deze zoekterm zit waarschijnlijk nog ergens in de hike-rugzak. Probeer eens een andere route."
+msgstr "This search term is probably still somewhere in the hiking backpack. Try another route."
+
+#: search.php:51
+msgid "Waar ben je naar op zoek?"
+msgstr "What are you looking for?"
+
+#: search.php:66
+msgid "Nog geen zoekterm ingevuld"
+msgstr "No search term entered yet"
+
+#: search.php:67
+msgid "Typ bijvoorbeeld een activiteit, speltak, verhuur of contactpersoon in het zoekveld hierboven."
+msgstr "Enter an activity, age section, rental, or contact person in the search field above."
+
+#. translators: %s: Number of search results.
+#: search.php:76
+#, php-format
+msgid "%s resultaat gevonden"
+msgid_plural "%s resultaten gevonden"
+msgstr[0] "%s result found"
+msgstr[1] "%s results found"
+
+#: search.php:103
+msgid "Pagina"
+msgstr "Page"
+
+#: search.php:120
+msgid "Bekijk resultaat"
+msgstr "View result"
+
+#: search.php:132
+msgid "‹ Vorige"
+msgstr "‹ Previous"
+
+#: search.php:133
+msgid "Volgende ›"
+msgstr "Next ›"
+
+#: search.php:143
+msgid "De route loopt hier dood"
+msgstr "This route is a dead end"
+
+#: search.php:144
+msgid "Controleer je zoekterm, probeer een korter woord of ga terug naar de homepage."
+msgstr "Check your search term, try a shorter word, or return to the homepage."
+
+#: searchform.php:26
+msgid "Zoeken op de site…"
+msgstr "Search the site…"
+
+#: searchform.php:33
+msgid "Zoeken naar:"
+msgstr "Search for:"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Scouting groen"
+msgstr "Scouting green"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Scouting blauw"
+msgstr "Scouting blue"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Scouting blauw accent"
+msgstr "Scouting blue accent"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Scouting geel"
+msgstr "Scouting yellow"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Scouting rood"
+msgstr "Scouting red"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Scouting oranje"
+msgstr "Scouting orange"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Scouting paars"
+msgstr "Scouting purple"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Zwart"
+msgstr "Black"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Wit"
+msgstr "White"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Poppins"
+msgstr "Poppins"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Roboto Slab"
+msgstr "Roboto Slab"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Impact"
+msgstr "Impact"

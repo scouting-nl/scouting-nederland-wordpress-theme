@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<a class="scouting-nederland-base-skip-link screen-reader-text" href="#scouting-nederland-layout-content"><?php esc_html_e( 'Ga naar de inhoud', 'scouting-nederland' ); ?></a>
+<a class="scouting-nederland-base-skip-link screen-reader-text" href="#scouting-nederland-layout-content"><?php esc_html_e( 'Ga naar de inhoud', 'scouting-nederland-wordpress-theme' ); ?></a>
 <?php
 $navclass   = 'narrow' === get_theme_mod( 'scouting_nederland_header_width', 'narrow' )
 	? 'scouting-nederland-header-desktop-collapsed'
@@ -41,7 +41,7 @@ $header_search_url = get_theme_mod( 'scouting_nederland_search_url', '' );
 // An empty custom URL opens WordPress's own search page, including its search form.
 $header_search_url = $header_search_url ? $header_search_url : add_query_arg( 's', '', home_url( '/' ) );
 ?>
-<nav id="scouting-nederland-header-nav" class="navbar navbar-light fixed-top <?php echo esc_attr( $navclass ); ?>" aria-label="<?php esc_attr_e( 'Hoofdnavigatie', 'scouting-nederland' ); ?>">
+<nav id="scouting-nederland-header-nav" class="navbar navbar-light fixed-top <?php echo esc_attr( $navclass ); ?>" aria-label="<?php esc_attr_e( 'Hoofdnavigatie', 'scouting-nederland-wordpress-theme' ); ?>">
 	<div class="container-fluid">
 		<div id="scouting-nederland-header-logo" class="navbar-brand me-auto">
 			<a class="<?php echo esc_attr( $logoclass ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -71,7 +71,7 @@ $header_search_url = $header_search_url ? $header_search_url : add_query_arg( 's
 			$phone = get_theme_mod( 'scouting_nederland_phone', '' );
 			if ( $header_show_phone && $phone ) :
 				?>
-				<a href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', $phone ) ); ?>" class="scouting-nederland-header-action-phone" aria-label="<?php esc_attr_e( 'Bellen', 'scouting-nederland' ); ?>">
+				<a href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', $phone ) ); ?>" class="scouting-nederland-header-action-phone" aria-label="<?php esc_attr_e( 'Bellen', 'scouting-nederland-wordpress-theme' ); ?>">
 					<i class="fas fa-phone scouting-nederland-header-action-icon" aria-hidden="true"></i>
 				</a>
 			<?php endif; ?>
@@ -79,19 +79,19 @@ $header_search_url = $header_search_url ? $header_search_url : add_query_arg( 's
 			$contact = get_theme_mod( 'scouting_nederland_contact_url', '' );
 			if ( $header_show_contact && $contact ) :
 				?>
-				<a href="<?php echo esc_url( $contact ); ?>" class="scouting-nederland-header-action-contact" aria-label="<?php esc_attr_e( 'Contact', 'scouting-nederland' ); ?>">
+				<a href="<?php echo esc_url( $contact ); ?>" class="scouting-nederland-header-action-contact" aria-label="<?php esc_attr_e( 'Contact', 'scouting-nederland-wordpress-theme' ); ?>">
 					<i class="fas fa-envelope scouting-nederland-header-action-icon" aria-hidden="true"></i>
 				</a>
 			<?php endif; ?>
 			<?php
 			if ( $header_show_search ) :
 				?>
-				<a href="<?php echo esc_url( $header_search_url ); ?>" class="scouting-nederland-header-action-search" aria-label="<?php esc_attr_e( 'Zoeken', 'scouting-nederland' ); ?>">
+				<a href="<?php echo esc_url( $header_search_url ); ?>" class="scouting-nederland-header-action-search" aria-label="<?php esc_attr_e( 'Zoeken', 'scouting-nederland-wordpress-theme' ); ?>">
 					<i class="fas fa-search scouting-nederland-header-action-icon" aria-hidden="true"></i>
 				</a>
 			<?php endif; ?>
-			<button class="navbar-toggler navbar-toggler-right scouting-nederland-header-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#scouting-nederland-header-offcanvas" aria-controls="scouting-nederland-header-offcanvas" aria-label="<?php esc_attr_e( 'Navigatie tonen', 'scouting-nederland' ); ?>">
-				<i id="scouting-nederland-header-toggle-icon" class="fa fa-bars scouting-nederland-header-action-icon" aria-hidden="true"></i><span class="scouting-nederland-header-menu-label"><?php esc_html_e( 'Menu', 'scouting-nederland' ); ?></span>
+			<button class="navbar-toggler navbar-toggler-right scouting-nederland-header-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#scouting-nederland-header-offcanvas" aria-controls="scouting-nederland-header-offcanvas" aria-label="<?php esc_attr_e( 'Navigatie tonen', 'scouting-nederland-wordpress-theme' ); ?>">
+				<i id="scouting-nederland-header-toggle-icon" class="fa fa-bars scouting-nederland-header-action-icon" aria-hidden="true"></i><span class="scouting-nederland-header-menu-label"><?php esc_html_e( 'Menu', 'scouting-nederland-wordpress-theme' ); ?></span>
 			</button>
 		</div>
 
@@ -114,7 +114,7 @@ $header_search_url = $header_search_url ? $header_search_url : add_query_arg( 's
 <div class="offcanvas offcanvas-end scouting-nederland-header-offcanvas" tabindex="-1" id="scouting-nederland-header-offcanvas" aria-labelledby="scouting-nederland-header-offcanvas-label">
 	<div class="offcanvas-header">
 		<h5 class="offcanvas-title" id="scouting-nederland-header-offcanvas-label"><?php bloginfo( 'name' ); ?></h5>
-		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="<?php esc_attr_e( 'Sluiten', 'scouting-nederland' ); ?>"></button>
+		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="<?php esc_attr_e( 'Sluiten', 'scouting-nederland-wordpress-theme' ); ?>"></button>
 	</div>
 	<div class="offcanvas-body">
 		<?php
@@ -129,7 +129,7 @@ $header_search_url = $header_search_url ? $header_search_url : add_query_arg( 's
 			</div>
 		<?php endif; ?>
 
-		<nav class="scouting-nederland-header-offcanvas-menu" aria-label="<?php esc_attr_e( 'Mobiele navigatie', 'scouting-nederland' ); ?>">
+		<nav class="scouting-nederland-header-offcanvas-menu" aria-label="<?php esc_attr_e( 'Mobiele navigatie', 'scouting-nederland-wordpress-theme' ); ?>">
 			<?php
 			wp_nav_menu(
 				array(
@@ -147,9 +147,9 @@ $header_search_url = $header_search_url ? $header_search_url : add_query_arg( 's
 			$mobile_phone = get_theme_mod( 'scouting_nederland_phone', '' );
 			if ( $header_show_phone && $mobile_phone ) :
 				?>
-				<a href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', $mobile_phone ) ); ?>" class="scouting-nederland-header-action-phone" aria-label="<?php esc_attr_e( 'Bellen', 'scouting-nederland' ); ?>">
+				<a href="tel:<?php echo esc_attr( preg_replace( '/\s+/', '', $mobile_phone ) ); ?>" class="scouting-nederland-header-action-phone" aria-label="<?php esc_attr_e( 'Bellen', 'scouting-nederland-wordpress-theme' ); ?>">
 					<i class="fas fa-phone" aria-hidden="true"></i>
-					<span><?php esc_html_e( 'Bellen', 'scouting-nederland' ); ?></span>
+					<span><?php esc_html_e( 'Bellen', 'scouting-nederland-wordpress-theme' ); ?></span>
 				</a>
 			<?php endif; ?>
 
@@ -157,18 +157,18 @@ $header_search_url = $header_search_url ? $header_search_url : add_query_arg( 's
 			$mobile_contact = get_theme_mod( 'scouting_nederland_contact_url', '' );
 			if ( $header_show_contact && $mobile_contact ) :
 				?>
-				<a href="<?php echo esc_url( $mobile_contact ); ?>" class="scouting-nederland-header-action-contact" aria-label="<?php esc_attr_e( 'Contact', 'scouting-nederland' ); ?>">
+				<a href="<?php echo esc_url( $mobile_contact ); ?>" class="scouting-nederland-header-action-contact" aria-label="<?php esc_attr_e( 'Contact', 'scouting-nederland-wordpress-theme' ); ?>">
 					<i class="fas fa-envelope" aria-hidden="true"></i>
-					<span><?php esc_html_e( 'Contact', 'scouting-nederland' ); ?></span>
+					<span><?php esc_html_e( 'Contact', 'scouting-nederland-wordpress-theme' ); ?></span>
 				</a>
 			<?php endif; ?>
 
 			<?php
 			if ( $header_show_search ) :
 				?>
-				<a href="<?php echo esc_url( $header_search_url ); ?>" class="scouting-nederland-header-action-search" aria-label="<?php esc_attr_e( 'Zoeken', 'scouting-nederland' ); ?>">
+				<a href="<?php echo esc_url( $header_search_url ); ?>" class="scouting-nederland-header-action-search" aria-label="<?php esc_attr_e( 'Zoeken', 'scouting-nederland-wordpress-theme' ); ?>">
 					<i class="fas fa-search" aria-hidden="true"></i>
-					<span><?php esc_html_e( 'Zoeken', 'scouting-nederland' ); ?></span>
+					<span><?php esc_html_e( 'Zoeken', 'scouting-nederland-wordpress-theme' ); ?></span>
 				</a>
 			<?php endif; ?>
 		</div>

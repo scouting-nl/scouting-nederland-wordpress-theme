@@ -1,10 +1,10 @@
 blank_issues_enabled: false
 contact_links:
   - name: I have a question or need support, ask the community.
-    url: https://github.com/scouting-nl/wordpress-theme/discussions/categories/support
+    url: https://github.com/scouting-nl/scouting-nederland-wordpress-theme/discussions/categories/support
     about: Let the people of our community help you.
   - name: If you have a feature request or idea.
-    url: https://github.com/scouting-nl/wordpress-theme/discussions/categories/ideas
+    url: https://github.com/scouting-nl/scouting-nederland-wordpress-theme/discussions/categories/ideas
     about: Show your feature request or idea to our community.
   - name: Offical Scouting Nederland website
     url: https://www.scouting.nl/

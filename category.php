@@ -37,7 +37,7 @@ get_header();
 		<div class="row"><div class="col-sm-12"><?php dynamic_sidebar( 'breadcrumbs' ); ?></div></div><?php endif; ?>
 
 	<header class="scouting-nederland-category-header">
-		<p class="scouting-nederland-category-header-eyebrow"><?php esc_html_e( 'Categorie', 'scouting-nederland' ); ?></p>
+		<p class="scouting-nederland-category-header-eyebrow"><?php esc_html_e( 'Categorie', 'scouting-nederland-wordpress-theme' ); ?></p>
 		<h1 class="scouting-nederland-category-header-title"><?php single_cat_title(); ?></h1>
 		<?php if ( category_description() ) : ?>
 			<div class="scouting-nederland-category-header-description"><?php echo wp_kses_post( category_description() ); ?></div>
@@ -72,7 +72,7 @@ get_header();
 							if ( $summary ) :
 								?>
 								<p><?php echo esc_html( $summary ); ?></p><?php endif; ?>
-							<a class="scouting-nederland-category-card-readmore" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Lees meer', 'scouting-nederland' ); ?> ›</a>
+							<a class="scouting-nederland-category-card-readmore" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Lees meer', 'scouting-nederland-wordpress-theme' ); ?> ›</a>
 						</div>
 					</article>
 				<?php endwhile; ?>
@@ -82,16 +82,16 @@ get_header();
 				the_posts_pagination(
 					array(
 						'mid_size'  => 1,
-						'prev_text' => __( 'Vorige', 'scouting-nederland' ),
-						'next_text' => __( 'Volgende', 'scouting-nederland' ),
+						'prev_text' => __( 'Vorige', 'scouting-nederland-wordpress-theme' ),
+						'next_text' => __( 'Volgende', 'scouting-nederland-wordpress-theme' ),
 					)
 				);
 				?>
 			</div>
 		<?php else : ?>
 			<section class="scouting-nederland-category-empty">
-				<h2><?php esc_html_e( 'Geen berichten gevonden', 'scouting-nederland' ); ?></h2>
-				<p><?php esc_html_e( 'Er zijn nog geen berichten binnen deze categorie.', 'scouting-nederland' ); ?></p>
+				<h2><?php esc_html_e( 'Geen berichten gevonden', 'scouting-nederland-wordpress-theme' ); ?></h2>
+				<p><?php esc_html_e( 'Er zijn nog geen berichten binnen deze categorie.', 'scouting-nederland-wordpress-theme' ); ?></p>
 			</section>
 		<?php endif; ?>
 	</main>
