@@ -61,7 +61,7 @@ core compatibility exceptions.
 ## Assets and Releases
 
 - Do not reformat or alter files under `assets/vendor/` unless explicitly requested.
-- Review [`PUBLISHING.md`](../PUBLISHING.md) before changing bundled fonts, images, screenshots, or release contents. Redistribution, privacy, and licensing restrictions apply to some assets.
+- Review the asset licensing notes in [`readme.txt`](../readme.txt) before changing bundled fonts, images, screenshots, or release contents. Redistribution, privacy, and licensing restrictions apply to some assets.
 - Build distributable archives with [`scripts/build-zip.ps1`](../scripts/build-zip.ps1). Generated ZIP files belong in `scripts/` and must not be committed.
 - Keep release packages limited to distributable theme files. Do not include development tooling, `.github/`, `.vscode/`, or the separate companion plugin.
 

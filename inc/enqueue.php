@@ -67,6 +67,15 @@ function scouting_nederland_assets() {
 
 	wp_enqueue_script( 'bootstrap-bundle', get_theme_file_uri( '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' ), array(), '5.3.8', true );
 	wp_enqueue_script( 'scouting-nederland-console', get_theme_file_uri( '/assets/js/console.js' ), array(), SCOUTING_NEDERLAND_VERSION, true );
+	wp_localize_script(
+		'scouting-nederland-console',
+		'scoutingNederlandConsoleL10n',
+		array(
+			'heading'   => __( 'Hey detective! Can you see what is happening under the hood?', 'scouting-nederland-wordpress-theme' ),
+			'message'   => __( 'At Scouting, we build great websites, portals, and systems for more than a hundred thousand members. We are always looking for enthusiastic volunteer IT specialists, developers, and tech enthusiasts to help us build!', 'scouting-nederland-wordpress-theme' ),
+			'vacancies' => __( 'View IT vacancies:', 'scouting-nederland-wordpress-theme' ),
+		)
+	);
 	wp_enqueue_script( 'scouting-nederland-motion', get_theme_file_uri( '/assets/js/motion.js' ), array(), SCOUTING_NEDERLAND_VERSION, true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

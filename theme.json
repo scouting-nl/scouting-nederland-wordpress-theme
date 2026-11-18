@@ -21,47 +21,47 @@
       "defaultPalette": false,
       "palette": [
         {
-          "name": "Scouting groen",
+          "name": "Scouting green",
           "slug": "scouting-groen",
           "color": "#00a551"
         },
         {
-          "name": "Scouting blauw",
+          "name": "Scouting blue",
           "slug": "scouting-blauw",
           "color": "#0066b2"
         },
         {
-          "name": "Scouting blauw accent",
+          "name": "Scouting blue accent",
           "slug": "scouting-blauw-accent",
           "color": "#006fb9"
         },
         {
-          "name": "Scouting geel",
+          "name": "Scouting yellow",
           "slug": "scouting-geel",
           "color": "#fcdd17"
         },
         {
-          "name": "Scouting rood",
+          "name": "Scouting red",
           "slug": "scouting-rood",
           "color": "#e1071a"
         },
         {
-          "name": "Scouting oranje",
+          "name": "Scouting orange",
           "slug": "scouting-oranje",
           "color": "#f2940a"
         },
         {
-          "name": "Scouting paars",
+          "name": "Scouting purple",
           "slug": "scouting-paars",
           "color": "#921c7f"
         },
         {
-          "name": "Zwart",
+          "name": "Black",
           "slug": "zwart",
           "color": "#000000"
         },
         {
-          "name": "Wit",
+          "name": "White",
           "slug": "wit",
           "color": "#ffffff"
         }

@@ -16,7 +16,7 @@ logs in issues, pull requests, or discussions.
 
 Use a WordPress test installation with content and accounts that you are authorized to use.
 Refer to [README.md](../README.md) for installation and supported WordPress and PHP versions.
-Review [PUBLISHING.md](../PUBLISHING.md) for the current release blockers and validation checklist.
+Review the asset licensing notes in [readme.txt](../readme.txt) before preparing a release.
 
 Native PHP templates live in the repository root, reusable template parts in `parts/`, PHP modules
 in `inc/`, and frontend assets in `assets/`.

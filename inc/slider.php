@@ -61,7 +61,7 @@ function scouting_nederland_render_slider_metabox( $post ) {
 		<p>
 			<label>
 				<input type="checkbox" name="scouting_nederland_slider_show" value="1" <?php checked( $show, '1' ); ?>>
-				<?php esc_html_e( 'Slider tonen', 'scouting-nederland-wordpress-theme' ); ?>
+				<?php esc_html_e( 'Show slider', 'scouting-nederland-wordpress-theme' ); ?>
 			</label>
 		</p>
 
@@ -89,19 +89,19 @@ function scouting_nederland_render_slider_metabox( $post ) {
 				?>
 			</div>
 			<p>
-				<button type="button" class="button" id="scouting-nederland-admin-slider-select-video"><?php esc_html_e( 'Video kiezen uit bibliotheek', 'scouting-nederland-wordpress-theme' ); ?></button>
-				<button type="button" class="button-link-delete" id="scouting-nederland-admin-slider-remove-video"><?php esc_html_e( 'Video verwijderen', 'scouting-nederland-wordpress-theme' ); ?></button>
+				<button type="button" class="button" id="scouting-nederland-admin-slider-select-video"><?php esc_html_e( 'Choose video from library', 'scouting-nederland-wordpress-theme' ); ?></button>
+				<button type="button" class="button-link-delete" id="scouting-nederland-admin-slider-remove-video"><?php esc_html_e( 'Remove video', 'scouting-nederland-wordpress-theme' ); ?></button>
 			</p>
 			<p>
-				<label for="scouting_nederland_slider_video_heading"><strong><?php esc_html_e( 'Kop over video', 'scouting-nederland-wordpress-theme' ); ?></strong></label><br>
-				<input type="text" id="scouting_nederland_slider_video_heading" name="scouting_nederland_slider_video_heading" value="<?php echo esc_attr( $video_heading ); ?>" class="widefat" placeholder="<?php esc_attr_e( 'Plaats hier ...', 'scouting-nederland-wordpress-theme' ); ?>">
-				<span class="description"><?php esc_html_e( 'Deze tekst wordt over de videobanner heen getoond.', 'scouting-nederland-wordpress-theme' ); ?></span>
+				<label for="scouting_nederland_slider_video_heading"><strong><?php esc_html_e( 'Heading over video', 'scouting-nederland-wordpress-theme' ); ?></strong></label><br>
+				<input type="text" id="scouting_nederland_slider_video_heading" name="scouting_nederland_slider_video_heading" value="<?php echo esc_attr( $video_heading ); ?>" class="widefat" placeholder="<?php esc_attr_e( 'Enter text here ...', 'scouting-nederland-wordpress-theme' ); ?>">
+				<span class="description"><?php esc_html_e( 'This text is displayed over the video banner.', 'scouting-nederland-wordpress-theme' ); ?></span>
 			</p>
 
 			<p>
-				<label for="scouting_nederland_slider_video"><strong><?php esc_html_e( 'Of externe video URL', 'scouting-nederland-wordpress-theme' ); ?></strong></label><br>
+				<label for="scouting_nederland_slider_video"><strong><?php esc_html_e( 'Or an external video URL', 'scouting-nederland-wordpress-theme' ); ?></strong></label><br>
 				<input type="url" id="scouting_nederland_slider_video" name="scouting_nederland_slider_video" value="<?php echo esc_attr( $video ); ?>" class="widefat" placeholder="https://...">
-				<span class="description"><?php esc_html_e( 'Gebruik dit alleen voor bijvoorbeeld YouTube/Vimeo. Een gekozen bibliotheekvideo heeft voorrang.', 'scouting-nederland-wordpress-theme' ); ?></span>
+				<span class="description"><?php esc_html_e( 'Use this only for services such as YouTube or Vimeo. A selected library video takes priority.', 'scouting-nederland-wordpress-theme' ); ?></span>
 			</p>
 		</div>
 
@@ -109,8 +109,8 @@ function scouting_nederland_render_slider_metabox( $post ) {
 			<thead>
 				<tr>
 					<th style="width:40px;"></th>
-					<th style="width:220px;"><?php esc_html_e( 'Achtergrondbeeld', 'scouting-nederland-wordpress-theme' ); ?></th>
-					<th><?php esc_html_e( 'Kop', 'scouting-nederland-wordpress-theme' ); ?></th>
+					<th style="width:220px;"><?php esc_html_e( 'Background image', 'scouting-nederland-wordpress-theme' ); ?></th>
+					<th><?php esc_html_e( 'Heading', 'scouting-nederland-wordpress-theme' ); ?></th>
 					<th style="width:90px;"></th>
 				</tr>
 			</thead>
@@ -131,18 +131,18 @@ function scouting_nederland_render_slider_metabox( $post ) {
 									?>
 									<img src="<?php echo esc_url( $preview ); ?>" alt="" style="max-width:120px;height:auto;"><?php endif; ?>
 							</div>
-							<button type="button" class="button scouting-nederland-admin-slider-select-image"><?php esc_html_e( 'Afbeelding kiezen', 'scouting-nederland-wordpress-theme' ); ?></button>
+							<button type="button" class="button scouting-nederland-admin-slider-select-image"><?php esc_html_e( 'Choose image', 'scouting-nederland-wordpress-theme' ); ?></button>
 						</td>
 						<td>
-							<input type="text" class="widefat" name="scouting_nederland_slides[<?php echo esc_attr( $index ); ?>][heading]" value="<?php echo esc_attr( $heading ); ?>" placeholder="<?php esc_attr_e( 'Plaats hier ...', 'scouting-nederland-wordpress-theme' ); ?>">
+							<input type="text" class="widefat" name="scouting_nederland_slides[<?php echo esc_attr( $index ); ?>][heading]" value="<?php echo esc_attr( $heading ); ?>" placeholder="<?php esc_attr_e( 'Enter text here ...', 'scouting-nederland-wordpress-theme' ); ?>">
 						</td>
-						<td><button type="button" class="button-link-delete scouting-nederland-admin-slider-remove-slide"><?php esc_html_e( 'Verwijder', 'scouting-nederland-wordpress-theme' ); ?></button></td>
+						<td><button type="button" class="button-link-delete scouting-nederland-admin-slider-remove-slide"><?php esc_html_e( 'Remove', 'scouting-nederland-wordpress-theme' ); ?></button></td>
 					</tr>
 				<?php endforeach; ?>
 			</tbody>
 		</table>
 		<p>
-			<button type="button" class="button button-primary" id="scouting-nederland-admin-slider-add-slide"><?php esc_html_e( 'Slide toevoegen', 'scouting-nederland-wordpress-theme' ); ?></button>
+			<button type="button" class="button button-primary" id="scouting-nederland-admin-slider-add-slide"><?php esc_html_e( 'Add slide', 'scouting-nederland-wordpress-theme' ); ?></button>
 		</p>
 
 		<script type="text/html" id="scouting-nederland-admin-slider-template">
@@ -151,12 +151,12 @@ function scouting_nederland_render_slider_metabox( $post ) {
 				<td>
 					<input type="hidden" class="scouting-nederland-admin-slider-image-id" name="scouting_nederland_slides[__INDEX__][image_id]" value="">
 					<div class="scouting-nederland-admin-slider-preview"></div>
-					<button type="button" class="button scouting-nederland-admin-slider-select-image"><?php esc_html_e( 'Afbeelding kiezen', 'scouting-nederland-wordpress-theme' ); ?></button>
+					<button type="button" class="button scouting-nederland-admin-slider-select-image"><?php esc_html_e( 'Choose image', 'scouting-nederland-wordpress-theme' ); ?></button>
 				</td>
 				<td>
-					<input type="text" class="widefat" name="scouting_nederland_slides[__INDEX__][heading]" value="" placeholder="<?php esc_attr_e( 'Plaats hier ...', 'scouting-nederland-wordpress-theme' ); ?>">
+					<input type="text" class="widefat" name="scouting_nederland_slides[__INDEX__][heading]" value="" placeholder="<?php esc_attr_e( 'Enter text here ...', 'scouting-nederland-wordpress-theme' ); ?>">
 				</td>
-				<td><button type="button" class="button-link-delete scouting-nederland-admin-slider-remove-slide"><?php esc_html_e( 'Verwijder', 'scouting-nederland-wordpress-theme' ); ?></button></td>
+				<td><button type="button" class="button-link-delete scouting-nederland-admin-slider-remove-slide"><?php esc_html_e( 'Remove', 'scouting-nederland-wordpress-theme' ); ?></button></td>
 			</tr>
 		</script>
 	</div>
@@ -229,6 +229,16 @@ function scouting_nederland_admin_slider_assets( $hook ) {
 	}
 	wp_enqueue_media();
 	wp_enqueue_script( 'scouting-nederland-admin-slider', get_template_directory_uri() . '/assets/js/admin-slider.js', array( 'media-views' ), SCOUTING_NEDERLAND_VERSION, true );
+	wp_localize_script(
+		'scouting-nederland-admin-slider',
+		'scoutingNederlandSliderL10n',
+		array(
+			'chooseImage' => __( 'Choose image', 'scouting-nederland-wordpress-theme' ),
+			'useImage'    => __( 'Use image', 'scouting-nederland-wordpress-theme' ),
+			'chooseVideo' => __( 'Choose video', 'scouting-nederland-wordpress-theme' ),
+			'useVideo'    => __( 'Use video', 'scouting-nederland-wordpress-theme' ),
+		)
+	);
 }
 add_action( 'admin_enqueue_scripts', 'scouting_nederland_admin_slider_assets' );
 
@@ -319,7 +329,7 @@ function scouting_nederland_render_home_slider( $post_id = null ) {
 		echo '</div>';
 	}
 	if ( count( $rendered_slides ) > 1 ) {
-		echo '<button type="button" class="scouting-nederland-homepage-slider-toggle" aria-pressed="false" aria-label="' . esc_attr__( 'Diavoorstelling pauzeren', 'scouting-nederland-wordpress-theme' ) . '" data-pause-label="' . esc_attr__( 'Diavoorstelling pauzeren', 'scouting-nederland-wordpress-theme' ) . '" data-play-label="' . esc_attr__( 'Diavoorstelling starten', 'scouting-nederland-wordpress-theme' ) . '">';
+		echo '<button type="button" class="scouting-nederland-homepage-slider-toggle" aria-pressed="false" aria-label="' . esc_attr__( 'Pause slideshow', 'scouting-nederland-wordpress-theme' ) . '" data-pause-label="' . esc_attr__( 'Pause slideshow', 'scouting-nederland-wordpress-theme' ) . '" data-play-label="' . esc_attr__( 'Start slideshow', 'scouting-nederland-wordpress-theme' ) . '">';
 		echo '<i class="fas fa-pause" aria-hidden="true"></i>';
 		echo '</button>';
 	}

@@ -23,14 +23,14 @@ $scouting_nederland_search_button_class = ! empty( $scouting_nederland_search_ar
 	: 'scouting-nederland-search-form-button';
 $scouting_nederland_search_placeholder  = ! empty( $scouting_nederland_search_args['placeholder'] )
 	? $scouting_nederland_search_args['placeholder']
-	: __( 'Zoeken op de site…', 'scouting-nederland-wordpress-theme' );
+	: __( 'Search the site…', 'scouting-nederland-wordpress-theme' );
 $scouting_nederland_search_button_label = ! empty( $scouting_nederland_search_args['button_label'] )
 	? $scouting_nederland_search_args['button_label']
-	: __( 'Zoeken', 'scouting-nederland-wordpress-theme' );
+	: __( 'Search', 'scouting-nederland-wordpress-theme' );
 $scouting_nederland_search_required     = ! empty( $scouting_nederland_search_args['required'] );
 ?>
-<form id="<?php echo esc_attr( $scouting_nederland_search_form_id ); ?>" method="get" class="<?php echo esc_attr( $scouting_nederland_search_form_class ); ?>" action="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'Zoeken op de site', 'scouting-nederland-wordpress-theme' ); ?>">
-	<label class="screen-reader-text" for="<?php echo esc_attr( $scouting_nederland_search_input_id ); ?>"><?php esc_html_e( 'Zoeken naar:', 'scouting-nederland-wordpress-theme' ); ?></label>
+<form id="<?php echo esc_attr( $scouting_nederland_search_form_id ); ?>" method="get" class="<?php echo esc_attr( $scouting_nederland_search_form_class ); ?>" action="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'Search the site', 'scouting-nederland-wordpress-theme' ); ?>">
+	<label class="screen-reader-text" for="<?php echo esc_attr( $scouting_nederland_search_input_id ); ?>"><?php esc_html_e( 'Search for:', 'scouting-nederland-wordpress-theme' ); ?></label>
 	<input
 		id="<?php echo esc_attr( $scouting_nederland_search_input_id ); ?>"
 		type="search"

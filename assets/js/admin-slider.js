@@ -1,11 +1,16 @@
 /**
  * Initializes the slider controls on the WordPress page-editing screen.
  *
- * @param {Object}   mediaApi       The global WordPress API object.
- * @param {Function} mediaApi.media The factory used to create a media-selection frame.
+ * @param {Object}   mediaApi           The global WordPress API object.
+ * @param {Function} mediaApi.media     The factory used to create a media-selection frame.
+ * @param {Object}   labels             Translated media dialog labels supplied by WordPress.
+ * @param {string}   labels.chooseImage Image dialog title.
+ * @param {string}   labels.useImage    Image confirmation label.
+ * @param {string}   labels.chooseVideo Video dialog title.
+ * @param {string}   labels.useVideo    Video confirmation label.
  * @return {void}
  */
-( function initializeAdminSlider( mediaApi ) {
+( function initializeAdminSlider( mediaApi, labels ) {
 	/**
 	 * Opens a single-selection WordPress media frame.
 	 *
@@ -147,7 +152,7 @@
 		 */
 		function selectSlideImage( row ) {
 			openMediaFrame(
-				{ title: 'Afbeelding kiezen', buttonText: 'Gebruik afbeelding' },
+				{ title: labels.chooseImage, buttonText: labels.useImage },
 				function( attachment ) {
 					row.querySelector( SELECTORS.imageId ).value = attachment.id;
 					renderImagePreview( row.querySelector( SELECTORS.imagePreview ), attachment );
@@ -191,7 +196,7 @@
 		function selectVideo( event ) {
 			event.preventDefault();
 			openMediaFrame(
-				{ title: 'Video kiezen', buttonText: 'Gebruik video', libraryType: 'video' },
+				{ title: labels.chooseVideo, buttonText: labels.useVideo, libraryType: 'video' },
 				function( attachment ) {
 					document.querySelector( SELECTORS.videoId ).value = attachment.id;
 					renderVideoPreview( attachment );
@@ -223,4 +228,4 @@
 	} else {
 		initializeSliderControls();
 	}
-}( globalThis.wp ) );
+}( globalThis.wp, globalThis.scoutingNederlandSliderL10n ) );

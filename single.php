@@ -58,7 +58,7 @@ if ( is_singular( 'post' ) && has_post_thumbnail( get_queried_object_id() ) ) {
 					} endwhile;
 				the_posts_pagination(); else :
 					?>
-				<p><?php esc_html_e( 'Geen inhoud gevonden.', 'scouting-nederland-wordpress-theme' ); ?></p><?php endif; ?>
+				<p><?php esc_html_e( 'No content found.', 'scouting-nederland-wordpress-theme' ); ?></p><?php endif; ?>
 		</main>
 		<?php get_sidebar(); ?>
 	</div>

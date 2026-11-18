@@ -18,26 +18,26 @@ $has_search_query = '' !== $search_query;
 		<div class="container scouting-nederland-search-hero-inner">
 			<span class="scouting-nederland-search-kicker">
 				<i class="fas fa-search" aria-hidden="true"></i>
-				<?php esc_html_e( 'Zoeken op de site', 'scouting-nederland-wordpress-theme' ); ?>
+				<?php esc_html_e( 'Search the site', 'scouting-nederland-wordpress-theme' ); ?>
 			</span>
 
 			<?php if ( ! $has_search_query ) : ?>
-				<h1><?php esc_html_e( 'Waar wil je naar zoeken?', 'scouting-nederland-wordpress-theme' ); ?></h1>
-				<p><?php esc_html_e( 'Vul een zoekterm in, dan pakken we de kaart erbij.', 'scouting-nederland-wordpress-theme' ); ?></p>
+				<h1><?php esc_html_e( 'What would you like to search for?', 'scouting-nederland-wordpress-theme' ); ?></h1>
+				<p><?php esc_html_e( 'Enter a search term and we will get the map out.', 'scouting-nederland-wordpress-theme' ); ?></p>
 			<?php elseif ( have_posts() ) : ?>
 				<h1>
 					<?php
 					printf(
 						/* translators: %s: Search query. */
-						esc_html__( 'Zoekresultaten voor: %s', 'scouting-nederland-wordpress-theme' ),
+						esc_html__( 'Search results for: %s', 'scouting-nederland-wordpress-theme' ),
 						'<span>' . esc_html( $search_query ) . '</span>'
 					);
 					?>
 				</h1>
-				<p><?php esc_html_e( 'We hebben de kaart erbij gepakt en dit spoor gevonden.', 'scouting-nederland-wordpress-theme' ); ?></p>
+				<p><?php esc_html_e( 'We checked the map and found this trail.', 'scouting-nederland-wordpress-theme' ); ?></p>
 			<?php else : ?>
-				<h1><?php esc_html_e( 'Geen spoor gevonden', 'scouting-nederland-wordpress-theme' ); ?></h1>
-				<p><?php esc_html_e( 'Deze zoekterm zit waarschijnlijk nog ergens in de hike-rugzak. Probeer eens een andere route.', 'scouting-nederland-wordpress-theme' ); ?></p>
+				<h1><?php esc_html_e( 'No trail found', 'scouting-nederland-wordpress-theme' ); ?></h1>
+				<p><?php esc_html_e( 'This search term is probably still somewhere in the hiking backpack. Try another route.', 'scouting-nederland-wordpress-theme' ); ?></p>
 			<?php endif; ?>
 
 			<?php
@@ -48,8 +48,8 @@ $has_search_query = '' !== $search_query;
 					'input_id'     => 'scouting-nederland-search-field',
 					'input_class'  => 'scouting-nederland-search-form-input',
 					'button_class' => 'scouting-nederland-search-form-button',
-					'placeholder'  => __( 'Waar ben je naar op zoek?', 'scouting-nederland-wordpress-theme' ),
-					'button_label' => __( 'Zoeken', 'scouting-nederland-wordpress-theme' ),
+					'placeholder'  => __( 'What are you looking for?', 'scouting-nederland-wordpress-theme' ),
+					'button_label' => __( 'Search', 'scouting-nederland-wordpress-theme' ),
 					'required'     => true,
 				)
 			);
@@ -63,8 +63,8 @@ $has_search_query = '' !== $search_query;
 				<div class="scouting-nederland-search-empty-icon">
 					<i class="fas fa-compass" aria-hidden="true"></i>
 				</div>
-				<h2><?php esc_html_e( 'Nog geen zoekterm ingevuld', 'scouting-nederland-wordpress-theme' ); ?></h2>
-				<p><?php esc_html_e( 'Typ bijvoorbeeld een activiteit, speltak, verhuur of contactpersoon in het zoekveld hierboven.', 'scouting-nederland-wordpress-theme' ); ?></p>
+				<h2><?php esc_html_e( 'No search term entered yet', 'scouting-nederland-wordpress-theme' ); ?></h2>
+				<p><?php esc_html_e( 'Enter an activity, age section, rental, or contact person in the search field above.', 'scouting-nederland-wordpress-theme' ); ?></p>
 			</div>
 		<?php elseif ( have_posts() ) : ?>
 			<div class="scouting-nederland-search-count">
@@ -73,7 +73,7 @@ $has_search_query = '' !== $search_query;
 				printf(
 					esc_html(
 						/* translators: %s: Number of search results. */
-						_n( '%s resultaat gevonden', '%s resultaten gevonden', (int) $wp_query->found_posts, 'scouting-nederland-wordpress-theme' )
+						_n( '%s result found', '%s results found', (int) $wp_query->found_posts, 'scouting-nederland-wordpress-theme' )
 					),
 					esc_html( number_format_i18n( (int) $wp_query->found_posts ) )
 				);
@@ -100,7 +100,7 @@ $has_search_query = '' !== $search_query;
 							<div class="scouting-nederland-search-card-meta">
 								<?php
 								$result_type_object = get_post_type_object( get_post_type() );
-								echo esc_html( $result_type_object ? $result_type_object->labels->singular_name : __( 'Pagina', 'scouting-nederland-wordpress-theme' ) );
+								echo esc_html( $result_type_object ? $result_type_object->labels->singular_name : __( 'Page', 'scouting-nederland-wordpress-theme' ) );
 								?>
 								<?php if ( 'page' !== get_post_type() && get_the_date() ) : ?>
 									<span aria-hidden="true">•</span>
@@ -117,7 +117,7 @@ $has_search_query = '' !== $search_query;
 							</div>
 
 							<a class="scouting-nederland-search-card-link" href="<?php the_permalink(); ?>">
-								<?php esc_html_e( 'Bekijk resultaat', 'scouting-nederland-wordpress-theme' ); ?> <span aria-hidden="true">›</span>
+								<?php esc_html_e( 'View result', 'scouting-nederland-wordpress-theme' ); ?> <span aria-hidden="true">›</span>
 							</a>
 						</div>
 					</article>
@@ -129,8 +129,8 @@ $has_search_query = '' !== $search_query;
 				the_posts_pagination(
 					array(
 						'mid_size'  => 1,
-						'prev_text' => __( '‹ Vorige', 'scouting-nederland-wordpress-theme' ),
-						'next_text' => __( 'Volgende ›', 'scouting-nederland-wordpress-theme' ),
+						'prev_text' => __( '‹ Previous', 'scouting-nederland-wordpress-theme' ),
+						'next_text' => __( 'Next ›', 'scouting-nederland-wordpress-theme' ),
 					)
 				);
 				?>
@@ -140,10 +140,10 @@ $has_search_query = '' !== $search_query;
 				<div class="scouting-nederland-search-empty-icon">
 					<i class="fas fa-map-signs" aria-hidden="true"></i>
 				</div>
-				<h2><?php esc_html_e( 'De route loopt hier dood', 'scouting-nederland-wordpress-theme' ); ?></h2>
-				<p><?php esc_html_e( 'Controleer je zoekterm, probeer een korter woord of ga terug naar de homepage.', 'scouting-nederland-wordpress-theme' ); ?></p>
+				<h2><?php esc_html_e( 'This route is a dead end', 'scouting-nederland-wordpress-theme' ); ?></h2>
+				<p><?php esc_html_e( 'Check your search term, try a shorter word, or return to the homepage.', 'scouting-nederland-wordpress-theme' ); ?></p>
 				<div class="scouting-nederland-search-empty-actions">
-					<a class="btn scouting-nederland-buttons-button scouting-nederland-buttons-button-blue" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Terug naar home', 'scouting-nederland-wordpress-theme' ); ?></a>
+					<a class="btn scouting-nederland-buttons-button scouting-nederland-buttons-button-blue" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Back to home', 'scouting-nederland-wordpress-theme' ); ?></a>
 				</div>
 			</div>
 		<?php endif; ?>

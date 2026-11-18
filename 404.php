@@ -18,11 +18,11 @@ $hero_url    = get_template_directory_uri() . '/assets/images/default-slide.jpg'
 		<div class="container scouting-nederland-404-hero-inner">
 			<span class="scouting-nederland-404-kicker">
 				<i class="fas fa-map-signs" aria-hidden="true"></i>
-				<?php esc_html_e( 'Oeps, verkeerd gelopen', 'scouting-nederland-wordpress-theme' ); ?>
+				<?php esc_html_e( 'Oops, wrong turn', 'scouting-nederland-wordpress-theme' ); ?>
 			</span>
 
 			<h1><?php esc_html_e( '404', 'scouting-nederland-wordpress-theme' ); ?></h1>
-			<p><?php esc_html_e( 'Deze pagina is op hike zonder routekaart vertrokken.', 'scouting-nederland-wordpress-theme' ); ?></p>
+			<p><?php esc_html_e( 'This page went hiking without a route map.', 'scouting-nederland-wordpress-theme' ); ?></p>
 
 			<?php
 			get_search_form(
@@ -32,8 +32,8 @@ $hero_url    = get_template_directory_uri() . '/assets/images/default-slide.jpg'
 					'input_id'     => 'scouting-nederland-404-search-field',
 					'input_class'  => 'scouting-nederland-search-form-input',
 					'button_class' => 'scouting-nederland-search-form-button',
-					'placeholder'  => __( 'Zoek op de site…', 'scouting-nederland-wordpress-theme' ),
-					'button_label' => __( 'Zoeken', 'scouting-nederland-wordpress-theme' ),
+					'placeholder'  => __( 'Search the site…', 'scouting-nederland-wordpress-theme' ),
+					'button_label' => __( 'Search', 'scouting-nederland-wordpress-theme' ),
 				)
 			);
 			?>
@@ -43,18 +43,18 @@ $hero_url    = get_template_directory_uri() . '/assets/images/default-slide.jpg'
 	<section class="container scouting-nederland-404-content">
 		<div class="scouting-nederland-404-grid">
 			<article class="scouting-nederland-404-card scouting-nederland-404-card-main">
-				<div class="scouting-nederland-404-badge"><i class="fas fa-compass" aria-hidden="true"></i> <?php esc_html_e( 'Spoor bijster', 'scouting-nederland-wordpress-theme' ); ?></div>
-				<h2><?php esc_html_e( 'We zijn het spoor even kwijt', 'scouting-nederland-wordpress-theme' ); ?></h2>
-				<p><?php esc_html_e( 'Misschien heeft een welp de routemarkering omgedraaid, is de kaart natgeregend of ligt deze pagina nog bij het kampvuur. Geen zorgen: we helpen je terug naar het goede pad.', 'scouting-nederland-wordpress-theme' ); ?></p>
+				<div class="scouting-nederland-404-badge"><i class="fas fa-compass" aria-hidden="true"></i> <?php esc_html_e( 'Off the trail', 'scouting-nederland-wordpress-theme' ); ?></div>
+				<h2><?php esc_html_e( 'We have lost the trail', 'scouting-nederland-wordpress-theme' ); ?></h2>
+				<p><?php esc_html_e( 'Maybe a Cub Scout turned a trail marker around, the map got soaked, or this page is still by the campfire. No worries: we will help you find your way back.', 'scouting-nederland-wordpress-theme' ); ?></p>
 
 				<ul class="scouting-nederland-404-tips">
-					<li><i class="fas fa-home" aria-hidden="true"></i><span><?php esc_html_e( 'Ga terug naar de homepage en begin opnieuw.', 'scouting-nederland-wordpress-theme' ); ?></span></li>
-					<li><i class="fas fa-search" aria-hidden="true"></i><span><?php esc_html_e( 'Zoek op een onderwerp, pagina of activiteit.', 'scouting-nederland-wordpress-theme' ); ?></span></li>
-					<li><i class="fas fa-campground" aria-hidden="true"></i><span><?php esc_html_e( 'Of neem contact op met de groep als je iets specifieks zoekt.', 'scouting-nederland-wordpress-theme' ); ?></span></li>
+					<li><i class="fas fa-home" aria-hidden="true"></i><span><?php esc_html_e( 'Return to the homepage and start again.', 'scouting-nederland-wordpress-theme' ); ?></span></li>
+					<li><i class="fas fa-search" aria-hidden="true"></i><span><?php esc_html_e( 'Search for a topic, page, or activity.', 'scouting-nederland-wordpress-theme' ); ?></span></li>
+					<li><i class="fas fa-campground" aria-hidden="true"></i><span><?php esc_html_e( 'Or contact the group if you are looking for something specific.', 'scouting-nederland-wordpress-theme' ); ?></span></li>
 				</ul>
 
 				<div class="scouting-nederland-404-actions">
-					<a class="btn scouting-nederland-buttons-button scouting-nederland-buttons-button-blue" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Terug naar home', 'scouting-nederland-wordpress-theme' ); ?></a>
+					<a class="btn scouting-nederland-buttons-button scouting-nederland-buttons-button-blue" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Back to home', 'scouting-nederland-wordpress-theme' ); ?></a>
 					<?php if ( $contact_url ) : ?>
 						<a class="btn scouting-nederland-buttons-button scouting-nederland-buttons-button-black" href="<?php echo esc_url( $contact_url ); ?>"><?php esc_html_e( 'Contact', 'scouting-nederland-wordpress-theme' ); ?></a>
 					<?php endif; ?>
@@ -62,13 +62,13 @@ $hero_url    = get_template_directory_uri() . '/assets/images/default-slide.jpg'
 			</article>
 
 			<aside class="scouting-nederland-404-card scouting-nederland-404-card-side">
-				<h3><?php esc_html_e( 'Verloren voorwerpen', 'scouting-nederland-wordpress-theme' ); ?></h3>
-				<p class="scouting-nederland-404-small"><?php esc_html_e( 'We hebben al gevonden op het terrein:', 'scouting-nederland-wordpress-theme' ); ?></p>
+				<h3><?php esc_html_e( 'Lost and found', 'scouting-nederland-wordpress-theme' ); ?></h3>
+				<p class="scouting-nederland-404-small"><?php esc_html_e( 'We have already found these around the campsite:', 'scouting-nederland-wordpress-theme' ); ?></p>
 				<ul class="scouting-nederland-404-found">
-					<li><?php esc_html_e( 'een routekaart zonder route', 'scouting-nederland-wordpress-theme' ); ?></li>
-					<li><?php esc_html_e( 'drie marshmallows en een halve pionierpaal', 'scouting-nederland-wordpress-theme' ); ?></li>
-					<li><?php esc_html_e( 'een verdwaalde hike-opdracht', 'scouting-nederland-wordpress-theme' ); ?></li>
-					<li><?php esc_html_e( 'maar helaas niet deze pagina', 'scouting-nederland-wordpress-theme' ); ?></li>
+					<li><?php esc_html_e( 'a route map without a route', 'scouting-nederland-wordpress-theme' ); ?></li>
+					<li><?php esc_html_e( 'three marshmallows and half a pioneering pole', 'scouting-nederland-wordpress-theme' ); ?></li>
+					<li><?php esc_html_e( 'a lost hiking challenge', 'scouting-nederland-wordpress-theme' ); ?></li>
+					<li><?php esc_html_e( 'but sadly not this page', 'scouting-nederland-wordpress-theme' ); ?></li>
 				</ul>
 			</aside>
 		</div>
