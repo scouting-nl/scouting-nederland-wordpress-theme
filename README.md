@@ -133,9 +133,3 @@ Report suspected vulnerabilities privately through the repository's [security po
 
 * English (source language)
 * Dutch (`nl_NL`, bundled translation)
-
-WordPress selects the language using the site language for visitors and the user's language preference in the dashboard. Set the site language under **Settings > General > Site Language**. Saved content, menu names, and settings are not translated or changed.
-
-The `languages/` directory contains the English `scouting-nederland-wordpress-theme.pot` template, the editable Dutch `scouting-nederland-wordpress-theme-nl_NL.po` catalog, and the compiled `scouting-nederland-wordpress-theme-nl_NL.mo` file loaded by WordPress. The theme maps WordPress's locale-only requests to these domain-prefixed filenames without overriding site-wide language packs. English is the fallback language and does not require a separate translation catalog.
-
-The **Translations** workflow checks catalog freshness automatically through **Build and test**. Run **Translations** manually with **update** enabled to download updated POT, PO, and MO files as an artifact. Translate new messages and review fuzzy entries before using the generated files; the workflow never commits changes automatically.
