@@ -37,17 +37,70 @@ jobs:
           PACKAGE_VERSION: ${{ inputs.version }}
         run: |
           $ErrorActionPreference = 'Stop'
+          $repositoryRoot = $env:GITHUB_WORKSPACE
+          $themeSlug = 'scouting-nederland'
 
-          $commitCount = git -C $env:GITHUB_WORKSPACE rev-list --count HEAD
-          if ($LASTEXITCODE -ne 0 -or $commitCount -notmatch '^\d+$') {
-            throw 'Could not determine the Git commit count.'
+          $stylesheet = Get-Content -LiteralPath (Join-Path $repositoryRoot 'style.css') -Raw
+          $versionMatch = [regex]::Match($stylesheet, '(?m)^[ \t]*\*?[ \t]*Version:[ \t]*([A-Za-z0-9][A-Za-z0-9._+-]*)[ \t]*\r?$')
+          if (-not $versionMatch.Success) {
+            throw 'Could not read the theme version from style.css.'
           }
 
-          $zipPath = & (Join-Path $env:GITHUB_WORKSPACE 'scripts\build-zip.ps1') `
-            -OutputDirectory (Join-Path $env:RUNNER_TEMP 'theme-package') `
-            -ReleaseTag $env:PACKAGE_VERSION -CommitCount $commitCount
-          Add-Content -Path $env:GITHUB_OUTPUT -Value "zip-path=$zipPath"
-          Add-Content -Path $env:GITHUB_OUTPUT -Value "zip-name=$(Split-Path -Leaf $zipPath)"
+          $themeVersion = $versionMatch.Groups[1].Value
+          $releaseTag = $env:PACKAGE_VERSION
+          if ($releaseTag -and ($releaseTag -replace '^[vV]', '') -cne $themeVersion) {
+            throw "Release tag '$releaseTag' does not match the theme version '$themeVersion' in style.css."
+          }
+
+          $zipName = if ($releaseTag) {
+            "scouting-nederland-wordpress-theme-$releaseTag.zip"
+          } else {
+            $commitCount = git -C $repositoryRoot rev-list --count HEAD
+            if ($LASTEXITCODE -ne 0 -or $commitCount -notmatch '^\d+$') {
+              throw 'Could not determine the Git commit count.'
+            }
+            "$themeSlug.$themeVersion.$commitCount.zip"
+          }
+
+          $rootFiles = @('style.css', 'theme.json', 'readme.txt', 'screenshot.png', 'LICENSE')
+          $files = @(
+            Get-ChildItem -LiteralPath $repositoryRoot -File |
+              Where-Object { $_.Extension -eq '.php' -or $_.Name -in $rootFiles }
+
+            foreach ($directory in @('assets', 'inc', 'languages', 'parts')) {
+              Get-ChildItem -LiteralPath (Join-Path $repositoryRoot $directory) -File -Recurse
+            }
+          )
+
+          $packageDirectory = Join-Path $env:RUNNER_TEMP 'theme-package'
+          New-Item -ItemType Directory -Path $packageDirectory -Force | Out-Null
+          $zipPath = Join-Path $packageDirectory $zipName
+          if (Test-Path -LiteralPath $zipPath) {
+            Remove-Item -LiteralPath $zipPath -Force
+          }
+
+          Add-Type -AssemblyName System.IO.Compression
+          Add-Type -AssemblyName System.IO.Compression.FileSystem
+          $archive = [System.IO.Compression.ZipFile]::Open($zipPath, [System.IO.Compression.ZipArchiveMode]::Create)
+
+          try {
+            foreach ($file in $files) {
+              $relativePath = $file.FullName.Substring($repositoryRoot.Length).TrimStart([char[]]@('\', '/'))
+              $entryName = "$themeSlug/$($relativePath -replace '\\', '/')"
+              [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile(
+                $archive,
+                $file.FullName,
+                $entryName,
+                [System.IO.Compression.CompressionLevel]::Optimal
+              ) | Out-Null
+            }
+          }
+          finally {
+            $archive.Dispose()
+          }
+
+          Add-Content -LiteralPath $env:GITHUB_OUTPUT -Value "zip-path=$zipPath"
+          Add-Content -LiteralPath $env:GITHUB_OUTPUT -Value "zip-name=$zipName"
 
       - name: Upload theme ZIP
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

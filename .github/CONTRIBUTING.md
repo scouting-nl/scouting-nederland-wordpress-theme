@@ -21,13 +21,9 @@ Review the asset licensing notes in [readme.txt](../readme.txt) before preparing
 Native PHP templates live in the repository root, reusable template parts in `parts/`, PHP modules
 in `inc/`, and frontend assets in `assets/`.
 
-Build a local distribution ZIP with PowerShell:
-
-```powershell
-pwsh -NoProfile -File .\scripts\build-zip.ps1
-```
-
-The ZIP is created in `scripts/`. Do not commit generated archives.
+Download the installable ZIP from the **Build and test** run artifacts.
+The [packaging workflow](workflows/package-theme.yml) also builds the ZIP for tagged releases.
+Do not commit generated archives.
 
 CSS uses the official WordPress Stylelint configuration, including formatting rules. With Node.js
 22.13 or newer, install the pinned tools and format the theme-owned stylesheets:
@@ -83,5 +79,9 @@ created by maintainers from version tags and release packages; contributors shou
 or publish release archives unless requested.
 
 The package version comes from `style.css`. A release tag, with or without a `v` prefix, must
-match that version. Update both changelogs, the stable tag in the readmes, and translation catalog
-headers (including the compiled MO) when bumping the version.
+match that version. The release workflow attaches `scouting-nederland-wordpress-theme-<tag>.zip`,
+using the exact tag, for example `scouting-nederland-wordpress-theme-1.0.1.zip`. Use this asset
+rather than GitHub's automatically generated source code ZIP to install the theme.
+
+Update both changelogs, the stable tag in the readmes, and translation catalog headers (including
+the compiled MO) when bumping the version.
