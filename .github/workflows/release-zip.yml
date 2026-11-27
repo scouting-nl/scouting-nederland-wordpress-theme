@@ -26,8 +26,9 @@ jobs:
       - name: Download theme package
         uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
-          name: ${{ needs.package.outputs.artifact-name }}
+          name: ${{ needs.package.outputs.zip-name }}
           path: ${{ runner.temp }}/theme-artifact
+          skip-decompress: true
 
       - name: Attach zip to release
         shell: bash
@@ -35,13 +36,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           RELEASE_TAG: ${{ github.ref_name }}
-          THEME_PACKAGE_DIR: ${{ runner.temp }}/theme-artifact
-          ZIP_PATH: ${{ runner.temp }}/${{ needs.package.outputs.zip-name }}
+          ZIP_PATH: ${{ runner.temp }}/theme-artifact/${{ needs.package.outputs.zip-name }}
         run: |
           set -euo pipefail
-
-          cd "${THEME_PACKAGE_DIR}"
-          zip -q -r "${ZIP_PATH}" scouting-nederland-wordpress-theme
 
           if gh release view "${RELEASE_TAG}" --json id >/dev/null 2>&1; then
             gh release upload "${RELEASE_TAG}" "${ZIP_PATH}" --clobber
