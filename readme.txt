@@ -49,10 +49,7 @@ The page template contains presentation adjustments for pages built with Element
 == Changelog ==
 
 = 1.0.0 =
-* Initial classic-theme release with responsive templates and Customizer settings.
-* Slider and page-level display settings.
-* Block editor styling, theme.json settings and a reusable block pattern.
-* WordPress comments, search and Elementor-related presentation adjustments.
+* Initial theme release.
 
 == Resources ==
 
