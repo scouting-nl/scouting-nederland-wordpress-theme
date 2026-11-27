@@ -1,0 +1,115 @@
+<?php
+/**
+ * Displays the site footer.
+ *
+ * @package Scouting_Nederland
+ */
+
+?><footer class="scouting-nederland-footer-root" role="contentinfo">
+	<div class="scouting-nederland-footer-grass" aria-hidden="true">
+		<div id="scouting-nederland-footer-butterfly" class="scouting-nederland-footer-butterfly">
+			<span class="scouting-nederland-footer-butterfly-flight">
+				<span class="scouting-nederland-footer-butterfly-body">
+					<span class="scouting-nederland-footer-butterfly-wing scouting-nederland-footer-butterfly-wing-left">
+						<span class="scouting-nederland-footer-butterfly-upper"></span>
+						<span class="scouting-nederland-footer-butterfly-lower"></span>
+					</span>
+					<span class="scouting-nederland-footer-butterfly-wing scouting-nederland-footer-butterfly-wing-right">
+						<span class="scouting-nederland-footer-butterfly-upper"></span>
+						<span class="scouting-nederland-footer-butterfly-lower"></span>
+					</span>
+				</span>
+				<span class="scouting-nederland-footer-butterfly-shadow"></span>
+			</span>
+		</div>
+	</div>
+
+	<div class="scouting-nederland-footer-main">
+		<div class="scouting-nederland-footer-inner">
+			<div>
+				<div class="scouting-nederland-footer-social">
+					<h5><?php esc_html_e( 'Find Scouting on:', 'scouting-nederland-wordpress-theme' ); ?></h5>
+					<ul>
+						<?php
+						$socials = array(
+							'facebook'  => array(
+								'icon'  => 'fab fa-facebook-f',
+								'label' => 'Facebook',
+							),
+							'x'         => array(
+								'icon'  => 'fab fa-x-twitter',
+								'label' => 'X',
+							),
+							'linkedin'  => array(
+								'icon'  => 'fab fa-linkedin-in',
+								'label' => 'LinkedIn',
+							),
+							'youtube'   => array(
+								'icon'  => 'fab fa-youtube',
+								'label' => 'YouTube',
+							),
+							'instagram' => array(
+								'icon'  => 'fab fa-instagram',
+								'label' => 'Instagram',
+							),
+							'tiktok'    => array(
+								'icon'  => 'fab fa-tiktok',
+								'label' => 'TikTok',
+							),
+						);
+						foreach ( $socials as $network => $data ) :
+							$url = get_theme_mod( 'scouting_nederland_' . $network . '_url', '' );
+							if ( ! $url ) {
+								continue;
+							}
+							?>
+							<li>
+								<a href="<?php echo esc_url( $url ); ?>" aria-label="<?php echo esc_attr( $data['label'] ); ?>">
+									<i class="<?php echo esc_attr( $data['icon'] ); ?>" aria-hidden="true"></i>
+								</a>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
+
+				<div class="scouting-nederland-footer-copyright">
+					<p>Copyright &copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?></p>
+					<p>
+					<?php
+					/* translators: %s: Association name. */
+					printf( esc_html__( 'This is the official website of the association %s.', 'scouting-nederland-wordpress-theme' ), esc_html( get_bloginfo( 'name' ) ) );
+					?>
+					</p>
+				</div>
+			</div>
+
+			<?php if ( is_active_sidebar( 'footer-partners' ) ) : ?>
+				<div class="scouting-nederland-footer-partners-widget-area">
+					<?php dynamic_sidebar( 'footer-partners' ); ?>
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
+
+	<?php if ( has_nav_menu( 'footer' ) ) : ?>
+		<div class="scouting-nederland-footer-bottom">
+			<div class="scouting-nederland-footer-bottom-inner">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'footer',
+						'container'      => false,
+						'menu_class'     => 'scouting-nederland-footer-menu',
+						'fallback_cb'    => '__return_false',
+						'depth'          => 1,
+					)
+				);
+				?>
+			</div>
+		</div>
+	<?php endif; ?>
+</footer>
+
+<?php wp_footer(); ?>
+</body></html>
+

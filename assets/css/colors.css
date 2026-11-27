@@ -1,0 +1,527 @@
+
+
+h1 {
+	color: var(--scouting-nederland-main-color) !important;
+}
+
+a {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+.scouting-nederland-volunteers,
+.bg-success {
+	background-color: var(--scouting-nederland-main-color) !important;
+}
+
+.text-success,
+.h1 {
+	color: var(--scouting-nederland-main-color) !important;
+}
+
+.scouting-nederland-vacancy-card {
+	border-color: var(--scouting-nederland-main-color) !important;
+}
+
+.scouting-nederland-news-grid h3 {
+	background-color: var(--scouting-nederland-main-color) !important;
+}
+
+.scouting-nederland-home-content h2,
+.scouting-nederland-featured-style h2,
+.scouting-nederland-featured-item h2,
+.scouting-nederland-block-news > h2,
+.scouting-nederland-block-callout h2,
+.scouting-nederland-block-two-columns h2,
+.scouting-nederland-news-style > h2,
+.scouting-nederland-vacancy-card h2 {
+	color: var(--scouting-nederland-main-color) !important;
+}
+
+.scouting-nederland-home-content hr {
+	border-top-color: var(--scouting-nederland-main-color) !important;
+}
+
+.scouting-nederland-mobile-nav a,
+.scouting-nederland-mobile-icons a {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body .scouting-nederland-mobile-offcanvas a,
+body .scouting-nederland-mobile-offcanvas button,
+body .scouting-nederland-mobile-offcanvas i,
+body .scouting-nederland-mobile-nav a,
+body .scouting-nederland-mobile-icons a,
+body .scouting-nederland-mobile-icons i {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+.scouting-nederland-block-callout.scouting-nederland-callout-style {
+	background-color: var(--scouting-nederland-main-color) !important;
+}
+
+.bottom-b .moduletable {
+	border-color: var(--scouting-nederland-main-color) !important;
+}
+
+.scouting-nederland-news-style .scouting-nederland-more-news {
+	background-color: var(--scouting-nederland-support-color) !important;
+}
+
+.scouting-nederland-news-style .gb-news-items > a {
+	color: var(--scouting-nederland-main-color) !important;
+}
+
+body .scouting-nederland-mobile-offcanvas .fa,
+body .scouting-nederland-mobile-offcanvas .fas {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body.mgroen .showcase-skyline::before,
+body.green-main .showcase-skyline::before,
+body.mgroen .scouting-nederland-volunteers::before,
+body.green-main .scouting-nederland-volunteers::before {
+	background-image: url(../images/skyline-groen.png) !important;
+}
+
+body.mblauw .showcase-skyline::before,
+body.blue-main .showcase-skyline::before,
+body.mblauw .scouting-nederland-volunteers::before,
+body.blue-main .scouting-nederland-volunteers::before {
+	background-image: url(../images/skyline-blauw.png) !important;
+}
+
+body.mgeel .showcase-skyline::before,
+body.yellow-main .showcase-skyline::before,
+body.mgeel .scouting-nederland-volunteers::before,
+body.yellow-main .scouting-nederland-volunteers::before {
+	background-image: url(../images/skyline-geel.png) !important;
+}
+
+body.mrood .showcase-skyline::before,
+body.red-main .showcase-skyline::before,
+body.mrood .scouting-nederland-volunteers::before,
+body.red-main .scouting-nederland-volunteers::before {
+	background-image: url(../images/skyline-rood.png) !important;
+}
+
+body.moranje .showcase-skyline::before,
+body.orange-main .showcase-skyline::before,
+body.moranje .scouting-nederland-volunteers::before,
+body.orange-main .scouting-nederland-volunteers::before {
+	background-image: url(../images/skyline-oranje.png) !important;
+}
+
+body.mpaars .showcase-skyline::before,
+body.purple-main .showcase-skyline::before,
+body.mpaars .scouting-nederland-volunteers::before,
+body.purple-main .scouting-nederland-volunteers::before {
+	background-image: url(../images/skyline-paars.png) !important;
+}
+
+body.mgeel .scouting-nederland-news-grid h3,
+body.yellow-main .scouting-nederland-news-grid h3 {
+	color: #fff !important;
+}
+
+body .scouting-nederland-mobile-offcanvas a:hover {
+	color: var(--scouting-nederland-support-color) !important;
+	opacity: 0.85;
+}
+
+.scouting-nederland-news-style .gb-news-items > .scouting-nederland-news-heading-link {
+	color: var(--scouting-nederland-main-color) !important;
+}
+
+.wp-block-button.is-style-scouting-nederland-blue .wp-block-button__link,
+.scouting-nederland-news-style .gb-news-items .meer-nieuws {
+	background-color: var(--scouting-nederland-support-color) !important;
+}
+
+.scouting-nederland-news-style .gb-news-items .news-item h5 {
+	background-color: var(--scouting-nederland-main-color) !important;
+}
+
+.scouting-nederland-featured-style .scouting-nederland-quicklink-list a:hover,
+.scouting-nederland-news-style .gb-news-items > a:hover {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body.mgroen .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.green-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
+	background-image: url(../images/skyline-groen.png) !important;
+}
+
+body.mblauw .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.blue-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
+	background-image: url(../images/skyline-blauw.png) !important;
+}
+
+body.mgeel .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.yellow-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
+	background-image: url(../images/skyline-geel.png) !important;
+}
+
+body.mrood .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.red-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
+	background-image: url(../images/skyline-rood.png) !important;
+}
+
+body.moranje .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.orange-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
+	background-image: url(../images/skyline-oranje.png) !important;
+}
+
+body.mpaars .scouting-nederland-block-callout.scouting-nederland-callout-style::before,
+body.purple-main .scouting-nederland-block-callout.scouting-nederland-callout-style::before {
+	background-image: url(../images/skyline-paars.png) !important;
+}
+
+.scouting-nederland-news-style .gb-news-items .news-item .lees-meer {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+.scouting-nederland-news-style .gb-news-items > .scouting-nederland-news-heading-link:hover {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+.scouting-nederland-news-style .gb-news-items .news-item .lees-meer:hover {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+#scouting-nederland-footer {
+	background-color: var(--scouting-nederland-main-color) !important;
+}
+
+#scouting-nederland-buttons a,
+#scouting-nederland-headermessage a {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body #scouting-nederland-headermessage,
+body #scouting-nederland-buttons {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body #scouting-nederland-headermessage {
+	color: var(--wp--preset--color--scouting-rood) !important;
+}
+
+body #scouting-nederland-headermessage a,
+body #scouting-nederland-headermessage i,
+body #scouting-nederland-buttons a,
+body #scouting-nederland-buttons button,
+body #scouting-nederland-buttons i {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body #scouting-nederland-buttons svg,
+body #scouting-nederland-buttons svg * {
+	color: var(--scouting-nederland-support-color) !important;
+	fill: var(--scouting-nederland-support-color) !important;
+	stroke: var(--scouting-nederland-support-color) !important;
+}
+
+body #scouting-nederland-headermessage a,
+body #scouting-nederland-headermessage i {
+	color: var(--wp--preset--color--scouting-rood) !important;
+}
+
+#scouting-nederland-footer .scouting-nederland-footer-main {
+	background-color: var(--scouting-nederland-main-color) !important;
+}
+
+#scouting-nederland-buttons .scouting-nederland-fa-icon,
+#scouting-nederland-buttons .navbar-toggler {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+#scouting-nederland-buttons a:hover,
+#scouting-nederland-buttons a:focus {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body #scouting-nederland-headermessage .fa,
+body #scouting-nederland-headermessage .fas,
+body #scouting-nederland-nav .dropdown-item,
+body #scouting-nederland-buttons .navbar-toggler,
+body #scouting-nederland-buttons .scouting-nederland-menu-label,
+body #scouting-nederland-buttons .fa,
+body #scouting-nederland-buttons .fas,
+body #scouting-nederland-buttons .far,
+body #scouting-nederland-buttons .fab,
+body #scouting-nederland-buttons .scouting-nederland-fa-icon,
+body #scouting-nederland-buttons .scouting-nederland-icon,
+body.scouting-nederland-header-wide #scouting-nederland-headermessage,
+body.scouting-nederland-header-wide #scouting-nederland-buttons,
+body.scouting-nederland-header-narrow #scouting-nederland-headermessage,
+body.scouting-nederland-header-narrow #scouting-nederland-buttons {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body #scouting-nederland-buttons .scouting-nederland-svg-icon,
+body #scouting-nederland-buttons .scouting-nederland-svg-icon * {
+	color: var(--scouting-nederland-support-color) !important;
+	fill: var(--scouting-nederland-support-color) !important;
+	stroke: var(--scouting-nederland-support-color) !important;
+}
+
+body #scouting-nederland-headermessage .fa,
+body #scouting-nederland-headermessage .fas,
+body.scouting-nederland-header-wide #scouting-nederland-headermessage,
+body.scouting-nederland-header-narrow #scouting-nederland-headermessage {
+	color: var(--wp--preset--color--scouting-rood) !important;
+}
+
+#scouting-nederland-nav .navbar-nav > li > a {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+#scouting-nederland-nav .navbar-nav > li::after {
+	background-color: var(--scouting-nederland-main-color) !important;
+}
+
+body #scouting-nederland-nav .dropdown-menu a,
+body #scouting-nederland-nav .sub-menu a {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body #scouting-nederland-buttons a:hover,
+body #scouting-nederland-buttons button:hover {
+	color: var(--scouting-nederland-support-color) !important;
+	opacity: 0.85;
+}
+
+body #scouting-nederland-nav .dropdown-menu a,
+body.scouting-nederland-header-wide #scouting-nederland-headermessage a,
+body.scouting-nederland-header-wide #scouting-nederland-headermessage i,
+body.scouting-nederland-header-wide #scouting-nederland-buttons a,
+body.scouting-nederland-header-wide #scouting-nederland-buttons button,
+body.scouting-nederland-header-wide #scouting-nederland-buttons i,
+body.scouting-nederland-header-narrow #scouting-nederland-headermessage a,
+body.scouting-nederland-header-narrow #scouting-nederland-headermessage i,
+body.scouting-nederland-header-narrow #scouting-nederland-buttons a,
+body.scouting-nederland-header-narrow #scouting-nederland-buttons button,
+body.scouting-nederland-header-narrow #scouting-nederland-buttons i {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body.scouting-nederland-header-wide #scouting-nederland-buttons svg,
+body.scouting-nederland-header-wide #scouting-nederland-buttons svg *,
+body.scouting-nederland-header-narrow #scouting-nederland-buttons svg,
+body.scouting-nederland-header-narrow #scouting-nederland-buttons svg * {
+	color: var(--scouting-nederland-support-color) !important;
+	fill: var(--scouting-nederland-support-color) !important;
+	stroke: var(--scouting-nederland-support-color) !important;
+}
+
+body #scouting-nederland-headermessage a:visited,
+body.scouting-nederland-header-wide #scouting-nederland-headermessage a,
+body.scouting-nederland-header-wide #scouting-nederland-headermessage i,
+body.scouting-nederland-header-narrow #scouting-nederland-headermessage a,
+body.scouting-nederland-header-narrow #scouting-nederland-headermessage i {
+	color: var(--wp--preset--color--scouting-rood) !important;
+}
+
+#scouting-nederland-nav .navbar-nav > li > a::before {
+	background-color: var(--scouting-nederland-main-color) !important;
+}
+
+body #scouting-nederland-nav .navbar-nav > li > a {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body #scouting-nederland-nav .navbar-nav > li::after {
+	background-color: var(--scouting-nederland-main-color) !important;
+}
+
+body #scouting-nederland-nav .navbar-nav > li > a::before {
+	background-color: var(--scouting-nederland-main-color) !important;
+}
+
+#scouting-nederland-nav .navbar-nav > li > .nav-link {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body.mgroen #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.green-main #scouting-nederland-footer .scouting-nederland-footer-grass {
+	background-image: url(../images/grass-groen.png) !important;
+}
+
+body.mblauw #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.blue-main #scouting-nederland-footer .scouting-nederland-footer-grass {
+	background-image: url(../images/grass-blauw.png) !important;
+}
+
+body.mgeel #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.yellow-main #scouting-nederland-footer .scouting-nederland-footer-grass {
+	background-image: url(../images/grass-geel.png) !important;
+}
+
+body.mrood #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.red-main #scouting-nederland-footer .scouting-nederland-footer-grass {
+	background-image: url(../images/grass-rood.png) !important;
+}
+
+body.moranje #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.orange-main #scouting-nederland-footer .scouting-nederland-footer-grass {
+	background-image: url(../images/grass-oranje.png) !important;
+}
+
+body.mpaars #scouting-nederland-footer .scouting-nederland-footer-grass,
+body.purple-main #scouting-nederland-footer .scouting-nederland-footer-grass {
+	background-image: url(../images/grass-paars.png) !important;
+}
+
+body #scouting-nederland-nav .dropdown-menu .dropdown-item,
+body #scouting-nederland-nav .sub-menu .nav-link {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body #scouting-nederland-buttons .navbar-toggler:hover {
+	color: var(--scouting-nederland-support-color) !important;
+	opacity: 0.85;
+}
+
+body.scouting-nederland-header-wide #scouting-nederland-buttons .navbar-toggler,
+body.scouting-nederland-header-wide #scouting-nederland-buttons .scouting-nederland-menu-label,
+body.scouting-nederland-header-wide #scouting-nederland-buttons .fa,
+body.scouting-nederland-header-wide #scouting-nederland-buttons .fas,
+body.scouting-nederland-header-wide #scouting-nederland-buttons .scouting-nederland-fa-icon,
+body.scouting-nederland-header-narrow #scouting-nederland-buttons .navbar-toggler,
+body.scouting-nederland-header-narrow #scouting-nederland-buttons .scouting-nederland-menu-label,
+body.scouting-nederland-header-narrow #scouting-nederland-buttons .fa,
+body.scouting-nederland-header-narrow #scouting-nederland-buttons .fas,
+body.scouting-nederland-header-narrow #scouting-nederland-buttons .scouting-nederland-fa-icon {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body.mblauw.sgroen #scouting-nederland-headermessage,
+body.mblauw.sgroen #scouting-nederland-buttons {
+	color: var(--wp--preset--color--scouting-groen) !important;
+}
+
+body.scouting-nederland-header-wide #scouting-nederland-headermessage .fa,
+body.scouting-nederland-header-wide #scouting-nederland-headermessage .fas,
+body.scouting-nederland-header-narrow #scouting-nederland-headermessage .fa,
+body.scouting-nederland-header-narrow #scouting-nederland-headermessage .fas {
+	color: var(--wp--preset--color--scouting-rood) !important;
+}
+
+body.mblauw.sgroen #scouting-nederland-headermessage {
+	color: var(--wp--preset--color--scouting-rood) !important;
+}
+
+#scouting-nederland-nav .navbar-nav > li > a:hover {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+#scouting-nederland-nav .navbar-nav > li > .nav-link::before {
+	background-color: var(--scouting-nederland-main-color) !important;
+}
+
+body.scouting-nederland-header-wide #scouting-nederland-nav .dropdown-menu a,
+body.scouting-nederland-header-narrow #scouting-nederland-nav .dropdown-menu a {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body #scouting-nederland-nav .dropdown-menu a:hover {
+	color: var(--scouting-nederland-support-color) !important;
+	opacity: 0.85;
+}
+
+body #scouting-nederland-nav .navbar-nav > li > .nav-link,
+body #scouting-nederland-nav .navbar-nav > .menu-item > a {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body.mblauw.sgroen #scouting-nederland-headermessage a,
+body.mblauw.sgroen #scouting-nederland-headermessage i,
+body.mblauw.sgroen #scouting-nederland-buttons a,
+body.mblauw.sgroen #scouting-nederland-buttons button,
+body.mblauw.sgroen #scouting-nederland-buttons i {
+	color: var(--wp--preset--color--scouting-groen) !important;
+}
+
+body.scouting-nederland-header-wide #scouting-nederland-headermessage a:visited,
+body.scouting-nederland-header-narrow #scouting-nederland-headermessage a:visited {
+	color: var(--wp--preset--color--scouting-rood) !important;
+}
+
+body.mblauw.sgroen #scouting-nederland-headermessage a,
+body.mblauw.sgroen #scouting-nederland-headermessage i {
+	color: var(--wp--preset--color--scouting-rood) !important;
+}
+
+body #scouting-nederland-nav .navbar-nav > li > a:hover {
+	color: var(--scouting-nederland-support-color) !important;
+	opacity: 0.85;
+}
+
+body.scouting-nederland-header-wide #scouting-nederland-nav .navbar-nav > li > a,
+body.scouting-nederland-header-narrow #scouting-nederland-nav .navbar-nav > li > a {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body #scouting-nederland-nav .navbar-nav > li > .nav-link::before {
+	background-color: var(--scouting-nederland-main-color) !important;
+}
+
+#scouting-nederland-nav .navbar-nav > li > .nav-link:hover {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body #scouting-nederland-nav .dropdown-menu .dropdown-item:hover {
+	color: var(--scouting-nederland-support-color) !important;
+	opacity: 0.85;
+}
+
+body #scouting-nederland-nav .navbar-nav > .menu-item > .nav-link {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body.mblauw.sgroen #scouting-nederland-buttons .navbar-toggler,
+body.mblauw.sgroen #scouting-nederland-buttons .scouting-nederland-menu-label,
+body.mblauw.sgroen #scouting-nederland-buttons .fa,
+body.mblauw.sgroen #scouting-nederland-buttons .fas,
+body.mblauw.sgroen #scouting-nederland-buttons .scouting-nederland-fa-icon {
+	color: var(--wp--preset--color--scouting-groen) !important;
+}
+
+body.mblauw.sgroen #scouting-nederland-headermessage .fa,
+body.mblauw.sgroen #scouting-nederland-headermessage .fas {
+	color: var(--wp--preset--color--scouting-rood) !important;
+}
+
+body #scouting-nederland-nav .navbar-nav > li > .nav-link:hover {
+	color: var(--scouting-nederland-support-color) !important;
+	opacity: 0.85;
+}
+
+body.scouting-nederland-header-wide #scouting-nederland-nav .navbar-nav > li > .nav-link,
+body.scouting-nederland-header-narrow #scouting-nederland-nav .navbar-nav > li > .nav-link {
+	color: var(--scouting-nederland-support-color) !important;
+}
+
+body.mblauw.sgroen #scouting-nederland-headermessage a:visited {
+	color: var(--wp--preset--color--scouting-rood) !important;
+}
+
+body.mblauw.sgroen #scouting-nederland-nav .navbar-nav > li > a {
+	color: var(--wp--preset--color--scouting-groen) !important;
+}
+
+body.mblauw.sgroen #scouting-nederland-nav .navbar-nav > li::after {
+	background-color: var(--wp--preset--color--scouting-blauw) !important;
+}
+
+body.mblauw.sgroen #scouting-nederland-nav .navbar-nav > li > a::before {
+	background-color: var(--wp--preset--color--scouting-blauw) !important;
+}
+
+body.mblauw.sgroen #scouting-nederland-nav .navbar-nav > li > .nav-link {
+	color: var(--wp--preset--color--scouting-groen) !important;
+}
+
+body.mblauw.sgroen #scouting-nederland-nav .navbar-nav > li > .nav-link::before {
+	background-color: var(--wp--preset--color--scouting-blauw) !important;
+}

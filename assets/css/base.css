@@ -1,0 +1,164 @@
+/* Shared responsive page-width tokens consumed by component owners. */
+:root {
+	--scouting-nederland-page-width: 1140px;
+	--scouting-nederland-page-gutter: 1rem;
+	--wp--preset--font-family--urban-jungle: var(--wp--preset--font-family--impact);
+}
+
+@font-face {
+	font-family: Poppins;
+	src: url(../fonts/poppins-300.woff2) format("woff2");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Poppins;
+	src: url(../fonts/poppins-400.woff2) format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Poppins;
+	src: url(../fonts/poppins-500.woff2) format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Poppins;
+	src: url(../fonts/poppins-600.woff2) format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Poppins;
+	src: url(../fonts/poppins-700.woff2) format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Poppins;
+	src: url(../fonts/poppins-900.woff2) format("woff2");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Roboto Slab";
+	src: url(../fonts/roboto-slab-700.woff2) format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+.has-urban-jungle-font-family {
+	font-family: var(--wp--preset--font-family--impact) !important;
+}
+
+/*
+ * Keyboard skip link.
+ *
+ * WordPress keeps the link visually hidden with screen-reader-text until focus.
+ * Fixed positioning then places it above the fixed header in the viewport.
+ */
+.scouting-nederland-base-skip-link:focus {
+	position: fixed;
+	top: 1rem;
+	left: 1rem;
+	z-index: 1040;
+	width: auto;
+	height: auto;
+	padding: 0.75rem 1rem;
+	color: #fff;
+	background: var(--wp--preset--color--scouting-blauw);
+	/* stylelint-disable-next-line property-no-deprecated -- Reset core clip. */
+	clip: auto;
+	clip-path: none;
+	text-decoration: none;
+}
+
+/* Reserve space for the fixed 84px navigation bar on every template. */
+.scouting-nederland-base-main {
+	padding-top: 84px !important;
+}
+
+/* Shared fallback hero used when a template has no page-specific media. */
+.scouting-nederland-base-default-banner {
+	min-height: 360px;
+	background-position: center;
+	background-size: cover;
+}
+
+/* Fixed-height variant used by archive and singular fallback heroes. */
+.scouting-nederland-base-default-banner-low {
+	height: 350px;
+	background-repeat: no-repeat;
+}
+
+/* Prevent the page shell itself from adding a second fixed-header gap. */
+body .scouting-nederland-base-main {
+	margin-top: 0 !important;
+}
+
+body .scouting-nederland-base-main > *:first-child {
+	margin-top: 0 !important;
+}
+
+/*
+ * Bootstrap widget rows in the shared hero must meet the top edge of the shell.
+ */
+.scouting-nederland-base-widget-hero,
+.scouting-nederland-base-widget-hero .row,
+.scouting-nederland-base-widget-hero .col,
+.scouting-nederland-base-widget-hero .col-sm-12,
+.scouting-nederland-base-widget-hero .col-md-12 {
+	margin-top: 0 !important;
+	padding-top: 0 !important;
+}
+
+/*
+ * Widget authors can provide several heading levels and copy inside this
+ * extension point.
+ */
+.scouting-nederland-base-widget-hero h1,
+.scouting-nederland-base-widget-hero h2,
+.scouting-nederland-base-widget-hero h3,
+.scouting-nederland-base-widget-hero p {
+	color: #fff !important;
+	text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.scouting-nederland-base-widget-hero h1,
+.scouting-nederland-base-widget-hero h2,
+.scouting-nederland-base-widget-hero h3 {
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif !important;
+	letter-spacing: 0.02em;
+}
+
+/*
+ * Runtime hero font state.
+ *
+ * PHP can place the state on a hero ancestor or directly on its h1. :is()
+ * handles both placements without enumerating every hero component.
+ */
+:is(.scouting-nederland-hero-font-impact h1, h1.scouting-nederland-hero-font-impact) {
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif !important;
+}
+
+:is(.scouting-nederland-hero-font-roboto-slab h1, h1.scouting-nederland-hero-font-roboto-slab) {
+	font-family: "Roboto Slab", Georgia, serif !important;
+}
+
+:is(.scouting-nederland-hero-font-poppins h1, h1.scouting-nederland-hero-font-poppins) {
+	font-family: Poppins, Arial, Helvetica, sans-serif !important;
+}
