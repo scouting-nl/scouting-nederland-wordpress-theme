@@ -21,13 +21,9 @@ Review the asset licensing notes in [readme.txt](../readme.txt) before preparing
 Native PHP templates live in the repository root, reusable template parts in `parts/`, PHP modules
 in `inc/`, and frontend assets in `assets/`.
 
-Build a local distribution ZIP with PowerShell:
-
-```powershell
-pwsh -NoProfile -File .\scripts\build-zip.ps1
-```
-
-The ZIP is created in `scripts/`. Do not commit generated archives.
+Download the installable ZIP from the **Build and test** run artifacts.
+The [packaging workflow](workflows/package-theme.yml) also builds the ZIP for tagged releases.
+Do not commit generated archives.
 
 CSS uses the official WordPress Stylelint configuration, including formatting rules. With Node.js
 22.13 or newer, install the pinned tools and format the theme-owned stylesheets:
@@ -42,7 +38,8 @@ Omit `--fix` to check without modifying files. The recommended VS Code Stylelint
 fixable rules on explicit save. Vendored stylesheets are excluded from linting and formatting.
 
 GitHub Actions checks PHP syntax, WordPress PHP, JavaScript and CSS coding standards, workflow
-configuration, and WordPress Theme Check against the packaged theme.
+configuration, and WordPress Theme Check against the installable ZIP. Theme Check findings appear
+in the **Build and test** run summary and in the job log.
 
 Keep changes focused and consistent with the existing WordPress coding and security practices.
 In particular:
@@ -80,3 +77,11 @@ Maintainers review pull requests for behavior, security, accessibility, backward
 WordPress Theme Check results, and the effect on existing content and settings. Releases are
 created by maintainers from version tags and release packages; contributors should not prepare
 or publish release archives unless requested.
+
+The package version comes from `style.css`. A release tag, with or without a `v` prefix, must
+match that version. The release workflow attaches `scouting-nederland-wordpress-theme-<tag>.zip`,
+using the exact tag, for example `scouting-nederland-wordpress-theme-1.0.1.zip`. Use this asset
+rather than GitHub's automatically generated source code ZIP to install the theme.
+
+Update both changelogs, the stable tag in the readmes, and translation catalog headers (including
+the compiled MO) when bumping the version.

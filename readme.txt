@@ -1,9 +1,9 @@
 === Scouting Nederland ===
 Contributors: scoutingnederland
-Tags: custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, one-column, right-sidebar, theme-options, translation-ready, two-columns, wide-blocks, block-styles
+Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, one-column, right-sidebar, theme-options, translation-ready, two-columns, wide-blocks, block-styles
 Requires at least: 7.0
 Tested up to: 7.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 8.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -19,7 +19,7 @@ The theme works without additional plugins and supports the WordPress block edit
 == Installation ==
 
 1. Install and activate the theme in Appearance > Themes.
-2. Set menus, logo and other design preferences in Appearance > Customize where available.
+2. Set menus, logo, header image and background in Appearance > Customize. The Header Image control provides the fallback hero when a page image, slider, hero widget or theme-specific Default hero image is not set.
 3. Configure a home page and widgets as desired.
 4. Optionally install Scouting Nederland Blocks separately, when available for your site, to add Scouting-specific Gutenberg blocks.
 5. Optionally install Scouting OpenID Connect from WordPress.org if Scouting login is needed.
@@ -48,8 +48,18 @@ The page template contains presentation adjustments for pages built with Element
 
 == Changelog ==
 
+= 1.0.1 =
+* Aligned the theme folder and text domain with the WordPress slug, scouting-nederland, and updated the bundled Dutch translation.
+* Added native Header Image and Background controls.
+* Added the theme copyright notice and made Theme Check results visible in the GitHub Actions run summary.
+
 = 1.0.0 =
 * Initial theme release.
+
+== Copyright ==
+
+Scouting Nederland WordPress Theme, Copyright (C) 2026 Scouting Nederland.
+The theme is distributed under the GNU General Public License, version 3 or later. See LICENSE.
 
 == Resources ==
 

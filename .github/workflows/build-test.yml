@@ -277,13 +277,14 @@ jobs:
       - name: Download theme package
         uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
-          name: ${{ needs.package.outputs.artifact-name }}
+          name: ${{ needs.package.outputs.zip-name }}
           path: ${{ runner.temp }}/theme-artifact
+          skip-decompress: true
 
       - name: Install WordPress and Theme Check
         shell: bash
         env:
-          THEME_PACKAGE_DIR: ${{ runner.temp }}/theme-artifact
+          ZIP_PATH: ${{ runner.temp }}/theme-artifact/${{ needs.package.outputs.zip-name }}
           WP_DB_PASSWORD: root
           WP_ADMIN_PASSWORD: test-password-123!
         run: |
@@ -311,6 +312,29 @@ jobs:
             --admin_email=theme-check@example.invalid \
             --skip-email
 
-          cp -a "${THEME_PACKAGE_DIR}/scouting-nederland-wordpress-theme" "${wordpress_path}/wp-content/themes/"
+          unzip -q "${ZIP_PATH}" -d "${wordpress_path}/wp-content/themes"
           php "${wp_cli}" plugin install theme-check --activate --path="${wordpress_path}"
-          php "${wp_cli}" theme-check run scouting-nederland-wordpress-theme --format=json --path="${wordpress_path}"
+
+      - name: Report Theme Check findings
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          report="${RUNNER_TEMP}/theme-check.json"
+          status=0
+          php "${RUNNER_TEMP}/wp-cli.phar" theme-check run scouting-nederland \
+            --format=json --path="${RUNNER_TEMP}/wordpress" > "${report}" || status=$?
+
+          printf '### WordPress Theme Check\n\n' | tee -a "${GITHUB_STEP_SUMMARY}"
+          if [[ ! -s "${report}" ]]; then
+            echo 'Theme Check produced no report. See the job log.' | tee -a "${GITHUB_STEP_SUMMARY}"
+            exit 1
+          fi
+
+          jq -er '
+            if type != "array" then error("Expected a list of Theme Check findings")
+            elif length == 0 then "No findings."
+            else .[] | "- **\(.type | @html):** \(.value | gsub("[\r\n]+"; " ") | @html)"
+            end
+          ' "${report}" | tee -a "${GITHUB_STEP_SUMMARY}"
+          exit "${status}"

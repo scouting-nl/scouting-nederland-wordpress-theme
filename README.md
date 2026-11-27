@@ -1,9 +1,9 @@
 # Scouting Nederland WordPress Theme
 
-[![WordPress](https://img.shields.io/badge/WordPress-7.0%2B-blue.svg)](https://wordpress.org/themes/scouting-nederland-wordpress-theme/)
-[![WordPress-Version](https://img.shields.io/wordpress/theme/v/scouting-nederland-wordpress-theme.svg)](https://wordpress.org/themes/scouting-nederland-wordpress-theme/)
-[![WordPress-Downloads](https://img.shields.io/wordpress/theme/dt/scouting-nederland-wordpress-theme.svg)](https://wordpress.org/themes/scouting-nederland-wordpress-theme/)
-[![WordPress-Active-Installs](https://img.shields.io/wordpress/theme/installs/scouting-nederland-wordpress-theme.svg)](https://wordpress.org/themes/scouting-nederland-wordpress-theme/)
+[![WordPress](https://img.shields.io/badge/WordPress-7.0%2B-blue.svg)](https://wordpress.org/themes/scouting-nederland/)
+[![WordPress-Version](https://img.shields.io/wordpress/theme/v/scouting-nederland.svg)](https://wordpress.org/themes/scouting-nederland/)
+[![WordPress-Downloads](https://img.shields.io/wordpress/theme/dt/scouting-nederland.svg)](https://wordpress.org/themes/scouting-nederland/)
+[![WordPress-Active-Installs](https://img.shields.io/wordpress/theme/installs/scouting-nederland.svg)](https://wordpress.org/themes/scouting-nederland/)
 [![License](https://img.shields.io/github/license/scouting-nl/scouting-nederland-wordpress-theme)](https://github.com/scouting-nl/scouting-nederland-wordpress-theme/blob/main/LICENSE)
 
 [![CI](https://github.com/scouting-nl/scouting-nederland-wordpress-theme/actions/workflows/build-test.yml/badge.svg)](https://github.com/scouting-nl/scouting-nederland-wordpress-theme/actions/workflows/build-test.yml)
@@ -12,8 +12,8 @@
 **Requires at least:** 7.0 \
 **Tested up to:** 7.1 \
 **Requires PHP:** 8.2 \
-**Stable tag:** 1.0.0 \
-**Tags:** custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, theme-options, translation-ready \
+**Stable tag:** 1.0.1 \
+**Tags:** custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, theme-options, translation-ready \
 **License:** GPLv3 or later \
 **License URI:** <https://www.gnu.org/licenses/gpl-3.0.html>
 
@@ -50,7 +50,7 @@ Features include:
 
 Scouting-specific Gutenberg blocks belong to the separate Scouting Nederland Blocks companion plugin. The theme does not register custom block types or bundle companion plugins.
 
-Bugs and feature requests can go to [GitHub](https://github.com/scouting-nl/scouting-nederland-wordpress-theme/issues) or [WordPress](https://wordpress.org/support/theme/scouting-nederland-wordpress-theme/).
+Bugs and feature requests can go to [GitHub](https://github.com/scouting-nl/scouting-nederland-wordpress-theme/issues) or [WordPress](https://wordpress.org/support/theme/scouting-nederland/).
 
 Do not report security vulnerabilities publicly. Follow the [security policy](.github/SECURITY.md) to submit a private report.
 
@@ -72,9 +72,11 @@ Installation and configuration instructions are included below. For development,
 4. Find the theme and click **Install**.
 5. After installation, click **Activate**.
 
-You can also download the theme ZIP from [WordPress.org](https://wordpress.org/themes/scouting-nederland-wordpress-theme/) or [GitHub Releases](https://github.com/scouting-nl/scouting-nederland-wordpress-theme/releases/latest), then install it through **Appearance > Themes > Add New Theme > Upload Theme**.
+You can also download the theme ZIP from [WordPress.org](https://wordpress.org/themes/scouting-nederland/) or [GitHub Releases](https://github.com/scouting-nl/scouting-nederland-wordpress-theme/releases/latest), then install it through **Appearance > Themes > Add New Theme > Upload Theme**.
 
 The theme requires WordPress 7.0 or later and PHP 8.2 or later.
+
+The ZIP installs the theme as `scouting-nederland`. WordPress treats it as a different theme from older installs under `scouting-nederland-wordpress-theme`. Back up your settings before switching and reapply Customizer settings and menu assignments as needed.
 
 ## Configuration
 
@@ -83,6 +85,8 @@ The theme requires WordPress 7.0 or later and PHP 8.2 or later.
 3. Configure widget areas under **Appearance > Widgets**.
 4. Choose your home page and posts page under **Settings > Reading**.
 5. Edit individual pages to adjust their hero, title, excerpt, sidebar, and slider settings.
+
+Use **Appearance > Customize > Background Image** to set a site background image, or **Colors** to change the background color.
 
 ### Header
 
@@ -93,6 +97,8 @@ The Customizer also lets you configure the phone, contact, and search actions an
 ### Hero and slider
 
 Set a default hero image and heading font in the Customizer. Individual pages can override the heading font, hide the default hero or page title, show the page excerpt below the hero heading, or hide the sidebar.
+
+Use **Appearance > Customize > Header Image** to replace the bundled fallback hero. A Default hero image set under **Scouting Nederland options** still takes priority.
 
 Use the **Slider** panel in the page editor to enable an image slider or video banner. Videos can come from the media library or an external video URL; a selected library video takes priority. A configured slider or video remains visible when the default hero is hidden.
 
