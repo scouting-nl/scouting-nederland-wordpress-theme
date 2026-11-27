@@ -71,9 +71,9 @@ function scouting_nederland_assets() {
 		'scouting-nederland-console',
 		'scoutingNederlandConsoleL10n',
 		array(
-			'heading'   => __( 'Hey detective! Can you see what is happening under the hood?', 'scouting-nederland-wordpress-theme' ),
-			'message'   => __( 'At Scouting, we build great websites, portals, and systems for more than a hundred thousand members. We are always looking for enthusiastic volunteer IT specialists, developers, and tech enthusiasts to help us build!', 'scouting-nederland-wordpress-theme' ),
-			'vacancies' => __( 'View IT vacancies:', 'scouting-nederland-wordpress-theme' ),
+			'heading'   => __( 'Hey detective! Can you see what is happening under the hood?', 'scouting-nederland' ),
+			'message'   => __( 'At Scouting, we build great websites, portals, and systems for more than a hundred thousand members. We are always looking for enthusiastic volunteer IT specialists, developers, and tech enthusiasts to help us build!', 'scouting-nederland' ),
+			'vacancies' => __( 'View IT vacancies:', 'scouting-nederland' ),
 		)
 	);
 	wp_enqueue_script( 'scouting-nederland-motion', get_theme_file_uri( '/assets/js/motion.js' ), array(), SCOUTING_NEDERLAND_VERSION, true );

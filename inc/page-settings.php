@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function scouting_nederland_get_hero_font_choices() {
 	return array(
-		'impact'      => __( 'Impact', 'scouting-nederland-wordpress-theme' ),
-		'roboto-slab' => __( 'Roboto Slab', 'scouting-nederland-wordpress-theme' ),
-		'poppins'     => __( 'Poppins', 'scouting-nederland-wordpress-theme' ),
+		'impact'      => __( 'Impact', 'scouting-nederland' ),
+		'roboto-slab' => __( 'Roboto Slab', 'scouting-nederland' ),
+		'poppins'     => __( 'Poppins', 'scouting-nederland' ),
 	);
 }
 
@@ -164,7 +164,7 @@ function scouting_nederland_page_hides_sidebar( $post_id = null ) {
 function scouting_nederland_add_page_display_metabox() {
 	add_meta_box(
 		'scouting_nederland_page_display_settings',
-		__( 'Page display', 'scouting-nederland-wordpress-theme' ),
+		__( 'Page display', 'scouting-nederland' ),
 		'scouting_nederland_render_page_display_metabox',
 		'page',
 		'side',
@@ -186,40 +186,40 @@ function scouting_nederland_render_page_display_metabox( $post ) {
 	<p>
 		<label>
 			<input type="checkbox" name="scouting_nederland_hide_hero" value="1" <?php checked( $settings['hide_hero'] ); ?>>
-			<?php esc_html_e( 'Hide default hero', 'scouting-nederland-wordpress-theme' ); ?>
+			<?php esc_html_e( 'Hide default hero', 'scouting-nederland' ); ?>
 		</label>
 	</p>
 	<p>
 		<label>
 			<input type="checkbox" name="scouting_nederland_hide_page_title" value="1" <?php checked( $settings['hide_page_title'] ); ?>>
-			<?php esc_html_e( 'Hide page title in hero', 'scouting-nederland-wordpress-theme' ); ?>
+			<?php esc_html_e( 'Hide page title in hero', 'scouting-nederland' ); ?>
 		</label>
 	</p>
 	<p>
 		<label>
 			<input type="checkbox" name="scouting_nederland_hide_sidebar" value="1" <?php checked( $settings['hide_sidebar'] ); ?>>
-			<?php esc_html_e( 'Hide sidebar', 'scouting-nederland-wordpress-theme' ); ?>
+			<?php esc_html_e( 'Hide sidebar', 'scouting-nederland' ); ?>
 		</label>
 	</p>
 	<p>
 		<label>
 			<input type="checkbox" name="scouting_nederland_show_hero_summary" value="1" <?php checked( $settings['show_hero_summary'] ); ?>>
-			<?php esc_html_e( 'Show excerpt in hero', 'scouting-nederland-wordpress-theme' ); ?>
+			<?php esc_html_e( 'Show excerpt in hero', 'scouting-nederland' ); ?>
 		</label><br>
-		<span class="description"><?php esc_html_e( 'Use the Excerpt field in the page editor. The text appears below the hero heading when this option is enabled.', 'scouting-nederland-wordpress-theme' ); ?></span>
+		<span class="description"><?php esc_html_e( 'Use the Excerpt field in the page editor. The text appears below the hero heading when this option is enabled.', 'scouting-nederland' ); ?></span>
 	</p>
 	<p>
-		<label for="scouting_nederland_hero_title_font"><strong><?php esc_html_e( 'Hero heading font', 'scouting-nederland-wordpress-theme' ); ?></strong></label><br>
+		<label for="scouting_nederland_hero_title_font"><strong><?php esc_html_e( 'Hero heading font', 'scouting-nederland' ); ?></strong></label><br>
 		<select name="scouting_nederland_hero_title_font" id="scouting_nederland_hero_title_font" style="width:100%;">
 			<?php /* translators: %s: The default hero font name configured in the Customizer. */ ?>
-			<option value="" <?php selected( $settings['hero_title_font'], '' ); ?>><?php printf( esc_html__( 'Customizer default (%s)', 'scouting-nederland-wordpress-theme' ), esc_html( scouting_nederland_get_hero_font_choices()[ scouting_nederland_get_default_hero_title_font() ] ) ); ?></option>
+			<option value="" <?php selected( $settings['hero_title_font'], '' ); ?>><?php printf( esc_html__( 'Customizer default (%s)', 'scouting-nederland' ), esc_html( scouting_nederland_get_hero_font_choices()[ scouting_nederland_get_default_hero_title_font() ] ) ); ?></option>
 			<?php foreach ( scouting_nederland_get_hero_font_choices() as $value => $label ) : ?>
 				<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $settings['hero_title_font'], $value ); ?>><?php echo esc_html( $label ); ?></option>
 			<?php endforeach; ?>
 		</select>
 	</p>
 	<p class="description">
-		<?php esc_html_e( 'Use these options to adjust the default hero, title overlay, sidebar, or hero heading font for this page. Any configured slider or video remains visible.', 'scouting-nederland-wordpress-theme' ); ?>
+		<?php esc_html_e( 'Use these options to adjust the default hero, title overlay, sidebar, or hero heading font for this page. Any configured slider or video remains visible.', 'scouting-nederland' ); ?>
 	</p>
 	<?php
 }

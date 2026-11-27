@@ -48,35 +48,12 @@ function scouting_nederland_trim_text_chars( $text, $limit = 142 ) {
 }
 
 /**
- * Maps bundled theme translations to domain-prefixed catalog filenames.
- *
- * @param string $mofile Path to the requested MO file.
- * @param string $domain Translation text domain.
- * @return string Path to the matching translation catalog.
- */
-function scouting_nederland_translation_mofile( $mofile, $domain ) {
-	if ( 'scouting-nederland-wordpress-theme' !== $domain
-		|| wp_normalize_path( dirname( $mofile ) ) !== wp_normalize_path( get_template_directory() . '/languages' )
-	) {
-		return $mofile;
-	}
-
-	$filename = basename( $mofile );
-	if ( str_starts_with( $filename, $domain . '-' ) ) {
-		return $mofile;
-	}
-
-	return dirname( $mofile ) . '/' . $domain . '-' . $filename;
-}
-add_filter( 'load_textdomain_mofile', 'scouting_nederland_translation_mofile', 10, 2 );
-
-/**
  * Sets up theme support and navigation menus.
  *
  * @return void
  */
 function scouting_nederland_setup() {
-	load_theme_textdomain( 'scouting-nederland-wordpress-theme', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'scouting-nederland', get_template_directory() . '/languages' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
@@ -85,6 +62,22 @@ function scouting_nederland_setup() {
 	add_theme_support( 'align-wide' );
 	add_theme_support( 'customize-selective-refresh-widgets' );
 	add_post_type_support( 'page', 'excerpt' );
+	add_theme_support(
+		'custom-header',
+		array(
+			'width'       => 1800,
+			'height'      => 400,
+			'flex-width'  => true,
+			'flex-height' => true,
+			'header-text' => false,
+		)
+	);
+	add_theme_support(
+		'custom-background',
+		array(
+			'default-color' => 'ffffff',
+		)
+	);
 	add_theme_support(
 		'custom-logo',
 		array(
@@ -97,8 +90,8 @@ function scouting_nederland_setup() {
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script' ) );
 	register_nav_menus(
 		array(
-			'primary' => __( 'Main menu', 'scouting-nederland-wordpress-theme' ),
-			'footer'  => __( 'Footer menu', 'scouting-nederland-wordpress-theme' ),
+			'primary' => __( 'Main menu', 'scouting-nederland' ),
+			'footer'  => __( 'Footer menu', 'scouting-nederland' ),
 		)
 	);
 }
@@ -114,14 +107,14 @@ function scouting_nederland_register_block_styles() {
 		'core/button',
 		array(
 			'name'  => 'scouting-nederland-blue',
-			'label' => __( 'Scouting blue', 'scouting-nederland-wordpress-theme' ),
+			'label' => __( 'Scouting blue', 'scouting-nederland' ),
 		)
 	);
 	register_block_style(
 		'core/button',
 		array(
 			'name'  => 'scouting-nederland-black',
-			'label' => __( 'Scouting black', 'scouting-nederland-wordpress-theme' ),
+			'label' => __( 'Scouting black', 'scouting-nederland' ),
 		)
 	);
 }
@@ -136,26 +129,26 @@ function scouting_nederland_register_block_patterns() {
 	register_block_pattern_category(
 		'scouting-nederland',
 		array(
-			'label' => __( 'Scouting Nederland', 'scouting-nederland-wordpress-theme' ),
+			'label' => __( 'Scouting Nederland', 'scouting-nederland' ),
 		)
 	);
 
 	register_block_pattern(
 		'scouting-nederland/information-panel',
 		array(
-			'title'       => __( 'Information panel', 'scouting-nederland-wordpress-theme' ),
-			'description' => __( 'A heading, text, and button for important information.', 'scouting-nederland-wordpress-theme' ),
+			'title'       => __( 'Information panel', 'scouting-nederland' ),
+			'description' => __( 'A heading, text, and button for important information.', 'scouting-nederland' ),
 			'categories'  => array( 'scouting-nederland' ),
 			'content'     => '<!-- wp:group {"className":"scouting-nederland-pattern-information-panel","layout":{"type":"constrained"}} -->'
 				. '<div class="wp-block-group scouting-nederland-pattern-information-panel">'
 				. '<!-- wp:heading {"level":2} --><h2 class="wp-block-heading">'
-				. esc_html__( 'Important information', 'scouting-nederland-wordpress-theme' )
+				. esc_html__( 'Important information', 'scouting-nederland' )
 				. '</h2><!-- /wp:heading -->'
 				. '<!-- wp:paragraph --><p>'
-				. esc_html__( 'Add a short explanation for website visitors here.', 'scouting-nederland-wordpress-theme' )
+				. esc_html__( 'Add a short explanation for website visitors here.', 'scouting-nederland' )
 				. '</p><!-- /wp:paragraph -->'
 				. '<!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button">'
-				. esc_html__( 'Read more', 'scouting-nederland-wordpress-theme' )
+				. esc_html__( 'Read more', 'scouting-nederland' )
 				. '</a></div><!-- /wp:button --></div><!-- /wp:buttons -->'
 				. '</div><!-- /wp:group -->',
 		)
@@ -193,18 +186,18 @@ function scouting_nederland_get_default_hero_url() {
  */
 function scouting_nederland_widgets_init() {
 	$areas = array(
-		'hero'            => __( 'Hero', 'scouting-nederland-wordpress-theme' ),
-		'featured-a'      => __( 'Featured A', 'scouting-nederland-wordpress-theme' ),
-		'featured-b'      => __( 'Featured B', 'scouting-nederland-wordpress-theme' ),
-		'featured-c'      => __( 'Featured C', 'scouting-nederland-wordpress-theme' ),
-		'showcase'        => __( 'Showcase', 'scouting-nederland-wordpress-theme' ),
-		'news'            => __( 'News', 'scouting-nederland-wordpress-theme' ),
-		'breadcrumbs'     => __( 'Breadcrumbs', 'scouting-nederland-wordpress-theme' ),
-		'sidebar'         => __( 'Sidebar', 'scouting-nederland-wordpress-theme' ),
-		'bottom-a'        => __( 'Bottom A', 'scouting-nederland-wordpress-theme' ),
-		'bottom-b'        => __( 'Bottom B', 'scouting-nederland-wordpress-theme' ),
-		'footer'          => __( 'Footer', 'scouting-nederland-wordpress-theme' ),
-		'footer-partners' => __( 'Footer - Scouting partners', 'scouting-nederland-wordpress-theme' ),
+		'hero'            => __( 'Hero', 'scouting-nederland' ),
+		'featured-a'      => __( 'Featured A', 'scouting-nederland' ),
+		'featured-b'      => __( 'Featured B', 'scouting-nederland' ),
+		'featured-c'      => __( 'Featured C', 'scouting-nederland' ),
+		'showcase'        => __( 'Showcase', 'scouting-nederland' ),
+		'news'            => __( 'News', 'scouting-nederland' ),
+		'breadcrumbs'     => __( 'Breadcrumbs', 'scouting-nederland' ),
+		'sidebar'         => __( 'Sidebar', 'scouting-nederland' ),
+		'bottom-a'        => __( 'Bottom A', 'scouting-nederland' ),
+		'bottom-b'        => __( 'Bottom B', 'scouting-nederland' ),
+		'footer'          => __( 'Footer', 'scouting-nederland' ),
+		'footer-partners' => __( 'Footer - Scouting partners', 'scouting-nederland' ),
 	);
 	foreach ( $areas as $id => $name ) {
 		register_sidebar(
@@ -212,7 +205,7 @@ function scouting_nederland_widgets_init() {
 				'name'          => $name,
 				'id'            => $id,
 				/* translators: %s: Widget area name. */
-				'description'   => sprintf( __( 'Widget area %s', 'scouting-nederland-wordpress-theme' ), $name ),
+				'description'   => sprintf( __( 'Widget area %s', 'scouting-nederland' ), $name ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
 				'before_title'  => '<h3 class="widget-title">',

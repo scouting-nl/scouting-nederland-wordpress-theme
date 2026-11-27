@@ -31,25 +31,25 @@ function scouting_nederland_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'scouting_nederland_options',
 		array(
-			'title'    => __( 'Scouting Nederland options', 'scouting-nederland-wordpress-theme' ),
+			'title'    => __( 'Scouting Nederland options', 'scouting-nederland' ),
 			'priority' => 30,
 		)
 	);
 	$colors    = array(
-		'mgroen'  => __( 'Green', 'scouting-nederland-wordpress-theme' ),
-		'mblauw'  => __( 'Blue', 'scouting-nederland-wordpress-theme' ),
-		'mgeel'   => __( 'Yellow', 'scouting-nederland-wordpress-theme' ),
-		'mrood'   => __( 'Red', 'scouting-nederland-wordpress-theme' ),
-		'moranje' => __( 'Orange', 'scouting-nederland-wordpress-theme' ),
-		'mpaars'  => __( 'Purple', 'scouting-nederland-wordpress-theme' ),
+		'mgroen'  => __( 'Green', 'scouting-nederland' ),
+		'mblauw'  => __( 'Blue', 'scouting-nederland' ),
+		'mgeel'   => __( 'Yellow', 'scouting-nederland' ),
+		'mrood'   => __( 'Red', 'scouting-nederland' ),
+		'moranje' => __( 'Orange', 'scouting-nederland' ),
+		'mpaars'  => __( 'Purple', 'scouting-nederland' ),
 	);
 	$subcolors = array(
-		'sgroen'  => __( 'Green', 'scouting-nederland-wordpress-theme' ),
-		'sblauw'  => __( 'Blue', 'scouting-nederland-wordpress-theme' ),
-		'sgeel'   => __( 'Yellow', 'scouting-nederland-wordpress-theme' ),
-		'srood'   => __( 'Red', 'scouting-nederland-wordpress-theme' ),
-		'soranje' => __( 'Orange', 'scouting-nederland-wordpress-theme' ),
-		'spaars'  => __( 'Purple', 'scouting-nederland-wordpress-theme' ),
+		'sgroen'  => __( 'Green', 'scouting-nederland' ),
+		'sblauw'  => __( 'Blue', 'scouting-nederland' ),
+		'sgeel'   => __( 'Yellow', 'scouting-nederland' ),
+		'srood'   => __( 'Red', 'scouting-nederland' ),
+		'soranje' => __( 'Orange', 'scouting-nederland' ),
+		'spaars'  => __( 'Purple', 'scouting-nederland' ),
 	);
 	$wp_customize->add_setting(
 		'scouting_nederland_main_color',
@@ -63,7 +63,7 @@ function scouting_nederland_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'select',
 			'section' => 'scouting_nederland_options',
-			'label'   => __( 'Primary color', 'scouting-nederland-wordpress-theme' ),
+			'label'   => __( 'Primary color', 'scouting-nederland' ),
 			'choices' => $colors,
 		)
 	);
@@ -79,7 +79,7 @@ function scouting_nederland_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'select',
 			'section' => 'scouting_nederland_options',
-			'label'   => __( 'Accent color', 'scouting-nederland-wordpress-theme' ),
+			'label'   => __( 'Accent color', 'scouting-nederland' ),
 			'choices' => $subcolors,
 		)
 	);
@@ -95,8 +95,8 @@ function scouting_nederland_customize_register( $wp_customize ) {
 		array(
 			'type'        => 'checkbox',
 			'section'     => 'scouting_nederland_options',
-			'label'       => __( 'Use logo stamp', 'scouting-nederland-wordpress-theme' ),
-			'description' => __( 'Displays the stamp/shadow below the logo.', 'scouting-nederland-wordpress-theme' ),
+			'label'       => __( 'Use logo stamp', 'scouting-nederland' ),
+			'description' => __( 'Displays the stamp/shadow below the logo.', 'scouting-nederland' ),
 		)
 	);
 
@@ -113,13 +113,13 @@ function scouting_nederland_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'scouting_nederland_header_width',
 		array(
-			'label'       => __( 'Header width', 'scouting-nederland-wordpress-theme' ),
-			'description' => __( 'Narrow displays a compact header with a hamburger menu. Wide uses the full width with a horizontal menu on desktop. Both use a hamburger menu on tablets and mobile devices.', 'scouting-nederland-wordpress-theme' ),
+			'label'       => __( 'Header width', 'scouting-nederland' ),
+			'description' => __( 'Narrow displays a compact header with a hamburger menu. Wide uses the full width with a horizontal menu on desktop. Both use a hamburger menu on tablets and mobile devices.', 'scouting-nederland' ),
 			'section'     => 'scouting_nederland_options',
 			'type'        => 'radio',
 			'choices'     => array(
-				'narrow' => __( 'Narrow', 'scouting-nederland-wordpress-theme' ),
-				'wide'   => __( 'Wide', 'scouting-nederland-wordpress-theme' ),
+				'narrow' => __( 'Narrow', 'scouting-nederland' ),
+				'wide'   => __( 'Wide', 'scouting-nederland' ),
 			),
 		)
 	);
@@ -137,8 +137,8 @@ function scouting_nederland_customize_register( $wp_customize ) {
 			$wp_customize,
 			'scouting_nederland_default_hero_image',
 			array(
-				'label'       => __( 'Default hero image', 'scouting-nederland-wordpress-theme' ),
-				'description' => __( 'This image is used when no custom page image, slider, or hero widget is set.', 'scouting-nederland-wordpress-theme' ),
+				'label'       => __( 'Default hero image', 'scouting-nederland' ),
+				'description' => __( 'This image is used when no custom page image, slider, or hero widget is set.', 'scouting-nederland' ),
 				'section'     => 'scouting_nederland_options',
 				'mime_type'   => 'image',
 			)
@@ -150,8 +150,8 @@ function scouting_nederland_customize_register( $wp_customize ) {
 	$header_actions = array(
 		array(
 			'id'          => 'search',
-			'label'       => __( 'Search page URL', 'scouting-nederland-wordpress-theme' ),
-			'description' => __( 'Leave empty to use the default WordPress search page.', 'scouting-nederland-wordpress-theme' ),
+			'label'       => __( 'Search page URL', 'scouting-nederland' ),
+			'description' => __( 'Leave empty to use the default WordPress search page.', 'scouting-nederland' ),
 			'field'       => 'scouting_nederland_search_url',
 			'field_type'  => 'url',
 			'sanitize'    => 'esc_url_raw',
@@ -159,8 +159,8 @@ function scouting_nederland_customize_register( $wp_customize ) {
 		),
 		array(
 			'id'          => 'phone',
-			'label'       => __( 'Phone number', 'scouting-nederland-wordpress-theme' ),
-			'description' => __( 'Enter a number to enable the call button.', 'scouting-nederland-wordpress-theme' ),
+			'label'       => __( 'Phone number', 'scouting-nederland' ),
+			'description' => __( 'Enter a number to enable the call button.', 'scouting-nederland' ),
 			'field'       => 'scouting_nederland_phone',
 			'field_type'  => 'tel',
 			'sanitize'    => 'sanitize_text_field',
@@ -168,8 +168,8 @@ function scouting_nederland_customize_register( $wp_customize ) {
 		),
 		array(
 			'id'          => 'contact',
-			'label'       => __( 'Contact page URL', 'scouting-nederland-wordpress-theme' ),
-			'description' => __( 'Enter a link to enable the contact button.', 'scouting-nederland-wordpress-theme' ),
+			'label'       => __( 'Contact page URL', 'scouting-nederland' ),
+			'description' => __( 'Enter a link to enable the contact button.', 'scouting-nederland' ),
 			'field'       => 'scouting_nederland_contact_url',
 			'field_type'  => 'url',
 			'sanitize'    => 'esc_url_raw',
@@ -204,7 +204,7 @@ function scouting_nederland_customize_register( $wp_customize ) {
 						'enabled' => $action['enabled'],
 					),
 					'field_type'   => $action['field_type'],
-					'toggle_label' => __( 'Show', 'scouting-nederland-wordpress-theme' ),
+					'toggle_label' => __( 'Show', 'scouting-nederland' ),
 				)
 			)
 		);
@@ -222,7 +222,7 @@ function scouting_nederland_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'text',
 			'section' => 'scouting_nederland_options',
-			'label'   => __( 'Header notice', 'scouting-nederland-wordpress-theme' ),
+			'label'   => __( 'Header notice', 'scouting-nederland' ),
 		)
 	);
 	$wp_customize->add_setting(
@@ -237,7 +237,7 @@ function scouting_nederland_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'url',
 			'section' => 'scouting_nederland_options',
-			'label'   => __( 'Header notice link', 'scouting-nederland-wordpress-theme' ),
+			'label'   => __( 'Header notice link', 'scouting-nederland' ),
 		)
 	);
 
@@ -253,8 +253,8 @@ function scouting_nederland_customize_register( $wp_customize ) {
 		array(
 			'type'        => 'select',
 			'section'     => 'scouting_nederland_options',
-			'label'       => __( 'Default hero heading font', 'scouting-nederland-wordpress-theme' ),
-			'description' => __( 'This font is used for hero headings unless you choose a different font for a page.', 'scouting-nederland-wordpress-theme' ),
+			'label'       => __( 'Default hero heading font', 'scouting-nederland' ),
+			'description' => __( 'This font is used for hero headings unless you choose a different font for a page.', 'scouting-nederland' ),
 			'choices'     => scouting_nederland_get_hero_font_choices(),
 		)
 	);

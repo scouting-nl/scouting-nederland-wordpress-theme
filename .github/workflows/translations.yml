@@ -81,8 +81,8 @@ jobs:
 
           mkdir -p "${TRANSLATION_WORK_DIR}"
           php "${WP_CLI_PHAR}" i18n make-pot . "${TRANSLATION_WORK_DIR}/messages.pot" \
-            --slug=scouting-nederland-wordpress-theme \
-            --domain=scouting-nederland-wordpress-theme \
+            --slug=scouting-nederland \
+            --domain=scouting-nederland \
             --file-comment="$(printf 'Copyright (C) %s Scouting Nederland\nThis file is distributed under the same license as the Scouting Nederland theme.' "$(date -u +%Y)")" \
             --headers='{"Report-Msgid-Bugs-To":"https://github.com/scouting-nl/scouting-nederland-wordpress-theme/issues"}' \
             --exclude=.github,.vscode,assets/vendor,scripts
@@ -102,7 +102,7 @@ jobs:
           require 'phar://' . getenv( 'WP_CLI_PHAR' ) . '/vendor/autoload.php';
 
           $source = Gettext\Translations::fromPoFile( getenv( 'TRANSLATION_WORK_DIR' ) . '/messages.pot' );
-          $files  = array_merge( array( 'languages/scouting-nederland-wordpress-theme.pot' ), glob( 'languages/*.po' ) );
+          $files  = array_merge( array( 'languages/scouting-nederland.pot' ), glob( 'languages/*.po' ) );
           foreach ( $files as $file ) {
               $catalog = Gettext\Translations::fromPoFile( $file );
               if ( count( $catalog ) !== count( $source ) ) {
@@ -149,8 +149,8 @@ jobs:
         run: |
           set -euo pipefail
 
-          cp "${TRANSLATION_WORK_DIR}/messages.pot" languages/scouting-nederland-wordpress-theme.pot
-          php "${WP_CLI_PHAR}" i18n update-po languages/scouting-nederland-wordpress-theme.pot
+          cp "${TRANSLATION_WORK_DIR}/messages.pot" languages/scouting-nederland.pot
+          php "${WP_CLI_PHAR}" i18n update-po languages/scouting-nederland.pot
 
       - name: Preserve issue-reporting metadata
         if: ${{ inputs.update }}
@@ -159,7 +159,7 @@ jobs:
           <?php
           require 'phar://' . getenv( 'WP_CLI_PHAR' ) . '/vendor/autoload.php';
 
-          $template = Gettext\Translations::fromPoFile( 'languages/scouting-nederland-wordpress-theme.pot' );
+          $template = Gettext\Translations::fromPoFile( 'languages/scouting-nederland.pot' );
           foreach ( glob( 'languages/*.po' ) as $file ) {
               $catalog = Gettext\Translations::fromPoFile( $file );
               $catalog->setHeader( 'Report-Msgid-Bugs-To', $template->getHeader( 'Report-Msgid-Bugs-To' ) );
@@ -176,13 +176,13 @@ jobs:
           for po in languages/*.po; do
             # WP-CLI merges drop file comments, so restore copyright and license notices.
             {
-              sed -n '/^#/p; /^msgid /q' languages/scouting-nederland-wordpress-theme.pot
+              sed -n '/^#/p; /^msgid /q' languages/scouting-nederland.pot
               cat "${po}"
             } > "${TRANSLATION_WORK_DIR}/catalog.po"
             mv "${TRANSLATION_WORK_DIR}/catalog.po" "${po}"
 
             msgfmt --check --statistics --output-file=/dev/null "${po}"
-            msgcmp --use-untranslated --use-fuzzy "${po}" languages/scouting-nederland-wordpress-theme.pot
+            msgcmp --use-untranslated --use-fuzzy "${po}" languages/scouting-nederland.pot
 
             msgattrib --untranslated --no-obsolete "${po}" > "${TRANSLATION_WORK_DIR}/untranslated.po"
             msgattrib --only-fuzzy --no-obsolete "${po}" > "${TRANSLATION_WORK_DIR}/fuzzy.po"
