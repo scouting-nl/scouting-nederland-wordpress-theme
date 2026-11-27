@@ -1,183 +1,159 @@
 <?php
-if (!defined('ABSPATH')) { exit; }
-
-function scoutingNederlandIsScoutingOpenidConnectActive() {
-    if (!function_exists('is_plugin_active')) {
-        include_once ABSPATH . 'wp-admin/includes/plugin.php';
-    }
-
-    $active_plugins = (array) get_option('active_plugins', array());
-
-    if (is_multisite()) {
-        $active_plugins = array_merge($active_plugins, array_keys((array) get_site_option('active_sitewide_plugins', array())));
-    }
-
-    foreach ($active_plugins as $plugin_file) {
-        if (strpos($plugin_file, 'scouting-openid-connect/') === 0) {
-            return true;
-        }
-    }
-
-    return false;
-}
-
-function scoutingNederlandScoutingOpenidConnectNotice() {
-    if (!is_admin() || !current_user_can('install_plugins')) {
-        return;
-    }
-
-    if (get_user_meta(get_current_user_id(), 'scouting_nederland_openid_notice_dismissed', true)) {
-        return;
-    }
-
-    if (scoutingNederlandIsScoutingOpenidConnectActive()) {
-        update_user_meta(get_current_user_id(), 'scouting_nederland_openid_notice_dismissed', 1);
-        return;
-    }
-
-    $install_url = wp_nonce_url(
-        self_admin_url('update.php?action=install-plugin&plugin=scouting-openid-connect'),
-        'install-plugin_scouting-openid-connect'
-    );
-    $dismiss_url = wp_nonce_url(
-        self_admin_url('admin-post.php?action=scouting_nederland_dismiss_openid_notice'),
-        'scouting_nederland_dismiss_openid_notice'
-    );
-    ?>
-    <div class="notice notice-info is-dismissible">
-        <p>
-            <strong><?php esc_html_e('Scouting login beschikbaar', 'scouting-nederland'); ?></strong><br>
-            <?php esc_html_e('Installeer optioneel de plugin Scouting OpenID Connect om gebruikers via Scouting te laten inloggen.', 'scouting-nederland'); ?>
-        </p>
-        <p>
-            <a class="button button-primary" href="<?php echo esc_url($install_url); ?>">
-                <?php esc_html_e('Scouting OpenID Connect direct installeren', 'scouting-nederland'); ?>
-            </a>
-            <a class="button button-link" href="<?php echo esc_url($dismiss_url); ?>">
-                <?php esc_html_e('Niet meer tonen', 'scouting-nederland'); ?>
-            </a>
-        </p>
-    </div>
-    <?php
-}
-add_action('admin_notices', 'scoutingNederlandScoutingOpenidConnectNotice');
-
-function scoutingNederlandDismissOpenidNotice() {
-    if (!current_user_can('install_plugins')) {
-        wp_die(esc_html__('Je hebt geen rechten om deze melding te verbergen.', 'scouting-nederland'));
-    }
-
-    check_admin_referer('scouting_nederland_dismiss_openid_notice');
-    update_user_meta(get_current_user_id(), 'scouting_nederland_openid_notice_dismissed', 1);
-
-    wp_safe_redirect(wp_get_referer() ?: self_admin_url('themes.php'));
-    exit;
-}
-add_action('admin_post_scouting_nederland_dismiss_openid_notice', 'scoutingNederlandDismissOpenidNotice');
-
 /**
- * Returns whether the companion blocks plugin is active.
+ * Registers optional plugin recommendation notices.
  *
- * @return bool
+ * @package Scouting_Nederland
  */
-function scoutingNederlandIsBlocksPluginActive() {
-    return defined('SCOUTING_NEDERLAND_BLOCKS_VERSION');
-}
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; }
 
 /**
- * Returns whether the companion blocks plugin is installed but inactive.
+ * Defines optional plugin recommendations published on WordPress.org.
  *
- * @return string Plugin file when installed, otherwise an empty string.
+ * @return array[] Recommendations keyed by plugin slug, with translated labels
+ *                 and a stable per-user dismissal meta key.
  */
-function scoutingNederlandGetInstalledBlocksPluginFile() {
-    if (!function_exists('get_plugins')) {
-        require_once ABSPATH . 'wp-admin/includes/plugin.php';
-    }
-
-    foreach (array_keys(get_plugins()) as $plugin_file) {
-        if (strpos($plugin_file, 'scouting-nederland-blocks/') === 0) {
-            return $plugin_file;
-        }
-    }
-
-    return '';
+function scouting_nederland_get_plugin_recommendations() {
+	return array(
+		'scouting-openid-connect' => array(
+			'title'              => __( 'Scouting sign-in available', 'scouting-nederland-wordpress-theme' ),
+			'description'        => __( 'The optional Scouting OpenID Connect plugin lets users sign in through Scouting Nederland. The theme also works without this plugin.', 'scouting-nederland-wordpress-theme' ),
+			'install_text'       => __( 'Install Scouting OpenID Connect', 'scouting-nederland-wordpress-theme' ),
+			'activate_text'      => __( 'Activate Scouting OpenID Connect', 'scouting-nederland-wordpress-theme' ),
+			'dismissed_meta_key' => 'scouting_nederland_openid_notice_dismissed',
+		),
+	);
 }
 
 /**
- * Shows an optional companion-plugin recommendation for the theme blocks.
+ * Finds the installed file for a WordPress.org plugin slug.
  *
- * The install action targets the WordPress.org plugin slug. WordPress.org theme
- * review rules permit recommended plugins only when they are hosted there and
- * installation is explicitly started by the user.
+ * @param string $slug Plugin directory slug.
+ * @return string The plugin file path, or an empty string when not installed.
+ */
+function scouting_nederland_get_installed_plugin_file( $slug ) {
+	if ( ! function_exists( 'get_plugins' ) ) {
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	}
+
+	foreach ( array_keys( get_plugins() ) as $plugin_file ) {
+		if ( strpos( $plugin_file, $slug . '/' ) === 0 ) {
+			return $plugin_file;
+		}
+	}
+
+	return '';
+}
+
+/**
+ * Renders one recommendation for an eligible theme administrator.
+ *
+ * @param string $slug           WordPress.org plugin slug.
+ * @param array  $recommendation {
+ *     Translated notice content and persistent dismissal settings.
+ *
+ *     @type string $title              Notice heading.
+ *     @type string $description        Optional plugin description.
+ *     @type string $install_text       Installation button text.
+ *     @type string $activate_text      Activation button text.
+ *     @type string $dismissed_meta_key Per-user dismissal meta key.
+ * }
+ * @return void
+ */
+function scouting_nederland_render_plugin_recommendation_notice( $slug, $recommendation ) {
+	if ( ! is_admin() || ! current_user_can( 'edit_theme_options' ) ) {
+		return;
+	}
+
+	if ( get_user_meta( get_current_user_id(), $recommendation['dismissed_meta_key'], true ) ) {
+		return;
+	}
+
+	$plugin_file = scouting_nederland_get_installed_plugin_file( $slug );
+	if ( $plugin_file ) {
+		if ( is_plugin_active( $plugin_file ) || ! current_user_can( 'activate_plugin', $plugin_file ) ) {
+			return;
+		}
+		$action_url  = wp_nonce_url(
+			self_admin_url( 'plugins.php?action=activate&plugin=' . rawurlencode( $plugin_file ) ),
+			'activate-plugin_' . $plugin_file
+		);
+		$button_text = $recommendation['activate_text'];
+	} elseif ( current_user_can( 'install_plugins' ) ) {
+		$action_url  = wp_nonce_url(
+			self_admin_url( 'update.php?action=install-plugin&plugin=' . rawurlencode( $slug ) ),
+			'install-plugin_' . $slug
+		);
+		$button_text = $recommendation['install_text'];
+	} else {
+		return;
+	}
+
+	$dismiss_url = wp_nonce_url(
+		add_query_arg(
+			array(
+				'action' => 'scouting_nederland_dismiss_plugin_notice',
+				'plugin' => $slug,
+			),
+			self_admin_url( 'admin-post.php' )
+		),
+		'scouting_nederland_dismiss_plugin_notice_' . $slug
+	);
+	?>
+	<div class="notice notice-info">
+		<p>
+			<strong><?php echo esc_html( $recommendation['title'] ); ?></strong><br>
+			<?php echo esc_html( $recommendation['description'] ); ?>
+		</p>
+		<p>
+			<a class="button button-primary" href="<?php echo esc_url( $action_url ); ?>">
+				<?php echo esc_html( $button_text ); ?>
+			</a>
+			<a class="button button-secondary" href="<?php echo esc_url( 'https://wordpress.org/plugins/' . $slug . '/' ); ?>">
+				<?php esc_html_e( 'More information', 'scouting-nederland-wordpress-theme' ); ?>
+			</a>
+			<a class="button button-link" href="<?php echo esc_url( $dismiss_url ); ?>">
+				<?php esc_html_e( 'Do not show again', 'scouting-nederland-wordpress-theme' ); ?>
+			</a>
+		</p>
+	</div>
+	<?php
+}
+
+/**
+ * Displays the configured optional plugin recommendations.
  *
  * @return void
  */
-function scoutingNederlandBlocksPluginNotice() {
-    if (!is_admin() || !current_user_can('install_plugins')) {
-        return;
-    }
-
-    if (scoutingNederlandIsBlocksPluginActive()) {
-        return;
-    }
-
-    if (get_user_meta(get_current_user_id(), 'scouting_nederland_blocks_notice_dismissed', true)) {
-        return;
-    }
-
-    $plugin_file = scoutingNederlandGetInstalledBlocksPluginFile();
-
-    if ($plugin_file && current_user_can('activate_plugins')) {
-        $action_url = wp_nonce_url(
-            self_admin_url('plugins.php?action=activate&plugin=' . rawurlencode($plugin_file)),
-            'activate-plugin_' . $plugin_file
-        );
-        $button_text = __('Scouting Nederland Blocks activeren', 'scouting-nederland');
-    } else {
-        $action_url = wp_nonce_url(
-            self_admin_url('update.php?action=install-plugin&plugin=scouting-nederland-blocks'),
-            'install-plugin_scouting-nederland-blocks'
-        );
-        $button_text = __('Scouting Nederland Blocks installeren', 'scouting-nederland');
-    }
-
-    $dismiss_url = wp_nonce_url(
-        self_admin_url('admin-post.php?action=scouting_nederland_dismiss_blocks_notice'),
-        'scouting_nederland_dismiss_blocks_notice'
-    );
-    ?>
-    <div class="notice notice-info">
-        <p>
-            <strong><?php esc_html_e('Extra Scouting Nederland blokken', 'scouting-nederland'); ?></strong><br>
-            <?php esc_html_e('De companion-plugin Scouting Nederland Blocks voegt de optionele Gutenberg-blokken van dit theme toe. Het theme blijft zonder deze plugin bruikbaar.', 'scouting-nederland'); ?>
-        </p>
-        <p>
-            <a class="button button-primary" href="<?php echo esc_url($action_url); ?>">
-                <?php echo esc_html($button_text); ?>
-            </a>
-            <a class="button button-link" href="<?php echo esc_url($dismiss_url); ?>">
-                <?php esc_html_e('Niet meer tonen', 'scouting-nederland'); ?>
-            </a>
-        </p>
-    </div>
-    <?php
+function scouting_nederland_plugin_recommendation_notices() {
+	foreach ( scouting_nederland_get_plugin_recommendations() as $slug => $recommendation ) {
+		scouting_nederland_render_plugin_recommendation_notice( $slug, $recommendation );
+	}
 }
-add_action('admin_notices', 'scoutingNederlandBlocksPluginNotice');
+add_action( 'admin_notices', 'scouting_nederland_plugin_recommendation_notices' );
 
 /**
- * Dismisses the blocks companion-plugin recommendation for the current user.
+ * Dismisses a configured recommendation for the current user.
  *
  * @return void
  */
-function scoutingNederlandDismissBlocksNotice() {
-    if (!current_user_can('install_plugins')) {
-        wp_die(esc_html__('Je hebt geen rechten om deze melding te verbergen.', 'scouting-nederland'));
-    }
+function scouting_nederland_dismiss_plugin_notice() {
+	if ( ! current_user_can( 'edit_theme_options' ) ) {
+		wp_die( esc_html__( 'You do not have permission to hide this notice.', 'scouting-nederland-wordpress-theme' ) );
+	}
 
-    check_admin_referer('scouting_nederland_dismiss_blocks_notice');
-    update_user_meta(get_current_user_id(), 'scouting_nederland_blocks_notice_dismissed', 1);
+	$slug            = isset( $_GET['plugin'] ) && is_string( $_GET['plugin'] ) ? sanitize_key( wp_unslash( $_GET['plugin'] ) ) : '';
+	$recommendations = scouting_nederland_get_plugin_recommendations();
+	if ( ! isset( $recommendations[ $slug ] ) ) {
+		wp_die( esc_html__( 'Invalid plugin recommendation.', 'scouting-nederland-wordpress-theme' ), '', array( 'response' => 400 ) );
+	}
 
-    wp_safe_redirect(wp_get_referer() ?: self_admin_url('themes.php'));
-    exit;
+	check_admin_referer( 'scouting_nederland_dismiss_plugin_notice_' . $slug );
+	update_user_meta( get_current_user_id(), $recommendations[ $slug ]['dismissed_meta_key'], 1 );
+
+	$referer = wp_get_referer();
+	wp_safe_redirect( $referer ? $referer : self_admin_url( 'themes.php' ) );
+	exit;
 }
-add_action('admin_post_scouting_nederland_dismiss_blocks_notice', 'scoutingNederlandDismissBlocksNotice');
+add_action( 'admin_post_scouting_nederland_dismiss_plugin_notice', 'scouting_nederland_dismiss_plugin_notice' );

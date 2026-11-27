@@ -2,9 +2,9 @@
 Contributors: scoutingnederland
 Tags: custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, one-column, right-sidebar, theme-options, translation-ready, two-columns, wide-blocks, block-styles
 Requires at least: 7.0
-Tested up to: 7.0
+Tested up to: 7.1
 Stable tag: 1.0.0
-Requires PHP: 7.4
+Requires PHP: 8.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,16 +14,14 @@ Classic WordPress theme officially developed and published by Scouting Nederland
 
 Scouting Nederland is a classic WordPress theme published by Scouting Nederland. It provides responsive page and post templates, menu locations, widget areas, a slider, Customizer settings, support for comments, block editor styles, and page-level presentation settings.
 
-The theme works without additional plugins. It supports the WordPress block editor but does not register custom block types or bundle companion-plugin block source files. Scouting Nederland Blocks is an optional companion plugin, planned for release alongside the theme via WordPress.org, that adds Scouting-specific Gutenberg blocks. The theme offers an optional installation or activation notice. Scouting OpenID Connect is another optional plugin.
-
-Scouting Nederland is the creator and publisher of the original images and graphics bundled with this theme. Distribution of those assets through WordPress.org requires a verified GPL-compatible grant for redistribution, modification and reuse; see Resources and the pre-release note below.
+The theme works without additional plugins and supports the WordPress block editor. Scouting Nederland Blocks is an optional, separately installed plugin for Scouting-specific Gutenberg blocks. Scouting OpenID Connect is another optional plugin. Neither plugin is bundled with the theme.
 
 == Installation ==
 
 1. Install and activate the theme in Appearance > Themes.
 2. Set menus, logo and other design preferences in Appearance > Customize where available.
 3. Configure a home page and widgets as desired.
-4. Optionally install Scouting Nederland Blocks from WordPress.org to add Scouting-specific Gutenberg blocks.
+4. Optionally install Scouting Nederland Blocks separately, when available for your site, to add Scouting-specific Gutenberg blocks.
 5. Optionally install Scouting OpenID Connect from WordPress.org if Scouting login is needed.
 
 == Frequently Asked Questions ==
@@ -34,7 +32,7 @@ No. This is a classic PHP theme with block editor support, editor styles, block 
 
 = Does this theme require additional plugins? =
 
-No. The theme works on its own. Scouting OpenID Connect is optional. Scouting Nederland Blocks is the optional companion plugin for additional Scouting-specific Gutenberg blocks. Scouting Nederland intends to release it separately alongside the theme through the WordPress.org Plugin Directory; the installation link becomes usable once the plugin is listed. The theme displays an optional installation or activation recommendation in the WordPress dashboard.
+No. The theme works on its own. Scouting OpenID Connect and Scouting Nederland Blocks are optional plugins installed separately. The theme can display an optional installation or activation recommendation in the WordPress dashboard.
 
 = Does this theme support comments? =
 
@@ -51,18 +49,22 @@ The page template contains presentation adjustments for pages built with Element
 == Changelog ==
 
 = 1.0.0 =
-* Initial classic-theme release with responsive templates and Customizer settings.
-* Slider and page-level display settings.
-* Block editor styling, theme.json settings and a reusable block pattern.
-* WordPress comments, search and Elementor-related presentation adjustments.
+* Initial theme release.
 
 == Resources ==
 
-* Scouting Nederland original theme illustrations, decorative graphics, logo and other bundled original image assets (assets/images/): Copyright Scouting Nederland. Creator and publisher: Scouting Nederland. License: TO BE CONFIRMED before submission; release requires an explicit GPL-compatible license covering redistribution and modification of each included asset. Source: original artwork created for Scouting Nederland.
-* screenshot.png: Screenshot of the Scouting Nederland theme, produced by Scouting Nederland. License for underlying original artwork and any included photographs: TO BE CONFIRMED before submission; must be GPL-compatible. Source: Scouting Nederland theme screenshot.
-* Bootstrap 5.3.8, Copyright 2011-2025 The Bootstrap Authors, MIT License, https://getbootstrap.com/
-* Font Awesome Free 7.3.1, Copyright Fonticons, Inc., icons: CC BY 4.0, fonts: SIL OFL 1.1, code: MIT License, https://fontawesome.com/
-* Poppins, Copyright 2014-2020 Indian Type Foundry, SIL Open Font License 1.1, https://github.com/itfoundry/Poppins
-* Roboto Slab, Copyright 2013 The Roboto Slab Project Authors, Apache License 2.0, https://github.com/googlefonts/robotoslab
-
-* callout-bijl.png was omitted from the theme distribution because its embedded stock-asset attribution could not establish a GPL-compatible license. Any replacement should be original or demonstrably GPL-compatible.
+* assets/images/callout-gps.png: Embedded creator credit: Dmitry Sytnik. Embedded rights reference: www.dasytnik.com. Matching source photograph: https://www.alamy.com/gps-navigator-with-fishing-tackles-on-map-image226153455.html (Alamy image ID R3X513). License: not documented; GPL-compatible redistribution not verified.
+* assets/images/callout-lamp.png: Embedded creator and rights credit: Emmanuelle Grimaud. Original source and license: not documented; GPL-compatible redistribution not verified.
+* assets/images/callout-touw.png: Embedded creator credit: Serhiy Stakhnyk. Embedded rights reference: www.sergofoto.com. Matching source photograph: https://www.alamy.com/a-roll-of-sturdy-rope-material-twisted-into-a-circle-on-a-white-background-image347937429.html (Alamy image ID 2B61WMN). License: not documented; GPL-compatible redistribution not verified.
+* assets/images/callout-zakmes.png: Embedded creator and owner credit: Dmitry Rukhlenko. Embedded copyright: Copyright 2014 Dmitry Rukhlenko. Embedded rights URL: http://www.f9photos.com. Original source and license: not documented; GPL-compatible redistribution not verified.
+* assets/images/callout-boei.png: Photographer credited by the matching stock-photo listing: Rattanachai Mokngam (Iamtui7). Matching source photograph: https://www.dreamstime.com/blue-white-safety-torus-lifebuoy-hanging-wall-background-copy-space-image150944274 (Dreamstime image ID 150944274). License: not documented; GPL-compatible redistribution not verified.
+* assets/images/callout-haken.png, callout-hout.png, callout-kompas.png and callout-zaklamp.png: Original creator, copyright holder, source and license: not documented. GPL-compatible redistribution not verified.
+* assets/images/footer-grass.png, grass-*.png, skyline-*.png and stamp-shadow.png: Scouting Nederland artwork. Copyright Scouting Nederland. Licensed under GPL-3.0-or-later.
+* assets/images/favicon.png and snl-logo.svg: Scouting branding. Copyright Scouting Nederland. Artwork licensed under GPL-3.0-or-later. Trademark rights are separate from this copyright license.
+* assets/images/default-slide.jpg: Cropped from "Roverway 2018 (91)", published by Scouting Nederland: https://www.flickr.com/photos/scoutingnederland/53558323048/. Album: Roverway 2018, https://www.flickr.com/photos/scoutingnederland/albums/72177720315134523. Copyright Scouting Nederland. Licensed here under GPL-3.0-or-later, independently of Flickr's "All rights reserved" notice. The individual photographer is not identified. Portrait rights are separate from this copyright license.
+* screenshot.png: Screenshot of the theme by Scouting Nederland. Copyright Scouting Nederland. Licensed under GPL-3.0-or-later. Third-party content shown retains its own copyrights and licensing requirements.
+* Bootstrap 5.3.8, Copyright 2011-2025 The Bootstrap Authors, MIT License. Source: https://github.com/twbs/bootstrap/releases/tag/v5.3.8. License: assets/vendor/bootstrap/LICENSE.
+* Popper 2.11.8, included in Bootstrap's JavaScript bundle, Copyright (c) 2019 Federico Zivolo, MIT License. Source: https://github.com/floating-ui/floating-ui/tree/v2.11.8. License: assets/licenses/Popper-MIT.txt.
+* Font Awesome Free 7.3.1, Copyright 2026 Fonticons, Inc., icons: CC BY 4.0, fonts: SIL OFL 1.1, code: MIT License. Source: https://www.npmjs.com/package/@fortawesome/fontawesome-free/v/7.3.1. License and brand-icon notice: assets/vendor/font-awesome/LICENSE.txt.
+* Poppins 4.004, assets/fonts/poppins-{300,400,500,600,700,900}.woff2, Copyright 2020 The Poppins Project Authors, SIL Open Font License 1.1. Source: https://github.com/itfoundry/Poppins. License: assets/fonts/Poppins-OFL.txt.
+* Roboto Slab 2.002, assets/fonts/roboto-slab-700.woff2, Copyright 2018 The Roboto Slab Project Authors, Apache License 2.0. Source: https://github.com/googlefonts/robotoslab. License: assets/fonts/Roboto-Slab-LICENSE.txt.

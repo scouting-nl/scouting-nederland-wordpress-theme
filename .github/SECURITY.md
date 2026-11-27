@@ -8,7 +8,7 @@ is investigated.
 
 The latest published version is available from:
 
-- [GitHub Releases](https://github.com/scouting-nl/wordpress-theme/releases/latest)
+- [GitHub Releases](https://github.com/scouting-nl/scouting-nederland-wordpress-theme/releases/latest)
 
 When the theme is published in the WordPress.org directory, its latest directory release
 will also be listed here.
@@ -18,7 +18,7 @@ will also be listed here.
 Do not disclose suspected vulnerabilities in a public GitHub issue, discussion, pull
 request, or WordPress.org support topic.
 
-Use [GitHub private vulnerability reporting](https://github.com/scouting-nl/wordpress-theme/security/advisories/new)
+Use [GitHub private vulnerability reporting](https://github.com/scouting-nl/scouting-nederland-wordpress-theme/security/advisories/new)
 to send the maintainers a confidential report. If GitHub private reporting is unavailable,
 email [cms@support.scouting.nl](mailto:cms@support.scouting.nl?subject=Private%20security%20report%3A%20Scouting%20Nederland%20WordPress%20theme).
 
@@ -49,9 +49,9 @@ the publication of an advisory when appropriate.
 
 ## Security Releases and Migration Guidance
 
-Security release details remain in the private advisory until a fixed theme package has been
-published and verified on GitHub Releases and, when applicable, WordPress.org. A version bump
-or source change alone does not satisfy this publication requirement.
+Security release details remain in the private advisory until a fixed theme package has
+been published and verified on GitHub Releases and, when applicable, WordPress.org. A version
+bump or source change alone does not satisfy this publication requirement.
 
 After patched installations are available, the maintainers will publish release and migration
 guidance that includes:

@@ -2,51 +2,52 @@
 :root {
 	--scouting-nederland-page-width: 1140px;
 	--scouting-nederland-page-gutter: 1rem;
+	--wp--preset--font-family--urban-jungle: var(--wp--preset--font-family--impact);
 }
 
 @font-face {
-	font-family: "Poppins";
-	src: url("../fonts/poppins-300.woff2") format("woff2");
+	font-family: Poppins;
+	src: url(../fonts/poppins-300.woff2) format("woff2");
 	font-weight: 300;
 	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
-	font-family: "Poppins";
-	src: url("../fonts/poppins-400.woff2") format("woff2");
+	font-family: Poppins;
+	src: url(../fonts/poppins-400.woff2) format("woff2");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
-	font-family: "Poppins";
-	src: url("../fonts/poppins-500.woff2") format("woff2");
+	font-family: Poppins;
+	src: url(../fonts/poppins-500.woff2) format("woff2");
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
-	font-family: "Poppins";
-	src: url("../fonts/poppins-600.woff2") format("woff2");
+	font-family: Poppins;
+	src: url(../fonts/poppins-600.woff2) format("woff2");
 	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
-	font-family: "Poppins";
-	src: url("../fonts/poppins-700.woff2") format("woff2");
+	font-family: Poppins;
+	src: url(../fonts/poppins-700.woff2) format("woff2");
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
-	font-family: "Poppins";
-	src: url("../fonts/poppins-900.woff2") format("woff2");
+	font-family: Poppins;
+	src: url(../fonts/poppins-900.woff2) format("woff2");
 	font-weight: 900;
 	font-style: normal;
 	font-display: swap;
@@ -54,10 +55,14 @@
 
 @font-face {
 	font-family: "Roboto Slab";
-	src: url("../fonts/roboto-slab-700.woff2") format("woff2");
+	src: url(../fonts/roboto-slab-700.woff2) format("woff2");
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
+}
+
+.has-urban-jungle-font-family {
+	font-family: var(--wp--preset--font-family--impact) !important;
 }
 
 /*
@@ -76,6 +81,7 @@
 	padding: 0.75rem 1rem;
 	color: #fff;
 	background: var(--wp--preset--color--scouting-blauw);
+	/* stylelint-disable-next-line property-no-deprecated -- Reset core clip. */
 	clip: auto;
 	clip-path: none;
 	text-decoration: none;
@@ -104,11 +110,13 @@ body .scouting-nederland-base-main {
 	margin-top: 0 !important;
 }
 
-body .scouting-nederland-base-main>*:first-child {
+body .scouting-nederland-base-main > *:first-child {
 	margin-top: 0 !important;
 }
 
-/* Bootstrap widget rows in the shared hero must meet the top edge of the shell. */
+/*
+ * Bootstrap widget rows in the shared hero must meet the top edge of the shell.
+ */
 .scouting-nederland-base-widget-hero,
 .scouting-nederland-base-widget-hero .row,
 .scouting-nederland-base-widget-hero .col,
@@ -118,7 +126,10 @@ body .scouting-nederland-base-main>*:first-child {
 	padding-top: 0 !important;
 }
 
-/* Widget authors can provide several heading levels and copy inside this extension point. */
+/*
+ * Widget authors can provide several heading levels and copy inside this
+ * extension point.
+ */
 .scouting-nederland-base-widget-hero h1,
 .scouting-nederland-base-widget-hero h2,
 .scouting-nederland-base-widget-hero h3,
@@ -130,7 +141,7 @@ body .scouting-nederland-base-main>*:first-child {
 .scouting-nederland-base-widget-hero h1,
 .scouting-nederland-base-widget-hero h2,
 .scouting-nederland-base-widget-hero h3 {
-	font-family: Impact, "Arial Narrow", sans-serif !important;
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif !important;
 	letter-spacing: 0.02em;
 }
 
@@ -140,14 +151,14 @@ body .scouting-nederland-base-main>*:first-child {
  * PHP can place the state on a hero ancestor or directly on its h1. :is()
  * handles both placements without enumerating every hero component.
  */
+:is(.scouting-nederland-hero-font-impact h1, h1.scouting-nederland-hero-font-impact) {
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif !important;
+}
+
 :is(.scouting-nederland-hero-font-roboto-slab h1, h1.scouting-nederland-hero-font-roboto-slab) {
 	font-family: "Roboto Slab", Georgia, serif !important;
 }
 
 :is(.scouting-nederland-hero-font-poppins h1, h1.scouting-nederland-hero-font-poppins) {
-	font-family: "Poppins", Arial, Helvetica, sans-serif !important;
-}
-/* Default Impact is scoped to hero headings. Optional fonts remain available. */
-:is(.scouting-nederland-hero-font-impact h1, h1.scouting-nederland-hero-font-impact) {
-	font-family: Impact, "Arial Narrow", sans-serif !important;
+	font-family: Poppins, Arial, Helvetica, sans-serif !important;
 }

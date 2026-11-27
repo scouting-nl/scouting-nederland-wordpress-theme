@@ -1,7 +1,8 @@
 /*
  * Gutenberg editor controls for Scouting Nederland blocks.
  *
- * WordPress owns components-*, block-editor-*, wp-editor-*, mce-*, and Quicktags
+ * WordPress owns components-*, block-editor-*, wp-editor-*, mce-*, and
+ * Quicktags
  * classes. Theme selectors use scouting-nederland-editor-* and style only the
  * custom forms emitted by assets/js/blocks/.
  */
@@ -29,7 +30,9 @@
 	line-height: 1.4;
 }
 
-/* Label and control occupy stable Grid tracks across repeated editor sections. */
+/*
+ * Label and control occupy stable Grid tracks across repeated editor sections.
+ */
 .editor-styles-wrapper .scouting-nederland-editor-form-row {
 	display: grid;
 	grid-template-columns: 90px minmax(0, 1fr);
@@ -80,8 +83,8 @@
 	background: #fff;
 }
 
-.editor-styles-wrapper .scouting-nederland-editor-form input[type="text"],
-.editor-styles-wrapper .scouting-nederland-editor-form textarea {
+.editor-styles-wrapper .scouting-nederland-editor-form textarea,
+.editor-styles-wrapper .scouting-nederland-editor-form input[type="text"] {
 	width: 100%;
 }
 
@@ -96,7 +99,10 @@
  * Repeater rows
  * -------------------------------------------------------------------------- */
 
-/* Root establishes one explicit editor-owned formatting context for repeated rows. */
+/*
+ * Root establishes one explicit editor-owned formatting context for repeated
+ * rows.
+ */
 .editor-styles-wrapper .scouting-nederland-editor-repeater {
 	display: block;
 	background: #fff;
@@ -226,7 +232,10 @@
  * WordPress classic editor integration
  * -------------------------------------------------------------------------- */
 
-/* WordPress enhances the persistent textarea in place; this wrapper stabilizes width. */
+/*
+ * WordPress enhances the persistent textarea in place; this wrapper stabilizes
+ * width.
+ */
 .scouting-nederland-editor-tinymce {
 	position: relative;
 	width: 100%;
@@ -294,7 +303,7 @@
 	max-width: 100%;
 }
 
-.editor-styles-wrapper .scouting-nederland-editor-featured-items-form .scouting-nederland-editor-form-field>label {
+.editor-styles-wrapper .scouting-nederland-editor-featured-items-form .scouting-nederland-editor-form-field > label {
 	display: block;
 	margin: 0 0 14px;
 	color: #1d2327;
@@ -302,12 +311,14 @@
 	font-weight: 400;
 }
 
-/* Server-rendered OIDC preview keeps its editor-only heading and copy compact. */
+/*
+ * Server-rendered OIDC preview keeps its editor-only heading and copy compact.
+ */
 .editor-styles-wrapper .scouting-nederland-editor-oidc-form {
 	padding: 18px;
 }
 
-.editor-styles-wrapper .scouting-nederland-editor-oidc-form> :first-child {
+.editor-styles-wrapper .scouting-nederland-editor-oidc-form > :first-child {
 	margin-top: 0;
 }
 
@@ -376,7 +387,7 @@
 	background: #fff;
 }
 
-.editor-styles-wrapper .scouting-nederland-editor-two-columns-column>legend {
+.editor-styles-wrapper .scouting-nederland-editor-two-columns-column > legend {
 	padding: 0 6px;
 	font-weight: 600;
 }
@@ -399,7 +410,10 @@
 	white-space: nowrap;
 }
 
-/* Stack label and control tracks when the editor sidebar leaves little inline room. */
+/*
+ * Stack label and control tracks when the editor sidebar leaves little inline
+ * room.
+ */
 @media (max-width: 782px) {
 
 	.editor-styles-wrapper .scouting-nederland-editor-form-row,

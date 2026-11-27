@@ -47,8 +47,8 @@
  * Platform classes remain unchanged. Exclusions preserve outline and registered
  * custom styles while default buttons use the selected main color consistently.
  */
-.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link.wp-element-button,
-.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link {
+.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link,
+.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link.wp-element-button {
 	background-color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
 	color: #fff !important;
 	border: 0 !important;
@@ -59,14 +59,14 @@
 	min-height: 0 !important;
 }
 
-.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link.wp-element-button:visited,
 .wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link:visited,
-.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link.wp-element-button:hover,
 .wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link:hover,
-.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link.wp-element-button:focus,
 .wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link:focus,
-.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link.wp-element-button:active,
-.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link:active {
+.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link:active,
+.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link.wp-element-button:visited,
+.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link.wp-element-button:hover,
+.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link.wp-element-button:focus,
+.wp-block-button:not(.is-style-outline):not([class*="is-style-scouting-nederland-"]) .wp-block-button__link.wp-element-button:active {
 	background-color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
 	color: #fff !important;
 	text-decoration: none !important;

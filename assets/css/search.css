@@ -1,4 +1,7 @@
-/* Remove template-level spacing because the fixed-header offset is owned by base.css. */
+/*
+ * Remove template-level spacing because the fixed-header offset is owned by
+ * base.css.
+ */
 .scouting-nederland-search-page {
 	padding-top: 0 !important;
 }
@@ -15,7 +18,7 @@
 	padding: 112px 0 72px;
 	background-image:
 		linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.88) 100%),
-		url("../images/default-slide.jpg") !important;
+		url(../images/default-slide.jpg) !important;
 	background-position: center center !important;
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
@@ -30,7 +33,7 @@
 	right: 0;
 	bottom: -1px;
 	height: 82px;
-	background-image: url("../images/skyline-groen.png");
+	background-image: url(../images/skyline-groen.png);
 	background-repeat: repeat-x;
 	background-position: 0 100%;
 	background-size: auto 78px;
@@ -39,6 +42,7 @@
 }
 
 @keyframes scouting-nederland-search-skyline-move {
+
 	from {
 		background-position-x: 0;
 	}
@@ -46,26 +50,6 @@
 	to {
 		background-position-x: 2000px;
 	}
-}
-
-body.scouting-nederland-utilities-main-blue .scouting-nederland-search-hero::after {
-	background-image: url("../images/skyline-blauw.png");
-}
-
-body.scouting-nederland-utilities-main-yellow .scouting-nederland-search-hero::after {
-	background-image: url("../images/skyline-geel.png");
-}
-
-body.scouting-nederland-utilities-main-red .scouting-nederland-search-hero::after {
-	background-image: url("../images/skyline-rood.png");
-}
-
-body.scouting-nederland-utilities-main-orange .scouting-nederland-search-hero::after {
-	background-image: url("../images/skyline-oranje.png");
-}
-
-body.scouting-nederland-utilities-main-purple .scouting-nederland-search-hero::after {
-	background-image: url("../images/skyline-paars.png");
 }
 
 /* Keep hero content above the absolutely positioned skyline layer. */
@@ -92,28 +76,6 @@ body.scouting-nederland-utilities-main-purple .scouting-nederland-search-hero::a
 	font-size: 0.9rem;
 	font-weight: 800;
 	box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-}
-
-.scouting-nederland-search-hero h1 {
-	margin: 0 auto;
-	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
-	font-family: Impact, "Arial Narrow", sans-serif;
-	font-size: clamp(2.3rem, 5vw, 4.2rem);
-	font-weight: 700;
-	line-height: 1.05;
-	text-align: center;
-}
-
-.scouting-nederland-search-hero h1 span {
-	color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
-}
-
-.scouting-nederland-search-hero p {
-	max-width: 760px;
-	margin: 18px auto 0;
-	font-size: 1.16rem;
-	line-height: 1.8;
-	text-align: center;
 }
 
 /* Two-column search control; the text field consumes remaining inline space. */
@@ -158,7 +120,9 @@ body.scouting-nederland-utilities-main-purple .scouting-nederland-search-hero::a
 	cursor: pointer;
 }
 
-/* Center the result region independently of Bootstrap's outer container width. */
+/*
+ * Center the result region independently of Bootstrap's outer container width.
+ */
 .scouting-nederland-search-content {
 	max-width: 920px;
 	margin-right: auto;
@@ -183,7 +147,10 @@ body.scouting-nederland-utilities-main-purple .scouting-nederland-search-hero::a
 	gap: 24px;
 }
 
-/* Result cards use Grid so media and copy remain aligned without fixed content heights. */
+/*
+ * Result cards use Grid so media and copy remain aligned without fixed content
+ * heights.
+ */
 .scouting-nederland-search-card {
 	display: grid;
 	grid-template-columns: 220px minmax(0, 1fr);
@@ -202,12 +169,6 @@ body.scouting-nederland-utilities-main-purple .scouting-nederland-search-hero::a
 	overflow: hidden;
 	background: rgba(0, 0, 0, 0.04);
 	text-decoration: none;
-}
-
-.scouting-nederland-search-card-image img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
 }
 
 .scouting-nederland-search-card-image-fallback {
@@ -244,17 +205,7 @@ body.scouting-nederland-utilities-main-purple .scouting-nederland-search-hero::a
 	line-height: 1.13;
 }
 
-.scouting-nederland-search-card-title a {
-	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
-	text-decoration: none;
-}
-
-.scouting-nederland-search-card-title a:hover {
-	color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw)) !important;
-}
-
-.scouting-nederland-search-card-excerpt,
-.scouting-nederland-search-card-excerpt p {
+.scouting-nederland-search-card-excerpt {
 	margin: 0;
 	color: #222;
 	font-size: 1rem;
@@ -270,44 +221,12 @@ body.scouting-nederland-utilities-main-purple .scouting-nederland-search-hero::a
 	text-decoration: none;
 }
 
-.scouting-nederland-search-card-link span {
-	display: inline-block;
-	transition: transform 0.18s ease;
-}
-
-.scouting-nederland-search-card-link:hover span {
-	transform: translateX(4px);
-}
-
-/* WordPress pagination classes remain platform-owned inside the search component. */
+/*
+ * WordPress pagination classes remain platform-owned inside the search
+ * component.
+ */
 .scouting-nederland-search-pagination {
 	margin-top: 34px;
-}
-
-.scouting-nederland-search-pagination .nav-links {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 8px;
-}
-
-.scouting-nederland-search-pagination .page-numbers {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	min-width: 42px;
-	min-height: 42px;
-	padding: 0 0.85rem;
-	border-radius: 999px;
-	background: #fff;
-	color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw)) !important;
-	text-decoration: none;
-	font-weight: 800;
-	box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
-}
-
-.scouting-nederland-search-pagination .page-numbers.current {
-	background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
-	color: #fff !important;
 }
 
 .scouting-nederland-search-empty {
@@ -333,6 +252,51 @@ body.scouting-nederland-utilities-main-purple .scouting-nederland-search-hero::a
 	font-size: 2.2rem;
 }
 
+.scouting-nederland-search-empty-actions {
+	margin-top: 24px;
+}
+
+.scouting-nederland-search-hero h1 {
+	margin: 0 auto;
+	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+	font-size: clamp(2.3rem, 5vw, 4.2rem);
+	font-weight: 700;
+	line-height: 1.05;
+	text-align: center;
+}
+
+.scouting-nederland-search-hero p {
+	max-width: 760px;
+	margin: 18px auto 0;
+	font-size: 1.16rem;
+	line-height: 1.8;
+	text-align: center;
+}
+
+.scouting-nederland-search-card-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.scouting-nederland-search-card-title a {
+	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
+	text-decoration: none;
+}
+
+.scouting-nederland-search-card-excerpt p {
+	margin: 0;
+	color: #222;
+	font-size: 1rem;
+	line-height: 1.8;
+}
+
+.scouting-nederland-search-card-link span {
+	display: inline-block;
+	transition: transform 0.18s ease;
+}
+
 .scouting-nederland-search-empty h2 {
 	margin: 0 0 12px;
 	color: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen)) !important;
@@ -346,12 +310,70 @@ body.scouting-nederland-utilities-main-purple .scouting-nederland-search-hero::a
 	line-height: 1.8;
 }
 
-.scouting-nederland-search-empty-actions {
-	margin-top: 24px;
+.scouting-nederland-search-hero h1 span {
+	color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw));
 }
 
-/* Tablet layout reduces hero spacing and media width while retaining two card columns. */
+.scouting-nederland-search-pagination .nav-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.scouting-nederland-search-pagination .page-numbers {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 42px;
+	min-height: 42px;
+	padding: 0 0.85rem;
+	border-radius: 999px;
+	background: #fff;
+	color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw)) !important;
+	text-decoration: none;
+	font-weight: 800;
+	box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+}
+
+.scouting-nederland-search-card-title a:hover {
+	color: var(--scouting-nederland-support-color, var(--wp--preset--color--scouting-blauw)) !important;
+}
+
+.scouting-nederland-search-card-link:hover span {
+	transform: translateX(4px);
+}
+
+body.scouting-nederland-utilities-main-blue .scouting-nederland-search-hero::after {
+	background-image: url(../images/skyline-blauw.png);
+}
+
+body.scouting-nederland-utilities-main-yellow .scouting-nederland-search-hero::after {
+	background-image: url(../images/skyline-geel.png);
+}
+
+body.scouting-nederland-utilities-main-red .scouting-nederland-search-hero::after {
+	background-image: url(../images/skyline-rood.png);
+}
+
+body.scouting-nederland-utilities-main-orange .scouting-nederland-search-hero::after {
+	background-image: url(../images/skyline-oranje.png);
+}
+
+body.scouting-nederland-utilities-main-purple .scouting-nederland-search-hero::after {
+	background-image: url(../images/skyline-paars.png);
+}
+
+.scouting-nederland-search-pagination .page-numbers.current {
+	background: var(--scouting-nederland-main-color, var(--wp--preset--color--scouting-groen));
+	color: #fff !important;
+}
+
+/*
+ * Tablet layout reduces hero spacing and media width while retaining two card
+ * columns.
+ */
 @media (max-width: 900px) {
+
 	.scouting-nederland-search-hero {
 		padding: 88px 0 64px;
 	}
@@ -365,12 +387,13 @@ body.scouting-nederland-utilities-main-purple .scouting-nederland-search-hero::a
 	}
 }
 
-/* Phone layout stacks form controls and result-card regions for readable tap targets. */
+/*
+ * Phone layout stacks form controls and result-card regions for readable tap
+ * targets.
+ */
 @media (max-width: 700px) {
 
-	.scouting-nederland-search-hero-inner,
-	.scouting-nederland-search-hero h1,
-	.scouting-nederland-search-hero p {
+	.scouting-nederland-search-hero-inner {
 		text-align: left;
 	}
 
@@ -409,9 +432,15 @@ body.scouting-nederland-utilities-main-purple .scouting-nederland-search-hero::a
 	.scouting-nederland-search-empty {
 		padding: 30px 22px;
 	}
+
+	.scouting-nederland-search-hero h1,
+	.scouting-nederland-search-hero p {
+		text-align: left;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
+
 	.scouting-nederland-search-hero::after {
 		animation: none;
 	}

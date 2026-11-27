@@ -1,0 +1,50 @@
+name: release-zip
+
+on:
+  push:
+    tags:
+      - "*.*.*"
+
+permissions: {}
+
+jobs:
+  package:
+    name: Theme ZIP artifact
+    permissions:
+      contents: read
+    uses: ./.github/workflows/package-theme.yml
+    with:
+      version: ${{ github.ref_name }}
+
+  release:
+    name: Publish theme release
+    needs: package
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download theme package
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: ${{ needs.package.outputs.artifact-name }}
+          path: ${{ runner.temp }}/theme-artifact
+
+      - name: Attach zip to release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+          THEME_PACKAGE_DIR: ${{ runner.temp }}/theme-artifact
+          ZIP_PATH: ${{ runner.temp }}/${{ needs.package.outputs.zip-name }}
+        run: |
+          set -euo pipefail
+
+          cd "${THEME_PACKAGE_DIR}"
+          zip -q -r "${ZIP_PATH}" scouting-nederland-wordpress-theme
+
+          if gh release view "${RELEASE_TAG}" --json id >/dev/null 2>&1; then
+            gh release upload "${RELEASE_TAG}" "${ZIP_PATH}" --clobber
+          else
+            gh release create "${RELEASE_TAG}" "${ZIP_PATH}" --generate-notes --verify-tag
+          fi
